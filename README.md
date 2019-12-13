@@ -74,7 +74,7 @@ extension UIFont {
 
 <a name="images"></a>
 
-# :camera_with_flash: Images and Icons
+# Images and Icons
 
 ---
 
@@ -112,7 +112,7 @@ let navbarNotifyIcon = Asset.Image.NavbarNotification
 
 <a name="custom-views"></a>
 
-# :file_folder: Custom Views and Cells
+# Custom Views and Cells
 
 > Create a subfolder with their parent class name folder inside CustomView like UIView, UIButton, etc. And create your custom view class inside the subfolder
 
