@@ -18,3 +18,7 @@ class ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___PresenterProt
         self.interactor.delegate = self
     }
 }
+
+class ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___InteractorDelegate {
+    
+}
