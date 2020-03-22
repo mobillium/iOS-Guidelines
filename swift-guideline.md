@@ -1,7 +1,75 @@
 # Mobillium Swift Style Guide
 
+## Naming
+
+<br>
+Variable name and function name should start with a lowercase character.
+
+[![SwiftLint: identifier_name](https://img.shields.io/badge/SwiftLint-identifier_name-007A87.svg)](https://realm.github.io/SwiftLint/identifier_name.html)
+
+<details>
+
+**Preferred**:
+```swift
+var abc = true
+func abc() {}
+```
+
+**Not Preferred**:
+```swift
+var Abc = true
+func Abc() {}
+```
+
+</details>
+
+<br>
+Type name and protocol name should start with an uppercase character.
+
+[![SwiftLint: type_name](https://img.shields.io/badge/SwiftLint-type_name-007A87.svg)](https://realm.github.io/SwiftLint/type_name.html)
+
+<details>
+
+**Preferred**:
+```swift
+class Abc {}
+protocol Abc {}
+```
+
+**Not Preferred**:
+```swift
+class abc {}
+protocol abc {}
+```
+
+</details>
+
+
+## Delegates
+
+<br>
+When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.
+
+<details>
+
+**Preferred**:
+```swift
+func namePickerView(_ namePickerView: NamePickerView, didSelectName name: String)
+func namePickerViewShouldReload(_ namePickerView: NamePickerView) -> Bool
+```
+
+**Not Preferred**:
+```swift
+func didSelectName(namePicker: NamePickerViewController, name: String)
+func namePickerShouldReload() -> Bool
+```
+
+</details>
+
+
 ## Spacing
 
+<br>
 if/else/switch/while etc.
 
 [![SwiftLint: opening_brace](https://img.shields.io/badge/SwiftLint-opening_brace-007A87.svg)](https://realm.github.io/SwiftLint/opening_brace.html)
@@ -26,6 +94,62 @@ if passed
 }
 else {
   // ...
+}
+```
+</details>
+
+<br>
+Colons should be next to the identifier when specifying a type and next to the key in dictionary literals.
+
+[![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-colon-007A87.svg)](https://realm.github.io/SwiftLint/colon.html)
+
+<details>
+
+**Preferred**:
+```swift
+var abc: Bool = true
+```
+
+**Not Preferred**:
+```swift
+var abc : Bool = true
+var abc :Bool = true
+func abc(string : String) {}
+func abc(string :String) {}
+```
+
+</details>
+
+
+## Protocol
+
+<br>
+In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+
+<br>
+<details>
+
+**Preferred**:
+```swift
+class ViewController: UIViewController {
+  // class stuff here
+}
+
+// MARK: - UITableViewDelegate
+extension UIViewController: UITableViewDelegate {
+  // UITableViewDelegate methods
+}
+
+// MARK: - UICollectionViewDataSource
+extension UIViewController: UICollectionViewDataSource {
+  // UICollectionViewDataSource methods
+}
+```
+
+**Not Preferred**:
+```swift
+class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDataSource {
+  // all methods
 }
 ```
 
