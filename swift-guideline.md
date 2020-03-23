@@ -2,55 +2,86 @@
 
 ## Naming
 
-<br>
 Variable name and function name should start with a lowercase character.
-
 [![SwiftLint: identifier_name](https://img.shields.io/badge/SwiftLint-identifier_name-007A87.svg)](https://realm.github.io/SwiftLint/identifier_name.html)
-
-<details>
 
 **Preferred**:
 ```swift
 var abc = true
 func abc() {}
 ```
-
 **Not Preferred**:
 ```swift
 var Abc = true
 func Abc() {}
 ```
 
-</details>
-
-<br>
 Type name and protocol name should start with an uppercase character.
-
 [![SwiftLint: type_name](https://img.shields.io/badge/SwiftLint-type_name-007A87.svg)](https://realm.github.io/SwiftLint/type_name.html)
-
-<details>
 
 **Preferred**:
 ```swift
 class Abc {}
 protocol Abc {}
 ```
-
 **Not Preferred**:
 ```swift
 class abc {}
 protocol abc {}
 ```
 
-</details>
+Use compiler inferred context to write shorter, clear code.
+
+**Preferred**:
+```swift
+let selector = #selector(viewDidLoad)
+view.backgroundColor = .red
+let toView = context.view(forKey: .to)
+let view = UIView(frame: .zero)
+```
+**Not Preferred**:
+```swift
+let selector = #selector(ViewController.viewDidLoad)
+view.backgroundColor = UIColor.red
+let toView = context.view(forKey: UITransitionContextViewKey.to)
+let view = UIView(frame: CGRect.zero)
+```
+
+ Include a hint about type in a name if it would otherwise be ambiguous.
+
+ **Preferred**:
+ ```swift
+ @IBOutlet private weak var nameTextField: UITextField!
+ @IBOutlet private weak var confirmButton: UITextField!
+ let titleText: String
+ let cancelButton: UIButton
+ ```
+ **Not Preferred**:
+ ```swift
+ @IBOutlet private weak var name: UITextField!
+ @IBOutlet private weak var confirm: UITextField!
+ let title: String
+ let cancel: UIButton
+ ```
+
+ Name booleans like isSpaceship, hasSpacesuit, etc. This makes it clear that they are booleans and not other types.
+
+ **Preferred**:
+ ```swift
+ var isPassed = true
+ var hasPhoneNumber = false
+ ```
+ **Not Preferred**:
+ ```swift
+ var passed = true
+ var phoneNumber = false
+ ```
 
 
 ## Delegates
 
 <br>
 When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.
-
-<details>
 
 **Preferred**:
 ```swift
@@ -64,8 +95,6 @@ func didSelectName(namePicker: NamePickerViewController, name: String)
 func namePickerShouldReload() -> Bool
 ```
 
-</details>
-
 
 ## Spacing
 
@@ -74,8 +103,6 @@ if/else/switch/while etc.
 
 [![SwiftLint: opening_brace](https://img.shields.io/badge/SwiftLint-opening_brace-007A87.svg)](https://realm.github.io/SwiftLint/opening_brace.html)
 [![SwiftLint: statement_position](https://img.shields.io/badge/SwiftLint-statement_position-007A87.svg)](https://realm.github.io/SwiftLint/statement_position.html)
-
-<details>
 
 **Preferred**:
 ```swift
@@ -96,18 +123,16 @@ else {
   // ...
 }
 ```
-</details>
 
 <br>
 Colons should be next to the identifier when specifying a type and next to the key in dictionary literals.
 
 [![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-colon-007A87.svg)](https://realm.github.io/SwiftLint/colon.html)
 
-<details>
-
 **Preferred**:
 ```swift
 var abc: Bool = true
+func abc(string: String) {}
 ```
 
 **Not Preferred**:
@@ -118,16 +143,11 @@ func abc(string : String) {}
 func abc(string :String) {}
 ```
 
-</details>
-
 
 ## Protocol
 
 <br>
 In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
-
-<br>
-<details>
 
 **Preferred**:
 ```swift
@@ -152,5 +172,3 @@ class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDat
   // all methods
 }
 ```
-
-</details>
