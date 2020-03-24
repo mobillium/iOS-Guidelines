@@ -80,7 +80,6 @@ let view = UIView(frame: CGRect.zero)
 
 ## Delegates
 
-<br>
 When creating custom delegate methods, an unnamed first parameter should be the delegate source. (UIKit contains numerous examples of this.
 
 **Preferred**:
@@ -88,7 +87,6 @@ When creating custom delegate methods, an unnamed first parameter should be the 
 func namePickerView(_ namePickerView: NamePickerView, didSelectName name: String)
 func namePickerViewShouldReload(_ namePickerView: NamePickerView) -> Bool
 ```
-
 **Not Preferred**:
 ```swift
 func didSelectName(namePicker: NamePickerViewController, name: String)
@@ -98,9 +96,7 @@ func namePickerShouldReload() -> Bool
 
 ## Spacing
 
-<br>
 if/else/switch/while etc.
-
 [![SwiftLint: opening_brace](https://img.shields.io/badge/SwiftLint-opening_brace-007A87.svg)](https://realm.github.io/SwiftLint/opening_brace.html)
 [![SwiftLint: statement_position](https://img.shields.io/badge/SwiftLint-statement_position-007A87.svg)](https://realm.github.io/SwiftLint/statement_position.html)
 
@@ -112,7 +108,6 @@ if passed {
   // ...
 }
 ```
-
 **Not Preferred**:
 ```swift
 if passed
@@ -124,9 +119,7 @@ else {
 }
 ```
 
-<br>
 Colons should be next to the identifier when specifying a type and next to the key in dictionary literals.
-
 [![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-colon-007A87.svg)](https://realm.github.io/SwiftLint/colon.html)
 
 **Preferred**:
@@ -134,7 +127,6 @@ Colons should be next to the identifier when specifying a type and next to the k
 var abc: Bool = true
 func abc(string: String) {}
 ```
-
 **Not Preferred**:
 ```swift
 var abc : Bool = true
@@ -146,7 +138,6 @@ func abc(string :String) {}
 
 ## Protocol
 
-<br>
 In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
 
 **Preferred**:
@@ -165,7 +156,6 @@ extension UIViewController: UICollectionViewDataSource {
   // UICollectionViewDataSource methods
 }
 ```
-
 **Not Preferred**:
 ```swift
 class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDataSource {
