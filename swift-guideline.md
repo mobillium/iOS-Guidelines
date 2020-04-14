@@ -162,3 +162,9 @@ class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDat
   // all methods
 }
 ```
+
+## References
+
+* [The Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines)
+* [The Raywenderlich API Design Guidelines](https://github.com/raywenderlich/swift-style-guide)
+* [The Airbnb API Design Guidelines](https://github.com/airbnb/swift)
