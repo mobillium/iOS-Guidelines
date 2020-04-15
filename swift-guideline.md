@@ -77,6 +77,17 @@ let view = UIView(frame: CGRect.zero)
  var phoneNumber = false
  ```
 
+ Use US English spelling to match Apple's API.
+
+ **Preferred**:
+ ```swift
+let color = "red"
+ ```
+ **Not Preferred**:
+ ```swift
+let colour = "red"
+ ```
+
 
 ## Delegates
 
@@ -93,6 +104,32 @@ func didSelectName(namePicker: NamePickerViewController, name: String)
 func namePickerShouldReload() -> Bool
 ```
 
+## Protocol
+
+In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+
+**Preferred**:
+```swift
+class ViewController: UIViewController {
+  // class stuff here
+}
+
+// MARK: - UITableViewDelegate
+extension UIViewController: UITableViewDelegate {
+  // UITableViewDelegate methods
+}
+
+// MARK: - UICollectionViewDataSource
+extension UIViewController: UICollectionViewDataSource {
+  // UICollectionViewDataSource methods
+}
+```
+**Not Preferred**:
+```swift
+class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDataSource {
+  // all methods
+}
+```
 
 ## Spacing
 
@@ -135,36 +172,50 @@ func abc(string : String) {}
 func abc(string :String) {}
 ```
 
+# Computed Properties
 
-## Protocol
-
-In particular, when adding protocol conformance to a model, prefer adding a separate extension for the protocol methods. This keeps the related methods grouped together with the protocol and can simplify instructions to add a protocol to a class with its associated methods.
+For conciseness, if a computed property is read-only, omit the get clause. The get clause is required only when a set clause is provided.
 
 **Preferred**:
 ```swift
-class ViewController: UIViewController {
-  // class stuff here
-}
-
-// MARK: - UITableViewDelegate
-extension UIViewController: UITableViewDelegate {
-  // UITableViewDelegate methods
-}
-
-// MARK: - UICollectionViewDataSource
-extension UIViewController: UICollectionViewDataSource {
-  // UICollectionViewDataSource methods
+var diameter: Double {
+  return radius * 2
 }
 ```
 **Not Preferred**:
 ```swift
-class ViewController: UIViewController, UITableViewDelegate, UICollectionViewDataSource {
-  // all methods
+var diameter: Double {
+  get {
+    return radius * 2
+  }
 }
+```
+
+## Operators
+
+Infix operators should have a single space on either side. Prefer parenthesis to visually group statements with many operators rather than varying widths of whitespace. This rule does not apply to range operators (e.g. 1...3) and postfix or prefix operators (e.g. guest? or -1).
+[![SwiftLint: colon](https://img.shields.io/badge/SwiftLint-operator_usage_whitespace-007A87.svg)](https://realm.github.io/SwiftLint/operator_usage_whitespace.html)
+
+**Preferred**:
+```swift
+let foo = 1 + 2
+let foo = 1 > 2
+let foo = !false
+let range = 1...3
+let range = 1..<3
+```
+**Not Preferred**:
+```swift
+let foo = 1+2
+let foo = 1   + 2
+let foo = 1   +    2
+let foo=bar
+let range = 1 ..<  3
 ```
 
 ## References
 
 * [The Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines)
-* [The Raywenderlich API Design Guidelines](https://github.com/raywenderlich/swift-style-guide)
-* [The Airbnb API Design Guidelines](https://github.com/airbnb/swift)
+* [The Raywenderlich Swift Style Guide](https://github.com/raywenderlich/swift-style-guide)
+* [The Airbnb Swift Style Guide](https://github.com/airbnb/swift)
+* [The Trendyol Swift Style Guide](https://github.com/Trendyol/ios-guidelines/blob/master/code_style_guideline/code_style_guideline.md)
