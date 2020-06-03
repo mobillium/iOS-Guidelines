@@ -370,7 +370,7 @@ if let _ = thing {
 
 **Preferred**:
 ```swift
-func namePickerView(_ namePickerView: NamePickerView, didSelectName name: String)
+func namePickerView(_ namePickerView: NamePickerView, didSelect name: String)
 func namePickerViewShouldReload(_ namePickerView: NamePickerView) -> Bool
 ```
 
