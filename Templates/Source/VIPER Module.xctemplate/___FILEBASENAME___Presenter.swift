@@ -19,6 +19,6 @@ class ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___PresenterProt
     }
 }
 
-class ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___InteractorDelegate {
+extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___InteractorDelegate {
     
 }
