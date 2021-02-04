@@ -107,6 +107,9 @@
     ├── Transitions
       ├── Transitions classes
 
+  ├── Helper
+    ├── Helper classes
+
   ├── Scenes
     ├── Auth
       ├── SignIn
@@ -318,6 +321,17 @@
       ├── Other global routes
     ├── Transitions
       ├── Transitions classes
+```
+
+<a name="helper"></a>
+## Helper
+
+> ....
+
+```text
+├── ProjectFolder
+  ├── Helper
+    ├── Helper classes
 ```
 
 
