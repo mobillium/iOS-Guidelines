@@ -5,7 +5,7 @@
 	<key>DefaultCompletionName</key>
 	<string>File</string>
 	<key>Description</key>
-	<string>VIPER Module</string>
+	<string>MVVM-R module.</string>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
@@ -34,20 +34,6 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_moduleName___.storyboard</string>
-			<key>Description</key>
-			<string>The storyboard name</string>
-			<key>Identifier</key>
-			<string>storyboardName</string>
-			<key>Name</key>
-			<string>Storyboard Name:</string>
-			<key>Required</key>
-			<true/>
-			<key>Type</key>
-			<string>static</string>
-		</dict>
-		<dict>
-			<key>Default</key>
 			<string>___VARIABLE_moduleName___ViewController.swift</string>
 			<key>Description</key>
 			<string>The interfaces name</string>
@@ -62,13 +48,13 @@
 		</dict>
 		<dict>
 			<key>Default</key>
-			<string>___VARIABLE_moduleName___Presenter.swift</string>
+			<string>___VARIABLE_moduleName___ViewModel.swift</string>
 			<key>Description</key>
-			<string>The presenter name</string>
+			<string>The viewModel name</string>
 			<key>Identifier</key>
-			<string>presenterName</string>
+			<string>viewModelName</string>
 			<key>Name</key>
-			<string>Presenter Name:</string>
+			<string>ViewModel Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -96,6 +82,6 @@
 	<key>SortOrder</key>
 	<string>7</string>
 	<key>Summary</key>
-	<string>Generate VIPER Module with its submodules like Storyboard, ViewController, Presenter, Interactor etc.</string>
+	<string>This generates a new MVVM-R module.</string>
 </dict>
 </plist>
