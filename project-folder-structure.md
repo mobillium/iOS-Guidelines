@@ -264,7 +264,9 @@
 <a name="constants"></a>
 ## Constants
 
-> All constants used in App should be stored under the **Constants** folder.
+<details>
+
+All constants used in App should be stored under the **Constants** folder.
 Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
   - #### NotificationCenter
   NotificationCenter extension file should be used, notification names **NotificationNames.swift** and notification parameters **NotificationParameterKeys.swift** named under **Constants** folder.
@@ -284,19 +286,21 @@ Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
     ├── DateFormats.swift
     ├── Other Constants files
 ```
-
+</details>
 
 <a name="deepLink"></a>
 ## DeepLink
 
-> DeepLink files should be stored under the **DeepLink** folder. DeepLink files should be divided by their usage and stored under the **DeepLink classes**.
+<details>
+
+DeepLink files should be stored under the **DeepLink** folder. DeepLink files should be divided by their usage and stored under the **DeepLink classes**.
 
 ```text
 ├── ProjectFolder
   ├── DeepLink
     ├── DeepLink classes
 ```
-
+</details>
 
 <a name="singleton"></a>
 ## Singleton
