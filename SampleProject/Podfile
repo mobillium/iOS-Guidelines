@@ -24,6 +24,8 @@ target 'SampleProject' do
   pod "TinyConstraints", '~> 4.0'
   pod "IQKeyboardManagerSwift", '~> 6.5'
   pod 'SwiftLint', '~> 0.42'
+  pod 'MSAUserDefaults', '~> 2.0'
+  pod 'MSADateFormatter', '~> 1.3'
   
   target 'SampleProjectTests' do
     inherit! :search_paths

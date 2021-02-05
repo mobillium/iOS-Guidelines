@@ -24,6 +24,8 @@
 		7A980AF82553173F00494520 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AF62553173F00494520 /* Animator.swift */; };
 		7A980AFC2553178000494520 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AFB2553178000494520 /* AppRouter.swift */; };
 		7A980B3325531F9600494520 /* HomeRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980B3225531F9600494520 /* HomeRoute.swift */; };
+		7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */; };
+		7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */; };
 		7AFC72A62551FA1A00B30789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC72A52551FA1A00B30789 /* Assets.xcassets */; };
 		7AFC72A92551FA1A00B30789 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AFC72A72551FA1A00B30789 /* LaunchScreen.storyboard */; };
 		7AFC72B42551FA1A00B30789 /* SampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC72B32551FA1A00B30789 /* SampleProjectTests.swift */; };
@@ -97,6 +99,8 @@
 		7A980AF62553173F00494520 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		7A980AFB2553178000494520 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		7A980B3225531F9600494520 /* HomeRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRoute.swift; sourceTree = "<group>"; };
+		7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		7AFC72992551FA1800B30789 /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC72A52551FA1A00B30789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AFC72A82551FA1A00B30789 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -251,6 +255,15 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		7AC7AC2C25CD48D700EA44C4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */,
+				7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		7AFC72902551FA1800B30789 = {
 			isa = PBXGroup;
 			children = (
@@ -277,8 +290,9 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
-				7A73C91225CC385900322233 /* Resources */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
+				7A73C91225CC385900322233 /* Resources */,
+				7AC7AC2C25CD48D700EA44C4 /* Constants */,
 				7AFC72DB2551FBF800B30789 /* Configurations */,
 				7A980AE92553170600494520 /* Routing */,
 				7A980AB02553166D00494520 /* Scenes */,
@@ -650,6 +664,7 @@
 				7A980AE5255316BF00494520 /* BaseNavigationController.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
 				7A980AB62553168400494520 /* HomeRouter.swift in Sources */,
+				7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
@@ -659,6 +674,7 @@
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
+				7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
