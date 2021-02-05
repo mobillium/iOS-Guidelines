@@ -293,7 +293,7 @@ Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
 
 <details>
 
-DeepLink files should be stored under the **DeepLink** folder. DeepLink files should be divided by their usage and stored under the **DeepLink classes**.
+DeepLink files should be stored under the **DeepLink** folder.
 
 ```text
 ├── ProjectFolder
