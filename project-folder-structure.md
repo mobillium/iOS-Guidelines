@@ -214,7 +214,7 @@
 
 <a name="protocols"></a>
 ## Protocols
-
+<details>
 > Multiple protocols used in App should store under the **Protocols** folder. These protocols should divided by their usage purpose such as Apple SignIn Protocol, Facebook SignIn Protocol.
 
 ```text
@@ -222,11 +222,12 @@
   ├── Protocols
     ├── Protocol files
 ```
+</details>
 
 
 <a name="validation"></a>
 ## Validation
-
+<details>
 > All validation files should store under the **Validation** folder. The core files and custom files should store under the **Classes** folder. If you are using custom rules, these rules should store under the **Rules** folder divided by their usage. All the constants such as password minimum - maximum lenght should store under the **Constants** folder with **ValidationConstants.swift** naming.
 
 ```text
@@ -239,7 +240,7 @@
     ├── Rules
       ├── Rules files
 ```
-
+</details>
 
 <a name="eventmanager"></a>
 ## EventManager
