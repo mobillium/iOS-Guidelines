@@ -176,7 +176,8 @@
 <a name="resources"></a>
 ## Resources
 
-> ....
+<details>
+> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
 
 ```text
 ├── ProjectFolder
@@ -198,6 +199,7 @@
     ├── Gif
       ├── Gif files
 ```
+</details>
 
 
 <a name="intent"></a>
