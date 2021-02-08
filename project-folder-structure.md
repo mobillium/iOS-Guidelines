@@ -142,8 +142,8 @@
 
 <a name="appdelegate"></a>
 ## AppDelegate
-
-> ....
+<details>
+Main AppDelegate should contain just default native functions. All 3rd party libraries should be separated from AppDelegate as extensions. Apart from that, Universal Link Handler & Push Notification Handler should also be separated as extensions. This distinction should be made in classic extension naming. Example -> (AppDelegate + {3rd party library name})
 
 ```text
 ├── ProjectFolder
@@ -152,12 +152,13 @@
     ├── AppDelegate+Firebase.swift
     ├── ...
 ```
+</details>
 
 
 <a name="configuration"></a>
 ## Configuration
-
-> ....
+<details>
+Configuration folder should contain entitlements, plist files, briding-header files, yml files(if available).They should divide into folders by build config.
 
 ```text
 ├── ProjectFolder
@@ -171,6 +172,7 @@
       ├── -.entitlements
       ├── sdk config files
 ```
+</details>
 
 
 <a name="resources"></a>
