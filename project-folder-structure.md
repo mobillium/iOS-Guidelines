@@ -107,6 +107,9 @@
     ├── Transitions
       ├── Transitions classes
 
+  ├── Helper
+    ├── Helper classes
+
   ├── Scenes
     ├── Auth
       ├── SignIn
@@ -215,7 +218,7 @@
 <a name="protocols"></a>
 ## Protocols
 <details>
-Multiple protocols used in App should store under the Protocols folder. These protocols should divided by their usage purpose such as Apple SignIn Protocol, Facebook SignIn Protocol.
+Multiple protocols used in App should store under the Protocols folder. These protocols should divided by their usage purpose such as AppleSignInProtocol, FacebookSignInProtocol.
 
 ```text
 ├── ProjectFolder
@@ -321,6 +324,16 @@ All validation files should store under the Validation folder. The core files an
       ├── Transitions classes
 ```
 
+<a name="helper"></a>
+ ## Helper
+
+ > ....
+
+ ```text
+ ├── ProjectFolder
+   ├── Helper
+     ├── Helper classes
+ ```
 
 <a name="scenes"></a>
 ## Scenes
