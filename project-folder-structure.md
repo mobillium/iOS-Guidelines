@@ -6,7 +6,7 @@
 - [AppDelegate](#appdelegate)
 - [Configuration](#configuration)
 - [Resources](#resources)
-- [Entity](#Entity)
+- [Entity](#entity)
 - [Protocols](#protocols)
 - [Validation](#validation)
 - [Constants](#constants)
