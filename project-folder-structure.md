@@ -6,7 +6,7 @@
 - [AppDelegate](#appdelegate)
 - [Configuration](#configuration)
 - [Resources](#resources)
-- [Intent](#intent)
+- [Entity](#Entity)
 - [Protocols](#protocols)
 - [Validation](#validation)
 - [Constants](#constants)
@@ -55,7 +55,7 @@
     ├── Gif
       ├── Gif files
 
-  ├── Intent
+  ├── Entity
     ├── Model
       ├── Object Files
     ├── Enum
