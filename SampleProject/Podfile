@@ -1,0 +1,84 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '12.1'
+
+# Comment the next line if you don't want to use dynamic frameworks
+use_frameworks!
+
+workspace 'SampleProject'
+
+project 'SampleProject.xcodeproj'
+project 'DataProvider/DataProvider.xcodeproj'
+project 'UIComponents/UIComponents.xcodeproj'
+project 'Utilities/Utilities.xcodeproj'
+
+target 'SampleProject' do
+  
+  project 'SampleProject.xcodeproj'
+
+  # Pods for SampleProject
+  
+  # Network
+  pod 'Alamofire', '~> 5.4'
+  
+  # Helper
+  pod "TinyConstraints", '~> 4.0'
+  pod "IQKeyboardManagerSwift", '~> 6.5'
+  pod 'SwiftLint', '~> 0.42'
+  pod 'MSAUserDefaults', '~> 2.0'
+  pod 'MSADateFormatter', '~> 1.3'
+  
+  target 'SampleProjectTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'SampleProjectUITests' do
+    # Pods for testing
+  end
+
+end
+
+target 'DataProvider' do
+  
+  project 'DataProvider/DataProvider.xcodeproj'
+  
+  # Pods for DataProvider
+  
+  # Network
+  pod 'Alamofire', '~> 5.4'
+  
+  target 'DataProviderTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+end
+
+target 'UIComponents' do
+  
+  project 'UIComponents/UIComponents.xcodeproj'
+  
+  # Pods for UIComponents
+  
+  # Helper
+  pod "TinyConstraints", '~> 4.0'
+  
+  target 'UIComponentsTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+end
+
+target 'Utilities' do
+  
+  project 'Utilities/Utilities.xcodeproj'
+  
+  # Pods for Utilities
+  
+  target 'UtilitiesTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+  
+end
