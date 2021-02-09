@@ -6,7 +6,7 @@
 - [AppDelegate](#appdelegate)
 - [Configuration](#configuration)
 - [Resources](#resources)
-- [Intent](#intent)
+- [Entity](#entity)
 - [Protocols](#protocols)
 - [Validation](#validation)
 - [Constants](#constants)
@@ -55,7 +55,7 @@
     ├── Gif
       ├── Gif files
 
-  ├── Intent
+  ├── Entity
     ├── Model
       ├── Object Files
     ├── Enum
@@ -178,7 +178,8 @@ Configuration folder should contain entitlements, plist files, briding-header fi
 <a name="resources"></a>
 ## Resources
 
-> ....
+<details>
+> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
 
 ```text
 ├── ProjectFolder
@@ -200,21 +201,24 @@ Configuration folder should contain entitlements, plist files, briding-header fi
     ├── Gif
       ├── Gif files
 ```
+</details>
 
 
-<a name="intent"></a>
-## Intent
+<a name="entity"></a>
+## Entity
 
-> ....
+<details>
+> It contains the models we create custom and the enums we need. As an example of custom models, models that we format the responses from web services by to specific logic.
 
 ```text
 ├── ProjectFolder
-  ├── Intent
+  ├── Entity
     ├── Model
       ├── Object Files
     ├── Enum
       ├── Enum Files
 ```
+</details>
 
 
 <a name="protocols"></a>
