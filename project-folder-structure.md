@@ -219,20 +219,21 @@ Configuration folder should contain entitlements, plist files, briding-header fi
 
 <a name="protocols"></a>
 ## Protocols
-
-> ....
+<details>
+Multiple protocols used in App should store under the Protocols folder. These protocols should divided by their usage purpose such as AppleSignInProtocol, FacebookSignInProtocol.
 
 ```text
 ├── ProjectFolder
   ├── Protocols
     ├── Protocol files
 ```
+</details>
 
 
 <a name="validation"></a>
 ## Validation
-
-> ....
+<details>
+All validation files should store under the Validation folder. The core files and custom files should store under the Classes folder. If you are using custom rules, these rules should store under the Rules folder divided by their usage. All the constants such as password minimum - maximum length should store under the Constants folder with ValidationConstants.swift naming.
 
 ```text
 ├── ProjectFolder
@@ -244,7 +245,7 @@ Configuration folder should contain entitlements, plist files, briding-header fi
     ├── Rules
       ├── Rules files
 ```
-
+</details>
 
 <a name="eventmanager"></a>
 ## EventManager
@@ -337,16 +338,15 @@ DeepLink files should be stored under the **DeepLink** folder.
 ```
 
 <a name="helper"></a>
-## Helper
+ ## Helper
 
-> ....
+ > ....
 
-```text
-├── ProjectFolder
-  ├── Helper
-    ├── Helper classes
-```
-
+ ```text
+ ├── ProjectFolder
+   ├── Helper
+     ├── Helper classes
+ ```
 
 <a name="scenes"></a>
 ## Scenes
