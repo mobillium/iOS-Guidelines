@@ -266,7 +266,16 @@ Configuration folder should contain entitlements, plist files, briding-header fi
 <a name="constants"></a>
 ## Constants
 
-> ....
+<details>
+
+All constants used in App should be stored under the **Constants** folder.
+Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
+  - #### NotificationCenter
+  NotificationCenter extension file should be used, notification names **NotificationNames.swift** and notification parameters **NotificationParameterKeys.swift** named under **Constants** folder.
+  - #### UserDefaults
+   **MSAUserDefaults** library should be used and defaults key should be stored under the **Constants** folder named as **DefaultsKeys.swift**.
+  - #### DateFormatter
+   **MSADateFormatter** library should be used, if need to use extension it should be named as **DateFormats.swift** and should be stored under the **Constants** folder.
 
 ```text
 ├── ProjectFolder
@@ -279,19 +288,21 @@ Configuration folder should contain entitlements, plist files, briding-header fi
     ├── DateFormats.swift
     ├── Other Constants files
 ```
-
+</details>
 
 <a name="deepLink"></a>
 ## DeepLink
 
-> ....
+<details>
+
+DeepLink files should be stored under the **DeepLink** folder.
 
 ```text
 ├── ProjectFolder
   ├── DeepLink
     ├── DeepLink classes
 ```
-
+</details>
 
 <a name="singleton"></a>
 ## Singleton
