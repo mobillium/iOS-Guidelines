@@ -346,7 +346,7 @@ DeepLink files should be stored under the **DeepLink** folder.
  
  <details>
  
- Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helpers** folder.
+ Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helper** folder.
 
  ```text
  ├── ProjectFolder
