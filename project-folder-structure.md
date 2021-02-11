@@ -346,7 +346,7 @@ DeepLink files should be stored under the **DeepLink** folder.
  
  <details>
  
- Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should stay under the Helpers folder.
+ Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helpers** folder.
 
  ```text
  ├── ProjectFolder
@@ -360,7 +360,7 @@ DeepLink files should be stored under the **DeepLink** folder.
 
 <details>
 
-Scenes should be divided into modules. If a scene has flow for more than one scene it should be seperated to another folder.
+Scenes should be divided into modules and modules should be under the **Scenes** folder. If a scene has flow for more than one scene it should be seperated to another folder.
 
 ```text
 ├── ProjectFolder
