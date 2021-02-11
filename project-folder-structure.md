@@ -312,7 +312,10 @@ DeepLink files should be stored under the **DeepLink** folder.
 <a name="singleton"></a>
 ## Singleton
 
-> ....
+
+<details>
+
+Each singleton pattern which we need to use will keep under separated singleton classes and files, like AuthSingleton.swift, etc.
 
 ```text
 ├── ProjectFolder
@@ -324,7 +327,9 @@ DeepLink files should be stored under the **DeepLink** folder.
 <a name="routing"></a>
 ## Routing
 
-> ....
+<details>
+
+The router will be under the related modules.
 
 ```text
 ├── ProjectFolder
