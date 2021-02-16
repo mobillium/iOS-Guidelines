@@ -360,7 +360,7 @@ DeepLink files should be stored under the **DeepLink** folder.
 
 <details>
 
-Scenes should be divided into modules and modules should be under the **Scenes** folder. If a scene has flow for more than one scene it should be seperated to another folder.
+Scenes should be divided under the **Scenes** folder. If a scene has flow for more than one scene it should be separated to another folder.
 
 ```text
 ├── ProjectFolder
