@@ -5,7 +5,6 @@
 - [Project](#project)
   - [AppDelegate](#appdelegate)
   - [Configuration](#configuration)
-  - [Resources](#resources)
   - [Entity](#entity)
   - [Protocols](#protocols)
   - [Validation](#validation)
@@ -24,6 +23,7 @@
 
 
 - [UIComponents](#uicomponents)
+  - [Resources](#uicomponents-resources)
   - [Extensions](#uicomponents-extensions)
   - [Protocol](#uicomponents-protocol)
   - [UIButton](#uicomponents-uibutton)
@@ -56,24 +56,6 @@
       ├── -.plist
       ├── -.entitlements
       ├── sdk config files
-
-  ├── Resources
-    ├── Assets
-      ├── Icons.xcassets
-      ├── Images.xcassets
-      ├── Colors.xcassets
-    ├── Strings
-      ├── General.strings
-      ├── Error.strings
-      ├── Placeholder.strings
-      ├── Modules.strings
-      ├── Components.strings
-    ├── Fonts
-      ├── Fonts files
-    ├── Sounds
-      ├── Sound files
-    ├── Gif
-      ├── Gif files
 
   ├── Entity
     ├── Model
@@ -177,6 +159,30 @@
 
 ├── UIComponents
 
+  ├── Resources
+    ├── Assets
+      ├── Icons.xcassets
+      ├── Images.xcassets
+      ├── Colors.xcassets
+      ├── Assets.swift
+      ├── UIImage+Icons.swift
+      ├── UIImage+Images.swift
+      ├── UIColor+Colors.swift
+    ├── Strings
+      ├── General.strings
+      ├── Error.strings
+      ├── Placeholder.strings
+      ├── Modules.strings
+      ├── Components.strings
+      ├── StringConstants.strings
+    ├── Fonts
+      ├── Fonts.swift
+      ├── Fonts files
+    ├── Sounds
+      ├── Sound files
+    ├── Gif
+      ├── Gif files
+
   ├── Extensions
     ├── UIImage+Extensions.swift
     ├── UICollection+Extensions.swift
@@ -269,36 +275,6 @@ Configuration folder should contain entitlements, plist files, briding-header fi
       ├── sdk config files
 ```
 </details>
-
-
-<a name="resources"></a>
-## Resources
-
-<details>
-> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
-
-```text
-├── ProjectFolder
-  ├── Resources
-    ├── Assets
-      ├── Icons.xcassets
-      ├── Images.xcassets
-      ├── Colors.xcassets
-    ├── Strings
-      ├── General.strings
-      ├── Error.strings
-      ├── Placeholder.strings
-      ├── Modules.strings
-      ├── Components.strings
-    ├── Fonts
-      ├── Fonts files
-    ├── Sounds
-      ├── Sound files
-    ├── Gif
-      ├── Gif files
-```
-</details>
-
 
 <a name="entity"></a>
 ## Entity
@@ -538,6 +514,41 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 # UIComponents
 <a name="uicomponents"></a>
+
+<a name="uicomponents-resources"></a>
+## Resources
+
+<details>
+> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
+
+```text
+├── UIComponents
+
+  ├── Resources
+    ├── Assets
+      ├── Icons.xcassets
+      ├── Images.xcassets
+      ├── Colors.xcassets
+      ├── Assets.swift
+      ├── UIImage+Icons.swift
+      ├── UIImage+Images.swift
+      ├── UIColor+Colors.swift
+    ├── Strings
+      ├── General.strings
+      ├── Error.strings
+      ├── Placeholder.strings
+      ├── Modules.strings
+      ├── Components.strings
+      ├── StringConstants.strings
+    ├── Fonts
+      ├── Fonts.swift
+      ├── Fonts files
+    ├── Sounds
+      ├── Sound files
+    ├── Gif
+      ├── Gif files
+```
+</details>
 
 <a name="uicomponents-extensions"></a>
 ## Extensions
