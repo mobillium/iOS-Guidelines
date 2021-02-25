@@ -2,21 +2,41 @@
 
 ### Table of Contents
 
-- [ProjectFolderTree](#projectfoldertree)
-- [AppDelegate](#appdelegate)
-- [Configuration](#configuration)
-- [Resources](#resources)
-- [Entity](#entity)
-- [Protocols](#protocols)
-- [Validation](#validation)
-- [Constants](#constants)
-- [DeepLink](#deepLink)
-- [Singleton](#singleton)
-- [Routing](#routing)
-- [Helper](#helper)
-- [Scenes](#scenes)
+- [Project](#project)
+  - [AppDelegate](#appdelegate)
+  - [Configuration](#configuration)
+  - [Resources](#resources)
+  - [Entity](#entity)
+  - [Protocols](#protocols)
+  - [Validation](#validation)
+  - [Constants](#constants)
+  - [DeepLink](#deepLink)
+  - [Singleton](#singleton)
+  - [Routing](#routing)
+  - [Helper](#helper)
+  - [Scenes](#scenes)
 
-<a name="projectfoldertree"></a>
+
+- [Utilities](#utilities)
+  - [Extensions](#uitilities-extensions)
+  - [Constants](#uitilities-constants)
+  - [Helper](#uitilities-helper)
+
+
+- [UIComponents](#uicomponents)
+  - [Extensions](#uicomponents-extensions)
+  - [Protocol](#uicomponents-protocol)
+  - [UIButton](#uicomponents-uibutton)
+  - [Builder](#uicomponents-builder)
+  - [Cell](#uicomponents-cell)
+
+
+- [DatProvider](#dataprovider)
+  - [Core](#dataprovider-core)
+  - [Manager](#dataprovider-manager)
+  - [Entity](#dataprovider-entity)
+  - [Requests](#dataprovider-requests)
+
 ## ProjectFolderTree
 
 ```text
@@ -137,8 +157,84 @@
       ├── SceneNameViewModel.swift
       ├── SceneNameRouter.swift
       ├── SceneNameRoute.swift
+
+
+├── Utilities
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── String+Extensions.swift
+    ├── ...
+
+  ├── Constants
+    ├── Closures.swift
+    ├── ...
+
+  ├── Helper
+    ├── KeyboardHelper.swift
+    ├── ...
+
+
+├── UIComponents
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── UICollection+Extensions.swift
+    ├── ...
+
+  ├── Protocol
+    ├── ReusableView.swift
+    ├── ...
+
+  ├── UIButton
+    ├── PrimaryButton.swift
+    ├── ...
+
+  ├── Builder
+    ├── UILabelBuilder.swift
+    ├── UIButtonBuilder.swift
+    ├── ...
+
+  ├── Cell
+    ├── UserCell.swift
+    ├── ProductCell.swift
+    ├── ...
+
+
+├── DataProvider
+
+  ├── Core
+    ├── Typealias.swift
+    ├── RequestProtocol.swift
+    ├── RequestMethod.swift
+    ├── RequestEncoding.swift
+    ├── DataProviderProtocol.swift
+    ├── ...
+
+  ├── Manager
+    ├── DataManager.swift
+    ├── ...
+
+  ├── Entity
+    ├── User
+      ├── User.swift
+      ├── Gender.swift
+      ├── ...
+    ├── Auth.swift
+    ├── ...
+
+  ├── Requests
+    ├── User
+      ├── GetUserRequest.swift
+      ├── UpdateUserRequest.swift
+      ├── ...
+    ├── VersionControlRequest.swift
+    ├── ...
 ```
 
+
+# Project
+<a name="project"></a>
 
 <a name="appdelegate"></a>
 ## AppDelegate
@@ -348,9 +444,9 @@ The router will be under the related modules.
 
 <a name="helper"></a>
  ## Helper
- 
+
  <details>
- 
+
  Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helper** folder.
 
  ```text
@@ -398,3 +494,175 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
       ├── SceneNameRoute.swift
 ```
 </details>
+
+
+
+# Utilities
+<a name="uitilities"></a>
+
+<a name="uitilities-extensions"></a>
+## Extensions
+> ....
+
+```text
+├── Utilities
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── String+Extensions.swift
+    ├── ...
+```
+
+<a name="uitilities-constants"></a>
+## Constants
+> ....
+
+```text
+├── Utilities
+  ├── Constants
+    ├── Closures.swift
+    ├── ...
+```
+
+<a name="uitilities-helper"></a>
+## Helper
+> ....
+
+```text
+├── Utilities
+  ├── Helper
+    ├── KeyboardHelper.swift
+    ├── ...
+```
+
+
+
+# UIComponents
+<a name="uicomponents"></a>
+
+<a name="uicomponents-extensions"></a>
+## Extensions
+> ....
+
+```text
+├── UIComponents
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── UICollection+Extensions.swift
+    ├── ...
+```
+
+<a name="uicomponents-protocol"></a>
+## Protocol
+> ....
+
+```text
+├── UIComponents
+
+  ├── Protocol
+    ├── ReusableView.swift
+    ├── ...
+```
+
+<a name="uicomponents-uibutton"></a>
+## UIButton
+> ....
+
+```text
+├── UIComponents
+
+  ├── UIButton
+    ├── PrimaryButton.swift
+    ├── ...
+```
+
+<a name="uicomponents-builder"></a>
+## Builder
+> ....
+
+```text
+├── UIComponents
+
+  ├── Builder
+    ├── UILabelBuilder.swift
+    ├── UIButtonBuilder.swift
+    ├── ...
+```
+
+<a name="uicomponents-cell"></a>
+## Cell
+> ....
+
+```text
+├── UIComponents
+
+  ├── Cell
+      ├── UserCell.swift
+      ├── ProductCell.swift
+      ├── ...
+```
+
+
+
+# DataProvider
+<a name="dataprovider"></a>
+
+<a name="dataprovider-core"></a>
+## Core
+> ....
+
+```text
+├── DataProvider
+
+  ├── Core
+    ├── Typealias.swift
+    ├── RequestProtocol.swift
+    ├── RequestMethod.swift
+    ├── RequestEncoding.swift
+    ├── DataProviderProtocol.swift
+    ├── ...
+```
+
+<a name="dataprovider-manager"></a>
+## Manager
+> ....
+
+```text
+├── DataProvider
+
+  ├── Manager
+    ├── DataManager.swift
+    ├── ...
+```
+
+<a name="dataprovider-entity"></a>
+## Entity
+> ....
+
+```text
+├── DataProvider
+
+  ├── Entity
+    ├── User
+      ├── User.swift
+      ├── Gender.swift
+      ├── ...
+    ├── Auth.swift
+    ├── ...
+```
+
+<a name="dataprovider-requests"></a>
+## Requests
+> ....
+
+```text
+├── DataProvider
+
+  ├── Requests
+    ├── User
+      ├── GetUserRequest.swift
+      ├── UpdateUserRequest.swift
+      ├── ...
+    ├── VersionControlRequest.swift
+    ├── ...
+```
