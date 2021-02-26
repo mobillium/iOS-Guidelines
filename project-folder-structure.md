@@ -8,6 +8,7 @@
   - [Entity](#entity)
   - [Protocols](#protocols)
   - [Validation](#validation)
+  - [EventManager](#eventmanager)
   - [Constants](#constants)
   - [DeepLink](#deepLink)
   - [Singleton](#singleton)
@@ -278,9 +279,8 @@ Configuration folder should contain entitlements, plist files, briding-header fi
 
 <a name="entity"></a>
 ## Entity
-
 <details>
-> It contains the models we create custom and the enums we need. As an example of custom models, models that we format the responses from web services by to specific logic.
+It contains the models we create custom and the enums we need. As an example of custom models, models that we format the responses from web services by to specific logic.
 
 ```text
 ├── ProjectFolder
@@ -325,8 +325,8 @@ All validation files should store under the Validation folder. The core files an
 
 <a name="eventmanager"></a>
 ## EventManager
-
-> ....
+<details>
+....
 
 ```text
 ├── ProjectFolder
@@ -338,21 +338,19 @@ All validation files should store under the Validation folder. The core files an
     ├── OtherProvider
       ├── OtherProvider files
 ```
-
+</details>
 
 <a name="constants"></a>
 ## Constants
-
 <details>
-
 All constants used in App should be stored under the **Constants** folder.
 Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
   - #### NotificationCenter
   NotificationCenter extension file should be used, notification names **NotificationNames.swift** and notification parameters **NotificationParameterKeys.swift** named under **Constants** folder.
   - #### UserDefaults
-   **MSAUserDefaults** library should be used and defaults key should be stored under the **Constants** folder named as **DefaultsKeys.swift**.
+   **MobilliumUserDefaults** library should be used and defaults key should be stored under the **Constants** folder named as **DefaultsKeys.swift**.
   - #### DateFormatter
-   **MSADateFormatter** library should be used, if need to use extension it should be named as **DateFormats.swift** and should be stored under the **Constants** folder.
+   **MobilliumDateFormatter** library should be used, if need to use extension it should be named as **DateFormats.swift** and should be stored under the **Constants** folder.
 
 ```text
 ├── ProjectFolder
@@ -369,9 +367,7 @@ Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
 
 <a name="deepLink"></a>
 ## DeepLink
-
 <details>
-
 DeepLink files should be stored under the **DeepLink** folder.
 
 ```text
@@ -383,10 +379,7 @@ DeepLink files should be stored under the **DeepLink** folder.
 
 <a name="singleton"></a>
 ## Singleton
-
-
 <details>
-
 Each singleton pattern which we need to use will keep under separated singleton classes and files, like AuthSingleton.swift, etc.
 
 ```text
@@ -394,13 +387,12 @@ Each singleton pattern which we need to use will keep under separated singleton 
   ├── Singleton
     ├── Singleton classes
 ```
+</details>
 
 
 <a name="routing"></a>
 ## Routing
-
 <details>
-
 The router will be under the related modules.
 
 ```text
@@ -417,12 +409,11 @@ The router will be under the related modules.
     ├── Transitions
       ├── Transitions classes
 ```
+</details>
 
 <a name="helper"></a>
  ## Helper
-
  <details>
-
  Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helper** folder.
 
  ```text
@@ -434,9 +425,7 @@ The router will be under the related modules.
 
 <a name="scenes"></a>
 ## Scenes
-
 <details>
-
 Scenes should be divided under the **Scenes** folder. If a scene has flow for more than one scene it should be separated to another folder.
 
 ```text
@@ -478,7 +467,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 <a name="uitilities-extensions"></a>
 ## Extensions
-> ....
+<details>
+....
 
 ```text
 ├── Utilities
@@ -487,10 +477,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── String+Extensions.swift
     ├── ...
 ```
+</details>
 
 <a name="uitilities-constants"></a>
 ## Constants
-> ....
+<details>
+....
 
 ```text
 ├── Utilities
@@ -498,10 +490,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── Closures.swift
     ├── ...
 ```
+</details>
 
 <a name="uitilities-helper"></a>
 ## Helper
-> ....
+<details>
+....
 
 ```text
 ├── Utilities
@@ -509,6 +503,7 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── KeyboardHelper.swift
     ├── ...
 ```
+</details>
 
 
 
@@ -517,9 +512,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 <a name="uicomponents-resources"></a>
 ## Resources
-
 <details>
-> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
+Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
 
 ```text
 ├── UIComponents
@@ -542,6 +536,7 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
       ├── StringConstants.strings
     ├── Fonts
       ├── Fonts.swift
+      ├── UIFont+Extensions.swift
       ├── Fonts files
     ├── Sounds
       ├── Sound files
@@ -552,7 +547,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 <a name="uicomponents-extensions"></a>
 ## Extensions
-> ....
+<details>
+....
 
 ```text
 ├── UIComponents
@@ -562,10 +558,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── UICollection+Extensions.swift
     ├── ...
 ```
+</details>
 
 <a name="uicomponents-protocol"></a>
 ## Protocol
-> ....
+<details>
+....
 
 ```text
 ├── UIComponents
@@ -574,10 +572,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── ReusableView.swift
     ├── ...
 ```
+</details>
 
 <a name="uicomponents-uibutton"></a>
 ## UIButton
-> ....
+<details>
+....
 
 ```text
 ├── UIComponents
@@ -586,10 +586,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── PrimaryButton.swift
     ├── ...
 ```
+</details>
 
 <a name="uicomponents-builder"></a>
 ## Builder
-> ....
+<details>
+....
 
 ```text
 ├── UIComponents
@@ -599,10 +601,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── UIButtonBuilder.swift
     ├── ...
 ```
+</details>
 
 <a name="uicomponents-cell"></a>
 ## Cell
-> ....
+<details>
+....
 
 ```text
 ├── UIComponents
@@ -612,6 +616,7 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
       ├── ProductCell.swift
       ├── ...
 ```
+</details>
 
 
 
@@ -620,7 +625,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 <a name="dataprovider-core"></a>
 ## Core
-> ....
+<details>
+....
 
 ```text
 ├── DataProvider
@@ -633,10 +639,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── DataProviderProtocol.swift
     ├── ...
 ```
+</details>
 
 <a name="dataprovider-manager"></a>
 ## Manager
-> ....
+<details>
+....
 
 ```text
 ├── DataProvider
@@ -645,10 +653,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── DataManager.swift
     ├── ...
 ```
+</details>
 
 <a name="dataprovider-entity"></a>
 ## Entity
-> ....
+<details>
+....
 
 ```text
 ├── DataProvider
@@ -661,10 +671,12 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── Auth.swift
     ├── ...
 ```
+</details>
 
 <a name="dataprovider-requests"></a>
 ## Requests
-> ....
+<details>
+....
 
 ```text
 ├── DataProvider
@@ -677,3 +689,4 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
     ├── VersionControlRequest.swift
     ├── ...
 ```
+</details>
