@@ -9,6 +9,27 @@
 /* Begin PBXBuildFile section */
 		1C39E0435D08B09D79582AD7 /* Pods_UIComponentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21582D1B374172423512A93A /* Pods_UIComponentsTests.framework */; };
 		6895F9D4FCA1DB6416A2BDA0 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE3416577E7799BB5B2D409 /* Pods_UIComponents.framework */; };
+		7A040F8A25E964E70052798D /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F8925E964E70052798D /* swiftgen.yml */; };
+		7A040F9225E9657C0052798D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040F9125E9657C0052798D /* Fonts.swift */; };
+		7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040F9425E9658B0052798D /* UIFont+Extensions.swift */; };
+		7A040F9C25E965D50052798D /* Inter-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F9B25E965D00052798D /* Inter-Light.otf */; };
+		7A040F9D25E965D50052798D /* Inter-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F9A25E965D00052798D /* Inter-Medium.otf */; };
+		7A040F9E25E965D50052798D /* Inter-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F9725E965CF0052798D /* Inter-SemiBold.otf */; };
+		7A040F9F25E965D50052798D /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F9825E965D00052798D /* Inter-Regular.otf */; };
+		7A040FA025E965D50052798D /* Inter-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F9925E965D00052798D /* Inter-Bold.otf */; };
+		7A040FBE25E966170052798D /* Componenets.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FB825E966170052798D /* Componenets.strings */; };
+		7A040FBF25E966170052798D /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FB925E966170052798D /* StringConstants.swift */; };
+		7A040FC025E966170052798D /* General.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FBA25E966170052798D /* General.strings */; };
+		7A040FC125E966170052798D /* Error.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FBB25E966170052798D /* Error.strings */; };
+		7A040FC225E966170052798D /* Modules.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FBC25E966170052798D /* Modules.strings */; };
+		7A040FC325E966170052798D /* Placeholder.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FBD25E966170052798D /* Placeholder.strings */; };
+		7A040FCC25E966FF0052798D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FC525E966FF0052798D /* Images.xcassets */; };
+		7A040FCD25E966FF0052798D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FC625E966FF0052798D /* Icons.xcassets */; };
+		7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FC725E966FF0052798D /* UIColor+Colors.swift */; };
+		7A040FCF25E966FF0052798D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A040FC825E966FF0052798D /* Colors.xcassets */; };
+		7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FC925E966FF0052798D /* UIImage+Images.swift */; };
+		7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FCA25E966FF0052798D /* UIImage+Icons.swift */; };
+		7A040FD225E966FF0052798D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FCB25E966FF0052798D /* Assets.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
 		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC735F2551FF1400B30789 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73552551FF1400B30789 /* UIComponents.framework */; };
@@ -57,6 +78,27 @@
 		37EC228B1BD0FDAAC1CEEB4B /* Pods-UIComponentsTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.development.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.development.xcconfig"; sourceTree = "<group>"; };
 		3B5BE3A239BC5AF9E9DFFC43 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		7035E78D3B64AD0B0B325BB0 /* Pods-UIComponentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.debug.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7A040F8925E964E70052798D /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		7A040F9125E9657C0052798D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		7A040F9425E9658B0052798D /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
+		7A040F9725E965CF0052798D /* Inter-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.otf"; sourceTree = "<group>"; };
+		7A040F9825E965D00052798D /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
+		7A040F9925E965D00052798D /* Inter-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.otf"; sourceTree = "<group>"; };
+		7A040F9A25E965D00052798D /* Inter-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.otf"; sourceTree = "<group>"; };
+		7A040F9B25E965D00052798D /* Inter-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.otf"; sourceTree = "<group>"; };
+		7A040FB825E966170052798D /* Componenets.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Componenets.strings; sourceTree = "<group>"; };
+		7A040FB925E966170052798D /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		7A040FBA25E966170052798D /* General.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = General.strings; sourceTree = "<group>"; };
+		7A040FBB25E966170052798D /* Error.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Error.strings; sourceTree = "<group>"; };
+		7A040FBC25E966170052798D /* Modules.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Modules.strings; sourceTree = "<group>"; };
+		7A040FBD25E966170052798D /* Placeholder.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Placeholder.strings; sourceTree = "<group>"; };
+		7A040FC525E966FF0052798D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		7A040FC625E966FF0052798D /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		7A040FC725E966FF0052798D /* UIColor+Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Colors.swift"; sourceTree = "<group>"; };
+		7A040FC825E966FF0052798D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		7A040FC925E966FF0052798D /* UIImage+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
+		7A040FCA25E966FF0052798D /* UIImage+Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
+		7A040FCB25E966FF0052798D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		7A73C83725CC18AB00322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73552551FF1400B30789 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73582551FF1400B30789 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
@@ -128,9 +170,61 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		7A040F4325E961B60052798D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A040F9025E964F90052798D /* Assets */,
+				7A040F8F25E964F50052798D /* Fonts */,
+				7A040F8E25E964EE0052798D /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7A040F8E25E964EE0052798D /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				7A040FB825E966170052798D /* Componenets.strings */,
+				7A040FBB25E966170052798D /* Error.strings */,
+				7A040FBA25E966170052798D /* General.strings */,
+				7A040FBC25E966170052798D /* Modules.strings */,
+				7A040FBD25E966170052798D /* Placeholder.strings */,
+				7A040FB925E966170052798D /* StringConstants.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		7A040F8F25E964F50052798D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A040F9925E965D00052798D /* Inter-Bold.otf */,
+				7A040F9B25E965D00052798D /* Inter-Light.otf */,
+				7A040F9A25E965D00052798D /* Inter-Medium.otf */,
+				7A040F9825E965D00052798D /* Inter-Regular.otf */,
+				7A040F9725E965CF0052798D /* Inter-SemiBold.otf */,
+				7A040F9125E9657C0052798D /* Fonts.swift */,
+				7A040F9425E9658B0052798D /* UIFont+Extensions.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7A040F9025E964F90052798D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7A040FCB25E966FF0052798D /* Assets.swift */,
+				7A040FC825E966FF0052798D /* Colors.xcassets */,
+				7A040FC625E966FF0052798D /* Icons.xcassets */,
+				7A040FC525E966FF0052798D /* Images.xcassets */,
+				7A040FC725E966FF0052798D /* UIColor+Colors.swift */,
+				7A040FCA25E966FF0052798D /* UIImage+Icons.swift */,
+				7A040FC925E966FF0052798D /* UIImage+Images.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		7AFC734B2551FF1400B30789 = {
 			isa = PBXGroup;
 			children = (
+				7A040F8925E964E70052798D /* swiftgen.yml */,
 				7AFC73572551FF1400B30789 /* UIComponents */,
 				7AFC73622551FF1400B30789 /* UIComponentsTests */,
 				7AFC73562551FF1400B30789 /* Products */,
@@ -151,6 +245,7 @@
 		7AFC73572551FF1400B30789 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				7A040F4325E961B60052798D /* Resources */,
 				7AFC73C3255200A300B30789 /* Builders */,
 				7AFC73C8255200A300B30789 /* Extensions */,
 				7AFC73CC255200A300B30789 /* Loading */,
@@ -237,6 +332,7 @@
 			buildConfigurationList = 7AFC73692551FF1400B30789 /* Build configuration list for PBXNativeTarget "UIComponents" */;
 			buildPhases = (
 				5FBED22C93D3A0661D009DF9 /* [CP] Check Pods Manifest.lock */,
+				7A040FD425E9679D0052798D /* Swiftgen */,
 				7AFC73502551FF1400B30789 /* Headers */,
 				7AFC73512551FF1400B30789 /* Sources */,
 				7AFC73522551FF1400B30789 /* Frameworks */,
@@ -313,6 +409,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A040FBE25E966170052798D /* Componenets.strings in Resources */,
+				7A040F8A25E964E70052798D /* swiftgen.yml in Resources */,
+				7A040F9F25E965D50052798D /* Inter-Regular.otf in Resources */,
+				7A040FC325E966170052798D /* Placeholder.strings in Resources */,
+				7A040F9D25E965D50052798D /* Inter-Medium.otf in Resources */,
+				7A040F9C25E965D50052798D /* Inter-Light.otf in Resources */,
+				7A040FC025E966170052798D /* General.strings in Resources */,
+				7A040FCD25E966FF0052798D /* Icons.xcassets in Resources */,
+				7A040FC225E966170052798D /* Modules.strings in Resources */,
+				7A040FC125E966170052798D /* Error.strings in Resources */,
+				7A040FCC25E966FF0052798D /* Images.xcassets in Resources */,
+				7A040F9E25E965D50052798D /* Inter-SemiBold.otf in Resources */,
+				7A040FA025E965D50052798D /* Inter-Bold.otf in Resources */,
+				7A040FCF25E966FF0052798D /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +458,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7A040FD425E9679D0052798D /* Swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		B554C4E13BB1106AD84B5B98 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,9 +505,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A040F9225E9657C0052798D /* Fonts.swift in Sources */,
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
 				7AFC73D7255200A300B30789 /* UIScrollViewBuilder.swift in Sources */,
+				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
+				7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */,
 				7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */,
 				7AFC73D6255200A300B30789 /* UILabelBuilder.swift in Sources */,
 				7AFC73DD255200A300B30789 /* LoadingProtocol.swift in Sources */,
@@ -388,7 +519,11 @@
 				7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */,
 				7AFC73D8255200A300B30789 /* UIViewBuilder.swift in Sources */,
 				7AFC73DC255200A300B30789 /* ActivityIndicatorProtocol.swift in Sources */,
+				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
+				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
+				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,
+				7A040FD225E966FF0052798D /* Assets.swift in Sources */,
 				7AFC73D5255200A300B30789 /* UIStackViewBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

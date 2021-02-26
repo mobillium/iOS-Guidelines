@@ -165,17 +165,9 @@
 		7A73C91225CC385900322233 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7A73C91325CC386100322233 /* Assets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		7A73C91325CC386100322233 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
 				7AFC72A52551FA1A00B30789 /* Assets.xcassets */,
 			);
-			path = Assets;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		7A73C91425CC386D00322233 /* Launch */ = {

@@ -1,0 +1,51 @@
+fonts:
+  inputs: UIComponents/Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: UIComponents/Resources/Fonts/Fonts.swift
+    params:
+        publicAccess: public
+
+strings:
+  inputs: UIComponents/Resources/Strings
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: UIComponents/Resources/Strings/StringConstants.swift
+      params:
+          publicAccess: public
+
+xcassets:
+  - inputs:
+    - UIComponents/Resources/Assets/Images.xcassets
+    - UIComponents/Resources/Assets/Icons.xcassets
+    - UIComponents/Resources/Assets/Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: UIComponents/Resources/Assets/Assets.swift
+        params:
+            publicAccess: public
+              
+  - inputs:
+    - UIComponents/Resources/Assets/Images.xcassets
+    outputs:
+      - templatePath: ../SwiftGenTemplates/images.stencil
+        output: UIComponents/Resources/Assets/UIImage+Images.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - UIComponents/Resources/Assets/Icons.xcassets
+    outputs:
+      - templatePath: ../SwiftGenTemplates/icons.stencil
+        output: UIComponents/Resources/Assets/UIImage+Icons.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - UIComponents/Resources/Assets/Colors.xcassets
+    outputs:
+      - templatePath: ../SwiftGenTemplates/colors.stencil
+        output: UIComponents/Resources/Assets/UIColor+Colors.swift
+        params:
+            publicAccess: public

@@ -62,6 +62,7 @@ target 'UIComponents' do
   
   # Helper
   pod "TinyConstraints", '~> 4.0'
+  pod 'SwiftGen', '~> 6.4'
   
   target 'UIComponentsTests' do
     inherit! :search_paths
