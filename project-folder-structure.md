@@ -343,6 +343,7 @@ All validation files should store under the Validation folder. The core files an
 <a name="constants"></a>
 ## Constants
 <details>
+
 All constants used in App should be stored under the **Constants** folder.
 Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
   - #### NotificationCenter
