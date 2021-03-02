@@ -1,0 +1,13 @@
+/*
+ Error.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+"empty" = "%@ can not be empty.";
+
+// MARK: - Keys
+"Key.username" = "Username";
+

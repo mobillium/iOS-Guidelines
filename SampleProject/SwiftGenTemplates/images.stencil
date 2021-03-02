@@ -1,0 +1,41 @@
+// swiftlint:disable all
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+{% if catalogs %}
+{% set enumName %}{{param.enumName|default:"Asset"}}{% endset %}
+{% set forceNamespaces %}{{param.forceProvidesNamespaces|default:"false"}}{% endset %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+{% macro enumBlock assets %}
+  {% call casesBlock assets %}
+{% endmacro %}
+{% macro casesBlock assets %}
+  {% for asset in assets %}
+  {% if asset.type == "image" %}
+
+  static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIImage {
+      return {{enumName}}.Images.{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}.image
+  }
+  {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
+  {% call casesBlock asset.items %}
+  {% elif asset.items %}
+  {% call casesBlock asset.items %}
+  {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+import UIKit
+
+// swiftlint:disable identifier_name line_length nesting type_body_length type_name
+{{accessModifier}} extension UIImage {
+  {% if catalogs.count > 1 or param.forceFileNameEnum %}
+  {% for catalog in catalogs %}
+  {% call enumBlock catalog.assets %}
+  {% endfor %}
+  {% else %}
+  {% call enumBlock catalogs.first.assets %}
+  {% endif %}
+}
+// swiftlint:enable identifier_name line_length nesting type_body_length type_name
+
+{% else %}
+// No assets found
+{% endif %}

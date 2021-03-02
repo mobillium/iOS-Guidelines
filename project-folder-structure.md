@@ -2,21 +2,42 @@
 
 ### Table of Contents
 
-- [ProjectFolderTree](#projectfoldertree)
-- [AppDelegate](#appdelegate)
-- [Configuration](#configuration)
-- [Resources](#resources)
-- [Entity](#entity)
-- [Protocols](#protocols)
-- [Validation](#validation)
-- [Constants](#constants)
-- [DeepLink](#deepLink)
-- [Singleton](#singleton)
-- [Routing](#routing)
-- [Helper](#helper)
-- [Scenes](#scenes)
+- [Project](#project)
+  - [AppDelegate](#appdelegate)
+  - [Configuration](#configuration)
+  - [Entity](#entity)
+  - [Protocols](#protocols)
+  - [Validation](#validation)
+  - [EventManager](#eventmanager)
+  - [Constants](#constants)
+  - [DeepLink](#deepLink)
+  - [Singleton](#singleton)
+  - [Routing](#routing)
+  - [Helper](#helper)
+  - [Scenes](#scenes)
 
-<a name="projectfoldertree"></a>
+
+- [Utilities](#utilities)
+  - [Extensions](#uitilities-extensions)
+  - [Constants](#uitilities-constants)
+  - [Helper](#uitilities-helper)
+
+
+- [UIComponents](#uicomponents)
+  - [Resources](#uicomponents-resources)
+  - [Extensions](#uicomponents-extensions)
+  - [Protocol](#uicomponents-protocol)
+  - [UIButton](#uicomponents-uibutton)
+  - [Builder](#uicomponents-builder)
+  - [Cell](#uicomponents-cell)
+
+
+- [DataProvider](#dataprovider)
+  - [Core](#dataprovider-core)
+  - [Manager](#dataprovider-manager)
+  - [Entity](#dataprovider-entity)
+  - [Requests](#dataprovider-requests)
+
 ## ProjectFolderTree
 
 ```text
@@ -36,24 +57,6 @@
       ├── -.plist
       ├── -.entitlements
       ├── sdk config files
-
-  ├── Resources
-    ├── Assets
-      ├── Icons.xcassets
-      ├── Images.xcassets
-      ├── Colors.xcassets
-    ├── Strings
-      ├── General.strings
-      ├── Error.strings
-      ├── Placeholder.strings
-      ├── Modules.strings
-      ├── Components.strings
-    ├── Fonts
-      ├── Fonts files
-    ├── Sounds
-      ├── Sound files
-    ├── Gif
-      ├── Gif files
 
   ├── Entity
     ├── Model
@@ -137,8 +140,108 @@
       ├── SceneNameViewModel.swift
       ├── SceneNameRouter.swift
       ├── SceneNameRoute.swift
+
+
+├── Utilities
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── String+Extensions.swift
+    ├── ...
+
+  ├── Constants
+    ├── Closures.swift
+    ├── ...
+
+  ├── Helper
+    ├── KeyboardHelper.swift
+    ├── ...
+
+
+├── UIComponents
+
+  ├── Resources
+    ├── Assets
+      ├── Icons.xcassets
+      ├── Images.xcassets
+      ├── Colors.xcassets
+      ├── Assets.swift
+      ├── UIImage+Icons.swift
+      ├── UIImage+Images.swift
+      ├── UIColor+Colors.swift
+    ├── Strings
+      ├── General.strings
+      ├── Error.strings
+      ├── Placeholder.strings
+      ├── Modules.strings
+      ├── Components.strings
+      ├── StringConstants.strings
+    ├── Fonts
+      ├── Fonts.swift
+      ├── Fonts files
+    ├── Sounds
+      ├── Sound files
+    ├── Gif
+      ├── Gif files
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── UICollection+Extensions.swift
+    ├── ...
+
+  ├── Protocol
+    ├── ReusableView.swift
+    ├── ...
+
+  ├── UIButton
+    ├── PrimaryButton.swift
+    ├── ...
+
+  ├── Builder
+    ├── UILabelBuilder.swift
+    ├── UIButtonBuilder.swift
+    ├── ...
+
+  ├── Cell
+    ├── UserCell.swift
+    ├── ProductCell.swift
+    ├── ...
+
+
+├── DataProvider
+
+  ├── Core
+    ├── Typealias.swift
+    ├── RequestProtocol.swift
+    ├── RequestMethod.swift
+    ├── RequestEncoding.swift
+    ├── DataProviderProtocol.swift
+    ├── ...
+
+  ├── Manager
+    ├── DataManager.swift
+    ├── ...
+
+  ├── Entity
+    ├── User
+      ├── User.swift
+      ├── Gender.swift
+      ├── ...
+    ├── Auth.swift
+    ├── ...
+
+  ├── Requests
+    ├── User
+      ├── GetUserRequest.swift
+      ├── UpdateUserRequest.swift
+      ├── ...
+    ├── VersionControlRequest.swift
+    ├── ...
 ```
 
+
+# Project
+<a name="project"></a>
 
 <a name="appdelegate"></a>
 ## AppDelegate
@@ -174,41 +277,10 @@ Configuration folder should contain entitlements, plist files, briding-header fi
 ```
 </details>
 
-
-<a name="resources"></a>
-## Resources
-
-<details>
-> Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
-
-```text
-├── ProjectFolder
-  ├── Resources
-    ├── Assets
-      ├── Icons.xcassets
-      ├── Images.xcassets
-      ├── Colors.xcassets
-    ├── Strings
-      ├── General.strings
-      ├── Error.strings
-      ├── Placeholder.strings
-      ├── Modules.strings
-      ├── Components.strings
-    ├── Fonts
-      ├── Fonts files
-    ├── Sounds
-      ├── Sound files
-    ├── Gif
-      ├── Gif files
-```
-</details>
-
-
 <a name="entity"></a>
 ## Entity
-
 <details>
-> It contains the models we create custom and the enums we need. As an example of custom models, models that we format the responses from web services by to specific logic.
+It contains the models we create custom and the enums we need. As an example of custom models, models that we format the responses from web services by to specific logic.
 
 ```text
 ├── ProjectFolder
@@ -253,8 +325,8 @@ All validation files should store under the Validation folder. The core files an
 
 <a name="eventmanager"></a>
 ## EventManager
-
-> ....
+<details>
+....
 
 ```text
 ├── ProjectFolder
@@ -266,11 +338,10 @@ All validation files should store under the Validation folder. The core files an
     ├── OtherProvider
       ├── OtherProvider files
 ```
-
+</details>
 
 <a name="constants"></a>
 ## Constants
-
 <details>
 
 All constants used in App should be stored under the **Constants** folder.
@@ -278,9 +349,9 @@ Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
   - #### NotificationCenter
   NotificationCenter extension file should be used, notification names **NotificationNames.swift** and notification parameters **NotificationParameterKeys.swift** named under **Constants** folder.
   - #### UserDefaults
-   **MSAUserDefaults** library should be used and defaults key should be stored under the **Constants** folder named as **DefaultsKeys.swift**.
+   **MobilliumUserDefaults** library should be used and defaults key should be stored under the **Constants** folder named as **DefaultsKeys.swift**.
   - #### DateFormatter
-   **MSADateFormatter** library should be used, if need to use extension it should be named as **DateFormats.swift** and should be stored under the **Constants** folder.
+   **MobilliumDateFormatter** library should be used, if need to use extension it should be named as **DateFormats.swift** and should be stored under the **Constants** folder.
 
 ```text
 ├── ProjectFolder
@@ -297,9 +368,7 @@ Such as Globals.swift, NotificationKeys, UserDefaultsKeys, DateFormatter etc.
 
 <a name="deepLink"></a>
 ## DeepLink
-
 <details>
-
 DeepLink files should be stored under the **DeepLink** folder.
 
 ```text
@@ -311,10 +380,7 @@ DeepLink files should be stored under the **DeepLink** folder.
 
 <a name="singleton"></a>
 ## Singleton
-
-
 <details>
-
 Each singleton pattern which we need to use will keep under separated singleton classes and files, like AuthSingleton.swift, etc.
 
 ```text
@@ -322,13 +388,12 @@ Each singleton pattern which we need to use will keep under separated singleton 
   ├── Singleton
     ├── Singleton classes
 ```
+</details>
 
 
 <a name="routing"></a>
 ## Routing
-
 <details>
-
 The router will be under the related modules.
 
 ```text
@@ -345,12 +410,11 @@ The router will be under the related modules.
     ├── Transitions
       ├── Transitions classes
 ```
+</details>
 
 <a name="helper"></a>
  ## Helper
- 
  <details>
- 
  Helper should be divided into swift files according to their process rather than a general helper. For example FirebaseHelper.swift, StripeHelper.swift. Helpers should be under the **Helper** folder.
 
  ```text
@@ -362,9 +426,7 @@ The router will be under the related modules.
 
 <a name="scenes"></a>
 ## Scenes
-
 <details>
-
 Scenes should be divided under the **Scenes** folder. If a scene has flow for more than one scene it should be separated to another folder.
 
 ```text
@@ -396,5 +458,236 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
       ├── SceneNameViewModel.swift
       ├── SceneNameRouter.swift
       ├── SceneNameRoute.swift
+```
+</details>
+
+
+
+# Utilities
+<a name="uitilities"></a>
+
+<a name="uitilities-extensions"></a>
+## Extensions
+<details>
+....
+
+```text
+├── Utilities
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── String+Extensions.swift
+    ├── ...
+```
+</details>
+
+<a name="uitilities-constants"></a>
+## Constants
+<details>
+....
+
+```text
+├── Utilities
+  ├── Constants
+    ├── Closures.swift
+    ├── ...
+```
+</details>
+
+<a name="uitilities-helper"></a>
+## Helper
+<details>
+....
+
+```text
+├── Utilities
+  ├── Helper
+    ├── KeyboardHelper.swift
+    ├── ...
+```
+</details>
+
+
+
+# UIComponents
+<a name="uicomponents"></a>
+
+<a name="uicomponents-resources"></a>
+## Resources
+<details>
+Folder containing files added externally to the project. Examples of these are Gif's, Animations, Assets, Sound Files, Strings, Font files.(Externally added .plist files are not included in this category.)
+
+```text
+├── UIComponents
+
+  ├── Resources
+    ├── Assets
+      ├── Icons.xcassets
+      ├── Images.xcassets
+      ├── Colors.xcassets
+      ├── Assets.swift
+      ├── UIImage+Icons.swift
+      ├── UIImage+Images.swift
+      ├── UIColor+Colors.swift
+    ├── Strings
+      ├── General.strings
+      ├── Error.strings
+      ├── Placeholder.strings
+      ├── Modules.strings
+      ├── Components.strings
+      ├── StringConstants.strings
+    ├── Fonts
+      ├── Fonts.swift
+      ├── UIFont+Extensions.swift
+      ├── Fonts files
+    ├── Sounds
+      ├── Sound files
+    ├── Gif
+      ├── Gif files
+```
+</details>
+
+<a name="uicomponents-extensions"></a>
+## Extensions
+<details>
+....
+
+```text
+├── UIComponents
+
+  ├── Extensions
+    ├── UIImage+Extensions.swift
+    ├── UICollection+Extensions.swift
+    ├── ...
+```
+</details>
+
+<a name="uicomponents-protocol"></a>
+## Protocol
+<details>
+....
+
+```text
+├── UIComponents
+
+  ├── Protocol
+    ├── ReusableView.swift
+    ├── ...
+```
+</details>
+
+<a name="uicomponents-uibutton"></a>
+## UIButton
+<details>
+....
+
+```text
+├── UIComponents
+
+  ├── UIButton
+    ├── PrimaryButton.swift
+    ├── ...
+```
+</details>
+
+<a name="uicomponents-builder"></a>
+## Builder
+<details>
+....
+
+```text
+├── UIComponents
+
+  ├── Builder
+    ├── UILabelBuilder.swift
+    ├── UIButtonBuilder.swift
+    ├── ...
+```
+</details>
+
+<a name="uicomponents-cell"></a>
+## Cell
+<details>
+....
+
+```text
+├── UIComponents
+
+  ├── Cell
+      ├── UserCell.swift
+      ├── ProductCell.swift
+      ├── ...
+```
+</details>
+
+
+
+# DataProvider
+<a name="dataprovider"></a>
+
+<a name="dataprovider-core"></a>
+## Core
+<details>
+....
+
+```text
+├── DataProvider
+
+  ├── Core
+    ├── Typealias.swift
+    ├── RequestProtocol.swift
+    ├── RequestMethod.swift
+    ├── RequestEncoding.swift
+    ├── DataProviderProtocol.swift
+    ├── ...
+```
+</details>
+
+<a name="dataprovider-manager"></a>
+## Manager
+<details>
+....
+
+```text
+├── DataProvider
+
+  ├── Manager
+    ├── DataManager.swift
+    ├── ...
+```
+</details>
+
+<a name="dataprovider-entity"></a>
+## Entity
+<details>
+....
+
+```text
+├── DataProvider
+
+  ├── Entity
+    ├── User
+      ├── User.swift
+      ├── Gender.swift
+      ├── ...
+    ├── Auth.swift
+    ├── ...
+```
+</details>
+
+<a name="dataprovider-requests"></a>
+## Requests
+<details>
+....
+
+```text
+├── DataProvider
+
+  ├── Requests
+    ├── User
+      ├── GetUserRequest.swift
+      ├── UpdateUserRequest.swift
+      ├── ...
+    ├── VersionControlRequest.swift
+    ├── ...
 ```
 </details>
