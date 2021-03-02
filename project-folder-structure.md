@@ -627,7 +627,8 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="dataprovider-core"></a>
 ## Core
 <details>
-....
+
+Core folder should contains Protocols, Request Encodings and Typealiases related with DataProvider. If there is an extension needed on DataProvider it should store in DataProvider. The main aim is that DataProvider must not be depended other modules or app. It should work if it is extract from the main app.
 
 ```text
 ├── DataProvider
@@ -645,7 +646,8 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="dataprovider-manager"></a>
 ## Manager
 <details>
-....
+
+Manager should contains DataManager class which is a manager of all requests.
 
 ```text
 ├── DataProvider
@@ -659,7 +661,8 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="dataprovider-entity"></a>
 ## Entity
 <details>
-....
+
+Entity should contains an all object models of app. These models should separated by their relations and grouped by folders.
 
 ```text
 ├── DataProvider
@@ -677,7 +680,8 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="dataprovider-requests"></a>
 ## Requests
 <details>
-....
+
+Requests should contains an all Api requests of app. These requests should seperated by their relations and grouped by folders.
 
 ```text
 ├── DataProvider
