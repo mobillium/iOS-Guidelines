@@ -32,7 +32,7 @@
   - [Cell](#uicomponents-cell)
 
 
-- [DatProvider](#dataprovider)
+- [DataProvider](#dataprovider)
   - [Core](#dataprovider-core)
   - [Manager](#dataprovider-manager)
   - [Entity](#dataprovider-entity)
