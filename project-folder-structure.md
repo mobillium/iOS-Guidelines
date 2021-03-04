@@ -469,7 +469,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 <a name="uitilities-extensions"></a>
 ## Extensions
 <details>
-....
+
+Extensions folder should contain all extensions except DataProvider extensions. Extension files should be separated by their classes and usage such as UIImage+Extensions.swift, String+Extensions.swift etc.
 
 ```text
 ├── Utilities
@@ -483,7 +484,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 <a name="uitilities-constants"></a>
 ## Constants
 <details>
-....
+
+Constants folder should contain files such as Closures.swift and separated by their usage.
 
 ```text
 ├── Utilities
@@ -496,7 +498,8 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 <a name="uitilities-helper"></a>
 ## Helper
 <details>
-....
+
+Helper folder should contain files such as KeyboardHelper.swift and separated by their usage.
 
 ```text
 ├── Utilities
