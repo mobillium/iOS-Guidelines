@@ -513,7 +513,7 @@ Helper folder should contain files such as KeyboardHelper.swift and separated by
 
 # UIComponents
 <a name="uicomponents"></a>
-
+UIComponents should contain Resources, CustomViews and Builders. The files of the resources created with the SwiftGen will be here.
 <a name="uicomponents-resources"></a>
 ## Resources
 <details>
@@ -552,7 +552,7 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="uicomponents-extensions"></a>
 ## Extensions
 <details>
-....
+Each component extensions (FILE_NAME+Extension.swift) should be kept in a separate file and these files should be under the Extensions folder. 
 
 ```text
 ├── UIComponents
@@ -567,7 +567,7 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="uicomponents-protocol"></a>
 ## Protocol
 <details>
-....
+Protocols should be under the Protocol folder. 
 
 ```text
 ├── UIComponents
@@ -581,7 +581,7 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="uicomponents-uibutton"></a>
 ## UIButton
 <details>
-....
+Every custom button should be under UIButton folder.
 
 ```text
 ├── UIComponents
@@ -595,7 +595,7 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="uicomponents-builder"></a>
 ## Builder
 <details>
-....
+Builders for UIComponents should be kept in a separate file and these files should be under the Builder folder. 
 
 ```text
 ├── UIComponents
@@ -610,7 +610,7 @@ Folder containing files added externally to the project. Examples of these are G
 <a name="uicomponents-cell"></a>
 ## Cell
 <details>
-....
+Every custom cell should be under Cell folder.
 
 ```text
 ├── UIComponents
