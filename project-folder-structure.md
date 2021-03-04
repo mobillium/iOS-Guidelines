@@ -510,7 +510,7 @@ Scenes should be divided under the **Scenes** folder. If a scene has flow for mo
 
 # UIComponents
 <a name="uicomponents"></a>
-UIComponents should contain Resources, CustomViews and Builders. We will create a library for the Builders in the future. The files of the resources created with the SwiftGen will be here.
+UIComponents should contain Resources, CustomViews and Builders. The files of the resources created with the SwiftGen will be here.
 <a name="uicomponents-resources"></a>
 ## Resources
 <details>
