@@ -178,6 +178,7 @@
       ├── StringConstants.strings
     ├── Fonts
       ├── Fonts.swift
+      ├── UIFont+Extensions.swift
       ├── Fonts files
     ├── Sounds
       ├── Sound files
