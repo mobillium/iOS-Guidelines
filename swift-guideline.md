@@ -5,10 +5,6 @@
 1. Install [SwiftLint](https://realm.github.io/SwiftLint/) by using CocoaPods.
 2. Add [.swiftlint.yml](https://github.com/mobillium/iOS-Guidelines/blob/master/.swiftlint.yml) files to under Project folder. .swiftlint.yml file located inside of repo.
 
-.swiftlint.yml             |  .swiftlint.yml Target
-:-------------------------:|:-------------------------:
-![SwiftLint](/images/swiftlint.jpg) | ![SwiftLint-Target](/images/swiftlinttarget.jpg)
-
 ## Naming
 
 **Variable name and function name should start with a lowercase character.** [![SwiftLint: identifier_name](https://img.shields.io/badge/SwiftLint-identifier_name-007A87.svg)](https://realm.github.io/SwiftLint/identifier_name.html)

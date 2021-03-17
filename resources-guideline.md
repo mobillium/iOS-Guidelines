@@ -80,12 +80,12 @@ import UIKit
 
 extension UIFont {
 
-  enum FontWeight: String {
-      case interRegular = "Inter-Regular"
-      case interLight = "Inter-Light"
-      case interMedium = "Inter-Medium"
-      case interSemiBold = "Inter-SemiBold"
-      case interBold = "Inter-Bold"
+  enum FontWeight {
+      case interRegular
+      case interLight
+      case interMedium
+      case interSemiBold
+      case interBold
   }
 
   // swiftlint:disable identifier_name

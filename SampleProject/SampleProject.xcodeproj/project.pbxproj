@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
-		7A6AED8B25A756F900BB1457 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7A6AED8A25A756F900BB1457 /* .swiftlint.yml */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
 		7A980AB62553168400494520 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB32553168400494520 /* HomeRouter.swift */; };
 		7A980AB72553168400494520 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB42553168400494520 /* HomeViewController.swift */; };
@@ -502,7 +501,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A6AED8B25A756F900BB1457 /* .swiftlint.yml in Resources */,
 				7AFC72A92551FA1A00B30789 /* LaunchScreen.storyboard in Resources */,
 				7AFC72A62551FA1A00B30789 /* Assets.xcassets in Resources */,
 			);
