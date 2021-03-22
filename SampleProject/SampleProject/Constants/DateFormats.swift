@@ -6,7 +6,7 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-import MSADateFormatter
+import MobilliumDateFormatter
 
 extension Date.Format {
     /// dd.MM.yyyy

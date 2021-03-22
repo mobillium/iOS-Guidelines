@@ -6,7 +6,7 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-import MSAUserDefaults
+import MobilliumUserDefaults
 
 extension DefaultsKey {
     static let stringKey = Key<String>(key: "stringKey")

@@ -87,6 +87,7 @@ public class FloatLabelTextField: UITextField {
         } else {
             setTitleToCenter(animate: true)
         }
+        layer.borderColor = isFirstResponder ? UIColor.red.cgColor : UIColor.gray.cgColor
     }
     
     private func configureContents() {

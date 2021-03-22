@@ -13,6 +13,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let emailTextField = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
+    private let loginButton = ButtonFactory.createPrimaryButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,11 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         passwordTextField.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         passwordTextField.leftImage = .icPassword
         passwordTextField.title = "Şifre"
+        
+        view.addSubview(loginButton)
+        loginButton.topToBottom(of: passwordTextField).constant = 20
+        loginButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        loginButton.setTitle("Giriş Yap", for: .normal)
     }
     
 }
