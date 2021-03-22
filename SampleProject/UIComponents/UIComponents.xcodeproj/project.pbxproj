@@ -30,6 +30,7 @@
 		7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FC925E966FF0052798D /* UIImage+Images.swift */; };
 		7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FCA25E966FF0052798D /* UIImage+Icons.swift */; };
 		7A040FD225E966FF0052798D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FCB25E966FF0052798D /* Assets.swift */; };
+		7A0A6EA426089A740094818D /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A6EA326089A740094818D /* FloatLabelTextField.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
 		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC735F2551FF1400B30789 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73552551FF1400B30789 /* UIComponents.framework */; };
@@ -99,6 +100,7 @@
 		7A040FC925E966FF0052798D /* UIImage+Images.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Images.swift"; sourceTree = "<group>"; };
 		7A040FCA25E966FF0052798D /* UIImage+Icons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Icons.swift"; sourceTree = "<group>"; };
 		7A040FCB25E966FF0052798D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		7A0A6EA326089A740094818D /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		7A73C83725CC18AB00322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73552551FF1400B30789 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73582551FF1400B30789 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
@@ -221,6 +223,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		7A0A6EA226089A590094818D /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				7A0A6EA326089A740094818D /* FloatLabelTextField.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		7AFC734B2551FF1400B30789 = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +255,7 @@
 		7AFC73572551FF1400B30789 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				7A0A6EA226089A590094818D /* UITextField */,
 				7A040F4325E961B60052798D /* Resources */,
 				7AFC73C3255200A300B30789 /* Builders */,
 				7AFC73C8255200A300B30789 /* Extensions */,
@@ -505,6 +516,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A0A6EA426089A740094818D /* FloatLabelTextField.swift in Sources */,
 				7A040F9225E9657C0052798D /* Fonts.swift in Sources */,
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
