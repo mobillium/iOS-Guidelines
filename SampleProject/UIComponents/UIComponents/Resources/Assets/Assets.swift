@@ -25,10 +25,30 @@ public enum Asset {
     public static let google = ColorAsset(name: "google")
   }
   public enum Icons {
-    public static let icApple = ImageAsset(name: "ic_apple")
+    public static let icBack = ImageAsset(name: "ic_back")
+    public static let icClock = ImageAsset(name: "ic_clock")
+    public static let icClose = ImageAsset(name: "ic_close")
+    public static let icComment = ImageAsset(name: "ic_comment")
+    public static let icHeart = ImageAsset(name: "ic_heart")
+    public static let icHome = ImageAsset(name: "ic_home")
+    public static let icLogout = ImageAsset(name: "ic_logout")
+    public static let icMail = ImageAsset(name: "ic_mail")
+    public static let icMenu = ImageAsset(name: "ic_menu")
+    public static let icMore = ImageAsset(name: "ic_more")
+    public static let icPassword = ImageAsset(name: "ic_password")
+    public static let icRestaurant = ImageAsset(name: "ic_restaurant")
+    public static let icSend = ImageAsset(name: "ic_send")
+    public static let icShare = ImageAsset(name: "ic_share")
+    public static let icUser = ImageAsset(name: "ic_user")
+    public static let icUsers = ImageAsset(name: "ic_users")
+    public static let icWarning = ImageAsset(name: "ic_warning")
   }
   public enum Images {
-    public static let imgPlaceholderUser = ImageAsset(name: "img_placeholder_user")
+    public static let imgEditorsPick = ImageAsset(name: "img_editors_pick")
+    public static let imgWalkthrough1 = ImageAsset(name: "img_walkthrough_1")
+    public static let imgWalkthrough2 = ImageAsset(name: "img_walkthrough_2")
+    public static let imgWalkthrough3 = ImageAsset(name: "img_walkthrough_3")
+    public static let imgWalkthrough4 = ImageAsset(name: "img_walkthrough_4")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
