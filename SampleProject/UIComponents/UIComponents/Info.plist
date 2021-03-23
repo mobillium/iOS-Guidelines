@@ -18,5 +18,10 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Nunito-Bold.ttf</string>
+        <string>Nunito-SemiBold.ttf</string>
+	</array>
 </dict>
 </plist>

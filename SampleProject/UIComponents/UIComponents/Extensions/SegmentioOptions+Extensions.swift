@@ -16,13 +16,13 @@ public extension SegmentioOptions {
         let verticalSeparatorOptions = SegmentioVerticalSeparatorOptions(ratio: 1, color: .gray)
         
         let segmentStates = SegmentioStates(defaultState: SegmentioState(backgroundColor: .clear,
-                                                                         titleFont: .interBold(size: .custom(size: 13)),
+                                                                         titleFont: .font(.nunitoBold, size: .medium),
                                                                          titleTextColor: .black),
                                             selectedState: SegmentioState(backgroundColor: .clear,
-                                                                          titleFont: .interBold(size: .custom(size: 13)),
+                                                                          titleFont: .font(.nunitoBold, size: .medium),
                                                                           titleTextColor: .red),
                                             highlightedState: SegmentioState(backgroundColor: .clear,
-                                                                             titleFont: .interBold(size: .custom(size: 13)),
+                                                                             titleFont: .font(.nunitoBold, size: .medium),
                                                                              titleTextColor: .red))
         
         let options = SegmentioOptions(backgroundColor: .white,
