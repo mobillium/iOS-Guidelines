@@ -6,8 +6,24 @@ import UIKit
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public extension UIColor {
 
-  static var google: UIColor {
-      return Asset.Colors.google.color
+  static var appCinder: UIColor {
+      return Asset.Colors.appCinder.color
+  }
+
+  static var appHeather: UIColor {
+      return Asset.Colors.appHeather.color
+  }
+
+  static var appRaven: UIColor {
+      return Asset.Colors.appRaven.color
+  }
+
+  static var appRed: UIColor {
+      return Asset.Colors.appRed.color
+  }
+
+  static var appZircon: UIColor {
+      return Asset.Colors.appZircon.color
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
