@@ -27,6 +27,7 @@ target 'SampleProject' do
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.1'
   pod 'MobilliumBuilders', '~> 1.0'
+  pod 'Segmentio', '~> 4.1'
   
   target 'SampleProjectTests' do
     inherit! :search_paths
@@ -65,6 +66,7 @@ target 'UIComponents' do
   pod "TinyConstraints", '~> 4.0'
   pod 'SwiftGen', '~> 6.4'
   pod 'MobilliumBuilders', '~> 1.0'
+  pod 'Segmentio', '~> 4.1'
   
   target 'UIComponentsTests' do
     inherit! :search_paths

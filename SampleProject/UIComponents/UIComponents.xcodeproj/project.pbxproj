@@ -34,6 +34,7 @@
 		7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A6EEF2609025E0094818D /* ButtonFactory.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
 		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */; };
 		7AFC735F2551FF1400B30789 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73552551FF1400B30789 /* UIComponents.framework */; };
 		7AFC73662551FF1400B30789 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC73582551FF1400B30789 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AFC73D5255200A300B30789 /* UIStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C4255200A300B30789 /* UIStackViewBuilder.swift */; };
@@ -104,6 +105,7 @@
 		7A0A6EA326089A740094818D /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		7A0A6EEF2609025E0094818D /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		7A73C83725CC18AB00322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentioOptions+Extensions.swift"; sourceTree = "<group>"; };
 		7AFC73552551FF1400B30789 /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73582551FF1400B30789 /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		7AFC73592551FF1400B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				7AFC73C9255200A300B30789 /* UITableView+Extensions.swift */,
 				7AFC73CA255200A300B30789 /* ReusableView+Extensions.swift */,
 				7AFC73CB255200A300B30789 /* UICollectionView+Extensions.swift */,
+				7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			files = (
 				7A0A6EA426089A740094818D /* FloatLabelTextField.swift in Sources */,
 				7A040F9225E9657C0052798D /* Fonts.swift in Sources */,
+				7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */,
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
