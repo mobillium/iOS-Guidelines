@@ -22,6 +22,10 @@ public extension UIColor {
       return Asset.Colors.appRed.color
   }
 
+  static var appWhite: UIColor {
+      return Asset.Colors.appWhite.color
+  }
+
   static var appZircon: UIColor {
       return Asset.Colors.appZircon.color
   }

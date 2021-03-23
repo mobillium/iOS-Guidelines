@@ -14,7 +14,8 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let emailTextField = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
-    private let loginButton = ButtonFactory.createPrimaryButton()
+    private let loginButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let loginBorderedButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     private let segmentedControl: Segmentio = {
         let segmentedControl = Segmentio()
         segmentedControl.selectedSegmentioIndex = 0
@@ -56,6 +57,11 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         loginButton.topToBottom(of: passwordTextField).constant = 20
         loginButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         loginButton.setTitle("Giriş Yap", for: .normal)
+        
+        view.addSubview(loginBorderedButton)
+        loginBorderedButton.topToBottom(of: loginButton).constant = 20
+        loginBorderedButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        loginBorderedButton.setTitle("Giriş Yap", for: .normal)
     }
     
 }
