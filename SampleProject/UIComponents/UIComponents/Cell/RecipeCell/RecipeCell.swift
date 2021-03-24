@@ -137,16 +137,16 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     
 }
 
-//public extension RecipeCell {
-//    func set(with viewModel: RecipeCellProtocol) {
-//        self.viewModel = viewModel
-//        userView.username = viewModel.username
-//        userView.userRecipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
-//        recipeTitleLabel.text = viewModel.recipeTitle
-//        recipeCategoryLabel.text = viewModel.categoryName
-//        recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText
-//        userView.userImage.setImage(viewModel.userImageUrl)
-//        recipeImageView.setImage(viewModel.recipeImageUrl)
-//        editorsPickImageContainerView.isHidden = !(viewModel.isEditorChoice ?? false)
-//    }
-//}
+public extension RecipeCell {
+    func set(with viewModel: RecipeCellProtocol) {
+        self.viewModel = viewModel
+        userView.username = viewModel.username
+        userView.userRecipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
+        userView.userImageView?.setImage(viewModel.userImageUrl)
+        recipeTitleLabel.text = viewModel.recipeTitle
+        recipeCategoryLabel.text = viewModel.categoryName
+        recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText
+        recipeImageView.setImage(viewModel.recipeImageUrl)
+        editorsPickImageContainerView.isHidden = !(viewModel.isEditorChoice ?? false)
+    }
+}

@@ -10,7 +10,7 @@ import UIKit
 
 public class UserView: UIView {
     
-    private let userImageView = UIImageViewBuilder()
+    private let userRoundedImageView = UIImageViewBuilder()
         .cornerRadius(20)
         .clipsToBounds(true)
         .masksToBounds(false)
@@ -34,12 +34,12 @@ public class UserView: UIView {
     
     private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
-    public var userImage: UIImage? {
+    public var userImageView: UIImageView? {
         willSet {
-            if let image = newValue {
-                userImageView.image = image
+            if let imageView = newValue {
+                userRoundedImageView.image = imageView.image
             } else {
-                userImageView.image = nil
+                userRoundedImageView.image = nil
             }
         }
     }
@@ -86,13 +86,13 @@ public class UserView: UIView {
     
     private func configureContents() {
         backgroundColor = .appWhite
-        addSubview(userImageView)
-        userImageView.centerYToSuperview()
-        userImageView.leadingToSuperview().constant = 15
-        userImageView.size(.init(width: 40, height: 40))
+        addSubview(userRoundedImageView)
+        userRoundedImageView.centerYToSuperview()
+        userRoundedImageView.leadingToSuperview().constant = 15
+        userRoundedImageView.size(.init(width: 40, height: 40))
         
         addSubview(textStackView)
-        textStackView.leadingToTrailing(of: userImageView).constant = 10
+        textStackView.leadingToTrailing(of: userRoundedImageView).constant = 10
         textStackView.centerYToSuperview()
         textStackView.addArrangedSubview(usernameLabel)
         textStackView.addArrangedSubview(userRecipeAndFollowerCountLabel)
@@ -110,7 +110,7 @@ public class UserView: UIView {
     }
     
     private func setDummyData() {
-        userImage = .imgWalkthrough1
+        userRoundedImageView.image = .imgWalkthrough4
         username = "mrtcelebi"
         userRecipeAndFollowerCountText = "1 Tarif 2 Takipçi"
     }
