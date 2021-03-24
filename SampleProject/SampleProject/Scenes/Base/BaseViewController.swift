@@ -30,7 +30,6 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         view.backgroundColor = .appWhite
         subscribeLoading()
         subscribeActivityIndicator()
-        viewModel.viewDidLoad()
     }
     
     private func subscribeActivityIndicator() {
