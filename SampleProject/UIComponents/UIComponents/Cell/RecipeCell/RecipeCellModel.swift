@@ -37,7 +37,22 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var recipeCommnetAndLikeCountText: String?
     public var isEditorChoice: Bool?
     
-    public init(id: Int) {
+    public init(id: Int,
+                userImageUrl: String?,
+                username: String?,
+                userRecipeAndFollowerCountText: String?,
+                recipeTitle: String?, categoryName: String?,
+                recipeImageUrl: String?,
+                recipeCommnetAndLikeCountText: String?,
+                isEditorChoice: Bool?) {
         self.id = id
+        self.userImageUrl = userImageUrl
+        self.username = username
+        self.userRecipeAndFollowerCountText = userRecipeAndFollowerCountText
+        self.recipeTitle = recipeTitle
+        self.categoryName = categoryName
+        self.recipeImageUrl = recipeImageUrl
+        self.recipeCommnetAndLikeCountText = recipeCommnetAndLikeCountText
+        self.isEditorChoice = isEditorChoice
     }
 }

@@ -62,13 +62,11 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-        setDummyData()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupConstraints()
-        setDummyData()
     }
     
     private func setupConstraints() {
@@ -128,21 +126,15 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         self.recipeCommentAndLikeCountLabel.text = nil
     }
     
-    private func setDummyData() {
-        recipeTitleLabel.text = "Makarna Tarifi"
-        recipeCategoryLabel.text = "Hamur işi"
-        recipeImageView.image = .imgWalkthrough1
-        recipeCommentAndLikeCountLabel.text = "5 Beğeni 3 Yorum"
-    }
-    
 }
 
+// MARK: - Set ViewModel
 public extension RecipeCell {
     func set(with viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
         userView.username = viewModel.username
-        userView.userRecipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
-        userView.userImageView?.setImage(viewModel.userImageUrl)
+        userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
+        userView.userImageView.setImage(viewModel.userImageUrl)
         recipeTitleLabel.text = viewModel.recipeTitle
         recipeCategoryLabel.text = viewModel.categoryName
         recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText

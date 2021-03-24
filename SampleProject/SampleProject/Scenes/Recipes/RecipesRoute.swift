@@ -14,7 +14,7 @@ protocol RecipesRoute {
 extension RecipesRoute where Self: RouterProtocol {    
     func pushRecipesViewController() {
         let router = RecipesRouter()
-        let viewModel = RecipesViewModel(recipesListingType: .editorChoiceRecipes, router: router)
+        let viewModel = RecipesViewModel(router: router)
         let viewController = RecipesViewController(viewModel: viewModel)
         
         let transition = PushTransition()        

@@ -22,7 +22,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         super.viewDidLoad()
         setupConstraints()
         setupCollectionView()
-        navigationItem.title = viewModel.title
+        viewModel.addDummyData()
     }
     
     private func setupConstraints() {
@@ -40,12 +40,12 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
 extension RecipesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.numberOfItems
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RecipeCell = collectionView.dequeueReusableCell(for: indexPath)
-  //     cell.set(with: viewModel.cellItem(for: indexPath))
+        cell.set(with: viewModel.cellItem(for: indexPath))
         return cell
     }
 }

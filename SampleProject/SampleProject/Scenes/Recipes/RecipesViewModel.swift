@@ -14,7 +14,6 @@ protocol RecipesViewDataSource: AnyObject {
 }
 
 protocol RecipesViewEventSource: AnyObject {
-    var didSuccessFetchRecipes: VoidClosure? { get set }
 }
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
@@ -22,28 +21,8 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-    
-    enum RecipesListingType {
-        case editorChoiceRecipes
-        case lastAddedRecipes
-        case categoryRecipes(categoryId: Int)
-    }
-    
-    var isRequestEnabled = false
-    var isPagingEnabled = false
-    
-    var page = 1
     var cellItems: [RecipeCellProtocol] = []
-  
-    var didSuccessFetchRecipes: VoidClosure?
-    private var recipesListingType: RecipesListingType
-    var title: String?
-    
-    init(recipesListingType: RecipesListingType, router: RecipesRouter) {
-        self.recipesListingType = recipesListingType
-        super.init(router: router)
-    }
-    
+ 
     var numberOfItems: Int {
         return cellItems.count
     }
@@ -51,5 +30,19 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     func cellItem(for indexPath: IndexPath) -> RecipeCellProtocol {
         let item = cellItems[indexPath.row]
         return item
+    }
+    
+    func addDummyData() {
+        let data = RecipeCellModel(id: 1,
+                                   userImageUrl: nil,
+                                   username: "mrtcelebi",
+                                   userRecipeAndFollowerCountText: "10 Tarif 5 Takipçi",
+                                   recipeTitle: "Makarna Tarifi",
+                                   categoryName: "Hamur İşi",
+                                   recipeImageUrl: nil,
+                                   recipeCommnetAndLikeCountText: "4 Yorum 2 beğeni",
+                                   isEditorChoice: true)
+        
+        cellItems.append(data)
     }
 }

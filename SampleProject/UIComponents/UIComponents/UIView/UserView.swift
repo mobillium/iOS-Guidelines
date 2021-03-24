@@ -10,7 +10,7 @@ import UIKit
 
 public class UserView: UIView {
     
-    private let userRoundedImageView = UIImageViewBuilder()
+    public let userImageView = UIImageViewBuilder()
         .cornerRadius(20)
         .clipsToBounds(true)
         .masksToBounds(false)
@@ -27,40 +27,22 @@ public class UserView: UIView {
         .textColor(.appCinder)
         .build()
     
-    private let userRecipeAndFollowerCountLabel = UILabelBuilder()
+    private let recipeAndFollowerCountLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .medium))
         .textColor(.appRaven)
         .build()
     
     private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
     
-    public var userImageView: UIImageView? {
+    public var recipeAndFollowerCountText: String? {
         willSet {
-            if let imageView = newValue {
-                userRoundedImageView.image = imageView.image
-            } else {
-                userRoundedImageView.image = nil
-            }
-        }
-    }
-    
-    public var userRecipeAndFollowerCountText: String? {
-        willSet {
-            if let text = newValue {
-                userRecipeAndFollowerCountLabel.text = text
-            } else {
-                userRecipeAndFollowerCountLabel.text = nil
-            }
+            recipeAndFollowerCountLabel.text = newValue
         }
     }
     
     public var username: String? {
         willSet {
-            if let username = newValue {
-                usernameLabel.text = username
-            } else {
-                usernameLabel.text = nil
-            }
+            usernameLabel.text = newValue
         }
     }
     
@@ -75,7 +57,6 @@ public class UserView: UIView {
         self.userViewType = userViewType
         super.init(frame: .zero)
         configureContents()
-        setDummyData()
     }
     
     // swiftlint:disable fatal_error unavailable_function
@@ -86,16 +67,16 @@ public class UserView: UIView {
     
     private func configureContents() {
         backgroundColor = .appWhite
-        addSubview(userRoundedImageView)
-        userRoundedImageView.centerYToSuperview()
-        userRoundedImageView.leadingToSuperview().constant = 15
-        userRoundedImageView.size(.init(width: 40, height: 40))
+        addSubview(userImageView)
+        userImageView.centerYToSuperview()
+        userImageView.leadingToSuperview().constant = 15
+        userImageView.size(.init(width: 40, height: 40))
         
         addSubview(textStackView)
-        textStackView.leadingToTrailing(of: userRoundedImageView).constant = 10
+        textStackView.leadingToTrailing(of: userImageView).constant = 10
         textStackView.centerYToSuperview()
         textStackView.addArrangedSubview(usernameLabel)
-        textStackView.addArrangedSubview(userRecipeAndFollowerCountLabel)
+        textStackView.addArrangedSubview(recipeAndFollowerCountLabel)
         
         switch userViewType {
         case .withFollowButton:
@@ -109,9 +90,4 @@ public class UserView: UIView {
         }
     }
     
-    private func setDummyData() {
-        userRoundedImageView.image = .imgWalkthrough4
-        username = "mrtcelebi"
-        userRecipeAndFollowerCountText = "1 Tarif 2 Takipçi"
-    }
 }
