@@ -18,9 +18,7 @@ protocol BaseViewModelEventSource: AnyObject {
     var hideLoading: VoidClosure? { get set }
 }
 
-protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {
-    func viewDidLoad()
-}
+protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {}
 
 class BaseViewModel<R: Router>: BaseViewModelProtocol {
     
@@ -37,7 +35,5 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
         self.router = router
         self.dataProvider = dataProvider
     }
-    
-    func viewDidLoad() {}
-    
+        
 }

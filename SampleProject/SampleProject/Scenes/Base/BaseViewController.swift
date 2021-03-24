@@ -27,10 +27,9 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .appWhite
         subscribeLoading()
         subscribeActivityIndicator()
-        viewModel.viewDidLoad()
     }
     
     private func subscribeActivityIndicator() {
