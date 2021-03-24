@@ -29,6 +29,8 @@
 		7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A6EEF2609025E0094818D /* ButtonFactory.swift */; };
 		7A716CB3260B3EB8008B91B7 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A716CB1260B3D6A008B91B7 /* Nunito-ExtraBold.ttf */; };
 		7A716D00260B50FF008B91B7 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CFF260B50FF008B91B7 /* UIImage+Extensions.swift */; };
+		7A716D5A260B6D9D008B91B7 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716D59260B6D9D008B91B7 /* ToastPresenter.swift */; };
+		7A716D60260B6DEC008B91B7 /* TostWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716D5F260B6DEC008B91B7 /* TostWarningView.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
 		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */; };
@@ -96,6 +98,8 @@
 		7A0A6EEF2609025E0094818D /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
 		7A716CB1260B3D6A008B91B7 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		7A716CFF260B50FF008B91B7 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		7A716D59260B6D9D008B91B7 /* ToastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPresenter.swift; sourceTree = "<group>"; };
+		7A716D5F260B6DEC008B91B7 /* TostWarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TostWarningView.swift; sourceTree = "<group>"; };
 		7A73C83725CC18AB00322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentioOptions+Extensions.swift"; sourceTree = "<group>"; };
 		7AC60650260A713000EADB8C /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -231,6 +235,15 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		7A716D57260B6D85008B91B7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				7A716D59260B6D9D008B91B7 /* ToastPresenter.swift */,
+				7A716D5F260B6DEC008B91B7 /* TostWarningView.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
 		7AFC734B2551FF1400B30789 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +268,7 @@
 		7AFC73572551FF1400B30789 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				7A716D57260B6D85008B91B7 /* Toast */,
 				7A0A6EEC2609024D0094818D /* Factory */,
 				7A0A6EA226089A590094818D /* UITextField */,
 				7A040F4325E961B60052798D /* Resources */,
@@ -520,10 +534,12 @@
 				7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */,
 				7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */,
 				7AFC73DC255200A300B30789 /* ActivityIndicatorProtocol.swift in Sources */,
+				7A716D5A260B6D9D008B91B7 /* ToastPresenter.swift in Sources */,
 				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
 				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
 				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,
+				7A716D60260B6DEC008B91B7 /* TostWarningView.swift in Sources */,
 				7A040FD225E966FF0052798D /* Assets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

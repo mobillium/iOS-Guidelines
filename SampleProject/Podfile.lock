@@ -5,7 +5,10 @@ PODS:
   - MobilliumBuilders (1.1.0)
   - MobilliumDateFormatter (1.1.0)
   - MobilliumUserDefaults (2.0.0)
+  - QuickLayout (3.0.0)
   - Segmentio (4.1)
+  - SwiftEntryKit (1.2.7):
+    - QuickLayout (= 3.0.0)
   - SwiftGen (6.4.0)
   - SwiftLint (0.42.0)
   - TinyConstraints (4.0.1)
@@ -18,6 +21,7 @@ DEPENDENCIES:
   - MobilliumDateFormatter (~> 1.1)
   - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
+  - SwiftEntryKit (~> 1.2)
   - SwiftGen (~> 6.4)
   - SwiftLint (~> 0.42)
   - TinyConstraints (~> 4.0)
@@ -30,7 +34,9 @@ SPEC REPOS:
     - MobilliumBuilders
     - MobilliumDateFormatter
     - MobilliumUserDefaults
+    - QuickLayout
     - Segmentio
+    - SwiftEntryKit
     - SwiftGen
     - SwiftLint
     - TinyConstraints
@@ -42,11 +48,13 @@ SPEC CHECKSUMS:
   MobilliumBuilders: 2040fa1e3f1cae48c872d7997e898ea35cf57dc6
   MobilliumDateFormatter: eccff23e7c493446d1600b123afc7a2da0e7b3cb
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
+  SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 01dee71a4649ea0f632cd99cba48f3a826c2d135
+PODFILE CHECKSUM: 9799824451908e38d37ae3cfd98e0b9d721a8b44
 
 COCOAPODS: 1.10.1
