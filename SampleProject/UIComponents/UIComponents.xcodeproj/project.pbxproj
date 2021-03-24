@@ -43,6 +43,9 @@
 		7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D1255200A300B30789 /* TextFieldDataSource.swift */; };
 		7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D2255200A300B30789 /* ReusableView.swift */; };
 		7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D4255200A300B30789 /* ActivityIndicatorView.swift */; };
+		A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D3260B3C6200FB990F /* RecipeCell.swift */; };
+		A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */; };
+		A2B360DB260B3F4100FB990F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360DA260B3F4100FB990F /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,9 @@
 		7AFC73D1255200A300B30789 /* TextFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDataSource.swift; sourceTree = "<group>"; };
 		7AFC73D2255200A300B30789 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		7AFC73D4255200A300B30789 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		A2B360D3260B3C6200FB990F /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellModel.swift; sourceTree = "<group>"; };
+		A2B360DA260B3F4100FB990F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		BDE3416577E7799BB5B2D409 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F424F25F74C8FC78B212DB /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		D4642D8F0950A3D569F0E3A7 /* Pods-UIComponentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.release.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -250,6 +256,8 @@
 		7AFC73572551FF1400B30789 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				A2B360D1260B3BE800FB990F /* Cell */,
+				A2B360D9260B3F1000FB990F /* UIView */,
 				7A0A6EEC2609024D0094818D /* Factory */,
 				7A0A6EA226089A590094818D /* UITextField */,
 				7A040F4325E961B60052798D /* Resources */,
@@ -307,6 +315,31 @@
 				7AFC73D4255200A300B30789 /* ActivityIndicatorView.swift */,
 			);
 			path = UIActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		A2B360D1260B3BE800FB990F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A2B360D2260B3C1C00FB990F /* RecipeCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A2B360D2260B3C1C00FB990F /* RecipeCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2B360D3260B3C6200FB990F /* RecipeCell.swift */,
+				A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */,
+			);
+			path = RecipeCell;
+			sourceTree = "<group>";
+		};
+		A2B360D9260B3F1000FB990F /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A2B360DA260B3F4100FB990F /* UserView.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,15 +537,18 @@
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
+				A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */,
 				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
 				7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */,
 				7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */,
 				7AFC73DD255200A300B30789 /* LoadingProtocol.swift in Sources */,
+				A2B360DB260B3F4100FB990F /* UserView.swift in Sources */,
 				7AFC73DE255200A300B30789 /* BlockingActivityIndicator.swift in Sources */,
 				7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */,
 				7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */,
 				7AFC73DC255200A300B30789 /* ActivityIndicatorProtocol.swift in Sources */,
 				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
+				A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
 				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
 				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,

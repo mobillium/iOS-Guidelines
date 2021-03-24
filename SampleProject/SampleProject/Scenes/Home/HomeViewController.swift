@@ -28,9 +28,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return segmentedControl
     }()
     
+    private let recipeCellButton = ButtonFactory.createPrimaryButton(style: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
+        addButtonTarget()
     }
     
     private func configureContents() {
@@ -62,6 +65,18 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         loginBorderedButton.topToBottom(of: loginButton).constant = 20
         loginBorderedButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         loginBorderedButton.setTitle("Giriş Yap", for: .normal)
+        
+        view.addSubview(recipeCellButton)
+        recipeCellButton.topToBottom(of: loginBorderedButton).constant = 20
+        recipeCellButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        recipeCellButton.setTitle("RecipeCell", for: .normal)
     }
     
+    private func addButtonTarget() {
+        recipeCellButton.addTarget(self, action: #selector(recipeCellButtonTapped), for: .touchUpInside)
+    }
+    
+    @IBAction private func recipeCellButtonTapped() {
+        viewModel.recipeCellButtonTapped()
+    }
 }
