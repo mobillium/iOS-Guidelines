@@ -50,8 +50,10 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         }
     }
     
+    #if DEBUG
     deinit {
         debugPrint("deinit \(self)")
     }
+    #endif
     
 }

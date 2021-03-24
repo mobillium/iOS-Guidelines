@@ -6,6 +6,14 @@ import UIKit
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public extension UIColor {
 
+  static var appPrimaryBackground: UIColor {
+      return Asset.Colors.appPrimaryBackground.color
+  }
+
+  static var appSecondaryBackground: UIColor {
+      return Asset.Colors.appSecondaryBackground.color
+  }
+
   static var appCinder: UIColor {
       return Asset.Colors.appCinder.color
   }
