@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
+		7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
 		7A980AB62553168400494520 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB32553168400494520 /* HomeRouter.swift */; };
 		7A980AB72553168400494520 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB42553168400494520 /* HomeViewController.swift */; };
 		7A980AB82553168400494520 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB52553168400494520 /* HomeViewModel.swift */; };
 		7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AE1255316BF00494520 /* BaseViewController.swift */; };
-		7A980AE5255316BF00494520 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AE2255316BF00494520 /* BaseNavigationController.swift */; };
+		7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AE2255316BF00494520 /* MainNavigationController.swift */; };
 		7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AE3255316BF00494520 /* BaseViewModel.swift */; };
 		7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AEA2553171A00494520 /* ModalTransition.swift */; };
 		7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AEB2553171A00494520 /* PlaceOnWindowTransition.swift */; };
@@ -83,12 +84,13 @@
 		6575F5C9303FE9C04D7EC30D /* Pods-SampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		72A3D9B8ADC26756F3977644 /* Pods-SampleProject.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.development.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.development.xcconfig"; sourceTree = "<group>"; };
 		7A6AED8A25A756F900BB1457 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
 		7A73C7FB25CC178000322233 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A980AB32553168400494520 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		7A980AB42553168400494520 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7A980AB52553168400494520 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7A980AE1255316BF00494520 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		7A980AE2255316BF00494520 /* BaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		7A980AE2255316BF00494520 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		7A980AE3255316BF00494520 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		7A980AEA2553171A00494520 /* ModalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		7A980AEB2553171A00494520 /* PlaceOnWindowTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceOnWindowTransition.swift; sourceTree = "<group>"; };
@@ -198,9 +200,10 @@
 		7A980ABB2553168D00494520 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7A980AE2255316BF00494520 /* BaseNavigationController.swift */,
+				7A980AE2255316BF00494520 /* MainNavigationController.swift */,
 				7A980AE1255316BF00494520 /* BaseViewController.swift */,
 				7A980AE3255316BF00494520 /* BaseViewModel.swift */,
+				7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -654,7 +657,7 @@
 				A2B36101260B5C2E00FB990F /* RecipesViewController.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
-				7A980AE5255316BF00494520 /* BaseNavigationController.swift in Sources */,
+				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
 				7A980AB62553168400494520 /* HomeRouter.swift in Sources */,
 				A2B360FF260B5C2E00FB990F /* RecipesViewModel.swift in Sources */,
@@ -671,6 +674,7 @@
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
 				7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */,
+				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,7 +772,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -823,7 +827,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1009,7 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

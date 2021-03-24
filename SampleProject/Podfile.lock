@@ -1,7 +1,8 @@
 PODS:
   - Alamofire (5.4.1)
   - IQKeyboardManagerSwift (6.5.6)
-  - MobilliumBuilders (1.0.0)
+  - Kingfisher (6.2.1)
+  - MobilliumBuilders (1.1.0)
   - MobilliumDateFormatter (1.1.0)
   - MobilliumUserDefaults (2.0.0)
   - Segmentio (4.1)
@@ -12,7 +13,8 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - IQKeyboardManagerSwift (~> 6.5)
-  - MobilliumBuilders (~> 1.0)
+  - Kingfisher (~> 6.2)
+  - MobilliumBuilders (~> 1.1)
   - MobilliumDateFormatter (~> 1.1)
   - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
@@ -24,6 +26,7 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
+    - Kingfisher
     - MobilliumBuilders
     - MobilliumDateFormatter
     - MobilliumUserDefaults
@@ -35,7 +38,8 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
-  MobilliumBuilders: e83c3b97b8ab113610369408e53a185b8b8e85c6
+  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
+  MobilliumBuilders: 2040fa1e3f1cae48c872d7997e898ea35cf57dc6
   MobilliumDateFormatter: eccff23e7c493446d1600b123afc7a2da0e7b3cb
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: af6bb5ed4a56b4689a3657ee43916ef34d1a43fe
+PODFILE CHECKSUM: 01dee71a4649ea0f632cd99cba48f3a826c2d135
 
 COCOAPODS: 1.10.1

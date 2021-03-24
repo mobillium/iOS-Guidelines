@@ -20,8 +20,9 @@ public typealias Font = FontConvertible.Font
 public enum FontFamily {
   public enum Nunito {
     public static let bold = FontConvertible(name: "Nunito-Bold", family: "Nunito", path: "Nunito-Bold.ttf")
+    public static let extraBold = FontConvertible(name: "Nunito-ExtraBold", family: "Nunito", path: "Nunito-ExtraBold.ttf")
     public static let semiBold = FontConvertible(name: "Nunito-SemiBold", family: "Nunito", path: "Nunito-SemiBold.ttf")
-    public static let all: [FontConvertible] = [bold, semiBold]
+    public static let all: [FontConvertible] = [bold, extraBold, semiBold]
   }
   public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {

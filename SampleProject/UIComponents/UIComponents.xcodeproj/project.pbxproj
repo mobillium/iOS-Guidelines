@@ -27,6 +27,8 @@
 		7A040FD225E966FF0052798D /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040FCB25E966FF0052798D /* Assets.swift */; };
 		7A0A6EA426089A740094818D /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A6EA326089A740094818D /* FloatLabelTextField.swift */; };
 		7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A6EEF2609025E0094818D /* ButtonFactory.swift */; };
+		7A716CB3260B3EB8008B91B7 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A716CB1260B3D6A008B91B7 /* Nunito-ExtraBold.ttf */; };
+		7A716D00260B50FF008B91B7 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CFF260B50FF008B91B7 /* UIImage+Extensions.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
 		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */; };
@@ -95,6 +97,8 @@
 		7A040FCB25E966FF0052798D /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		7A0A6EA326089A740094818D /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		7A0A6EEF2609025E0094818D /* ButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFactory.swift; sourceTree = "<group>"; };
+		7A716CB1260B3D6A008B91B7 /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7A716CFF260B50FF008B91B7 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		7A73C83725CC18AB00322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmentioOptions+Extensions.swift"; sourceTree = "<group>"; };
 		7AC60650260A713000EADB8C /* Nunito-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Bold.ttf"; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		7A040F8F25E964F50052798D /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				7A716CB1260B3D6A008B91B7 /* Nunito-ExtraBold.ttf */,
 				7AC60650260A713000EADB8C /* Nunito-Bold.ttf */,
 				7AC60651260A713000EADB8C /* Nunito-SemiBold.ttf */,
 				7A040F9125E9657C0052798D /* Fonts.swift */,
@@ -286,6 +291,7 @@
 				7AFC73CA255200A300B30789 /* ReusableView+Extensions.swift */,
 				7AFC73CB255200A300B30789 /* UICollectionView+Extensions.swift */,
 				7AC605FF2609E5FE00EADB8C /* SegmentioOptions+Extensions.swift */,
+				7A716CFF260B50FF008B91B7 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +447,7 @@
 				7A040FBE25E966170052798D /* Componenets.strings in Resources */,
 				7A040F8A25E964E70052798D /* swiftgen.yml in Resources */,
 				7A040FC325E966170052798D /* Placeholder.strings in Resources */,
+				7A716CB3260B3EB8008B91B7 /* Nunito-ExtraBold.ttf in Resources */,
 				7A040FC025E966170052798D /* General.strings in Resources */,
 				7A040FCD25E966FF0052798D /* Icons.xcassets in Resources */,
 				7AC60657260A737600EADB8C /* Nunito-SemiBold.ttf in Resources */,
@@ -539,6 +546,7 @@
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
 				A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */,
 				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
+				7A716D00260B50FF008B91B7 /* UIImage+Extensions.swift in Sources */,
 				7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */,
 				7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */,
 				7AFC73DD255200A300B30789 /* LoadingProtocol.swift in Sources */,
@@ -621,7 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -731,7 +739,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -789,7 +797,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

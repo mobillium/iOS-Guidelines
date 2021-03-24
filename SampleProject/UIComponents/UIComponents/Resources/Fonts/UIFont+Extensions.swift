@@ -13,6 +13,7 @@ public extension UIFont {
     enum FontWeight {
         case nunitoSemiBold
         case nunitoBold
+        case nunitoExtraBold
     }
     
     enum FontSize {
@@ -57,6 +58,8 @@ public extension UIFont {
             font = FontFamily.Nunito.semiBold.font(size: size.rawValue)
         case .nunitoBold:
             font = FontFamily.Nunito.bold.font(size: size.rawValue)
+        case .nunitoExtraBold:
+            font = FontFamily.Nunito.extraBold.font(size: size.rawValue)
         }
         return font
     }
