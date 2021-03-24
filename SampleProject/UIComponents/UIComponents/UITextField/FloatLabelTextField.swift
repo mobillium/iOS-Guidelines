@@ -17,7 +17,7 @@ public class FloatLabelTextField: UITextField {
         imageView.heightAnchor.constraint(equalToConstant: 18).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 18).isActive = true
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = .black
+        imageView.tintColor = .appCinder
         return imageView
     }()
     
@@ -87,7 +87,7 @@ public class FloatLabelTextField: UITextField {
         } else {
             setTitleToCenter(animate: true)
         }
-        layer.borderColor = isFirstResponder ? UIColor.red.cgColor : UIColor.gray.cgColor
+        layer.borderColor = isFirstResponder ? UIColor.appRed.cgColor : UIColor.appZircon.cgColor
     }
     
     private func configureContents() {
@@ -97,8 +97,9 @@ public class FloatLabelTextField: UITextField {
         borderStyle = .none
         layer.borderWidth = 2
         layer.cornerRadius = 4
-        layer.borderColor = UIColor.gray.cgColor
+        layer.borderColor = UIColor.appZircon.cgColor
         font = .systemFont(ofSize: 14, weight: .semibold)
+        textColor = .appRaven
     }
     
     private func updateTitlePosition() {
@@ -124,7 +125,7 @@ public class FloatLabelTextField: UITextField {
         let contentHeight = frame.size.height
         let titleHeight = titleLabel.frame.size.height
         titleLabel.font = .systemFont(ofSize: 12, weight: .bold)
-        titleLabel.textColor = .red
+        titleLabel.textColor = .appRed
         titleLabel.frame.origin.y = (contentHeight / 2) - titleHeight
     }
     
@@ -132,7 +133,7 @@ public class FloatLabelTextField: UITextField {
         let contentHeight = frame.size.height
         let titleHeight = titleLabel.frame.size.height
         titleLabel.font = .systemFont(ofSize: 14, weight: .semibold)
-        titleLabel.textColor = .gray
+        titleLabel.textColor = .appHeather
         titleLabel.frame.origin.y = (contentHeight / 2) - (titleHeight / 2)
     }
 }

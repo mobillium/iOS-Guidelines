@@ -34,10 +34,6 @@
 		7AC60657260A737600EADB8C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7AC60651260A713000EADB8C /* Nunito-SemiBold.ttf */; };
 		7AFC735F2551FF1400B30789 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73552551FF1400B30789 /* UIComponents.framework */; };
 		7AFC73662551FF1400B30789 /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC73582551FF1400B30789 /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7AFC73D5255200A300B30789 /* UIStackViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C4255200A300B30789 /* UIStackViewBuilder.swift */; };
-		7AFC73D6255200A300B30789 /* UILabelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C5255200A300B30789 /* UILabelBuilder.swift */; };
-		7AFC73D7255200A300B30789 /* UIScrollViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C6255200A300B30789 /* UIScrollViewBuilder.swift */; };
-		7AFC73D8255200A300B30789 /* UIViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C7255200A300B30789 /* UIViewBuilder.swift */; };
 		7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73C9255200A300B30789 /* UITableView+Extensions.swift */; };
 		7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73CA255200A300B30789 /* ReusableView+Extensions.swift */; };
 		7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73CB255200A300B30789 /* UICollectionView+Extensions.swift */; };
@@ -105,10 +101,6 @@
 		7AFC73592551FF1400B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AFC735E2551FF1400B30789 /* UIComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC73652551FF1400B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7AFC73C4255200A300B30789 /* UIStackViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStackViewBuilder.swift; sourceTree = "<group>"; };
-		7AFC73C5255200A300B30789 /* UILabelBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelBuilder.swift; sourceTree = "<group>"; };
-		7AFC73C6255200A300B30789 /* UIScrollViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollViewBuilder.swift; sourceTree = "<group>"; };
-		7AFC73C7255200A300B30789 /* UIViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewBuilder.swift; sourceTree = "<group>"; };
 		7AFC73C9255200A300B30789 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		7AFC73CA255200A300B30789 /* ReusableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extensions.swift"; sourceTree = "<group>"; };
 		7AFC73CB255200A300B30789 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
@@ -261,7 +253,6 @@
 				7A0A6EEC2609024D0094818D /* Factory */,
 				7A0A6EA226089A590094818D /* UITextField */,
 				7A040F4325E961B60052798D /* Resources */,
-				7AFC73C3255200A300B30789 /* Builders */,
 				7AFC73C8255200A300B30789 /* Extensions */,
 				7AFC73CC255200A300B30789 /* Loading */,
 				7AFC73D0255200A300B30789 /* Protocols */,
@@ -278,17 +269,6 @@
 				7AFC73652551FF1400B30789 /* Info.plist */,
 			);
 			path = UIComponentsTests;
-			sourceTree = "<group>";
-		};
-		7AFC73C3255200A300B30789 /* Builders */ = {
-			isa = PBXGroup;
-			children = (
-				7AFC73C4255200A300B30789 /* UIStackViewBuilder.swift */,
-				7AFC73C5255200A300B30789 /* UILabelBuilder.swift */,
-				7AFC73C6255200A300B30789 /* UIScrollViewBuilder.swift */,
-				7AFC73C7255200A300B30789 /* UIViewBuilder.swift */,
-			);
-			path = Builders;
 			sourceTree = "<group>";
 		};
 		7AFC73C8255200A300B30789 /* Extensions */ = {
@@ -524,23 +504,19 @@
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
-				7AFC73D7255200A300B30789 /* UIScrollViewBuilder.swift in Sources */,
 				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
 				7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */,
 				7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */,
-				7AFC73D6255200A300B30789 /* UILabelBuilder.swift in Sources */,
 				7AFC73DD255200A300B30789 /* LoadingProtocol.swift in Sources */,
 				7AFC73DE255200A300B30789 /* BlockingActivityIndicator.swift in Sources */,
 				7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */,
 				7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */,
-				7AFC73D8255200A300B30789 /* UIViewBuilder.swift in Sources */,
 				7AFC73DC255200A300B30789 /* ActivityIndicatorProtocol.swift in Sources */,
 				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
 				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
 				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,
 				7A040FD225E966FF0052798D /* Assets.swift in Sources */,
-				7AFC73D5255200A300B30789 /* UIStackViewBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

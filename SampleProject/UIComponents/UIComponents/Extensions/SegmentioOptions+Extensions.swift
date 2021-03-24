@@ -11,21 +11,21 @@ import Segmentio
 public extension SegmentioOptions {
     
     static func options() -> SegmentioOptions {
-        let indicatorOptions = SegmentioIndicatorOptions(type: .bottom, ratio: 0.32, height: 2, color: .red)
-        let horizontalSeparatorOptions = SegmentioHorizontalSeparatorOptions(type: .none, height: 0, color: .white)
-        let verticalSeparatorOptions = SegmentioVerticalSeparatorOptions(ratio: 1, color: .gray)
+        let indicatorOptions = SegmentioIndicatorOptions(type: .bottom, ratio: 0.32, height: 2, color: .appRed)
+        let horizontalSeparatorOptions = SegmentioHorizontalSeparatorOptions(type: .none, height: 0, color: .appWhite)
+        let verticalSeparatorOptions = SegmentioVerticalSeparatorOptions(ratio: 1, color: .appZircon)
         
         let segmentStates = SegmentioStates(defaultState: SegmentioState(backgroundColor: .clear,
                                                                          titleFont: .font(.nunitoBold, size: .medium),
-                                                                         titleTextColor: .black),
+                                                                         titleTextColor: .appCinder),
                                             selectedState: SegmentioState(backgroundColor: .clear,
                                                                           titleFont: .font(.nunitoBold, size: .medium),
-                                                                          titleTextColor: .red),
+                                                                          titleTextColor: .appRed),
                                             highlightedState: SegmentioState(backgroundColor: .clear,
                                                                              titleFont: .font(.nunitoBold, size: .medium),
-                                                                             titleTextColor: .red))
+                                                                             titleTextColor: .appRed))
         
-        let options = SegmentioOptions(backgroundColor: .white,
+        let options = SegmentioOptions(backgroundColor: .appWhite,
                                        segmentPosition: .fixed(maxVisibleItems: 2),
                                        scrollEnabled: false, indicatorOptions: indicatorOptions,
                                        horizontalSeparatorOptions: horizontalSeparatorOptions,
