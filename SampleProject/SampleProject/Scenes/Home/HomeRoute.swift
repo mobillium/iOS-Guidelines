@@ -18,7 +18,7 @@ extension HomeRoute where Self: RouterProtocol {
         let router = HomeRouter()
         let viewModel = HomeViewModel(router: router, dataProvider: APIDataProvider())
         let viewController = HomeViewController(viewModel: viewModel)
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController = MainNavigationController(rootViewController: viewController)
         
         let transition = PlaceOnWindowTransition()
         router.viewController = viewController

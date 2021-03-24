@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '12.1'
+platform :ios, '11.0'
 
 # Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!
@@ -26,8 +26,9 @@ target 'SampleProject' do
   pod 'SwiftLint', '~> 0.42'
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.1'
-  pod 'MobilliumBuilders', '~> 1.0'
+  pod 'MobilliumBuilders', '~> 1.1'
   pod 'Segmentio', '~> 4.1'
+  pod 'Kingfisher', '~> 6.2'
   
   target 'SampleProjectTests' do
     inherit! :search_paths
@@ -65,8 +66,9 @@ target 'UIComponents' do
   # Helper
   pod "TinyConstraints", '~> 4.0'
   pod 'SwiftGen', '~> 6.4'
-  pod 'MobilliumBuilders', '~> 1.0'
+  pod 'MobilliumBuilders', '~> 1.1'
   pod 'Segmentio', '~> 4.1'
+  pod 'Kingfisher', '~> 6.2'
   
   target 'UIComponentsTests' do
     inherit! :search_paths
