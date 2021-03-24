@@ -38,7 +38,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         
         view.addSubview(segmentedControl)
         segmentedControl.topToSuperview(usingSafeArea: true)
-        segmentedControl.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        segmentedControl.edgesToSuperview(excluding: [.bottom, .top])
         segmentedControl.height(44)
         
         view.addSubview(emailTextField)
