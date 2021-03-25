@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Utilities
 
 public class UserView: UIView {
     
@@ -62,11 +63,15 @@ public class UserView: UIView {
     }
     
     let userViewType: UserViewType
+    public var isFollowing: Bool = false
+    public var followButtonTapped: VoidClosure?
     
     init(userViewType: UserViewType) {
         self.userViewType = userViewType
         super.init(frame: .zero)
         configureContents()
+        updatefollowButton()
+        addButtonTarget()
     }
     
     // swiftlint:disable fatal_error unavailable_function
@@ -97,6 +102,26 @@ public class UserView: UIView {
             followButton.width(120)
         case .withoutFollowButton:
             textStackView.trailingToSuperview().constant = -15
+        }
+    }
+    
+    private func addButtonTarget() {
+        followButton.addTarget(self, action: #selector(followButtonDidTap), for: .touchUpInside)
+    }
+    
+    @IBAction private func followButtonDidTap() {
+        followButtonTapped?()
+    }
+    
+    public func updatefollowButton() {
+        if isFollowing {
+            followButton.setTitle("Takip Ediliyor", for: .normal)
+            followButton.setTitleColor(.white, for: .normal)
+            followButton.backgroundColor = .appRed
+        } else {
+            followButton.setTitle("Takip Et", for: .normal)
+            followButton.setTitleColor(.appRed, for: .normal)
+            followButton.backgroundColor = .appWhite
         }
     }
     

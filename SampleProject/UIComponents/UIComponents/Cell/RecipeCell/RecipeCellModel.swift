@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Utilities
 
 public protocol RecipeCellDataSource: AnyObject {
-    var id: Int { get }
+    var recipeId: Int { get }
+    var userId: Int { get }
     var userImageUrl: String? { get }
     var username: String? { get }
     var userRecipeAndFollowerCountText: String? { get }
@@ -18,16 +20,18 @@ public protocol RecipeCellDataSource: AnyObject {
     var recipeImageUrl: String? { get }
     var recipeCommnetAndLikeCountText: String? { get }
     var isEditorChoice: Bool { get }
+    var isFollowing: Bool { get }
 }
 
 public protocol RecipeCellEventSource: AnyObject {
-    
+    var followButtonTapped: VoidClosure? { get set }
 }
 
 public protocol RecipeCellProtocol: RecipeCellDataSource, RecipeCellEventSource {}
 
 public class RecipeCellModel: RecipeCellProtocol {
-    public var id: Int
+    public var recipeId: Int
+    public var userId: Int
     public var userImageUrl: String?
     public var username: String?
     public var userRecipeAndFollowerCountText: String?
@@ -36,16 +40,21 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var recipeImageUrl: String?
     public var recipeCommnetAndLikeCountText: String?
     public var isEditorChoice: Bool = false
+    public var isFollowing: Bool = false
+    public var followButtonTapped: VoidClosure?
     
-    public init(id: Int,
+    public init(recipeId: Int,
+                userId: Int,
                 userImageUrl: String?,
                 username: String?,
                 userRecipeAndFollowerCountText: String?,
                 recipeTitle: String?, categoryName: String?,
                 recipeImageUrl: String?,
                 recipeCommnetAndLikeCountText: String?,
-                isEditorChoice: Bool) {
-        self.id = id
+                isEditorChoice: Bool,
+                isFollowing: Bool) {
+        self.recipeId = recipeId
+        self.userId = userId
         self.userImageUrl = userImageUrl
         self.username = username
         self.userRecipeAndFollowerCountText = userRecipeAndFollowerCountText
@@ -54,5 +63,6 @@ public class RecipeCellModel: RecipeCellProtocol {
         self.recipeImageUrl = recipeImageUrl
         self.recipeCommnetAndLikeCountText = recipeCommnetAndLikeCountText
         self.isEditorChoice = isEditorChoice
+        self.isFollowing = isFollowing
     }
 }

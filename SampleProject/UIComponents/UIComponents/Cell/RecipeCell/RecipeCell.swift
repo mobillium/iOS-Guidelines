@@ -138,6 +138,9 @@ public extension RecipeCell {
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
         userView.userImageUrl = viewModel.userImageUrl
+        userView.isFollowing = viewModel.isFollowing
+        userView.updatefollowButton()
+        userView.followButtonTapped = viewModel.followButtonTapped
         recipeTitleLabel.text = viewModel.recipeTitle
         recipeCategoryLabel.text = viewModel.categoryName
         recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText

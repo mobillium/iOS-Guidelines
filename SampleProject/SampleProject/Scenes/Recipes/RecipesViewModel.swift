@@ -34,7 +34,8 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     func addDummyData() {
         for _ in 0...20 {
-            let data = RecipeCellModel(id: 1,
+            let data = RecipeCellModel(recipeId: 1,
+                                       userId: 1,
                                        userImageUrl: nil,
                                        username: "mrtcelebi",
                                        userRecipeAndFollowerCountText: "10 Tarif 5 Takipçi",
@@ -42,7 +43,8 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
                                        categoryName: "Hamur İşi",
                                        recipeImageUrl: nil,
                                        recipeCommnetAndLikeCountText: "4 Yorum 2 beğeni",
-                                       isEditorChoice: true)
+                                       isEditorChoice: true,
+                                       isFollowing: false)
             cellItems.append(data)
         }
     }
