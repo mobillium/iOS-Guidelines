@@ -12,10 +12,12 @@ public protocol CategoryWithRecipesCellDataSource: AnyObject {
     var categoryId: Int { get }
     var categoryImageURL: String? { get }
     var categoryName: String? { get }
+    var cellItems: [RecipeCellProtocol] { get }
 }
 
 public protocol CategoryWithRecipesCellEventSource: AnyObject {
-    var seeAllButtonDidTap: VoidClosure? { get set }
+    var didSelectRecipe: IntClosure? { get set }
+    var seeAllButtonDidTap: ((Int, String) -> Void)? { get set }
 }
 
 public protocol CategoryWithRecipesCellProtocol: CategoryWithRecipesCellDataSource, CategoryWithRecipesCellEventSource {
@@ -26,11 +28,14 @@ public final class CategoryWithRecipesCellModel: CategoryWithRecipesCellProtocol
     public var categoryId: Int
     public var categoryImageURL: String?
     public var categoryName: String?
-    public var seeAllButtonDidTap: VoidClosure?
+    public var seeAllButtonDidTap: ((Int, String) -> Void)?
+    public var cellItems: [RecipeCellProtocol]
+    public var didSelectRecipe: IntClosure?
     
-    public init(categoryId: Int, categoryImageURL: String?, categoryName: String?) {
+    public init(categoryId: Int, categoryImageURL: String?, categoryName: String?, cellItems: [RecipeCellProtocol]) {
         self.categoryId = categoryId
         self.categoryImageURL = categoryImageURL
         self.categoryName = categoryName
+        self.cellItems = cellItems
     }
 }

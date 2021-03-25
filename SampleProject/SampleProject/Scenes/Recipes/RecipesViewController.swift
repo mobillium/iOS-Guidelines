@@ -52,6 +52,7 @@ extension RecipesViewController: UICollectionViewDataSource {
 
 extension RecipesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }
 

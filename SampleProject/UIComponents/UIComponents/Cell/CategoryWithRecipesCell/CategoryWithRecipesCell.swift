@@ -33,17 +33,18 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         .build()
     
     weak var viewModel: CategoryWithRecipesCellProtocol?
+    public let recipeSmallCellViewController = RecipeSmallCellViewController()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupConstraints()
-        addSeeAllButtonAction()
+        addButtonTarget()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupConstraints()
-        addSeeAllButtonAction()
+        addButtonTarget()
     }
     
     private func setupConstraints() {
@@ -69,6 +70,9 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         seperator.topToBottom(of: topContainerView)
         seperator.size(CGSize(width: contentView.frame.width, height: 1))
         
+        contentView.addSubview(recipeSmallCellViewController.view)
+        recipeSmallCellViewController.view.edgesToSuperview(excluding: .top)
+        recipeSmallCellViewController.view.topToBottom(of: seperator)
     }
     
     public override func prepareForReuse() {
@@ -77,14 +81,16 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         self.categoryNameLabel.text = nil
     }
     
-    private func addSeeAllButtonAction() {
+    private func addButtonTarget() {
         seeAllButton.addTarget(self, action: #selector(seeAllButtonTapped(_:)), for: .touchUpInside)
     }
     
     @objc
     private func seeAllButtonTapped(_ sender: UIButton) {
-        viewModel?.seeAllButtonDidTap?()
+        guard let categoryId = viewModel?.categoryId, let categoryName = viewModel?.categoryName else { return }
+        viewModel?.seeAllButtonDidTap?(categoryId, categoryName)
     }
+
 }
 
 // MARK: - Set ViewModel
@@ -93,5 +99,7 @@ public extension CategoryWithRecipesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImageURL)
         self.categoryNameLabel.text = viewModel.categoryName
+        self.recipeSmallCellViewController.didSelectRecipe = viewModel.didSelectRecipe
+        self.recipeSmallCellViewController.cellItems = viewModel.cellItems
     }
 }

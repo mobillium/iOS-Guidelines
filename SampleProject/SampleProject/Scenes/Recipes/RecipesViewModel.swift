@@ -23,6 +23,8 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
     var cellItems: [CategoryWithRecipesCellProtocol] = []
  
+    var recipesCellItems: [RecipeCellModel] = []
+    
     var numberOfItems: Int {
         return cellItems.count
     }
@@ -33,8 +35,25 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     }
     
     func addDummyData() {
+        
+        for _ in 0...10 {
+            let recipeCellItems = RecipeCellModel(recipeId: 1,
+                                                  userId: 1,
+                                                  userImageUrl: nil,
+                                                  username: "mrtcelebi",
+                                                  userRecipeAndFollowerCountText: "5 Tarif 3 Takipçi",
+                                                  recipeTitle: "Makarna Tarifi",
+                                                  categoryName: "Makarna",
+                                                  recipeImageUrl: nil,
+                                                  recipeCommnetAndLikeCountText: "3 Yorum 2 Beğeni",
+                                                  isEditorChoice: false,
+                                                  isFollowing: false)
+            recipesCellItems.append(recipeCellItems)
+        }    
+        
         for _ in 0...20 {
-            let data = CategoryWithRecipesCellModel(categoryId: 1, categoryImageURL: nil, categoryName: "Makarna")
+            
+            let data = CategoryWithRecipesCellModel(categoryId: 1, categoryImageURL: nil, categoryName: "Makarna", cellItems: recipesCellItems)
             cellItems.append(data)
         }
     }
