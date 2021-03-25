@@ -14,7 +14,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         layout.scrollDirection = .vertical
         collectionView.backgroundColor = .gray
-        collectionView.register(CategoryWithRecipesCell.self)
+        collectionView.register(CommentCell.self)
         return collectionView
     }()
 
@@ -44,7 +44,7 @@ extension RecipesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CategoryWithRecipesCell = collectionView.dequeueReusableCell(for: indexPath)
+        let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.set(with: viewModel.cellItem(for: indexPath))
         return cell
     }
@@ -61,7 +61,7 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: view.frame.size.width, height: 270)
+        return CGSize(width: view.frame.size.width, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView,
