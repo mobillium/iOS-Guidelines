@@ -7,3 +7,4 @@
 //
 
 public typealias RequestParameters = [String: Any]
+public typealias RequestHeaders = [String: String]

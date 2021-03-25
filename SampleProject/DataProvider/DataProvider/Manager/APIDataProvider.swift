@@ -16,15 +16,12 @@ public struct APIDataProvider: DataProviderProtocol {
     public init() {}
     
     private func createRequest<T: RequestProtocol>(_ request: T) -> DataRequest {
-        let adapter = APIRequestAdapter(method: request.method,
-                                        parameters: request.parameters,
-                                        encoding: request.encoding,
-                                        url: request.url)
+        let adapter = APIRequestAdapter(request: request)
         let request = AF.request(adapter.url,
                                  method: adapter.method,
                                  parameters: adapter.parameters,
                                  encoding: adapter.encoding,
-                                 headers: nil)
+                                 headers: adapter.headers)
         return request
     }
     
