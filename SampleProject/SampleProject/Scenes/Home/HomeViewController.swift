@@ -12,6 +12,10 @@ import Segmentio
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
+    private let scrollView = UIScrollView()
+    private let contentView = UIViewBuilder()
+        .backgroundColor(.clear)
+        .build()
     private let emailTextField = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
     private let loginButton = ButtonFactory.createPrimaryButton(style: .large)
@@ -36,24 +40,35 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     
     private let commentCountInfoView = CountInfoView()
     private let likeCountInfoView = CountInfoView()
+    private let recipeStepsView = RecipeDetailInfoView()
+    private let recipeIngredientsView = RecipeDetailInfoView()
     
-    private let recipeCellButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let categoryWithRecipeCellButton = ButtonFactory.createPrimaryButton(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
+        addTextFields()
+        addButtons()
+        addDetailInfoViews()
         addButtonTarget()
     }
     
     private func configureContents() {
         navigationItem.title = "Home"
+        view.addSubview(scrollView)
+        scrollView.topToSuperview(usingSafeArea: true)
+        scrollView.edgesToSuperview(excluding: .top)
+        scrollView.addSubview(contentView)
+        contentView.edgesToSuperview()
+        contentView.widthToSuperview()
         
-        view.addSubview(segmentedControl)
+        contentView.addSubview(segmentedControl)
         segmentedControl.topToSuperview(usingSafeArea: true)
         segmentedControl.edgesToSuperview(excluding: [.bottom, .top])
         segmentedControl.height(44)
         
-        view.addSubview(countStackView)
+        contentView.addSubview(countStackView)
         countStackView.topToBottom(of: segmentedControl)
         countStackView.edgesToSuperview(excluding: [.bottom, .top])
         countStackView.addArrangedSubview(commentCountInfoView)
@@ -67,37 +82,67 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         likeCountInfoView.isSelected = true
         likeCountInfoView.count = 3323
         likeCountInfoView.info = L10n.General.like
-        
-        view.addSubview(emailTextField)
+    }
+    
+    private func addTextFields() {
+        contentView.addSubview(emailTextField)
         emailTextField.topToBottom(of: commentCountInfoView).constant = 20
         emailTextField.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         emailTextField.leftImage = .icMail
         emailTextField.title = "E-posta adresi"
         
-        view.addSubview(passwordTextField)
+        contentView.addSubview(passwordTextField)
         passwordTextField.topToBottom(of: emailTextField).constant = 20
         passwordTextField.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         passwordTextField.leftImage = .icPassword
         passwordTextField.title = "Şifre"
-        
-        view.addSubview(loginButton)
+    }
+    
+    private func addButtons() {
+        contentView.addSubview(loginButton)
         loginButton.topToBottom(of: passwordTextField).constant = 20
         loginButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         loginButton.setTitle("Giriş Yap", for: .normal)
         
-        view.addSubview(loginBorderedButton)
+        contentView.addSubview(loginBorderedButton)
         loginBorderedButton.topToBottom(of: loginButton).constant = 20
         loginBorderedButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         loginBorderedButton.setTitle("Giriş Yap", for: .normal)
         
-        view.addSubview(recipeCellButton)
-        recipeCellButton.topToBottom(of: loginBorderedButton).constant = 20
-        recipeCellButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
-        recipeCellButton.setTitle("RecipeCell", for: .normal)
+        contentView.addSubview(categoryWithRecipeCellButton)
+        categoryWithRecipeCellButton.topToBottom(of: loginBorderedButton).constant = 20
+        categoryWithRecipeCellButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        categoryWithRecipeCellButton.setTitle("CategoryWithRecipeCell", for: .normal)
+    }
+    
+    private func addDetailInfoViews() {
+        contentView.addSubview(recipeIngredientsView)
+        recipeIngredientsView.topToBottom(of: categoryWithRecipeCellButton).constant = 20
+        recipeIngredientsView.edgesToSuperview(excluding: [.bottom, .top])
+        recipeIngredientsView.title = "Malzemeler"
+        recipeIngredientsView.info = "8 su bardağı su\n1 silme yemek kaşığı tuz" +
+            "\n250 gram makarna(yarım paket)" +
+            "\n 3 yemek kaşığı sıvı yağ" +
+            "\nMakarna süzgeci"
+        recipeIngredientsView.icon = UIImage.icRestaurant.withRenderingMode(.alwaysTemplate)
+        recipeIngredientsView.iconSubtitle = "4-6"
+        
+        contentView.addSubview(recipeStepsView)
+        recipeStepsView.bottomToSuperview().constant = -20
+        recipeStepsView.topToBottom(of: recipeIngredientsView).constant = 20
+        recipeStepsView.edgesToSuperview(excluding: [.bottom, .top])
+        recipeStepsView.title = "Yapılışı"
+        recipeStepsView.info = "Öncelikle tencereye 8 bardak soğuk suyu ekleyin." +
+            "\nKaynayan suyun içerisine tuzu ve sıvı" +
+            "\nyağı ekleyerek kaynaya kadar kapağı" +
+            "\nkapalı bir şekilde bekleyin." +
+            "\n\n~Afiyet olsun…"
+        recipeStepsView.icon = UIImage.icClock.withRenderingMode(.alwaysTemplate)
+        recipeStepsView.iconSubtitle = "20dk"
     }
     
     private func addButtonTarget() {
-        recipeCellButton.addTarget(self, action: #selector(recipeCellButtonTapped), for: .touchUpInside)
+        categoryWithRecipeCellButton.addTarget(self, action: #selector(recipeCellButtonTapped), for: .touchUpInside)
     }
     
     @IBAction private func recipeCellButtonTapped() {
