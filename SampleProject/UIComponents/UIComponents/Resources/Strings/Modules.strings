@@ -9,3 +9,5 @@
 // MARK: - SignInPassword
 "SignIn.navigationTitle" = "Sign In";
 
+// MARK: - Favorites
+"Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";

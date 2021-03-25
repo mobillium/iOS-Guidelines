@@ -43,12 +43,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private let recipeStepsView = RecipeDetailInfoView()
     private let recipeIngredientsView = RecipeDetailInfoView()
     
+    private let categoryWithRecipeCellButton = ButtonFactory.createPrimaryButton(style: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
         addTextFields()
         addButtons()
         addDetailInfoViews()
+        addButtonTarget()
     }
     
     private func configureContents() {
@@ -105,11 +108,16 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         loginBorderedButton.topToBottom(of: loginButton).constant = 20
         loginBorderedButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         loginBorderedButton.setTitle("Giriş Yap", for: .normal)
+        
+        contentView.addSubview(categoryWithRecipeCellButton)
+        categoryWithRecipeCellButton.topToBottom(of: loginBorderedButton).constant = 20
+        categoryWithRecipeCellButton.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
+        categoryWithRecipeCellButton.setTitle("CategoryWithRecipeCell", for: .normal)
     }
     
     private func addDetailInfoViews() {
         contentView.addSubview(recipeIngredientsView)
-        recipeIngredientsView.topToBottom(of: loginBorderedButton).constant = 20
+        recipeIngredientsView.topToBottom(of: categoryWithRecipeCellButton).constant = 20
         recipeIngredientsView.edgesToSuperview(excluding: [.bottom, .top])
         recipeIngredientsView.title = "Malzemeler"
         recipeIngredientsView.info = "8 su bardağı su\n1 silme yemek kaşığı tuz" +
@@ -131,5 +139,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
             "\n\n~Afiyet olsun…"
         recipeStepsView.icon = UIImage.icClock.withRenderingMode(.alwaysTemplate)
         recipeStepsView.iconSubtitle = "20dk"
+    }
+    
+    private func addButtonTarget() {
+        categoryWithRecipeCellButton.addTarget(self, action: #selector(recipeCellButtonTapped), for: .touchUpInside)
+    }
+    
+    @IBAction private func recipeCellButtonTapped() {
+        viewModel.recipeCellButtonTapped()
     }
 }
