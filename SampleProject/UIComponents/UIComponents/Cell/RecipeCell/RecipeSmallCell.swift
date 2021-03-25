@@ -112,7 +112,7 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
     private func configureCellShadowAndRadius() {
         contentView.layer.cornerRadius = 4
         contentView.clipsToBounds = true
-        contentView.layer.masksToBounds = true
+        contentView.layer.masksToBounds = false
         contentView.layer.borderWidth = 0.0
         contentView.layer.shadowColor = UIColor.appCinder.cgColor
         contentView.layer.shadowOffset = .zero
