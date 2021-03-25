@@ -27,10 +27,18 @@ public enum L10n {
     }
   }
   public enum General {
+    /// Takip Et
+    public static let follow = L10n.tr("General", "follow")
+    /// Takip Ediliyor
+    public static let following = L10n.tr("General", "following")
     /// Sign In
     public static let signIn = L10n.tr("General", "signIn")
   }
   public enum Modules {
+    public enum Favorites {
+      /// TÜMÜNÜ GÖR
+      public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
+    }
     public enum SignIn {
       /// Sign In
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")

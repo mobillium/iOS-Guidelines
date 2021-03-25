@@ -61,7 +61,6 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
         super.init(frame: frame)
         configureCellShadowAndRadius()
         setupConstraints()
-        
     }
     
     required init?(coder: NSCoder) {

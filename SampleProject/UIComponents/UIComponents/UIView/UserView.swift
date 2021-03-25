@@ -106,20 +106,20 @@ public class UserView: UIView {
     }
     
     private func addButtonTarget() {
-        followButton.addTarget(self, action: #selector(followButtonDidTap), for: .touchUpInside)
+        followButton.addTarget(self, action: #selector(followButtonTapped(_:)), for: .touchUpInside)
     }
     
-    @IBAction private func followButtonDidTap() {
+    @IBAction private func followButtonTapped(_ sender: Any?) {
         followButtonTapped?()
     }
     
     public func updatefollowButton() {
         if isFollowing {
-            followButton.setTitle("Takip Ediliyor", for: .normal)
+            followButton.setTitle(L10n.General.following, for: .normal)
             followButton.setTitleColor(.white, for: .normal)
             followButton.backgroundColor = .appRed
         } else {
-            followButton.setTitle("Takip Et", for: .normal)
+            followButton.setTitle(L10n.General.follow, for: .normal)
             followButton.setTitleColor(.appRed, for: .normal)
             followButton.backgroundColor = .appWhite
         }

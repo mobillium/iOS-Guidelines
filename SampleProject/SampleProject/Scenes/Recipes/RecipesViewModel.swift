@@ -10,7 +10,7 @@ import UIKit
 protocol RecipesViewDataSource: AnyObject {
     var numberOfItems: Int { get }
     
-    func cellItem(for indexPath: IndexPath) -> RecipeCellProtocol
+    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol
 }
 
 protocol RecipesViewEventSource: AnyObject {
@@ -21,30 +21,20 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-    var cellItems: [RecipeCellProtocol] = []
+    var cellItems: [CategoryWithRecipesCellProtocol] = []
  
     var numberOfItems: Int {
         return cellItems.count
     }
     
-    func cellItem(for indexPath: IndexPath) -> RecipeCellProtocol {
+    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol {
         let item = cellItems[indexPath.row]
         return item
     }
     
     func addDummyData() {
         for _ in 0...20 {
-            let data = RecipeCellModel(recipeId: 1,
-                                       userId: 1,
-                                       userImageUrl: nil,
-                                       username: "mrtcelebi",
-                                       userRecipeAndFollowerCountText: "10 Tarif 5 Takipçi",
-                                       recipeTitle: "Makarna Tarifi",
-                                       categoryName: "Hamur İşi",
-                                       recipeImageUrl: nil,
-                                       recipeCommnetAndLikeCountText: "4 Yorum 2 beğeni",
-                                       isEditorChoice: true,
-                                       isFollowing: false)
+            let data = CategoryWithRecipesCellModel(categoryId: 1, categoryImageURL: nil, categoryName: "Makarna")
             cellItems.append(data)
         }
     }
