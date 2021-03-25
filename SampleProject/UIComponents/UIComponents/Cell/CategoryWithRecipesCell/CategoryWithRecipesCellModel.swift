@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Utilities
 
 public protocol CategoryWithRecipesCellDataSource: AnyObject {
     var categoryId: Int { get }

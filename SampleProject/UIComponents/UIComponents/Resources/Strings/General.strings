@@ -7,5 +7,7 @@
  */
 
 "signIn" = "Sign In";
+"comment" = "Yorum";
+"like" = "Beğeni";
 "follow" = "Takip Et";
 "following" = "Takip Ediliyor";

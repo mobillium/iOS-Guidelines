@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Utilities
 
 public protocol RecipeCellDataSource: AnyObject {
     var recipeId: Int { get }
