@@ -28,6 +28,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return segmentedControl
     }()
     
+    private let countStackView = UIStackViewBuilder()
+        .axis(.horizontal)
+        .spacing(0)
+        .distribution(.fillEqually)
+        .build()
+    
+    private let commentCountInfoView = CountInfoView()
+    private let likeCountInfoView = CountInfoView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
@@ -41,8 +50,23 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         segmentedControl.edgesToSuperview(excluding: [.bottom, .top])
         segmentedControl.height(44)
         
+        view.addSubview(countStackView)
+        countStackView.topToBottom(of: segmentedControl)
+        countStackView.edgesToSuperview(excluding: [.bottom, .top])
+        countStackView.addArrangedSubview(commentCountInfoView)
+        countStackView.addArrangedSubview(likeCountInfoView)
+        commentCountInfoView.isUserInteractionEnabled = false
+        commentCountInfoView.icon = UIImage.icComment.withRenderingMode(.alwaysTemplate)
+        commentCountInfoView.isSelected = false
+        commentCountInfoView.count = 10
+        commentCountInfoView.info = L10n.General.comment
+        likeCountInfoView.icon = UIImage.icHeart.withRenderingMode(.alwaysTemplate)
+        likeCountInfoView.isSelected = true
+        likeCountInfoView.count = 3323
+        likeCountInfoView.info = L10n.General.like
+        
         view.addSubview(emailTextField)
-        emailTextField.topToBottom(of: segmentedControl).constant = 20
+        emailTextField.topToBottom(of: commentCountInfoView).constant = 20
         emailTextField.edgesToSuperview(excluding: [.bottom, .top], insets: .init(top: 20, left: 20, bottom: 20, right: 20))
         emailTextField.leftImage = .icMail
         emailTextField.title = "E-posta adresi"

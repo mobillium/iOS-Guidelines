@@ -27,6 +27,10 @@ public enum L10n {
     }
   }
   public enum General {
+    /// Yorum
+    public static let comment = L10n.tr("General", "comment")
+    /// Beğeni
+    public static let like = L10n.tr("General", "like")
     /// Sign In
     public static let signIn = L10n.tr("General", "signIn")
   }
