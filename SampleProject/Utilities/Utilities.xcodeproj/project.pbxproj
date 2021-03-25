@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2A25CC80AEAA52436711DED9 /* Pods_UtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C280C6DE6AF952AD56767055 /* Pods_UtilitiesTests.framework */; };
+		7AC2B0FC260C8C77008160B0 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B0FB260C8C77008160B0 /* Int+Extensions.swift */; };
 		7AFC73852551FF3100B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC737B2551FF3100B30789 /* Utilities.framework */; };
 		7AFC738C2551FF3100B30789 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC737E2551FF3100B30789 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7AFC73BD2552001F00B30789 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73B72552001F00B30789 /* KeyboardHelper.swift */; };
@@ -31,6 +32,7 @@
 		2813822194058BB9EA54B868 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		503B4C4AE0D4997B1F956FE8 /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75300BE7C777B2B4958676D3 /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC2B0FB260C8C77008160B0 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		7AFC737B2551FF3100B30789 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC737E2551FF3100B30789 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		7AFC737F2551FF3100B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				7AFC73BB2552001F00B30789 /* String+Extensions.swift */,
 				7AFC73BC2552001F00B30789 /* UITextField+Extensions.swift */,
+				7AC2B0FB260C8C77008160B0 /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				7AFC73C02552001F00B30789 /* UITextField+Extensions.swift in Sources */,
 				7AFC73BF2552001F00B30789 /* String+Extensions.swift in Sources */,
 				7AFC73BE2552001F00B30789 /* Closures.swift in Sources */,
+				7AC2B0FC260C8C77008160B0 /* Int+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
