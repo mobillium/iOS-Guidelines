@@ -8,7 +8,7 @@
 
 import UIKit
 
-final public class RecipeSmallCellViewController: UIViewController {
+final public class RecipeSmallCellView: UIView {
     
     public let collecitonView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,19 +27,25 @@ final public class RecipeSmallCellViewController: UIViewController {
         }
     }
     
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        setupConstraints()
-        setupCollectionView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureConstraints()
+        configureCollectionView()
     }
     
-    private func setupConstraints() {
-        view.backgroundColor = .red
-        view.addSubview(collecitonView)
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureConstraints()
+        configureCollectionView()
+    }
+    
+    private func configureConstraints() {
+        backgroundColor = .red
+        addSubview(collecitonView)
         collecitonView.edgesToSuperview(usingSafeArea: true)
     }
     
-    private func setupCollectionView() {
+    private func configureCollectionView() {
         collecitonView.dataSource = self
         collecitonView.delegate = self
         collecitonView.register(RecipeSmallCell.self)
@@ -47,7 +53,7 @@ final public class RecipeSmallCellViewController: UIViewController {
 }
 
 // MARK: - UICollectionView DataSource
-extension RecipeSmallCellViewController: UICollectionViewDataSource {
+extension RecipeSmallCellView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellItems?.count ?? 0
@@ -63,7 +69,7 @@ extension RecipeSmallCellViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionView Delegate
-extension RecipeSmallCellViewController: UICollectionViewDelegate {
+extension RecipeSmallCellView: UICollectionViewDelegate {
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cellItem = cellItems?[indexPath.row] else { return }
         didSelectRecipe?(cellItem.recipeId)
@@ -71,7 +77,7 @@ extension RecipeSmallCellViewController: UICollectionViewDelegate {
 }
 
 // MARK: - UICollectionView Delegate FlowLayout
-extension RecipeSmallCellViewController: UICollectionViewDelegateFlowLayout {
+extension RecipeSmallCellView: UICollectionViewDelegateFlowLayout {
     public func collectionView(_ collectionView: UICollectionView,
                                layout collectionViewLayout: UICollectionViewLayout,
                                sizeForItemAt indexPath: IndexPath) -> CGSize {

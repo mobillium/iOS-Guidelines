@@ -33,21 +33,21 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         .build()
     
     weak var viewModel: CategoryWithRecipesCellProtocol?
-    public let recipeSmallCellViewController = RecipeSmallCellViewController()
+    public let recipeSmallCellView = RecipeSmallCellView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupConstraints()
+        configureConstraints()
         addButtonTarget()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupConstraints()
+        configureConstraints()
         addButtonTarget()
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         backgroundColor = .white
         
         contentView.addSubview(topContainerView)
@@ -70,9 +70,9 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         seperator.topToBottom(of: topContainerView)
         seperator.size(CGSize(width: contentView.frame.width, height: 1))
         
-        contentView.addSubview(recipeSmallCellViewController.view)
-        recipeSmallCellViewController.view.edgesToSuperview(excluding: .top)
-        recipeSmallCellViewController.view.topToBottom(of: seperator)
+        contentView.addSubview(recipeSmallCellView)
+        recipeSmallCellView.edgesToSuperview(excluding: .top)
+        recipeSmallCellView.topToBottom(of: seperator)
     }
     
     public override func prepareForReuse() {
@@ -88,7 +88,7 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
     @objc
     private func seeAllButtonTapped(_ sender: UIButton) {
         guard let categoryId = viewModel?.categoryId, let categoryName = viewModel?.categoryName else { return }
-        viewModel?.seeAllButtonDidTap?(categoryId, categoryName)
+        viewModel?.seeAllButtonTapped?(categoryId, categoryName)
     }
 
 }
@@ -99,7 +99,7 @@ public extension CategoryWithRecipesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImageURL)
         self.categoryNameLabel.text = viewModel.categoryName
-        self.recipeSmallCellViewController.didSelectRecipe = viewModel.didSelectRecipe
-        self.recipeSmallCellViewController.cellItems = viewModel.cellItems
+        self.recipeSmallCellView.didSelectRecipe = viewModel.didSelectRecipe
+        self.recipeSmallCellView.cellItems = viewModel.cellItems
     }
 }

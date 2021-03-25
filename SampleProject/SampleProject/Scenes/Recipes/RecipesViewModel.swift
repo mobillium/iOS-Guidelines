@@ -46,8 +46,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
                                                   categoryName: "Makarna",
                                                   recipeImageUrl: nil,
                                                   recipeCommnetAndLikeCountText: "3 Yorum 2 Beğeni",
-                                                  isEditorChoice: false,
-                                                  isFollowing: false)
+                                                  isEditorChoice: false)
             recipesCellItems.append(recipeCellItems)
         }    
         

@@ -19,7 +19,6 @@ public protocol RecipeCellDataSource: AnyObject {
     var recipeImageUrl: String? { get }
     var recipeCommnetAndLikeCountText: String? { get }
     var isEditorChoice: Bool { get }
-    var isFollowing: Bool { get }
 }
 
 public protocol RecipeCellEventSource: AnyObject {
@@ -39,7 +38,6 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var recipeImageUrl: String?
     public var recipeCommnetAndLikeCountText: String?
     public var isEditorChoice: Bool = false
-    public var isFollowing: Bool = false
     public var followButtonTapped: VoidClosure?
     
     public init(recipeId: Int,
@@ -50,8 +48,7 @@ public class RecipeCellModel: RecipeCellProtocol {
                 recipeTitle: String?, categoryName: String?,
                 recipeImageUrl: String?,
                 recipeCommnetAndLikeCountText: String?,
-                isEditorChoice: Bool,
-                isFollowing: Bool) {
+                isEditorChoice: Bool) {
         self.recipeId = recipeId
         self.userId = userId
         self.userImageUrl = userImageUrl
@@ -62,6 +59,5 @@ public class RecipeCellModel: RecipeCellProtocol {
         self.recipeImageUrl = recipeImageUrl
         self.recipeCommnetAndLikeCountText = recipeCommnetAndLikeCountText
         self.isEditorChoice = isEditorChoice
-        self.isFollowing = isFollowing
     }
 }

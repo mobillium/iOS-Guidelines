@@ -17,7 +17,7 @@ public protocol CategoryWithRecipesCellDataSource: AnyObject {
 
 public protocol CategoryWithRecipesCellEventSource: AnyObject {
     var didSelectRecipe: IntClosure? { get set }
-    var seeAllButtonDidTap: ((Int, String) -> Void)? { get set }
+    var seeAllButtonTapped: ((Int, String) -> Void)? { get set }
 }
 
 public protocol CategoryWithRecipesCellProtocol: CategoryWithRecipesCellDataSource, CategoryWithRecipesCellEventSource {
@@ -28,7 +28,7 @@ public final class CategoryWithRecipesCellModel: CategoryWithRecipesCellProtocol
     public var categoryId: Int
     public var categoryImageURL: String?
     public var categoryName: String?
-    public var seeAllButtonDidTap: ((Int, String) -> Void)?
+    public var seeAllButtonTapped: ((Int, String) -> Void)?
     public var cellItems: [RecipeCellProtocol]
     public var didSelectRecipe: IntClosure?
     

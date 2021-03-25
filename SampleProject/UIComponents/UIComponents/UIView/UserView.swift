@@ -62,14 +62,20 @@ public class UserView: UIView {
     }
     
     let userViewType: UserViewType
-    public var isFollowing: Bool = false
+    
+    /// Only use this variable when you enable followButton
+    public var isFollowing: Bool = false {
+        didSet {
+            updateFollowButton()
+        }
+    }
+    
     public var followButtonTapped: VoidClosure?
     
     init(userViewType: UserViewType) {
         self.userViewType = userViewType
         super.init(frame: .zero)
         configureContents()
-        updatefollowButton()
         addButtonTarget()
     }
     
@@ -112,7 +118,7 @@ public class UserView: UIView {
         followButtonTapped?()
     }
     
-    public func updatefollowButton() {
+    private func updateFollowButton() {
         if isFollowing {
             followButton.setTitle(L10n.General.following, for: .normal)
             followButton.setTitleColor(.white, for: .normal)

@@ -65,15 +65,15 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupConstraints()
+        configureConstraints()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupConstraints()
+        configureConstraints()
     }
     
-    private func setupConstraints() {
+    private func configureConstraints() {
         backgroundColor = .white
         
         contentView.addSubview(userView)
@@ -138,9 +138,6 @@ public extension RecipeCell {
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
         userView.userImageUrl = viewModel.userImageUrl
-        userView.isFollowing = viewModel.isFollowing
-        userView.updatefollowButton()
-        userView.followButtonTapped = viewModel.followButtonTapped
         recipeTitleLabel.text = viewModel.recipeTitle
         recipeCategoryLabel.text = viewModel.categoryName
         recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText
