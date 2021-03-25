@@ -17,7 +17,7 @@ public protocol RecipeCellDataSource: AnyObject {
     var categoryName: String? { get }
     var recipeImageUrl: String? { get }
     var recipeCommnetAndLikeCountText: String? { get }
-    var isEditorChoice: Bool? { get }
+    var isEditorChoice: Bool { get }
 }
 
 public protocol RecipeCellEventSource: AnyObject {
@@ -35,7 +35,7 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var categoryName: String?
     public var recipeImageUrl: String?
     public var recipeCommnetAndLikeCountText: String?
-    public var isEditorChoice: Bool?
+    public var isEditorChoice: Bool = false
     
     public init(id: Int,
                 userImageUrl: String?,
@@ -44,7 +44,7 @@ public class RecipeCellModel: RecipeCellProtocol {
                 recipeTitle: String?, categoryName: String?,
                 recipeImageUrl: String?,
                 recipeCommnetAndLikeCountText: String?,
-                isEditorChoice: Bool?) {
+                isEditorChoice: Bool) {
         self.id = id
         self.userImageUrl = userImageUrl
         self.username = username

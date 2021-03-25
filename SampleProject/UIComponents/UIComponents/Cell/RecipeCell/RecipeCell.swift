@@ -39,20 +39,20 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .contentMode(.scaleAspectFill)
         .build()
     
-    private let editorsPickImageContainerView = UIViewBuilder()
-        .backgroundColor(.white)
-        .cornerRadius(20)
-        .clipsToBounds(true)
-        .shadowColor(UIColor.appCinder.cgColor)
-        .shadowOpacity(0.4)
-        .shadowOffset(.zero)
-        .shadowRadius(4)
-        .build()
-    
-    private let editorsPickImageView = UIImageViewBuilder()
-        .contentMode(.scaleAspectFit)
-        .image(.imgEditorsPick)
-        .build()
+    private let editoryPickImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .center
+        let image = UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit)
+        imageView.image = image
+        imageView.size(.init(width: 40, height: 40))
+        imageView.layer.cornerRadius = 20
+        imageView.layer.shadowColor = UIColor.appCinder.cgColor
+        imageView.layer.shadowOpacity = 0.40
+        imageView.layer.shadowOffset = .zero
+        imageView.layer.shadowRadius = 4
+        imageView.backgroundColor = .appWhite
+        return imageView
+    }()
     
     private let recipeCommentAndLikeContainerView = UIView()
     
@@ -103,13 +103,9 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         recipeImageView.trailingToSuperview().constant = -15
         recipeImageView.aspectRatio(1 / 1)
         
-        recipeImageView.addSubview(editorsPickImageContainerView)
-        editorsPickImageContainerView.topToSuperview(offset: 15)
-        editorsPickImageContainerView.trailingToSuperview(offset: 15)
-        editorsPickImageContainerView.size(CGSize(width: 40, height: 40))
-        
-        editorsPickImageContainerView.addSubview(editorsPickImageView)
-        editorsPickImageView.edgesToSuperview(insets: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
+        contentView.addSubview(editoryPickImageView)
+        editoryPickImageView.top(to: recipeImageView).constant = 15
+        editoryPickImageView.trailing(to: recipeImageView).constant = -15
         
         contentView.addSubview(recipeCommentAndLikeContainerView)
         recipeCommentAndLikeContainerView.topToBottom(of: recipeImageView)
@@ -146,6 +142,6 @@ public extension RecipeCell {
         recipeCategoryLabel.text = viewModel.categoryName
         recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText
         recipeImageView.setImage(viewModel.recipeImageUrl)
-        editorsPickImageContainerView.isHidden = !(viewModel.isEditorChoice ?? false)
+        editoryPickImageView.isHidden = !viewModel.isEditorChoice
     }
 }

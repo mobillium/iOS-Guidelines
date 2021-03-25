@@ -33,16 +33,17 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     }
     
     func addDummyData() {
-        let data = RecipeCellModel(id: 1,
-                                   userImageUrl: nil,
-                                   username: "mrtcelebi",
-                                   userRecipeAndFollowerCountText: "10 Tarif 5 Takipçi",
-                                   recipeTitle: "Makarna Tarifi",
-                                   categoryName: "Hamur İşi",
-                                   recipeImageUrl: nil,
-                                   recipeCommnetAndLikeCountText: "4 Yorum 2 beğeni",
-                                   isEditorChoice: true)
-        
-        cellItems.append(data)
+        for _ in 0...20 {
+            let data = RecipeCellModel(id: 1,
+                                       userImageUrl: nil,
+                                       username: "mrtcelebi",
+                                       userRecipeAndFollowerCountText: "10 Tarif 5 Takipçi",
+                                       recipeTitle: "Makarna Tarifi",
+                                       categoryName: "Hamur İşi",
+                                       recipeImageUrl: nil,
+                                       recipeCommnetAndLikeCountText: "4 Yorum 2 beğeni",
+                                       isEditorChoice: true)
+            cellItems.append(data)
+        }
     }
 }
