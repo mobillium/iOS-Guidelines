@@ -21,6 +21,6 @@ public extension APIRequest {
 
 public extension APIRequest {
     var url: String {
-        return "baseurl" + path
+        return "https://fodamy.mobillium.com/api/" + path
     }
 }
