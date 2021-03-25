@@ -37,12 +37,17 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .cornerRadius(4)
         .clipsToBounds(true)
         .contentMode(.scaleAspectFill)
+        .backgroundColor(.lightGray)
         .build()
     
     private let editorsPickImageContainerView = UIViewBuilder()
         .backgroundColor(.white)
         .cornerRadius(20)
         .clipsToBounds(true)
+        .shadowColor(UIColor.appCinder.cgColor)
+        .shadowOpacity(0.4)
+        .shadowOffset(.zero)
+        .shadowRadius(4)
         .build()
     
     private let editorsPickImageView = UIImageViewBuilder()
@@ -120,6 +125,9 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     
     public override func prepareForReuse() {
         super.prepareForReuse()
+        self.userView.username = nil
+        self.userView.userImageUrl = nil
+        self.userView.recipeAndFollowerCountText = nil
         self.recipeTitleLabel.text = nil
         self.recipeCategoryLabel.text = nil
         self.recipeImageView.image = nil
@@ -134,7 +142,7 @@ public extension RecipeCell {
         self.viewModel = viewModel
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
-        userView.userImageView.setImage(viewModel.userImageUrl)
+        userView.userImageUrl = viewModel.userImageUrl
         recipeTitleLabel.text = viewModel.recipeTitle
         recipeCategoryLabel.text = viewModel.categoryName
         recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText

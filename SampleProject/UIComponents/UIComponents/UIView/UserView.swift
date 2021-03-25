@@ -10,7 +10,7 @@ import UIKit
 
 public class UserView: UIView {
     
-    public let userImageView = UIImageViewBuilder()
+    private let userImageView = UIImageViewBuilder()
         .cornerRadius(20)
         .clipsToBounds(true)
         .masksToBounds(false)
@@ -33,6 +33,16 @@ public class UserView: UIView {
         .build()
     
     private lazy var followButton = ButtonFactory.createPrimaryBorderedButton(style: .small)
+    
+    public var userImageUrl: String? {
+        willSet {
+            if let url = newValue {
+                userImageView.setImage(url)
+            } else {
+                userImageView.image = nil
+            }
+        }
+    }
     
     public var recipeAndFollowerCountText: String? {
         willSet {
