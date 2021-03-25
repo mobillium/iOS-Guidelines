@@ -10,7 +10,7 @@ import UIKit
 protocol RecipesViewDataSource: AnyObject {
     var numberOfItems: Int { get }
     
-    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol
+    func cellItem(for indexPath: IndexPath) -> CommentCellProtocol
 }
 
 protocol RecipesViewEventSource: AnyObject {
@@ -21,38 +21,29 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
 }
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
-    var cellItems: [CategoryWithRecipesCellProtocol] = []
+    var cellItems: [CommentCellProtocol] = []
  
-    var recipesCellItems: [RecipeCellModel] = []
     
     var numberOfItems: Int {
         return cellItems.count
     }
     
-    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol {
+    func cellItem(for indexPath: IndexPath) -> CommentCellProtocol {
         let item = cellItems[indexPath.row]
         return item
     }
     
     func addDummyData() {
         
-        for _ in 0...10 {
-            let recipeCellItems = RecipeCellModel(recipeId: 1,
-                                                  userId: 1,
-                                                  userImageUrl: nil,
-                                                  username: "mrtcelebi",
-                                                  userRecipeAndFollowerCountText: "5 Tarif 3 Takipçi",
-                                                  recipeTitle: "Makarna Tarifi",
-                                                  categoryName: "Makarna",
-                                                  recipeImageUrl: nil,
-                                                  recipeCommnetAndLikeCountText: "3 Yorum 2 Beğeni",
-                                                  isEditorChoice: false)
-            recipesCellItems.append(recipeCellItems)
-        }    
-        
         for _ in 0...20 {
             
-            let data = CategoryWithRecipesCellModel(categoryId: 1, categoryImageURL: nil, categoryName: "Makarna", cellItems: recipesCellItems)
+            let data = CommentCellModel(userId: 1,
+                                        imageUrl: nil,
+                                        username: "mrtcelebi",
+                                        recipeAndFollowerCountText: "5 Tarif 2 Takipçi",
+                                        timeDifferenceText: "3 dakika önce",
+                                        commentId: 2,
+                                        commentText: "Merhaba ellerinize sağlık çok güzel olmuş")
             cellItems.append(data)
         }
     }

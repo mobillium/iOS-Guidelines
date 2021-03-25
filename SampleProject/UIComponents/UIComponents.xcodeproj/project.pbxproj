@@ -54,6 +54,8 @@
 		A20A4BA4260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4BA2260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift */; };
 		A20A4BA5260C8EFF00F1ACFF /* CategoryWithRecipesCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4BA3260C8EFF00F1ACFF /* CategoryWithRecipesCellModel.swift */; };
 		A20A4BE2260C9C8C00F1ACFF /* RecipeSmallCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4BE1260C9C8C00F1ACFF /* RecipeSmallCellView.swift */; };
+		A21DA4CC260CBD6700493FFE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DA4CA260CBD6700493FFE /* CommentCell.swift */; };
+		A21DA4CD260CBD6700493FFE /* CommentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DA4CB260CBD6700493FFE /* CommentCellModel.swift */; };
 		A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D3260B3C6200FB990F /* RecipeCell.swift */; };
 		A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */; };
 		A2B360DB260B3F4100FB990F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360DA260B3F4100FB990F /* UserView.swift */; };
@@ -136,6 +138,8 @@
 		A20A4BA2260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryWithRecipesCell.swift; sourceTree = "<group>"; };
 		A20A4BA3260C8EFF00F1ACFF /* CategoryWithRecipesCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryWithRecipesCellModel.swift; sourceTree = "<group>"; };
 		A20A4BE1260C9C8C00F1ACFF /* RecipeSmallCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSmallCellView.swift; sourceTree = "<group>"; };
+		A21DA4CA260CBD6700493FFE /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		A21DA4CB260CBD6700493FFE /* CommentCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellModel.swift; sourceTree = "<group>"; };
 		A2B360D3260B3C6200FB990F /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellModel.swift; sourceTree = "<group>"; };
 		A2B360DA260B3F4100FB990F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -383,9 +387,19 @@
 			path = CategoryWithRecipesCell;
 			sourceTree = "<group>";
 		};
+		A21DA4C3260CBD3A00493FFE /* CommentCell */ = {
+			isa = PBXGroup;
+			children = (
+				A21DA4CA260CBD6700493FFE /* CommentCell.swift */,
+				A21DA4CB260CBD6700493FFE /* CommentCellModel.swift */,
+			);
+			path = CommentCell;
+			sourceTree = "<group>";
+		};
 		A2B360D1260B3BE800FB990F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A21DA4C3260CBD3A00493FFE /* CommentCell */,
 				A20A4BA1260C8EDA00F1ACFF /* CategoryWithRecipesCell */,
 				A2B360D2260B3C1C00FB990F /* RecipeCell */,
 			);
@@ -601,6 +615,7 @@
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
 				7AC2B13C260CA589008160B0 /* RecipeDetailInfoView.swift in Sources */,
 				A2B36136260B66EA00FB990F /* UIImageView+Extensions.swift in Sources */,
+				A21DA4CC260CBD6700493FFE /* CommentCell.swift in Sources */,
 				A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */,
 				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
 				7A716D00260B50FF008B91B7 /* UIImage+Extensions.swift in Sources */,
@@ -619,6 +634,7 @@
 				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
 				A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
+				A21DA4CD260CBD6700493FFE /* CommentCellModel.swift in Sources */,
 				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
 				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,
 				7A716D60260B6DEC008B91B7 /* TostWarningView.swift in Sources */,
