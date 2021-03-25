@@ -6,6 +6,5 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-final class HomeRouter: Router, HomeRouter.Routes {
-    typealias Routes = RecipesRoute
+final class HomeRouter: Router {
 }
