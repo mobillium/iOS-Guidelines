@@ -37,7 +37,6 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .cornerRadius(4)
         .clipsToBounds(true)
         .contentMode(.scaleAspectFill)
-        .backgroundColor(.lightGray)
         .build()
     
     private let editorsPickImageContainerView = UIViewBuilder()
