@@ -44,6 +44,8 @@
 		7AC2B20B260D003E008160B0 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */; };
 		7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */; };
 		7AC2B20D260D003E008160B0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B200260D003E008160B0 /* ForgotPasswordRequest.swift */; };
+		7AC9DCFF260DE73B00D2874D /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */; };
+		7AC9DD03260DED1900D2874D /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9DD02260DED1900D2874D /* APILogger.swift */; };
 		7AFC73352551FE8C00B30789 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC732B2551FE8C00B30789 /* DataProvider.framework */; };
 		7AFC733C2551FE8C00B30789 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC732E2551FE8C00B30789 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA437F60DC149107572A5129 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D68F791B41615D09FC98E92 /* Pods_DataProvider.framework */; };
@@ -112,6 +114,8 @@
 		7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
 		7AC2B200260D003E008160B0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
+		7AC9DD02260DED1900D2874D /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		7AFC732B2551FE8C00B30789 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC732E2551FE8C00B30789 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		7AFC732F2551FE8C00B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				7A17BB80255203000086B35B /* APIDataProvider.swift */,
 				7A17BB81255203000086B35B /* APIRequestAdapter.swift */,
 				7A17BB82255203000086B35B /* APIRequest.swift */,
+				7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */,
+				7AC9DD02260DED1900D2874D /* APILogger.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -485,8 +491,10 @@
 				7AC2B209260D003E008160B0 /* GetCategoriesRequest.swift in Sources */,
 				7AC2B1E7260D0006008160B0 /* SuccessResponse.swift in Sources */,
 				7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */,
+				7AC9DD03260DED1900D2874D /* APILogger.swift in Sources */,
 				7AC2B20B260D003E008160B0 /* LogoutRequest.swift in Sources */,
 				7A17BB89255203000086B35B /* APIDataProvider.swift in Sources */,
+				7AC9DCFF260DE73B00D2874D /* APIRequestInterceptor.swift in Sources */,
 				7AC2B205260D003E008160B0 /* GetRecipeCommentsRequest.swift in Sources */,
 				7AC2B20D260D003E008160B0 /* ForgotPasswordRequest.swift in Sources */,
 				7AC2B1E4260D0006008160B0 /* Pagination.swift in Sources */,
