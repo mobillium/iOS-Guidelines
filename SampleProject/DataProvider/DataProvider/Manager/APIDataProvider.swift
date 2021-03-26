@@ -12,16 +12,21 @@ public struct APIDataProvider: DataProviderProtocol {
     
     // Singleton
     public static let shared = APIDataProvider()
+    #if DEBUG
+    private let session = Session(interceptor: APIRequestInterceptor.shared, eventMonitors: [APILogger.shared])
+    #else
+    private let session = Session(interceptor: APIRequestInterceptor.shared)
+    #endif
     
     public init() {}
     
     private func createRequest<T: RequestProtocol>(_ request: T) -> DataRequest {
         let adapter = APIRequestAdapter(request: request)
-        let request = AF.request(adapter.url,
-                                 method: adapter.method,
-                                 parameters: adapter.parameters,
-                                 encoding: adapter.encoding,
-                                 headers: adapter.headers)
+        let request = session.request(adapter.url,
+                                      method: adapter.method,
+                                      parameters: adapter.parameters,
+                                      encoding: adapter.encoding,
+                                      headers: adapter.headers)
         return request
     }
     

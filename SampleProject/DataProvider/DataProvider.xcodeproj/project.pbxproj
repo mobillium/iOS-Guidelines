@@ -18,6 +18,34 @@
 		7A17BB90255203000086B35B /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB88255203000086B35B /* DataProviderProtocol.swift */; };
 		7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; };
 		7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7AC2B1E3260D0006008160B0 /* MainCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D6260D0005008160B0 /* MainCategory.swift */; };
+		7AC2B1E4260D0006008160B0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D7260D0005008160B0 /* Pagination.swift */; };
+		7AC2B1E5260D0006008160B0 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D8260D0005008160B0 /* Auth.swift */; };
+		7AC2B1E6260D0006008160B0 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D9260D0005008160B0 /* Comment.swift */; };
+		7AC2B1E7260D0006008160B0 /* SuccessResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DA260D0005008160B0 /* SuccessResponse.swift */; };
+		7AC2B1E8260D0006008160B0 /* RecipeTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DB260D0005008160B0 /* RecipeTime.swift */; };
+		7AC2B1E9260D0006008160B0 /* NumberOfPerson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DC260D0005008160B0 /* NumberOfPerson.swift */; };
+		7AC2B1EA260D0006008160B0 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DD260D0005008160B0 /* CategoryDetail.swift */; };
+		7AC2B1EB260D0006008160B0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DE260D0005008160B0 /* Image.swift */; };
+		7AC2B1EC260D0006008160B0 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1DF260D0006008160B0 /* Recipe.swift */; };
+		7AC2B1ED260D0006008160B0 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1E0260D0006008160B0 /* BaseResponse.swift */; };
+		7AC2B1EE260D0006008160B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1E1260D0006008160B0 /* User.swift */; };
+		7AC2B1EF260D0006008160B0 /* RecipeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1E2260D0006008160B0 /* RecipeDetail.swift */; };
+		7AC2B201260D003E008160B0 /* UserFollowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F2260D003E008160B0 /* UserFollowRequest.swift */; };
+		7AC2B202260D003E008160B0 /* PostRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F4260D003E008160B0 /* PostRecipeCommentRequest.swift */; };
+		7AC2B203260D003E008160B0 /* DeleteRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F5260D003E008160B0 /* DeleteRecipeCommentRequest.swift */; };
+		7AC2B204260D003E008160B0 /* EditRecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F6260D003E008160B0 /* EditRecipeCommentRequest.swift */; };
+		7AC2B205260D003E008160B0 /* GetRecipeCommentsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F7260D003E008160B0 /* GetRecipeCommentsRequest.swift */; };
+		7AC2B206260D003E008160B0 /* RecipeLikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */; };
+		7AC2B207260D003E008160B0 /* GetRecipeDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */; };
+		7AC2B208260D003E008160B0 /* GetRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */; };
+		7AC2B209260D003E008160B0 /* GetCategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */; };
+		7AC2B20A260D003E008160B0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FD260D003E008160B0 /* LoginRequest.swift */; };
+		7AC2B20B260D003E008160B0 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */; };
+		7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */; };
+		7AC2B20D260D003E008160B0 /* ForgotPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B200260D003E008160B0 /* ForgotPasswordRequest.swift */; };
+		7AC9DCFF260DE73B00D2874D /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */; };
+		7AC9DD03260DED1900D2874D /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9DD02260DED1900D2874D /* APILogger.swift */; };
 		7AFC73352551FE8C00B30789 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC732B2551FE8C00B30789 /* DataProvider.framework */; };
 		7AFC733C2551FE8C00B30789 /* DataProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC732E2551FE8C00B30789 /* DataProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA437F60DC149107572A5129 /* Pods_DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D68F791B41615D09FC98E92 /* Pods_DataProvider.framework */; };
@@ -60,6 +88,34 @@
 		7A17BB87255203000086B35B /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
 		7A17BB88255203000086B35B /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		7A73C83325CC18A000322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AC2B1D6260D0005008160B0 /* MainCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategory.swift; sourceTree = "<group>"; };
+		7AC2B1D7260D0005008160B0 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		7AC2B1D8260D0005008160B0 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		7AC2B1D9260D0005008160B0 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		7AC2B1DA260D0005008160B0 /* SuccessResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessResponse.swift; sourceTree = "<group>"; };
+		7AC2B1DB260D0005008160B0 /* RecipeTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeTime.swift; sourceTree = "<group>"; };
+		7AC2B1DC260D0005008160B0 /* NumberOfPerson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberOfPerson.swift; sourceTree = "<group>"; };
+		7AC2B1DD260D0005008160B0 /* CategoryDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
+		7AC2B1DE260D0005008160B0 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		7AC2B1DF260D0006008160B0 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		7AC2B1E0260D0006008160B0 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		7AC2B1E1260D0006008160B0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7AC2B1E2260D0006008160B0 /* RecipeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetail.swift; sourceTree = "<group>"; };
+		7AC2B1F2260D003E008160B0 /* UserFollowRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFollowRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F4260D003E008160B0 /* PostRecipeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRecipeCommentRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F5260D003E008160B0 /* DeleteRecipeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeleteRecipeCommentRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F6260D003E008160B0 /* EditRecipeCommentRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRecipeCommentRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F7260D003E008160B0 /* GetRecipeCommentsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRecipeCommentsRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeLikeRequest.swift; sourceTree = "<group>"; };
+		7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRecipesRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCategoriesRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FD260D003E008160B0 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		7AC2B200260D003E008160B0 /* ForgotPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRequest.swift; sourceTree = "<group>"; };
+		7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
+		7AC9DD02260DED1900D2874D /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
 		7AFC732B2551FE8C00B30789 /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC732E2551FE8C00B30789 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
 		7AFC732F2551FE8C00B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +180,8 @@
 				7A17BB80255203000086B35B /* APIDataProvider.swift */,
 				7A17BB81255203000086B35B /* APIRequestAdapter.swift */,
 				7A17BB82255203000086B35B /* APIRequest.swift */,
+				7AC9DCFE260DE73B00D2874D /* APIRequestInterceptor.swift */,
+				7AC9DD02260DED1900D2874D /* APILogger.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -138,6 +196,78 @@
 				7A17BB88255203000086B35B /* DataProviderProtocol.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		7AC2B1AC260CFE8C008160B0 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B211260D0077008160B0 /* User */,
+				7AC2B20F260D004A008160B0 /* Recipe */,
+				7AC2B1FC260D003E008160B0 /* Auth */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		7AC2B1B4260CFECB008160B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B1D8260D0005008160B0 /* Auth.swift */,
+				7AC2B1E0260D0006008160B0 /* BaseResponse.swift */,
+				7AC2B1DD260D0005008160B0 /* CategoryDetail.swift */,
+				7AC2B1D9260D0005008160B0 /* Comment.swift */,
+				7AC2B1DE260D0005008160B0 /* Image.swift */,
+				7AC2B1D6260D0005008160B0 /* MainCategory.swift */,
+				7AC2B1DC260D0005008160B0 /* NumberOfPerson.swift */,
+				7AC2B1D7260D0005008160B0 /* Pagination.swift */,
+				7AC2B1DF260D0006008160B0 /* Recipe.swift */,
+				7AC2B1E2260D0006008160B0 /* RecipeDetail.swift */,
+				7AC2B1DB260D0005008160B0 /* RecipeTime.swift */,
+				7AC2B1DA260D0005008160B0 /* SuccessResponse.swift */,
+				7AC2B1E1260D0006008160B0 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AC2B1F3260D003E008160B0 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B1F4260D003E008160B0 /* PostRecipeCommentRequest.swift */,
+				7AC2B1F5260D003E008160B0 /* DeleteRecipeCommentRequest.swift */,
+				7AC2B1F6260D003E008160B0 /* EditRecipeCommentRequest.swift */,
+				7AC2B1F7260D003E008160B0 /* GetRecipeCommentsRequest.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		7AC2B1FC260D003E008160B0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B1FD260D003E008160B0 /* LoginRequest.swift */,
+				7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */,
+				7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */,
+				7AC2B200260D003E008160B0 /* ForgotPasswordRequest.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7AC2B20F260D004A008160B0 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */,
+				7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */,
+				7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */,
+				7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */,
+				7AC2B1F3260D003E008160B0 /* Comment */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		7AC2B211260D0077008160B0 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				7AC2B1F2260D003E008160B0 /* UserFollowRequest.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		7AFC73212551FE8C00B30789 = {
@@ -163,6 +293,8 @@
 		7AFC732D2551FE8C00B30789 /* DataProvider */ = {
 			isa = PBXGroup;
 			children = (
+				7AC2B1B4260CFECB008160B0 /* Model */,
+				7AC2B1AC260CFE8C008160B0 /* Requests */,
 				7A17BB83255203000086B35B /* Core */,
 				7A17BB7F255203000086B35B /* Manager */,
 				7AFC732E2551FE8C00B30789 /* DataProvider.h */,
@@ -338,14 +470,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC2B1E5260D0006008160B0 /* Auth.swift in Sources */,
+				7AC2B1E8260D0006008160B0 /* RecipeTime.swift in Sources */,
+				7AC2B204260D003E008160B0 /* EditRecipeCommentRequest.swift in Sources */,
+				7AC2B1E9260D0006008160B0 /* NumberOfPerson.swift in Sources */,
+				7AC2B208260D003E008160B0 /* GetRecipesRequest.swift in Sources */,
+				7AC2B1E6260D0006008160B0 /* Comment.swift in Sources */,
+				7AC2B1EF260D0006008160B0 /* RecipeDetail.swift in Sources */,
+				7AC2B1EA260D0006008160B0 /* CategoryDetail.swift in Sources */,
 				7A17BB8A255203000086B35B /* APIRequestAdapter.swift in Sources */,
 				7A17BB8F255203000086B35B /* RequestEncoding.swift in Sources */,
 				7A17BB8B255203000086B35B /* APIRequest.swift in Sources */,
+				7AC2B1EE260D0006008160B0 /* User.swift in Sources */,
+				7AC2B1E3260D0006008160B0 /* MainCategory.swift in Sources */,
 				7A17BB8C255203000086B35B /* Typealias.swift in Sources */,
 				7A17BB90255203000086B35B /* DataProviderProtocol.swift in Sources */,
+				7AC2B201260D003E008160B0 /* UserFollowRequest.swift in Sources */,
+				7AC2B207260D003E008160B0 /* GetRecipeDetailRequest.swift in Sources */,
+				7AC2B1EB260D0006008160B0 /* Image.swift in Sources */,
+				7AC2B209260D003E008160B0 /* GetCategoriesRequest.swift in Sources */,
+				7AC2B1E7260D0006008160B0 /* SuccessResponse.swift in Sources */,
+				7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */,
+				7AC9DD03260DED1900D2874D /* APILogger.swift in Sources */,
+				7AC2B20B260D003E008160B0 /* LogoutRequest.swift in Sources */,
 				7A17BB89255203000086B35B /* APIDataProvider.swift in Sources */,
+				7AC9DCFF260DE73B00D2874D /* APIRequestInterceptor.swift in Sources */,
+				7AC2B205260D003E008160B0 /* GetRecipeCommentsRequest.swift in Sources */,
+				7AC2B20D260D003E008160B0 /* ForgotPasswordRequest.swift in Sources */,
+				7AC2B1E4260D0006008160B0 /* Pagination.swift in Sources */,
 				7A17BB8E255203000086B35B /* RequestMethod.swift in Sources */,
+				7AC2B202260D003E008160B0 /* PostRecipeCommentRequest.swift in Sources */,
+				7AC2B203260D003E008160B0 /* DeleteRecipeCommentRequest.swift in Sources */,
+				7AC2B1ED260D0006008160B0 /* BaseResponse.swift in Sources */,
+				7AC2B206260D003E008160B0 /* RecipeLikeRequest.swift in Sources */,
 				7A17BB8D255203000086B35B /* RequestProtocol.swift in Sources */,
+				7AC2B1EC260D0006008160B0 /* Recipe.swift in Sources */,
+				7AC2B20A260D003E008160B0 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
