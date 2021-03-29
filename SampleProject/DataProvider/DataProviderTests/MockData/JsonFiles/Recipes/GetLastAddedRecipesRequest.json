@@ -1,0 +1,1767 @@
+{
+  "data": [
+    {
+      "id": 27,
+      "title": "Lahmacun Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "İç harcı için:\r\n2 adetkırmızı biber\r\n3 adetyeşil biber\r\n2 adet orta boysoğan\r\n1 demetmaydanoz\r\n2 adetdomates\r\n1 yemek kaşığıdomates salçası\r\n1 yemek kaşığıbiber salçası\r\n1/2 çay kaşığıpul biber\r\n1 çay kaşığıtoz kırmızı biber\r\n1 çay kaşığıtuz\r\n1 çay bardağısıvı yağ\r\n1/4 çay bardağısu\r\n500 gramyağlı dana kıyma\r\nHamuru için:\r\n5 su bardağıun\r\n2 su bardağısu\r\n1 tatlı kaşığıtuz\r\n1 çay kaşığıtoz şeker",
+      "directions": "Bir mutfak robotunun içinde iç harcı için baharatlar, salça sıvı yağ ve kıyma hariç tüm malzemeleri alın ve çekin. Maydanozları en son ilave edin.\r\n\r\nlahmacun-hazirlik-1\r\nRondonun içinden büyükçe bir kaba aldığınız harca baharatları, salçayı ve sıvı yağı ekleyip iyice karıştırın.\r\n\r\nlahmacun-hazirlik-2\r\nSon olarak kıymayı ekleyerek güzelce yoğurun.Lahmacunun lezzetli olması için harcınızın cıvık bir kıvamda olması gerekir. Yeteri kadar cıvık bir kıvamda değilse, biraz su ekleyebilirsiniz.\r\n",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "1 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 3,
+      "is_approved": true,
+      "user": {
+        "id": 7,
+        "username": "muratagaa",
+        "name": "Fodamy",
+        "surname": "Şipşak",
+        "definition": "",
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 0,
+        "following_count": 5,
+        "recipe_count": 1,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7a40756b-dbcb-4f40-a09b-9da03be88c13.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 11,
+        "text": "55"
+      },
+      "number_of_person": {
+        "id": 5,
+        "text": "8-10"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 315,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/b6639b08-c775-49c8-8a2e-6f023c973800.jpg"
+        },
+        {
+          "width": 600,
+          "height": 315,
+          "key": "recipe",
+          "order": 1,
+          "url": "https://fodamy.mobillium.com/images/ac1e092e-3bc2-47c4-af78-bd682c38ed32.jpg"
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "title": "Pesto Soslu Makarna",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Yarım paket penne makarna\r\n3 yemek kaşığı pesto sos\r\n3 yemek kaşığı krema\r\n2 yemek kaşığı zeytinyağı\r\nTuz ve haşlamak için su",
+      "directions": "Öncelikle haşlamak için suyu koyun, içine tuz atın ve kaynamaya bırakın ve kaynayan suya makarnayı atın, 8-10 dk arası pişirin.\r\nSos için zeytinyağı ve pesto sosu alın tavaya ısınınca kremayı ekleyin ve çok kaynatmadan alın ocaktan.\r\nHaşlanan makarnayı süzün.\r\nBiraz suyundan sosuna ekleyin kıvam arttırmak isterseniz.\r\nSos ile makarnayı iyice harmanlayın.\r\nVe sıcak olarak tavuk yanında yada tek başına bir öğün olarak tüketin. Mutlu kalın",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 3,
+      "number_of_favorite_count": 0,
+      "comment_count": 3,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 3,
+        "text": "15"
+      },
+      "number_of_person": {
+        "id": 1,
+        "text": "1-2"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 450,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/02f4b404-eb6f-4019-b03e-47936ee18372.jpg"
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "title": "Lazanya Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Yarım paket lazanya\r\n300 g kıyma\r\n2 adet  soğan\r\n2 adet domates\r\n2 yemek kaşığı salça\r\n3 yemek kaşığı sıvı yağ\r\n2 diş sarımsak\r\nBeşamel sos için;\r\n\r\n2 yemek kaşığı tereyağı\r\n4 yemek kaşığı un\r\n2 su bardağı süt",
+      "directions": "Geniş bir tavaya sıvı yağı alın. Küçük küçük doğradığınız soğanları ilave edin, biraz kavurduktan sonra üzerine kıymayı ilave ederek kavurmaya devam edin.\r\nKıymalar yeterince kavrulunca doğradığınız sarımsakları ve kabuğunu soyup rendelediğimiz domatesleri de ilave edin ve orta ateşte 10 dakika kadar daha soteleyin.\r\nÜzerine salçayı ekleyerek kavurun ve yaklaşık 1 su bardağı sıcak su ekleyin. Tuzunu da ekledikten sonra ocaktan alıp soğumaya bırakın.\r\n Beşamel sos için tereyağı ve unu küçük bir tencereye koyun ve orta ateşte kavurun. Üzerine sütü azar azar ekleyin ve topaklanmaması için sürekli çırparak karıştırın. Muhallebi kıvamına gelince ocaktan alın.\r\nKıymalı sos ve beşamel sos hazırlandıktan sonra ısıya dayanıklı bir fırın kabını biraz yağlayın ve tabanına lazanya dizin. Lazanyaların üzerine biraz beşamel sos dökerek güzelce yayın. Ardından üzerine kıymalı harçtan dökün. Üzerine tekrar lazanya koyun. Bu işlemi malzemeleriniz bitene kadar devam ettirin.\r\nEn üstteki lazanyalara tekrar beşamel sos dökün ve kaşar peyniri rendesi serpin.\r\nLazanyaların yumuşaması için 10-15 dakika kadar bekletin.\r\nSon olarak 180 derece fırında yaklaşık 15 dakika pişirin.\r\nÜzeri tamamen kızarınca dilimleyerek servis yapın. Afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 8,
+        "text": "40"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 338,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/cfce4028-d716-4ab4-8793-3586d17db496.jpg"
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "title": "Pirinç Pilavı Tarifi ",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "2 su bardağı pirinç\r\n2,5 su bardağı sıcak su\r\n3 yemek kaşığı tereyağı\r\n1 yemek kaşığı sıvı yağ\r\nTuz\r\nPirinçleri ıslatmak için;\r\n\r\nPirinçlerin üzerini geçecek kadar ılık su\r\nTuz",
+      "directions": "Pirinci bol su ile yıkayın. Uygun bir kaba alarak üzerini geçecek kadar ılık su ekleyin. Birazda tuz ilave edip karıştırın ve 15-20 dakika bekletin. Daha sonra yıkayarak suyunu süzün. Nişastası gidene kadar yıkıyoruz. Çıkan suyun berrak olması gerekiyor.\r\nTencerede tereyağını eritip suyu süzülmüş pirinci ekleyin ve 4-5 dakika kadar kavurun. Pirinçlerin yeteri kadar kavrulduğunu pirinler tane tane dökülmeye başladığında anlayabilirsiniz.\r\nPirinçler kavrulduktan sonra sıcak su veya sıcak et suyunu ekleyelim. İsterseniz yarım tavuk suyu yarım sıcak su kullanabilirsiniz. Tavuk suyunuz yağlı ise bu şekilde su ile karıştırmanızı tavsiye ederim ancak yağlı değilse tamamı tavuk suyu ile çok daha lezzetli olacaktır.\r\nSon olarak tuzu ekleyin.\r\nPilavımızı kapağı kapalı bir şekilde önce yüksek ateşte pişmeye bırakalım.\r\nÜzeri göz göz olduğunda yani üzerindeki suyu çekip pilavın üzerinde nokta nokta delikler oluştuğunda kısık ateşe alalım.  Pirinçler yumuşayıp suyu tamamen çekene kadar pişirelim.\r\nPişen pilavımızı ocaktan aldıktan sonra üzerine havlu peçete sererek kapağını tekrar kapatalım.\r\nPilavı 10-15 dk dinlendirelim. Daha sonra tahta kaşık ile karıştırarak servis yapabilirsiniz.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 7,
+        "text": "35"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 5,
+        "name": "Pilav Tarifleri",
+        "language": "tr",
+        "main_category_id": 1,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 338,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/22e218bf-ab8c-4015-99cf-668674a404e5.jpg"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "title": "Sebzeli Bulgur Pilavı ",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 adet soğan\r\n1 adet yeşil biber\r\n1 adet kırmızı biber\r\n1 adet patlıcan\r\n2 adet domates\r\n1 yemek kaşığı domates salçası\r\n2 su bardağı pilavlık bulgur\r\n2 yemek kaşığı sıvı yağ\r\n4 su bardağı sıcak su",
+      "directions": "Patlıcanlar soyularak küçük küçük doğranır ve tuzlu suda 15-20dk kadar bekletilir.\r\nSoğan yemeklik doğranır ve pembeleşene kadar sıvı yağda kavrulur.\r\nPatlıcanlar süzülür ve biberlerde doğrandıktan sonra tencereye eklenir ve soğanla birlikte kavrulmaya başlanır.\r\nSebzelerin pişmesine yakın küçük doğranmış domatesler eklenir ve tencerenin kapağı kapatılarak sebzeler pişene kadar beklenir.\r\nDomates mevsimi değilse eğer bu aşamada biraz salça eklenir ve kavrulur, ancak mevsiminde domates kullanmanızı tavsiye ederim.\r\nPişen sebzelerin üzerine yıkayıp suyunu süzdüğünüz bulgurlar eklenir, tuzu ilave edilerek, tencereye sıcak su eklenir.\r\nPilavın üzerini örtecek kadar su yeterli olacaktır. Su miktarını ölçmeyi unuttum, bir sonrakinde yapışımda ölçüsünü belirteceğim.\r\nTencerenin kapağı kapatılarak kısık ateşte bulgurlar şişip yumuşayana kadar pişirilir.\r\nPilavın suyu yetersiz gelip tencerenin tabanına yapışmaması için ara sıra kontrol etmeyi unutmayın.\r\nSuyu azalmış ancak hala pişmemiş ise bir miktar daha sıcak su ekleyebilirsiniz.\r\nOcağı kapattıktan sonra kapağın altına kağıt havlu sererek demlendirin.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 1,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 8,
+        "text": "40"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 5,
+        "name": "Pilav Tarifleri",
+        "language": "tr",
+        "main_category_id": 1,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 320,
+          "height": 213,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8736281-c3f1-440e-a437-caaeb74af73d.jpg"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "title": "Şehriyeli Pirinç Pilavı ",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "2 yemek kaşığı tereyağı\r\n3 yemek kaşığı sıvı yağ\r\n2 su bardağı pirinç\r\nYarım su bardağı arpa şehriye\r\n3 su bardağı sıcak su (tavuk suyu)\r\nTuz",
+      "directions": "Pirinçler bol su ile yıkanarak, ılık tuzlu suda yarım saat kadar bekletilir.\r\nBu süre sonunda, tuzlu suyu akıtılır ve pirinçler sudan geçirilerek, tüm suyu süzdürülür.\r\nPilav tenceresinde tereyağı eritilir, sıvı yağ da eklenerek üzerine arpa şehriyeler eklenir.\r\nŞehriyenin rengi dönene kadar kavrulur.\r\nPirinçler ilave edilerek, 2-3 dk daha kavrulur.\r\nÜzerine sıcak su eklenir ve tuzu ilave edilir.\r\nTencerenin kapağı kapatılarak, yüksek ateşte fazla suyu çekip pirinçler göz göz oluncaya kadar, yani pirinçlerin üzerinde su çekilip pirinçler göründüğünde kısık ateşe alın ve tamamen suyu çekene kadar pişirin. (Yazının devamında süreler ile ilgili detaylı açıklamayı bulabilirsiniz.)\r\nOcaktan aldıktan sonra, üzerine havlu kağıt koyarak kapağını tekrar kapatın ve demlenmesini bekleyin.\r\nPilavı güzelce karıştırdıktan sonra servis yapabilirsiniz.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 6,
+        "text": "30"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 5,
+        "name": "Pilav Tarifleri",
+        "language": "tr",
+        "main_category_id": 1,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/cb9a4fc6-84fe-413c-a5dc-c5b131f5f0f7.jpg"
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "title": "Pankek Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "2 adet yumurta\r\n2 yemek kaşığı şeker\r\n1 su bardağı süt\r\n1,5 su bardağı un\r\n1 paket kabartma tozu\r\n1 paket vanilya\r\nPişirme aşamasında kullanmak için;\r\n\r\nsıvı yağ\r\nServis önerisi:\r\n\r\nKivi, muz, çilek, reçel, bal, çikolata",
+      "directions": "Pankek yapmak için öncelikle yumurtalar ve şekeri uygun bir karıştırma kabına alarak iyice çırpalım.\r\nSüt, un, kabartma tozu, vanilya ilave çırpma teli ile çırpalım. Siz dilerseniz mikser ile de çırpabilirsiniz. Kek kıvamından biraz daha koyu olacak şekilde hamur hazırlayalım.\r\nTeflon ya da yapışmaz bir tavaya az sıvı yağı dökelim, fırça yardımı ile her tarafına dağıtalım. Sıvı yağı az kullanmak pankek yapmanın püf noktalarındandır. Dilerseniz peçete ile de tavaya dağıtabilirsiniz.\r\n1 büyük kaşık hamur dökülerek hamurun kendi kendine yayılmasını bekleyelim.\r\nÜzeri göz göz olmaya başlayan pankeklerimizi spatula yardımı ile ters çevirelim. Diğer taraflarını da pişirelim.\r\nHer iki tarafı da pişen pankeklerimizi servis tabağına alalım.\r\nÜzerine  pudra şekeri serpilerek zevkinize göre muz, kivi, çilek, çikolata, bal, sürülebilir çikolata, reçel ile servis edebilirsiniz.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 5,
+        "text": "25"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/49b704b5-4412-4404-b7cc-3790890149c6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Pastane Poğaçası Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 paket oda ısısında margarin (250g)\r\n1 yemek kaşığı maya\r\n1 çay bardağı süt\r\n1 tatlı kaşığı tuz\r\n1 çay bardağı sıvı yağ\r\n2 yumurta(bir sarı üstüne)\r\n2 çorba kaşığı şeker(şekerli tadı severseniz 2 çorba kaşığı daha ilave edin)\r\nUn (yaklaşık 5,5 su bardağı)\r\nİçi için;\r\n\r\nPeynir",
+      "directions": "Pastane poğaçası hazırlamak için ılık sütte maya ve şekeri karıştırıp kabartın.\r\nBir kaba margarin, tuz, sıvı yağ,yumurta ve sütlü mayayı ekleyin.\r\nUnu da azar azar ekleyin ve oldukça yumuşak bir hamur yapın.\r\nCeviz büyüklüğünde hamur yapın ve içine peyniri koyun.\r\nYağlanmış tepsiye dizin.\r\nÜstüne yumurta sarısı sürüp 200 derecelik fırında pişirin.\r\nPastane poğaçalarınız servise hazır, şimdiden afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 12,
+        "text": "60"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 338,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/622f6b1b-a9d9-48f4-93a4-56a13218575f.jpg"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Ev Pizza Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "5 su bardağı un\r\n1 paket instant maya (ya da yarım paket yaş maya)\r\n1 yemek kaşığı toz şeker\r\nYarım yemek kaşığı tuz\r\n4 yemek kaşığı zeytinyağı\r\n2 su bardağı ılık su\r\nSosu İçin;\r\n\r\n2 su bardağı domates sosu\r\n2 yemek kaşığı zeytinyağı\r\n1 çay kaşığı kuru fesleğen\r\n1 çay kaşığı kekik\r\nÜzeri İçin;\r\n\r\nMozzarella peyniri\r\nKaşar peyniri\r\nSucuk\r\nSosis\r\nDomates kurusu\r\nMantar\r\nMısır",
+      "directions": "Unu yoğurma kabına alalım ve ortasını havuz şeklinde açalım.\r\nUnun ortasına instant maya, şeker, tuz, zeytinyağı ve ılık suyu yavaş yavaş ilave ederek hamurumuzu yoğurmaya başlayalım. İnstant maya yerine yarım paket yaş mayada kullanabilirsiniz.\r\nYumuşak kıvamlı ele yapışmayan bir hamur elde edelim.\r\nToparlanan hamurumuzun üzerini streç film örterek yaklaşık 30 dk kadar mayalanmaya bırakalım.\r\nMayalanan hamurun üzerini açalım ve un serptiğimiz tezgaha hamuru alalım.\r\nElimizle yine toparlayıp havasını aldıktan sonra 2 eşit parçaya bölelim. Eğer ince hamurlu pizza hazırlamak istiyorsanız aynı hamuru 3 parçaya da bölebilirsiniz.\r\nKestiğimiz parçayı beze haline getirerek un serptiğimiz tezgahta merdane yardımıyla açalım. Hafifçe un serperek merdaneye yapışmamasını sağlayabilirsiniz.\r\nAçtığımız hamuru pizza tepsisine almadan önce boyutu uygun mu diye kontrol edelim.\r\nAçtığımız hamuru unladığımız pizza tepsisine alalım ve elimizle etrafını düzeltelim.\r\nDilerseniz normal fırın tepsisine pişirme kağıdı sererek veya altına mısır unu serperek de hazırlayabilirsiniz.\r\nBir çatal yardımıyla hamurumuzun tüm yüzeyine delikler açalım böylelikle hamur pişerken kabarmayacaktır.\r\nPizza tepsisini önceden ısıttığımız 200° fırına sürerek hamurumuzu 10 dk pişirelim.\r\nHamurumuz pişerken pizzanın sosu için domates sosu, zeytinyağı, kuru fesleğen ve kekiği ekleyerek güzelce karıştıralım.\r\nYarı pişen hamurumuzu fırından alıp hazırladığımız sosu üzerine bolca sürelim. Kenarlarına doğruda güzelce sürersek kenarlarıda daha güzel kızaracaktır.\r\nDomates sosunun üzerine bolca mozzarella peyniri rendesi veya kaşar peyniri rendesini yerleştirelim.\r\nÜzerine tercihe göre dilimlenmiş sucuk, dilimlenmiş sosis, domates kurusu,dilimlenmiş mantar ve mısır tanelerini ekleyelim.\r\nSon olarak pizzamızı tekrar fırına sürelim ve 200° fırında 20 dk daha pişmeye bırakalım.\r\nPeynirleri güzel bir şekilde eriyen sucukları sosisleri gayet nefis bir şekilde pişen pizzamız servise hazır. Afiyet olsun :)",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 1,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 14,
+        "text": "70"
+      },
+      "number_of_person": {
+        "id": 5,
+        "text": "8-10"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/c3464f81-b89d-478a-8763-c62c9fecec8e.jpg"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Kadınbudu Köfte Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Köfte harcı için:\r\n\r\n500 g yağsız dana kıyması\r\n1 çay bardağı (50 g) pirinç\r\n1 adet yumurta\r\n1 adet soğan\r\n Tuz\r\nKarabiber\r\nKızartmak için;\r\n\r\nGaleta unu\r\n3 adet yumurta\r\nSıvı yağ",
+      "directions": "Pirinç haşlanır ve süzülür.\r\nSoğan yemeklik olarak doğranır ve tavaya çok az miktarda sıvı yağ konarak öldürülür.\r\nÜzerine kıymanın yarısı ilave edilerek orta derecede kavrulur.\r\nYağı tamamen süzülerek bir yayvan kaba aktarılır.\r\nİçine yumurta, pirinç, tuz, biberi ayarlanıp çiğ olarak kalan 250 g kıyma da konulduktan sonra yoğurulur.\r\nÖnemli olan malzemenin birbiriyle iyice özdeşmesidir. Köfte harcını en az yarım saat kadar dinlendirdikten sonra hazırlanan harçtan irice ve yassı oval şekilli hazırlanan köfteler önce una bulanır.\r\nDaha sonra bir kase içerisine kırıp çırptığınız yumurtaya batırılır.\r\nTavada iyice kızdırılan sıvı yağda köftelerin her iki yönü kızartılır.\r\nKızaran köfteleri kağıt havlu üzerine alarak fazla yağı alın.\r\nServise hazır. Afiyet olsun…",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 9,
+        "text": "45"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 338,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/1f36d3b8-360f-465f-bff0-05cb341850df.jpg"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Püreli Tepsi Kebabı",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "500 gram kadar kıyma\r\n1 adet kuru soğan\r\n1 avuç maydanoz\r\n1 yumurta\r\n2-3 diş sarımsak\r\n1 kase dolusu bayat ekmek içi\r\nTuz\r\nKarabiber\r\nPul biber",
+      "directions": "Öncelikle patatesler haşlanmak üzere ocağa alınır ve köftesi yoğurulur.\r\nBunun için soğanları dilimleyip yumurta, sarımsak ve maydanozla beraber rondodan geçirin.\r\nGeniş bir kapta tüm malzemeleri kıyma ile yoğurarak vaktiniz varsa biraz dinlendirin.\r\nDaha sonra fırın kabına köfte harcını elinizle yayın. Bir kasede salçayı 2 su bardağı kadar sıcak su ile incelterek kıymanın üzerine gezdirin.\r\nTepsiyi fırına sürerek 170 derecede üzeri kızarıncaya kadar pişirin.\r\nBu arada patates püresinin hazırlanmasına geçebilirsiniz.\r\nHaşlanmış patatesler soyularak ufak ufak doğranır.\r\nTereyağı ve tuz ilave edilerek ezici yardımı ile ezilir. Bu sırada yavaş yavaş süt de ilave edilir.\r\nBen patatesleri önceden haşladığım için soğumuştu, bu sebeple bu işlemi tencere ocakta kısık ateşteyken yaptım. Siz patates püresini nasıl biliyorsanız öyle yapabilirsiniz. Daha krema gibi bir püre için blender kullanabilirsiniz.\r\nPatatesler iyice krema gibi olduktan sonra kaşar peynirini ilave edip tahta kaşıkla biraz karıştırın. Böylelikle püreniz hazır olacak.\r\nFırından aldığınız sıcak köftenin üzerine püreyi yayarak üzerini dilimlenmiş domatesler ve biberler ile süsleyip tekrar fırına sürün.\r\nDomatesler eriyene kadar fırında tuttuktan sonra fırından alarak dilimleyip servis yapabilirsiniz. Afiyet olsun…",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 18,
+        "text": "90"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 399,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7dfff92d-0fe5-4966-8dc4-ef116a3a7816.jpg"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "Karnıyarık Yemeği",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "6 adet küçük boy patlıcan (büyük ise ikiye bölebilirsiniz)\r\n3 adet sivri biber\r\nKıymalı Harç İçin;\r\n\r\n2 adet orta boy soğan\r\n2 adet domates\r\n2 adet sivri biber\r\n2 diş sarımsak\r\nSıvı yağ, tuz, karabiber, kırmızıbiber\r\n200 gr kıyma\r\n1 çay bardağı sıcak su\r\nSosu İçin;\r\n\r\n1 yemek kaşığı salça\r\n1 su bardağı sıcak su",
+      "directions": "Patlıcanları çizgili soyup, yarım saat yağ çekmemesi için tuzlu suda bekletin.\r\nİyice yıkadıktan sonra suyunu havlu ile çektirin ve az yağda kızartın. 3 adet biberi de yağda kızartın.\r\nDaha sonra aynı tavada doğranmış soğanları kavurun, kıymayı ekleyerek bir müddet daha kavurun ve biberleri, sarımsağı ekleyerek 2 dakika daha kavurun.\r\nKüp küp doğramış olduğunuz 2 adet domatesi, tuzu, baharatları ekleyerek karıştırın.\r\nÜzerine bir çay bardağı su ekleyerek 5 dk kaynatın.\r\nTepsiye patlıcanların ortalarını keserek yerleştirin ve bu kesiklerden patlıcanın içine bastırarak iç malzemesine yer açın ve malzeme ile patlıcanları doldurun.\r\nDoldurduğunuz patlıcanların üzerine ortadan ikiye kestiğiniz çeri domatesi ya da 1 adet domatesi eşit büyüklükte olacak şekilde paylaştırın ve kızarttığımız biberlerden birer tane koyun.\r\nAyrı bir yerde 1 kaşık salçayı, 1 su bardağı sıcak suda ezerek patlıcanların aralarına dökün. Kıymalar çıkmasın diye üzerine dökmeyin.\r\nDaha sonra 170 derece de ısıttığınız fırına sürerek 20-25 dk pişirin. Dilerseniz bu işlemi pilav tenceresi gibi bir tencerede ocakta yapabilirsiniz. Aynı sürede tencerede de  pişecektir.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 2,
+      "number_of_favorite_count": 0,
+      "comment_count": 1,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 12,
+        "text": "60"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a3cc0140-7b73-4ee7-85ad-c2ba40e8cec3.jpg"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Güveçte Soslu Köfte",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Yarım kilogram köftelik kıyma\r\n2 dilim bayat ekmek\r\n1 adet rendelenmiş kuru soğan\r\nKuru nane\r\nKimyon\r\nKarabiber\r\nPul biber\r\nTuz\r\nKızartmak için sıvı yağ",
+      "directions": "Köfte malzemelerini yoğurma kabına alalım.\r\nBirbirini alıncaya kadar iyice yoğuralım.\r\nCeviz büyüklüğünde parçalar alıp yuvarlayalım.\r\nKöfteyi buzdolabında yarım saat kadar dinlendirelim.\r\nKızgın yağda arkalı önlü kızartalım ve güveç kaplarına eşit şekilde paylaştıralım.\r\nDomatesin kabuklarını soyup küçük küçük doğrayalım ve küçük bir tencereye alalım.\r\nTereyağını da ilave edelim.\r\nKızartma yağından 1-2 kaşık da sosun içine koyalım.\r\nDomatesleri biraz pişirelim.\r\nSalça, sarımsak, tuz ve kekiği de ilave edelim.\r\nDomatesler yumuşayıncaya kadar pişirelim.\r\nBunları da köftelerin üzerine eşit şekilde ilave edelim.\r\n250 derecelik fırında 20 dakika kadar pişirelim.\r\nFırından çıkarıp üzerine rendelenmiş kaşar peynirini de serpelim.\r\nÜzeri kızarıncaya kadar tekrar fırına verip pişirelim.\r\nSıcak olarak servis edelim. Afiyetler olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 9,
+        "text": "45"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/3347ed23-101f-4241-99d5-4843a66cd8ff.jpg"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Sebzeli Tavuk Çorbası",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Varsa tüm tavuk daha iyi benim yoktu\r\n6 tane but\r\n1 tane kereviz\r\n1 tane pırasa\r\n2 tane havuç\r\n2 adet patates\r\n2 diş sarımsak\r\n1 adet limon\r\n1 tatlı kaşığı karabiber ,kimyon ,tozbiber\r\n1 yemek kaşığı acı pul biber\r\n1 yemek kaşığı nane\r\n2 yemek kaşığı un",
+      "directions": "Tavuğumuzu 2 saat kadar kaynatıyoruz ,sonra etleri tencereden alıyoruz etlerimizi kemiklerden ayırıp didikliyoruz.\r\nSonra bütün sebzeleri ince küçük doğruyoruz.\r\nBütün sebzeleri et suyuna döküyoruz .\r\nBaharatlarımızı da katıyoruz .3 saat kadar pişiriyoruz .\r\nAyrı bir yerde unumuzu az kavurup üzerine bir buçuk bardak su ekleyip iyice karıştırıyoruz .\r\nSonra çorbamıza katıyoruz karıştırıp, nanemizi, limonumuzu ,pul biberimizi ekleyin bir kaç dk kaynamaya bırakıp sonra servis edebilirsiniz afiyet olsun ",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 24,
+        "text": "120"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 12,
+        "name": "Sıcak Çorbalar",
+        "language": "tr",
+        "main_category_id": 10,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 600,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/ea4d7045-9836-43c2-82c3-5a47be8ace29.jpg"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Mercimek Çorbası ",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 su bardağı kırmızı mercimek\r\n1 adet soğan\r\n1 yemek kaşığı un\r\n1 adet havuç\r\nyarım yemek kaşığı biber ya da  domates salçası (rengi kırmızı olsun isterseniz artırabilir ya da hiç kullanmayabilirsiniz)\r\nTuz\r\n1 çay kaşığı karabiber\r\nyarım çay kaşığı kimyon (isteğe bağlı)\r\n1 litre su\r\n2 yemek kaşığı sıvı yağ\r\nSosu için:\r\n\r\n2 yemek kaşığı tereyağı\r\n1 tatlı kaşığı kırmızı toz biber",
+      "directions": "Kırmızı mercimek çorbası için sıvı yağı tencereye alınarak yemeklik doğranan soğanlar hafif pembeleşinceye kadar kavrulur.\r\nDaha sonra un ilave edilerek kısık ateşte kavurmaya devam edilir.\r\nSalça kullanılacak ise salça ilave edilir, kavrulduktan sonra küp küp doğranmış havuç ve iyice yıkanıp suyu süzülen mercimekler ilave edilir.\r\nÜzerine 1 lt su eklenerek karıştırılır ve tencerenin kapağı kapatılır. Mercimekler ve havuçlar yumuşayana kadar kısık ateşte pişirilir.\r\nÇorba piştikten sonra el blenderı ile güzelce ezilir.\r\nKarabiber, tuz ve isteğe bağlı olarak kimyon eklenir.\r\nKıvamı koyu gelirse size bir miktar su ilave edilerek bir taşım kaynatılır.\r\nBu arada küçük bir tavaya iki yemek kaşığı tereyağı alınır, kızdırılır ve bir tatlı kaşığı kırmızı toz biber eklenerek ocaktan alınır.\r\nMercimek çorbası servis kasesine alındıktan sonra üzerine kırmızı biberli sos gezdirilir ve bir dilim limon ile servis edilir.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 9,
+        "text": "45"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 12,
+        "name": "Sıcak Çorbalar",
+        "language": "tr",
+        "main_category_id": 10,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 398,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/fa066804-b29a-4c15-877d-d66d7cc9749b.jpg"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Yayla Çorbası",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 çay bardağı pirinç\r\n3 su bardağı su\r\n3 su bardağı sıcak su (tavuk veya kemik suyu)\r\nTuz\r\nTerbiyesi İçin;\r\n\r\n1 adet yumurta sarısı\r\n1,5 su bardağı yoğurt\r\n1 yemek kaşığı un\r\nSosu İçin;\r\n\r\n2 yemek kaşığı tereyağı\r\n1 yemek kaşığı kuru nane",
+      "directions": "Yayla çorbası için ilk olarak pirinçler yıkanarak suda yumuşayıncaya kadar haşlanır.\r\nYayla çorbamızın terbiyesi için diğer taraftan yumurta sarısı, yoğurt, un bir kasede iyice çırpılır.\r\nPişen pirinçlere varsa et ya da kemik suyu yoksa 3 su bardağı sıcak su ilave edilir.\r\nÇorbanın suyundan 1-2 kepçe alınarak yavaş yavaş alınıp terbiyeye ilave edilir.\r\nHafifçe sulanan bu karışım ılınmış olan çorbaya ilave edilir ve 1-2 taşım kaynatılır.\r\nEn son tuzu ilave edilir, bir kaç dakika daha kaynatılarak ocak kapatılır.\r\nÜzerine sos için kuru nane eritilmiş tereyağında kızdırılarak gezdirilir. Yayla çorbamız servise hazır. Afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 6,
+        "text": "30"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 12,
+        "name": "Sıcak Çorbalar",
+        "language": "tr",
+        "main_category_id": 10,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/4754794e-8d2e-4a6c-8c2e-2727831703a2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Ezogelin Çorbası",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 su bardağı kırmızı mercimek\r\n1 tatlı kaşığı pirinç\r\n1 tatlı kaşığı bulgur\r\n2 çay kaşığı pul biber\r\n1 yemek kaşığı nane\r\n2 diş sarımsak\r\n1 orta boy soğan\r\n1 yemek kaşığı biber salçası\r\n1 yemek kaşığı tuz\r\n1 yemek kaşığı tereyağı\r\n2 litreye yakın sıcak su",
+      "directions": "Ezogelin çorbası yapmak için düdüklü tencerede önce rendelemiş olduğumuz soğanı ve ezmiş olduğumuz sarımsağı tereyağında kavuruyoruz. Soğanlar diriliğini kaybetsin yeterli yakmadan orta ateşte kavuralım.\r\nSoğanlar kavrulunca naneyi, kırmızı biberi ve salçayı ilave edip. Kavurmaya devam edelim.\r\nBir iki karıştırdıktan sonra yıkadığımız mercimeği, pirinci, bulguru ve tuzunu da ilave ederek karıştıralım.\r\nBaşka bir tarafta kaynamakta olan 2 litreye yakın suyu üzerine boşaltalım.\r\nDüdüklünün kapağını ve düdüğünü kapattıktan sonra 10 dakika pişiriyoruz. Normal tencerede de yapabilirsiniz ama biraz daha geç pişecektir (yaklaşık 30-40 dakika sürecektir).",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 4,
+        "text": "20"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 12,
+        "name": "Sıcak Çorbalar",
+        "language": "tr",
+        "main_category_id": 10,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/e74a846a-d357-477e-843e-a16c9b795f44.jpg"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Domates Çorbası",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "2 yemek kaşığı sıvı yağ\r\n1 yemek kaşığı tereyağı\r\n2 tepeleme yemek kaşığı un\r\n1 yemek kaşığı domates salçası\r\n5 adet domates\r\nYarım su bardağı süt\r\nTuz",
+      "directions": "Tereyağı ve sıvı yağ tencereye alınır, un eklenerek biraz kavrulur.\r\nDomates salçası ve rendelenmiş domatesler eklenir. 3-4 dk daha kavrulur.\r\n4 su bardağı su eklenerek çırpılır.\r\nTuzu damak tadınıza göre ayarlanır.\r\nKaynayana kadar karıştırılarak, kaynadıktan sonra yaklaşık 15dk kısık ateşte pişirilir.\r\nServis yapmadan önce tencereye süt ilave edilerek, karıştırılır.\r\n İsteğe göre üzerine kaşar peyniri rendesi ve karabiber serpilir.\r\nNefis Sütlü domates çorbası tarifimiz servise hazır. Deneyeceklere afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 6,
+        "text": "30"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 10,
+        "name": "Çorbalar",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 88,
+          "height": 81,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/ae00a047-1f05-4d89-bd80-c7a8d915eb58.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 338,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/5d5c4bc1-940d-4032-b919-d0405681d0b5.jpg"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Zeytinli Ekmek Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Yarım su bardağı süt\r\n1 su bardağı ılık su\r\n1 tatlı kaşığı şeker\r\n1 çay kaşığı tuz\r\n1 paket instant maya\r\n3 yemek kaşığı zeytinyağı\r\n3,5 su bardağı elenmiş un\r\n1 küçük kase siyah zeytin\r\nÜzeri için;\r\n\r\nYoğurt",
+      "directions": "Uygun bir yoğurma içerisine süt, su, şeker, tuz, maya ve zeytinyağını alarak karıştıralım.\r\nArdından elediğimiz unu kontrollü bir şekilde yavaş yavaş ilave ederek hamurumuzu yoğurmaya başlayalım.\r\nToparlanan hamurumuzun üzerini temiz bir bez ile örterek 1 saat kadar mayalanmaya bırakalım.\r\nMayası gelen hamurumuzu hafifçe unladığımız tezgaha alarak elimizle açalım.\r\nÇekirdeklerini ayırdığımız zeytinleri hamurumuzun üzerine serpiştirelim. Sonrasında hamurumuzu rulo şeklinde saralım.\r\nBaton kalıbımızın tabanına pişirme kağıdı sererek rulo yaptığımız hamurumuzu içerisine yerleştirelim.\r\nÜzerine bir fırça yardımı ile yoğurt sürelim ve 20 dakika kadar tepsi mayası için bekletelim.\r\nSürenin sonunda bıçak yardımı ile hamurumuzun üzerine çizikler atalım ve 200°C fırında yaklaşık 45 dakika kadar pişmeye bırakalım.\r\nPişen zeytinli ekmeğimiz servise hazır. Deneyeceklere şimdiden afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 12,
+        "text": "60"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 20,
+        "name": "Ekmek",
+        "language": "tr",
+        "main_category_id": 19,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 400,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/d958426b-75ac-4c96-871a-d2f8ec1539e2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Kıymalı Enfes Börek",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1 paket böreklik hazır yufka (5 adet)\r\n250 gram kıyma\r\n5 adet kuru soğan\r\nYarım çay bardağı Sıvı yağ\r\n1 çay kaşığı pul biber\r\n1 çay kaşığı karabiber\r\n1 tatlı kaşığı tuz\r\nİç malzemesi\r\n\r\n1 su bardağı süt\r\n1 çay bardağı yoğurt\r\nYarım çay bardağı sıvı yağ\r\n2 adet yumurta (1 tanesinin sarısı üzerine)",
+      "directions": "Öncelikle sos malzemelerini derince bir kapta çırpıcı yardımı ile güzelce karıştıralım.\r\nSoğanları yemeklik doğrayıp tavamıza alalım. Yağını ilave edip biraz kavuralım. Soğanların hafif pembeleşmesi yeterli olacaktır.\r\nKıymasını katıp karıştıralım birazda kıymayı kavuralım.\r\nKarabiber, tuz, pul biberini katıp karıştıralım ocaktan alalım.\r\nYağladığımız tepsimize yufkamızın bir tanesini kenarlarından sarkacak şekilde serelim.\r\nÜzerine sostan biraz dökelim fırçayla sürelim, ikinci yufkayı üzerine gelişigüzel serelim, onun üzerine sostan yine sürelim kıymanın yarısını döküp düzeltelim.\r\nÜzerine üçüncü yufkayı serelim sostan dökelim ve kıymanın kalanını döküp düzeltelim, dördüncü yufkayı da üzerine serelim.\r\nTekrar sostan sürelim ve beşinci ve son yufkayı üzerine serelim. Kalan sosun tamamını döküp düzeltelim.\r\nZamanınız varsa pişirmeden biraz dinlendirelim\r\nSonra yumurta sarısı sürüp 180 derecede kızarana dek yaklaşık 40 dakika pişirelim.\r\nHarika bi börek oldu mutlaka deneyin derim şimdiden kolay gelsin afiyet olsun. ",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 11,
+        "text": "55"
+      },
+      "number_of_person": {
+        "id": 4,
+        "text": "6-8"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 337,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/1e9f0816-1a0e-4f1b-96e8-dddda377c40f.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Yoğurt Soslu Patates",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "4 adet orta boy patates\r\n2 yemek kaşığı sıvı yağ\r\n2 yemek kaşığı yoğurt\r\n1 çay kaşığı tuz\r\n1 çay kaşığı pul biber\r\n1 fiske nane\r\n1 fiske kekik\r\nYarım çay kaşığı karabiber",
+      "directions": "Patates hariç sos malzemeleri bir kapta çırpılır.\r\nİçine soyulup elma dilim şeklinde dilimlenmiş patatesler eklenir ve güzelce harmanlanır.\r\nYağlı kağıt serilmiş fırın tepsisine serilir ve önceden ısıtılmış 200 derece fırında kızarana kadar pişirilir.\r\nBen tavuk yanına yaptığım için içine başka bir şey eklemedim. Ama varsa içine tavuk kanat ekleyip de harmanlayabilirsiniz, büsbütün süper bir lezzet olacaktır ",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 6,
+        "text": "30"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 18,
+        "name": "Atıştırmalıklar",
+        "language": "tr",
+        "main_category_id": null,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 450,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/810e45f2-8f8c-4260-8592-837edcbe4237.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Fırında Kaşarlı Mantar",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "Taze kültür mantarı\r\nTereyağı\r\nRendelenmiş kaşar peyniri\r\nTuz",
+      "directions": "Mantarlar temizlenerek kabukları soyulur.\r\nBir fırın kabına yan yana dizilir.\r\nÜzerlerine tuz serpilerek  birer çay kaşığı kadar tereyağı mantarların içine yerleştirilir.\r\n185 derece fırında 20 dakika kadar pişirilir.\r\nDaha sonra fırından alınıp üzerlerine rendelenmiş kaşar peyniri serpilir.\r\nPeynirler kızarıncaya kadar yaklaşık 10 dk daha fırında tutulduktan sonra sıcağıyla servis edilir. Afiyet olsun.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": false,
+      "is_owner": false,
+      "like_count": 0,
+      "number_of_favorite_count": 0,
+      "comment_count": 0,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 6,
+        "text": "30"
+      },
+      "number_of_person": {
+        "id": 2,
+        "text": "2-4"
+      },
+      "category": {
+        "id": 18,
+        "name": "Atıştırmalıklar",
+        "language": "tr",
+        "main_category_id": null,
+        "image": null
+      },
+      "images": [
+        {
+          "width": 500,
+          "height": 333,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/6f0d7c51-f2c4-4648-8bcf-dcd431c28ae0.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Domatesli Makarna Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "1/2 paketburgu makarna\r\n2 yemek kaşığıtereyağı\r\n1 yemek kaşığıdomates salçası\r\n2 dişsarımsak\r\n2 adet orta boydomates\r\n1 çay kaşığıkarabiber\r\n1 çay kaşığıtuz\r\n2 su bardağıılık su",
+      "directions": "Orta boy bir tencerenin içerisine tereyağını koyun. Rendelenmiş sarımsakları, domates salçasını koyun ve güzelce karıştırın.\r\n\r\nDomatesleri rendeleyin ve üzerine baharatları ekleyerek güzelce karıştırın.\r\n\r\nDomatesleri bir süre bu şekilde pişirerek yoğunlaştırın. Ardından makarnaları ekleyin ve üzerine su gezdirin.\r\n\r\nKapağını kapatın ve suyunu çekene kadar ortalama 10-12 dakika kadar pişirin. Ardından ocaktan alın ve birkaç dakika dinlendirin.\r\n\r\nÜzerine dilediğiniz malzemeleri ekleyerek servis edin.",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "2 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 1,
+      "number_of_favorite_count": 0,
+      "comment_count": 3,
+      "is_approved": true,
+      "user": {
+        "id": 4,
+        "username": "mrttcelebi",
+        "name": "Murat",
+        "surname": "Çelebi",
+        "definition": "",
+        "is_trusted": 1,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 2,
+        "following_count": 0,
+        "recipe_count": 22,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+        }
+      },
+      "time_of_recipe": {
+        "id": 5,
+        "text": "25"
+      },
+      "number_of_person": {
+        "id": 1,
+        "text": "1-2"
+      },
+      "category": {
+        "id": 19,
+        "name": "Hamur İşi",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 102,
+          "height": 60,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/96670e4a-6183-4ccc-bb63-472a41a3b67f.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 600,
+          "height": 450,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/76d418be-39de-4d67-93ad-e960510472d4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Köfte Tarifi",
+      "definition": "",
+      "language": "tr",
+      "ingredients": "500 gramdana kıyma\r\n1 adetsoğan\r\n7-8 dalmaydanoz\r\n2 adetyumurta\r\n2 avuçbayat ekmek\r\n1 tatlı kaşığıkimyon\r\n1 çay kaşığıtuz\r\n1 çay kaşığıkarabiber\r\n1 çay kaşığıyenibahar\r\n2 yemek kaşığızeytinyağı",
+      "directions": "Köftelik kıymayı derince bir kaba alın ve üstüne soğanı rendeleyin.Ardından ince doğranmış maydanozu ve gerekli diğer malzemeleri de ekledikten sonra güzelce yoğurun.\r\n\r\nYoğurduğunuz harcı koparıp avucunuzda şekillendirerek köfteleri hazırlayın.\r\n\r\nBir tavaya aldığınız ve kızdırdığınız yağda hazırladığınız köfteleri arkalı önlü olarak pişirin.\r\n\r\nBir tabağa alıp sıcak sıcak servis edin. Afiyetler olsun!",
+      "youtube_url": "",
+      "youtube_image": null,
+      "difference": "3 ay önce",
+      "is_editor_choice": true,
+      "is_owner": false,
+      "like_count": 2,
+      "number_of_favorite_count": 0,
+      "comment_count": 2,
+      "is_approved": true,
+      "user": {
+        "id": 2,
+        "username": "aslanmsalih",
+        "name": null,
+        "surname": null,
+        "definition": null,
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 1,
+        "following_count": 2,
+        "recipe_count": 3,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": null
+      },
+      "time_of_recipe": {
+        "id": 8,
+        "text": "40"
+      },
+      "number_of_person": {
+        "id": 3,
+        "text": "4-6"
+      },
+      "category": {
+        "id": 6,
+        "name": "Et",
+        "language": "tr",
+        "main_category_id": null,
+        "image": {
+          "width": 99,
+          "height": 64,
+          "key": "category",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+        }
+      },
+      "images": [
+        {
+          "width": 940,
+          "height": 625,
+          "key": "recipe",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/6df67480-4444-4656-a925-f5694447aa36.jpg"
+        },
+        {
+          "width": 940,
+          "height": 627,
+          "key": "recipe",
+          "order": 1,
+          "url": "https://fodamy.mobillium.com/images/b9e38c5b-5961-4789-bce5-039d47645583.jpg"
+        },
+        {
+          "width": 741,
+          "height": 489,
+          "key": "recipe",
+          "order": 2,
+          "url": "https://fodamy.mobillium.com/images/8ca4aa95-dcfe-45df-a21a-8635d53809b1.jpg"
+        }
+      ]
+    }
+  ],
+  "pagination": {
+    "total": 27,
+    "per_page": 24,
+    "current_page": 1,
+    "last_page": 2,
+    "first_item": 1,
+    "last_item": 24
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "data": [
+    {
+      "id": 72,
+      "text": "Deneme",
+      "difference": "4 hafta önce",
+      "user": {
+        "id": 7,
+        "username": "muratagaa",
+        "name": "Fodamy",
+        "surname": "Şipşak",
+        "definition": "",
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 0,
+        "following_count": 5,
+        "recipe_count": 1,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7a40756b-dbcb-4f40-a09b-9da03be88c13.jpg"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "text": "Beğendim çok güzel olmuş, gerçekten pratik, tatlı ve aynı zamanda doyurucu bir tarifti. Teşekkürler tekrardan\nBeğendim çok güzel olmuş, gerçekten pratik, tatlı ve aynı zamanda doyurucu bir tarifti. Teşekkürler tekrardan",
+      "difference": "1 ay önce",
+      "user": {
+        "id": 7,
+        "username": "muratagaa",
+        "name": "Fodamy",
+        "surname": "Şipşak",
+        "definition": "",
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 0,
+        "following_count": 5,
+        "recipe_count": 1,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7a40756b-dbcb-4f40-a09b-9da03be88c13.jpg"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "text": "Beğendim çok güzel olmuş, gerçekten pratik, tatlı ve aynı zamanda doyurucu bir tarifti. Teşekkürler tekrardan",
+      "difference": "1 ay önce",
+      "user": {
+        "id": 7,
+        "username": "muratagaa",
+        "name": "Fodamy",
+        "surname": "Şipşak",
+        "definition": "",
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 0,
+        "following_count": 5,
+        "recipe_count": 1,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7a40756b-dbcb-4f40-a09b-9da03be88c13.jpg"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "text": "Beğendim güzel olmuş",
+      "difference": "1 ay önce",
+      "user": {
+        "id": 7,
+        "username": "muratagaa",
+        "name": "Fodamy",
+        "surname": "Şipşak",
+        "definition": "",
+        "is_trusted": 0,
+        "facebook_url": null,
+        "twitter_url": null,
+        "instagram_url": null,
+        "youtube_url": null,
+        "language": "tr",
+        "is_top_user_choice": false,
+        "followed_count": 0,
+        "following_count": 5,
+        "recipe_count": 1,
+        "is_following": false,
+        "favorites_count": 0,
+        "likes_count": 0,
+        "cover": null,
+        "image": {
+          "width": 512,
+          "height": 512,
+          "key": "user",
+          "order": 0,
+          "url": "https://fodamy.mobillium.com/images/7a40756b-dbcb-4f40-a09b-9da03be88c13.jpg"
+        }
+      }
+    }
+  ],
+  "pagination": {
+    "total": 4,
+    "per_page": 24,
+    "current_page": 1,
+    "last_page": 1,
+    "first_item": 1,
+    "last_item": 4
+  }
+}

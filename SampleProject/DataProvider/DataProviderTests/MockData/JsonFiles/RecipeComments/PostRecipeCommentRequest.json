@@ -1,0 +1,27 @@
+{
+  "id": 171,
+  "text": "text text text",
+  "difference": "1 saniye önce",
+  "user": {
+    "id": 2,
+    "username": "aslanmsalih",
+    "name": null,
+    "surname": null,
+    "definition": null,
+    "is_trusted": 0,
+    "facebook_url": null,
+    "twitter_url": null,
+    "instagram_url": null,
+    "youtube_url": null,
+    "language": "tr",
+    "is_top_user_choice": false,
+    "followed_count": 1,
+    "following_count": 2,
+    "recipe_count": 3,
+    "is_following": false,
+    "favorites_count": 0,
+    "likes_count": 0,
+    "cover": null,
+    "image": null
+  }
+}
