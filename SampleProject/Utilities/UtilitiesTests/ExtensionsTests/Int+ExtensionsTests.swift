@@ -8,7 +8,7 @@
 
 import XCTest
 
-class Int_ExtensionsTests: XCTestCase {
+class IntExtensionsTests: XCTestCase {
 
     func testToString() {
         let number = 100

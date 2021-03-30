@@ -9,9 +9,9 @@
 import XCTest
 @testable import Utilities
 
-class String_ExtensionsTests: XCTestCase {
+class StringExtensionsTests: XCTestCase {
     
-    func testTrim()  {
+    func testTrim() {
         var string = " Salih "
         XCTAssertEqual("Salih", string.trim)
         

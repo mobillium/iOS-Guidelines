@@ -9,9 +9,9 @@
 import XCTest
 @testable import Utilities
 
-class UITextField_ExtensionsTests: XCTestCase {
+class UITextFieldExtensionsTests: XCTestCase {
     
-    func testTrimmedText()  {
+    func testTrimmedText() {
         let textField = UITextField()
         textField.text = " Salih "
         XCTAssertEqual("Salih", textField.trimmedText)

@@ -13,7 +13,7 @@ class RecipeRequests: XCTestCase {
     let dataProvider = MockDataProvider()
 
     func testGetLastAddedRecipes() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = GetRecipesRequest(page: 1, listType: .lastAddedRecipes)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -22,13 +22,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetEditorChoiceRecipes() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = GetRecipesRequest(page: 1, listType: .editorChoiceRecipes)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -37,13 +37,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetCategoryRecipes() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = GetRecipesRequest(page: 1, listType: .categoryRecipes(categoryId: 1))
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -52,13 +52,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetCategoriesWithRecipesRequest() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = GetCategoriesWithRecipesRequest(page: 1)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -67,13 +67,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetRecipeDetailRequest() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = GetRecipeDetailRequest(recipeId: 1)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -82,13 +82,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetRecipeLikeRequest() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = RecipeLikeRequest(recipeId: 0, likeType: .like)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -97,13 +97,13 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
     
     func testGetRecipeUnlikeRequest() throws {
-        let expectation = expectation(description: "request expectation")
+        let requestExpectation = expectation(description: "requestExpectation")
         let request = RecipeLikeRequest(recipeId: 0, likeType: .unlike)
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -112,9 +112,9 @@ class RecipeRequests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expectation.fulfill()
+            requestExpectation.fulfill()
         }
-        wait(for: [expectation], timeout: 5)
+        wait(for: [requestExpectation], timeout: 5)
     }
 
 }
