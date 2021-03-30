@@ -13,7 +13,7 @@ class AuthTests: XCTestCase {
     let dataProvider = MockDataProvider()
 
     func testLoginRequest() throws {
-        let expentation = expectation(description: "request expentation")
+        let expectation = expectation(description: "request expectation")
         let request = LoginRequest(username: "aslanmsalih", password: "password")
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -22,13 +22,13 @@ class AuthTests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expentation.fulfill()
+            expectation.fulfill()
         }
-        wait(for: [expentation], timeout: 5)
+        wait(for: [expectation], timeout: 5)
     }
     
     func testRegisterRequest() throws {
-        let expentation = expectation(description: "request expentation")
+        let expectation = expectation(description: "request expectation")
         let request = RegisterRequest(username: "aslanmsalih", email: "aslanmsalih@gmail.com", password: "password")
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -37,13 +37,13 @@ class AuthTests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expentation.fulfill()
+            expectation.fulfill()
         }
-        wait(for: [expentation], timeout: 5)
+        wait(for: [expectation], timeout: 5)
     }
     
     func testLogoutRequest() throws {
-        let expentation = expectation(description: "request expentation")
+        let expectation = expectation(description: "request expectation")
         let request = LogoutRequest()
         dataProvider.request(for: request) { (result) in
             switch result {
@@ -52,9 +52,9 @@ class AuthTests: XCTestCase {
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
-            expentation.fulfill()
+            expectation.fulfill()
         }
-        wait(for: [expentation], timeout: 5)
+        wait(for: [expectation], timeout: 5)
     }
 
 }
