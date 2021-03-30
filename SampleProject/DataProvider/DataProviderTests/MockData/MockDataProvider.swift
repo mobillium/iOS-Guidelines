@@ -8,7 +8,7 @@
 
 class MockDataProvider: DataProviderProtocol {
     
-    func request<T>(for request: T, result: DataProviderResult<T.ResponseType>?) where T : RequestProtocol {
+    func request<T>(for request: T, result: DataProviderResult<T.ResponseType>?) where T: RequestProtocol {
         debugPrint("mockFileName: \(request.mockFileName)")
         let bundle = Bundle(for: type(of: self))
         do {
