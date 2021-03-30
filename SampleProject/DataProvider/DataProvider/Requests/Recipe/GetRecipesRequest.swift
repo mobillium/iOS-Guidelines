@@ -14,9 +14,11 @@ public struct GetRecipesRequest: APIRequest {
     public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
+    public let listType: ListType
     
     public init(page: Int, listType: ListType) {
         self.parameters["page"] = page
+        self.listType = listType
         switch listType {
         case .editorChoiceRecipes:
             path = "editor-choices"

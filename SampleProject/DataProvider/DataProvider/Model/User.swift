@@ -6,7 +6,6 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-
 public struct User: Codable {
     public let id: Int
     public let username: String

@@ -14,9 +14,11 @@ public struct RecipeLikeRequest: APIRequest {
     public var method: RequestMethod = .post
     public var parameters: RequestParameters = [:]
     public var headers: RequestHeaders = [:]
+    public let likeType: LikeType
     
     public init(recipeId: Int, likeType: LikeType) {
         self.path = "recipe/\(recipeId)/like"
+        self.likeType = likeType
         switch likeType {
         case .like:
             method = .post

@@ -181,6 +181,7 @@
 		7A980AB02553166D00494520 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7AD4057526130DEF00212D73 /* Recipes */,
 				7A73C91425CC386D00322233 /* Launch */,
 				7A980ABB2553168D00494520 /* Base */,
 				7A980ABC2553169100494520 /* Home */,
@@ -247,6 +248,13 @@
 				7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		7AD4057526130DEF00212D73 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Recipes;
 			sourceTree = "<group>";
 		};
 		7AFC72902551FA1800B30789 = {

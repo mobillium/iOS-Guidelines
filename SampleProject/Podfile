@@ -54,6 +54,10 @@ target 'DataProvider' do
   target 'DataProviderTests' do
     inherit! :search_paths
     # Pods for testing
+    
+    # Network
+    pod 'Alamofire', '~> 5.4'
+    
   end
   
 end

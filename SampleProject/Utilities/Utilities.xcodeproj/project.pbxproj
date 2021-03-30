@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2A25CC80AEAA52436711DED9 /* Pods_UtilitiesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C280C6DE6AF952AD56767055 /* Pods_UtilitiesTests.framework */; };
+		7A7A387D2611F46E006E7A4A /* String+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A387C2611F46E006E7A4A /* String+ExtensionsTests.swift */; };
+		7A7A38832611F491006E7A4A /* UITextField+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A38822611F491006E7A4A /* UITextField+ExtensionsTests.swift */; };
+		7A7A38872611F4E9006E7A4A /* Int+ExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A38862611F4E9006E7A4A /* Int+ExtensionsTests.swift */; };
 		7AC2B0FC260C8C77008160B0 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B0FB260C8C77008160B0 /* Int+Extensions.swift */; };
 		7AFC73852551FF3100B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC737B2551FF3100B30789 /* Utilities.framework */; };
 		7AFC738C2551FF3100B30789 /* Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AFC737E2551FF3100B30789 /* Utilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +35,10 @@
 		2813822194058BB9EA54B868 /* Pods-Utilities.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.debug.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.debug.xcconfig"; sourceTree = "<group>"; };
 		503B4C4AE0D4997B1F956FE8 /* Pods-UtilitiesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.debug.xcconfig"; path = "Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		75300BE7C777B2B4958676D3 /* Pods_Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7A38762611F458006E7A4A /* UtilitiesTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UtilitiesTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A7A387C2611F46E006E7A4A /* String+ExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		7A7A38822611F491006E7A4A /* UITextField+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+ExtensionsTests.swift"; sourceTree = "<group>"; };
+		7A7A38862611F4E9006E7A4A /* Int+ExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+ExtensionsTests.swift"; sourceTree = "<group>"; };
 		7AC2B0FB260C8C77008160B0 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		7AFC737B2551FF3100B30789 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC737E2551FF3100B30789 /* Utilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
@@ -84,6 +91,16 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		7A7A387B2611F45F006E7A4A /* ExtensionsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A387C2611F46E006E7A4A /* String+ExtensionsTests.swift */,
+				7A7A38822611F491006E7A4A /* UITextField+ExtensionsTests.swift */,
+				7A7A38862611F4E9006E7A4A /* Int+ExtensionsTests.swift */,
+			);
+			path = ExtensionsTests;
+			sourceTree = "<group>";
+		};
 		7AFC73712551FF3100B30789 = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +136,9 @@
 		7AFC73882551FF3100B30789 /* UtilitiesTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A7A387B2611F45F006E7A4A /* ExtensionsTests */,
 				7AFC738B2551FF3100B30789 /* Info.plist */,
+				7A7A38762611F458006E7A4A /* UtilitiesTests-Bridging-Header.h */,
 			);
 			path = UtilitiesTests;
 			sourceTree = "<group>";
@@ -226,6 +245,7 @@
 					};
 					7AFC73832551FF3100B30789 = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -329,6 +349,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7A387D2611F46E006E7A4A /* String+ExtensionsTests.swift in Sources */,
+				7A7A38872611F4E9006E7A4A /* Int+ExtensionsTests.swift in Sources */,
+				7A7A38832611F491006E7A4A /* UITextField+ExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -433,6 +457,7 @@
 			baseConfigurationReference = DF8DDC1263D8B88E7F5039A3 /* Pods-UtilitiesTests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = UtilitiesTests/Info.plist;
@@ -443,6 +468,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UtilitiesTests/UtilitiesTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -590,6 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -615,6 +642,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.Utilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -625,6 +653,7 @@
 			baseConfigurationReference = 503B4C4AE0D4997B1F956FE8 /* Pods-UtilitiesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = UtilitiesTests/Info.plist;
@@ -635,6 +664,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UtilitiesTests/UtilitiesTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -645,6 +676,7 @@
 			baseConfigurationReference = FD7B4D0ADD17E408BC41A575 /* Pods-UtilitiesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = UtilitiesTests/Info.plist;
@@ -655,6 +687,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.UtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "UtilitiesTests/UtilitiesTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

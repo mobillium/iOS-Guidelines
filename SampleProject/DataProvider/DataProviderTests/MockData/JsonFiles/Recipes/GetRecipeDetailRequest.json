@@ -1,0 +1,78 @@
+{
+  "id": 16,
+  "title": "Karnıyarık Yemeği",
+  "definition": "",
+  "language": "tr",
+  "ingredients": "6 adet küçük boy patlıcan (büyük ise ikiye bölebilirsiniz)\r\n3 adet sivri biber\r\nKıymalı Harç İçin;\r\n\r\n2 adet orta boy soğan\r\n2 adet domates\r\n2 adet sivri biber\r\n2 diş sarımsak\r\nSıvı yağ, tuz, karabiber, kırmızıbiber\r\n200 gr kıyma\r\n1 çay bardağı sıcak su\r\nSosu İçin;\r\n\r\n1 yemek kaşığı salça\r\n1 su bardağı sıcak su",
+  "directions": "Patlıcanları çizgili soyup, yarım saat yağ çekmemesi için tuzlu suda bekletin.\r\nİyice yıkadıktan sonra suyunu havlu ile çektirin ve az yağda kızartın. 3 adet biberi de yağda kızartın.\r\nDaha sonra aynı tavada doğranmış soğanları kavurun, kıymayı ekleyerek bir müddet daha kavurun ve biberleri, sarımsağı ekleyerek 2 dakika daha kavurun.\r\nKüp küp doğramış olduğunuz 2 adet domatesi, tuzu, baharatları ekleyerek karıştırın.\r\nÜzerine bir çay bardağı su ekleyerek 5 dk kaynatın.\r\nTepsiye patlıcanların ortalarını keserek yerleştirin ve bu kesiklerden patlıcanın içine bastırarak iç malzemesine yer açın ve malzeme ile patlıcanları doldurun.\r\nDoldurduğunuz patlıcanların üzerine ortadan ikiye kestiğiniz çeri domatesi ya da 1 adet domatesi eşit büyüklükte olacak şekilde paylaştırın ve kızarttığımız biberlerden birer tane koyun.\r\nAyrı bir yerde 1 kaşık salçayı, 1 su bardağı sıcak suda ezerek patlıcanların aralarına dökün. Kıymalar çıkmasın diye üzerine dökmeyin.\r\nDaha sonra 170 derece de ısıttığınız fırına sürerek 20-25 dk pişirin. Dilerseniz bu işlemi pilav tenceresi gibi bir tencerede ocakta yapabilirsiniz. Aynı sürede tencerede de  pişecektir.",
+  "youtube_url": "",
+  "youtube_image": null,
+  "view_count": 0,
+  "is_liked": false,
+  "is_favorited": false,
+  "difference": "2 ay önce",
+  "is_editor_choice": false,
+  "is_owner": false,
+  "like_count": 2,
+  "number_of_favorite_count": 0,
+  "comment_count": 1,
+  "is_approved": true,
+  "user": {
+    "id": 4,
+    "username": "mrttcelebi",
+    "name": "Murat",
+    "surname": "Çelebi",
+    "definition": "",
+    "is_trusted": 1,
+    "facebook_url": null,
+    "twitter_url": null,
+    "instagram_url": null,
+    "youtube_url": null,
+    "language": "tr",
+    "is_top_user_choice": false,
+    "followed_count": 2,
+    "following_count": 0,
+    "recipe_count": 22,
+    "is_following": false,
+    "favorites_count": 0,
+    "likes_count": 0,
+    "cover": null,
+    "image": {
+      "width": 512,
+      "height": 512,
+      "key": "user",
+      "order": 0,
+      "url": "https://fodamy.mobillium.com/images/454ea7c3-aefb-4c76-aee4-a140a71b5834.jpg"
+    }
+  },
+  "time_of_recipe": {
+    "id": 12,
+    "text": "60"
+  },
+  "number_of_person": {
+    "id": 3,
+    "text": "4-6"
+  },
+  "category": {
+    "id": 6,
+    "name": "Et",
+    "language": "tr",
+    "main_category_id": null,
+    "image": {
+      "width": 99,
+      "height": 64,
+      "key": "category",
+      "order": 0,
+      "url": "https://fodamy.mobillium.com/images/a8522f7a-cffa-4114-879b-9b061455c235.jpg"
+    }
+  },
+  "images": [
+    {
+      "width": 600,
+      "height": 400,
+      "key": "recipe",
+      "order": 0,
+      "url": "https://fodamy.mobillium.com/images/a3cc0140-7b73-4ee7-85ad-c2ba40e8cec3.jpg"
+    }
+  ]
+}

@@ -30,16 +30,9 @@ public struct APIDataProvider: DataProviderProtocol {
         return request
     }
     
-    public func getData<T: RequestProtocol>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
+    public func request<T: RequestProtocol>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
         let request = createRequest(request)
         request.validate()
-        request.responseData { (response) in
-            if let value = response.value {
-                if let json = String(data: value, encoding: .utf8) {
-                    print("Response JSON: \n\(json)")
-                }
-            }
-        }
         request.responseDecodable(of: T.ResponseType.self) { (response) in
             switch response.result {
             case .success(let value):

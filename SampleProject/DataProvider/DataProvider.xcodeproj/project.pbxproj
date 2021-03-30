@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,25 @@
 		7A17BB90255203000086B35B /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB88255203000086B35B /* DataProviderProtocol.swift */; };
 		7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; };
 		7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7A7A3944261202FF006E7A4A /* RecipeRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A3943261202FF006E7A4A /* RecipeRequestsTests.swift */; };
+		7A7A394A26120C03006E7A4A /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394926120C03006E7A4A /* MockDataProvider.swift */; };
+		7A7A394E26120C3B006E7A4A /* RequestProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394D26120C3B006E7A4A /* RequestProtocol+Extensions.swift */; };
+		7A7A395326120C9B006E7A4A /* GetLastAddedRecipesRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A395226120C9B006E7A4A /* GetLastAddedRecipesRequest.json */; };
+		7A7A395726120CB3006E7A4A /* GetEditorChoiceRecipesRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A395626120CB3006E7A4A /* GetEditorChoiceRecipesRequest.json */; };
+		7A7A395E2612125E006E7A4A /* LogoutRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A395B2612125E006E7A4A /* LogoutRequest.json */; };
+		7A7A395F2612125E006E7A4A /* RegisterRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A395C2612125E006E7A4A /* RegisterRequest.json */; };
+		7A7A39602612125E006E7A4A /* LoginRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A395D2612125E006E7A4A /* LoginRequest.json */; };
+		7A7A398326121A9F006E7A4A /* GetCategoryRecipesRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A398226121A9F006E7A4A /* GetCategoryRecipesRequest.json */; };
+		7A7A398A2612233B006E7A4A /* GetCategoriesWithRecipesRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39892612233B006E7A4A /* GetCategoriesWithRecipesRequest.json */; };
+		7A7A3991261223AF006E7A4A /* AuthRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A3990261223AF006E7A4A /* AuthRequestsTests.swift */; };
+		7A7A39952612241B006E7A4A /* GetRecipeDetailRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39942612241B006E7A4A /* GetRecipeDetailRequest.json */; };
+		7A7A399926122A11006E7A4A /* RecipeCommentsRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A399826122A11006E7A4A /* RecipeCommentsRequestsTests.swift */; };
+		7A7A39A126122BF3006E7A4A /* RecipeLikeRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A399F26122BF3006E7A4A /* RecipeLikeRequest.json */; };
+		7A7A39A226122BF3006E7A4A /* RecipeUnlikeRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39A026122BF3006E7A4A /* RecipeUnlikeRequest.json */; };
+		7A7A39AC26122D89006E7A4A /* PostRecipeCommentRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39AB26122D89006E7A4A /* PostRecipeCommentRequest.json */; };
+		7A7A39B326122DCF006E7A4A /* DeleteRecipeCommentRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39B226122DCF006E7A4A /* DeleteRecipeCommentRequest.json */; };
+		7A7A39D6261231F1006E7A4A /* GetRecipeCommentsRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39D4261231F1006E7A4A /* GetRecipeCommentsRequest.json */; };
+		7A7A39D7261231F1006E7A4A /* EditRecipeCommentRequest.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A7A39D5261231F1006E7A4A /* EditRecipeCommentRequest.json */; };
 		7AC2B1E3260D0006008160B0 /* MainCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D6260D0005008160B0 /* MainCategory.swift */; };
 		7AC2B1E4260D0006008160B0 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D7260D0005008160B0 /* Pagination.swift */; };
 		7AC2B1E5260D0006008160B0 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1D8260D0005008160B0 /* Auth.swift */; };
@@ -39,7 +58,7 @@
 		7AC2B206260D003E008160B0 /* RecipeLikeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */; };
 		7AC2B207260D003E008160B0 /* GetRecipeDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */; };
 		7AC2B208260D003E008160B0 /* GetRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */; };
-		7AC2B209260D003E008160B0 /* GetCategoriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */; };
+		7AC2B209260D003E008160B0 /* GetCategoriesWithRecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FB260D003E008160B0 /* GetCategoriesWithRecipesRequest.swift */; };
 		7AC2B20A260D003E008160B0 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FD260D003E008160B0 /* LoginRequest.swift */; };
 		7AC2B20B260D003E008160B0 /* LogoutRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */; };
 		7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */; };
@@ -88,6 +107,26 @@
 		7A17BB87255203000086B35B /* RequestEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestEncoding.swift; sourceTree = "<group>"; };
 		7A17BB88255203000086B35B /* DataProviderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProviderProtocol.swift; sourceTree = "<group>"; };
 		7A73C83325CC18A000322233 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7A388C2611F596006E7A4A /* DataProviderTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DataProviderTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7A7A3943261202FF006E7A4A /* RecipeRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeRequestsTests.swift; sourceTree = "<group>"; };
+		7A7A394926120C03006E7A4A /* MockDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataProvider.swift; sourceTree = "<group>"; };
+		7A7A394D26120C3B006E7A4A /* RequestProtocol+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestProtocol+Extensions.swift"; sourceTree = "<group>"; };
+		7A7A395226120C9B006E7A4A /* GetLastAddedRecipesRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetLastAddedRecipesRequest.json; sourceTree = "<group>"; };
+		7A7A395626120CB3006E7A4A /* GetEditorChoiceRecipesRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetEditorChoiceRecipesRequest.json; sourceTree = "<group>"; };
+		7A7A395B2612125E006E7A4A /* LogoutRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LogoutRequest.json; sourceTree = "<group>"; };
+		7A7A395C2612125E006E7A4A /* RegisterRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegisterRequest.json; sourceTree = "<group>"; };
+		7A7A395D2612125E006E7A4A /* LoginRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoginRequest.json; sourceTree = "<group>"; };
+		7A7A398226121A9F006E7A4A /* GetCategoryRecipesRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCategoryRecipesRequest.json; sourceTree = "<group>"; };
+		7A7A39892612233B006E7A4A /* GetCategoriesWithRecipesRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetCategoriesWithRecipesRequest.json; sourceTree = "<group>"; };
+		7A7A3990261223AF006E7A4A /* AuthRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRequestsTests.swift; sourceTree = "<group>"; };
+		7A7A39942612241B006E7A4A /* GetRecipeDetailRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetRecipeDetailRequest.json; sourceTree = "<group>"; };
+		7A7A399826122A11006E7A4A /* RecipeCommentsRequestsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCommentsRequestsTests.swift; sourceTree = "<group>"; };
+		7A7A399F26122BF3006E7A4A /* RecipeLikeRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeLikeRequest.json; sourceTree = "<group>"; };
+		7A7A39A026122BF3006E7A4A /* RecipeUnlikeRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RecipeUnlikeRequest.json; sourceTree = "<group>"; };
+		7A7A39AB26122D89006E7A4A /* PostRecipeCommentRequest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PostRecipeCommentRequest.json; sourceTree = "<group>"; };
+		7A7A39B226122DCF006E7A4A /* DeleteRecipeCommentRequest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DeleteRecipeCommentRequest.json; sourceTree = "<group>"; };
+		7A7A39D4261231F1006E7A4A /* GetRecipeCommentsRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GetRecipeCommentsRequest.json; sourceTree = "<group>"; };
+		7A7A39D5261231F1006E7A4A /* EditRecipeCommentRequest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EditRecipeCommentRequest.json; sourceTree = "<group>"; };
 		7AC2B1D6260D0005008160B0 /* MainCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCategory.swift; sourceTree = "<group>"; };
 		7AC2B1D7260D0005008160B0 /* Pagination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		7AC2B1D8260D0005008160B0 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
@@ -109,7 +148,7 @@
 		7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeLikeRequest.swift; sourceTree = "<group>"; };
 		7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRecipeDetailRequest.swift; sourceTree = "<group>"; };
 		7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetRecipesRequest.swift; sourceTree = "<group>"; };
-		7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCategoriesRequest.swift; sourceTree = "<group>"; };
+		7AC2B1FB260D003E008160B0 /* GetCategoriesWithRecipesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCategoriesWithRecipesRequest.swift; sourceTree = "<group>"; };
 		7AC2B1FD260D003E008160B0 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		7AC2B1FE260D003E008160B0 /* LogoutRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutRequest.swift; sourceTree = "<group>"; };
 		7AC2B1FF260D003E008160B0 /* RegisterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
@@ -198,6 +237,79 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		7A7A392526120089006E7A4A /* RequestsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A3943261202FF006E7A4A /* RecipeRequestsTests.swift */,
+				7A7A399826122A11006E7A4A /* RecipeCommentsRequestsTests.swift */,
+				7A7A3990261223AF006E7A4A /* AuthRequestsTests.swift */,
+			);
+			path = RequestsTests;
+			sourceTree = "<group>";
+		};
+		7A7A394826120BF3006E7A4A /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A396326121388006E7A4A /* Extensions */,
+				7A7A395126120C65006E7A4A /* JsonFiles */,
+				7A7A394926120C03006E7A4A /* MockDataProvider.swift */,
+				7A7A394D26120C3B006E7A4A /* RequestProtocol+Extensions.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		7A7A395126120C65006E7A4A /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A39A526122D1D006E7A4A /* RecipeComments */,
+				7A7A398626121AEA006E7A4A /* Recipes */,
+				7A7A395A261210F3006E7A4A /* Auth */,
+			);
+			path = JsonFiles;
+			sourceTree = "<group>";
+		};
+		7A7A395A261210F3006E7A4A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A395D2612125E006E7A4A /* LoginRequest.json */,
+				7A7A395B2612125E006E7A4A /* LogoutRequest.json */,
+				7A7A395C2612125E006E7A4A /* RegisterRequest.json */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		7A7A396326121388006E7A4A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7A7A398626121AEA006E7A4A /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A399F26122BF3006E7A4A /* RecipeLikeRequest.json */,
+				7A7A39A026122BF3006E7A4A /* RecipeUnlikeRequest.json */,
+				7A7A39942612241B006E7A4A /* GetRecipeDetailRequest.json */,
+				7A7A39892612233B006E7A4A /* GetCategoriesWithRecipesRequest.json */,
+				7A7A395626120CB3006E7A4A /* GetEditorChoiceRecipesRequest.json */,
+				7A7A398226121A9F006E7A4A /* GetCategoryRecipesRequest.json */,
+				7A7A395226120C9B006E7A4A /* GetLastAddedRecipesRequest.json */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		7A7A39A526122D1D006E7A4A /* RecipeComments */ = {
+			isa = PBXGroup;
+			children = (
+				7A7A39D5261231F1006E7A4A /* EditRecipeCommentRequest.json */,
+				7A7A39D4261231F1006E7A4A /* GetRecipeCommentsRequest.json */,
+				7A7A39AB26122D89006E7A4A /* PostRecipeCommentRequest.json */,
+				7A7A39B226122DCF006E7A4A /* DeleteRecipeCommentRequest.json */,
+			);
+			path = RecipeComments;
+			sourceTree = "<group>";
+		};
 		7AC2B1AC260CFE8C008160B0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,7 +367,7 @@
 			children = (
 				7AC2B1F8260D003E008160B0 /* RecipeLikeRequest.swift */,
 				7AC2B1F9260D003E008160B0 /* GetRecipeDetailRequest.swift */,
-				7AC2B1FB260D003E008160B0 /* GetCategoriesRequest.swift */,
+				7AC2B1FB260D003E008160B0 /* GetCategoriesWithRecipesRequest.swift */,
 				7AC2B1FA260D003E008160B0 /* GetRecipesRequest.swift */,
 				7AC2B1F3260D003E008160B0 /* Comment */,
 			);
@@ -306,7 +418,10 @@
 		7AFC73382551FE8C00B30789 /* DataProviderTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A7A394826120BF3006E7A4A /* MockData */,
+				7A7A392526120089006E7A4A /* RequestsTests */,
 				7AFC733B2551FE8C00B30789 /* Info.plist */,
+				7A7A388C2611F596006E7A4A /* DataProviderTests-Bridging-Header.h */,
 			);
 			path = DataProviderTests;
 			sourceTree = "<group>";
@@ -353,6 +468,7 @@
 				7AFC73302551FE8C00B30789 /* Sources */,
 				7AFC73312551FE8C00B30789 /* Frameworks */,
 				7AFC73322551FE8C00B30789 /* Resources */,
+				CC21885115B68BC0179BBB11 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +495,7 @@
 					};
 					7AFC73332551FE8C00B30789 = {
 						CreatedOnToolsVersion = 12.1;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -413,6 +530,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7A39A126122BF3006E7A4A /* RecipeLikeRequest.json in Resources */,
+				7A7A39AC26122D89006E7A4A /* PostRecipeCommentRequest.json in Resources */,
+				7A7A39B326122DCF006E7A4A /* DeleteRecipeCommentRequest.json in Resources */,
+				7A7A395726120CB3006E7A4A /* GetEditorChoiceRecipesRequest.json in Resources */,
+				7A7A395326120C9B006E7A4A /* GetLastAddedRecipesRequest.json in Resources */,
+				7A7A398326121A9F006E7A4A /* GetCategoryRecipesRequest.json in Resources */,
+				7A7A395F2612125E006E7A4A /* RegisterRequest.json in Resources */,
+				7A7A39A226122BF3006E7A4A /* RecipeUnlikeRequest.json in Resources */,
+				7A7A39602612125E006E7A4A /* LoginRequest.json in Resources */,
+				7A7A39D7261231F1006E7A4A /* EditRecipeCommentRequest.json in Resources */,
+				7A7A39D6261231F1006E7A4A /* GetRecipeCommentsRequest.json in Resources */,
+				7A7A398A2612233B006E7A4A /* GetCategoriesWithRecipesRequest.json in Resources */,
+				7A7A395E2612125E006E7A4A /* LogoutRequest.json in Resources */,
+				7A7A39952612241B006E7A4A /* GetRecipeDetailRequest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +594,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CC21885115B68BC0179BBB11 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -488,7 +636,7 @@
 				7AC2B201260D003E008160B0 /* UserFollowRequest.swift in Sources */,
 				7AC2B207260D003E008160B0 /* GetRecipeDetailRequest.swift in Sources */,
 				7AC2B1EB260D0006008160B0 /* Image.swift in Sources */,
-				7AC2B209260D003E008160B0 /* GetCategoriesRequest.swift in Sources */,
+				7AC2B209260D003E008160B0 /* GetCategoriesWithRecipesRequest.swift in Sources */,
 				7AC2B1E7260D0006008160B0 /* SuccessResponse.swift in Sources */,
 				7AC2B20C260D003E008160B0 /* RegisterRequest.swift in Sources */,
 				7AC9DD03260DED1900D2874D /* APILogger.swift in Sources */,
@@ -513,6 +661,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7A399926122A11006E7A4A /* RecipeCommentsRequestsTests.swift in Sources */,
+				7A7A394A26120C03006E7A4A /* MockDataProvider.swift in Sources */,
+				7A7A394E26120C3B006E7A4A /* RequestProtocol+Extensions.swift in Sources */,
+				7A7A3944261202FF006E7A4A /* RecipeRequestsTests.swift in Sources */,
+				7A7A3991261223AF006E7A4A /* AuthRequestsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -607,6 +760,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -616,7 +770,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3556722C15DE1D42C53CE0DD /* Pods-DataProviderTests.development.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = DataProviderTests/Info.plist;
@@ -627,6 +782,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.DataProviderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataProviderTests/DataProviderTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -774,6 +930,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -799,6 +956,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.DataProvider;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -808,7 +966,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A571D8F95D58C08B3061AA5A /* Pods-DataProviderTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = DataProviderTests/Info.plist;
@@ -819,6 +978,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.DataProviderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataProviderTests/DataProviderTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -828,7 +989,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 928D7DDA0F8026B6F4B4D941 /* Pods-DataProviderTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
 				INFOPLIST_FILE = DataProviderTests/Info.plist;
@@ -839,6 +1001,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aslanmehmetsalih.DataProviderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DataProviderTests/DataProviderTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
