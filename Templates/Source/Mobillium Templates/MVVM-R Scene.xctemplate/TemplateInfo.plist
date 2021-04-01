@@ -109,6 +109,42 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
+		<dict>
+			<key>Description</key>
+			<string>The name of cell</string>
+			<key>Identifier</key>
+			<string>cellName</string>
+			<key>Name</key>
+			<string>Cell Name:</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>RequiredOptions</key>
+      <dict>
+        <key>includeDelegate</key>
+        <array>
+          <string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+        </array>
+      </dict>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_cellName___</string>
+			<key>Identifier</key>
+			<string>variableCellName</string>
+			<key>Type</key>
+			<string>static</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>includeDelegate</key>
+				<array>
+					<string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
 </dict>
 </plist>

@@ -4,6 +4,13 @@ import UIKit
 
 final class ___VARIABLE_moduleName___ViewController: BaseViewController<___VARIABLE_moduleName___ViewModel> {
     
+    private let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(___VARIABLE_cellName___.self)
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -14,16 +21,19 @@ final class ___VARIABLE_moduleName___ViewController: BaseViewController<___VARIA
 extension ___VARIABLE_moduleName___ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        return viewModel.numberOfItemsAt(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell: ___VARIABLE_cellName___ = collectionView.dequeueReusableCell(for: indexPath)
+        let cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        cell.set(viewModel: cellItem)
+        return cell
     }
     
 }
 
-//swiftlint:disable line_length
+// swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ___VARIABLE_moduleName___ViewController: UICollectionViewDelegateFlowLayout {
     
@@ -44,4 +54,4 @@ extension ___VARIABLE_moduleName___ViewController: UICollectionViewDelegateFlowL
     }
     
 }
-//swiftlint:enable line_length
+// swiftlint:enable line_length
