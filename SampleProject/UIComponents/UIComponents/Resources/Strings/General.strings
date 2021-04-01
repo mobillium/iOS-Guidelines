@@ -11,3 +11,6 @@
 "like" = "Beğeni";
 "follow" = "Takip Et";
 "following" = "Takip Ediliyor";
+"recipeIngredients" = "Malzemeler";
+"recipeSteps" = "Yapılışı";
+"addComment" = "Yorum Ekle";
