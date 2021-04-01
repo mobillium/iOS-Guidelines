@@ -44,7 +44,7 @@
 			<key>Identifier</key>
 			<string>viewControllerName</string>
 			<key>Name</key>
-			<string>ViewController:</string>
+			<string>ViewController Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -58,7 +58,7 @@
 			<key>Identifier</key>
 			<string>viewModelName</string>
 			<key>Name</key>
-			<string>ViewModel:</string>
+			<string>ViewModel Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -72,7 +72,7 @@
 			<key>Identifier</key>
 			<string>routerName</string>
 			<key>Name</key>
-			<string>Router:</string>
+			<string>Router Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -126,6 +126,8 @@
 					<string>TableViewDelegate</string>
         </array>
       </dict>
+			<key>Required</key>
+			<true/>
 			<key>Type</key>
 			<string>text</string>
 		</dict>

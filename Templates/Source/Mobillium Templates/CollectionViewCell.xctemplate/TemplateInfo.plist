@@ -40,11 +40,11 @@
 			<key>Default</key>
 			<string>___VARIABLE_moduleName___Cell.swift</string>
 			<key>Description</key>
-			<string>The interface name</string>
+			<string>The cell name</string>
 			<key>Identifier</key>
-			<string>interfaceName</string>
+			<string>cellName</string>
 			<key>Name</key>
-			<string>Interface Name:</string>
+			<string>Cell Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>

@@ -40,11 +40,11 @@
 			<key>Default</key>
 			<string>___VARIABLE_moduleName___.swift</string>
 			<key>Description</key>
-			<string>The interface name</string>
+			<string>The view name</string>
 			<key>Identifier</key>
-			<string>interfaceName</string>
+			<string>viewName</string>
 			<key>Name</key>
-			<string>Interface Name:</string>
+			<string>View Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
