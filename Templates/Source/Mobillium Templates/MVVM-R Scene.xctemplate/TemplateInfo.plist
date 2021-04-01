@@ -78,6 +78,37 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>Default</string>
+			<key>Values</key>
+			<array>
+				<string>Default</string>
+				<string>CollectionViewDelegate</string>
+				<string>TableViewDelegate</string>
+			</array>
+			<key>Description</key>
+			<string>The include delegate</string>
+			<key>Identifier</key>
+			<string>includeDelegate</string>
+			<key>Name</key>
+			<string>Delegate</string>
+			<key>Required</key>
+			<true/>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>cocoaSubclass</key>
+				<array>
+					<string>Default</string>
+					<string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+				</array>
+			</dict>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>
