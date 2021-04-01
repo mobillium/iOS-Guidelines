@@ -11,3 +11,7 @@
 
 // MARK: - Favorites
 "Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";

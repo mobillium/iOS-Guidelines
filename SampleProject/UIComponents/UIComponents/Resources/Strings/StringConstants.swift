@@ -47,6 +47,12 @@ public enum L10n {
       /// Sign In
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")
     }
+    public enum WalkThrough {
+      /// İlerle
+      public static let next = L10n.tr("Modules", "WalkThrough.Next")
+      /// Başla!
+      public static let start = L10n.tr("Modules", "WalkThrough.Start")
+    }
   }
   public enum Placeholder {
     /// Username
