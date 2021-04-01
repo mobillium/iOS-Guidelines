@@ -50,6 +50,29 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>checkbox</string>
+			<key>Default</key>
+			<string>true</string>
+			<key>Description</key>
+			<string>The public check</string>
+			<key>Identifier</key>
+			<string>Public</string>
+			<key>Name</key>
+			<string>Public</string>
+			<key>Required</key>
+			<true/>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>cocoaSubclass</key>
+				<array>
+					<string>Default</string>
+				</array>
+			</dict>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>
