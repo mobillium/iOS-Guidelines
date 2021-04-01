@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AAAFC1A26161A42006B2FCF /* RecipeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFC1826161A42006B2FCF /* RecipeHeaderCell.swift */; };
+		1AAAFC1B26161A42006B2FCF /* RecipeHeaderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFC1926161A42006B2FCF /* RecipeHeaderCellModel.swift */; };
 		1AAAFC07261612F7006B2FCF /* FoodDetailHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFC05261612F7006B2FCF /* FoodDetailHeaderCell.swift */; };
 		1AAAFC08261612F7006B2FCF /* FoodDetailHeaderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFC06261612F7006B2FCF /* FoodDetailHeaderCellModel.swift */; };
 		1C39E0435D08B09D79582AD7 /* Pods_UIComponentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21582D1B374172423512A93A /* Pods_UIComponentsTests.framework */; };
@@ -92,8 +94,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1AAAFC05261612F7006B2FCF /* FoodDetailHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailHeaderCell.swift; sourceTree = "<group>"; };
-		1AAAFC06261612F7006B2FCF /* FoodDetailHeaderCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailHeaderCellModel.swift; sourceTree = "<group>"; };
+		1AAAFC1826161A42006B2FCF /* RecipeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHeaderCell.swift; sourceTree = "<group>"; };
+		1AAAFC1926161A42006B2FCF /* RecipeHeaderCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeHeaderCellModel.swift; sourceTree = "<group>"; };
 		21582D1B374172423512A93A /* Pods_UIComponentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37EC228B1BD0FDAAC1CEEB4B /* Pods-UIComponentsTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.development.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.development.xcconfig"; sourceTree = "<group>"; };
 		3B5BE3A239BC5AF9E9DFFC43 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,13 +194,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1AAAFC04261612D2006B2FCF /* FoodDetailHeaderCell */ = {
+		1AAAFC1726161A30006B2FCF /* RecipeHeaderCell */ = {
 			isa = PBXGroup;
 			children = (
-				1AAAFC05261612F7006B2FCF /* FoodDetailHeaderCell.swift */,
-				1AAAFC06261612F7006B2FCF /* FoodDetailHeaderCellModel.swift */,
+				1AAAFC1826161A42006B2FCF /* RecipeHeaderCell.swift */,
+				1AAAFC1926161A42006B2FCF /* RecipeHeaderCellModel.swift */,
 			);
-			path = FoodDetailHeaderCell;
+			path = RecipeHeaderCell;
 			sourceTree = "<group>";
 		};
 		34EE8F3D3D00DA0D4C40CE39 /* Pods */ = {
@@ -650,7 +652,9 @@
 				7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */,
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
 				7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */,
+				1AAAFC1A26161A42006B2FCF /* RecipeHeaderCell.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
+				1AAAFC1B26161A42006B2FCF /* RecipeHeaderCellModel.swift in Sources */,
 				7AC2B13C260CA589008160B0 /* RecipeDetailInfoView.swift in Sources */,
 				A2B36136260B66EA00FB990F /* UIImageView+Extensions.swift in Sources */,
 				A21DA4CC260CBD6700493FFE /* CommentCell.swift in Sources */,
@@ -677,8 +681,6 @@
 				A21DA4CD260CBD6700493FFE /* CommentCellModel.swift in Sources */,
 				7A040FCE25E966FF0052798D /* UIColor+Colors.swift in Sources */,
 				7A040F9525E9658B0052798D /* UIFont+Extensions.swift in Sources */,
-				1AAAFC08261612F7006B2FCF /* FoodDetailHeaderCellModel.swift in Sources */,
-				1AAAFC07261612F7006B2FCF /* FoodDetailHeaderCell.swift in Sources */,
 				7A716D60260B6DEC008B91B7 /* TostWarningView.swift in Sources */,
 				7A040FD225E966FF0052798D /* Assets.swift in Sources */,
 				A20A4BA4260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift in Sources */,
