@@ -5,7 +5,11 @@
 	<key>DefaultCompletionName</key>
 	<string>File</string>
 	<key>Description</key>
-	<string>MVVM-R Route module.</string>
+	<string>MVVM-R Push Route</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
@@ -16,7 +20,7 @@
 			<key>Identifier</key>
 			<string>moduleName</string>
 			<key>Name</key>
-			<string>New Module Name:</string>
+			<string>Module Name:</string>
 			<key>NotPersisted</key>
 			<true/>
 			<key>Required</key>
@@ -47,13 +51,5 @@
 			<string>static</string>
 		</dict>
 	</array>
-	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.iphoneos</string>
-	</array>
-	<key>SortOrder</key>
-	<string>7</string>
-	<key>Summary</key>
-	<string>This generates a new MVVM-R module.</string>
 </dict>
 </plist>

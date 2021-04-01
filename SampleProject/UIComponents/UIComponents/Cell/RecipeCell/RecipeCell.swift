@@ -133,7 +133,7 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
 
 // MARK: - Set ViewModel
 public extension RecipeCell {
-    func set(with viewModel: RecipeCellProtocol) {
+    func set(viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText

@@ -5,7 +5,11 @@
 	<key>DefaultCompletionName</key>
 	<string>File</string>
 	<key>Description</key>
-	<string>MVVM-R module.</string>
+	<string>MVVM-R module</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
 	<key>Kind</key>
 	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
 	<key>Options</key>
@@ -16,7 +20,7 @@
 			<key>Identifier</key>
 			<string>moduleName</string>
 			<key>Name</key>
-			<string>New Module Name:</string>
+			<string>Module Name:</string>
 			<key>NotPersisted</key>
 			<true/>
 			<key>Required</key>
@@ -36,11 +40,11 @@
 			<key>Default</key>
 			<string>___VARIABLE_moduleName___ViewController.swift</string>
 			<key>Description</key>
-			<string>The interfaces name</string>
+			<string>The ViewController name</string>
 			<key>Identifier</key>
-			<string>interfacesName</string>
+			<string>viewControllerName</string>
 			<key>Name</key>
-			<string>Interfaces Name:</string>
+			<string>ViewController Name:</string>
 			<key>Required</key>
 			<true/>
 			<key>Type</key>
@@ -50,7 +54,7 @@
 			<key>Default</key>
 			<string>___VARIABLE_moduleName___ViewModel.swift</string>
 			<key>Description</key>
-			<string>The viewModel name</string>
+			<string>The ViewModel name</string>
 			<key>Identifier</key>
 			<string>viewModelName</string>
 			<key>Name</key>
@@ -64,7 +68,7 @@
 			<key>Default</key>
 			<string>___VARIABLE_moduleName___Router.swift</string>
 			<key>Description</key>
-			<string>The router name</string>
+			<string>The Router name</string>
 			<key>Identifier</key>
 			<string>routerName</string>
 			<key>Name</key>
@@ -74,14 +78,75 @@
 			<key>Type</key>
 			<string>static</string>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>Default</string>
+			<key>Values</key>
+			<array>
+				<string>Default</string>
+				<string>CollectionViewDelegate</string>
+				<string>TableViewDelegate</string>
+			</array>
+			<key>Description</key>
+			<string>The include delegate</string>
+			<key>Identifier</key>
+			<string>includeDelegate</string>
+			<key>Name</key>
+			<string>Delegate</string>
+			<key>Required</key>
+			<true/>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>cocoaSubclass</key>
+				<array>
+					<string>Default</string>
+					<string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+				</array>
+			</dict>
+			<key>NotPersisted</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Description</key>
+			<string>The name of cell</string>
+			<key>Identifier</key>
+			<string>cellName</string>
+			<key>Name</key>
+			<string>Cell Name:</string>
+			<key>NotPersisted</key>
+			<true/>
+			<key>RequiredOptions</key>
+      <dict>
+        <key>includeDelegate</key>
+        <array>
+          <string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+        </array>
+      </dict>
+			<key>Required</key>
+			<true/>
+			<key>Type</key>
+			<string>text</string>
+		</dict>
+		<dict>
+			<key>Default</key>
+			<string>___VARIABLE_cellName___</string>
+			<key>Identifier</key>
+			<string>variableCellName</string>
+			<key>Type</key>
+			<string>static</string>
+			<key>RequiredOptions</key>
+			<dict>
+				<key>includeDelegate</key>
+				<array>
+					<string>CollectionViewDelegate</string>
+					<string>TableViewDelegate</string>
+				</array>
+			</dict>
+		</dict>
 	</array>
-	<key>Platforms</key>
-	<array>
-		<string>com.apple.platform.iphoneos</string>
-	</array>
-	<key>SortOrder</key>
-	<string>7</string>
-	<key>Summary</key>
-	<string>This generates a new MVVM-R module.</string>
 </dict>
 </plist>
