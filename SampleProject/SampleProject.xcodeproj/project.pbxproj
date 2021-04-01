@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1AAAFBFD26161163006B2FCF /* FoodDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFBFA26161163006B2FCF /* FoodDetailRouter.swift */; };
+		1AAAFBFE26161163006B2FCF /* FoodDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFBFB26161163006B2FCF /* FoodDetailViewController.swift */; };
+		1AAAFBFF26161163006B2FCF /* FoodDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAAFBFC26161163006B2FCF /* FoodDetailViewModel.swift */; };
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
 		7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
@@ -75,6 +78,9 @@
 
 /* Begin PBXFileReference section */
 		005DB6B35F16FDAD2C7AC516 /* Pods-SampleProject-SampleProjectUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.development.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.development.xcconfig"; sourceTree = "<group>"; };
+		1AAAFBFA26161163006B2FCF /* FoodDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailRouter.swift; sourceTree = "<group>"; };
+		1AAAFBFB26161163006B2FCF /* FoodDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewController.swift; sourceTree = "<group>"; };
+		1AAAFBFC26161163006B2FCF /* FoodDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewModel.swift; sourceTree = "<group>"; };
 		1E52FF46F5E4E48AE437A803 /* Pods-SampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6575F5C9303FE9C04D7EC30D /* Pods-SampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +160,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1AAAFBF7261610F9006B2FCF /* FoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+				1AAAFBFB26161163006B2FCF /* FoodDetailViewController.swift */,
+				1AAAFBFC26161163006B2FCF /* FoodDetailViewModel.swift */,
+				1AAAFBFA26161163006B2FCF /* FoodDetailRouter.swift */,
+			);
+			path = FoodDetail;
+			sourceTree = "<group>";
+		};
 		7A73C91225CC385900322233 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +201,7 @@
 				7A73C91425CC386D00322233 /* Launch */,
 				7A980ABB2553168D00494520 /* Base */,
 				7A980ABC2553169100494520 /* Home */,
+				1AAAFBF7261610F9006B2FCF /* FoodDetail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -644,9 +661,12 @@
 				7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
+				1AAAFBFF26161163006B2FCF /* FoodDetailViewModel.swift in Sources */,
+				1AAAFBFE26161163006B2FCF /* FoodDetailViewController.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
 				7A980AB62553168400494520 /* HomeRouter.swift in Sources */,
+				1AAAFBFD26161163006B2FCF /* FoodDetailRouter.swift in Sources */,
 				7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
