@@ -38,6 +38,13 @@
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		96B66E7F95B2EEF438709FEE /* Pods_SampleProject_SampleProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */; };
 		D75D3CA02C5723C8ECD6AB85 /* Pods_SampleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */; };
+		FBA13EC726161062001E19B4 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13EC426161062001E19B4 /* RegisterRouter.swift */; };
+		FBA13EC826161062001E19B4 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13EC526161062001E19B4 /* RegisterViewController.swift */; };
+		FBA13EC926161062001E19B4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13EC626161062001E19B4 /* RegisterViewModel.swift */; };
+		FBA13ECD2616137A001E19B4 /* RegisterRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13ECC2616137A001E19B4 /* RegisterRoute.swift */; };
+		FBA13ED726161C2B001E19B4 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13ED426161C2B001E19B4 /* LoginRouter.swift */; };
+		FBA13ED826161C2B001E19B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13ED526161C2B001E19B4 /* LoginViewController.swift */; };
+		FBA13ED926161C2B001E19B4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +128,13 @@
 		CB526380A6A2347B67422B7B /* Pods-SampleProject-SampleProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D78D27F28F8522986519EE58 /* Pods-SampleProject-SampleProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EE0AECC8D636877B9E99C637 /* Pods-SampleProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.release.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.release.xcconfig"; sourceTree = "<group>"; };
+		FBA13EC426161062001E19B4 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		FBA13EC526161062001E19B4 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FBA13EC626161062001E19B4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		FBA13ECC2616137A001E19B4 /* RegisterRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRoute.swift; sourceTree = "<group>"; };
+		FBA13ED426161C2B001E19B4 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		FBA13ED526161C2B001E19B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +195,7 @@
 		7A980AB02553166D00494520 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				FBA13EC326161052001E19B4 /* Auth */,
 				7AD4057526130DEF00212D73 /* Recipes */,
 				7A73C91425CC386D00322233 /* Launch */,
 				7A980ABB2553168D00494520 /* Base */,
@@ -381,6 +396,36 @@
 				802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FBA13EC326161052001E19B4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FBA13ED326161C1E001E19B4 /* Login */,
+				FBA13ED026161C19001E19B4 /* Register */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FBA13ED026161C19001E19B4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				FBA13EC426161062001E19B4 /* RegisterRouter.swift */,
+				FBA13EC526161062001E19B4 /* RegisterViewController.swift */,
+				FBA13EC626161062001E19B4 /* RegisterViewModel.swift */,
+				FBA13ECC2616137A001E19B4 /* RegisterRoute.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		FBA13ED326161C1E001E19B4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
+				FBA13ED526161C2B001E19B4 /* LoginViewController.swift */,
+				FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -650,14 +695,21 @@
 				7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
+				FBA13ED726161C2B001E19B4 /* LoginRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
 				7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */,
+				FBA13ED826161C2B001E19B4 /* LoginViewController.swift in Sources */,
+				FBA13ED926161C2B001E19B4 /* LoginViewModel.swift in Sources */,
+				FBA13EC826161062001E19B4 /* RegisterViewController.swift in Sources */,
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
+				FBA13EC926161062001E19B4 /* RegisterViewModel.swift in Sources */,
+				FBA13EC726161062001E19B4 /* RegisterRouter.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
 				7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */,
+				FBA13ECD2616137A001E19B4 /* RegisterRoute.swift in Sources */,
 				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
