@@ -7,6 +7,7 @@ public struct ___VARIABLE_moduleName___Request: RequestProtocol {
     public var path: String = <#T##Type###>
     public var method: RequestMethod = <#T##Type###>
     public var parameters: RequestParameters = [:]
+    public var headers: RequestHeaders = [:]
     
     public init() {}
     
