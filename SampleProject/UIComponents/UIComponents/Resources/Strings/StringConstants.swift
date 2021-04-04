@@ -14,6 +14,8 @@ public enum L10n {
     public enum Action {
       /// Block
       public static let block = L10n.tr("Componenets", "Action.block")
+      /// Giriş yapmanız gereklidir.
+      public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
     }
   }
   public enum Error {
