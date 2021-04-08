@@ -26,7 +26,6 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
     private let imageView = UIImageViewBuilder()
         .image(.icWarning)
         .contentMode(.scaleAspectFit)
-        .tintColor(.yellow)  // Color eklenebilir
         .build()
     
     private let buttonStackView = UIStackViewBuilder()
@@ -36,15 +35,15 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
         .build()
     
     private let loginButton = UIButtonBuilder()
-        .backgroundColor(.red)
-        .title("Giriş Yap")
+        .backgroundColor(.appRed)
+        .title(L10n.General.login)
         .titleColor(.appWhite)
         .titleFont(.font(.nunitoBold, size: .medium))
         .build()
     
     private let giveUpButton = UIButtonBuilder()
-        .backgroundColor(.red)
-        .title("Vazgeç")
+        .backgroundColor(.appZircon)
+        .title(L10n.General.giveUp)
         .titleColor(.black)
         .titleFont(.font(.nunitoBold, size: .medium))
         .build()
@@ -62,27 +61,45 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
         contentView.addSubview(imageView)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(buttonStackView)
-        buttonStackView.addArrangedSubview(loginButton)
         buttonStackView.addArrangedSubview(giveUpButton)
+        buttonStackView.addArrangedSubview(loginButton)
+        
+        loginButton.addTarget(self, action: #selector(touchUpInside(_:)), for: .touchUpInside)
+        giveUpButton.addTarget(self, action: #selector(touchUpInside(_:)), for: .touchUpInside)
     }
     
     func setupLayouts() {
         contentView.centerInSuperview()
-        contentView.height(180)
-        contentView.width(325)
+        contentView.leadingToSuperview().constant = 25
+        contentView.trailingToSuperview().constant = -25
         
         imageView.centerX(to: contentView)
         imageView.topToSuperview().constant = 20
         imageView.bottomToTop(of: descriptionLabel).constant = -16
-        imageView.height(60)
-        imageView.width(60)
+        imageView.size(CGSize(width: 60, height: 60))
         
         descriptionLabel.topToBottom(of: imageView).constant = 16
         descriptionLabel.edgesToSuperview(excluding: [.top, .bottom])
         descriptionLabel.bottomToTop(of: buttonStackView).constant = -15
+        loginButton.height(50)
+        giveUpButton.height(50)
         
         buttonStackView.edgesToSuperview(excluding: .top)
         buttonStackView.topToBottom(of: descriptionLabel).constant = 15
     }
+}
+
+// MARK: - Actions
+extension LoginWarningPopupViewController {
     
+    @IBAction private func touchUpInside(_ sender: UIButton) {
+        switch sender {
+        case loginButton:
+            viewModel.loginButtonAction()
+        case giveUpButton:
+            viewModel.giveUpButtonAction()
+        default:
+            break
+        }
+    }
 }
