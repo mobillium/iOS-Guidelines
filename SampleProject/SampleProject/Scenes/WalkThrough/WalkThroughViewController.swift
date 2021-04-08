@@ -32,6 +32,7 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
         super.viewDidLoad()
         configureContents()
         configureCollectionView()
+        addButtonTarget()
         viewModel.configureCellItems()
     }
     
@@ -54,6 +55,41 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     private func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    private func addButtonTarget() {
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+        pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .touchUpInside)
+    }
+    
+    @IBAction private func nextButtonTapped() {
+        if pageControl.currentPage == viewModel.numberOfItemsAt(section: 0) - 1 {
+            viewModel.didFinishWalkThroughScene()
+        }
+        
+        let nextIndex = min(pageControl.currentPage + 1, viewModel.numberOfItemsAt(section: 0) - 1)
+        let indexPath = IndexPath(item: nextIndex, section: 0)
+        pageControl.currentPage = nextIndex
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    @IBAction private func pageControlValueChanged(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        collectionView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(current), y: 0), animated: true)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let xPoint = targetContentOffset.pointee.x
+        let pageIndex = Int(xPoint / view.frame.width)
+        pageControl.currentPage = pageIndex
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if pageControl.currentPage == viewModel.numberOfItemsAt(section: 0) - 1 {
+            nextButton.setTitle(L10n.Modules.WalkThrough.start, for: .normal)
+        } else {
+            nextButton.setTitle(L10n.Modules.WalkThrough.next, for: .normal)
+        }
     }
 }
 

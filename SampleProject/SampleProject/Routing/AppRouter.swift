@@ -6,8 +6,8 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MobilliumUserDefaults
 
 final class AppRouter: Router, AppRouter.Routes {
     
@@ -16,7 +16,11 @@ final class AppRouter: Router, AppRouter.Routes {
     static let shared = AppRouter()
     
     func startApp() {
-        placeOnWindowWalkThrough()
+        if DefaultsKey.isWalkThroughCompleted.value == true {
+            placeOnWindowHome()
+        } else {
+            placeOnWindowWalkThrough()
+        }
     }
     
 }

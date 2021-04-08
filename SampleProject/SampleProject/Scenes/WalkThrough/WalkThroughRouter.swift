@@ -6,4 +6,6 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-final class WalkThroughRouter: Router {}
+final class WalkThroughRouter: Router, WalkThroughRouter.Routes {
+    typealias Routes = HomeRoute
+}

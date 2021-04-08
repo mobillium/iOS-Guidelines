@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MobilliumUserDefaults
 
 protocol WalkThroughViewDataSource {
     func numberOfItemsAt(section: Int) -> Int
@@ -17,6 +18,7 @@ protocol WalkThroughViewEventSource {}
 
 protocol WalkThroughViewProtocol: WalkThroughViewDataSource, WalkThroughViewEventSource {
     func configureCellItems()
+    func didFinishWalkThroughScene()
 }
 
 final class WalkThroughViewModel: BaseViewModel<WalkThroughRouter>, WalkThroughViewProtocol {
@@ -32,20 +34,27 @@ final class WalkThroughViewModel: BaseViewModel<WalkThroughRouter>, WalkThroughV
     }
     
     func configureCellItems() {
-        let firstTitle = "Welcome to Fodamy Network!"
-        let secondTitle = "Finding recipes were not that easy."
-        let thirdTitle = "Add new recipe."
-        let fourthTitle = "Share recipes with others."
-        let descriptionText = "Fodamy is the best place to find your \n favorite recipes in all around the world."
-        
-        let firstOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough1, titleText: firstTitle, descriptionText: descriptionText)
-        let secondOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough2, titleText: secondTitle, descriptionText: descriptionText)
-        let thirdOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough3, titleText: thirdTitle, descriptionText: descriptionText)
-        let fourthOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough4, titleText: fourthTitle, descriptionText: descriptionText)
+        let firstOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough1,
+                                                       titleText: L10n.Modules.WalkThrough.firstTitle,
+                                                       descriptionText: L10n.Modules.WalkThrough.descriptionText)
+        let secondOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough2,
+                                                        titleText: L10n.Modules.WalkThrough.secondTitle,
+                                                        descriptionText: L10n.Modules.WalkThrough.descriptionText)
+        let thirdOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough3,
+                                                       titleText: L10n.Modules.WalkThrough.thirdTitle,
+                                                       descriptionText: L10n.Modules.WalkThrough.descriptionText)
+        let fourthOnboardingPage = WalkThroughCellModel(image: .imgWalkthrough4,
+                                                        titleText: L10n.Modules.WalkThrough.fourthTitle,
+                                                        descriptionText: L10n.Modules.WalkThrough.descriptionText)
         
         let onboardingPages = [firstOnboardingPage, secondOnboardingPage, thirdOnboardingPage, fourthOnboardingPage]
         
         cellItems.append(contentsOf: onboardingPages)
+    }
+    
+    func didFinishWalkThroughScene() {
+        DefaultsKey.isWalkThroughCompleted.value = true
+        router.placeOnWindowHome()
     }
     
 }
