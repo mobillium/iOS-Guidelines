@@ -19,7 +19,7 @@ public class AppSegmentedControl: UIControl {
         }
     }
     
-    var selectedIndex: Int = 0 {
+    public var selectedIndex: Int = 0 {
         didSet {
             displayNewSelectedIndex()
         }
