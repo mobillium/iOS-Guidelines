@@ -6,3 +6,4 @@
 2. [Swift Style Guide](https://github.com/mobillium/iOS-Guidelines/blob/master/swift-guideline.md)
 3. [Resources Guideline](https://github.com/mobillium/iOS-Guidelines/blob/master/resources-guideline.md)
 4. [Mobillium Templates](https://github.com/mobillium/iOS-Guidelines/blob/master/Templates/install-templates.md)
+5. [Mobillium Git Guidelines](https://github.com/mobillium/MobilliumGitGuidelines)
