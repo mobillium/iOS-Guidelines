@@ -12,46 +12,64 @@ protocol HomeViewDataSource {
     var segmentedControlTitles: [String] { get }
     var recipeCellModels: [RecipeCellModel] { get }
     var recipes: [Recipe] { get }
-
     var currentPage: Int { get }
+    var lastPage: Int { get }
     var listType: ListType { get }
+    var recipesClosure: BoolClosure? { get }
 
-    func getRecipes(closure: @escaping VoidClosure)
+    func getRecipes(isTypeChanged: Bool)
+    func setToDefaultValues()
 }
 
 protocol HomeViewEventSource {}
 
 protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
-
+    
 }
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
 
-    var listType: ListType = .editorChoiceRecipes
+    var listType: ListType = .editorChoiceRecipes {
+        didSet {
+            setToDefaultValues()
+            getRecipes(isTypeChanged: true)
+        }
+    }
+        
+    var currentPage: Int = 1 {
+        didSet {
+            isLoadingList = true
+            getRecipes()
+        }
+    }
     
+    var recipesClosure: BoolClosure?
     var recipes: [Recipe] = []
-    
-    var currentPage: Int = 1
-
-    lazy var recipeCellModels: [RecipeCellModel] = []
-    
+    var lastPage: Int = 1
+    var recipeCellModels: [RecipeCellModel] = []
     var segmentedControlTitles: [String] = ["EDİTÖR SEÇİMİ", "SON EKLENENLER"]
-    
-    func getRecipes(closure: @escaping VoidClosure) {
+    var isLoadingList: Bool = true
+}
+
+// MARK: - Network
+extension HomeViewModel {
+    func getRecipes(isTypeChanged: Bool = false) {
         let request = GetRecipesRequest(page: currentPage, listType: listType)
         dataProvider.request(for: request) { (result) in
+            self.isLoadingList = false
             switch result {
             case .success(let response):
-                self.recipes = response.data
-                self.setRecipeCellModels()
-                closure()
+                self.recipes += response.data
+                self.lastPage = response.pagination.lastPage
+                self.setRecipeCellModels(recipes: response.data)
+                self.recipesClosure?(isTypeChanged)
             case .failure:
                 print("error")
             }
         }
     }
     
-    func setRecipeCellModels() {
+    func setRecipeCellModels(recipes: [Recipe]) {
         for recipe in recipes {
             let recipeCellModel = RecipeCellModel(recipeId: recipe.id,
                                                   userId: recipe.user.id,
@@ -65,5 +83,15 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
                                                   isEditorChoice: recipe.isEditorChoice)
             recipeCellModels.append(recipeCellModel)
         }
+    }
+}
+
+// MARK: - Helper
+extension HomeViewModel {
+    func setToDefaultValues() {
+        recipes = []
+        recipeCellModels = []
+        currentPage = 1
+        lastPage = 1
     }
 }

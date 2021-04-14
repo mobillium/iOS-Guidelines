@@ -12,32 +12,34 @@ import StoreKit
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
     lazy var segmentedControl: AppSegmentedControl = {
-        let segmentedControl = AppSegmentedControl(titles: viewModel.segmentedControlTitles)
+        let segmentedControl = AppSegmentedControl(titles: viewModel.segmentedControlTitles, backgroundColor: .appWhite)
         segmentedControl.addTarget(self,
                                    action: #selector(segmentedControlValueChanged(_:)),
                                    for: .valueChanged)
         return segmentedControl
     }()
     
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(RecipeCell.self)
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        collectionView.backgroundColor = .clear
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        return collectionView
-    }()
-    
+    private let collectionView = UICollectionViewBuilder()
+        .showsVerticalScrollIndicator(false)
+        .showsHorizontalScrollIndicator(false)
+        .backgroundColor(.clear)
+        .build()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setCollectionView()
         setupViews()
         setupLayouts()
         
-        viewModel.getRecipes {
+        viewModel.getRecipes()
+        
+        viewModel.recipesClosure = { [weak self] isTypeChanged in
+            guard let self = self else { return }
+            if isTypeChanged {
+                self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
+                                                 at: .top,
+                                                 animated: true)
+            }
             self.collectionView.reloadData()
         }
     }
@@ -55,19 +57,28 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         collectionView.topToBottom(of: segmentedControl)
         collectionView.edgesToSuperview(excluding: .top)
     }
+    
+    func setCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(RecipeCell.self)
+    }
 }
 
 // MARK: - Action
 @objc
 extension HomeViewController {
     func segmentedControlValueChanged(_ sender: AppSegmentedControl) {
-        print(sender.selectedIndex)
+        if sender.selectedIndex == 0 {
+            viewModel.listType = .editorChoiceRecipes
+        } else if sender.selectedIndex == 1 {
+            viewModel.listType = .lastAddedRecipes
+        }
     }
 }
 
 // MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.recipeCellModels.count
     }
@@ -78,28 +89,31 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.set(viewModel: cellViewModel)
         return cell
     }
-    
 }
 
 // swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 15
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.frame.size
+        let width = collectionView.frame.width
+        let height = width * 520 / 375
+        return CGSize(width: width, height: height)
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if self.viewModel.lastPage >= self.viewModel.currentPage + 1 {
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height) && !viewModel.isLoadingList {
+                self.viewModel.currentPage += 1
+            }
+        }
+    }
 }
 // swiftlint:enable line_length

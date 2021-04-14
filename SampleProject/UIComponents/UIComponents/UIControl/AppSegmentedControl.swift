@@ -55,12 +55,6 @@ public class AppSegmentedControl: UIControl {
         }
     }
     
-    public override var bounds: CGRect {
-        didSet {
-            layer.cornerRadius = frame.height / 2
-        }
-    }
-    
     public convenience init(titles: [String],
                             selectedIndex: Int = 0,
                             selectedFont: UIFont = .font(.nunitoBold, size: .medium),
