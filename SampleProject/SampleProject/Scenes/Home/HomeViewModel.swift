@@ -47,7 +47,8 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var recipes: [Recipe] = []
     var lastPage: Int = 1
     var recipeCellModels: [RecipeCellModel] = []
-    var segmentedControlTitles: [String] = ["EDİTÖR SEÇİMİ", "SON EKLENENLER"]
+    var segmentedControlTitles: [String] = [L10n.Modules.Home.editorChoiceRecipes,
+                                            L10n.Modules.Home.lastAddedRecipes]
     var isLoadingList: Bool = true
 }
 
@@ -75,11 +76,11 @@ extension HomeViewModel {
                                                   userId: recipe.user.id,
                                                   userImageUrl: recipe.user.image?.url,
                                                   username: recipe.user.username,
-                                                  userRecipeAndFollowerCountText: "\(recipe.user.recipeCount) Tarif \(recipe.user.followedCount) Takipçi",
+                                                  userRecipeAndFollowerCountText: L10n.Modules.Home.userRecipeAndFollowerCount(recipe.user.recipeCount, recipe.user.followedCount),
                                                   recipeTitle: recipe.title,
                                                   categoryName: recipe.category.name,
                                                   recipeImageUrl: recipe.images[0].url,
-                                                  recipeCommnetAndLikeCountText: "\(recipe.commentCount) Yorum \(recipe.likeCount) Beğeni",
+                                                  recipeCommnetAndLikeCountText: L10n.Modules.Home.recipeCommnetAndLikeCount(recipe.commentCount, recipe.likeCount),
                                                   isEditorChoice: recipe.isEditorChoice)
             recipeCellModels.append(recipeCellModel)
         }

@@ -11,3 +11,9 @@
 
 // MARK: - Favorites
 "Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - Home
+"Home.editorChoiceRecipes" = "EDİTÖR SEÇİMİ";
+"Home.lastAddedRecipes" = "SON EKLENENLER";
+"Home.recipeCommnetAndLikeCount" = "%@ Yorum %@ Beğeni";
+"Home.userRecipeAndFollowerCount" = "%@ Tarif %@ Takipçi";
