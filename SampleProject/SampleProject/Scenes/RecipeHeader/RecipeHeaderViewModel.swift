@@ -8,13 +8,20 @@
 
 import Foundation
 
-protocol RecipeHeaderViewDataSource {}
+protocol RecipeHeaderViewDataSource {
+    var recipeHeaderData: [RecipeHeaderCellProtocol] { get set }
+}
 
 protocol RecipeHeaderViewEventSource {}
 
 protocol RecipeHeaderViewProtocol: RecipeHeaderViewDataSource, RecipeHeaderViewEventSource {}
 
 final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHeaderViewProtocol {
-    
-    
+    var recipeHeaderData: [RecipeHeaderCellProtocol]
+
+    init(router: RecipeHeaderRouter, recipeHeaderData: [RecipeHeaderCellProtocol]) {
+        self.recipeHeaderData = recipeHeaderData
+        super.init(router: router)
+    }
+
 }

@@ -12,7 +12,11 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
     
     lazy var collectionView = UICollectionViewBuilder()
         .allowsMultipleSelection(false)
-        .backgroundColor(.clear)
+        .scrollDirection(.horizontal)
+        .estimatedItemSize(CGSize(width: 100, height: 100))
+        .backgroundColor(.red)
+        .registerCell(RecipeHeaderCell.self, reuseIdentifier: "RecipeHeaderCell")
+        .build()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +29,13 @@ extension RecipeHeaderViewController: UICollectionViewDelegate {
 
 extension RecipeHeaderViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return viewModel.recipeHeaderData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(for: indexPath)
+        let currentRecipeHeaderModel = viewModel.recipeHeaderData[indexPath.row]
+        cell.set(with: currentRecipeHeaderModel)
         return cell
     }
 }
@@ -52,13 +58,5 @@ extension RecipeHeaderViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
-    }
-}
-
-extension UICollectionViewBuilder {
-    @discardableResult
-    func register(_ view: ReusableView) -> Self {
-        collectionView.register(RecipeHeaderCell.self)
-        return self
     }
 }
