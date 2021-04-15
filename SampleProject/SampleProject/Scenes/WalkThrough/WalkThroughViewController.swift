@@ -28,6 +28,11 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     
     private let nextButton = ButtonFactory.createPrimaryButton(style: .large)
     
+    private let dismissButton = UIButtonBuilder()
+        .image(UIImage.icClose.withRenderingMode(.alwaysTemplate))
+        .tintColor(.appCinder)
+        .build()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
@@ -50,6 +55,11 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
         view.addSubview(collectionView)
         collectionView.edgesToSuperview(excluding: [.bottom], usingSafeArea: true)
         collectionView.bottomToTop(of: pageControl).constant = -60
+        
+        view.addSubview(dismissButton)
+        dismissButton.topToSuperview(usingSafeArea: true).constant = 25
+        dismissButton.trailingToSuperview().constant = -20
+        dismissButton.size(.init(width: 18, height: 18))
     }
     
     private func configureCollectionView() {
@@ -60,6 +70,7 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     private func addButtonTarget() {
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .touchUpInside)
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
     }
     
     @IBAction private func nextButtonTapped() {
@@ -76,6 +87,10 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     @IBAction private func pageControlValueChanged(_ sender: UIPageControl) {
         let current = sender.currentPage
         collectionView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(current), y: 0), animated: true)
+    }
+    
+    @IBAction private func dismissButtonTapped() {
+        viewModel.didFinishWalkThroughScene()
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -114,15 +129,15 @@ extension WalkThroughViewController: UICollectionViewDataSource {
 extension WalkThroughViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return .zero
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
