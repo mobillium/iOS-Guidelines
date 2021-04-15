@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5DC50A261F52DA002294B7 /* RecipeDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */; };
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
 		7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
@@ -79,6 +80,7 @@
 /* Begin PBXFileReference section */
 		005DB6B35F16FDAD2C7AC516 /* Pods-SampleProject-SampleProjectUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.development.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.development.xcconfig"; sourceTree = "<group>"; };
 		1E52FF46F5E4E48AE437A803 /* Pods-SampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRoute.swift; sourceTree = "<group>"; };
 		4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6575F5C9303FE9C04D7EC30D /* Pods-SampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.debug.xcconfig"; sourceTree = "<group>"; };
 		72A3D9B8ADC26756F3977644 /* Pods-SampleProject.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.development.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.development.xcconfig"; sourceTree = "<group>"; };
@@ -367,6 +369,7 @@
 				7AFCDEA4261615A600D5D115 /* RecipeDetailRouter.swift */,
 				7AFCDEA5261615A600D5D115 /* RecipeDetailViewController.swift */,
 				7AFCDEA6261615A600D5D115 /* RecipeDetailViewModel.swift */,
+				3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */,
 			);
 			path = RecipeDetail;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
+				3D5DC50A261F52DA002294B7 /* RecipeDetailRoute.swift in Sources */,
 				7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */,
 				7AFCDEA8261615A600D5D115 /* RecipeDetailViewController.swift in Sources */,
 				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,

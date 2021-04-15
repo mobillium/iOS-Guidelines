@@ -9,6 +9,8 @@
 import Foundation
 
 protocol RecipeDetailViewDataSource {
+    var username: String? { get }
+    var recipeAndFollowerCountText: String? { get }
     var ingredients: String? { get }
     var numberOfPeople: String? { get }
     var steps: String? { get }
@@ -21,6 +23,8 @@ protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewE
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
 
+    var username: String?
+    var recipeAndFollowerCountText: String?
     var ingredients: String?
     var numberOfPeople: String?
     var steps: String?

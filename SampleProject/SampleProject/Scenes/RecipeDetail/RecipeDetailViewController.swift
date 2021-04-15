@@ -21,6 +21,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .spacing(15)
         .build()
     
+    private let userView = UserView(userViewType: .withFollowButton)
     private let ingredientsView = RecipeDetailInfoView()
     private let stepsView = RecipeDetailInfoView()
     private let commentButtonContainerView = UIViewBuilder()
@@ -49,6 +50,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         commentButtonContainerView.addSubview(commentButton)
         commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
         
+        contentStackView.addArrangedSubview(userView)
         contentStackView.addArrangedSubview(ingredientsView)
         contentStackView.addArrangedSubview(stepsView)
         contentStackView.addArrangedSubview(commentButtonContainerView)
@@ -63,6 +65,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func fillData() {
+        userView.username = viewModel.username
+        userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         ingredientsView.iconSubtitle = viewModel.numberOfPeople
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
@@ -88,6 +92,8 @@ struct RecipeDetailViewControllerRepresentable: UIViewRepresentable {
         + "Afiyet olsun…"
         viewModel.time = "20dk"
         viewModel.numberOfPeople = "4-6"
+        viewModel.username = "aslanmsalih"
+        viewModel.recipeAndFollowerCountText = "3 Tarif 0 Takipçi"
         let viewController = RecipeDetailViewController(viewModel: viewModel)
         return viewController.view
     }
