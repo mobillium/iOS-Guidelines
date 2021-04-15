@@ -44,22 +44,22 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     private func configureContents() {
         view.backgroundColor = .white
         
-        view.addSubview(nextButton)
-        nextButton.edgesToSuperview(excluding: .top, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), usingSafeArea: true)
-        nextButton.setTitle(L10n.Modules.WalkThrough.next, for: .normal)
-        
-        view.addSubview(pageControl)
-        pageControl.bottomToTop(of: nextButton).constant = -20
-        pageControl.centerXToSuperview()
-        
         view.addSubview(collectionView)
         collectionView.edgesToSuperview(excluding: [.bottom], usingSafeArea: true)
-        collectionView.bottomToTop(of: pageControl).constant = -60
         
         view.addSubview(dismissButton)
         dismissButton.topToSuperview(usingSafeArea: true).constant = 25
         dismissButton.trailingToSuperview().constant = -20
         dismissButton.size(.init(width: 18, height: 18))
+        
+        view.addSubview(pageControl)
+        pageControl.topToBottom(of: collectionView).constant = 60
+        pageControl.centerXToSuperview()
+        
+        view.addSubview(nextButton)
+        nextButton.edgesToSuperview(excluding: .top, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), usingSafeArea: true)
+        nextButton.topToBottom(of: pageControl).constant = 20
+        nextButton.setTitle(L10n.Modules.WalkThrough.next, for: .normal)
     }
     
     private func configureCollectionView() {
