@@ -26,7 +26,7 @@ target 'SampleProject' do
   pod 'SwiftLint', '~> 0.42'
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.1'
-  pod 'MobilliumBuilders', '~> 1.1'
+  pod 'MobilliumBuilders', '~> 1.2'
   pod 'Segmentio', '~> 4.1'
   pod 'Kingfisher', '~> 6.2'
   pod 'SwiftEntryKit', '~> 1.2'
