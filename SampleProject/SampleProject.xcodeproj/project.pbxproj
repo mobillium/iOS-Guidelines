@@ -40,6 +40,7 @@
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		843D3D6726288C6900ABEDB8 /* RecipeHeaderRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D3D6626288C6900ABEDB8 /* RecipeHeaderRoute.swift */; };
+		84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB45DA2629791B007A41A7 /* ScreenSize.swift */; };
 		96B66E7F95B2EEF438709FEE /* Pods_SampleProject_SampleProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */; };
 		D75D3CA02C5723C8ECD6AB85 /* Pods_SampleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */; };
 /* End PBXBuildFile section */
@@ -124,6 +125,7 @@
 		802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.development.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.development.xcconfig"; sourceTree = "<group>"; };
 		82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject_SampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		843D3D6626288C6900ABEDB8 /* RecipeHeaderRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeHeaderRoute.swift; path = "../../../../../suiste-ios/suiste/ViewControllers/Products/ProductsContainerVC/RecipeHeaderRoute.swift"; sourceTree = "<group>"; };
+		84AB45DA2629791B007A41A7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9507BD8AAF36E2ADFE3B42D /* Pods-SampleProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB526380A6A2347B67422B7B /* Pods-SampleProject-SampleProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */,
 				7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */,
+				84AB45DA2629791B007A41A7 /* ScreenSize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -664,6 +667,7 @@
 				7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
+				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
 				1AAAFC12261615A2006B2FCF /* RecipeHeaderViewModel.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
