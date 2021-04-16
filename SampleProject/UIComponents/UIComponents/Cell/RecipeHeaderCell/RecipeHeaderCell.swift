@@ -25,6 +25,7 @@ public class RecipeHeaderCell: UICollectionViewCell, ReusableView {
     }
     
     private func configureConstraints() {
+        contentView.addSubview(headerImageView)
         headerImageView.edgesToSuperview()
     }
 }
