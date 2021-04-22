@@ -14,9 +14,10 @@ protocol RecipesViewDataSource {
     var currentPage: Int { get }
     var lastPage: Int { get }
     var listType: ListType? { get }
-    var recipesClosure: BoolClosure? { get }
+    var isLoadingList: Bool { get }
+    var recipesClosure: VoidClosure? { get }
 
-    func getRecipes(isTypeChanged: Bool)
+    func getRecipes()
     func setToDefaultValues()
 }
 
@@ -25,32 +26,33 @@ protocol RecipesViewEventSource {}
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {}
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
+    
+    var lastPage: Int = 1
+    var recipes: [Recipe] = []
+    var isLoadingList: Bool = true
+    var recipesClosure: VoidClosure?
+    var recipeCellModels: [RecipeCellModel] = []
+    
     var listType: ListType? {
         didSet {
             setToDefaultValues()
-            getRecipes(isTypeChanged: true)
+            getRecipes()
         }
     }
         
     var currentPage: Int = 1 {
         didSet {
-            isLoadingList = true
             getRecipes()
         }
     }
-    
-    var recipesClosure: BoolClosure?
-    var recipes: [Recipe] = []
-    var lastPage: Int = 1
-    var recipeCellModels: [RecipeCellModel] = []
-    var isLoadingList: Bool = true
 }
 
 // MARK: - Network
 extension RecipesViewModel {
-    func getRecipes(isTypeChanged: Bool = false) {
+    func getRecipes() {
         guard let listType = listType else { return }
         let request = GetRecipesRequest(page: currentPage, listType: listType)
+        isLoadingList = true
         dataProvider.request(for: request) { (result) in
             self.isLoadingList = false
             switch result {
@@ -58,11 +60,21 @@ extension RecipesViewModel {
                 self.recipes += response.data
                 self.lastPage = response.pagination.lastPage
                 self.setRecipeCellModels(recipes: response.data)
-                self.recipesClosure?(isTypeChanged)
+                self.recipesClosure?()
             case .failure:
                 print("error")
             }
         }
+    }
+}
+
+// MARK: - Helper
+extension RecipesViewModel {
+    func setToDefaultValues() {
+        recipes = []
+        recipeCellModels = []
+        currentPage = 1
+        lastPage = 1
     }
     
     func setRecipeCellModels(recipes: [Recipe]) {
@@ -79,15 +91,5 @@ extension RecipesViewModel {
                                                   isEditorChoice: recipe.isEditorChoice)
             recipeCellModels.append(recipeCellModel)
         }
-    }
-}
-
-// MARK: - Helper
-extension RecipesViewModel {
-    func setToDefaultValues() {
-        recipes = []
-        recipeCellModels = []
-        currentPage = 1
-        lastPage = 1
     }
 }

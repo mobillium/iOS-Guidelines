@@ -21,27 +21,22 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
         setCollectionView()
         setupViews()
         setupLayouts()
-        viewModel.recipesClosure = { [weak self] isTypeChanged in
+        viewModel.recipesClosure = { [weak self] in
             guard let self = self else { return }
-            if isTypeChanged {
-                self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0),
-                                                 at: .top,
-                                                 animated: true)
-            }
             self.collectionView.reloadData()
         }
     }
     
-    func setupViews() {
+    private func setupViews() {
         view.addSubview(collectionView)
         view.backgroundColor = .appSecondaryBackground
     }
     
-    func setupLayouts() {
+    private func setupLayouts() {
         collectionView.edgesToSuperview()
     }
     
-    func setCollectionView() {
+    private func setCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(RecipeCell.self)
@@ -62,7 +57,6 @@ extension RecipesViewController: UICollectionViewDataSource {
     }
 }
 
-// swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -87,4 +81,3 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
-// swiftlint:enable line_length

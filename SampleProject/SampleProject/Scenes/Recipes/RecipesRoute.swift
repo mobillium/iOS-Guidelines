@@ -11,7 +11,6 @@ protocol RecipesRoute {
 }
 
 extension RecipesRoute where Self: RouterProtocol {
-    
     func pushRecipes(listType: ListType) {
         let router = RecipesRouter()
         let viewModel = RecipesViewModel(router: router)
