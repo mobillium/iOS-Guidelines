@@ -10,15 +10,34 @@ import Foundation
 
 protocol RegisterViewDataSource {}
 
-protocol RegisterViewEventSource {}
+protocol RegisterViewEventSource {
+    var didGetError: StringClosure? { get set }
+}
 
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
     func showLoginScreen()
+    func sendRegisterRequest(username: String, email: String, password: String)
 }
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
+    
+    var didGetError: StringClosure?
+    
     func showLoginScreen() {
         router.placeLoginOnWindow()
+    }
+    
+    func sendRegisterRequest(username: String, email: String, password: String) {
+        showLoading?()
+        dataProvider.request(for: RegisterRequest(username: username, email: email, password: password)) { [weak self] (result) in
+            self?.hideLoading?()
+            switch result {
+            case .success(let response):
+                break
+            case .failure(let error):
+                self?.didGetError?(error.localizedDescription)
+            }
+        }
     }
     
 }

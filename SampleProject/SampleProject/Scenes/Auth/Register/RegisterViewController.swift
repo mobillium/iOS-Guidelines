@@ -58,6 +58,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         super.viewDidLoad()
         addSubviews()
         setUIElements()
+        subscribeViewModel()
     }
     
     private func addSubviews() {
@@ -80,6 +81,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         bottomStackView.centerXToSuperview()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        ctaButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
     
     private func setUIElements() {
@@ -92,10 +94,20 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         ctaButton.setTitle("Üye Ol", for: .normal)
     }
     
+    private func subscribeViewModel() {
+        viewModel.didGetError = { [weak self] (message) in
+            //TODO: - Show error
+        }
+    }
+    
     // MARK: - Actions
     @objc
     private func loginButtonTapped() {
         viewModel.showLoginScreen()
     }
     
+    @objc
+    private func registerButtonTapped() {
+        viewModel.sendRegisterRequest(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+    }
 }
