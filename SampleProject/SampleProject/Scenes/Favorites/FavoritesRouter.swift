@@ -6,4 +6,6 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-final class FavoritesRouter: Router {}
+final class FavoritesRouter: Router, FavoritesRouter.Routes {
+    typealias Routes = RecipesRoute
+}
