@@ -12,8 +12,13 @@ protocol LoginViewDataSource {}
 
 protocol LoginViewEventSource {}
 
-protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {}
+protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
+    func showRegisterOnWindow()
+}
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
+    func showRegisterOnWindow() {
+        router.placeOnRegister()
+    }
     
 }

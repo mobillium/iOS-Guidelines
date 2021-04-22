@@ -26,6 +26,29 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
             .build()
     }()
     
+    private var bottomStackView: UIStackView = {
+        return UIStackViewBuilder()
+            .axis(.horizontal)
+            .spacing(4)
+            .build()
+    }()
+    
+    private var bottomLabel: UILabel = {
+        return UILabelBuilder()
+            .text("Hesabın mı var?")
+            .font(.font(.nunitoBold, size: .xLarge))
+            .textColor(.appRaven)
+            .build()
+    }()
+    
+    private var loginButton: UIButton = {
+        return UIButtonBuilder()
+            .titleColor(.appRed)
+            .titleFont(.font(.nunitoBold, size: .xLarge))
+            .title("Giriş Yap", for: .normal)
+            .build()
+    }()
+    
     private var usernameTextField = FloatLabelTextField()
     private var emailTextField = FloatLabelTextField()
     private var passwordTextField = FloatLabelTextField()
@@ -40,7 +63,10 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private func addSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
-        titleLabel.topToSuperview().constant = 50
+        view.addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(bottomLabel)
+        bottomStackView.addArrangedSubview(loginButton)
+        titleLabel.topToSuperview(usingSafeArea: true).constant = 50
         titleLabel.centerXToSuperview()
         titleLabel.bottomToTop(of: stackView).constant = -50
         stackView.leadingToSuperview().constant = 15
@@ -49,13 +75,27 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(ctaButton)
+        bottomStackView.bottomToSuperview(usingSafeArea: true)
+        bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
+        bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
+        bottomStackView.centerXToSuperview()
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private func setUIElements() {
         usernameTextField.title = "Kullanıcı Adı"
+        usernameTextField.leftImage = .icUser
         emailTextField.title = "E-mail Adresi"
+        emailTextField.leftImage = .icMail
         passwordTextField.title = "Şifre"
+        passwordTextField.leftImage = .icPassword
         ctaButton.setTitle("Üye Ol", for: .normal)
+    }
+    
+    // MARK: - Actions
+    @objc
+    private func loginButtonTapped() {
+        viewModel.showLoginScreen()
     }
     
 }

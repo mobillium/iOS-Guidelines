@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
+		68638C1B26288E820079B785 /* LoginRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68638C1A26288E820079B785 /* LoginRoute.swift */; };
 		7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
 		7A980AB62553168400494520 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB32553168400494520 /* HomeRouter.swift */; };
@@ -85,6 +86,7 @@
 		1E52FF46F5E4E48AE437A803 /* Pods-SampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6575F5C9303FE9C04D7EC30D /* Pods-SampleProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.debug.xcconfig"; sourceTree = "<group>"; };
+		68638C1A26288E820079B785 /* LoginRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRoute.swift; sourceTree = "<group>"; };
 		72A3D9B8ADC26756F3977644 /* Pods-SampleProject.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.development.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.development.xcconfig"; sourceTree = "<group>"; };
 		7A6AED8A25A756F900BB1457 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
 				FBA13ED526161C2B001E19B4 /* LoginViewController.swift */,
 				FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */,
+				68638C1A26288E820079B785 /* LoginRoute.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 				FBA13ED826161C2B001E19B4 /* LoginViewController.swift in Sources */,
 				FBA13ED926161C2B001E19B4 /* LoginViewModel.swift in Sources */,
 				FBA13EC826161062001E19B4 /* RegisterViewController.swift in Sources */,
+				68638C1B26288E820079B785 /* LoginRoute.swift in Sources */,
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,

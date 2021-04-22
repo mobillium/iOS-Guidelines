@@ -6,4 +6,6 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-final class LoginRouter: Router {}
+final class LoginRouter: Router, LoginRouter.Routes {
+    typealias Routes = RegisterRoute
+}
