@@ -10,14 +10,13 @@ import Foundation
 import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
-    
-    typealias Routes = HomeRoute & RecipeHeaderRoute
+
+    typealias Routes = HomeRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-        //placeOnWindowHome()
-        placeOnWindowRecipeHeader()
+        placeOnWindowHome()
     }
     
 }

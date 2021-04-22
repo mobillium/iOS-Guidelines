@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RecipeHeaderViewDataSource {
-    func numberOfItemsAt(section: Int) -> Int
+    func numberOfItemsAt() -> Int
     func cellItemAt(indexPath: IndexPath) -> RecipeHeaderCellProtocol
 }
 
@@ -19,14 +19,14 @@ protocol RecipeHeaderViewProtocol: RecipeHeaderViewDataSource, RecipeHeaderViewE
 
 final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHeaderViewProtocol {
 
-    let recipeHeaderData: [RecipeHeaderCellProtocol]
+    private let recipeHeaderData: [RecipeHeaderCellProtocol]
 
     init(router: RecipeHeaderRouter, recipeHeaderData: [RecipeHeaderCellProtocol]) {
         self.recipeHeaderData = recipeHeaderData
         super.init(router: router)
     }
 
-    func numberOfItemsAt(section: Int) -> Int {
+    func numberOfItemsAt() -> Int {
         return recipeHeaderData.count
     }
 
