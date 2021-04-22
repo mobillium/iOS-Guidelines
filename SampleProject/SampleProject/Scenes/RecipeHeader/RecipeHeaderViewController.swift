@@ -13,13 +13,13 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
     lazy var collectionView = UICollectionViewBuilder()
         .allowsMultipleSelection(false)
         .scrollDirection(.horizontal)
-        .backgroundColor(.appWhite)
+        .backgroundColor(.clear)
         .isPagingEnabled(true)
         .registerCell(RecipeHeaderCell.self, reuseIdentifier: "RecipeHeaderCell")
         .build()
 
     lazy var pageControl = UIPageControlBuilder()
-        .numberOfPages(viewModel.recipeHeaderData.count)
+        .numberOfPages(viewModel.numberOfItemsAt())
         .build()
 
     override func viewDidLoad() {
@@ -44,14 +44,20 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
 
 }
 
+// MARK: - UICollectionViewDelegate
 extension RecipeHeaderViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(viewModel.cellItemAt(indexPath: indexPath).imageUrl)
+    }
     
 }
 
+// MARK: - UICollectionViewDataSource
 extension RecipeHeaderViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsAt(section: section)
+        return viewModel.numberOfItemsAt()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,6 +73,7 @@ extension RecipeHeaderViewController: UICollectionViewDataSource {
 
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension RecipeHeaderViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,

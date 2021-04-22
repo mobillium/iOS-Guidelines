@@ -42,7 +42,6 @@
 		7AFC73A52551FF5400B30789 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A32551FF5400B30789 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		843D3D6726288C6900ABEDB8 /* RecipeHeaderRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843D3D6626288C6900ABEDB8 /* RecipeHeaderRoute.swift */; };
 		84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB45DA2629791B007A41A7 /* ScreenSize.swift */; };
 		96B66E7F95B2EEF438709FEE /* Pods_SampleProject_SampleProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */; };
 		A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2326161623008B3C46 /* WalkThroughRouter.swift */; };
@@ -131,7 +130,6 @@
 		7AFC73A82551FF5800B30789 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.development.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.development.xcconfig"; sourceTree = "<group>"; };
 		82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject_SampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		843D3D6626288C6900ABEDB8 /* RecipeHeaderRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecipeHeaderRoute.swift; path = "../../../../../suiste-ios/suiste/ViewControllers/Products/ProductsContainerVC/RecipeHeaderRoute.swift"; sourceTree = "<group>"; };
 		84AB45DA2629791B007A41A7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2176A2326161623008B3C46 /* WalkThroughRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRouter.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				1AAAFC0D261615A2006B2FCF /* RecipeHeaderRouter.swift */,
 				1AAAFC0E261615A2006B2FCF /* RecipeHeaderViewController.swift */,
 				1AAAFC0F261615A2006B2FCF /* RecipeHeaderViewModel.swift */,
-				843D3D6626288C6900ABEDB8 /* RecipeHeaderRoute.swift */,
 			);
 			path = RecipeHeader;
 			sourceTree = "<group>";
@@ -706,7 +703,6 @@
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
-				843D3D6726288C6900ABEDB8 /* RecipeHeaderRoute.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
 				A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */,
