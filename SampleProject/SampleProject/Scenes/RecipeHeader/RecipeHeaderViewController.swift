@@ -67,10 +67,6 @@ extension RecipeHeaderViewController: UICollectionViewDataSource {
         return cell
     }
 
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        pageControl.currentPage = indexPath.row
-    }
-
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -93,6 +89,15 @@ extension RecipeHeaderViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat.leastNonzeroMagnitude
+    }
+
+}
+
+// MARK: - UIScrollViewDelegate
+extension RecipeHeaderViewController {
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
 
 }
