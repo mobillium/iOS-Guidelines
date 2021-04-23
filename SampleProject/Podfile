@@ -30,6 +30,7 @@ target 'SampleProject' do
   pod 'Segmentio', '~> 4.1'
   pod 'Kingfisher', '~> 6.2'
   pod 'SwiftEntryKit', '~> 1.2'
+  pod 'SKPhotoBrowser', '~> 6.1'
   
   target 'SampleProjectTests' do
     inherit! :search_paths
