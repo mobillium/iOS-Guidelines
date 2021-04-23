@@ -43,6 +43,8 @@
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB45DA2629791B007A41A7 /* ScreenSize.swift */; };
+		84BBEF202632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEF1F2632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift */; };
+		84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */; };
 		96B66E7F95B2EEF438709FEE /* Pods_SampleProject_SampleProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */; };
 		A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2326161623008B3C46 /* WalkThroughRouter.swift */; };
 		A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2426161623008B3C46 /* WalkThroughViewController.swift */; };
@@ -131,6 +133,8 @@
 		802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.development.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.development.xcconfig"; sourceTree = "<group>"; };
 		82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject_SampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AB45DA2629791B007A41A7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		84BBEF1F2632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserKingfisherCache.swift; sourceTree = "<group>"; };
+		84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SKPhotoBrowser.swift"; sourceTree = "<group>"; };
 		95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2176A2326161623008B3C46 /* WalkThroughRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRouter.swift; sourceTree = "<group>"; };
 		A2176A2426161623008B3C46 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				84BBEF1E2632CCD400F33F04 /* Helper */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				7A73C91225CC385900322233 /* Resources */,
 				7AC7AC2C25CD48D700EA44C4 /* Constants */,
@@ -357,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				7A73C7FB25CC178000322233 /* AppDelegate.swift */,
+				84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -687,6 +693,7 @@
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
+				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
 				1AAAFC12261615A2006B2FCF /* RecipeHeaderViewModel.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
@@ -697,6 +704,7 @@
 				A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
+				84BBEF202632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
 				1AAAFC11261615A2006B2FCF /* RecipeHeaderViewController.swift in Sources */,
 				7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */,
