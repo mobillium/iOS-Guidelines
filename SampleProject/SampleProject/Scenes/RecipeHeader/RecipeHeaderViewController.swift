@@ -16,6 +16,7 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
         .scrollDirection(.horizontal)
         .backgroundColor(.clear)
         .isPagingEnabled(true)
+        .showsHorizontalScrollIndicator(false)
         .registerCell(RecipeHeaderCell.self, reuseIdentifier: "RecipeHeaderCell")
         .build()
 
@@ -32,7 +33,6 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.showsHorizontalScrollIndicator = false
         view.addSubview(collectionView)
         collectionView.edgesToSuperview()
     }

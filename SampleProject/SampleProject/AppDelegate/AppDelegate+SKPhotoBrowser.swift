@@ -11,7 +11,6 @@ import SKPhotoBrowser
 extension AppDelegate {
 
     func configureSKPhotoBrowser() {
-          SKPhotoBrowserOptions.displayBackAndForwardButton = false
           SKPhotoBrowserOptions.displayAction = false
           SKPhotoBrowserOptions.displayHorizontalScrollIndicator = false
           SKPhotoBrowserOptions.displayVerticalScrollIndicator = false
