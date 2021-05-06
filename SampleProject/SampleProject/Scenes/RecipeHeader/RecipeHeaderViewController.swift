@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SKPhotoBrowser
 
 final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel> {
     
@@ -49,9 +48,7 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
 extension RecipeHeaderViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let skPhotos = viewModel.convertImageToSKPhoto()
-        let photoBrowser = SKPhotoBrowser(photos: skPhotos, initialPageIndex: indexPath.row)
-        present(photoBrowser, animated: true)
+        viewModel.didSelectItem(indexPath: indexPath)
     }
     
 }

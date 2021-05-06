@@ -6,17 +6,16 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-import SKPhotoBrowser
-
 protocol RecipeHeaderViewDataSource {
     func numberOfItemsAt() -> Int
     func cellItemAt(indexPath: IndexPath) -> RecipeHeaderCellProtocol
-    func convertImageToSKPhoto() -> [SKPhotoProtocol]
 }
 
 protocol RecipeHeaderViewEventSource {}
 
-protocol RecipeHeaderViewProtocol: RecipeHeaderViewDataSource, RecipeHeaderViewEventSource {}
+protocol RecipeHeaderViewProtocol: RecipeHeaderViewDataSource, RecipeHeaderViewEventSource {
+    func didSelectItem(indexPath: IndexPath)
+}
 
 final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHeaderViewProtocol {
 
@@ -35,8 +34,9 @@ final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHead
         return recipeHeaderData[indexPath.row]
     }
 
-    func convertImageToSKPhoto() -> [SKPhotoProtocol] {
-        return recipeHeaderData.map { SKPhoto.photoWithImageURL($0.imageUrl) }
+    func didSelectItem(indexPath: IndexPath) {
+        let photos = recipeHeaderData.map { $0.imageUrl }
+        AppRouter.shared.presentSKPhotoBrowser(with: photos, initialPageIndex: indexPath.row)
     }
-
+    
 }

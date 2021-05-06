@@ -28,7 +28,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         addChild(recipeHeaderViewController)
         view.addSubview(recipeHeaderViewController.view)
         recipeHeaderViewController.didMove(toParent: self)
-        
+
         recipeHeaderViewController.view.height(300)
         recipeHeaderViewController.view.width(ScreenSize.width)
         recipeHeaderViewController.view.center(in: view)
