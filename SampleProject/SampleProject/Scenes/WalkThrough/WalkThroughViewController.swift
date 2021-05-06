@@ -38,7 +38,6 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
         configureContents()
         configureCollectionView()
         addButtonTarget()
-        viewModel.configureCellItems()
     }
     
     private func configureContents() {
