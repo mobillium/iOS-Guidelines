@@ -42,6 +42,7 @@
 		7AFC73A52551FF5400B30789 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A32551FF5400B30789 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		847E68E2264438CD001310F1 /* SKPhotoBrowserRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E68E1264438CD001310F1 /* SKPhotoBrowserRoute.swift */; };
 		84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB45DA2629791B007A41A7 /* ScreenSize.swift */; };
 		84BBEF202632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEF1F2632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift */; };
 		84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */; };
@@ -132,6 +133,7 @@
 		7AFC73A82551FF5800B30789 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.development.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.development.xcconfig"; sourceTree = "<group>"; };
 		82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject_SampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		847E68E1264438CD001310F1 /* SKPhotoBrowserRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserRoute.swift; sourceTree = "<group>"; };
 		84AB45DA2629791B007A41A7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
 		84BBEF1F2632CD1E00F33F04 /* SKPhotoBrowserKingfisherCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserKingfisherCache.swift; sourceTree = "<group>"; };
 		84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SKPhotoBrowser.swift"; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 		7A980AE92553170600494520 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				847E68DE264437C5001310F1 /* Routes */,
 				7A980AFB2553178000494520 /* AppRouter.swift */,
 				7A980B1A255318EA00494520 /* Core */,
 				7A980AF42553172700494520 /* Transitions */,
