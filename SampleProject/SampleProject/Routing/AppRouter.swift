@@ -11,12 +11,12 @@ import UIKit
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = FavoritesRoute
+    typealias Routes = HomeRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-        pushFavorites()
+        placeOnWindowHome()
     }
     
 }
