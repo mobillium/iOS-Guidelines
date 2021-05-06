@@ -14,24 +14,13 @@ extension FavoritesRoute where Self: RouterProtocol {
     
     func pushFavorites() {
         let router = FavoritesRouter()
-        let viewModel = FavoritesViewModel(router: router, dataProvider: APIDataProvider())
+        let viewModel = FavoritesViewModel(router: router)
         let viewController = FavoritesViewController(viewModel: viewModel)
-        let navigationController = MainNavigationController(rootViewController: viewController)
-        
-        let transition = PlaceOnWindowTransition()
+
+        let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
-        
-        open(navigationController, transition: transition)
-        
-//        let router = FavoritesRouter()
-//        let viewModel = FavoritesViewModel(router: router)
-//        let viewController = FavoritesViewController(viewModel: viewModel)
-//
-//        let transition = PushTransition()
-//        router.viewController = viewController
-//        router.openTransition = transition
-//
-//        open(viewController, transition: transition)
+
+        open(viewController, transition: transition)
     }
 }
