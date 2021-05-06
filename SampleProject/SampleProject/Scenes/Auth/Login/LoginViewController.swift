@@ -104,6 +104,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     @objc
     func ctaButtonTapped() {
         view.endEditing(true)
-        viewModel.sendLoginRequest(username: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            //TODO: - Show error
+
+            return
+        }
+        viewModel.sendLoginRequest(username: email, password: password)
     }
 }

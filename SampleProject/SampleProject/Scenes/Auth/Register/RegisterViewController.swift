@@ -112,6 +112,13 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     @objc
     private func registerButtonTapped() {
         view.endEditing(true)
-        viewModel.sendRegisterRequest(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
+        guard let userName = usernameTextField.text,
+              let email = emailTextField.text,
+              let password = passwordTextField.text else {
+            //TODO: - Show error
+
+            return
+        }
+        viewModel.sendRegisterRequest(username: userName, email: email, password: password)
     }
 }
