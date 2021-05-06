@@ -20,12 +20,15 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
     private let descriptionLabel = UILabelBuilder()
         .text(L10n.Componenets.Action.loginWarning)
         .textAlignment(.center)
+        .textColor(.appCinder)
         .font(.font(.nunitoSemiBold, size: .large))
         .build()
     
     private let imageView = UIImageViewBuilder()
         .image(.icWarning)
         .contentMode(.scaleAspectFit)
+        .masksToBounds(true)
+        .clipsToBounds(true)
         .build()
     
     private let buttonStackView = UIStackViewBuilder()
@@ -44,7 +47,7 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
     private let giveUpButton = UIButtonBuilder()
         .backgroundColor(.appZircon)
         .title(L10n.General.giveUp)
-        .titleColor(.black)
+        .titleColor(.appCinder)
         .titleFont(.font(.nunitoBold, size: .medium))
         .build()
     

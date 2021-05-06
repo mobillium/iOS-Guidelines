@@ -17,6 +17,10 @@ public enum L10n {
       /// Giriş yapmanız gereklidir.
       public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
     }
+    public enum Comment {
+      /// Bir şeyler yazın..
+      public static let placeholder = L10n.tr("Componenets", "Comment.placeholder")
+    }
   }
   public enum Error {
     /// %@ can not be empty.
