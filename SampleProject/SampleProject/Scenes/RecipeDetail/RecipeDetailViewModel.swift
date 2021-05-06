@@ -15,23 +15,27 @@ protocol RecipeDetailViewDataSource {
     var numberOfPeople: String? { get }
     var steps: String? { get }
     var time: String? { get }
-    
+    var reloadData: VoidClosure? { get set }
+
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
 
 protocol RecipeDetailViewEventSource {}
 
-protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewEventSource {}
+protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewEventSource {
+    func getRecipeComment(_ recipeId: Int)
+}
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
-
+    
     var username: String?
     var recipeAndFollowerCountText: String?
     var ingredients: String?
     var numberOfPeople: String?
     var steps: String?
     var time: String?
+    var reloadData: VoidClosure?
     
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count
@@ -42,4 +46,26 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     }
     
     var cellItems: [CommentCellProtocol] = []
+    
+    func getRecipeComment(_ recipeId: Int) {
+        dataProvider.request(for: RecipeCommentRequest(recipedId: recipeId)) { [weak self] result in
+            switch result {
+            case .success(let response):
+                guard let self = self else { return }
+                response.data.forEach { comment in
+                    self.cellItems.append(CommentCellModel(userId: comment.user!.id,
+                                                           imageUrl: nil,
+                                                           username: comment.user?.username,
+                                                           recipeAndFollowerCountText: "\(comment.user?.recipeCount ?? 0) Tarif \(comment.user?.followedCount ?? 0) Takipçi",
+                                                           timeDifferenceText: comment.difference,
+                                                           commentId: comment.id,
+                                                           commentText: comment.text))
+                }
+                self.reloadData?()
+            case .failure(_ ):
+                self?.reloadData?()
+            }
+        }
+    }
+    
 }

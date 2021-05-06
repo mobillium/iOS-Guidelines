@@ -53,6 +53,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         configureContents()
         setLocalize()
         fillData()
+        subscribeViewModel()
+        configureCollectionView()
+        viewModel.getRecipeComment(2)
     }
     
     private func configureContents() {
@@ -108,6 +111,16 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         commentsCollectionView.layoutIfNeeded()
     }
     
+    private func subscribeViewModel() {
+        viewModel.reloadData = { [weak self] in
+            self?.commentsCollectionView.reloadData()
+        }
+    }
+    
+    private func configureCollectionView() {
+        commentsCollectionView.dataSource = self
+        commentsCollectionView.delegate = self
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -143,7 +156,7 @@ extension RecipeDetailViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .zero
+        return CGSize(width: UIScreen.main.bounds.width, height: 195)
     }
     
 }
