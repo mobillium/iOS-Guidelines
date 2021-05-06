@@ -13,7 +13,7 @@ import TinyConstraints
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private var titleLabel: UILabel = {
         return UILabelBuilder()
-            .text("Üye Ol")
+            .text(L10n.Modules.RegisterViewController.title)
             .textColor(.appCinder)
             .font(.font(.nunitoBold, size: .xxLarge))
             .build()
@@ -35,7 +35,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private var bottomLabel: UILabel = {
         return UILabelBuilder()
-            .text("Hesabın mı var?")
+            .text(L10n.Modules.RegisterViewController.bottomText)
             .font(.font(.nunitoBold, size: .xLarge))
             .textColor(.appRaven)
             .build()
@@ -45,7 +45,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         return UIButtonBuilder()
             .titleColor(.appRed)
             .titleFont(.font(.nunitoBold, size: .xLarge))
-            .title("Giriş Yap", for: .normal)
+            .title(L10n.General.login, for: .normal)
             .build()
     }()
     
@@ -85,13 +85,16 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     }
     
     private func setUIElements() {
-        usernameTextField.title = "Kullanıcı Adı"
+        usernameTextField.title = L10n.Placeholder.username
         usernameTextField.leftImage = .icUser
-        emailTextField.title = "E-mail Adresi"
+        emailTextField.title = L10n.Placeholder.email
         emailTextField.leftImage = .icMail
-        passwordTextField.title = "Şifre"
+        emailTextField.autocapitalizationType = .none
+        emailTextField.keyboardType = .emailAddress
+        passwordTextField.title = L10n.Placeholder.password
         passwordTextField.leftImage = .icPassword
-        ctaButton.setTitle("Üye Ol", for: .normal)
+        passwordTextField.isSecureTextEntry = true
+        ctaButton.setTitle(L10n.General.register, for: .normal)
     }
     
     private func subscribeViewModel() {
@@ -108,6 +111,7 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     @objc
     private func registerButtonTapped() {
+        view.endEditing(true)
         viewModel.sendRegisterRequest(username: usernameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!)
     }
 }

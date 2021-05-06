@@ -33,6 +33,7 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
             self?.hideLoading?()
             switch result {
             case .success(let response):
+                // TO DO:  Route to main page
                 break
             case .failure(let error):
                 self?.didGetError?(error.localizedDescription)

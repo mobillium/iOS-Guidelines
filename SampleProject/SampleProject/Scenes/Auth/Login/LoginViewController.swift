@@ -11,7 +11,7 @@ import UIKit
 final class LoginViewController: BaseViewController<LoginViewModel> {
     private var titleLabel: UILabel = {
         return UILabelBuilder()
-            .text("Giriş Yap")
+            .text(L10n.Modules.LoginViewController.title)
             .textColor(.appCinder)
             .font(.font(.nunitoBold, size: .xxLarge))
             .build()
@@ -33,7 +33,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private var bottomLabel: UILabel = {
         return UILabelBuilder()
-            .text("Hesabın mı yok?")
+            .text(L10n.Modules.LoginViewController.bottomText)
             .font(.font(.nunitoBold, size: .xLarge))
             .textColor(.appRaven)
             .build()
@@ -43,7 +43,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         return UIButtonBuilder()
             .titleColor(.appRed)
             .titleFont(.font(.nunitoBold, size: .xLarge))
-            .title("Giriş Yap", for: .normal)
+            .title(L10n.General.register, for: .normal)
             .build()
     }()
     
@@ -55,6 +55,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
         addSubviews()
         setUIElements()
+        subscribeViewModel()
     }
     
     private func addSubviews() {
@@ -76,18 +77,33 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         bottomStackView.addArrangedSubview(bottomLabel)
         bottomStackView.addArrangedSubview(registerButton)
         registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
+        ctaButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
     }
     
     private func setUIElements() {
-        emailTextField.title = "E-mail Adresi"
-        passwordTextField.title = "Şifre"
-        ctaButton.setTitle("Üye Ol", for: .normal)
+        emailTextField.title = L10n.Placeholder.email
+        emailTextField.autocapitalizationType = .none
+        emailTextField.keyboardType = .emailAddress
+        passwordTextField.title = L10n.Placeholder.password
+        passwordTextField.isSecureTextEntry = true
+        ctaButton.setTitle(L10n.General.login, for: .normal)
     }
     
+    private func subscribeViewModel() {
+        viewModel.didGetError = { [weak self] (message) in
+            //TODO: - Show error
+        }
+    }
+
     // MARK: - Action
     @objc
     func regiserButtonTapped() {
         viewModel.showRegisterOnWindow()
     }
     
+    @objc
+    func ctaButtonTapped() {
+        view.endEditing(true)
+        viewModel.sendLoginRequest(username: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+    }
 }

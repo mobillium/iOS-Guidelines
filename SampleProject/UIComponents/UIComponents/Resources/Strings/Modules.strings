@@ -11,3 +11,12 @@
 
 // MARK: - Favorites
 "Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+
+// MARK: - Login
+"LoginViewController.title" = "Giriş Yap";
+"LoginViewController.bottomText" = "Hesabın mı yok?";
+
+// MARK: - Register
+"RegisterViewController.title" = "Üye Ol";
+"RegisterViewController.bottomText" = "Hesabın mı var?";

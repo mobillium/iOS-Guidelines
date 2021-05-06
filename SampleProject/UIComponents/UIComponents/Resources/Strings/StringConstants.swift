@@ -35,13 +35,27 @@ public enum L10n {
     public static let following = L10n.tr("General", "following")
     /// Beğeni
     public static let like = L10n.tr("General", "like")
-    /// Sign In
-    public static let signIn = L10n.tr("General", "signIn")
+    /// Giriş Yap
+    public static let login = L10n.tr("General", "login")
+    /// Üye Ol
+    public static let register = L10n.tr("General", "register")
   }
   public enum Modules {
     public enum Favorites {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
+    }
+    public enum LoginViewController {
+      /// Hesabın mı yok?
+      public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
+      /// Giriş Yap
+      public static let title = L10n.tr("Modules", "LoginViewController.title")
+    }
+    public enum RegisterViewController {
+      /// Hesabın mı var?
+      public static let bottomText = L10n.tr("Modules", "RegisterViewController.bottomText")
+      /// Üye Ol
+      public static let title = L10n.tr("Modules", "RegisterViewController.title")
     }
     public enum SignIn {
       /// Sign In
@@ -49,7 +63,11 @@ public enum L10n {
     }
   }
   public enum Placeholder {
-    /// Username
+    /// E-mail Adresi
+    public static let email = L10n.tr("Placeholder", "email")
+    /// Şifre
+    public static let password = L10n.tr("Placeholder", "password")
+    /// Kullanıcı Adı
     public static let username = L10n.tr("Placeholder", "username")
   }
 }
