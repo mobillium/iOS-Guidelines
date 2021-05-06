@@ -16,8 +16,6 @@
 		7A17BB8E255203000086B35B /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB86255203000086B35B /* RequestMethod.swift */; };
 		7A17BB8F255203000086B35B /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB87255203000086B35B /* RequestEncoding.swift */; };
 		7A17BB90255203000086B35B /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB88255203000086B35B /* DataProviderProtocol.swift */; };
-		7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; };
-		7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A7A3944261202FF006E7A4A /* RecipeRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A3943261202FF006E7A4A /* RecipeRequestsTests.swift */; };
 		7A7A394A26120C03006E7A4A /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394926120C03006E7A4A /* MockDataProvider.swift */; };
 		7A7A394E26120C3B006E7A4A /* RequestProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394D26120C3B006E7A4A /* RequestProtocol+Extensions.swift */; };
@@ -79,20 +77,6 @@
 			remoteInfo = DataProvider;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7A73C83625CC18A000322233 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		25BFC2CCD82B8B1169142259 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +157,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA437F60DC149107572A5129 /* Pods_DataProvider.framework in Frameworks */,
-				7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +432,6 @@
 				7AFC73272551FE8C00B30789 /* Sources */,
 				7AFC73282551FE8C00B30789 /* Frameworks */,
 				7AFC73292551FE8C00B30789 /* Resources */,
-				7A73C83625CC18A000322233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

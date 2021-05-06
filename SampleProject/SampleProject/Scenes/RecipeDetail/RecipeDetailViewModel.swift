@@ -15,6 +15,9 @@ protocol RecipeDetailViewDataSource {
     var numberOfPeople: String? { get }
     var steps: String? { get }
     var time: String? { get }
+    
+    func numberOfItemsAt(section: Int) -> Int
+    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
 
 protocol RecipeDetailViewEventSource {}
@@ -29,4 +32,14 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var numberOfPeople: String?
     var steps: String?
     var time: String?
+    
+    func numberOfItemsAt(section: Int) -> Int {
+        return cellItems.count
+    }
+    
+    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol {
+        return cellItems[indexPath.row]
+    }
+    
+    var cellItems: [CommentCellProtocol] = []
 }

@@ -24,6 +24,25 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private let userView = UserView(userViewType: .withFollowButton)
     private let ingredientsView = RecipeDetailInfoView()
     private let stepsView = RecipeDetailInfoView()
+    
+    private let commentsContainerView = UIViewBuilder()
+        .backgroundColor(.appWhite)
+        .build()
+    private let commentsTitleLabel = UILabelBuilder()
+        .font(.font(.nunitoBold, size: .xLarge))
+        .textColor(.appCinder)
+        .text(L10n.General.comments)
+        .build()
+    private let commentsSeparator = UIViewBuilder()
+        .backgroundColor(.appZircon)
+        .build()
+    private let commentsCollectionView = UICollectionViewBuilder<DynamicHeightCollectionView>()
+        .scrollDirection(.vertical)
+        .registerCell(CommentCell.self, reuseIdentifier: CommentCell.defaultReuseIdentifier)
+        .showsVerticalScrollIndicator(false)
+        .bounces(false)
+        .build()
+    
     private let commentButtonContainerView = UIViewBuilder()
         .backgroundColor(.clear)
         .build()
@@ -53,7 +72,21 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         contentStackView.addArrangedSubview(userView)
         contentStackView.addArrangedSubview(ingredientsView)
         contentStackView.addArrangedSubview(stepsView)
+        contentStackView.addArrangedSubview(commentsContainerView)
         contentStackView.addArrangedSubview(commentButtonContainerView)
+        
+        commentsContainerView.addSubview(commentsTitleLabel)
+        commentsContainerView.addSubview(commentsSeparator)
+        commentsContainerView.addSubview(commentsCollectionView)
+        
+        commentsTitleLabel.edgesToSuperview(excluding: .bottom, insets: .init(top: 11, left: 15, bottom: 11, right: 15))
+        
+        commentsSeparator.height(1)
+        commentsSeparator.edgesToSuperview(excluding: [.top, .bottom])
+        commentsSeparator.topToBottom(of: commentsTitleLabel).constant = 11
+        
+        commentsCollectionView.edgesToSuperview(excluding: .top)
+        commentsCollectionView.topToBottom(of: commentsSeparator)
     }
     
     private func setLocalize() {
@@ -71,9 +104,50 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
         stepsView.info = viewModel.steps
+        commentsCollectionView.reloadData()
+        commentsCollectionView.layoutIfNeeded()
     }
     
 }
+
+// MARK: - UICollectionViewDataSource
+extension RecipeDetailViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.numberOfItemsAt(section: section)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
+        let cellItem = viewModel.cellItemAt(indexPath: indexPath)
+        cell.set(with: cellItem)
+        return cell
+    }
+    
+}
+
+// swiftlint:disable line_length
+// MARK: - UICollectionViewDelegateFlowLayout
+extension RecipeDetailViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        .zero
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        .zero
+    }
+    
+}
+// swiftlint:enable line_length
 
 #if canImport(SwiftUI) && DEBUG
 import SwiftUI
@@ -94,6 +168,15 @@ struct RecipeDetailViewControllerRepresentable: UIViewRepresentable {
         viewModel.numberOfPeople = "4-6"
         viewModel.username = "aslanmsalih"
         viewModel.recipeAndFollowerCountText = "3 Tarif 0 Takipçi"
+        
+        let comment = CommentCellModel(userId: 0,
+                                       imageUrl: nil,
+                                       username: "salih",
+                                       recipeAndFollowerCountText: "1 Tarif, 3 Takipçi",
+                                       timeDifferenceText: "3 gün önce",
+                                       commentId: 1,
+                                       commentText: "Çok güzel bir tarif, çok teşekkürler")
+        viewModel.cellItems.append(comment)
         let viewController = RecipeDetailViewController(viewModel: viewModel)
         return viewController.view
     }

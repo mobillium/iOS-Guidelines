@@ -31,6 +31,8 @@ public enum L10n {
     public static let addComment = L10n.tr("General", "addComment")
     /// Yorum
     public static let comment = L10n.tr("General", "comment")
+    /// Yorumlar
+    public static let comments = L10n.tr("General", "comments")
     /// Takip Et
     public static let follow = L10n.tr("General", "follow")
     /// Takip Ediliyor
