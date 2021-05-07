@@ -6,9 +6,4 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-final class HomeRouter: Router {
-
-
-    
-
-}
+final class HomeRouter: Router {}

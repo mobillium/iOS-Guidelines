@@ -14,7 +14,7 @@ protocol RecipeHeaderViewDataSource {
 protocol RecipeHeaderViewEventSource {}
 
 protocol RecipeHeaderViewProtocol: RecipeHeaderViewDataSource, RecipeHeaderViewEventSource {
-    func didSelectItem(indexPath: IndexPath)
+    func didSelectItem(indexPath: IndexPath, delegate: PhotoBrowserDelegate)
 }
 
 final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHeaderViewProtocol {
@@ -34,9 +34,9 @@ final class RecipeHeaderViewModel: BaseViewModel<RecipeHeaderRouter>, RecipeHead
         return recipeHeaderData[indexPath.row]
     }
 
-    func didSelectItem(indexPath: IndexPath) {
+    func didSelectItem(indexPath: IndexPath, delegate: PhotoBrowserDelegate) {
         let photos = recipeHeaderData.map { $0.imageUrl }
-        AppRouter.shared.presentSKPhotoBrowser(with: photos, initialPageIndex: indexPath.row)
+        AppRouter.shared.presentSKPhotoBrowser(with: photos, delegate: delegate, initialPageIndex: indexPath.row)
     }
     
 }
