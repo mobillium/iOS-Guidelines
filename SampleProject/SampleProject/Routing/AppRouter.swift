@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import SKPhotoBrowser
 import MobilliumUserDefaults
+import SKPhotoBrowser
 
 final class AppRouter: Router, AppRouter.Routes {
     
