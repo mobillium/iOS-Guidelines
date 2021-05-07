@@ -6,17 +6,21 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-import Foundation
 import UIKit
+import MobilliumUserDefaults
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = HomeRoute
+    typealias Routes = HomeRoute & WalkThroughRoute
     
     static let shared = AppRouter()
     
     func startApp() {
-        placeOnWindowHome()
+        if DefaultsKey.isWalkThroughCompleted.value == true {
+            placeOnWindowHome()
+        } else {
+            placeOnWindowWalkThrough()
+        }
     }
     
 }

@@ -11,3 +11,12 @@
 
 // MARK: - Favorites
 "Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";
+"WalkThrough.firstTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your \n favorite recipes in all around the world.";
