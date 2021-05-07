@@ -20,9 +20,9 @@ final class AppRouter: Router, AppRouter.Routes {
         placeOnWindowHome()
     }
 
-    func presentSKPhotoBrowser(with photos: [String], initialPageIndex: Int = 0) {
+    func presentSKPhotoBrowser(with photos: [String], delegate: PhotoBrowserDelegate, initialPageIndex: Int = 0) {
         guard let topVC = topViewController() else { return }
-        presentSKPhotoBrowser(with: photos, viewController: topVC, initialPageIndex: initialPageIndex)
+        presentSKPhotoBrowser(with: photos, viewController: topVC, initialPageIndex: initialPageIndex, delegate: delegate)
     }
 
     private func topViewController() -> UIViewController? {

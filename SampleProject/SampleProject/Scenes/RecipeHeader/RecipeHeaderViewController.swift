@@ -23,12 +23,27 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
         .numberOfPages(viewModel.numberOfItemsAt())
         .build()
 
+    // swiftlint:disable weak_delegate
+    var photoBrowserDelegate: PhotoBrowserDelegate?
+    // swiftlint:enable weak_delegate
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setCollectionView()
         setPageControl()
+        setPhotoBrowserDelegate()
     }
-
+    
+    private func setPhotoBrowserDelegate() {
+        photoBrowserDelegate = PhotoBrowserDelegate()
+        photoBrowserDelegate?.willDismissAtPage = { [weak self] (index) in
+            guard let self = self else { return }
+            let indexPath = IndexPath(item: index, section: 0)
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.pageControl.currentPage = index
+        }
+    }
+    
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -48,7 +63,8 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
 extension RecipeHeaderViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        viewModel.didSelectItem(indexPath: indexPath)
+        guard let delegate = photoBrowserDelegate else { return }
+        viewModel.didSelectItem(indexPath: indexPath, delegate: delegate)
     }
     
 }
