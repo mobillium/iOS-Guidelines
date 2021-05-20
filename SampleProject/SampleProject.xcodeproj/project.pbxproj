@@ -224,7 +224,6 @@
 				7AFCDEA32616159600D5D115 /* RecipeDetail */,
 				840EB59B2645893A0019C101 /* RecipeHeader */,
 				A2176A22261615EC008B3C46 /* WalkThrough */,
-				7AD4057526130DEF00212D73 /* Recipes */,
 				7A73C91425CC386D00322233 /* Launch */,
 				7A980ABB2553168D00494520 /* Base */,
 				7A980ABC2553169100494520 /* Home */,
@@ -293,13 +292,6 @@
 				84AB45DA2629791B007A41A7 /* ScreenSize.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		7AD4057526130DEF00212D73 /* Recipes */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Recipes;
 			sourceTree = "<group>";
 		};
 		7AFC72902551FA1800B30789 = {
