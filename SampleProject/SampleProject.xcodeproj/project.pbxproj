@@ -40,11 +40,24 @@
 		7AFC73A52551FF5400B30789 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A32551FF5400B30789 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
 		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840EB59F2645893A0019C101 /* RecipeHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB59C2645893A0019C101 /* RecipeHeaderViewModel.swift */; };
+		840EB5A02645893A0019C101 /* RecipeHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB59D2645893A0019C101 /* RecipeHeaderViewController.swift */; };
+		840EB5A12645893A0019C101 /* RecipeHeaderRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB59E2645893A0019C101 /* RecipeHeaderRouter.swift */; };
+		840EB5A72645895B0019C101 /* (null) in Sources */ = {isa = PBXBuildFile; };
+		840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */; };
+		840EB5B226458B220019C101 /* PhotoBrowserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB5A32645894A0019C101 /* PhotoBrowserDelegate.swift */; };
+		840EB5B426458B490019C101 /* SKPhotoBrowserKingfisherCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB5B326458B490019C101 /* SKPhotoBrowserKingfisherCache.swift */; };
+		84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB45DA2629791B007A41A7 /* ScreenSize.swift */; };
+		84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */; };
 		96B66E7F95B2EEF438709FEE /* Pods_SampleProject_SampleProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
 		B321F6752631C8650082484C /* RecipesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F6742631C8650082484C /* RecipesRouter.swift */; };
+		A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2326161623008B3C46 /* WalkThroughRouter.swift */; };
+		A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2426161623008B3C46 /* WalkThroughViewController.swift */; };
+		A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */; };
+		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
 		D75D3CA02C5723C8ECD6AB85 /* Pods_SampleProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */; };
 /* End PBXBuildFile section */
 
@@ -128,11 +141,23 @@
 		7AFC73A82551FF5800B30789 /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802D84D3D59E04E626A3BE55 /* Pods-SampleProjectTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.development.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.development.xcconfig"; sourceTree = "<group>"; };
 		82678514AED8AC1BA8E918E5 /* Pods_SampleProject_SampleProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject_SampleProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		840EB59C2645893A0019C101 /* RecipeHeaderViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHeaderViewModel.swift; sourceTree = "<group>"; };
+		840EB59D2645893A0019C101 /* RecipeHeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHeaderViewController.swift; sourceTree = "<group>"; };
+		840EB59E2645893A0019C101 /* RecipeHeaderRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHeaderRouter.swift; sourceTree = "<group>"; };
+		840EB5A32645894A0019C101 /* PhotoBrowserDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserDelegate.swift; sourceTree = "<group>"; };
+		840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserRoute.swift; sourceTree = "<group>"; };
+		840EB5B326458B490019C101 /* SKPhotoBrowserKingfisherCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPhotoBrowserKingfisherCache.swift; sourceTree = "<group>"; };
+		84AB45DA2629791B007A41A7 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+SKPhotoBrowser.swift"; sourceTree = "<group>"; };
 		95F2B9308C652BC523FE205D /* Pods_SampleProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
 		B321F6742631C8650082484C /* RecipesRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRouter.swift; sourceTree = "<group>"; };
+		A2176A2326161623008B3C46 /* WalkThroughRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRouter.swift; sourceTree = "<group>"; };
+		A2176A2426161623008B3C46 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
+		A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewModel.swift; sourceTree = "<group>"; };
+		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
 		C9507BD8AAF36E2ADFE3B42D /* Pods-SampleProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB526380A6A2347B67422B7B /* Pods-SampleProject-SampleProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D78D27F28F8522986519EE58 /* Pods-SampleProject-SampleProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +235,8 @@
 			children = (
 				6CFE5372262ED7BB0008FFCD /* Favorites */,
 				B321F651263188A50082484C /* Recipes */,
+				840EB59B2645893A0019C101 /* RecipeHeader */,
+				A2176A22261615EC008B3C46 /* WalkThrough */,
 				7A73C91425CC386D00322233 /* Launch */,
 				7A980ABB2553168D00494520 /* Base */,
 				7A980ABC2553169100494520 /* Home */,
@@ -242,6 +269,7 @@
 		7A980AE92553170600494520 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				840EB5A8264589790019C101 /* Routes */,
 				7A980AFB2553178000494520 /* AppRouter.swift */,
 				7A980B1A255318EA00494520 /* Core */,
 				7A980AF42553172700494520 /* Transitions */,
@@ -274,6 +302,7 @@
 			children = (
 				7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */,
 				7AC7AC3325CD4A1C00EA44C4 /* DefaultsKeys.swift */,
+				84AB45DA2629791B007A41A7 /* ScreenSize.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -304,6 +333,8 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				840EB5A52645895B0019C101 /* Helper */,
+				840EB5A22645894A0019C101 /* Delegates */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				7A73C91225CC385900322233 /* Resources */,
 				7AC7AC2C25CD48D700EA44C4 /* Constants */,
@@ -347,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				7A73C7FB25CC178000322233 /* AppDelegate.swift */,
+				84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -384,6 +416,51 @@
 				B321F655263188A50082484C /* RecipesViewController.swift */,
 			);
 			path = Recipes;
+            sourceTree = "<group>";
+        };
+            840EB59B2645893A0019C101 /* RecipeHeader */ = {
+			isa = PBXGroup;
+			children = (
+				840EB59C2645893A0019C101 /* RecipeHeaderViewModel.swift */,
+				840EB59D2645893A0019C101 /* RecipeHeaderViewController.swift */,
+				840EB59E2645893A0019C101 /* RecipeHeaderRouter.swift */,
+			);
+			path = RecipeHeader;
+			sourceTree = "<group>";
+		};
+		840EB5A22645894A0019C101 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				840EB5A32645894A0019C101 /* PhotoBrowserDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		840EB5A52645895B0019C101 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				840EB5B326458B490019C101 /* SKPhotoBrowserKingfisherCache.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		840EB5A8264589790019C101 /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		A2176A22261615EC008B3C46 /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				A2176A2426161623008B3C46 /* WalkThroughViewController.swift */,
+				A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */,
+				A2176A2326161623008B3C46 /* WalkThroughRouter.swift */,
+				A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */,
+			);
+			path = WalkThrough;
 			sourceTree = "<group>";
 		};
 		DBF57CA68880BD6211571426 /* Frameworks */ = {
@@ -676,27 +753,39 @@
 				B321F657263188A50082484C /* RecipesViewModel.swift in Sources */,
 				7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
+				840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
 				6CFE5376262ED7DC0008FFCD /* FavoritesRouter.swift in Sources */,
+				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
+				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
+				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
+				A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */,
 				7A980AB62553168400494520 /* HomeRouter.swift in Sources */,
 				7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */,
+				A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
 				B321F658263188A50082484C /* RecipesRoute.swift in Sources */,
 				B321F6752631C8650082484C /* RecipesRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
 				7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */,
+				840EB5B426458B490019C101 /* SKPhotoBrowserKingfisherCache.swift in Sources */,
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
+				840EB5A12645893A0019C101 /* RecipeHeaderRouter.swift in Sources */,
+				840EB5A02645893A0019C101 /* RecipeHeaderViewController.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
 				6CFE5378262ED7DC0008FFCD /* FavoritesViewModel.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
+				A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */,
+				840EB5B226458B220019C101 /* PhotoBrowserDelegate.swift in Sources */,
 				7AC7AC3425CD4A1C00EA44C4 /* DefaultsKeys.swift in Sources */,
 				6CFE5377262ED7DC0008FFCD /* FavoritesViewController.swift in Sources */,
 				B321F659263188A50082484C /* RecipesViewController.swift in Sources */,
+				840EB59F2645893A0019C101 /* RecipeHeaderViewModel.swift in Sources */,
 				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,
 				6CFE537E262ED7F00008FFCD /* FavoritesRoute.swift in Sources */,
 			);
