@@ -1,16 +1,17 @@
 PODS:
-  - Alamofire (5.4.1)
+  - Alamofire (5.4.2)
   - IQKeyboardManagerSwift (6.5.6)
   - Kingfisher (6.2.1)
-  - MobilliumBuilders (1.1.0)
-  - MobilliumDateFormatter (1.1.0)
+  - MobilliumBuilders (1.2.0)
+  - MobilliumDateFormatter (1.2.0)
   - MobilliumUserDefaults (2.0.0)
   - QuickLayout (3.0.0)
   - Segmentio (4.1)
+  - SKPhotoBrowser (6.1.0)
   - SwiftEntryKit (1.2.7):
     - QuickLayout (= 3.0.0)
   - SwiftGen (6.4.0)
-  - SwiftLint (0.42.0)
+  - SwiftLint (0.43.1)
   - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
@@ -18,9 +19,11 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (~> 6.5)
   - Kingfisher (~> 6.2)
   - MobilliumBuilders (~> 1.1)
+  - MobilliumBuilders (~> 1.2)
   - MobilliumDateFormatter (~> 1.1)
   - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
+  - SKPhotoBrowser (~> 6.1)
   - SwiftEntryKit (~> 1.2)
   - SwiftGen (~> 6.4)
   - SwiftLint (~> 0.42)
@@ -36,25 +39,27 @@ SPEC REPOS:
     - MobilliumUserDefaults
     - QuickLayout
     - Segmentio
+    - SKPhotoBrowser
     - SwiftEntryKit
     - SwiftGen
     - SwiftLint
     - TinyConstraints
 
 SPEC CHECKSUMS:
-  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
-  MobilliumBuilders: 2040fa1e3f1cae48c872d7997e898ea35cf57dc6
-  MobilliumDateFormatter: eccff23e7c493446d1600b123afc7a2da0e7b3cb
+  MobilliumBuilders: 5c5fbc2ba2f5f2bf9e1bf92a7022e3ddb09ffcaa
+  MobilliumDateFormatter: 398a47e62aeeda24385c362c61c213550b07f047
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
   Segmentio: ab29def64e1bff6e6e9b97671788a99bed3f1d9f
+  SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
   SwiftEntryKit: 537c92699d6034efb1ef9c32b11e0b37c97aa589
   SwiftGen: 67860cc7c3cfc2ed25b9b74cfd55495fc89f9108
-  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 74caf64c6a6466f3614d78ff6bb95375935932c6
+PODFILE CHECKSUM: 3e1299c6fffbd2071fe29313182b75f7a6cc9598
 
 COCOAPODS: 1.10.1

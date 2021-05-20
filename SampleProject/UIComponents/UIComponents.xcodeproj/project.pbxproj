@@ -50,6 +50,8 @@
 		7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D1255200A300B30789 /* TextFieldDataSource.swift */; };
 		7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D2255200A300B30789 /* ReusableView.swift */; };
 		7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73D4255200A300B30789 /* ActivityIndicatorView.swift */; };
+		840EB599264588F90019C101 /* RecipeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB597264588F90019C101 /* RecipeHeaderCell.swift */; };
+		840EB59A264588F90019C101 /* RecipeHeaderCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840EB598264588F90019C101 /* RecipeHeaderCellModel.swift */; };
 		A20A4B92260C78F800F1ACFF /* RecipeSmallCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4B91260C78F800F1ACFF /* RecipeSmallCell.swift */; };
 		A20A4B97260C7ED900F1ACFF /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4B96260C7ED900F1ACFF /* PaddingLabel.swift */; };
 		A20A4BA4260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A4BA2260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift */; };
@@ -137,6 +139,8 @@
 		7AFC73D1255200A300B30789 /* TextFieldDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDataSource.swift; sourceTree = "<group>"; };
 		7AFC73D2255200A300B30789 /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		7AFC73D4255200A300B30789 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		840EB597264588F90019C101 /* RecipeHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHeaderCell.swift; sourceTree = "<group>"; };
+		840EB598264588F90019C101 /* RecipeHeaderCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeHeaderCellModel.swift; sourceTree = "<group>"; };
 		A20A4B91260C78F800F1ACFF /* RecipeSmallCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeSmallCell.swift; sourceTree = "<group>"; };
 		A20A4B96260C7ED900F1ACFF /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		A20A4BA2260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryWithRecipesCell.swift; sourceTree = "<group>"; };
@@ -385,6 +389,15 @@
 			path = UIActivityIndicatorView;
 			sourceTree = "<group>";
 		};
+		840EB596264588F90019C101 /* RecipeHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				840EB597264588F90019C101 /* RecipeHeaderCell.swift */,
+				840EB598264588F90019C101 /* RecipeHeaderCellModel.swift */,
+			);
+			path = RecipeHeaderCell;
+			sourceTree = "<group>";
+		};
 		A20A4B95260C7EB200F1ACFF /* UILabel */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +436,7 @@
 		A2B360D1260B3BE800FB990F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				840EB596264588F90019C101 /* RecipeHeaderCell */,
 				A2176A1B261610C8008B3C46 /* WalkThroughCell */,
 				A21DA4C3260CBD3A00493FFE /* CommentCell */,
 				A20A4BA1260C8EDA00F1ACFF /* CategoryWithRecipesCell */,
@@ -654,6 +668,8 @@
 				A2176A1F261610FD008B3C46 /* WalkThroughCellModel.swift in Sources */,
 				7AFC73DE255200A300B30789 /* BlockingActivityIndicator.swift in Sources */,
 				7AFC73DF255200A300B30789 /* TextFieldDataSource.swift in Sources */,
+				840EB599264588F90019C101 /* RecipeHeaderCell.swift in Sources */,
+				840EB59A264588F90019C101 /* RecipeHeaderCellModel.swift in Sources */,
 				7AFC73DA255200A300B30789 /* ReusableView+Extensions.swift in Sources */,
 				7AFC73DC255200A300B30789 /* ActivityIndicatorProtocol.swift in Sources */,
 				7A716D5A260B6D9D008B91B7 /* ToastPresenter.swift in Sources */,
