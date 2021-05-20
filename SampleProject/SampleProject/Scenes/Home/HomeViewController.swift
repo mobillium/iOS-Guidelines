@@ -9,10 +9,4 @@
 import UIKit
 import StoreKit
 
-final class HomeViewController: BaseViewController<HomeViewModel> {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-}
+final class HomeViewController: BaseViewController<HomeViewModel> {}
