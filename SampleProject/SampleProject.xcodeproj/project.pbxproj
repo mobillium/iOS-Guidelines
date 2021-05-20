@@ -186,6 +186,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D99B2962656ADCE0002E23E /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				7A980AFB2553178000494520 /* AppRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		7A73C91225CC385900322233 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,8 +257,8 @@
 		7A980AE92553170600494520 /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				3D99B2962656ADCE0002E23E /* Routers */,
 				840EB5A8264589790019C101 /* Routes */,
-				7A980AFB2553178000494520 /* AppRouter.swift */,
 				7A980B1A255318EA00494520 /* Core */,
 				7A980AF42553172700494520 /* Transitions */,
 			);
@@ -742,7 +750,6 @@
 				840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
-				840EB5A72645895B0019C101 /* (null) in Sources */,
 				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
