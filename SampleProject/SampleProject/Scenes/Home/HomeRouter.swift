@@ -6,6 +6,4 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-final class HomeRouter: Router, HomeRouter.Routes {
-    typealias Routes = LoginWarningPopupRoute
-}
+final class HomeRouter: Router {}
