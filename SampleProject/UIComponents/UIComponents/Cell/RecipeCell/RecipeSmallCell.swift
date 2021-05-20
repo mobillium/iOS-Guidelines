@@ -20,7 +20,7 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
         image.contentMode = .scaleAspectFill
         image.layer.cornerRadius = 15
         image.clipsToBounds = true
-        image.layer.masksToBounds = false
+        image.layer.masksToBounds = true
         image.layer.borderWidth = 2
         image.layer.borderColor = UIColor.appRed.cgColor
         image.backgroundColor = .white

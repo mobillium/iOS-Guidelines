@@ -43,6 +43,20 @@ public enum L10n {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
     }
+    public enum Home {
+      /// EDİTÖR SEÇİMİ
+      public static let editorChoiceRecipes = L10n.tr("Modules", "Home.editorChoiceRecipes")
+      /// SON EKLENENLER
+      public static let lastAddedRecipes = L10n.tr("Modules", "Home.lastAddedRecipes")
+      /// %@ Yorum %@ Beğeni
+      public static func recipeCommnetAndLikeCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.recipeCommnetAndLikeCount", String(describing: p1), String(describing: p2))
+      }
+      /// %@ Tarif %@ Takipçi
+      public static func userRecipeAndFollowerCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.userRecipeAndFollowerCount", String(describing: p1), String(describing: p2))
+      }
+    }
     public enum SignIn {
       /// Sign In
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")

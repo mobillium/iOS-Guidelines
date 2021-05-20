@@ -28,11 +28,10 @@ public struct GetRecipesRequest: APIRequest {
             path = "category/\(categoryId)/recipe"
         }
     }
-    
-    public enum ListType {
-        case editorChoiceRecipes
-        case lastAddedRecipes
-        case categoryRecipes(categoryId: Int)
-    }
-    
+}
+
+public enum ListType {
+    case editorChoiceRecipes
+    case lastAddedRecipes
+    case categoryRecipes(categoryId: Int)
 }
