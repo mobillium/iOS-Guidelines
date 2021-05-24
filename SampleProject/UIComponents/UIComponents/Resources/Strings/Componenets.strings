@@ -8,3 +8,5 @@
 
 // MARK: - Action
 "Action.block" = "Block";
+"Action.loginWarning" = "Giriş yapmanız gereklidir.";
+"Comment.placeholder" = "Bir şeyler yazın..";

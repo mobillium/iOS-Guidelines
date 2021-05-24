@@ -14,6 +14,12 @@ public enum L10n {
     public enum Action {
       /// Block
       public static let block = L10n.tr("Componenets", "Action.block")
+      /// Giriş yapmanız gereklidir.
+      public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
+    }
+    public enum Comment {
+      /// Bir şeyler yazın..
+      public static let placeholder = L10n.tr("Componenets", "Comment.placeholder")
     }
   }
   public enum Error {
@@ -33,8 +39,12 @@ public enum L10n {
     public static let follow = L10n.tr("General", "follow")
     /// Takip Ediliyor
     public static let following = L10n.tr("General", "following")
+    /// Vazgeç
+    public static let giveUp = L10n.tr("General", "giveUp")
     /// Beğeni
     public static let like = L10n.tr("General", "like")
+    /// Giriş Yap
+    public static let login = L10n.tr("General", "login")
     /// Sign In
     public static let signIn = L10n.tr("General", "signIn")
   }
