@@ -14,6 +14,12 @@ public enum L10n {
     public enum Action {
       /// Block
       public static let block = L10n.tr("Componenets", "Action.block")
+      /// Giriş yapmanız gereklidir.
+      public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
+    }
+    public enum Comment {
+      /// Bir şeyler yazın..
+      public static let placeholder = L10n.tr("Componenets", "Comment.placeholder")
     }
   }
   public enum Error {
@@ -33,6 +39,8 @@ public enum L10n {
     public static let follow = L10n.tr("General", "follow")
     /// Takip Ediliyor
     public static let following = L10n.tr("General", "following")
+    /// Vazgeç
+    public static let giveUp = L10n.tr("General", "giveUp")
     /// Beğeni
     public static let like = L10n.tr("General", "like")
     /// Giriş Yap
@@ -44,6 +52,20 @@ public enum L10n {
     public enum Favorites {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
+    }
+    public enum Home {
+      /// EDİTÖR SEÇİMİ
+      public static let editorChoiceRecipes = L10n.tr("Modules", "Home.editorChoiceRecipes")
+      /// SON EKLENENLER
+      public static let lastAddedRecipes = L10n.tr("Modules", "Home.lastAddedRecipes")
+      /// %@ Yorum %@ Beğeni
+      public static func recipeCommnetAndLikeCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.recipeCommnetAndLikeCount", String(describing: p1), String(describing: p2))
+      }
+      /// %@ Tarif %@ Takipçi
+      public static func userRecipeAndFollowerCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.userRecipeAndFollowerCount", String(describing: p1), String(describing: p2))
+      }
     }
     public enum LoginViewController {
       /// Hesabın mı yok?
@@ -60,6 +82,22 @@ public enum L10n {
     public enum SignIn {
       /// Sign In
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")
+    }
+    public enum WalkThrough {
+      /// Fodamy is the best place to find your \n favorite recipes in all around the world.
+      public static let descriptionText = L10n.tr("Modules", "WalkThrough.descriptionText")
+      /// Welcome to Fodamy Network!
+      public static let firstTitle = L10n.tr("Modules", "WalkThrough.firstTitle")
+      /// Share recipes with others.
+      public static let fourthTitle = L10n.tr("Modules", "WalkThrough.fourthTitle")
+      /// İlerle
+      public static let next = L10n.tr("Modules", "WalkThrough.Next")
+      /// Finding recipes were not that easy.
+      public static let secondTitle = L10n.tr("Modules", "WalkThrough.secondTitle")
+      /// Başla!
+      public static let start = L10n.tr("Modules", "WalkThrough.Start")
+      /// Add new recipe.
+      public static let thirdTitle = L10n.tr("Modules", "WalkThrough.thirdTitle")
     }
   }
   public enum Placeholder {

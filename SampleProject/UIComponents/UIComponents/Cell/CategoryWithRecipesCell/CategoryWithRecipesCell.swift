@@ -32,7 +32,7 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         .backgroundColor(.appZircon)
         .build()
     
-    weak var viewModel: CategoryWithRecipesCellProtocol?
+    var viewModel: CategoryWithRecipesCellProtocol?
     public let recipeSmallCellView = RecipeSmallCellView()
     
     override init(frame: CGRect) {

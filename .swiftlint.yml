@@ -19,6 +19,7 @@ disabled_rules:
   - modifier_order
   - file_header
   - pattern_matching_keywords
+  - redundant_type_annotation
 opt_in_rules:
   - anyobject_protocol
   - array_init
