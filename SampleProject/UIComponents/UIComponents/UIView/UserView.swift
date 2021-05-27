@@ -72,7 +72,7 @@ public class UserView: UIView {
     
     public var followButtonTapped: VoidClosure?
     
-    init(userViewType: UserViewType) {
+    public init(userViewType: UserViewType) {
         self.userViewType = userViewType
         super.init(frame: .zero)
         configureContents()
@@ -88,8 +88,7 @@ public class UserView: UIView {
     private func configureContents() {
         backgroundColor = .appWhite
         addSubview(userImageView)
-        userImageView.centerYToSuperview()
-        userImageView.leadingToSuperview().constant = 15
+        userImageView.edgesToSuperview(excluding: .trailing, insets: .init(top: 15, left: 15, bottom: 15, right: 15))
         userImageView.size(.init(width: 40, height: 40))
         
         addSubview(textStackView)

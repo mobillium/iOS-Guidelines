@@ -72,7 +72,7 @@ target 'UIComponents' do
   # Helper
   pod "TinyConstraints", '~> 4.0'
   pod 'SwiftGen', '~> 6.4'
-  pod 'MobilliumBuilders', '~> 1.1'
+  pod 'MobilliumBuilders', '~> 1.2'
   pod 'Segmentio', '~> 4.1'
   pod 'Kingfisher', '~> 6.2'
   pod 'SwiftEntryKit', '~> 1.2'

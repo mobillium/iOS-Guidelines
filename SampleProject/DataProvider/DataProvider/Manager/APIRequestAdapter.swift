@@ -9,7 +9,7 @@
 import Alamofire
 
 struct APIRequestAdapter {
-        
+    
     let method: HTTPMethod
     let parameters: Parameters
     let headers: HTTPHeaders

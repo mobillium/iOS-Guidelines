@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A7A01AF26443B8C0023E081 /* RecipeCommentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A01AE26443B8C0023E081 /* RecipeCommentRequest.swift */; };
+		1A7A01B126443D850023E081 /* RecipeComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7A01B026443D850023E081 /* RecipeComment.swift */; };
 		67F021DD2311EEAC6FA27BC5 /* Pods_DataProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453C23E160F8AEF9559B665C /* Pods_DataProviderTests.framework */; };
 		7A17BB89255203000086B35B /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB80255203000086B35B /* APIDataProvider.swift */; };
 		7A17BB8A255203000086B35B /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB81255203000086B35B /* APIRequestAdapter.swift */; };
@@ -16,8 +18,6 @@
 		7A17BB8E255203000086B35B /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB86255203000086B35B /* RequestMethod.swift */; };
 		7A17BB8F255203000086B35B /* RequestEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB87255203000086B35B /* RequestEncoding.swift */; };
 		7A17BB90255203000086B35B /* DataProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB88255203000086B35B /* DataProviderProtocol.swift */; };
-		7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; };
-		7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83325CC18A000322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A7A3944261202FF006E7A4A /* RecipeRequestsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A3943261202FF006E7A4A /* RecipeRequestsTests.swift */; };
 		7A7A394A26120C03006E7A4A /* MockDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394926120C03006E7A4A /* MockDataProvider.swift */; };
 		7A7A394E26120C3B006E7A4A /* RequestProtocol+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7A394D26120C3B006E7A4A /* RequestProtocol+Extensions.swift */; };
@@ -80,21 +80,9 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		7A73C83625CC18A000322233 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7A73C83525CC18A000322233 /* Utilities.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		1A7A01AE26443B8C0023E081 /* RecipeCommentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCommentRequest.swift; sourceTree = "<group>"; };
+		1A7A01B026443D850023E081 /* RecipeComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeComment.swift; sourceTree = "<group>"; };
 		25BFC2CCD82B8B1169142259 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 		3556722C15DE1D42C53CE0DD /* Pods-DataProviderTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.development.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.development.xcconfig"; sourceTree = "<group>"; };
 		453C23E160F8AEF9559B665C /* Pods_DataProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +161,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA437F60DC149107572A5129 /* Pods_DataProvider.framework in Frameworks */,
-				7A73C83425CC18A000322233 /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +188,14 @@
 			);
 			name = Pods;
 			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		1A7A01AD26443B7D0023E081 /* RecipeComment */ = {
+			isa = PBXGroup;
+			children = (
+				1A7A01AE26443B8C0023E081 /* RecipeCommentRequest.swift */,
+			);
+			path = RecipeComment;
 			sourceTree = "<group>";
 		};
 		29FB8C5FD6BC124804D7F407 /* Frameworks */ = {
@@ -313,6 +308,7 @@
 		7AC2B1AC260CFE8C008160B0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				1A7A01AD26443B7D0023E081 /* RecipeComment */,
 				7AC2B211260D0077008160B0 /* User */,
 				7AC2B20F260D004A008160B0 /* Recipe */,
 				7AC2B1FC260D003E008160B0 /* Auth */,
@@ -336,6 +332,7 @@
 				7AC2B1DB260D0005008160B0 /* RecipeTime.swift */,
 				7AC2B1DA260D0005008160B0 /* SuccessResponse.swift */,
 				7AC2B1E1260D0006008160B0 /* User.swift */,
+				1A7A01B026443D850023E081 /* RecipeComment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,7 +446,6 @@
 				7AFC73272551FE8C00B30789 /* Sources */,
 				7AFC73282551FE8C00B30789 /* Frameworks */,
 				7AFC73292551FE8C00B30789 /* Resources */,
-				7A73C83625CC18A000322233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -619,10 +615,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AC2B1E5260D0006008160B0 /* Auth.swift in Sources */,
+				1A7A01B126443D850023E081 /* RecipeComment.swift in Sources */,
 				7AC2B1E8260D0006008160B0 /* RecipeTime.swift in Sources */,
 				7AC2B204260D003E008160B0 /* EditRecipeCommentRequest.swift in Sources */,
 				7AC2B1E9260D0006008160B0 /* NumberOfPerson.swift in Sources */,
 				7AC2B208260D003E008160B0 /* GetRecipesRequest.swift in Sources */,
+				1A7A01AF26443B8C0023E081 /* RecipeCommentRequest.swift in Sources */,
 				7AC2B1E6260D0006008160B0 /* Comment.swift in Sources */,
 				7AC2B1EF260D0006008160B0 /* RecipeDetail.swift in Sources */,
 				7AC2B1EA260D0006008160B0 /* CategoryDetail.swift in Sources */,

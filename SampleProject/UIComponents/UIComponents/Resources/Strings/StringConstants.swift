@@ -33,8 +33,12 @@ public enum L10n {
     }
   }
   public enum General {
+    /// Yorum Ekle
+    public static let addComment = L10n.tr("General", "addComment")
     /// Yorum
     public static let comment = L10n.tr("General", "comment")
+    /// Yorumlar
+    public static let comments = L10n.tr("General", "comments")
     /// Takip Et
     public static let follow = L10n.tr("General", "follow")
     /// Takip Ediliyor
@@ -45,6 +49,10 @@ public enum L10n {
     public static let like = L10n.tr("General", "like")
     /// Giriş Yap
     public static let login = L10n.tr("General", "login")
+    /// Malzemeler
+    public static let recipeIngredients = L10n.tr("General", "recipeIngredients")
+    /// Yapılışı
+    public static let recipeSteps = L10n.tr("General", "recipeSteps")
     /// Üye Ol
     public static let register = L10n.tr("General", "register")
   }

@@ -18,7 +18,6 @@ DEPENDENCIES:
   - Alamofire (~> 5.4)
   - IQKeyboardManagerSwift (~> 6.5)
   - Kingfisher (~> 6.2)
-  - MobilliumBuilders (~> 1.1)
   - MobilliumBuilders (~> 1.2)
   - MobilliumDateFormatter (~> 1.1)
   - MobilliumUserDefaults (~> 2.0)
@@ -60,6 +59,6 @@ SPEC CHECKSUMS:
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 3e1299c6fffbd2071fe29313182b75f7a6cc9598
+PODFILE CHECKSUM: 8d83226794d7d92ce8d0484111caa40d3d1f040b
 
 COCOAPODS: 1.10.1
