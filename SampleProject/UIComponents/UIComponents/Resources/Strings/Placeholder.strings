@@ -6,4 +6,6 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"username" = "Username";
+"username" = "Kullanıcı Adı";
+"email" = "E-mail Adresi";
+"password" = "Şifre";

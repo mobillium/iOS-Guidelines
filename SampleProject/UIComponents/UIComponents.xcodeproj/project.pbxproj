@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1C39E0435D08B09D79582AD7 /* Pods_UIComponentsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21582D1B374172423512A93A /* Pods_UIComponentsTests.framework */; };
 		3D7478AA2628891100183ECA /* DynamicHeightCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7478A92628891100183ECA /* DynamicHeightCollectionView.swift */; };
+		5F9F89352628887000CD39E6 /* CommentInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F89342628887000CD39E6 /* CommentInputView.swift */; };
 		6895F9D4FCA1DB6416A2BDA0 /* Pods_UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE3416577E7799BB5B2D409 /* Pods_UIComponents.framework */; };
 		7A040F8A25E964E70052798D /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7A040F8925E964E70052798D /* swiftgen.yml */; };
 		7A040F9225E9657C0052798D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A040F9125E9657C0052798D /* Fonts.swift */; };
@@ -66,6 +67,7 @@
 		A2B360D6260B3C6200FB990F /* RecipeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */; };
 		A2B360DB260B3F4100FB990F /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360DA260B3F4100FB990F /* UserView.swift */; };
 		A2B36136260B66EA00FB990F /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B36135260B66EA00FB990F /* UIImageView+Extensions.swift */; };
+		B308E6FF261612E700E45656 /* AppSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B308E6FE261612E700E45656 /* AppSegmentedControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +99,7 @@
 		37EC228B1BD0FDAAC1CEEB4B /* Pods-UIComponentsTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.development.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.development.xcconfig"; sourceTree = "<group>"; };
 		3B5BE3A239BC5AF9E9DFFC43 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		3D7478A92628891100183ECA /* DynamicHeightCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightCollectionView.swift; sourceTree = "<group>"; };
+		5F9F89342628887000CD39E6 /* CommentInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInputView.swift; sourceTree = "<group>"; };
 		7035E78D3B64AD0B0B325BB0 /* Pods-UIComponentsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.debug.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7A040F8925E964E70052798D /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		7A040F9125E9657C0052798D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -156,6 +159,7 @@
 		A2B360D4260B3C6200FB990F /* RecipeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCellModel.swift; sourceTree = "<group>"; };
 		A2B360DA260B3F4100FB990F /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		A2B36135260B66EA00FB990F /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		B308E6FE261612E700E45656 /* AppSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSegmentedControl.swift; sourceTree = "<group>"; };
 		BDE3416577E7799BB5B2D409 /* Pods_UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9F424F25F74C8FC78B212DB /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
 		D4642D8F0950A3D569F0E3A7 /* Pods-UIComponentsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponentsTests.release.xcconfig"; path = "Target Support Files/Pods-UIComponentsTests/Pods-UIComponentsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				7AC2B13B260CA589008160B0 /* RecipeDetailInfoView.swift */,
 				A2B360DA260B3F4100FB990F /* UserView.swift */,
 				A20A4BE1260C9C8C00F1ACFF /* RecipeSmallCellView.swift */,
+				5F9F89342628887000CD39E6 /* CommentInputView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				3D7478A82628890300183ECA /* UICollectionView */,
+				B308E6F8261612A200E45656 /* UIControl */,
 				7AC2B181260CBD7D008160B0 /* UIPageControl */,
 				7AC2B0D8260C8305008160B0 /* UIView */,
 				7A716D57260B6D85008B91B7 /* Toast */,
@@ -464,6 +470,14 @@
 				A20A4B91260C78F800F1ACFF /* RecipeSmallCell.swift */,
 			);
 			path = RecipeCell;
+			sourceTree = "<group>";
+		};
+		B308E6F8261612A200E45656 /* UIControl */ = {
+			isa = PBXGroup;
+			children = (
+				B308E6FE261612E700E45656 /* AppSegmentedControl.swift */,
+			);
+			path = UIControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -671,6 +685,7 @@
 				7A040FBF25E966170052798D /* StringConstants.swift in Sources */,
 				7A716D00260B50FF008B91B7 /* UIImage+Extensions.swift in Sources */,
 				A20A4B97260C7ED900F1ACFF /* PaddingLabel.swift in Sources */,
+				B308E6FF261612E700E45656 /* AppSegmentedControl.swift in Sources */,
 				A20A4B92260C78F800F1ACFF /* RecipeSmallCell.swift in Sources */,
 				7A040FD025E966FF0052798D /* UIImage+Images.swift in Sources */,
 				7AFC73E0255200A300B30789 /* ReusableView.swift in Sources */,
@@ -687,6 +702,7 @@
 				A20A4BE2260C9C8C00F1ACFF /* RecipeSmallCellView.swift in Sources */,
 				3D7478AA2628891100183ECA /* DynamicHeightCollectionView.swift in Sources */,
 				7A040FD125E966FF0052798D /* UIImage+Icons.swift in Sources */,
+				5F9F89352628887000CD39E6 /* CommentInputView.swift in Sources */,
 				A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */,
 				7AFC73E1255200A300B30789 /* ActivityIndicatorView.swift in Sources */,
 				A21DA4CD260CBD6700493FFE /* CommentCellModel.swift in Sources */,

@@ -14,6 +14,12 @@ public enum L10n {
     public enum Action {
       /// Block
       public static let block = L10n.tr("Componenets", "Action.block")
+      /// Giriş yapmanız gereklidir.
+      public static let loginWarning = L10n.tr("Componenets", "Action.loginWarning")
+    }
+    public enum Comment {
+      /// Bir şeyler yazın..
+      public static let placeholder = L10n.tr("Componenets", "Comment.placeholder")
     }
   }
   public enum Error {
@@ -37,19 +43,49 @@ public enum L10n {
     public static let follow = L10n.tr("General", "follow")
     /// Takip Ediliyor
     public static let following = L10n.tr("General", "following")
+    /// Vazgeç
+    public static let giveUp = L10n.tr("General", "giveUp")
     /// Beğeni
     public static let like = L10n.tr("General", "like")
+    /// Giriş Yap
+    public static let login = L10n.tr("General", "login")
     /// Malzemeler
     public static let recipeIngredients = L10n.tr("General", "recipeIngredients")
     /// Yapılışı
     public static let recipeSteps = L10n.tr("General", "recipeSteps")
-    /// Sign In
-    public static let signIn = L10n.tr("General", "signIn")
+    /// Üye Ol
+    public static let register = L10n.tr("General", "register")
   }
   public enum Modules {
     public enum Favorites {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
+    }
+    public enum Home {
+      /// EDİTÖR SEÇİMİ
+      public static let editorChoiceRecipes = L10n.tr("Modules", "Home.editorChoiceRecipes")
+      /// SON EKLENENLER
+      public static let lastAddedRecipes = L10n.tr("Modules", "Home.lastAddedRecipes")
+      /// %@ Yorum %@ Beğeni
+      public static func recipeCommnetAndLikeCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.recipeCommnetAndLikeCount", String(describing: p1), String(describing: p2))
+      }
+      /// %@ Tarif %@ Takipçi
+      public static func userRecipeAndFollowerCount(_ p1: Any, _ p2: Any) -> String {
+        return L10n.tr("Modules", "Home.userRecipeAndFollowerCount", String(describing: p1), String(describing: p2))
+      }
+    }
+    public enum LoginViewController {
+      /// Hesabın mı yok?
+      public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
+      /// Giriş Yap
+      public static let title = L10n.tr("Modules", "LoginViewController.title")
+    }
+    public enum RegisterViewController {
+      /// Hesabın mı var?
+      public static let bottomText = L10n.tr("Modules", "RegisterViewController.bottomText")
+      /// Üye Ol
+      public static let title = L10n.tr("Modules", "RegisterViewController.title")
     }
     public enum SignIn {
       /// Sign In
@@ -73,7 +109,11 @@ public enum L10n {
     }
   }
   public enum Placeholder {
-    /// Username
+    /// E-mail Adresi
+    public static let email = L10n.tr("Placeholder", "email")
+    /// Şifre
+    public static let password = L10n.tr("Placeholder", "password")
+    /// Kullanıcı Adı
     public static let username = L10n.tr("Placeholder", "username")
   }
 }

@@ -6,7 +6,8 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"signIn" = "Sign In";
+"login" = "Giriş Yap";
+"register" = "Üye Ol";
 "comment" = "Yorum";
 "like" = "Beğeni";
 "follow" = "Takip Et";
@@ -15,3 +16,5 @@
 "recipeSteps" = "Yapılışı";
 "addComment" = "Yorum Ekle";
 "comments" = "Yorumlar";
+"giveUp" = "Vazgeç";
+"login" = "Giriş Yap";

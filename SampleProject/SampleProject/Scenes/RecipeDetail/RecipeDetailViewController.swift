@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TinyConstraints
 
 final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel> {
     
@@ -161,48 +162,3 @@ extension RecipeDetailViewController: UICollectionViewDelegateFlowLayout {
     
 }
 // swiftlint:enable line_length
-
-#if canImport(SwiftUI) && DEBUG
-import SwiftUI
-struct RecipeDetailViewControllerRepresentable: UIViewRepresentable {
-    
-    func makeUIView(context: Context) -> UIView {
-        let router = RecipeDetailRouter()
-        let viewModel = RecipeDetailViewModel(router: router)
-        viewModel.ingredients = "8 su bardağı su\n"
-        + "1 silme yemek kaşığı tuz\n"
-        + "250 gram makarna(yarım paket)\n"
-        + "3 yemek kaşığı sıvı yağ\n"
-        + "Makarna süzgeci"
-        viewModel.steps = "Öncelikle tencereye 8 bardak soğuk suyu ekleyin. Kaynayan suyun içerisine tuzu ve sıvı\n"
-        + "yağı ekleyerek kaynaya kadar kapağı kapalı bir şekilde bekleyin.\n\n"
-        + "Afiyet olsun…"
-        viewModel.time = "20dk"
-        viewModel.numberOfPeople = "4-6"
-        viewModel.username = "aslanmsalih"
-        viewModel.recipeAndFollowerCountText = "3 Tarif 0 Takipçi"
-        
-        let comment = CommentCellModel(userId: 0,
-                                       imageUrl: nil,
-                                       username: "salih",
-                                       recipeAndFollowerCountText: "1 Tarif, 3 Takipçi",
-                                       timeDifferenceText: "3 gün önce",
-                                       commentId: 1,
-                                       commentText: "Çok güzel bir tarif, çok teşekkürler")
-        viewModel.cellItems.append(comment)
-        let viewController = RecipeDetailViewController(viewModel: viewModel)
-        return viewController.view
-    }
-    
-    func updateUIView(_ view: UIView, context: Context) {
-        
-    }
-}
-
-@available(iOS 13.0, *)
-struct RecipeDetailController_Preview: PreviewProvider { // swiftlint:disable:this type_name
-    static var previews: some View {
-        RecipeDetailViewControllerRepresentable().previewLayout(.device)
-    }
-}
-#endif
