@@ -26,3 +26,12 @@
 "WalkThrough.thirdTitle" = "Add new recipe.";
 "WalkThrough.fourthTitle" = "Share recipes with others.";
 "WalkThrough.descriptionText" = "Fodamy is the best place to find your \n favorite recipes in all around the world.";
+
+
+// MARK: - Login
+"LoginViewController.title" = "Giriş Yap";
+"LoginViewController.bottomText" = "Hesabın mı yok?";
+
+// MARK: - Register
+"RegisterViewController.title" = "Üye Ol";
+"RegisterViewController.bottomText" = "Hesabın mı var?";
