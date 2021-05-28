@@ -19,30 +19,28 @@ class MainTabBarController: UITabBarController {
         let favoritesViewController = createFavoritesViewController()
         
         viewControllers = [
-            generateNavigationController(for: homeViewController, image: .icHome),
-            generateNavigationController(for: favoritesViewController, image: .icHeart)
+            homeViewController,
+            favoritesViewController
         ]
     }
     
-    private func generateNavigationController(for rootViewController: UIViewController, image: UIImage) -> UIViewController {
-        let navController = MainNavigationController(rootViewController: rootViewController)
-        navController.tabBarItem.image = image
-        return navController
-    }
-    
-    private func createHomeViewController() -> UIViewController {
+    private func createHomeViewController() -> UINavigationController {
         let homeRouter = HomeRouter()
         let homeViewModel = HomeViewModel(router: homeRouter)
         let homeViewController = HomeViewController(viewModel: homeViewModel)
+        let navController = MainNavigationController(rootViewController: homeViewController)
+        navController.tabBarItem.image = .icHome
         homeRouter.viewController = homeViewController
-        return homeViewController
+        return navController
     }
     
-    private func createFavoritesViewController() -> UIViewController {
+    private func createFavoritesViewController() -> UINavigationController {
         let favoritesRouter = FavoritesRouter()
         let favoritesViewModel = FavoritesViewModel(router: favoritesRouter)
         let favoritesViewController = FavoritesViewController(viewModel: favoritesViewModel)
+        let navController = MainNavigationController(rootViewController: favoritesViewController)
+        navController.tabBarItem.image = .icHeart
         favoritesRouter.viewController = favoritesViewController
-        return favoritesViewController
+        return navController
     }
 }
