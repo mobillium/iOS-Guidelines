@@ -49,8 +49,11 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
 extension FavoritesViewModel {
     
     func getCategoryWithRecipes(categoryWithRecipesClosure: Bool = false) {
+        showLoading?()
         let request = GetCategoriesWithRecipesRequest(page: currentPage)
-        dataProvider.request(for: request) { (result) in
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
             self.isLoadingList = false
             switch result {
             case .success(let response):
