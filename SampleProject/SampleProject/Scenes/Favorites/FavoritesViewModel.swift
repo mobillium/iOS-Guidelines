@@ -19,14 +19,18 @@ protocol FavoritesViewDataSource {
 }
 
 protocol FavoritesViewEventSource {
-    func tapSeeAllButton(categoryId: Int)
+    var didSuccesLogout: VoidClosure? { get set }
 }
 
-protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {}
+protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {
+    func tapSeeAllButton(categoryId: Int)
+    func userLogout()
+}
 
 final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewProtocol {
 
     var categoryWithRecipesClosure: BoolClosure?
+    var didSuccesLogout: VoidClosure?
     var mainCategories: [MainCategory] = []
     var lastPage: Int = 1
     var currentPage: Int = 1 {
@@ -57,7 +61,22 @@ extension FavoritesViewModel {
                 print("error")
             }
         }
-
+    }
+    
+    func userLogout() {
+        showLoading?()
+        let request = LogoutRequest()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(let response):
+                self.didSuccesLogout?()
+                print(response.message)
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
     }
 }
 

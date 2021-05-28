@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KeychainSwift
 
 final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     
@@ -16,11 +17,13 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         .backgroundColor(.clear)
         .build()
     
+    private let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         configureCollectionView()
-        setupViews()
-        setupLayouts()
+        configureContents()
         fetchData()
         viewModel.categoryWithRecipesClosure = { [weak self] categoryWithRecipesClosure in
             guard let self = self else { return }
@@ -30,13 +33,15 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
         }
     }
     
-    func setupViews() {
-        view.addSubview(collectionView)
-        view.backgroundColor = .appSecondaryBackground
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIsUserLogin()
     }
     
-    func setupLayouts() {
-        collectionView.edgesToSuperview()
+    private func configureContents() {
+        view.addSubview(collectionView)
+        view.backgroundColor = .appSecondaryBackground
+        collectionView.edgesToSuperview(usingSafeArea: true)
     }
     
     private func configureCollectionView() {
@@ -50,6 +55,7 @@ final class FavoritesViewController: BaseViewController<FavoritesViewModel> {
     }
 }
 
+// MARK: - UICollectionViewDataSource
 extension FavoritesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -68,13 +74,9 @@ extension FavoritesViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
-    }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -84,9 +86,9 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width
-        let height = width * 270 / 375
-        return CGSize(width: width, height: height)
+        let cellWitdh = view.frame.width
+        let cellHeight = CGFloat(270)
+        return CGSize(width: cellWitdh, height: cellHeight)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -95,5 +97,26 @@ extension FavoritesViewController: UICollectionViewDelegateFlowLayout {
                 self.viewModel.currentPage += 1
             }
         }
+    }
+}
+
+// MARK: - Logout
+extension FavoritesViewController {
+    
+    private func setupLogoutRightBarButton() {
+        let logoutBarButton = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutBarButtonDidTap))
+        navigationItem.rightBarButtonItem = logoutBarButton
+    }
+    
+    private func checkIsUserLogin() {
+        if keychain.get(Keychain.token) != nil {
+            setupLogoutRightBarButton()
+        } else {
+            navigationItem.rightBarButtonItem = .none
+        }
+    }
+    
+    @IBAction private func logoutBarButtonDidTap() {
+        viewModel.userLogout()
     }
 }

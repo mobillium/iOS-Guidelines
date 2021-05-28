@@ -252,9 +252,9 @@
 		6CFE5372262ED7BB0008FFCD /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				6CFE5373262ED7DC0008FFCD /* FavoritesRouter.swift */,
 				6CFE5374262ED7DC0008FFCD /* FavoritesViewController.swift */,
 				6CFE5375262ED7DC0008FFCD /* FavoritesViewModel.swift */,
+				6CFE5373262ED7DC0008FFCD /* FavoritesRouter.swift */,
 				6CFE537D262ED7F00008FFCD /* FavoritesRoute.swift */,
 			);
 			path = Favorites;
