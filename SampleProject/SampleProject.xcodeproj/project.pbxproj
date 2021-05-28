@@ -17,7 +17,6 @@
 		6CFE5376262ED7DC0008FFCD /* FavoritesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5373262ED7DC0008FFCD /* FavoritesRouter.swift */; };
 		6CFE5377262ED7DC0008FFCD /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5374262ED7DC0008FFCD /* FavoritesViewController.swift */; };
 		6CFE5378262ED7DC0008FFCD /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE5375262ED7DC0008FFCD /* FavoritesViewModel.swift */; };
-		6CFE537E262ED7F00008FFCD /* FavoritesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFE537D262ED7F00008FFCD /* FavoritesRoute.swift */; };
 		7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */; };
 		7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A73C7FB25CC178000322233 /* AppDelegate.swift */; };
 		7A980AB62553168400494520 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A980AB32553168400494520 /* HomeRouter.swift */; };
@@ -125,7 +124,6 @@
 		6CFE5373262ED7DC0008FFCD /* FavoritesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRouter.swift; sourceTree = "<group>"; };
 		6CFE5374262ED7DC0008FFCD /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		6CFE5375262ED7DC0008FFCD /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		6CFE537D262ED7F00008FFCD /* FavoritesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRoute.swift; sourceTree = "<group>"; };
 		72A3D9B8ADC26756F3977644 /* Pods-SampleProject.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject.development.xcconfig"; path = "Target Support Files/Pods-SampleProject/Pods-SampleProject.development.xcconfig"; sourceTree = "<group>"; };
 		7A6AED8A25A756F900BB1457 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		7A716CDB260B4B83008B91B7 /* TransparentNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentNavigationController.swift; sourceTree = "<group>"; };
@@ -255,7 +253,6 @@
 				6CFE5374262ED7DC0008FFCD /* FavoritesViewController.swift */,
 				6CFE5375262ED7DC0008FFCD /* FavoritesViewModel.swift */,
 				6CFE5373262ED7DC0008FFCD /* FavoritesRouter.swift */,
-				6CFE537D262ED7F00008FFCD /* FavoritesRoute.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -914,7 +911,6 @@
 				840EB59F2645893A0019C101 /* RecipeHeaderViewModel.swift in Sources */,
 				FBA13ECD2616137A001E19B4 /* RegisterRoute.swift in Sources */,
 				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,
-				6CFE537E262ED7F00008FFCD /* FavoritesRoute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
