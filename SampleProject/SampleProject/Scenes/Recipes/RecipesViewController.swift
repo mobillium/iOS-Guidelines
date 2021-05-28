@@ -68,9 +68,11 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width
-        let height = width * 520 / 375
-        return CGSize(width: width, height: height)
+        let cellWitdh = view.frame.width
+        let recipeImageHeight = cellWitdh - 30
+        let otherCellItemsHeight = CGFloat(175)
+        let cellHeight = recipeImageHeight + otherCellItemsHeight
+        return CGSize(width: cellWitdh, height: cellHeight)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
