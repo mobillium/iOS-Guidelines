@@ -45,10 +45,12 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     }
 
     private func setupViews() {
-        addChild(pageViewController)
+        definesPresentationContext = true
         view.addSubview(pageViewController.view)
         view.addSubview(segmentView)
         view.backgroundColor = .appSecondaryBackground
+        addChild(pageViewController)
+        pageViewController.didMove(toParent: self)
     }
     
     private func setupLayouts() {
@@ -80,15 +82,17 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
 // MARK: - Helper
 extension HomeViewController {
     private func preparedViewControllers() -> [UIViewController] {
-        let editorChoiceVdRouter = RecipesRouter()
-        let editorChoiceViewModel = RecipesViewModel(router: editorChoiceVdRouter)
+        let editorChoiceRouter = RecipesRouter()
+        let editorChoiceViewModel = RecipesViewModel(router: editorChoiceRouter)
         editorChoiceViewModel.listType = .editorChoiceRecipes
         let editorChoiceviewController = RecipesViewController(viewModel: editorChoiceViewModel)
+        editorChoiceRouter.viewController = editorChoiceviewController
         
         let lastAddedRouter = RecipesRouter()
         let lastAddedRecipesViewModel = RecipesViewModel(router: lastAddedRouter)
         lastAddedRecipesViewModel.listType = .lastAddedRecipes
         let lastAddedRecipesviewController = RecipesViewController(viewModel: lastAddedRecipesViewModel)
+        lastAddedRouter.viewController = lastAddedRecipesviewController
         
         return [
             editorChoiceviewController,

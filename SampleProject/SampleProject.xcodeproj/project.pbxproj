@@ -468,9 +468,9 @@
 		7AFCDEA32616159600D5D115 /* RecipeDetail */ = {
 			isa = PBXGroup;
 			children = (
-				7AFCDEA4261615A600D5D115 /* RecipeDetailRouter.swift */,
 				7AFCDEA5261615A600D5D115 /* RecipeDetailViewController.swift */,
 				7AFCDEA6261615A600D5D115 /* RecipeDetailViewModel.swift */,
+				7AFCDEA4261615A600D5D115 /* RecipeDetailRouter.swift */,
 				3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */,
 			);
 			path = RecipeDetail;

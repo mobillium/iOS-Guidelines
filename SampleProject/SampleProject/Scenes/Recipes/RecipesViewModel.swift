@@ -23,7 +23,9 @@ protocol RecipesViewDataSource {
 
 protocol RecipesViewEventSource {}
 
-protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {}
+protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
+    func didSelectRecipe(at indexPath: IndexPath)
+}
 
 final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
     
@@ -44,6 +46,11 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
         didSet {
             getRecipes()
         }
+    }
+    
+    func didSelectRecipe(at indexPath: IndexPath) {
+        let recipeId = recipes[indexPath.row].id
+        router.pushRecipeDetail(recipeId: recipeId)
     }
 }
 

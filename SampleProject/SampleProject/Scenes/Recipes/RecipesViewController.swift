@@ -57,6 +57,14 @@ extension RecipesViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
+extension RecipesViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectRecipe(at: indexPath)
+    }
+}
+
+// swiftlint:disable line_length
 // MARK: - UICollectionViewDelegateFlowLayout
 extension RecipesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -83,3 +91,4 @@ extension RecipesViewController: UICollectionViewDelegateFlowLayout {
         }
     }
 }
+// swiftlint:enable line_length
