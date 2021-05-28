@@ -39,6 +39,10 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
         router.pushRecipeDetail(recipeId: recipeId)
     }
     
+}
+
+// MARK: - Network
+extension HomeViewModel {
     func userLogout() {
         showLoading?()
         let request = LogoutRequest()

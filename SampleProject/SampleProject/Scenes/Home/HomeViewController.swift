@@ -32,8 +32,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLogo()
-        setupViews()
-        setupLayouts()
+        configureContents()
         setSegmentHandler()
         segmentView.selectedSegmentioIndex = viewModel.selectedSegmentIndex
         setupPageViewController()
@@ -44,19 +43,17 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         checkIsUserLogin()
     }
 
-    private func setupViews() {
+    private func configureContents() {
         definesPresentationContext = true
         view.addSubview(pageViewController.view)
         view.addSubview(segmentView)
         view.backgroundColor = .appSecondaryBackground
         addChild(pageViewController)
         pageViewController.didMove(toParent: self)
-    }
-    
-    private func setupLayouts() {
+        
         segmentView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
         segmentView.height(46)
-        pageViewController.view.edgesToSuperview(excluding: .top)
+        pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
         pageViewController.view.topToBottom(of: segmentView)
     }
     
