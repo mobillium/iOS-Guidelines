@@ -9,6 +9,8 @@
 import UIKit
 import StoreKit
 import Segmentio
+import KeychainSwift
+import MobilliumUserDefaults
 
 final class HomeViewController: BaseViewController<HomeViewModel> {
     
@@ -25,13 +27,21 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         return self.preparedViewControllers()
     }()
     
+    private let keychain = KeychainSwift()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavigationBarLogo()
         setupViews()
         setupLayouts()
         setSegmentHandler()
         segmentView.selectedSegmentioIndex = viewModel.selectedSegmentIndex
         setupPageViewController()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkIsUserLogin()
     }
 
     private func setupViews() {
@@ -55,6 +65,15 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                                               direction: .forward,
                                               animated: true,
                                               completion: nil)
+    }
+    
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccesLogout = { [weak self] in
+            guard let self = self else { return }
+            self.keychain.clear()
+            DefaultsKey.userId.remove()
+            self.navigationItem.rightBarButtonItem = .none
+        }
     }
 }
 
@@ -120,5 +139,26 @@ extension HomeViewController: UIPageViewControllerDelegate, UIPageViewController
                 segmentView.selectedSegmentioIndex = index
             }
         }
+    }
+}
+
+// MARK: - Logout
+extension HomeViewController {
+    
+    private func setupLogoutRightBarButton() {
+        let logoutBarButton = UIBarButtonItem(image: .icLogout, style: .done, target: self, action: #selector(logoutBarButtonDidTap))
+        navigationItem.rightBarButtonItem = logoutBarButton
+    }
+    
+    private func checkIsUserLogin() {
+        if keychain.get(Keychain.token) != nil {
+            setupLogoutRightBarButton()
+        } else {
+            navigationItem.rightBarButtonItem = .none
+        }
+    }
+    
+    @IBAction private func logoutBarButtonDidTap() {
+        viewModel.userLogout()
     }
 }

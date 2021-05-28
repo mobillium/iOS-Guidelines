@@ -16,6 +16,8 @@ protocol BaseViewModelEventSource: AnyObject {
     
     var showLoading: VoidClosure? { get set }
     var hideLoading: VoidClosure? { get set }
+    
+    var showWarningToast: StringClosure? { get set }
 }
 
 protocol BaseViewModelProtocol: BaseViewModelDataSource, BaseViewModelEventSource {}
@@ -27,6 +29,8 @@ class BaseViewModel<R: Router>: BaseViewModelProtocol {
     
     var showLoading: VoidClosure?
     var hideLoading: VoidClosure?
+    
+    var showWarningToast: StringClosure?
     
     let router: R
     let dataProvider: DataProviderProtocol

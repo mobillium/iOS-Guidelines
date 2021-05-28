@@ -29,7 +29,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     
     var lastPage: Int = 1
     var recipes: [Recipe] = []
-    var isLoadingList: Bool = true
+    var isLoadingList = true
     var recipesClosure: VoidClosure?
     var recipeCellModels: [RecipeCellModel] = []
     
@@ -51,9 +51,12 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 extension RecipesViewModel {
     func getRecipes() {
         guard let listType = listType else { return }
+        showLoading?()
         let request = GetRecipesRequest(page: currentPage, listType: listType)
         isLoadingList = true
-        dataProvider.request(for: request) { (result) in
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
             self.isLoadingList = false
             switch result {
             case .success(let response):

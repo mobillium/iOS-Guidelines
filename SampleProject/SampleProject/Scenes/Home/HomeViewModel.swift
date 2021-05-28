@@ -13,9 +13,14 @@ protocol HomeViewDataSource {
     var selectedSegmentIndex: Int { get }
 }
 
-protocol HomeViewEventSource { }
+protocol HomeViewEventSource {
+    var didSuccesLogout: VoidClosure? { get set }
+}
 
-protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource { }
+protocol HomeViewProtocol: HomeViewDataSource, HomeViewEventSource {
+    func pushDetailViewController(recipeId: Int)
+    func userLogout()
+}
 
 final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var segmentedControlTitles: [String] = [L10n.Modules.Home.editorChoiceRecipes,
@@ -28,4 +33,25 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     }
     
     var selectedSegmentIndex = 0
+    var didSuccesLogout: VoidClosure?
+    
+    func pushDetailViewController(recipeId: Int) {
+        router.pushRecipeDetail(recipeId: recipeId)
+    }
+    
+    func userLogout() {
+        showLoading?()
+        let request = LogoutRequest()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(let response):
+                self.didSuccesLogout?()
+                print(response.message)
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
 }

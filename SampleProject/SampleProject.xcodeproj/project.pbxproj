@@ -533,10 +533,10 @@
 		B321F651263188A50082484C /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
-				B321F6742631C8650082484C /* RecipesRouter.swift */,
-				B321F653263188A50082484C /* RecipesViewModel.swift */,
-				B321F654263188A50082484C /* RecipesRoute.swift */,
 				B321F655263188A50082484C /* RecipesViewController.swift */,
+				B321F653263188A50082484C /* RecipesViewModel.swift */,
+				B321F6742631C8650082484C /* RecipesRouter.swift */,
+				B321F654263188A50082484C /* RecipesRoute.swift */,
 			);
 			path = Recipes;
 			sourceTree = "<group>";

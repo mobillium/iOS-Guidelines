@@ -52,6 +52,7 @@ public enum Asset {
   }
   public enum Images {
     public static let imgEditorsPick = ImageAsset(name: "img_editors_pick")
+    public static let imgLogoFodamy = ImageAsset(name: "img_logo_fodamy")
     public static let imgWalkthrough1 = ImageAsset(name: "img_walkthrough_1")
     public static let imgWalkthrough2 = ImageAsset(name: "img_walkthrough_2")
     public static let imgWalkthrough3 = ImageAsset(name: "img_walkthrough_3")

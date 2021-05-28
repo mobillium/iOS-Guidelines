@@ -6,34 +6,21 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
+import UIKit
+
 protocol RecipeDetailRoute {
-    func pushRecipeDetail()
-    func placeOnWindowRecipeDetail()
+    func pushRecipeDetail(recipeId: Int)
 }
 
 extension RecipeDetailRoute where Self: RouterProtocol {
-    
-    func pushRecipeDetail() {
+    func pushRecipeDetail(recipeId: Int) {
         let router = RecipeDetailRouter()
-        let viewModel = RecipeDetailViewModel(router: router)
+        let viewModel = RecipeDetailViewModel(recipeId: recipeId, router: router)
         let viewController = RecipeDetailViewController(viewModel: viewModel)
-        
+
         let transition = PushTransition()
-        router.viewController = viewController
         router.openTransition = transition
-        
-        open(viewController, transition: transition)
-    }
-    
-    func placeOnWindowRecipeDetail() {
-        let router = RecipeDetailRouter()
-        let viewModel = RecipeDetailViewModel(router: router)
-        let viewController = RecipeDetailViewController(viewModel: viewModel)
-        
-        let transition = PlaceOnWindowTransition()
         router.viewController = viewController
-        router.openTransition = transition
-        
         open(viewController, transition: transition)
     }
 }
