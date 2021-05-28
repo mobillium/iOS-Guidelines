@@ -25,6 +25,7 @@ protocol FavoritesViewEventSource {
 protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {
     func tapSeeAllButton(categoryId: Int)
     func userLogout()
+    func didSelectRecipe(recipeId: Int)
 }
 
 final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewProtocol {
@@ -39,10 +40,14 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
             getCategoryWithRecipes(categoryWithRecipesClosure: true)
         }
     }
-    var isLoadingList: Bool = true
+    var isLoadingList = true
 
     func tapSeeAllButton(categoryId: Int) {
         router.pushRecipes(listType: .categoryRecipes(categoryId: categoryId))
+    }
+    
+    func didSelectRecipe(recipeId: Int) {
+        router.pushRecipeDetail(recipeId: recipeId)
     }
 }
 

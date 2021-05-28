@@ -66,10 +66,13 @@ extension FavoritesViewController: UICollectionViewDataSource {
         
         let cell: CategoryWithRecipesCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellViewModel = viewModel.getCategoryWithRecipesCellModel(indexRow: indexPath.row)
-        cell.set(with: cellViewModel)
-        cellViewModel.seeAllButtonTapped = { (id, _) in
-            self.viewModel.tapSeeAllButton(categoryId: id)
+        cellViewModel.didSelectRecipe = { [weak self] id in
+            self?.viewModel.didSelectRecipe(recipeId: id)
         }
+        cellViewModel.seeAllButtonTapped = { [weak self] (id, _) in
+            self?.viewModel.tapSeeAllButton(categoryId: id)
+        }
+        cell.set(with: cellViewModel)
         return cell
     }
 }
