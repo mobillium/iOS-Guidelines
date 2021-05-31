@@ -63,6 +63,7 @@
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
 		A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */; };
+		A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB432664F3F000E3F3A2 /* Validation.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
@@ -180,6 +181,7 @@
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
+		A2D7BB432664F3F000E3F3A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				A2D7BB422664F3E300E3F3A2 /* Validation */,
 				840EB5A52645895B0019C101 /* Helper */,
 				840EB5A22645894A0019C101 /* Delegates */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
@@ -527,6 +530,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A2D7BB422664F3E300E3F3A2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB432664F3F000E3F3A2 /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		B321F651263188A50082484C /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,9 +601,9 @@
 		FBA13ED326161C1E001E19B4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
 				FBA13ED526161C2B001E19B4 /* LoginViewController.swift */,
 				FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */,
+				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
 				68638C1A26288E820079B785 /* LoginRoute.swift */,
 			);
 			path = Login;
@@ -862,6 +873,7 @@
 				A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */,
+				A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
 				6CFE5376262ED7DC0008FFCD /* FavoritesRouter.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,

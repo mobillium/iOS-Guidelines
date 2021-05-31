@@ -55,7 +55,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
         addSubviews()
         setUIElements()
-        subscribeViewModel()
     }
     
     private func addSubviews() {
@@ -88,13 +87,8 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         passwordTextField.isSecureTextEntry = true
         ctaButton.setTitle(L10n.General.login, for: .normal)
     }
-    
-    private func subscribeViewModel() {
-        viewModel.didGetError = { [weak self] (message) in
-            //TODO: - Show error
-        }
-    }
 
+    
     // MARK: - Action
     @objc
     func regiserButtonTapped() {
@@ -106,10 +100,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         view.endEditing(true)
         guard let email = emailTextField.text,
               let password = passwordTextField.text else {
-            //TODO: - Show error
-
+            showWarningToast(message: "Lütfen boş alanları doldurunuz.")
             return
         }
+        let validation = Validation()
+        guard validation.isValidPassword(password) else { return }
+        
         viewModel.sendLoginRequest(username: email, password: password)
     }
 }
