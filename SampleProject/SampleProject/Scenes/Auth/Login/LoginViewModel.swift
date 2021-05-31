@@ -18,6 +18,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
     func showRegisterOnWindow()
     func sendLoginRequest(username: String, password: String)
     func dismissLoginScene()
+    func pushPasswordResetScene()
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
@@ -29,6 +30,10 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     
     func dismissLoginScene() {
         router.close()
+    }
+    
+    func pushPasswordResetScene() {
+        router.pushPasswordReset()
     }
     
     func sendLoginRequest(username: String, password: String) {

@@ -87,6 +87,12 @@ public enum L10n {
       /// Giriş Yap
       public static let title = L10n.tr("Modules", "LoginViewController.title")
     }
+    public enum PasswordResetController {
+      /// Sıfırla
+      public static let reset = L10n.tr("Modules", "PasswordResetController.reset")
+      /// Şifre Sıfırlama
+      public static let title = L10n.tr("Modules", "PasswordResetController.title")
+    }
     public enum RegisterViewController {
       /// Hesabın mı var?
       public static let bottomText = L10n.tr("Modules", "RegisterViewController.bottomText")

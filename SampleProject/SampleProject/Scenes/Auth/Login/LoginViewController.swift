@@ -94,7 +94,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         emailTextField.title = L10n.Placeholder.email
         emailTextField.autocapitalizationType = .none
         emailTextField.keyboardType = .emailAddress
+        emailTextField.leftImage = .icMail
         passwordTextField.title = L10n.Placeholder.password
+        passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         ctaButton.setTitle(L10n.General.login, for: .normal)
         forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
@@ -129,7 +131,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     @objc
     func forgotPasswordButtonTapped() {
-        
+        viewModel.pushPasswordResetScene()
     }
     
     @objc

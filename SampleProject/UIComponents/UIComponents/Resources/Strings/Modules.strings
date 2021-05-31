@@ -36,3 +36,7 @@
 // MARK: - Register
 "RegisterViewController.title" = "Üye Ol";
 "RegisterViewController.bottomText" = "Hesabın mı var?";
+
+// MARK: - PasswordReset
+"PasswordResetController.title" = "Şifre Sıfırlama";
+"PasswordResetController.reset" = "Sıfırla";
