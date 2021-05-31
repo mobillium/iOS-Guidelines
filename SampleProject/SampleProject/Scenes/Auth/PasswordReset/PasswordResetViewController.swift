@@ -55,7 +55,14 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
     
     @objc
     private func resetButtonTapped() {
+        guard let email = emailTextField.text, !email.isEmpty else {
+            showWarningToast(message: L10n.Error.empty("Email"))
+            return
+        }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
         
+        viewModel.passwordReset(email: email)
     }
     
 }

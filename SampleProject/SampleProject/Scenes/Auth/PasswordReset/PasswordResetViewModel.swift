@@ -12,8 +12,24 @@ protocol PasswordResetViewDataSource {}
 
 protocol PasswordResetViewEventSource {}
 
-protocol PasswordResetViewProtocol: PasswordResetViewDataSource, PasswordResetViewEventSource {}
+protocol PasswordResetViewProtocol: PasswordResetViewDataSource, PasswordResetViewEventSource {
+    func passwordReset(email: String)
+}
 
 final class PasswordResetViewModel: BaseViewModel<PasswordResetRouter>, PasswordResetViewProtocol {
     
+    func passwordReset(email: String) {
+        showLoading?()
+        let request = ForgotPasswordRequest(email: email)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(_):
+                self.router.close()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
+        }
+    }
 }
