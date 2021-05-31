@@ -18,28 +18,28 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollectionView()
-        setupViews()
-        setupLayouts()
+        configureCollectionView()
+        configureContents()
+        subscribeViewModelEvents()
+    }
+    
+    private func configureContents() {
+        view.addSubview(collectionView)
+        view.backgroundColor = .appSecondaryBackground
+        collectionView.edgesToSuperview()
+    }
+    
+    private func configureCollectionView() {
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.register(RecipeCell.self)
+    }
+    
+    private func subscribeViewModelEvents() {
         viewModel.recipesClosure = { [weak self] in
             guard let self = self else { return }
             self.collectionView.reloadData()
         }
-    }
-    
-    private func setupViews() {
-        view.addSubview(collectionView)
-        view.backgroundColor = .appSecondaryBackground
-    }
-    
-    private func setupLayouts() {
-        collectionView.edgesToSuperview()
-    }
-    
-    private func setCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(RecipeCell.self)
     }
 }
 
