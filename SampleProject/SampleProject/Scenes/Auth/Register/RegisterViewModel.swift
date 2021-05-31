@@ -20,7 +20,7 @@ protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
         
     func showLoginScreen() {
-        router.placeLoginOnWindow()
+        router.close()
     }
     
     func sendRegisterRequest(username: String, email: String, password: String) {
