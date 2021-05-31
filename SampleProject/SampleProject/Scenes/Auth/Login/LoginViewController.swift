@@ -9,53 +9,44 @@
 import UIKit
 
 final class LoginViewController: BaseViewController<LoginViewModel> {
-    private var titleLabel: UILabel = {
-        return UILabelBuilder()
+    
+    private let titleLabel = UILabelBuilder()
             .text(L10n.Modules.LoginViewController.title)
             .textColor(.appCinder)
             .font(.font(.nunitoBold, size: .xxLarge))
             .build()
-    }()
     
-    private var stackView: UIStackView = {
-        return UIStackViewBuilder()
+    private let stackView = UIStackViewBuilder()
             .axis(.vertical)
             .spacing(15)
             .build()
-    }()
     
-    private var bottomStackView: UIStackView = {
-        return UIStackViewBuilder()
+    private let bottomStackView = UIStackViewBuilder()
             .axis(.horizontal)
             .spacing(4)
             .build()
-    }()
     
-    private var bottomLabel: UILabel = {
-        return UILabelBuilder()
+    private let bottomLabel = UILabelBuilder()
             .text(L10n.Modules.LoginViewController.bottomText)
             .font(.font(.nunitoBold, size: .xLarge))
             .textColor(.appRaven)
             .build()
-    }()
     
-    private var registerButton: UIButton = {
-        return UIButtonBuilder()
+    private let registerButton = UIButtonBuilder()
             .titleColor(.appRed)
             .titleFont(.font(.nunitoBold, size: .xLarge))
             .title(L10n.General.register, for: .normal)
             .build()
-    }()
     
     private let forgotPasswordButton = UIButtonBuilder()
         .titleFont(.font(.nunitoSemiBold, size: .large))
         .titleColor(.appRaven)
         .build()
     
-    private var emailTextField = FloatLabelTextField()
-    private var passwordTextField = FloatLabelTextField()
-    private var ctaButton = ButtonFactory.createPrimaryButton(style: .large)
-
+    private let emailTextField = FloatLabelTextField()
+    private let passwordTextField = FloatLabelTextField()
+    private let ctaButton = ButtonFactory.createPrimaryButton(style: .large)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -101,7 +92,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         ctaButton.setTitle(L10n.General.login, for: .normal)
         forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
     }
-
+    
     private func setupCancelRightBarButton() {
         let image = UIImage.icClose.withRenderingMode(.alwaysTemplate)
         let cancelBarButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(dismissLoginViewController))

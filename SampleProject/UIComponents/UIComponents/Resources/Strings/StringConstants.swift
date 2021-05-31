@@ -25,7 +25,7 @@ public enum L10n {
   public enum Error {
     /// Lütfen bilgilerinizi kontrol ediniz
     public static let checkInformations = L10n.tr("Error", "checkInformations")
-    /// %@ can not be empty.
+    /// %@ alanı boş olamaz.
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }

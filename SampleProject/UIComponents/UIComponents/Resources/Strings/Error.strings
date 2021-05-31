@@ -6,7 +6,7 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"empty" = "%@ can not be empty.";
+"empty" = "%@ alanı boş olamaz.";
 
 // MARK: - Keys
 "Key.username" = "Username";
