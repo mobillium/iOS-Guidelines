@@ -49,12 +49,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        configureContents()
         setUIElements()
         setupCancelRightBarButton()
     }
     
-    private func addSubviews() {
+    private func configureContents() {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         view.addSubview(bottomStackView)

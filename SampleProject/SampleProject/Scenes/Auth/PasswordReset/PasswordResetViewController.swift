@@ -52,7 +52,6 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
     }
     
     // MARK: - Actions
-    
     @objc
     private func resetButtonTapped() {
         guard let email = emailTextField.text, !email.isEmpty else {

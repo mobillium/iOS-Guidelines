@@ -47,11 +47,11 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubviews()
+        configureContents()
         setUIElements()
     }
     
-    private func addSubviews() {
+    private func configureContents() {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         view.addSubview(bottomStackView)
