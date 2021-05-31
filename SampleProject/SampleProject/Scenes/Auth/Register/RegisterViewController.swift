@@ -11,48 +11,39 @@ import MobilliumBuilders
 import TinyConstraints
 
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
-    private var titleLabel: UILabel = {
-        return UILabelBuilder()
-            .text(L10n.Modules.RegisterViewController.title)
-            .textColor(.appCinder)
-            .font(.font(.nunitoBold, size: .xxLarge))
-            .build()
-    }()
     
-    private var stackView: UIStackView = {
-        return UIStackViewBuilder()
-            .axis(.vertical)
-            .spacing(15)
-            .build()
-    }()
+    private let titleLabel = UILabelBuilder()
+        .text(L10n.Modules.RegisterViewController.title)
+        .textColor(.appCinder)
+        .font(.font(.nunitoBold, size: .xxLarge))
+        .build()
     
-    private var bottomStackView: UIStackView = {
-        return UIStackViewBuilder()
-            .axis(.horizontal)
-            .spacing(4)
-            .build()
-    }()
+    private let stackView = UIStackViewBuilder()
+        .axis(.vertical)
+        .spacing(15)
+        .build()
     
-    private var bottomLabel: UILabel = {
-        return UILabelBuilder()
-            .text(L10n.Modules.RegisterViewController.bottomText)
-            .font(.font(.nunitoBold, size: .xLarge))
-            .textColor(.appRaven)
-            .build()
-    }()
+    private let bottomStackView = UIStackViewBuilder()
+        .axis(.horizontal)
+        .spacing(4)
+        .build()
     
-    private var loginButton: UIButton = {
-        return UIButtonBuilder()
-            .titleColor(.appRed)
-            .titleFont(.font(.nunitoBold, size: .xLarge))
-            .title(L10n.General.login, for: .normal)
-            .build()
-    }()
+    private let bottomLabel = UILabelBuilder()
+        .text(L10n.Modules.RegisterViewController.bottomText)
+        .font(.font(.nunitoBold, size: .xLarge))
+        .textColor(.appRaven)
+        .build()
     
-    private var usernameTextField = FloatLabelTextField()
-    private var emailTextField = FloatLabelTextField()
-    private var passwordTextField = FloatLabelTextField()
-    private var ctaButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let loginButton = UIButtonBuilder()
+        .titleColor(.appRed)
+        .titleFont(.font(.nunitoBold, size: .xLarge))
+        .title(L10n.General.login, for: .normal)
+        .build()
+    
+    private let usernameTextField = FloatLabelTextField()
+    private let emailTextField = FloatLabelTextField()
+    private let passwordTextField = FloatLabelTextField()
+    private let ctaButton = ButtonFactory.createPrimaryButton(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()

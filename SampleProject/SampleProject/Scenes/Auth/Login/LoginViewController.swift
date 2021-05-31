@@ -102,12 +102,12 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     // MARK: - Action
     @objc
-    func regiserButtonTapped() {
+    private func regiserButtonTapped() {
         viewModel.showRegisterOnWindow()
     }
     
     @objc
-    func ctaButtonTapped() {
+    private func ctaButtonTapped() {
         view.endEditing(true)
         guard let email = emailTextField.text,
               let password = passwordTextField.text else {
@@ -121,7 +121,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     }
     
     @objc
-    func forgotPasswordButtonTapped() {
+    private func forgotPasswordButtonTapped() {
         viewModel.pushPasswordResetScene()
     }
     
