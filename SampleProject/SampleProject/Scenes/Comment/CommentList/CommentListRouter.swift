@@ -7,5 +7,8 @@
 //
 
 final class CommentListRouter: Router, CommentListRouter.Routes {
-    typealias Routes = LoginWarningPopupRoute & LoginRoute & CommentEditDeleteAlertViewRoute
+    typealias Routes = LoginWarningPopupRoute &
+        LoginRoute &
+        CommentEditDeleteAlertViewRoute &
+        CommentEditRoute
 }

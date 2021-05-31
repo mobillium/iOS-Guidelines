@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobilliumUserDefaults
 
 public class CommentCell: UICollectionViewCell, ReusableView {
 
@@ -103,7 +104,7 @@ public extension CommentCell {
         self.userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         self.timeDifferenceLabel.text = viewModel.timeDifferenceText
         self.commentLabel.text = viewModel.commentText
-  //      self.moreButton.isHidden = !(viewModel.userId == DefaultsKey.userId.value)
+        self.moreButton.isHidden = !(viewModel.userId == DefaultsKey.userId.value)
         self.moreButton.isHidden = true
         self.viewModel?.commentTextDidChanged = { [weak self] in
             self?.commentLabel.text = self?.viewModel?.commentText

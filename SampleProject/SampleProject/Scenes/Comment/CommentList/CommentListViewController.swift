@@ -58,7 +58,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         super.viewDidLoad()
         navigationItem.title = viewModel.title
         keyboardHelper.delegate = self
-        setupConstraints()
+        configureContents()
         setupCollectionView()
         addButtonTarget()
         setupRefreshControl()
@@ -67,7 +67,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         setupKeyboard()
     }
     
-    private func setupConstraints() {
+    private func configureContents() {
         view.addSubview(bottomView)
         bottomView.widthToSuperview()
         bottomViewBottomConstraint = bottomView.bottomToSuperview(usingSafeArea: true)
@@ -99,7 +99,8 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
     }
     
-    @IBAction private func sendButtonDidTap() {
+    @objc
+    private func sendButtonDidTap() {
         guard let commentText = commentTextView.text, !commentText.isEmpty else {
             showWarningToast(message: L10n.Error.empty("Yorum"))
             return
@@ -111,7 +112,8 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
-    @IBAction private func pullToRefreshValueChanged() {
+    @objc
+    private func pullToRefreshValueChanged() {
         viewModel.cellItems.isEmpty ? viewModel.fetchComments() : collectionView.reloadData()
         refreshControl.endRefreshing()
     }

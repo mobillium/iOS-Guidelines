@@ -35,3 +35,6 @@
 // MARK: - Register
 "RegisterViewController.title" = "Üye Ol";
 "RegisterViewController.bottomText" = "Hesabın mı var?";
+
+// MARK: - CommentEdit
+"CommentEditController.save" = "Kaydet";

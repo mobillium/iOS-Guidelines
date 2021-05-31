@@ -11,6 +11,7 @@ import KeychainSwift
 
 protocol CommentListViewDataSource {
     var title: String { get }
+    
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
@@ -71,16 +72,16 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
         let commentText = viewModel.commentText
         
         let editRecipeCommentDidSuccess: StringClosure = { text in
-            //       viewModel.commentText = text
+            viewModel.commentText = text
             viewModel.commentTextDidChanged?()
         }
         
-        //        router.pushCommentEditViewController(recipeId: recipeId,
-        //                                             commentId: commentId,
-        //                                             commentText: commentText,
-        //                                             editRecipeCommentDidSuccess: editRecipeCommentDidSuccess)
+        router.pushCommentEdit(recipeId: recipeId,
+                               commentId: commentId,
+                               commentText: commentText,
+                               editRecipeCommentDidSuccess: editRecipeCommentDidSuccess)
     }
-     
+    
 }
 
 // MARK: - Network
