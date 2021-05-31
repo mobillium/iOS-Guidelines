@@ -63,6 +63,11 @@
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
 		A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */; };
+		A2D7BB582665126600E3F3A2 /* CommentListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */; };
+		A2D7BB5C266513C900E3F3A2 /* CommentListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB59266513C900E3F3A2 /* CommentListRouter.swift */; };
+		A2D7BB5D266513C900E3F3A2 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB5A266513C900E3F3A2 /* CommentListViewController.swift */; };
+		A2D7BB5E266513C900E3F3A2 /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB5B266513C900E3F3A2 /* CommentListViewModel.swift */; };
+		A2D7BB632665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB622665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
@@ -180,6 +185,11 @@
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
+		A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRoute.swift; sourceTree = "<group>"; };
+		A2D7BB59266513C900E3F3A2 /* CommentListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRouter.swift; sourceTree = "<group>"; };
+		A2D7BB5A266513C900E3F3A2 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
+		A2D7BB5B266513C900E3F3A2 /* CommentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
+		A2D7BB622665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentEditDeleteAlertViewRoute.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -284,6 +294,7 @@
 		7A980AB02553166D00494520 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A2D7BB4E266511F200E3F3A2 /* Comment */,
 				A29A02D22660F5570078F2FA /* Main */,
 				7AFCDEA32616159600D5D115 /* RecipeDetail */,
 				6CFE5372262ED7BB0008FFCD /* Favorites */,
@@ -502,6 +513,7 @@
 		840EB5A8264589790019C101 /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				A2D7BB622665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift */,
 				840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */,
 			);
 			path = Routes;
@@ -525,6 +537,33 @@
 				A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		A2D7BB4E266511F200E3F3A2 /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB502665121C00E3F3A2 /* CommentList */,
+				A2D7BB4F2665121200E3F3A2 /* CommentEdit */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		A2D7BB4F2665121200E3F3A2 /* CommentEdit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommentEdit;
+			sourceTree = "<group>";
+		};
+		A2D7BB502665121C00E3F3A2 /* CommentList */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB5A266513C900E3F3A2 /* CommentListViewController.swift */,
+				A2D7BB5B266513C900E3F3A2 /* CommentListViewModel.swift */,
+				A2D7BB59266513C900E3F3A2 /* CommentListRouter.swift */,
+				A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */,
+			);
+			path = CommentList;
 			sourceTree = "<group>";
 		};
 		B321F651263188A50082484C /* Recipes */ = {
@@ -859,6 +898,7 @@
 				A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */,
 				B321F657263188A50082484C /* RecipesViewModel.swift in Sources */,
 				7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */,
+				A2D7BB582665126600E3F3A2 /* CommentListRoute.swift in Sources */,
 				A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */,
@@ -866,6 +906,7 @@
 				6CFE5376262ED7DC0008FFCD /* FavoritesRouter.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
 				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
+				A2D7BB5C266513C900E3F3A2 /* CommentListRouter.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
@@ -879,6 +920,7 @@
 				7A980AFC2553178000494520 /* AppRouter.swift in Sources */,
 				B321F658263188A50082484C /* RecipesRoute.swift in Sources */,
 				B321F6752631C8650082484C /* RecipesRouter.swift in Sources */,
+				A2D7BB5E266513C900E3F3A2 /* CommentListViewModel.swift in Sources */,
 				5FFC3224261A1328004D4F15 /* LoginWarningPopupViewModel.swift in Sources */,
 				FBA13ED726161C2B001E19B4 /* LoginRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
@@ -891,6 +933,7 @@
 				68638C1B26288E820079B785 /* LoginRoute.swift in Sources */,
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
 				840EB5A12645893A0019C101 /* RecipeHeaderRouter.swift in Sources */,
+				A2D7BB632665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift in Sources */,
 				840EB5A02645893A0019C101 /* RecipeHeaderViewController.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
 				7A980AF82553173F00494520 /* Animator.swift in Sources */,
@@ -900,6 +943,7 @@
 				FBA13EC926161062001E19B4 /* RegisterViewModel.swift in Sources */,
 				FBA13EC726161062001E19B4 /* RegisterRouter.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,
+				A2D7BB5D266513C900E3F3A2 /* CommentListViewController.swift in Sources */,
 				3D5DC50A261F52DA002294B7 /* RecipeDetailRoute.swift in Sources */,
 				A2176A2626161623008B3C46 /* WalkThroughRouter.swift in Sources */,
 				840EB5B226458B220019C101 /* PhotoBrowserDelegate.swift in Sources */,
