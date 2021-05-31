@@ -47,6 +47,11 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             .build()
     }()
     
+    private let forgotPasswordButton = UIButtonBuilder()
+        .titleFont(.font(.nunitoSemiBold, size: .large))
+        .titleColor(.appRaven)
+        .build()
+    
     private var emailTextField = FloatLabelTextField()
     private var passwordTextField = FloatLabelTextField()
     private var ctaButton = ButtonFactory.createPrimaryButton(style: .large)
@@ -61,6 +66,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         view.addSubview(bottomStackView)
+        view.addSubview(forgotPasswordButton)
         titleLabel.topToSuperview(usingSafeArea: true).constant = 50
         titleLabel.centerXToSuperview()
         titleLabel.bottomToTop(of: stackView).constant = -50
@@ -69,6 +75,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(ctaButton)
+        forgotPasswordButton.topToBottom(of: stackView).constant = 10
+        forgotPasswordButton.trailingToSuperview().constant = -15
+        forgotPasswordButton.height(20)
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
         bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         bottomStackView.bottomToSuperview(usingSafeArea: true)
@@ -77,6 +86,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         bottomStackView.addArrangedSubview(registerButton)
         registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
         ctaButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
     
     private func setUIElements() {
@@ -86,9 +96,9 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         passwordTextField.title = L10n.Placeholder.password
         passwordTextField.isSecureTextEntry = true
         ctaButton.setTitle(L10n.General.login, for: .normal)
+        forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
     }
 
-    
     // MARK: - Action
     @objc
     func regiserButtonTapped() {
@@ -107,5 +117,10 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         guard validation.isValidPassword(password) else { return }
         
         viewModel.sendLoginRequest(username: email, password: password)
+    }
+    
+    @objc
+    func forgotPasswordButtonTapped() {
+        
     }
 }

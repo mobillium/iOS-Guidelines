@@ -78,6 +78,8 @@ public enum L10n {
     public enum LoginViewController {
       /// Hesabın mı yok?
       public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
+      /// Şifrenizi mi unuttunuz?
+      public static let forgotPassword = L10n.tr("Modules", "LoginViewController.forgotPassword")
       /// Giriş Yap
       public static let title = L10n.tr("Modules", "LoginViewController.title")
     }
