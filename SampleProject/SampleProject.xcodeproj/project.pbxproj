@@ -590,9 +590,9 @@
 		FBA13ED026161C19001E19B4 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				FBA13EC426161062001E19B4 /* RegisterRouter.swift */,
 				FBA13EC526161062001E19B4 /* RegisterViewController.swift */,
 				FBA13EC626161062001E19B4 /* RegisterViewModel.swift */,
+				FBA13EC426161062001E19B4 /* RegisterRouter.swift */,
 				FBA13ECC2616137A001E19B4 /* RegisterRoute.swift */,
 			);
 			path = Register;

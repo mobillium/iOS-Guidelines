@@ -110,7 +110,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         view.endEditing(true)
         guard let email = emailTextField.text,
               let password = passwordTextField.text else {
-            showWarningToast(message: "Lütfen boş alanları doldurunuz.")
+            showWarningToast(message: L10n.Error.emptyFields)
             return
         }
         let validation = Validation()

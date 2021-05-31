@@ -23,10 +23,14 @@ public enum L10n {
     }
   }
   public enum Error {
+    /// Lütfen bilgilerinizi kontrol ediniz
+    public static let checkInformations = L10n.tr("Error", "checkInformations")
     /// %@ can not be empty.
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }
+    /// Lütfen boş alanları doldurunuz.
+    public static let emptyFields = L10n.tr("Error", "emptyFields")
     public enum Key {
       /// Username
       public static let username = L10n.tr("Error", "Key.username")

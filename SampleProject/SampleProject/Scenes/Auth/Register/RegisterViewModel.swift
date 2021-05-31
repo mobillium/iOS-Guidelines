@@ -10,9 +10,7 @@ import Foundation
 
 protocol RegisterViewDataSource {}
 
-protocol RegisterViewEventSource {
-    var didGetError: StringClosure? { get set }
-}
+protocol RegisterViewEventSource {}
 
 protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
     func showLoginScreen()
@@ -20,9 +18,7 @@ protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
 }
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
-    
-    var didGetError: StringClosure?
-    
+        
     func showLoginScreen() {
         router.placeLoginOnWindow()
     }
@@ -30,13 +26,14 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
     func sendRegisterRequest(username: String, email: String, password: String) {
         showLoading?()
         dataProvider.request(for: RegisterRequest(username: username, email: email, password: password)) { [weak self] (result) in
-            self?.hideLoading?()
+            guard let self = self else { return }
+            self.hideLoading?()
             switch result {
             case .success(let response):
-                // TO DO:  Route to main page
-                break
+                print(response.token)
+                self.router.close()
             case .failure(let error):
-                self?.didGetError?(error.localizedDescription)
+                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
             }
         }
     }

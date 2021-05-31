@@ -58,7 +58,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         super.viewDidLoad()
         addSubviews()
         setUIElements()
-        subscribeViewModel()
     }
     
     private func addSubviews() {
@@ -97,12 +96,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         ctaButton.setTitle(L10n.General.register, for: .normal)
     }
     
-    private func subscribeViewModel() {
-        viewModel.didGetError = { [weak self] (message) in
-            //TODO: - Show error
-        }
-    }
-    
     // MARK: - Actions
     @objc
     private func loginButtonTapped() {
@@ -115,10 +108,13 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         guard let userName = usernameTextField.text,
               let email = emailTextField.text,
               let password = passwordTextField.text else {
-            //TODO: - Show error
-
+            showWarningToast(message: L10n.Error.emptyFields)
             return
         }
+        let validation = Validation()
+        guard validation.isValidEmail(email) else { return }
+        guard validation.isValidPassword(password) else { return }
+        
         viewModel.sendRegisterRequest(username: userName, email: email, password: password)
     }
 }

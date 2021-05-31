@@ -11,3 +11,5 @@
 // MARK: - Keys
 "Key.username" = "Username";
 
+"emptyFields" = "Lütfen boş alanları doldurunuz.";
+"checkInformations" = "Lütfen bilgilerinizi kontrol ediniz";"

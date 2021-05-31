@@ -27,6 +27,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     }
     
     func sendLoginRequest(username: String, password: String) {
+        showLoading?()
         dataProvider.request(for: LoginRequest(username: username, password: password)) { [weak self] result in
             guard let self = self else { return }
             self.hideLoading?()
@@ -37,7 +38,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
                 DefaultsKey.userId.value = response.user.id
                 self.router.close()
             case .failure(let error):
-                self.showWarningToast?("\(error.localizedDescription) Lütfen bilgilerinizi kontrol ediniz")
+                self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")
             }
         }
     }
