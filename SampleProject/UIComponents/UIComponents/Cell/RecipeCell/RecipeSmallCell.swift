@@ -126,8 +126,8 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
 public extension RecipeSmallCell {
     func set(with viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
-        self.recipeImageView.setImage(viewModel.recipeImageUrl)
-        self.userImageView.setImage(viewModel.userImageUrl)
+        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
+        self.userImageView.setImageScaled(viewModel.userImageUrl)
         self.usernameLabel.text = viewModel.username
         self.recipeTitleLabel.text = viewModel.recipeTitle
         self.recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText
