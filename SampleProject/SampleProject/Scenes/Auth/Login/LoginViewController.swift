@@ -60,6 +60,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         super.viewDidLoad()
         addSubviews()
         setUIElements()
+        setupCancelRightBarButton()
     }
     
     private func addSubviews() {
@@ -99,6 +100,13 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
     }
 
+    private func setupCancelRightBarButton() {
+        let image = UIImage.icClose.withRenderingMode(.alwaysTemplate)
+        let cancelBarButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(dismissLoginViewController))
+        cancelBarButton.tintColor = UIColor.black
+        navigationItem.rightBarButtonItem = cancelBarButton
+    }
+    
     // MARK: - Action
     @objc
     func regiserButtonTapped() {
@@ -122,5 +130,10 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     @objc
     func forgotPasswordButtonTapped() {
         
+    }
+    
+    @objc
+    private func dismissLoginViewController() {
+        viewModel.dismissLoginScene()
     }
 }
