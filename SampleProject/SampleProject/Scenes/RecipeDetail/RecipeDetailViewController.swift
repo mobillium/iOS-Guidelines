@@ -47,12 +47,19 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private let commentsSeparator = UIViewBuilder()
         .backgroundColor(.appZircon)
         .build()
-    private let commentsCollectionView = UICollectionViewBuilder<DynamicHeightCollectionView>()
-        .scrollDirection(.vertical)
-        .registerCell(CommentCell.self, reuseIdentifier: CommentCell.defaultReuseIdentifier)
-        .showsVerticalScrollIndicator(false)
-        .bounces(false)
-        .build()
+    
+    private let commentsCollectionView: DynamicHeightCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let width = UIScreen.main.bounds.size.width
+        layout.estimatedItemSize = CGSize(width: width, height: 10)
+        let collectionView = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .appSecondaryBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(CommentCell.self)
+        return collectionView
+    }()
     
     private let commentButtonContainerView = UIViewBuilder()
         .backgroundColor(.clear)
@@ -158,6 +165,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
 extension RecipeDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if viewModel.numberOfItemsAt(section: section) > 3 {
+            return 3
+        }
         return viewModel.numberOfItemsAt(section: section)
     }
     
@@ -179,7 +189,7 @@ extension RecipeDetailViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        .zero
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
