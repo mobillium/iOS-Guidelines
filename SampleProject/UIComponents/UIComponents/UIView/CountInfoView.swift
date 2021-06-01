@@ -41,6 +41,12 @@ public class CountInfoView: UIView {
         }
     }
     
+    public var iconColor: UIColor? {
+        willSet {
+            iconButton.tintColor = newValue
+        }
+    }
+    
     public var count: Int? {
         willSet {
             countLabel.text = newValue?.toString

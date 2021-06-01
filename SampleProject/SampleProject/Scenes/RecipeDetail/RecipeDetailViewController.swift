@@ -76,6 +76,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         subscribeViewModel()
         configureCollectionView()
         viewModel.getRecipeComment(2)
+        subscribeLikeButtonAction()
     }
     
     private func configureContents() {
@@ -125,7 +126,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private func setLocalize() {
         commentCountView.icon = .icComment
         commentCountView.info = L10n.General.comment
-        likeCountView.icon = .icHeart
+        likeCountView.icon = .icHeart.withRenderingMode(.alwaysTemplate)
         likeCountView.info = L10n.General.like
         ingredientsView.title = L10n.General.recipeIngredients
         ingredientsView.icon = .icRestaurant
@@ -141,6 +142,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         topTitleView.timeDifferenceText = viewModel.timeDifferenceText
         commentCountView.count = viewModel.commentCount
         likeCountView.count = viewModel.likeCount
+        likeCountView.iconColor = viewModel.isLiked ? .appRed : .appCinder
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         userView.userImageUrl = viewModel.userImageUrl
@@ -158,6 +160,34 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         }
         viewModel.reloadDetailData = { [weak self] in
             self?.fillData()
+        }
+        
+        viewModel.toggleIsLiked = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.isLiked.toggle()
+            self.updateLikeButtonState()
+        }
+    }
+    
+    private func updateLikeButtonState() {
+        let isLiked = self.viewModel.isLiked
+        if isLiked {
+            self.likeCountView.iconColor = .appRed
+            self.viewModel.likeCount? += 1
+            self.likeCountView.count = self.viewModel.likeCount
+            print("like")
+        } else {
+            self.likeCountView.iconColor = .appCinder
+            self.viewModel.likeCount? -= 1
+            self.likeCountView.count = self.viewModel.likeCount
+            print("dislike")
+        }
+    }
+    
+    private func subscribeLikeButtonAction() {
+        likeCountView.iconButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.likeButtonTapped()
         }
     }
     

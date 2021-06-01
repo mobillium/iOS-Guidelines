@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 protocol RecipeDetailViewDataSource {
     var username: String? { get }
@@ -21,6 +22,7 @@ protocol RecipeDetailViewDataSource {
     var time: String? { get }
     var commentCount: Int? { get }
     var likeCount: Int? { get }
+    var isLiked: Bool { get }
     var reloadData: VoidClosure? { get set }
     var reloadDetailData: VoidClosure? { get set }
     
@@ -49,9 +51,13 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var time: String?
     var commentCount: Int?
     var likeCount: Int?
+    var isLiked = false
     var reloadData: VoidClosure?
     var reloadDetailData: VoidClosure?
+    var toggleIsLiked: VoidClosure?
     private let recipeId: Int
+    
+    let keychain = KeychainSwift()
     
     var recipeHeaderCellItems: [RecipeHeaderCellProtocol] = []
     
@@ -113,6 +119,7 @@ extension RecipeDetailViewModel {
                 self.time = response.timeOfRecipe.text
                 self.commentCount = response.commentCount
                 self.likeCount = response.likeCount
+                self.isLiked = response.isLiked
                 response.images.forEach({ image in
                     self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? ""))
                 })
@@ -124,4 +131,31 @@ extension RecipeDetailViewModel {
         }
     }
     
+    func likeButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.placeLoginOnWindow()
+            })
+            return
+        }
+
+        let request: RecipeLikeRequest
+        switch isLiked {
+        case true:
+            request = RecipeLikeRequest(recipeId: recipeId, likeType: .unlike)
+        case false:
+            request = RecipeLikeRequest(recipeId: recipeId, likeType: .like)
+        }
+        toggleIsLiked?()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print(response.message)
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.toggleIsLiked?()
+            }
+        }
+    }
 }
