@@ -63,9 +63,9 @@ public class UserView: UIView {
     let userViewType: UserViewType
     
     /// Only use this variable when you enable followButton
-    public var isFollowing: Bool = false {
+    public var isFollowing = false {
         didSet {
-            updateFollowButton()
+            updateFollowButtonState()
         }
     }
     
@@ -103,7 +103,7 @@ public class UserView: UIView {
             followButton.leadingToTrailing(of: textStackView).constant = 10
             followButton.centerYToSuperview()
             followButton.width(120)
-            updateFollowButton()
+            updateFollowButtonState()
         case .withoutFollowButton:
             textStackView.trailingToSuperview().constant = -15
         }
@@ -117,7 +117,7 @@ public class UserView: UIView {
         followButtonTapped?()
     }
     
-    private func updateFollowButton() {
+    private func updateFollowButtonState() {
         if isFollowing {
             followButton.setTitle(L10n.General.following, for: .normal)
             followButton.setTitleColor(.white, for: .normal)

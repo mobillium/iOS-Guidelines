@@ -59,6 +59,7 @@
 		A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */; };
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
 		A24F29DA26664B5200B7211B /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */; };
+		A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
 		A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
@@ -174,6 +175,7 @@
 		A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewModel.swift; sourceTree = "<group>"; };
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
 		A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
+		A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 			isa = PBXGroup;
 			children = (
 				840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */,
+				A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -861,6 +864,7 @@
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
 				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
+				A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
 				A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */,

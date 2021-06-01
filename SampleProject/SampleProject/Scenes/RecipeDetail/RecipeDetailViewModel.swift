@@ -23,18 +23,24 @@ protocol RecipeDetailViewDataSource {
     var commentCount: Int? { get }
     var likeCount: Int? { get }
     var isLiked: Bool { get }
-    var reloadData: VoidClosure? { get set }
-    var reloadDetailData: VoidClosure? { get set }
+    var isFollowing: Bool { get }
     
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
 
-protocol RecipeDetailViewEventSource {}
+protocol RecipeDetailViewEventSource {
+    var toggleIsLiked: VoidClosure? { get set }
+    var toggleIsFollowing: VoidClosure? { get set }
+    var reloadCommentData: VoidClosure? { get set }
+    var reloadDetailData: VoidClosure? { get set }
+}
 
 protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewEventSource {
     func getRecipeComment(_ recipeId: Int)
     func getRecipeDetail(_ recipeId: Int)
+    func likeButtonTapped()
+    func followButtonTapped()
 }
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
@@ -52,10 +58,13 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var commentCount: Int?
     var likeCount: Int?
     var isLiked = false
-    var reloadData: VoidClosure?
+    var isFollowing = false
+    var reloadCommentData: VoidClosure?
     var reloadDetailData: VoidClosure?
     var toggleIsLiked: VoidClosure?
+    var toggleIsFollowing: VoidClosure?
     private let recipeId: Int
+    private var followedId: Int?
     
     let keychain = KeychainSwift()
     
@@ -95,9 +104,9 @@ extension RecipeDetailViewModel {
                                                            commentId: comment.id,
                                                            commentText: comment.text))
                 }
-                self.reloadData?()
+                self.reloadCommentData?()
             case .failure(_ ):
-                self?.reloadData?()
+                self?.reloadCommentData?()
             }
         }
     }
@@ -120,6 +129,8 @@ extension RecipeDetailViewModel {
                 self.commentCount = response.commentCount
                 self.likeCount = response.likeCount
                 self.isLiked = response.isLiked
+                self.isFollowing = response.user.isFollowing
+                self.followedId = response.user.id
                 response.images.forEach({ image in
                     self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? ""))
                 })
@@ -131,14 +142,7 @@ extension RecipeDetailViewModel {
         }
     }
     
-    func likeButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
-            })
-            return
-        }
-
+    private func recipeLikeRequest() {
         let request: RecipeLikeRequest
         switch isLiked {
         case true:
@@ -156,6 +160,55 @@ extension RecipeDetailViewModel {
                 print(error.localizedDescription)
                 self.toggleIsLiked?()
             }
+        }
+    }
+    
+    private func userFollowRequest(followType: UserFollowRequest.FollowType) {
+        guard let followedId = followedId else { return }
+        toggleIsFollowing?()
+        let request = UserFollowRequest(followedId: followedId, followType: followType)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                print(response.message)
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.toggleIsFollowing?()
+            }
+        }
+    }
+}
+
+// MARK: - Actions
+extension RecipeDetailViewModel {
+    
+    func likeButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.placeLoginOnWindow()
+            })
+            return
+        }
+        
+        recipeLikeRequest()
+    }
+    
+    func followButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.placeLoginOnWindow()
+            })
+            return
+        }
+        
+        switch isFollowing {
+        case true:
+            router.presentUnfollowAlertView {
+                self.userFollowRequest(followType: .unfollow)
+            }
+        case false:
+            userFollowRequest(followType: .follow)
         }
     }
 }
