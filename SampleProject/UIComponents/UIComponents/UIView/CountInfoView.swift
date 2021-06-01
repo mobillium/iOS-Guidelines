@@ -67,6 +67,7 @@ public class CountInfoView: UIView {
     // swiftlint:enable fatal_error unavailable_function
     
     private func configureContents() {
+        backgroundColor = .appWhite
         addSubview(iconButton)
         iconButton.centerXToSuperview()
         iconButton.leadingToSuperview(relation: .equalOrGreater)

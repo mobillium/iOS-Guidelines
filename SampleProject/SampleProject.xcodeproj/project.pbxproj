@@ -476,8 +476,8 @@
 		840EB59B2645893A0019C101 /* RecipeHeader */ = {
 			isa = PBXGroup;
 			children = (
-				840EB59C2645893A0019C101 /* RecipeHeaderViewModel.swift */,
 				840EB59D2645893A0019C101 /* RecipeHeaderViewController.swift */,
+				840EB59C2645893A0019C101 /* RecipeHeaderViewModel.swift */,
 				840EB59E2645893A0019C101 /* RecipeHeaderRouter.swift */,
 			);
 			path = RecipeHeader;

@@ -22,6 +22,14 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .spacing(15)
         .build()
     
+    private let countInfoStackView = UIStackViewBuilder()
+        .axis(.horizontal)
+        .spacing(1)
+        .distribution(.fillEqually)
+        .build()
+    private let commentCountView = CountInfoView()
+    private let likeCountView = CountInfoView()
+    
     private let userView = UserView(userViewType: .withFollowButton)
     private let ingredientsView = RecipeDetailInfoView()
     private let stepsView = RecipeDetailInfoView()
@@ -73,6 +81,10 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         commentButtonContainerView.addSubview(commentButton)
         commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
         
+        countInfoStackView.addArrangedSubview(commentCountView)
+        countInfoStackView.addArrangedSubview(likeCountView)
+        
+        contentStackView.addArrangedSubview(countInfoStackView)
         contentStackView.addArrangedSubview(userView)
         contentStackView.addArrangedSubview(ingredientsView)
         contentStackView.addArrangedSubview(stepsView)
@@ -94,6 +106,10 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func setLocalize() {
+        commentCountView.icon = .icComment
+        commentCountView.info = L10n.General.comment
+        likeCountView.icon = .icHeart
+        likeCountView.info = L10n.General.like
         ingredientsView.title = L10n.General.recipeIngredients
         ingredientsView.icon = .icRestaurant
         stepsView.title = L10n.General.recipeSteps
