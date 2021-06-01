@@ -122,6 +122,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         likeCountView.count = viewModel.likeCount
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
+        userView.userImageUrl = viewModel.userImageUrl
         ingredientsView.iconSubtitle = viewModel.numberOfPeople
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
