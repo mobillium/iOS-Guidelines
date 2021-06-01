@@ -16,17 +16,22 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
         .build()
     
     private let bottomView = UIView()
-    private let saveButton = ButtonFactory.createPrimaryBorderedButton(style: .medium)
+    private let saveButton = ButtonFactory.createPrimaryButton(style: .medium)
     
     private let keyboardHelper = KeyboardHelper()
     private var bottomViewBottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = viewModel.title
+        setUIElements()
         keyboardHelper.delegate = self
         configureContents()
         commentTextView.text = viewModel.commentText
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        commentTextView.becomeFirstResponder()
     }
     
     private func configureContents() {
@@ -48,9 +53,11 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
     }
     
     private func setUIElements() {
+        navigationItem.title = viewModel.title
         saveButton.setTitle(L10n.Modules.CommentEditController.save, for: .normal)
     }
     
+    // MARK: - Actions
     @objc
     private func saveButtonTapped() {
         guard let commentText = commentTextView.text, !commentText.isEmpty else {

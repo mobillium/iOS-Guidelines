@@ -35,6 +35,11 @@ final class CommentEditViewModel: BaseViewModel<CommentEditRouter>, CommentEditV
         super.init(router: router)
     }
     
+}
+
+// MARK: - Network
+extension CommentEditViewModel {
+    
     func editComment(commentText: String) {
         showLoading?()
         let request = EditRecipeCommentRequest(recipeId: recipeId, commentId: commentId, commentText: commentText)

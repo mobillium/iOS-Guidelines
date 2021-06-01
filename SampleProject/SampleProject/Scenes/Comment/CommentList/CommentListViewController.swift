@@ -49,6 +49,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         .build()
     
     private let refreshControl = UIRefreshControl()
+    private var loadingFooterView: ActivityIndicatorFooterView?
     
     private let keyboardHelper = KeyboardHelper()
     private var bottomViewBottomConstraint: NSLayoutConstraint?
@@ -60,8 +61,6 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         keyboardHelper.delegate = self
         configureContents()
         setupCollectionView()
-        addButtonTarget()
-        setupRefreshControl()
         viewModel.fetchComments()
         subscribeViewModelEvents()
         setupKeyboard()
@@ -86,6 +85,9 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         view.addSubview(collectionView)
         collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
         collectionView.bottomToTop(of: bottomView)
+        
+        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
     private func setupCollectionView() {
@@ -95,27 +97,10 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         collectionView.refreshControl = refreshControl
     }
     
-    private func addButtonTarget() {
-        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
-    }
-    
-    @objc
-    private func sendButtonDidTap() {
-        guard let commentText = commentTextView.text, !commentText.isEmpty else {
-            showWarningToast(message: L10n.Error.empty("Yorum"))
-            return
+    private func setupKeyboard() {
+        if isKeyboardOpen {
+            commentTextView.becomeFirstResponder()
         }
-        viewModel.sendButtonDidTap(commentText: commentText)
-    }
-    
-    private func setupRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
-    }
-    
-    @objc
-    private func pullToRefreshValueChanged() {
-        viewModel.cellItems.isEmpty ? viewModel.fetchComments() : collectionView.reloadData()
-        refreshControl.endRefreshing()
     }
     
     private func subscribeViewModelEvents() {
@@ -136,11 +121,26 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         }
     }
     
-    private func setupKeyboard() {
-        if isKeyboardOpen {
-            commentTextView.becomeFirstResponder()
+    // MARK: - Actions
+    @objc
+    private func sendButtonDidTap() {
+        guard let commentText = commentTextView.text, !commentText.isEmpty else {
+            showWarningToast(message: L10n.Error.empty("Yorum"))
+            return
         }
+        viewModel.sendButtonDidTap(commentText: commentText)
     }
+    
+    @objc
+    private func pullToRefreshValueChanged() {
+        viewModel.cellItems.isEmpty ? viewModel.fetchComments() : collectionView.reloadData()
+        refreshControl.endRefreshing()
+    }
+        
+}
+
+// MARK: - ScrollView Methods
+extension CommentListViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y
@@ -155,7 +155,6 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         view.endEditing(true)
     }
-        
 }
 
 // MARK: - UICollectionViewDataSource
@@ -176,6 +175,34 @@ extension CommentListViewController: UICollectionViewDataSource {
         
         cell.set(with: cellItem)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let footer: ActivityIndicatorFooterView = collectionView.dequeueReusableCell(ofKind: kind, for: indexPath)
+        loadingFooterView = footer
+        return footer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplaySupplementaryView view: UICollectionReusableView,
+                        forElementKind elementKind: String,
+                        at indexPath: IndexPath) {
+
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            self.loadingFooterView?.activityIndicator.startAnimating()
+        }
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        didEndDisplayingSupplementaryView view: UICollectionReusableView,
+                        forElementOfKind elementKind: String,
+                        at indexPath: IndexPath) {
+
+        if elementKind == UICollectionView.elementKindSectionFooter {
+            self.loadingFooterView?.activityIndicator.stopAnimating()
+        }
     }
     
 }
