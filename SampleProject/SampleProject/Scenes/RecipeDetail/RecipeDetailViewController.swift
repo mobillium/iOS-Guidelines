@@ -118,6 +118,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func fillData() {
+        commentCountView.count = viewModel.commentCount
+        likeCountView.count = viewModel.likeCount
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         ingredientsView.iconSubtitle = viewModel.numberOfPeople

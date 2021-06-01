@@ -15,6 +15,8 @@ protocol RecipeDetailViewDataSource {
     var numberOfPeople: String? { get }
     var steps: String? { get }
     var time: String? { get }
+    var commentCount: Int? { get }
+    var likeCount: Int? { get }
     var reloadData: VoidClosure? { get set }
     var reloadDetailData: VoidClosure? { get set }
 
@@ -37,6 +39,8 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var numberOfPeople: String?
     var steps: String?
     var time: String?
+    var commentCount: Int?
+    var likeCount: Int?
     var reloadData: VoidClosure?
     var reloadDetailData: VoidClosure?
     private let recipeId: Int
@@ -93,6 +97,8 @@ extension RecipeDetailViewModel {
                 self.numberOfPeople = response.numberOfPerson.text
                 self.steps = response.instructions
                 self.time = response.timeOfRecipe.text
+                self.commentCount = response.commentCount
+                self.likeCount = response.likeCount
                 self.reloadDetailData?()
             case .failure(let error ):
                 print(error.localizedDescription)
