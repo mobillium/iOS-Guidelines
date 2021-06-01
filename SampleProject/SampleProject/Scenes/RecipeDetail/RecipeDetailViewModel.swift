@@ -16,6 +16,7 @@ protocol RecipeDetailViewDataSource {
     var steps: String? { get }
     var time: String? { get }
     var reloadData: VoidClosure? { get set }
+    var reloadDetailData: VoidClosure? { get set }
 
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
@@ -25,6 +26,7 @@ protocol RecipeDetailViewEventSource {}
 
 protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewEventSource {
     func getRecipeComment(_ recipeId: Int)
+    func getRecipeDetail(_ recipeId: Int)
 }
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
@@ -36,6 +38,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var steps: String?
     var time: String?
     var reloadData: VoidClosure?
+    var reloadDetailData: VoidClosure?
     private let recipeId: Int
     
     init(recipeId: Int, router: RecipeDetailRouter) {
@@ -52,6 +55,11 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     }
     
     var cellItems: [CommentCellProtocol] = []
+    
+}
+
+// MARK: - Network
+extension RecipeDetailViewModel {
     
     func getRecipeComment(_ recipeId: Int) {
         dataProvider.request(for: RecipeCommentRequest(recipedId: recipeId)) { [weak self] result in
@@ -74,4 +82,22 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         }
     }
     
+    func getRecipeDetail(_ recipeId: Int) {
+        dataProvider.request(for: GetRecipeDetailRequest(recipeId: recipeId)) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let response):
+                self.username = response.user.username
+                self.recipeAndFollowerCountText = "\(response.user.recipeCount) Tarif \(response.user.followingCount) Takipçi"
+                self.ingredients = response.ingredients
+                self.numberOfPeople = response.numberOfPerson.text
+                self.steps = response.instructions
+                self.time = response.timeOfRecipe.text
+                self.reloadDetailData?()
+            case .failure(let error ):
+                print(error.localizedDescription)
+            }
+        }
+    }
+
 }

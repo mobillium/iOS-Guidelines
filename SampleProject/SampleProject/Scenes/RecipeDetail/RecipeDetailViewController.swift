@@ -51,9 +51,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.getRecipeDetail(26)
         configureContents()
         setLocalize()
-        fillData()
         subscribeViewModel()
         configureCollectionView()
         viewModel.getRecipeComment(2)
@@ -108,6 +108,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
         stepsView.info = viewModel.steps
+        view.layoutIfNeeded()
         commentsCollectionView.reloadData()
         commentsCollectionView.layoutIfNeeded()
     }
@@ -115,6 +116,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private func subscribeViewModel() {
         viewModel.reloadData = { [weak self] in
             self?.commentsCollectionView.reloadData()
+        }
+        viewModel.reloadDetailData = { [weak self] in
+            self?.fillData()
         }
     }
     

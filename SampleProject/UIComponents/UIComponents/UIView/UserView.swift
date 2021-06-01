@@ -103,6 +103,7 @@ public class UserView: UIView {
             followButton.leadingToTrailing(of: textStackView).constant = 10
             followButton.centerYToSuperview()
             followButton.width(120)
+            updateFollowButton()
         case .withoutFollowButton:
             textStackView.trailingToSuperview().constant = -15
         }
