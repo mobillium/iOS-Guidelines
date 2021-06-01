@@ -53,6 +53,8 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var reloadDetailData: VoidClosure?
     private let recipeId: Int
     
+    var recipeHeaderCellItems: [RecipeHeaderCellProtocol] = []
+    
     init(recipeId: Int, router: RecipeDetailRouter) {
         self.recipeId = recipeId
         super.init(router: router)
@@ -111,6 +113,10 @@ extension RecipeDetailViewModel {
                 self.time = response.timeOfRecipe.text
                 self.commentCount = response.commentCount
                 self.likeCount = response.likeCount
+                response.images.forEach({ image in
+                    self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? ""))
+                })
+                
                 self.reloadDetailData?()
             case .failure(let error ):
                 print(error.localizedDescription)

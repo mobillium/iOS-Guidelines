@@ -66,6 +66,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .build()
     private let commentButton = ButtonFactory.createPrimaryButton(style: .large)
     
+    private let recipeHeaderView = RecipeDetailHeaderView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.getRecipeDetail(26)
@@ -92,7 +94,11 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         
         countInfoStackView.addArrangedSubview(commentCountView)
         countInfoStackView.addArrangedSubview(likeCountView)
+
+        recipeHeaderView.aspectRatio(1)
         
+        contentStackView.addArrangedSubview(recipeHeaderView)
+        contentStackView.setCustomSpacing(0, after: recipeHeaderView)
         contentStackView.addArrangedSubview(topTitleView)
         contentStackView.setCustomSpacing(1, after: topTitleView)
         contentStackView.addArrangedSubview(countInfoStackView)
@@ -129,6 +135,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func fillData() {
+        recipeHeaderView.recipeHeaderData = viewModel.recipeHeaderCellItems
         topTitleView.recipeName = viewModel.recipeName
         topTitleView.categoryName = viewModel.categoryName
         topTitleView.timeDifferenceText = viewModel.timeDifferenceText
@@ -141,7 +148,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
         stepsView.info = viewModel.steps
-        view.layoutIfNeeded()
         commentsCollectionView.reloadData()
         commentsCollectionView.layoutIfNeeded()
     }

@@ -1,5 +1,5 @@
 //
-//  RecipeHeaderViewController.swift
+//  RecipeHeaderView.swift
 //  SampleProject
 //
 //  Created by Emirhan Battalbaş on 1.04.2021.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel> {
+final class RecipeDetailHeaderView: UIView {
     
     lazy var collectionView = UICollectionViewBuilder()
         .allowsMultipleSelection(false)
@@ -20,15 +20,28 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
         .build()
 
     lazy var pageControl = UIPageControlBuilder()
-        .numberOfPages(viewModel.numberOfItemsAt())
+        .numberOfPages(recipeHeaderData.count)
         .build()
 
     // swiftlint:disable weak_delegate
     var photoBrowserDelegate: PhotoBrowserDelegate?
     // swiftlint:enable weak_delegate
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var recipeHeaderData: [RecipeHeaderCellProtocol] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+ 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setCollectionView()
+        setPageControl()
+        setPhotoBrowserDelegate()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
         setCollectionView()
         setPageControl()
         setPhotoBrowserDelegate()
@@ -47,12 +60,12 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
     private func setCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        view.addSubview(collectionView)
+        addSubview(collectionView)
         collectionView.edgesToSuperview()
     }
 
     private func setPageControl() {
-        view.addSubview(pageControl)
+        addSubview(pageControl)
         pageControl.bottom(to: collectionView)
         pageControl.centerX(to: collectionView)
     }
@@ -60,25 +73,26 @@ final class RecipeHeaderViewController: BaseViewController<RecipeHeaderViewModel
 }
 
 // MARK: - UICollectionViewDelegate
-extension RecipeHeaderViewController: UICollectionViewDelegate {
+extension RecipeDetailHeaderView: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let delegate = photoBrowserDelegate else { return }
-        viewModel.didSelectItem(indexPath: indexPath, delegate: delegate)
+        let photos = recipeHeaderData.map { $0.imageUrl }
+        AppRouter.shared.presentSKPhotoBrowser(with: photos, delegate: delegate, initialPageIndex: indexPath.row)
     }
     
 }
 
 // MARK: - UICollectionViewDataSource
-extension RecipeHeaderViewController: UICollectionViewDataSource {
+extension RecipeDetailHeaderView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItemsAt()
+        return recipeHeaderData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RecipeHeaderCell = collectionView.dequeueReusableCell(for: indexPath)
-        let currentRecipeHeaderModel = viewModel.cellItemAt(indexPath: indexPath)
+        let currentRecipeHeaderModel = recipeHeaderData[indexPath.row]
         cell.set(with: currentRecipeHeaderModel)
         return cell
     }
@@ -86,7 +100,7 @@ extension RecipeHeaderViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
-extension RecipeHeaderViewController: UICollectionViewDelegateFlowLayout {
+extension RecipeDetailHeaderView: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -110,7 +124,7 @@ extension RecipeHeaderViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UIScrollViewDelegate
-extension RecipeHeaderViewController {
+extension RecipeDetailHeaderView {
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
