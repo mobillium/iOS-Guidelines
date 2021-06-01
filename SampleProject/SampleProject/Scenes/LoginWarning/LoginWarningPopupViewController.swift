@@ -72,18 +72,16 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
     }
     
     func setupLayouts() {
-        contentView.centerInSuperview()
+        contentView.centerYToSuperview()
         contentView.leadingToSuperview().constant = 25
         contentView.trailingToSuperview().constant = -25
         
-        imageView.centerX(to: contentView)
+        imageView.centerXToSuperview()
         imageView.topToSuperview().constant = 20
-        imageView.bottomToTop(of: descriptionLabel).constant = -16
         imageView.size(CGSize(width: 60, height: 60))
         
         descriptionLabel.topToBottom(of: imageView).constant = 16
         descriptionLabel.edgesToSuperview(excluding: [.top, .bottom])
-        descriptionLabel.bottomToTop(of: buttonStackView).constant = -15
         loginButton.height(50)
         giveUpButton.height(50)
         
