@@ -94,7 +94,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         
         countInfoStackView.addArrangedSubview(commentCountView)
         countInfoStackView.addArrangedSubview(likeCountView)
-
+        
         recipeHeaderView.aspectRatio(1)
         
         contentStackView.addArrangedSubview(recipeHeaderView)

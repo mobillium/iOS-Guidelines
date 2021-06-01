@@ -23,7 +23,7 @@ protocol RecipeDetailViewDataSource {
     var likeCount: Int? { get }
     var reloadData: VoidClosure? { get set }
     var reloadDetailData: VoidClosure? { get set }
-
+    
     func numberOfItemsAt(section: Int) -> Int
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
@@ -123,5 +123,5 @@ extension RecipeDetailViewModel {
             }
         }
     }
-
+    
 }
