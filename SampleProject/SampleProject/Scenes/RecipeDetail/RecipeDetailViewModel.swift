@@ -11,6 +11,9 @@ import Foundation
 protocol RecipeDetailViewDataSource {
     var username: String? { get }
     var userImageUrl: String? { get }
+    var recipeName: String? { get }
+    var categoryName: String? { get }
+    var timeDifferenceText: String? { get }
     var recipeAndFollowerCountText: String? { get }
     var ingredients: String? { get }
     var numberOfPeople: String? { get }
@@ -36,6 +39,9 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     
     var username: String?
     var userImageUrl: String?
+    var recipeName: String?
+    var categoryName: String?
+    var timeDifferenceText: String?
     var recipeAndFollowerCountText: String?
     var ingredients: String?
     var numberOfPeople: String?
@@ -95,6 +101,9 @@ extension RecipeDetailViewModel {
             case .success(let response):
                 self.username = response.user.username
                 self.userImageUrl = response.user.image?.url
+                self.recipeName = response.title
+                self.categoryName = response.category.name
+                self.timeDifferenceText = response.timeDifference
                 self.recipeAndFollowerCountText = "\(response.user.recipeCount) Tarif \(response.user.followingCount) Takipçi"
                 self.ingredients = response.ingredients
                 self.numberOfPeople = response.numberOfPerson.text

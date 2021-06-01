@@ -22,6 +22,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .spacing(15)
         .build()
     
+    private let topTitleView = RecipeDetailTitlesView()
+    
     private let countInfoStackView = UIStackViewBuilder()
         .axis(.horizontal)
         .spacing(1)
@@ -84,6 +86,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         countInfoStackView.addArrangedSubview(commentCountView)
         countInfoStackView.addArrangedSubview(likeCountView)
         
+        contentStackView.addArrangedSubview(topTitleView)
+        contentStackView.setCustomSpacing(1, after: topTitleView)
         contentStackView.addArrangedSubview(countInfoStackView)
         contentStackView.addArrangedSubview(userView)
         contentStackView.addArrangedSubview(ingredientsView)
@@ -118,6 +122,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func fillData() {
+        topTitleView.recipeName = viewModel.recipeName
+        topTitleView.categoryName = viewModel.categoryName
+        topTitleView.timeDifferenceText = viewModel.timeDifferenceText
         commentCountView.count = viewModel.commentCount
         likeCountView.count = viewModel.likeCount
         userView.username = viewModel.username
