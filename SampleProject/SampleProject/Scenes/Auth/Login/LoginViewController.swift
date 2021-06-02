@@ -11,7 +11,6 @@ import UIKit
 final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private let titleLabel = UILabelBuilder()
-            .text(L10n.Modules.LoginViewController.title)
             .textColor(.appCinder)
             .font(.font(.nunitoBold, size: .xxLarge))
             .build()
@@ -27,7 +26,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
             .build()
     
     private let bottomLabel = UILabelBuilder()
-            .text(L10n.Modules.LoginViewController.bottomText)
             .font(.font(.nunitoBold, size: .xLarge))
             .textColor(.appRaven)
             .build()
@@ -35,7 +33,6 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     private let registerButton = UIButtonBuilder()
             .titleColor(.appRed)
             .titleFont(.font(.nunitoBold, size: .xLarge))
-            .title(L10n.General.register, for: .normal)
             .build()
     
     private let forgotPasswordButton = UIButtonBuilder()
@@ -49,58 +46,92 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubViews()
         configureContents()
-        setUIElements()
-        setupCancelRightBarButton()
+        setLocalize()
+    }
+}
+
+// MARK: - UILayout
+extension LoginViewController {
+    
+    private func addSubViews() {
+        addTitleLabel()
+        addStackView()
+        addBottomStackView()
+        addForgotPasswordButton()    
     }
     
-    private func configureContents() {
+    private func addTitleLabel() {
         view.addSubview(titleLabel)
-        view.addSubview(stackView)
-        view.addSubview(bottomStackView)
-        view.addSubview(forgotPasswordButton)
         titleLabel.topToSuperview(usingSafeArea: true).constant = 50
         titleLabel.centerXToSuperview()
-        titleLabel.bottomToTop(of: stackView).constant = -50
+    }
+    
+    private func addStackView() {
+        view.addSubview(stackView)
+        stackView.topToBottom(of: titleLabel).constant = 50
         stackView.leadingToSuperview().constant = 15
         stackView.trailingToSuperview().constant = -15
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(ctaButton)
-        forgotPasswordButton.topToBottom(of: stackView).constant = 10
-        forgotPasswordButton.trailingToSuperview().constant = -15
-        forgotPasswordButton.height(20)
+        registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
+        ctaButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
+    }
+    
+    private func addBottomStackView() {
+        view.addSubview(bottomStackView)
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
         bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         bottomStackView.bottomToSuperview(usingSafeArea: true)
         bottomStackView.centerXToSuperview()
         bottomStackView.addArrangedSubview(bottomLabel)
         bottomStackView.addArrangedSubview(registerButton)
-        registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
-        ctaButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
-        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
     }
     
-    private func setUIElements() {
-        emailTextField.title = L10n.Placeholder.email
+    private func addForgotPasswordButton() {
+        view.addSubview(forgotPasswordButton)
+        forgotPasswordButton.topToBottom(of: stackView).constant = 10
+        forgotPasswordButton.trailingToSuperview().constant = -15
+        forgotPasswordButton.height(20)
+        forgotPasswordButton.addTarget(self, action: #selector(forgotPasswordButtonTapped), for: .touchUpInside)
+    }
+}
+
+// MARK: - Configure and Localize
+extension LoginViewController {
+    
+    private func configureContents() {
         emailTextField.autocapitalizationType = .none
         emailTextField.keyboardType = .emailAddress
         emailTextField.leftImage = .icMail
-        passwordTextField.title = L10n.Placeholder.password
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
-        ctaButton.setTitle(L10n.General.login, for: .normal)
-        forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
+        configureCancelRightBarButton()
     }
     
-    private func setupCancelRightBarButton() {
+    private func setLocalize() {
+        titleLabel.text = L10n.Modules.LoginViewController.title
+        emailTextField.title = L10n.Placeholder.email
+        passwordTextField.title = L10n.Placeholder.password
+        ctaButton.setTitle(L10n.General.login, for: .normal)
+        forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
+        registerButton.setTitle(L10n.General.register, for: .normal)
+        bottomLabel.text = L10n.Modules.LoginViewController.bottomText
+    }
+
+    private func configureCancelRightBarButton() {
         let image = UIImage.icClose.withRenderingMode(.alwaysTemplate)
         let cancelBarButton = UIBarButtonItem(image: image, style: .done, target: self, action: #selector(dismissLoginViewController))
         cancelBarButton.tintColor = UIColor.black
         navigationItem.rightBarButtonItem = cancelBarButton
     }
+}
+
+// MARK: - Actions
+extension LoginViewController {
     
-    // MARK: - Action
     @objc
     private func regiserButtonTapped() {
         viewModel.showRegisterOnWindow()

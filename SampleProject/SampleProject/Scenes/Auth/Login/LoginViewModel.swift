@@ -22,7 +22,11 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
-    var didGetError: StringClosure?
+    
+}
+
+// MARK: - Actions
+extension LoginViewModel {
     
     func showRegisterOnWindow() {
         router.placeOnRegister()
@@ -35,6 +39,10 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
     func pushPasswordResetScene() {
         router.pushPasswordReset()
     }
+}
+
+// MARK: - Network
+extension LoginViewModel {
     
     func sendLoginRequest(username: String, password: String) {
         showLoading?()
