@@ -59,12 +59,12 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var likeCount: Int?
     var isLiked = false
     var isFollowing = false
+    private let recipeId: Int
+    private var followedId: Int?
     var reloadCommentData: VoidClosure?
     var reloadDetailData: VoidClosure?
     var toggleIsLiked: VoidClosure?
     var toggleIsFollowing: VoidClosure?
-    private let recipeId: Int
-    private var followedId: Int?
     
     let keychain = KeychainSwift()
     
@@ -85,6 +85,39 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     
     var cellItems: [CommentCellProtocol] = []
     
+}
+
+// MARK: - Actions
+extension RecipeDetailViewModel {
+    
+    func likeButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.placeLoginOnWindow()
+            })
+            return
+        }
+        
+        recipeLikeRequest()
+    }
+    
+    func followButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.placeLoginOnWindow()
+            })
+            return
+        }
+        
+        switch isFollowing {
+        case true:
+            router.presentUnfollowAlertView {
+                self.userFollowRequest(followType: .unfollow)
+            }
+        case false:
+            userFollowRequest(followType: .follow)
+        }
+    }
 }
 
 // MARK: - Network
@@ -176,39 +209,6 @@ extension RecipeDetailViewModel {
                 print(error.localizedDescription)
                 self.toggleIsFollowing?()
             }
-        }
-    }
-}
-
-// MARK: - Actions
-extension RecipeDetailViewModel {
-    
-    func likeButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
-            })
-            return
-        }
-        
-        recipeLikeRequest()
-    }
-    
-    func followButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
-            })
-            return
-        }
-        
-        switch isFollowing {
-        case true:
-            router.presentUnfollowAlertView {
-                self.userFollowRequest(followType: .unfollow)
-            }
-        case false:
-            userFollowRequest(followType: .follow)
         }
     }
 }
