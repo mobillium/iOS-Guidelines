@@ -97,7 +97,7 @@ extension RecipeDetailViewModel {
                 guard let self = self else { return }
                 response.data.forEach { comment in
                     self.cellItems.append(CommentCellModel(userId: comment.user!.id,
-                                                           imageUrl: nil,
+                                                           imageUrl: comment.user?.image?.url,
                                                            username: comment.user?.username,
                                                            recipeAndFollowerCountText: "\(comment.user?.recipeCount ?? 0) Tarif \(comment.user?.followedCount ?? 0) Takipçi",
                                                            timeDifferenceText: comment.difference,
