@@ -13,7 +13,6 @@ import TinyConstraints
 final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     private let titleLabel = UILabelBuilder()
-        .text(L10n.Modules.RegisterViewController.title)
         .textColor(.appCinder)
         .font(.font(.nunitoBold, size: .xxLarge))
         .build()
@@ -29,7 +28,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
         .build()
     
     private let bottomLabel = UILabelBuilder()
-        .text(L10n.Modules.RegisterViewController.bottomText)
         .font(.font(.nunitoBold, size: .xLarge))
         .textColor(.appRaven)
         .build()
@@ -37,7 +35,6 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     private let loginButton = UIButtonBuilder()
         .titleColor(.appRed)
         .titleFont(.font(.nunitoBold, size: .xLarge))
-        .title(L10n.General.login, for: .normal)
         .build()
     
     private let usernameTextField = FloatLabelTextField()
@@ -47,47 +44,78 @@ final class RegisterViewController: BaseViewController<RegisterViewModel> {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubViews()
         configureContents()
-        setUIElements()
+        setLocalize()
+    }
+}
+
+// MARK: - UILayout
+extension RegisterViewController {
+    
+    private func addSubViews() {
+        addTitleLabel()
+        addStackView()
+        addBottomStackView()
     }
     
-    private func configureContents() {
+    private func addTitleLabel() {
         view.addSubview(titleLabel)
-        view.addSubview(stackView)
-        view.addSubview(bottomStackView)
-        bottomStackView.addArrangedSubview(bottomLabel)
-        bottomStackView.addArrangedSubview(loginButton)
         titleLabel.topToSuperview(usingSafeArea: true).constant = 50
         titleLabel.centerXToSuperview()
-        titleLabel.bottomToTop(of: stackView).constant = -50
+    }
+    
+    private func addStackView() {
+        view.addSubview(stackView)
+        stackView.topToBottom(of: titleLabel).constant = 50
         stackView.leadingToSuperview().constant = 15
         stackView.trailingToSuperview().constant = -15
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(emailTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(ctaButton)
+        ctaButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
+    }
+    
+    private func addBottomStackView() {
+        view.addSubview(bottomStackView)
+        bottomStackView.addArrangedSubview(bottomLabel)
+        bottomStackView.addArrangedSubview(loginButton)
         bottomStackView.bottomToSuperview(usingSafeArea: true)
         bottomStackView.leadingToSuperview(relation: .equalOrGreater).constant = 20
         bottomStackView.trailingToSuperview(relation: .equalOrLess).constant = -20
         bottomStackView.centerXToSuperview()
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        ctaButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure and Localize
+extension RegisterViewController {
     
-    private func setUIElements() {
-        usernameTextField.title = L10n.Placeholder.username
+    private func configureContents() {
         usernameTextField.leftImage = .icUser
-        emailTextField.title = L10n.Placeholder.email
         emailTextField.leftImage = .icMail
         emailTextField.autocapitalizationType = .none
         emailTextField.keyboardType = .emailAddress
-        passwordTextField.title = L10n.Placeholder.password
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
-        ctaButton.setTitle(L10n.General.register, for: .normal)
+        
     }
     
-    // MARK: - Actions
+    private func setLocalize() {
+        titleLabel.text = L10n.Modules.RegisterViewController.title
+        usernameTextField.title = L10n.Placeholder.username
+        emailTextField.title = L10n.Placeholder.email
+        passwordTextField.title = L10n.Placeholder.password
+        ctaButton.setTitle(L10n.General.register, for: .normal)
+        loginButton.setTitle(L10n.General.login, for: .normal)
+        bottomLabel.text = L10n.Modules.RegisterViewController.bottomText
+    }
+}
+
+// MARK: - Actions
+extension RegisterViewController {
+    
     @objc
     private func loginButtonTapped() {
         viewModel.showLoginScreen()

@@ -18,10 +18,19 @@ protocol RegisterViewProtocol: RegisterViewDataSource, RegisterViewEventSource {
 }
 
 final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtocol {
-        
+    
+}
+
+// MARK: - Actions
+extension RegisterViewModel {
+    
     func showLoginScreen() {
         router.close()
     }
+}
+
+// MARK: - Network
+extension RegisterViewModel {
     
     func sendRegisterRequest(username: String, email: String, password: String) {
         showLoading?()
@@ -37,5 +46,4 @@ final class RegisterViewModel: BaseViewModel<RegisterRouter>, RegisterViewProtoc
             }
         }
     }
-    
 }
