@@ -66,7 +66,7 @@ extension WalkThroughViewController {
     
     private func addPageControl() {
         view.addSubview(pageControl)
-        pageControl.topToBottom(of: collectionView).constant = 60
+        pageControl.topToBottom(of: collectionView)
         pageControl.centerXToSuperview()
         pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .touchUpInside)
     }
