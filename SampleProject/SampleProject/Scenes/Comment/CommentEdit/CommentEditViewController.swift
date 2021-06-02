@@ -23,22 +23,32 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUIElements()
-        keyboardHelper.delegate = self
+        addSubViews()
         configureContents()
-        commentTextView.text = viewModel.commentText
+        setLocalize()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         commentTextView.becomeFirstResponder()
     }
+}
+
+// MARK: - UILayout
+extension CommentEditViewController {
     
-    private func configureContents() {
+    private func addSubViews() {
+        addCommentTextView()
+        addBottomView()
+    }
+    
+    private func addCommentTextView() {
         view.addSubview(commentTextView)
         commentTextView.edgesToSuperview(excluding: .bottom, insets: UIEdgeInsets(top: 26, left: 15, bottom: 0, right: 15), usingSafeArea: true)
         commentTextView.height(150)
-        
+    }
+    
+    private func addBottomView() {
         view.addSubview(bottomView)
         bottomView.widthToSuperview()
         bottomViewBottomConstraint = bottomView.bottomToSuperview(usingSafeArea: true)
@@ -51,13 +61,25 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
         saveButton.size(CGSize(width: 162.5, height: 50))
         saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure and Localize
+extension CommentEditViewController {
     
-    private func setUIElements() {
+    private func configureContents() {
         navigationItem.title = viewModel.title
-        saveButton.setTitle(L10n.Modules.CommentEditController.save, for: .normal)
+        keyboardHelper.delegate = self
+        commentTextView.text = viewModel.commentText
     }
     
-    // MARK: - Actions
+    private func setLocalize() {
+        saveButton.setTitle(L10n.Modules.CommentEditController.save, for: .normal)
+    }
+}
+
+// MARK: - Actions
+extension CommentEditViewController {
+    
     @objc
     private func saveButtonTapped() {
         guard let commentText = commentTextView.text, !commentText.isEmpty else {
@@ -66,7 +88,6 @@ final class CommentEditViewController: BaseViewController<CommentEditViewModel> 
         }
         viewModel.editComment(commentText: commentText)
     }
-
 }
 
 // MARK: - KeyboardHelper Delegate

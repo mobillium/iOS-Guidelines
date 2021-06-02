@@ -10,6 +10,7 @@ import Foundation
 
 protocol CommentEditViewDataSource {
     var title: String { get }
+    var commentText: String? { get }
 }
 
 protocol CommentEditViewEventSource {
@@ -34,7 +35,6 @@ final class CommentEditViewModel: BaseViewModel<CommentEditRouter>, CommentEditV
         self.commentText = commentText
         super.init(router: router)
     }
-    
 }
 
 // MARK: - Network
