@@ -26,23 +26,21 @@ final class HomeViewModel: BaseViewModel<HomeRouter>, HomeViewProtocol {
     var segmentedControlTitles: [String] = [L10n.Modules.Home.editorChoiceRecipes,
                                             L10n.Modules.Home.lastAddedRecipes]
     
-    var listType: ListType = .editorChoiceRecipes {
-        didSet {
-            router.pushRecipes(listType: listType)
-        }
-    }
-    
     var selectedSegmentIndex = 0
     var didSuccesLogout: VoidClosure?
+}
+
+// MARK: - Actions
+extension HomeViewModel {
     
     func pushDetailViewController(recipeId: Int) {
         router.pushRecipeDetail(recipeId: recipeId)
     }
-    
 }
 
 // MARK: - Network
 extension HomeViewModel {
+    
     func userLogout() {
         showLoading?()
         let request = LogoutRequest()

@@ -20,9 +20,9 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                                     SegmentioItem(title: viewModel.segmentedControlTitles[1], image: nil)], style: .onlyLabel, options: .options())
         return segmentView
     }()
-        
+    
     private let pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-
+    
     private lazy var subViewControllers: [UIViewController] = {
         return self.preparedViewControllers()
     }()
@@ -34,15 +34,29 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         addNavigationBarLogo()
         addSubViews()
         setSegmentHandler()
-        segmentView.selectedSegmentioIndex = viewModel.selectedSegmentIndex
-        setupPageViewController()
+        
+        configureContents()
+        subscribeViewModelEvents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         checkIsUserLogin()
     }
+    
+    private func subscribeViewModelEvents() {
+        viewModel.didSuccesLogout = { [weak self] in
+            guard let self = self else { return }
+            self.keychain.clear()
+            DefaultsKey.userId.remove()
+            self.navigationItem.rightBarButtonItem = .none
+        }
+    }
+}
 
+// MARK: - UILayout
+extension HomeViewController {
+    
     private func addSubViews() {
         definesPresentationContext = true
         view.addSubview(pageViewController.view)
@@ -56,8 +70,13 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         pageViewController.view.edgesToSuperview(excluding: .top, usingSafeArea: true)
         pageViewController.view.topToBottom(of: segmentView)
     }
+}
+
+// MARK: - Configure
+extension HomeViewController {
     
-    private func setupPageViewController() {
+    private func configureContents() {
+        segmentView.selectedSegmentioIndex = viewModel.selectedSegmentIndex
         pageViewController.delegate = self
         pageViewController.dataSource = self
         pageViewController.setViewControllers([subViewControllers[viewModel.selectedSegmentIndex]],
@@ -65,29 +84,18 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
                                               animated: true,
                                               completion: nil)
     }
-    
-    private func subscribeViewModelEvents() {
-        viewModel.didSuccesLogout = { [weak self] in
-            guard let self = self else { return }
-            self.keychain.clear()
-            DefaultsKey.userId.remove()
-            self.navigationItem.rightBarButtonItem = .none
-        }
-    }
 }
 
 // MARK: - Helper
 extension HomeViewController {
     private func preparedViewControllers() -> [UIViewController] {
         let editorChoiceRouter = RecipesRouter()
-        let editorChoiceViewModel = RecipesViewModel(router: editorChoiceRouter)
-        editorChoiceViewModel.listType = .editorChoiceRecipes
+        let editorChoiceViewModel = RecipesViewModel(recipesListingType: .editorChoiceRecipes, router: editorChoiceRouter)
         let editorChoiceviewController = RecipesViewController(viewModel: editorChoiceViewModel)
         editorChoiceRouter.viewController = editorChoiceviewController
         
         let lastAddedRouter = RecipesRouter()
-        let lastAddedRecipesViewModel = RecipesViewModel(router: lastAddedRouter)
-        lastAddedRecipesViewModel.listType = .lastAddedRecipes
+        let lastAddedRecipesViewModel = RecipesViewModel(recipesListingType: .lastAddedRecipes, router: lastAddedRouter)
         let lastAddedRecipesviewController = RecipesViewController(viewModel: lastAddedRecipesViewModel)
         lastAddedRouter.viewController = lastAddedRecipesviewController
         
@@ -139,7 +147,7 @@ extension HomeViewController: UIPageViewControllerDelegate, UIPageViewController
                             transitionCompleted completed: Bool) {
         if completed {
             if let currentViewController = pageViewController.viewControllers?.first,
-            let index = subViewControllers.firstIndex(of: currentViewController) {
+               let index = subViewControllers.firstIndex(of: currentViewController) {
                 segmentView.selectedSegmentioIndex = index
             }
         }
