@@ -11,7 +11,6 @@ import UIKit
 final class PasswordResetViewController: BaseViewController<PasswordResetViewModel> {
     
     private let titleLabel = UILabelBuilder()
-        .text(L10n.Modules.PasswordResetController.title)
         .textColor(.appCinder)
         .font(.font(.nunitoBold, size: .xxLarge))
         .build()
@@ -20,17 +19,20 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
         .axis(.vertical)
         .spacing(15)
         .build()
-    
     private var emailTextField = FloatLabelTextField()
     private var resetButton = ButtonFactory.createPrimaryButton(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureContents()
-        setUIElements()
+        addSubViews()
+        setLocalize()
     }
+}
+
+// MARK: - UILayout
+extension PasswordResetViewController {
     
-    private func configureContents() {
+    private func addSubViews() {
         view.addSubview(titleLabel)
         view.addSubview(stackView)
         titleLabel.topToSuperview(usingSafeArea: true).constant = 50
@@ -42,16 +44,27 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
         stackView.addArrangedSubview(resetButton)
         resetButton.addTarget(self, action: #selector(resetButtonTapped), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure and Localize
+extension PasswordResetViewController {
     
-    private func setUIElements() {
-        emailTextField.title = L10n.Placeholder.email
+    private func configureContents() {
         emailTextField.leftImage = .icMail
         emailTextField.autocapitalizationType = .none
         emailTextField.keyboardType = .emailAddress
-        resetButton.setTitle(L10n.Modules.PasswordResetController.reset, for: .normal)
     }
     
-    // MARK: - Actions
+    private func setLocalize() {
+        titleLabel.text = L10n.Modules.PasswordResetController.title
+        emailTextField.title = L10n.Placeholder.email
+        resetButton.setTitle(L10n.Modules.PasswordResetController.reset, for: .normal)
+    }
+}
+
+// MARK: - Actions
+extension PasswordResetViewController {
+    
     @objc
     private func resetButtonTapped() {
         guard let email = emailTextField.text, !email.isEmpty else {
@@ -63,5 +76,4 @@ final class PasswordResetViewController: BaseViewController<PasswordResetViewMod
         
         viewModel.passwordReset(email: email)
     }
-    
 }

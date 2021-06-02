@@ -18,6 +18,11 @@ protocol PasswordResetViewProtocol: PasswordResetViewDataSource, PasswordResetVi
 
 final class PasswordResetViewModel: BaseViewModel<PasswordResetRouter>, PasswordResetViewProtocol {
     
+}
+
+// MARK: - Network
+extension PasswordResetViewModel {
+    
     func passwordReset(email: String) {
         showLoading?()
         let request = ForgotPasswordRequest(email: email)
