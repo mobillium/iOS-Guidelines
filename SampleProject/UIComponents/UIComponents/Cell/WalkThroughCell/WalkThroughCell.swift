@@ -36,15 +36,19 @@ public class WalkThroughCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureContents()
+        addSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureContents()
+        addSubViews()
     }
-    
-    private func configureContents() {
+}
+
+// MARK: - UILayout
+extension WalkThroughCell {
+  
+    private func addSubViews() {
         contentView.backgroundColor = .appWhite
         
         contentView.addSubview(imageView)
@@ -57,6 +61,10 @@ public class WalkThroughCell: UICollectionViewCell, ReusableView {
         textStackView.addArrangedSubview(titleLabel)
         textStackView.addArrangedSubview(descriptionLabel)
     }
+}
+
+// MARK: - Set ViewModel
+extension WalkThroughCell {
     
     public func set(viewModel: WalkThroughCellProtocol) {
         self.viewModel = viewModel
@@ -64,5 +72,4 @@ public class WalkThroughCell: UICollectionViewCell, ReusableView {
         self.titleLabel.text = viewModel.titleText
         self.descriptionLabel.text = viewModel.descriptionText
     }
-    
 }

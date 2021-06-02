@@ -35,8 +35,9 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSubViews()
         configureContents()
-        configureContents()
+        setLocalize()
     }
 }
 
