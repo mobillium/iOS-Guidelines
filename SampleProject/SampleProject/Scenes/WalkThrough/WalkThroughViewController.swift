@@ -36,43 +36,67 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureContents()
-        configureCollectionView()
-        addButtonTarget()
+        configureContents()
+    }
+}
+
+// MARK: - UILayout
+extension WalkThroughViewController {
+    
+    private func addSubViews() {
+        addCollectionView()
+        addDismissButton()
+        addPageControl()
+        addNextButton()
     }
     
-    private func configureContents() {
-        view.backgroundColor = .white
-        
+    private func addCollectionView() {
         view.addSubview(collectionView)
         collectionView.edgesToSuperview(excluding: [.bottom], usingSafeArea: true)
-        
+    }
+    
+    private func addDismissButton() {
         view.addSubview(dismissButton)
         dismissButton.topToSuperview(usingSafeArea: true).constant = 25
         dismissButton.trailingToSuperview().constant = -20
         dismissButton.size(.init(width: 18, height: 18))
-        
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+    }
+    
+    private func addPageControl() {
         view.addSubview(pageControl)
         pageControl.topToBottom(of: collectionView).constant = 60
         pageControl.centerXToSuperview()
-        
+        pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .touchUpInside)
+    }
+    
+    private func addNextButton() {
         view.addSubview(nextButton)
         nextButton.edgesToSuperview(excluding: .top, insets: UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15), usingSafeArea: true)
         nextButton.topToBottom(of: pageControl).constant = 20
-        nextButton.setTitle(L10n.Modules.WalkThrough.next, for: .normal)
+        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure and Localize
+extension WalkThroughViewController {
     
-    private func configureCollectionView() {
+    private func configureContents() {
+        view.backgroundColor = .white
         collectionView.dataSource = self
         collectionView.delegate = self
     }
     
-    private func addButtonTarget() {
-        nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
-        pageControl.addTarget(self, action: #selector(pageControlValueChanged), for: .touchUpInside)
-        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+    private func setLocalize() {
+        nextButton.setTitle(L10n.Modules.WalkThrough.next, for: .normal)
     }
+}
+
+// MARK: - Actions
+extension WalkThroughViewController {
     
-    @IBAction private func nextButtonTapped() {
+    @objc
+    private func nextButtonTapped() {
         if pageControl.currentPage == viewModel.numberOfItemsAt(section: 0) - 1 {
             viewModel.didFinishWalkThroughScene()
         }
@@ -83,14 +107,20 @@ final class WalkThroughViewController: BaseViewController<WalkThroughViewModel> 
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
-    @IBAction private func pageControlValueChanged(_ sender: UIPageControl) {
+    @objc
+    private func pageControlValueChanged(_ sender: UIPageControl) {
         let current = sender.currentPage
         collectionView.setContentOffset(CGPoint(x: view.frame.width * CGFloat(current), y: 0), animated: true)
     }
     
-    @IBAction private func dismissButtonTapped() {
+    @objc
+    private func dismissButtonTapped() {
         viewModel.didFinishWalkThroughScene()
     }
+}
+
+// MARK: - UIScrollViewDelegate
+extension WalkThroughViewController {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let xPoint = targetContentOffset.pointee.x
