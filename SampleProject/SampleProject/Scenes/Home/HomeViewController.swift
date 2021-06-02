@@ -32,7 +32,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         addNavigationBarLogo()
-        configureContents()
+        addSubViews()
         setSegmentHandler()
         segmentView.selectedSegmentioIndex = viewModel.selectedSegmentIndex
         setupPageViewController()
@@ -43,7 +43,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         checkIsUserLogin()
     }
 
-    private func configureContents() {
+    private func addSubViews() {
         definesPresentationContext = true
         view.addSubview(pageViewController.view)
         view.addSubview(segmentView)
