@@ -16,13 +16,22 @@ protocol CommentListViewDataSource {
     func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
 }
 
-protocol CommentListViewEventSource {}
+protocol CommentListViewEventSource {
+    var fetchCommentsDidSuccess: VoidClosure? { get set }
+    var postCommentDidSuccess: VoidClosure? { get set }
+    var deleteCommentDidSuccess: IndexPathClosure? { get set }
+}
 
-protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {}
+protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEventSource {
+    func sendButtonTapped(commentText: String)
+    func moreButtonTapped(at indexPath: IndexPath)
+    func fetchComments()
+    func fetchMorePages()
+}
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
     
-    let title = "YORUMLAR"
+    let title = L10n.Modules.CommentListController.title
     private let recipeId: Int
     private let keychain = KeychainSwift()
     var fetchCommentsDidSuccess: VoidClosure?
@@ -47,8 +56,12 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     }
     
     var cellItems: [CommentCellProtocol] = []
+}
+
+// MARK: - Actions
+extension CommentListViewModel {
     
-    func sendButtonDidTap(commentText: String) {
+    func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
             router.presentLoginWarningPopup(loginHandler: { [weak self] in
                 self?.router.placeLoginOnWindow()
@@ -60,13 +73,13 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     
     func moreButtonTapped(at indexPath: IndexPath) {
         router.presentCommentEditDeleteAlertView(edit: { [weak self] in
-            self?.editCommentButtonDidTap(indexPath: indexPath)
+            self?.editCommentButtonTapped(indexPath: indexPath)
         }, delete: { [weak self] in
-            self?.deleteCommentButtonDidTap(indexPath: indexPath)
+            self?.deleteCommentRequest(indexPath: indexPath)
         })
     }
     
-    private func editCommentButtonDidTap(indexPath: IndexPath) {
+    private func editCommentButtonTapped(indexPath: IndexPath) {
         let viewModel = cellItems[indexPath.row]
         let commentId = viewModel.commentId
         let commentText = viewModel.commentText
@@ -81,7 +94,6 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
                                commentText: commentText,
                                editRecipeCommentDidSuccess: editRecipeCommentDidSuccess)
     }
-    
 }
 
 // MARK: - Network
@@ -110,13 +122,13 @@ extension CommentListViewModel {
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 if self.isPagingEnabled { self.page += 1 }
                 self.fetchCommentsDidSuccess?()
-            case .failure(let error):
-                if self.page == 1 { self.showWarningToast?("\(error.localizedDescription) Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.") }
+            case .failure(_ ):
+                if self.page == 1 { self.showWarningToast?(L10n.Error.refresh) }
             }
         }
     }
     
-    private func deleteCommentButtonDidTap(indexPath: IndexPath) {
+    private func deleteCommentRequest(indexPath: IndexPath) {
         let commentId = cellItems[indexPath.row].commentId
         showLoading?()
         let request = DeleteRecipeCommentRequest(recipeId: recipeId, commentId: commentId)

@@ -60,6 +60,7 @@
 		A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2426161623008B3C46 /* WalkThroughViewController.swift */; };
 		A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */; };
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
+		A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
 		A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */; };
 		A2D7BB582665126600E3F3A2 /* CommentListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */; };
@@ -185,6 +186,7 @@
 		A2176A2426161623008B3C46 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewModel.swift; sourceTree = "<group>"; };
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
+		A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
 		A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRoute.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 			children = (
 				7A73C7FB25CC178000322233 /* AppDelegate.swift */,
 				84BBEF252632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift */,
+				A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */,
 				B321F657263188A50082484C /* RecipesViewModel.swift in Sources */,
 				7A980AEE2553171A00494520 /* ModalTransition.swift in Sources */,
+				A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */,
 				A2D7BB582665126600E3F3A2 /* CommentListRoute.swift in Sources */,
 				A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,

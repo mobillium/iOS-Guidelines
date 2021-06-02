@@ -22,7 +22,7 @@ protocol CommentEditViewProtocol: CommentEditViewDataSource, CommentEditViewEven
 
 final class CommentEditViewModel: BaseViewModel<CommentEditRouter>, CommentEditViewProtocol {
     
-    let title = "YORUM DÜZENLE"
+    let title = L10n.Modules.CommentEditController.title
     private let recipeId: Int
     private let commentId: Int
     let commentText: String?

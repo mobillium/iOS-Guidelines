@@ -27,6 +27,8 @@ public enum L10n {
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }
+    /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
+    public static let refresh = L10n.tr("Error", "refresh")
     public enum Key {
       /// Username
       public static let username = L10n.tr("Error", "Key.username")
@@ -60,6 +62,12 @@ public enum L10n {
     public enum CommentEditController {
       /// Kaydet
       public static let save = L10n.tr("Modules", "CommentEditController.save")
+      /// YORUM DÜZENLE
+      public static let title = L10n.tr("Modules", "CommentEditController.title")
+    }
+    public enum CommentListController {
+      /// YORUMLAR
+      public static let title = L10n.tr("Modules", "CommentListController.title")
     }
     public enum Favorites {
       /// TÜMÜNÜ GÖR

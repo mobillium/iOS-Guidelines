@@ -57,53 +57,13 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = viewModel.title
-        keyboardHelper.delegate = self
+        addSubViews()
         configureContents()
-        setupCollectionView()
         viewModel.fetchComments()
-        subscribeViewModelEvents()
-        setupKeyboard()
+        subscribeViewModel()
     }
     
-    private func configureContents() {
-        view.addSubview(bottomView)
-        bottomView.widthToSuperview()
-        bottomViewBottomConstraint = bottomView.bottomToSuperview(usingSafeArea: true)
-        bottomViewBottomConstraint?.isActive = true
-        
-        bottomView.addSubview(commentTextView)
-        commentTextView.topToSuperview(bottomView.topAnchor, offset: 10, priority: .defaultLow)
-        commentTextView.edgesToSuperview(excluding: [.right, .top], insets: UIEdgeInsets(top: 0, left: 15, bottom: 10, right: 0))
-        
-        bottomView.addSubview(sendButton)
-        sendButton.trailingToSuperview(offset: 15)
-        sendButton.centerYToSuperview()
-        sendButton.leftToRight(of: commentTextView, offset: 15)
-        sendButton.size(.init(width: 40, height: 40))
-        
-        view.addSubview(collectionView)
-        collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
-        collectionView.bottomToTop(of: bottomView)
-        
-        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
-        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
-    }
-    
-    private func setupCollectionView() {
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.contentInset.bottom = 15
-        collectionView.refreshControl = refreshControl
-    }
-    
-    private func setupKeyboard() {
-        if isKeyboardOpen {
-            commentTextView.becomeFirstResponder()
-        }
-    }
-    
-    private func subscribeViewModelEvents() {
+    private func subscribeViewModel() {
         viewModel.fetchCommentsDidSuccess = { [weak self] in
             guard let self = self else { return }
             self.collectionView.reloadData()
@@ -120,15 +80,71 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
             self.collectionView.deleteItems(at: [indexPath])
         }
     }
+}
+
+// MARK: - UILayout
+extension CommentListViewController {
     
-    // MARK: - Actions
+    private func addSubViews() {
+        addCollectionView()
+        addBottomView()
+    }
+    
+    private func addCollectionView() {
+        view.addSubview(collectionView)
+        collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
+    }
+    
+    private func addBottomView() {
+        view.addSubview(bottomView)
+        bottomView.topToBottom(of: collectionView)
+        bottomView.edgesToSuperview(excluding: [.top, .bottom])
+        bottomViewBottomConstraint = bottomView.bottomToSuperview(usingSafeArea: true)
+        bottomViewBottomConstraint?.isActive = true
+        
+        bottomView.addSubview(commentTextView)
+        commentTextView.topToSuperview(bottomView.topAnchor, offset: 10, priority: .defaultLow)
+        commentTextView.edgesToSuperview(excluding: [.right, .top], insets: UIEdgeInsets(top: 0, left: 15, bottom: 10, right: 0))
+        
+        bottomView.addSubview(sendButton)
+        sendButton.trailingToSuperview(offset: 15)
+        sendButton.centerYToSuperview()
+        sendButton.leftToRight(of: commentTextView, offset: 15)
+        sendButton.size(.init(width: 40, height: 40))
+        
+        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
+    }
+}
+
+// MARK: - Configure
+extension CommentListViewController {
+    
+    private func configureContents() {
+        navigationItem.title = viewModel.title
+        keyboardHelper.delegate = self
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.contentInset.bottom = 15
+        collectionView.refreshControl = refreshControl
+
+        if isKeyboardOpen {
+            commentTextView.becomeFirstResponder()
+        }
+    }
+}
+
+// MARK: - Actions
+extension CommentListViewController {
+    
     @objc
     private func sendButtonDidTap() {
         guard let commentText = commentTextView.text, !commentText.isEmpty else {
             showWarningToast(message: L10n.Error.empty("Yorum"))
             return
         }
-        viewModel.sendButtonDidTap(commentText: commentText)
+        viewModel.sendButtonTapped(commentText: commentText)
     }
     
     @objc
@@ -136,10 +152,9 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         viewModel.cellItems.isEmpty ? viewModel.fetchComments() : collectionView.reloadData()
         refreshControl.endRefreshing()
     }
-        
 }
 
-// MARK: - ScrollView Methods
+// MARK: - ScrollViewDelegate
 extension CommentListViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -204,7 +219,6 @@ extension CommentListViewController: UICollectionViewDataSource {
             self.loadingFooterView?.activityIndicator.stopAnimating()
         }
     }
-    
 }
 
 // swiftlint:disable line_length
@@ -213,13 +227,13 @@ extension CommentListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
-    }
-    
+    }    
 }
 // swiftlint:enable line_length
 
 // MARK: - KeyboardHelper Delegate
 extension CommentListViewController: KeyboardHelperDelegate {
+    
     func keyboardWillShow(_ keyboardHeight: CGFloat) {
         UIView.animate(withDuration: 0.3) { [weak self] in
             guard let self = self else { return }
@@ -235,5 +249,4 @@ extension CommentListViewController: KeyboardHelperDelegate {
             self.view.layoutIfNeeded()
         }
     }
-        
 }
