@@ -91,6 +91,9 @@ target 'Utilities' do
   
   # Pods for Utilities
   
+  # Helper
+  pod 'MobilliumUserDefaults', '~> 2.0'
+  
   target 'UtilitiesTests' do
     inherit! :search_paths
     # Pods for testing

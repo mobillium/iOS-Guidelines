@@ -22,6 +22,16 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .spacing(15)
         .build()
     
+    private let topTitleView = RecipeDetailTitlesView()
+    
+    private let countInfoStackView = UIStackViewBuilder()
+        .axis(.horizontal)
+        .spacing(1)
+        .distribution(.fillEqually)
+        .build()
+    private let commentCountView = CountInfoView()
+    private let likeCountView = CountInfoView()
+    
     private let userView = UserView(userViewType: .withFollowButton)
     private let ingredientsView = RecipeDetailInfoView()
     private let stepsView = RecipeDetailInfoView()
@@ -37,48 +47,107 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private let commentsSeparator = UIViewBuilder()
         .backgroundColor(.appZircon)
         .build()
-    private let commentsCollectionView = UICollectionViewBuilder<DynamicHeightCollectionView>()
-        .scrollDirection(.vertical)
-        .registerCell(CommentCell.self, reuseIdentifier: CommentCell.defaultReuseIdentifier)
-        .showsVerticalScrollIndicator(false)
-        .bounces(false)
-        .build()
+    
+    private let commentsCollectionView: DynamicHeightCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        let width = UIScreen.main.bounds.size.width
+        layout.estimatedItemSize = CGSize(width: width, height: 10)
+        let collectionView = DynamicHeightCollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .appSecondaryBackground
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.register(CommentCell.self)
+        return collectionView
+    }()
     
     private let commentButtonContainerView = UIViewBuilder()
         .backgroundColor(.clear)
         .build()
     private let commentButton = ButtonFactory.createPrimaryButton(style: .large)
     
+    private let recipeHeaderView = RecipeDetailHeaderView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureContents()
+        addSubviews()
         setLocalize()
-        fillData()
         subscribeViewModel()
         configureCollectionView()
         viewModel.getRecipeComment(2)
+        viewModel.getRecipeDetail(26)
+        subscribeActions()
     }
     
-    private func configureContents() {
-        view.backgroundColor = .appSecondaryBackground
+    private func subscribeViewModel() {
+        viewModel.reloadCommentData = { [weak self] in
+            self?.commentsCollectionView.reloadData()
+        }
         
+        viewModel.reloadDetailData = { [weak self] in
+            self?.fillData()
+        }
+        
+        viewModel.toggleIsLiked = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.isLiked.toggle()
+            
+            let isLiked = self.viewModel.isLiked
+            if isLiked {
+                self.likeCountView.iconColor = .appRed
+                self.viewModel.likeCount? += 1
+                self.likeCountView.count = self.viewModel.likeCount
+            } else {
+                self.likeCountView.iconColor = .appCinder
+                self.viewModel.likeCount? -= 1
+                self.likeCountView.count = self.viewModel.likeCount
+            }
+        }
+        
+        viewModel.toggleIsFollowing = { [weak self] in
+            self?.userView.isFollowing.toggle()
+        }
+    }
+}
+
+// MARK: - UILayout
+extension RecipeDetailViewController {
+    
+    private func addSubviews() {
+        view.backgroundColor = .appSecondaryBackground
+        addScrollView()
+        addContentStackView()
+        addCommentsContainerView()
+    }
+    
+    private func addScrollView() {
         view.addSubview(scrollView)
         scrollView.edgesToSuperview(excluding: .top)
         scrollView.topToSuperview(usingSafeArea: true)
-        
+    }
+    
+    private func addContentStackView() {
         scrollView.addSubview(contentStackView)
         contentStackView.widthToSuperview()
         contentStackView.edgesToSuperview()
         
-        commentButtonContainerView.addSubview(commentButton)
-        commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
-        
+        contentStackView.addArrangedSubview(recipeHeaderView)
+        contentStackView.setCustomSpacing(0, after: recipeHeaderView)
+        contentStackView.addArrangedSubview(topTitleView)
+        contentStackView.setCustomSpacing(1, after: topTitleView)
+        contentStackView.addArrangedSubview(countInfoStackView)
         contentStackView.addArrangedSubview(userView)
         contentStackView.addArrangedSubview(ingredientsView)
         contentStackView.addArrangedSubview(stepsView)
         contentStackView.addArrangedSubview(commentsContainerView)
         contentStackView.addArrangedSubview(commentButtonContainerView)
         
+        countInfoStackView.addArrangedSubview(commentCountView)
+        countInfoStackView.addArrangedSubview(likeCountView)
+        recipeHeaderView.aspectRatio(1)
+    }
+    
+    private func addCommentsContainerView() {
         commentsContainerView.addSubview(commentsTitleLabel)
         commentsContainerView.addSubview(commentsSeparator)
         commentsContainerView.addSubview(commentsCollectionView)
@@ -91,9 +160,25 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         
         commentsCollectionView.edgesToSuperview(excluding: .top)
         commentsCollectionView.topToBottom(of: commentsSeparator)
+        
+        commentButtonContainerView.addSubview(commentButton)
+        commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
+    }
+}
+
+// MARK: - Configure and Localize
+extension RecipeDetailViewController {
+    
+    private func configureCollectionView() {
+        commentsCollectionView.dataSource = self
+        commentsCollectionView.delegate = self
     }
     
     private func setLocalize() {
+        commentCountView.icon = .icComment
+        commentCountView.info = L10n.General.comment
+        likeCountView.icon = .icHeart.withRenderingMode(.alwaysTemplate)
+        likeCountView.info = L10n.General.like
         ingredientsView.title = L10n.General.recipeIngredients
         ingredientsView.icon = .icRestaurant
         stepsView.title = L10n.General.recipeSteps
@@ -102,8 +187,17 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     }
     
     private func fillData() {
+        recipeHeaderView.recipeHeaderData = viewModel.recipeHeaderCellItems
+        topTitleView.recipeName = viewModel.recipeName
+        topTitleView.categoryName = viewModel.categoryName
+        topTitleView.timeDifferenceText = viewModel.timeDifferenceText
+        commentCountView.count = viewModel.commentCount
+        likeCountView.count = viewModel.likeCount
+        likeCountView.iconColor = viewModel.isLiked ? .appRed : .appCinder
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
+        userView.userImageUrl = viewModel.userImageUrl
+        userView.isFollowing = viewModel.isFollowing
         ingredientsView.iconSubtitle = viewModel.numberOfPeople
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
@@ -111,16 +205,21 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         commentsCollectionView.reloadData()
         commentsCollectionView.layoutIfNeeded()
     }
+}
+
+// MARK: - Actions
+extension RecipeDetailViewController {
     
-    private func subscribeViewModel() {
-        viewModel.reloadData = { [weak self] in
-            self?.commentsCollectionView.reloadData()
+    private func subscribeActions() {
+        likeCountView.iconButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.likeButtonTapped()
         }
-    }
-    
-    private func configureCollectionView() {
-        commentsCollectionView.dataSource = self
-        commentsCollectionView.delegate = self
+        
+        userView.followButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.viewModel.followButtonTapped()
+        }
     }
 }
 
@@ -128,6 +227,9 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
 extension RecipeDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if viewModel.numberOfItemsAt(section: section) > 3 {
+            return 3
+        }
         return viewModel.numberOfItemsAt(section: section)
     }
     
@@ -149,7 +251,7 @@ extension RecipeDetailViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        .zero
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

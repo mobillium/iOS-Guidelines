@@ -25,7 +25,7 @@
 "WalkThrough.secondTitle" = "Finding recipes were not that easy.";
 "WalkThrough.thirdTitle" = "Add new recipe.";
 "WalkThrough.fourthTitle" = "Share recipes with others.";
-"WalkThrough.descriptionText" = "Fodamy is the best place to find your \n favorite recipes in all around the world.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your favorite recipes in all around the world.";
 
 
 // MARK: - Login
@@ -36,6 +36,13 @@
 // MARK: - Register
 "RegisterViewController.title" = "Üye Ol";
 "RegisterViewController.bottomText" = "Hesabın mı var?";
+
+// MARK: - CommentEdit
+"CommentEditController.title" = "YORUM DÜZENLE";
+"CommentEditController.save" = "Kaydet";
+
+// MARK: - CommentList
+"CommentListController.title" = "YORUMLAR";
 
 // MARK: - PasswordReset
 "PasswordResetController.title" = "Şifre Sıfırlama";
