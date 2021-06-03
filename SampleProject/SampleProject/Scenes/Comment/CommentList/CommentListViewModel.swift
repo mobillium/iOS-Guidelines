@@ -17,7 +17,7 @@ protocol CommentListViewDataSource {
 }
 
 protocol CommentListViewEventSource {
-    var fetchCommentsDidSuccess: VoidClosure? { get set }
+    var reloadData: VoidClosure? { get set }
     var postCommentDidSuccess: VoidClosure? { get set }
     var deleteCommentDidSuccess: IndexPathClosure? { get set }
 }
@@ -34,7 +34,7 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
     let title = L10n.Modules.CommentListController.title
     private let recipeId: Int
     private let keychain = KeychainSwift()
-    var fetchCommentsDidSuccess: VoidClosure?
+    var reloadData: VoidClosure?
     var postCommentDidSuccess: VoidClosure?
     var deleteCommentDidSuccess: IndexPathClosure?
     
@@ -84,9 +84,11 @@ extension CommentListViewModel {
         let commentId = viewModel.commentId
         let commentText = viewModel.commentText
         
-        let editCommentDidSuccess: StringClosure = { text in
+        let editCommentDidSuccess: StringClosure = { [weak self] text in
             viewModel.commentText = text
             viewModel.commentTextDidChanged?()
+            self?.reloadData?()
+            
         }
         
         router.pushCommentEdit(recipeId: recipeId,
@@ -121,7 +123,7 @@ extension CommentListViewModel {
                 })
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 if self.isPagingEnabled { self.page += 1 }
-                self.fetchCommentsDidSuccess?()
+                self.reloadData?()
             case .failure(_ ):
                 if self.page == 1 { self.showWarningToast?(L10n.Error.refresh) }
             }

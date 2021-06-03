@@ -24,7 +24,7 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         .numberOfLines(0)
         .build()
     
-    public let moreButton = UIButtonBuilder()
+    private let moreButton = UIButtonBuilder()
         .backgroundColor(.clear)
         .image(UIImage.icMore.withRenderingMode(.alwaysTemplate))
         .tintColor(.appCinder)
@@ -35,6 +35,12 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         width.isActive = true
         return width
     }()
+    
+    public var isMoreButtonHidden: Bool? {
+        willSet {
+            moreButton.isHidden = newValue ?? false
+        }
+    }
     
     weak var viewModel: CommentCellProtocol?
     
@@ -111,7 +117,6 @@ public extension CommentCell {
         self.timeDifferenceLabel.text = viewModel.timeDifferenceText
         self.commentLabel.text = viewModel.commentText
         self.moreButton.isHidden = !(viewModel.userId == DefaultsKey.userId.value)
-        self.moreButton.isHidden = true
         self.viewModel?.commentTextDidChanged = { [weak self] in
             self?.commentLabel.text = self?.viewModel?.commentText
         }

@@ -64,7 +64,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
     }
     
     private func subscribeViewModel() {
-        viewModel.fetchCommentsDidSuccess = { [weak self] in
+        viewModel.reloadData = { [weak self] in
             guard let self = self else { return }
             self.collectionView.reloadData()
         }
@@ -227,7 +227,15 @@ extension CommentListViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 15
-    }    
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        let height: CGFloat = viewModel.isPagingEnabled ? 100 : 0
+        return CGSize(width: collectionView.bounds.size.width, height: height)
+    }
 }
 // swiftlint:enable line_length
 
