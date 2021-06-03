@@ -24,5 +24,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppRouter.shared.startApp()
         return true
     }
-
 }

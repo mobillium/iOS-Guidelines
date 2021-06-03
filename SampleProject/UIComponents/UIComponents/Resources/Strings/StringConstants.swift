@@ -104,7 +104,7 @@ public enum L10n {
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")
     }
     public enum WalkThrough {
-      /// Fodamy is the best place to find your \n favorite recipes in all around the world.
+      /// Fodamy is the best place to find your favorite recipes in all around the world.
       public static let descriptionText = L10n.tr("Modules", "WalkThrough.descriptionText")
       /// Welcome to Fodamy Network!
       public static let firstTitle = L10n.tr("Modules", "WalkThrough.firstTitle")

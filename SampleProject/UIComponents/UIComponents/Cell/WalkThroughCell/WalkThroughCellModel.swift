@@ -33,5 +33,4 @@ public final class WalkThroughCellModel: WalkThroughCellProtocol {
         self.titleText = titleText
         self.descriptionText = descriptionText
     }
-    
 }
