@@ -7,12 +7,14 @@
 //
 
 import Alamofire
+import KeychainSwift
+import Utilities
 
 public class APIRequestInterceptor: RequestInterceptor {
     
     public static let shared = APIRequestInterceptor()
     
-    public var accessToken: String?
+    public var accessToken = KeychainSwift().get(Keychain.token)
     
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
         var urlRequest = urlRequest
