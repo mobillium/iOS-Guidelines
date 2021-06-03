@@ -31,6 +31,7 @@ target 'SampleProject' do
   pod 'Kingfisher', '~> 6.2'
   pod 'SwiftEntryKit', '~> 1.2'
   pod 'SKPhotoBrowser', '~> 6.1'
+  pod 'KeychainSwift', '~> 19.0'
   
   target 'SampleProjectTests' do
     inherit! :search_paths

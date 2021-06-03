@@ -36,6 +36,12 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var steps: String?
     var time: String?
     var reloadData: VoidClosure?
+    private let recipeId: Int
+    
+    init(recipeId: Int, router: RecipeDetailRouter) {
+        self.recipeId = recipeId
+        super.init(router: router)
+    }
     
     func numberOfItemsAt(section: Int) -> Int {
         return cellItems.count

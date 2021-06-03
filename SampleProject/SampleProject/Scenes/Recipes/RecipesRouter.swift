@@ -6,4 +6,6 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-final class RecipesRouter: Router {}
+final class RecipesRouter: Router, RecipesRouter.Routes {
+    typealias Routes = RecipeDetailRoute
+}

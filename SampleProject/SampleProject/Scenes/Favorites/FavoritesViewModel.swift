@@ -9,88 +9,95 @@
 import Foundation
 
 protocol FavoritesViewDataSource {
+    var numberOfItems: Int { get }
     
-    var mainCategories: [MainCategory] { get }
-    var currentPage: Int { get }
-    var lastPage: Int { get }
-    var categoryWithRecipesClosure: BoolClosure? { get }
-    
-    func getCategoryWithRecipes(categoryWithRecipesClosure: Bool)
+    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol
 }
 
 protocol FavoritesViewEventSource {
-    func tapSeeAllButton(categoryId: Int)
+    var didSuccessFetchCategories: VoidClosure? { get set }
+    var didSuccesLogout: VoidClosure? { get set }
 }
 
-protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {}
+protocol FavoritesViewProtocol: FavoritesViewDataSource, FavoritesViewEventSource {
+    func fetchCategories()
+    func fetchMorePages()
+    func seeAllButtonTapped(categoryId: Int, title: String)
+    func didSelectRecipe(recipeId: Int)
+    func userLogout()
+}
 
 final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewProtocol {
-
-    var categoryWithRecipesClosure: BoolClosure?
-    var mainCategories: [MainCategory] = []
-    var lastPage: Int = 1
-    var currentPage: Int = 1 {
-        didSet {
-            isLoadingList = true
-            getCategoryWithRecipes(categoryWithRecipesClosure: true)
-        }
+    
+    private var page = 1
+    var isRequestEnabled = false
+    var isPagingEnabled = false
+    var cellItems: [CategoryWithRecipesCellModel] = []
+    var didSuccessFetchCategories: VoidClosure?
+    var didSuccesLogout: VoidClosure?
+    
+    var numberOfItems: Int {
+        return cellItems.count
     }
-    var isLoadingList: Bool = true
-
-    func tapSeeAllButton(categoryId: Int) {
-        router.pushRecipes(listType: .categoryRecipes(categoryId: categoryId))
+    
+    func cellItem(for indexPath: IndexPath) -> CategoryWithRecipesCellProtocol {
+        let cellItem = cellItems[indexPath.item]
+        return cellItem
     }
 }
 
+// MARK: Actions
 extension FavoritesViewModel {
     
-    func getCategoryWithRecipes(categoryWithRecipesClosure: Bool = false) {
-        let request = GetCategoriesWithRecipesRequest(page: currentPage)
-        dataProvider.request(for: request) { (result) in
-            self.isLoadingList = false
+    func seeAllButtonTapped(categoryId: Int, title: String) {
+        router.pushRecipes(categoryId: categoryId, title: title)
+    }
+    
+    func didSelectRecipe(recipeId: Int) {
+        router.pushRecipeDetail(recipeId: recipeId)
+    }
+    
+    func fetchMorePages() {
+        fetchCategories()
+    }
+}
+
+// MARK: - Network
+extension FavoritesViewModel {
+    
+    func fetchCategories() {
+        self.isRequestEnabled = false
+        if page == 1 { showActivityIndicatorView?() }
+        let request = GetCategoriesWithRecipesRequest(page: page)
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideActivityIndicatorView?()
+            self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                self.lastPage = response.pagination.lastPage
-                self.mainCategories.append(contentsOf: response.data)
-                self.categoryWithRecipesClosure?(categoryWithRecipesClosure)
-            case .failure:
-                print("error")
+                let cellItems = response.data.map({ CategoryWithRecipesCellModel(category: $0) })
+                self.cellItems.append(contentsOf: cellItems)
+                self.page += 1
+                self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
+                self.didSuccessFetchCategories?()
+            case .failure(_ ):
+                if self.page == 1 { self.showWarningToast?("æLütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.") }
             }
         }
-
-    }
-}
-
-extension FavoritesViewModel {
-    
-    func getCategoryWithRecipesCellModel(indexRow: Int) -> CategoryWithRecipesCellModel {
-        
-        let mainCategory = self.mainCategories[indexRow]
-        let categoryWithRecipesCellModel = CategoryWithRecipesCellModel(categoryId: mainCategory.id,
-                                                                        categoryImageURL: mainCategory.recipes.first?.category.imageUrl?.url,
-                                                                        categoryName: mainCategory.name,
-                                                                        cellItems: recipeToRecipeCellModel(recipes: mainCategory.recipes))
-        return categoryWithRecipesCellModel
     }
     
-    private func recipeToRecipeCellModel(recipes: [Recipe]) -> [RecipeCellModel] {
-        
-        var recipeCellModel: [RecipeCellModel] = []
-        for recipe in recipes {
-            let model = RecipeCellModel(recipeId: recipe.id,
-                                        userId: recipe.user.id,
-                                        userImageUrl: recipe.user.image?.url,
-                                        username: recipe.user.username,
-                                        userRecipeAndFollowerCountText: recipe.user.recipeCount.toString,
-                                        recipeTitle: recipe.title,
-                                        categoryName: recipe.category.name,
-                                        recipeImageUrl: recipe.images.first?.url,
-                                        recipeCommnetAndLikeCountText: recipe.likeCount.toString,
-                                        isEditorChoice: recipe.isEditorChoice)
-            recipeCellModel.append(model)
+    func userLogout() {
+        showLoading?()
+        let request = LogoutRequest()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            self.hideLoading?()
+            switch result {
+            case .success(_ ):
+                self.didSuccesLogout?()
+            case .failure(let error):
+                self.showWarningToast?(error.localizedDescription)
+            }
         }
-        
-        return recipeCellModel
     }
-    
 }

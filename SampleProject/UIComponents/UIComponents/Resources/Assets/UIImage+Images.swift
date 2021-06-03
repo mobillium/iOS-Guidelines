@@ -10,6 +10,10 @@ public extension UIImage {
       return Asset.Images.imgEditorsPick.image
   }
 
+  static var imgLogoFodamy: UIImage {
+      return Asset.Images.imgLogoFodamy.image
+  }
+
   static var imgWalkthrough1: UIImage {
       return Asset.Images.imgWalkthrough1.image
   }

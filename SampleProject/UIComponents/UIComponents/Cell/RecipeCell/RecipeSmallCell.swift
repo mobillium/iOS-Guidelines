@@ -111,13 +111,14 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
     
     private func configureCellShadowAndRadius() {
         contentView.layer.cornerRadius = 4
+        layer.cornerRadius = 4
+        layer.masksToBounds = false
         contentView.clipsToBounds = true
-        contentView.layer.masksToBounds = false
-        contentView.layer.borderWidth = 0.0
-        contentView.layer.shadowColor = UIColor.appCinder.cgColor
-        contentView.layer.shadowOffset = .zero
-        contentView.layer.shadowRadius = 4.0
-        contentView.layer.shadowOpacity = 0.2
+        layer.borderWidth = 0.0
+        layer.shadowColor = UIColor.appCinder.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 0.2
     }
 }
 
@@ -125,8 +126,8 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
 public extension RecipeSmallCell {
     func set(with viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
-        self.recipeImageView.setImage(viewModel.recipeImageUrl)
-        self.userImageView.setImage(viewModel.userImageUrl)
+        self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
+        self.userImageView.setImageScaled(viewModel.userImageUrl)
         self.usernameLabel.text = viewModel.username
         self.recipeTitleLabel.text = viewModel.recipeTitle
         self.recipeCommentAndLikeCountLabel.text = viewModel.recipeCommnetAndLikeCountText

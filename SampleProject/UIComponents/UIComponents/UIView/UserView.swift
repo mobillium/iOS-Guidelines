@@ -13,7 +13,6 @@ public class UserView: UIView {
     private let userImageView = UIImageViewBuilder()
         .cornerRadius(20)
         .clipsToBounds(true)
-        .masksToBounds(false)
         .contentMode(.scaleToFill)
         .build()
     

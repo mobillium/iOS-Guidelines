@@ -37,7 +37,7 @@ public class RecipeCellModel: RecipeCellProtocol {
     public var categoryName: String?
     public var recipeImageUrl: String?
     public var recipeCommnetAndLikeCountText: String?
-    public var isEditorChoice: Bool = false
+    public var isEditorChoice = false
     public var followButtonTapped: VoidClosure?
     
     public init(recipeId: Int,

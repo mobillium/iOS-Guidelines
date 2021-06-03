@@ -30,6 +30,7 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         view.backgroundColor = .appWhite
         subscribeLoading()
         subscribeActivityIndicator()
+        subscribeToast()
     }
     
     private func subscribeActivityIndicator() {
@@ -50,10 +51,28 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         }
     }
     
+    private func subscribeToast() {
+        viewModel.showWarningToast = { text in
+            ToastPresenter.showWarningToast(text: text)
+        }
+    }
+    
     #if DEBUG
     deinit {
         debugPrint("deinit \(self)")
     }
     #endif
     
+}
+
+// MARK: - NavigationBar Logo
+extension BaseViewController {
+    func addNavigationBarLogo() {
+        let image = UIImage.imgLogoFodamy
+        let imageView = UIImageView()
+        imageView.size(CGSize(width: 110, height: 30))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = image
+        navigationItem.titleView = imageView
+    }
 }
