@@ -6,8 +6,8 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"empty" = "%@ can not be empty.";
+"empty" = "%@ alanı boş olamaz.";
+"refresh" = "Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.";
 
 // MARK: - Keys
 "Key.username" = "Username";
-

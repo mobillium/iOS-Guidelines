@@ -23,10 +23,12 @@ public enum L10n {
     }
   }
   public enum Error {
-    /// %@ can not be empty.
+    /// %@ alanı boş olamaz.
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }
+    /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
+    public static let refresh = L10n.tr("Error", "refresh")
     public enum Key {
       /// Username
       public static let username = L10n.tr("Error", "Key.username")
@@ -57,6 +59,16 @@ public enum L10n {
     public static let register = L10n.tr("General", "register")
   }
   public enum Modules {
+    public enum CommentEditController {
+      /// Kaydet
+      public static let save = L10n.tr("Modules", "CommentEditController.save")
+      /// YORUM DÜZENLE
+      public static let title = L10n.tr("Modules", "CommentEditController.title")
+    }
+    public enum CommentListController {
+      /// YORUMLAR
+      public static let title = L10n.tr("Modules", "CommentListController.title")
+    }
     public enum Favorites {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")

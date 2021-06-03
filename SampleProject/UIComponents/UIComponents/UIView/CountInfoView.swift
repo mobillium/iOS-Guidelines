@@ -29,7 +29,7 @@ public class CountInfoView: UIView {
         .textAlignment(.center)
         .build()
     
-    public var isSelected: Bool = false {
+    public var isSelected = false {
         willSet {
             iconButton.tintColor = newValue ? .appRed : .appCinder
         }

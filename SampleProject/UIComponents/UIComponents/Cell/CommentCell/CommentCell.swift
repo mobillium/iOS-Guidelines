@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MobilliumUserDefaults
 
 public class CommentCell: UICollectionViewCell, ReusableView {
 
@@ -39,16 +40,14 @@ public class CommentCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureConstraints()
-        addButtonTarget()
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureConstraints()
-        addButtonTarget()
+        addSubViews()
     }
-
+    
     public override func systemLayoutSizeFitting(_ targetSize: CGSize,
                                                  withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
                                                  verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -56,7 +55,20 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
     
-    private func configureConstraints() {
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        self.userView.userImageUrl = nil
+        self.userView.username = nil
+        self.userView.recipeAndFollowerCountText = nil
+        self.timeDifferenceLabel.text = nil
+        self.commentLabel.text = nil
+    }
+}
+
+// MARK: - UILayout
+extension CommentCell {
+    
+    private func addSubViews() {
         backgroundColor = .white
         contentView.addSubview(userView)
         userView.edgesToSuperview(excluding: .bottom)
@@ -75,27 +87,22 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         moreButton.topToSuperview(offset: 10)
         moreButton.trailingToSuperview(offset: 15)
         moreButton.size(CGSize(width: 18, height: 10))
-    }
-    
-    private func addButtonTarget() {
         moreButton.addTarget(self, action: #selector(moreButtonTapped(_:)), for: .touchUpInside)
-    }
-    
-    @IBAction private func moreButtonTapped(_ sender: UIButton) {
-        viewModel?.moreButtonTapped?()
-    }
-    
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        self.userView.userImageUrl = nil
-        self.userView.username = nil
-        self.userView.recipeAndFollowerCountText = nil
-        self.timeDifferenceLabel.text = nil
-        self.commentLabel.text = nil
     }
 }
 
+// MARK: - Actions
+extension CommentCell {
+    
+    @objc
+    private func moreButtonTapped(_ sender: UIButton) {
+        viewModel?.moreButtonTapped?()
+    }
+}
+
+// MARK: - Set ViewModel
 public extension CommentCell {
+    
     func set(with viewModel: CommentCellProtocol) {
         self.viewModel = viewModel
         self.userView.userImageUrl = viewModel.imageUrl
@@ -103,11 +110,10 @@ public extension CommentCell {
         self.userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         self.timeDifferenceLabel.text = viewModel.timeDifferenceText
         self.commentLabel.text = viewModel.commentText
-  //      self.moreButton.isHidden = !(viewModel.userId == DefaultsKey.userId.value)
+        self.moreButton.isHidden = !(viewModel.userId == DefaultsKey.userId.value)
         self.moreButton.isHidden = true
         self.viewModel?.commentTextDidChanged = { [weak self] in
             self?.commentLabel.text = self?.viewModel?.commentText
         }
     }
-    
 }
