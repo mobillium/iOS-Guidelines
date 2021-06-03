@@ -64,7 +64,7 @@ extension CommentListViewModel {
     func sendButtonTapped(commentText: String) {
         guard keychain.get(Keychain.token) != nil else {
             router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
+                self?.router.presentLogin()
             })
             return
         }

@@ -29,7 +29,7 @@ final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
 extension LoginViewModel {
     
     func showRegisterOnWindow() {
-        router.placeOnRegister()
+        router.pushRegister()
     }
     
     func dismissLoginScene() {

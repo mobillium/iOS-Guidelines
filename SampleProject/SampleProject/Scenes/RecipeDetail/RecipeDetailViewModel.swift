@@ -95,7 +95,7 @@ extension RecipeDetailViewModel {
     func likeButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
             router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
+                self?.router.presentLogin()
             })
             return
         }
@@ -106,7 +106,7 @@ extension RecipeDetailViewModel {
     func followButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
             router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.placeLoginOnWindow()
+                self?.router.presentLogin()
             })
             return
         }
