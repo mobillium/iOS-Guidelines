@@ -20,6 +20,12 @@ public extension UICollectionView {
                  withReuseIdentifier: T.defaultReuseIdentifier)
     }
     
+    func registerFooter<T: UICollectionReusableView>(_: T.Type) where T: ReusableView {
+        register(T.self,
+                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
+                 withReuseIdentifier: T.defaultReuseIdentifier)
+    }
+    
     // swiftlint:disable fatal_error
     func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: ReusableView {
         guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {

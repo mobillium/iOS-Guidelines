@@ -57,6 +57,8 @@
 		A2176A2726161623008B3C46 /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2426161623008B3C46 /* WalkThroughViewController.swift */; };
 		A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */; };
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
+		A22C0B8426677A51003A6EFA /* RecipeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */; };
+		A22C0B862667816A003A6EFA /* CategoryCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */; };
 		A24F29DA26664B5200B7211B /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */; };
 		A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */; };
 		A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */; };
@@ -187,6 +189,8 @@
 		A2176A2426161623008B3C46 /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
 		A2176A2526161623008B3C46 /* WalkThroughViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewModel.swift; sourceTree = "<group>"; };
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
+		A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeCellModel+Extension.swift"; sourceTree = "<group>"; };
+		A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryCellModel+Extension.swift"; sourceTree = "<group>"; };
 		A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
 		A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				7A73C91225CC385900322233 /* Resources */,
 				7AC7AC2C25CD48D700EA44C4 /* Constants */,
+				A22C0B8226677A0C003A6EFA /* UIComponents */,
 				7AFC72DB2551FBF800B30789 /* Configurations */,
 				7A980AE92553170600494520 /* Routing */,
 				7A980AB02553166D00494520 /* Scenes */,
@@ -536,6 +541,15 @@
 				A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */,
 			);
 			path = WalkThrough;
+			sourceTree = "<group>";
+		};
+		A22C0B8226677A0C003A6EFA /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */,
+				A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 		A24F29DB26664B6800B7211B /* SubViews */ = {
@@ -949,8 +963,10 @@
 				A2D7BB492664FC3C00E3F3A2 /* PasswordResetRouter.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
 				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
+				A22C0B8426677A51003A6EFA /* RecipeCellModel+Extension.swift in Sources */,
 				A2D7BB5C266513C900E3F3A2 /* CommentListRouter.swift in Sources */,
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
+				A22C0B862667816A003A6EFA /* CategoryCellModel+Extension.swift in Sources */,
 				A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,

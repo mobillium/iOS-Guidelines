@@ -2,7 +2,8 @@
 //  ActivityIndicatorFooterView.swift
 //  UIComponents
 //
-//  Created by Catalina on 26.01.2021.
+//  Created by Muart Celebi on 02.06.2021.
+//  Copyright © 2020 Mobillium. All rights reserved.
 //
 
 import UIKit
