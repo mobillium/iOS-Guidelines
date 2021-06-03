@@ -29,6 +29,12 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         .tintColor(.appCinder)
         .build()
     
+    private lazy var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
+    
     weak var viewModel: CommentCellProtocol?
     
     override init(frame: CGRect) {
@@ -43,6 +49,13 @@ public class CommentCell: UICollectionViewCell, ReusableView {
         addButtonTarget()
     }
 
+    public override func systemLayoutSizeFitting(_ targetSize: CGSize,
+                                                 withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority,
+                                                 verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
+    }
+    
     private func configureConstraints() {
         backgroundColor = .white
         contentView.addSubview(userView)

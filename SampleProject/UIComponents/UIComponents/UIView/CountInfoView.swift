@@ -41,6 +41,12 @@ public class CountInfoView: UIView {
         }
     }
     
+    public var iconColor: UIColor? {
+        willSet {
+            iconButton.tintColor = newValue
+        }
+    }
+    
     public var count: Int? {
         willSet {
             countLabel.text = newValue?.toString
@@ -67,6 +73,7 @@ public class CountInfoView: UIView {
     // swiftlint:enable fatal_error unavailable_function
     
     private func configureContents() {
+        backgroundColor = .appWhite
         addSubview(iconButton)
         iconButton.centerXToSuperview()
         iconButton.leadingToSuperview(relation: .equalOrGreater)
