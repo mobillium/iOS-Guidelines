@@ -31,6 +31,7 @@
 // MARK: - Login
 "LoginViewController.title" = "Giriş Yap";
 "LoginViewController.bottomText" = "Hesabın mı yok?";
+"LoginViewController.forgotPassword" = "Şifrenizi mi unuttunuz?";
 
 // MARK: - Register
 "RegisterViewController.title" = "Üye Ol";
@@ -42,3 +43,7 @@
 
 // MARK: - CommentList
 "CommentListController.title" = "YORUMLAR";
+
+// MARK: - PasswordReset
+"PasswordResetController.title" = "Şifre Sıfırlama";
+"PasswordResetController.reset" = "Sıfırla";

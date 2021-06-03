@@ -71,6 +71,11 @@
 		A2D7BB68266524E200E3F3A2 /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */; };
 		A2D7BB69266524E200E3F3A2 /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */; };
 		A2D7BB6B266524F600E3F3A2 /* CommentEditRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */; };
+		A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB432664F3F000E3F3A2 /* Validation.swift */; };
+		A2D7BB492664FC3C00E3F3A2 /* PasswordResetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */; };
+		A2D7BB4A2664FC3C00E3F3A2 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */; };
+		A2D7BB4B2664FC3C00E3F3A2 /* PasswordResetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */; };
+		A2D7BB4D2664FC4900E3F3A2 /* PasswordResetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
@@ -196,6 +201,11 @@
 		A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
 		A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewModel.swift; sourceTree = "<group>"; };
 		A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRoute.swift; sourceTree = "<group>"; };
+		A2D7BB432664F3F000E3F3A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRouter.swift; sourceTree = "<group>"; };
+		A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewModel.swift; sourceTree = "<group>"; };
+		A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRoute.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -403,6 +413,7 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				A2D7BB422664F3E300E3F3A2 /* Validation */,
 				840EB5A52645895B0019C101 /* Helper */,
 				840EB5A22645894A0019C101 /* Delegates */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
@@ -575,6 +586,25 @@
 			path = CommentList;
 			sourceTree = "<group>";
 		};
+		A2D7BB422664F3E300E3F3A2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB432664F3F000E3F3A2 /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		A2D7BB452664FC1600E3F3A2 /* PasswordReset */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */,
+				A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */,
+				A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */,
+				A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */,
+			);
+			path = PasswordReset;
+			sourceTree = "<group>";
+		};
 		B321F651263188A50082484C /* Recipes */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +650,7 @@
 			children = (
 				FBA13ED326161C1E001E19B4 /* Login */,
 				FBA13ED026161C19001E19B4 /* Register */,
+				A2D7BB452664FC1600E3F3A2 /* PasswordReset */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -627,9 +658,9 @@
 		FBA13ED026161C19001E19B4 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				FBA13EC426161062001E19B4 /* RegisterRouter.swift */,
 				FBA13EC526161062001E19B4 /* RegisterViewController.swift */,
 				FBA13EC626161062001E19B4 /* RegisterViewModel.swift */,
+				FBA13EC426161062001E19B4 /* RegisterRouter.swift */,
 				FBA13ECC2616137A001E19B4 /* RegisterRoute.swift */,
 			);
 			path = Register;
@@ -638,9 +669,9 @@
 		FBA13ED326161C1E001E19B4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
 				FBA13ED526161C2B001E19B4 /* LoginViewController.swift */,
 				FBA13ED626161C2B001E19B4 /* LoginViewModel.swift */,
+				FBA13ED426161C2B001E19B4 /* LoginRouter.swift */,
 				68638C1A26288E820079B785 /* LoginRoute.swift */,
 			);
 			path = Login;
@@ -912,8 +943,10 @@
 				A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */,
 				7A980AB72553168400494520 /* HomeViewController.swift in Sources */,
 				840EB5AA264589790019C101 /* SKPhotoBrowserRoute.swift in Sources */,
+				A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */,
 				7A980AF02553171A00494520 /* PushTransition.swift in Sources */,
 				6CFE5376262ED7DC0008FFCD /* FavoritesRouter.swift in Sources */,
+				A2D7BB492664FC3C00E3F3A2 /* PasswordResetRouter.swift in Sources */,
 				84AB45DB2629791B007A41A7 /* ScreenSize.swift in Sources */,
 				84BBEF262632CD6D00F33F04 /* AppDelegate+SKPhotoBrowser.swift in Sources */,
 				A2D7BB5C266513C900E3F3A2 /* CommentListRouter.swift in Sources */,
@@ -936,6 +969,7 @@
 				B321F6752631C8650082484C /* RecipesRouter.swift in Sources */,
 				A2D7BB5E266513C900E3F3A2 /* CommentListViewModel.swift in Sources */,
 				5FFC3224261A1328004D4F15 /* LoginWarningPopupViewModel.swift in Sources */,
+				A2D7BB4B2664FC3C00E3F3A2 /* PasswordResetViewModel.swift in Sources */,
 				FBA13ED726161C2B001E19B4 /* LoginRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
 				7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */,
@@ -945,6 +979,7 @@
 				FBA13ED926161C2B001E19B4 /* LoginViewModel.swift in Sources */,
 				FBA13EC826161062001E19B4 /* RegisterViewController.swift in Sources */,
 				68638C1B26288E820079B785 /* LoginRoute.swift in Sources */,
+				A2D7BB4D2664FC4900E3F3A2 /* PasswordResetRoute.swift in Sources */,
 				7A980AEF2553171A00494520 /* PlaceOnWindowTransition.swift in Sources */,
 				A2D7BB632665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift in Sources */,
 				7A980AE4255316BF00494520 /* BaseViewController.swift in Sources */,
@@ -953,6 +988,7 @@
 				6CFE5378262ED7DC0008FFCD /* FavoritesViewModel.swift in Sources */,
 				7A980AF72553173F00494520 /* Router.swift in Sources */,
 				5FFC3223261A1328004D4F15 /* LoginWarningPopupRouter.swift in Sources */,
+				A2D7BB4A2664FC3C00E3F3A2 /* PasswordResetViewController.swift in Sources */,
 				FBA13EC926161062001E19B4 /* RegisterViewModel.swift in Sources */,
 				FBA13EC726161062001E19B4 /* RegisterRouter.swift in Sources */,
 				7A980B3325531F9600494520 /* HomeRoute.swift in Sources */,

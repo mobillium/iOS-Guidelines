@@ -23,10 +23,14 @@ public enum L10n {
     }
   }
   public enum Error {
+    /// Lütfen bilgilerinizi kontrol ediniz
+    public static let checkInformations = L10n.tr("Error", "checkInformations")
     /// %@ alanı boş olamaz.
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }
+    /// Lütfen boş alanları doldurunuz.
+    public static let emptyFields = L10n.tr("Error", "emptyFields")
     /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
     public static let refresh = L10n.tr("Error", "refresh")
     public enum Key {
@@ -90,8 +94,16 @@ public enum L10n {
     public enum LoginViewController {
       /// Hesabın mı yok?
       public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
+      /// Şifrenizi mi unuttunuz?
+      public static let forgotPassword = L10n.tr("Modules", "LoginViewController.forgotPassword")
       /// Giriş Yap
       public static let title = L10n.tr("Modules", "LoginViewController.title")
+    }
+    public enum PasswordResetController {
+      /// Sıfırla
+      public static let reset = L10n.tr("Modules", "PasswordResetController.reset")
+      /// Şifre Sıfırlama
+      public static let title = L10n.tr("Modules", "PasswordResetController.title")
     }
     public enum RegisterViewController {
       /// Hesabın mı var?
