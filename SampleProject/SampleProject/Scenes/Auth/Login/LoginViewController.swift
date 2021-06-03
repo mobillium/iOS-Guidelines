@@ -40,7 +40,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
         .titleColor(.appRaven)
         .build()
     
-    private let emailTextField = FloatLabelTextField()
+    private let usernameTextField = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
     private let ctaButton = ButtonFactory.createPrimaryButton(style: .large)
     
@@ -73,7 +73,7 @@ extension LoginViewController {
         stackView.topToBottom(of: titleLabel).constant = 50
         stackView.leadingToSuperview().constant = 15
         stackView.trailingToSuperview().constant = -15
-        stackView.addArrangedSubview(emailTextField)
+        stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(passwordTextField)
         stackView.addArrangedSubview(ctaButton)
         registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
@@ -103,9 +103,8 @@ extension LoginViewController {
 extension LoginViewController {
     
     private func configureContents() {
-        emailTextField.autocapitalizationType = .none
-        emailTextField.keyboardType = .emailAddress
-        emailTextField.leftImage = .icMail
+        usernameTextField.autocapitalizationType = .none
+        usernameTextField.leftImage = .icUser
         passwordTextField.leftImage = .icPassword
         passwordTextField.isSecureTextEntry = true
         configureCancelRightBarButton()
@@ -113,7 +112,7 @@ extension LoginViewController {
     
     private func setLocalize() {
         titleLabel.text = L10n.Modules.LoginViewController.title
-        emailTextField.title = L10n.Placeholder.email
+        usernameTextField.title = L10n.Placeholder.username
         passwordTextField.title = L10n.Placeholder.password
         ctaButton.setTitle(L10n.General.login, for: .normal)
         forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
@@ -140,7 +139,7 @@ extension LoginViewController {
     @objc
     private func ctaButtonTapped() {
         view.endEditing(true)
-        guard let email = emailTextField.text,
+        guard let userName = usernameTextField.text,
               let password = passwordTextField.text else {
             showWarningToast(message: L10n.Error.emptyFields)
             return
@@ -148,7 +147,7 @@ extension LoginViewController {
         let validation = Validation()
         guard validation.isValidPassword(password) else { return }
         
-        viewModel.sendLoginRequest(username: email, password: password)
+        viewModel.sendLoginRequest(username: userName, password: password)
     }
     
     @objc
