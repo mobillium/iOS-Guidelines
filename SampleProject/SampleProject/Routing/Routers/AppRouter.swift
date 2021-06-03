@@ -13,13 +13,13 @@ import MobilliumUserDefaults
 
 final class AppRouter: Router, AppRouter.Routes {
     
-    typealias Routes = MainTabBarRoute & WalkThroughRoute & SKPhotoBrowserRoute & RecipeDetailRoute
+    typealias Routes = MainTabBarRoute & WalkThroughRoute & SKPhotoBrowserRoute
     
     static let shared = AppRouter()
     
     func startApp() {
         if DefaultsKey.isWalkThroughCompleted.value == true {
-            placeOnRecipeDetail(recipeId: 2)
+            placeOnWindowMainTabBar()
         } else {
             placeOnWindowWalkThrough()
         }

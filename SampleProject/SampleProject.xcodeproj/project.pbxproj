@@ -59,11 +59,16 @@
 		A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */; };
 		A22C0B8426677A51003A6EFA /* RecipeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */; };
 		A22C0B862667816A003A6EFA /* CategoryCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */; };
+		A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */; };
 		A24F29DA26664B5200B7211B /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */; };
 		A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */; };
-		A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
 		A29A02D62660F5E80078F2FA /* MainTabBarRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */; };
+		A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB432664F3F000E3F3A2 /* Validation.swift */; };
+		A2D7BB492664FC3C00E3F3A2 /* PasswordResetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */; };
+		A2D7BB4A2664FC3C00E3F3A2 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */; };
+		A2D7BB4B2664FC3C00E3F3A2 /* PasswordResetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */; };
+		A2D7BB4D2664FC4900E3F3A2 /* PasswordResetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */; };
 		A2D7BB582665126600E3F3A2 /* CommentListRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */; };
 		A2D7BB5C266513C900E3F3A2 /* CommentListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB59266513C900E3F3A2 /* CommentListRouter.swift */; };
 		A2D7BB5D266513C900E3F3A2 /* CommentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB5A266513C900E3F3A2 /* CommentListViewController.swift */; };
@@ -73,11 +78,6 @@
 		A2D7BB68266524E200E3F3A2 /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */; };
 		A2D7BB69266524E200E3F3A2 /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */; };
 		A2D7BB6B266524F600E3F3A2 /* CommentEditRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */; };
-		A2D7BB442664F3F000E3F3A2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB432664F3F000E3F3A2 /* Validation.swift */; };
-		A2D7BB492664FC3C00E3F3A2 /* PasswordResetRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */; };
-		A2D7BB4A2664FC3C00E3F3A2 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */; };
-		A2D7BB4B2664FC3C00E3F3A2 /* PasswordResetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */; };
-		A2D7BB4D2664FC4900E3F3A2 /* PasswordResetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
@@ -191,11 +191,16 @@
 		A2176A2F26161686008B3C46 /* WalkThroughRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughRoute.swift; sourceTree = "<group>"; };
 		A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeCellModel+Extension.swift"; sourceTree = "<group>"; };
 		A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryCellModel+Extension.swift"; sourceTree = "<group>"; };
+		A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
-		A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A29A02D52660F5E80078F2FA /* MainTabBarRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarRoute.swift; sourceTree = "<group>"; };
+		A2D7BB432664F3F000E3F3A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRouter.swift; sourceTree = "<group>"; };
+		A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
+		A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewModel.swift; sourceTree = "<group>"; };
+		A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRoute.swift; sourceTree = "<group>"; };
 		A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRoute.swift; sourceTree = "<group>"; };
 		A2D7BB59266513C900E3F3A2 /* CommentListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListRouter.swift; sourceTree = "<group>"; };
 		A2D7BB5A266513C900E3F3A2 /* CommentListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewController.swift; sourceTree = "<group>"; };
@@ -205,11 +210,6 @@
 		A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
 		A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewModel.swift; sourceTree = "<group>"; };
 		A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRoute.swift; sourceTree = "<group>"; };
-		A2D7BB432664F3F000E3F3A2 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
-		A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRouter.swift; sourceTree = "<group>"; };
-		A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
-		A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewModel.swift; sourceTree = "<group>"; };
-		A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetRoute.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -417,10 +417,10 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				A2D7BB422664F3E300E3F3A2 /* Validation */,
 				840EB5A52645895B0019C101 /* Helper */,
 				840EB5A22645894A0019C101 /* Delegates */,
-				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				7A73C91225CC385900322233 /* Resources */,
 				7AC7AC2C25CD48D700EA44C4 /* Constants */,
 				A22C0B8226677A0C003A6EFA /* UIComponents */,
@@ -569,6 +569,25 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		A2D7BB422664F3E300E3F3A2 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB432664F3F000E3F3A2 /* Validation.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		A2D7BB452664FC1600E3F3A2 /* PasswordReset */ = {
+			isa = PBXGroup;
+			children = (
+				A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */,
+				A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */,
+				A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */,
+				A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */,
+			);
+			path = PasswordReset;
+			sourceTree = "<group>";
+		};
 		A2D7BB4E266511F200E3F3A2 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,25 +617,6 @@
 				A2D7BB572665126600E3F3A2 /* CommentListRoute.swift */,
 			);
 			path = CommentList;
-			sourceTree = "<group>";
-		};
-		A2D7BB422664F3E300E3F3A2 /* Validation */ = {
-			isa = PBXGroup;
-			children = (
-				A2D7BB432664F3F000E3F3A2 /* Validation.swift */,
-			);
-			path = Validation;
-			sourceTree = "<group>";
-		};
-		A2D7BB452664FC1600E3F3A2 /* PasswordReset */ = {
-			isa = PBXGroup;
-			children = (
-				A2D7BB472664FC3C00E3F3A2 /* PasswordResetViewController.swift */,
-				A2D7BB482664FC3C00E3F3A2 /* PasswordResetViewModel.swift */,
-				A2D7BB462664FC3C00E3F3A2 /* PasswordResetRouter.swift */,
-				A2D7BB4C2664FC4900E3F3A2 /* PasswordResetRoute.swift */,
-			);
-			path = PasswordReset;
 			sourceTree = "<group>";
 		};
 		B321F651263188A50082484C /* Recipes */ = {
