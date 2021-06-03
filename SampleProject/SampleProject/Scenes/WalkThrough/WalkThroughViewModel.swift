@@ -42,10 +42,13 @@ final class WalkThroughViewModel: BaseViewModel<WalkThroughRouter>, WalkThroughV
     func cellItemAt(indexPath: IndexPath) -> WalkThroughCellProtocol {
         return cellItems[indexPath.row]
     }
+}
+
+// MARK: - Actions
+extension WalkThroughViewModel {
     
     func didFinishWalkThroughScene() {
         DefaultsKey.isWalkThroughCompleted.value = true
         router.placeOnWindowHome()
     }
-    
 }
