@@ -41,6 +41,8 @@ protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewE
     func getRecipeDetail()
     func likeButtonTapped()
     func followButtonTapped()
+    func commentButtonTapped()
+    func didSelectComment()
 }
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
@@ -117,6 +119,14 @@ extension RecipeDetailViewModel {
         case false:
             userFollowRequest(followType: .follow)
         }
+    }
+    
+    func commentButtonTapped() {
+        router.pushCommentList(recipeId: recipeId, isKeyboardOpen: true)
+    }
+    
+    func didSelectComment() {
+        router.pushCommentList(recipeId: recipeId, isKeyboardOpen: false)
     }
 }
 

@@ -7,34 +7,20 @@
 //
 
 protocol CommentListRoute {
-    func pushCommentList(recipeId: Int)
-    func placeOnCommentList(recipeId: Int)
+    func pushCommentList(recipeId: Int, isKeyboardOpen: Bool?)
 }
 
 extension CommentListRoute where Self: RouterProtocol {
     
-    func pushCommentList(recipeId: Int) {
+    func pushCommentList(recipeId: Int, isKeyboardOpen: Bool?) {
         let router = CommentListRouter()
         let viewModel = CommentListViewModel(recipeId: recipeId, router: router)
         let viewController = CommentListViewController(viewModel: viewModel)
-        
+        viewController.isKeyboardOpen = isKeyboardOpen ?? false
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition
         
         open(viewController, transition: transition)
-    }
-    
-    func placeOnCommentList(recipeId: Int) {
-        let router = CommentListRouter()
-        let viewModel = CommentListViewModel(recipeId: recipeId, router: router)
-        let viewController = CommentListViewController(viewModel: viewModel)
-        let navController = MainNavigationController(rootViewController: viewController)
-        
-        let transition = PlaceOnWindowTransition()
-        router.viewController = viewController
-        router.openTransition = transition
-        
-        open(navController, transition: transition)
     }
 }

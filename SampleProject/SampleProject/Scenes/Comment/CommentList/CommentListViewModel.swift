@@ -84,7 +84,7 @@ extension CommentListViewModel {
         let commentId = viewModel.commentId
         let commentText = viewModel.commentText
         
-        let editRecipeCommentDidSuccess: StringClosure = { text in
+        let editCommentDidSuccess: StringClosure = { text in
             viewModel.commentText = text
             viewModel.commentTextDidChanged?()
         }
@@ -92,7 +92,7 @@ extension CommentListViewModel {
         router.pushCommentEdit(recipeId: recipeId,
                                commentId: commentId,
                                commentText: commentText,
-                               editRecipeCommentDidSuccess: editRecipeCommentDidSuccess)
+                               editCommentDidSuccess: editCommentDidSuccess)
     }
 }
 

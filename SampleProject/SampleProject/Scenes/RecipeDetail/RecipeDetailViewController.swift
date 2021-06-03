@@ -163,6 +163,7 @@ extension RecipeDetailViewController {
         
         commentButtonContainerView.addSubview(commentButton)
         commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
+        commentButton.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
     }
 }
 
@@ -221,6 +222,11 @@ extension RecipeDetailViewController {
             self.viewModel.followButtonTapped()
         }
     }
+    
+    @objc
+    private func commentButtonTapped() {
+        viewModel.commentButtonTapped()
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -240,6 +246,14 @@ extension RecipeDetailViewController: UICollectionViewDataSource {
         return cell
     }
     
+}
+
+// MARK: - UICollectionViewDelegate
+extension RecipeDetailViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        viewModel.didSelectComment()
+    }
 }
 
 // swiftlint:disable line_length
