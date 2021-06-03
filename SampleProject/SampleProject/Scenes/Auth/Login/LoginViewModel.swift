@@ -57,7 +57,6 @@ extension LoginViewModel {
             case .success(let response):
                 self.keychain.set(response.token, forKey: Keychain.token)
                 DefaultsKey.userId.value = response.user.id
-                print(response.token)
                 self.postNotification()
                 self.router.close()
             case .failure(let error):

@@ -25,7 +25,8 @@ final class LoginWarningPopupViewController: BaseViewController<LoginWarningPopu
         .build()
     
     private let imageView = UIImageViewBuilder()
-        .image(.icWarning)
+        .image(.icWarning.withRenderingMode(.alwaysTemplate))
+        .tintColor(.appYellow)
         .contentMode(.scaleAspectFit)
         .masksToBounds(true)
         .clipsToBounds(true)

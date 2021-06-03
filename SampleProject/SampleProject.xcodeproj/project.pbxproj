@@ -271,10 +271,10 @@
 		5FFC321D261A12EF004D4F15 /* LoginWarning */ = {
 			isa = PBXGroup;
 			children = (
-				5FFC321E261A1327004D4F15 /* LoginWarningPopupRoute.swift */,
-				5FFC321F261A1327004D4F15 /* LoginWarningPopupRouter.swift */,
 				5FFC3221261A1327004D4F15 /* LoginWarningPopupViewController.swift */,
 				5FFC3220261A1327004D4F15 /* LoginWarningPopupViewModel.swift */,
+				5FFC321E261A1327004D4F15 /* LoginWarningPopupRoute.swift */,
+				5FFC321F261A1327004D4F15 /* LoginWarningPopupRouter.swift */,
 			);
 			path = LoginWarning;
 			sourceTree = "<group>";
