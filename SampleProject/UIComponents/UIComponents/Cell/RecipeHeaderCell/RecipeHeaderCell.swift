@@ -13,6 +13,7 @@ public class RecipeHeaderCell: UICollectionViewCell, ReusableView {
     private let headerImageView = UIImageViewBuilder()
         .backgroundColor(.clear)
         .contentMode(.scaleAspectFill)
+        .clipsToBounds(true)
         .build()
     
     override init(frame: CGRect) {

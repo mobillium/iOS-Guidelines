@@ -74,8 +74,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         setLocalize()
         subscribeViewModel()
         configureCollectionView()
-        viewModel.getRecipeComment(2)
-        viewModel.getRecipeDetail(26)
+        viewModel.getRecipeComment()
+        viewModel.getRecipeDetail()
         subscribeActions()
     }
     

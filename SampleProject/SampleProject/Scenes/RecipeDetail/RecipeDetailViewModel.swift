@@ -37,8 +37,8 @@ protocol RecipeDetailViewEventSource {
 }
 
 protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewEventSource {
-    func getRecipeComment(_ recipeId: Int)
-    func getRecipeDetail(_ recipeId: Int)
+    func getRecipeComment()
+    func getRecipeDetail()
     func likeButtonTapped()
     func followButtonTapped()
 }
@@ -123,7 +123,7 @@ extension RecipeDetailViewModel {
 // MARK: - Network
 extension RecipeDetailViewModel {
     
-    func getRecipeComment(_ recipeId: Int) {
+    func getRecipeComment() {
         dataProvider.request(for: RecipeCommentRequest(recipedId: recipeId)) { [weak self] result in
             switch result {
             case .success(let response):
@@ -144,7 +144,7 @@ extension RecipeDetailViewModel {
         }
     }
     
-    func getRecipeDetail(_ recipeId: Int) {
+    func getRecipeDetail() {
         dataProvider.request(for: GetRecipeDetailRequest(recipeId: recipeId)) { [weak self] result in
             guard let self = self else { return }
             switch result {
