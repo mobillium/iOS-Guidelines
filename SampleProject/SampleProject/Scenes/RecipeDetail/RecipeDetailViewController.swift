@@ -8,15 +8,17 @@
 
 import UIKit
 import TinyConstraints
+import MobilliumUserDefaults
 
 final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel> {
+    
+    private let recipeHeaderView = RecipeDetailHeaderView()
     
     private let scrollView = UIScrollViewBuilder()
         .showsHorizontalScrollIndicator(false)
         .showsVerticalScrollIndicator(false)
         .alwaysBounceVertical(false)
         .build()
-    
     private let contentStackView = UIStackViewBuilder()
         .axis(.vertical)
         .spacing(15)
@@ -47,7 +49,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     private let commentsSeparator = UIViewBuilder()
         .backgroundColor(.appZircon)
         .build()
-    
     private let commentsCollectionView: DynamicHeightCollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -66,7 +67,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         .build()
     private let commentButton = ButtonFactory.createPrimaryButton(style: .large)
     
-    private let recipeHeaderView = RecipeDetailHeaderView()
+    private var observer: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         viewModel.getRecipeComment()
         viewModel.getRecipeDetail()
         subscribeActions()
+        addObserver()
     }
     
     private func subscribeViewModel() {
@@ -107,6 +109,14 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         viewModel.toggleIsFollowing = { [weak self] in
             self?.userView.isFollowing.toggle()
         }
+    }
+    
+    private func addObserver() {
+        observer = NotificationCenter.default.addObserver(forName: .reloadDetailView, object: nil, queue: nil, using: { [weak self] _ in
+            self?.viewModel.resetData()
+            self?.viewModel.getRecipeComment()
+            self?.viewModel.getRecipeDetail()
+        })
     }
 }
 
@@ -203,6 +213,9 @@ extension RecipeDetailViewController {
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time
         stepsView.info = viewModel.steps
+        if DefaultsKey.userId.value == viewModel.userId {
+            userView.isFollowButtonHidden = true
+        }
         commentsCollectionView.reloadData()
         commentsCollectionView.layoutIfNeeded()
     }

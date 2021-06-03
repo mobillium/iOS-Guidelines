@@ -55,6 +55,12 @@ public class UserView: UIView {
         }
     }
     
+    public var isFollowButtonHidden: Bool? {
+        willSet {
+            followButton.isHidden = newValue ?? false
+        }
+    }
+    
     public enum UserViewType {
         case withFollowButton
         case withoutFollowButton

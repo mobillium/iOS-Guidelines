@@ -78,6 +78,7 @@
 		A2D7BB68266524E200E3F3A2 /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */; };
 		A2D7BB69266524E200E3F3A2 /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */; };
 		A2D7BB6B266524F600E3F3A2 /* CommentEditRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */; };
+		A2F53D6F2668E7B7007E89BA /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F53D6E2668E7B7007E89BA /* NotificationNames.swift */; };
 		B321F657263188A50082484C /* RecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F653263188A50082484C /* RecipesViewModel.swift */; };
 		B321F658263188A50082484C /* RecipesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F654263188A50082484C /* RecipesRoute.swift */; };
 		B321F659263188A50082484C /* RecipesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B321F655263188A50082484C /* RecipesViewController.swift */; };
@@ -210,6 +211,7 @@
 		A2D7BB65266524E200E3F3A2 /* CommentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
 		A2D7BB66266524E200E3F3A2 /* CommentEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewModel.swift; sourceTree = "<group>"; };
 		A2D7BB6A266524F600E3F3A2 /* CommentEditRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditRoute.swift; sourceTree = "<group>"; };
+		A2F53D6E2668E7B7007E89BA /* NotificationNames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		B321F653263188A50082484C /* RecipesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewModel.swift; sourceTree = "<group>"; };
 		B321F654263188A50082484C /* RecipesRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesRoute.swift; sourceTree = "<group>"; };
 		B321F655263188A50082484C /* RecipesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipesViewController.swift; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 			children = (
 				7AC7AC2F25CD49F700EA44C4 /* DateFormats.swift */,
 				84AB45DA2629791B007A41A7 /* ScreenSize.swift */,
+				A2F53D6E2668E7B7007E89BA /* NotificationNames.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -968,6 +971,7 @@
 				7A980AE5255316BF00494520 /* MainNavigationController.swift in Sources */,
 				A22C0B862667816A003A6EFA /* CategoryCellModel+Extension.swift in Sources */,
 				A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */,
+				A2F53D6F2668E7B7007E89BA /* NotificationNames.swift in Sources */,
 				A2176A3026161686008B3C46 /* WalkThroughRoute.swift in Sources */,
 				7A980AB82553168400494520 /* HomeViewModel.swift in Sources */,
 				A2D7BB67266524E200E3F3A2 /* CommentEditRouter.swift in Sources */,

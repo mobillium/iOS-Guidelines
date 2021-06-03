@@ -22,7 +22,7 @@ protocol LoginViewProtocol: LoginViewDataSource, LoginViewEventSource {
 }
 
 final class LoginViewModel: BaseViewModel<LoginRouter>, LoginViewProtocol {
-    
+    let keychain = KeychainSwift()
 }
 
 // MARK: - Actions
@@ -39,6 +39,10 @@ extension LoginViewModel {
     func pushPasswordResetScene() {
         router.pushPasswordReset()
     }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: .reloadDetailView, object: nil)
+    }
 }
 
 // MARK: - Network
@@ -51,9 +55,10 @@ extension LoginViewModel {
             self.hideLoading?()
             switch result {
             case .success(let response):
-                let keychain = KeychainSwift()
-                keychain.set(response.token, forKey: Keychain.token)
+                self.keychain.set(response.token, forKey: Keychain.token)
                 DefaultsKey.userId.value = response.user.id
+                print(response.token)
+                self.postNotification()
                 self.router.close()
             case .failure(let error):
                 self.showWarningToast?("\(error.localizedDescription) \(L10n.Error.checkInformations)")

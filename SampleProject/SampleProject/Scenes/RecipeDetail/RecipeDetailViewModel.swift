@@ -11,6 +11,7 @@ import KeychainSwift
 
 protocol RecipeDetailViewDataSource {
     var username: String? { get }
+    var userId: Int? { get }
     var userImageUrl: String? { get }
     var recipeName: String? { get }
     var categoryName: String? { get }
@@ -48,6 +49,7 @@ protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewE
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
     
     var username: String?
+    var userId: Int?
     var userImageUrl: String?
     var recipeName: String?
     var categoryName: String?
@@ -128,6 +130,11 @@ extension RecipeDetailViewModel {
     func didSelectComment() {
         router.pushCommentList(recipeId: recipeId, isKeyboardOpen: false)
     }
+    
+    func resetData() {
+        cellItems.removeAll()
+        recipeHeaderCellItems.removeAll()
+    }
 }
 
 // MARK: - Network
@@ -160,6 +167,7 @@ extension RecipeDetailViewModel {
             switch result {
             case .success(let response):
                 self.username = response.user.username
+                self.userId = response.user.id
                 self.userImageUrl = response.user.image?.url
                 self.recipeName = response.title
                 self.categoryName = response.category.name
@@ -209,6 +217,7 @@ extension RecipeDetailViewModel {
     private func userFollowRequest(followType: UserFollowRequest.FollowType) {
         guard let followedId = followedId else { return }
         toggleIsFollowing?()
+        isFollowing.toggle()
         let request = UserFollowRequest(followedId: followedId, followType: followType)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
@@ -218,6 +227,7 @@ extension RecipeDetailViewModel {
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsFollowing?()
+                self.isFollowing.toggle()
             }
         }
     }

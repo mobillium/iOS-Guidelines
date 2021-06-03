@@ -34,7 +34,6 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
         addNavigationBarLogo()
         addSubViews()
         setSegmentHandler()
-        
         configureContents()
         subscribeViewModelEvents()
     }
@@ -47,7 +46,7 @@ final class HomeViewController: BaseViewController<HomeViewModel> {
     private func subscribeViewModelEvents() {
         viewModel.didSuccesLogout = { [weak self] in
             guard let self = self else { return }
-            self.keychain.clear()
+            self.keychain.delete(Keychain.token)
             DefaultsKey.userId.remove()
             self.navigationItem.rightBarButtonItem = .none
         }
