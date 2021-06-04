@@ -113,6 +113,10 @@ public enum L10n {
       /// Şifre Sıfırlama
       public static let title = L10n.tr("Modules", "PasswordResetController.title")
     }
+    public enum RecipeDetail {
+      /// Henüz yorum yapılmamıştır.
+      public static let noComment = L10n.tr("Modules", "RecipeDetail.noComment")
+    }
     public enum RegisterViewController {
       /// Hesabın mı var?
       public static let bottomText = L10n.tr("Modules", "RegisterViewController.bottomText")

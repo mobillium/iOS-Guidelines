@@ -47,3 +47,6 @@
 // MARK: - PasswordReset
 "PasswordResetController.title" = "Şifre Sıfırlama";
 "PasswordResetController.reset" = "Sıfırla";
+
+// MARK: RecipeDetail
+"RecipeDetail.noComment" = "Henüz yorum yapılmamıştır.";

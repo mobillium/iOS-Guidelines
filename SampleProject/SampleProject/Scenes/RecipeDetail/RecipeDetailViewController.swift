@@ -59,6 +59,7 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         collectionView.backgroundColor = .appSecondaryBackground
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(CommentCell.self)
+        collectionView.register(EmptyCell.self)
         return collectionView
     }()
     
@@ -256,13 +257,21 @@ extension RecipeDetailViewController {
 extension RecipeDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if viewModel.numberOfItemsAt(section: section) > 3 {
+        if viewModel.numberOfItemsAt(section: section) == 0 {
+            return 1
+        } else if viewModel.numberOfItemsAt(section: section) > 3 {
             return 3
         }
         return viewModel.numberOfItemsAt(section: section)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if viewModel.numberOfItemsAt(section: 0) == 0 {
+            let cell: EmptyCell = collectionView.dequeueReusableCell(for: indexPath)
+            cell.infoText = L10n.Modules.RecipeDetail.noComment
+            return cell
+        }
+        
         let cell: CommentCell = collectionView.dequeueReusableCell(for: indexPath)
         let cellItem = viewModel.cellItemAt(indexPath: indexPath)
         cell.set(with: cellItem)

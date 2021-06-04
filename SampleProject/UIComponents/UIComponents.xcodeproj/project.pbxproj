@@ -63,6 +63,8 @@
 		A2176A1F261610FD008B3C46 /* WalkThroughCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2176A1D261610FD008B3C46 /* WalkThroughCellModel.swift */; };
 		A21DA4CC260CBD6700493FFE /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DA4CA260CBD6700493FFE /* CommentCell.swift */; };
 		A21DA4CD260CBD6700493FFE /* CommentCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DA4CB260CBD6700493FFE /* CommentCellModel.swift */; };
+		A2463335266A225800F85CB4 /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2463333266A225800F85CB4 /* EmptyCell.swift */; };
+		A2463336266A225800F85CB4 /* EmptyCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2463334266A225800F85CB4 /* EmptyCellModel.swift */; };
 		A24F29D426660F2100B7211B /* ActivityIndicatorFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D326660F2100B7211B /* ActivityIndicatorFooterView.swift */; };
 		A24F29D626662BBB00B7211B /* RecipeDetailTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D526662BBB00B7211B /* RecipeDetailTitlesView.swift */; };
 		A2B360D5260B3C6200FB990F /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B360D3260B3C6200FB990F /* RecipeCell.swift */; };
@@ -156,6 +158,8 @@
 		A2176A1D261610FD008B3C46 /* WalkThroughCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughCellModel.swift; sourceTree = "<group>"; };
 		A21DA4CA260CBD6700493FFE /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		A21DA4CB260CBD6700493FFE /* CommentCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellModel.swift; sourceTree = "<group>"; };
+		A2463333266A225800F85CB4 /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		A2463334266A225800F85CB4 /* EmptyCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCellModel.swift; sourceTree = "<group>"; };
 		A24F29D326660F2100B7211B /* ActivityIndicatorFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorFooterView.swift; sourceTree = "<group>"; };
 		A24F29D526662BBB00B7211B /* RecipeDetailTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailTitlesView.swift; sourceTree = "<group>"; };
 		A2B360D3260B3C6200FB990F /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -453,6 +457,15 @@
 			path = CommentCell;
 			sourceTree = "<group>";
 		};
+		A2463332266A224500F85CB4 /* EmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				A2463333266A225800F85CB4 /* EmptyCell.swift */,
+				A2463334266A225800F85CB4 /* EmptyCellModel.swift */,
+			);
+			path = EmptyCell;
+			sourceTree = "<group>";
+		};
 		A24F29D226660F2100B7211B /* ActivityIndicatorFooterView */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +477,7 @@
 		A2B360D1260B3BE800FB990F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A2463332266A224500F85CB4 /* EmptyCell */,
 				840EB596264588F90019C101 /* RecipeHeaderCell */,
 				A2176A1B261610C8008B3C46 /* WalkThroughCell */,
 				A21DA4C3260CBD3A00493FFE /* CommentCell */,
@@ -678,6 +692,7 @@
 				7A040F9225E9657C0052798D /* Fonts.swift in Sources */,
 				7AC606002609E5FE00EADB8C /* SegmentioOptions+Extensions.swift in Sources */,
 				7AFC73DB255200A300B30789 /* UICollectionView+Extensions.swift in Sources */,
+				A2463336266A225800F85CB4 /* EmptyCellModel.swift in Sources */,
 				7A0A6EF02609025E0094818D /* ButtonFactory.swift in Sources */,
 				7AFC73D9255200A300B30789 /* UITableView+Extensions.swift in Sources */,
 				7AC2B13C260CA589008160B0 /* RecipeDetailInfoView.swift in Sources */,
@@ -717,6 +732,7 @@
 				A20A4BA4260C8EFF00F1ACFF /* CategoryWithRecipesCell.swift in Sources */,
 				7AC2B184260CBD90008160B0 /* PageControl.swift in Sources */,
 				A20A4BA5260C8EFF00F1ACFF /* CategoryWithRecipesCellModel.swift in Sources */,
+				A2463335266A225800F85CB4 /* EmptyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
