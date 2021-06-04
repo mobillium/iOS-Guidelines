@@ -10,7 +10,7 @@ import UIKit
 
 final class RecipeDetailHeaderView: UIView {
     
-    lazy var collectionView = UICollectionViewBuilder()
+    private let  collectionView = UICollectionViewBuilder()
         .allowsMultipleSelection(false)
         .scrollDirection(.horizontal)
         .backgroundColor(.clear)
@@ -19,8 +19,7 @@ final class RecipeDetailHeaderView: UIView {
         .registerCell(RecipeHeaderCell.self, reuseIdentifier: "RecipeHeaderCell")
         .build()
     
-    lazy var pageControl = UIPageControlBuilder()
-        .numberOfPages(recipeHeaderData.count)
+    private let pageControl = UIPageControlBuilder<PageControl>()
         .build()
     
     // swiftlint:disable weak_delegate
@@ -30,24 +29,43 @@ final class RecipeDetailHeaderView: UIView {
     var recipeHeaderData: [RecipeHeaderCellProtocol] = [] {
         didSet {
             collectionView.reloadData()
+            pageControl.numberOfPages = recipeHeaderData.count
+            pageControl.isHidden = pageControl.numberOfPages == 1
         }
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setCollectionView()
-        setPageControl()
-        setPhotoBrowserDelegate()
+        addSubViews()
+        configurePhotoBrowserDelegate()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setCollectionView()
-        setPageControl()
-        setPhotoBrowserDelegate()
+        addSubViews()
+        configurePhotoBrowserDelegate()
     }
+}
+
+// MARK: - UILayout
+extension RecipeDetailHeaderView {
     
-    private func setPhotoBrowserDelegate() {
+    private func addSubViews() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        addSubview(collectionView)
+        collectionView.edgesToSuperview()
+        
+        addSubview(pageControl)
+        pageControl.bottom(to: collectionView)
+        pageControl.centerX(to: collectionView)
+    }
+}
+
+// MARK: - Configure
+extension RecipeDetailHeaderView {
+    
+    private func configurePhotoBrowserDelegate() {
         photoBrowserDelegate = PhotoBrowserDelegate()
         photoBrowserDelegate?.willDismissAtPage = { [weak self] (index) in
             guard let self = self else { return }
@@ -56,20 +74,6 @@ final class RecipeDetailHeaderView: UIView {
             self.pageControl.currentPage = index
         }
     }
-    
-    private func setCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        addSubview(collectionView)
-        collectionView.edgesToSuperview()
-    }
-    
-    private func setPageControl() {
-        addSubview(pageControl)
-        pageControl.bottom(to: collectionView)
-        pageControl.centerX(to: collectionView)
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegate
