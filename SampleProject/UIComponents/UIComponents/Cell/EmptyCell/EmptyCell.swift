@@ -33,12 +33,12 @@ public class EmptyCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureContents()
+        addSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureContents()
+        addSubViews()
     }
     
     public override func systemLayoutSizeFitting(_ targetSize: CGSize,
@@ -47,16 +47,22 @@ public class EmptyCell: UICollectionViewCell, ReusableView {
         width.constant = bounds.size.width
         return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
+}
+
+// MARK: - UILayout
+extension EmptyCell {
     
-    private func configureContents() {
+    private func addSubViews() {
         contentView.backgroundColor = .appWhite
         contentView.addSubview(infoLabel)
         infoLabel.edgesToSuperview(insets: UIEdgeInsets(top: 50, left: 20, bottom: 50, right: 20))
     }
+}
+
+// MARK: - Set ViewModel
+public extension EmptyCell {
     
-    public func set(viewModel: EmptyCellProtocol) {
+    func set(viewModel: EmptyCellProtocol) {
         self.viewModel = viewModel
-        
     }
-    
 }
