@@ -80,8 +80,7 @@ public class UserView: UIView {
     public init(userViewType: UserViewType) {
         self.userViewType = userViewType
         super.init(frame: .zero)
-        configureContents()
-        addButtonTarget()
+        addSubViews()
     }
     
     // swiftlint:disable fatal_error unavailable_function
@@ -90,7 +89,12 @@ public class UserView: UIView {
     }
     // swiftlint:enable fatal_error unavailable_function
     
-    private func configureContents() {
+}
+
+// MARK: - UILayout
+extension UserView {
+    
+    private func addSubViews() {
         backgroundColor = .appWhite
         addSubview(userImageView)
         userImageView.edgesToSuperview(excluding: .trailing, insets: .init(top: 15, left: 15, bottom: 15, right: 15))
@@ -113,15 +117,12 @@ public class UserView: UIView {
         case .withoutFollowButton:
             textStackView.trailingToSuperview().constant = -15
         }
-    }
-    
-    private func addButtonTarget() {
         followButton.addTarget(self, action: #selector(followButtonTapped(_:)), for: .touchUpInside)
     }
-    
-    @IBAction private func followButtonTapped(_ sender: Any?) {
-        followButtonTapped?()
-    }
+}
+
+// MARK: - Configure
+extension UserView {
     
     private func updateFollowButtonState() {
         if isFollowing {
@@ -134,5 +135,13 @@ public class UserView: UIView {
             followButton.backgroundColor = .appWhite
         }
     }
+}
+
+// MARK: - Actions
+extension UserView {
     
+    @objc
+    private func followButtonTapped(_ sender: Any?) {
+        followButtonTapped?()
+    }
 }
