@@ -21,32 +21,8 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         collectionView.register(CommentCell.self)
         return collectionView
     }()
-    
-    private let bottomView = UIViewBuilder()
-        .backgroundColor(.clear)
-        .build()
-    
-    private let commentTextView: UITextView = {
-        let textView = UITextView()
-        textView.font = .font(.nunitoSemiBold, size: .large)
-        textView.textColor = .appRaven
-        textView.layer.borderWidth = 2
-        textView.layer.borderColor = UIColor.appZircon.cgColor
-        textView.layer.cornerRadius = 20
-        textView.clipsToBounds = true
-        textView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
-        textView.sizeToFit()
-        textView.isScrollEnabled = false
-        return textView
-    }()
-    
-    private let sendButton = UIButtonBuilder()
-        .cornerRadius(20)
-        .clipsToBounds(true)
-        .backgroundColor(.appRed)
-        .image(UIImage.icSend.withRenderingMode(.alwaysTemplate))
-        .tintColor(.appWhite)
-        .build()
+
+    private let commentInputView = CommentInputView()
     
     private let refreshControl = UIRefreshControl()
     private var loadingFooterView: ActivityIndicatorFooterView?
@@ -61,6 +37,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         configureContents()
         viewModel.fetchComments()
         subscribeViewModel()
+        setSendButtonAction()
     }
     
     private func subscribeViewModel() {
@@ -71,7 +48,7 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
         
         viewModel.postCommentDidSuccess = { [weak self] in
             guard let self = self else { return }
-            self.commentTextView.text = ""
+            self.commentInputView.textViewText = ""
             self.view.endEditing(true)
             self.viewModel.postNotification()
         }
@@ -89,33 +66,21 @@ extension CommentListViewController {
     
     private func addSubViews() {
         addCollectionView()
-        addBottomView()
+        addCommentInputView()
     }
     
     private func addCollectionView() {
         view.addSubview(collectionView)
         collectionView.edgesToSuperview(excluding: .bottom, usingSafeArea: true)
+        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
     
-    private func addBottomView() {
-        view.addSubview(bottomView)
-        bottomView.topToBottom(of: collectionView)
-        bottomView.edgesToSuperview(excluding: [.top, .bottom])
-        bottomViewBottomConstraint = bottomView.bottomToSuperview(usingSafeArea: true)
+    private func addCommentInputView() {
+        view.addSubview(commentInputView)
+        commentInputView.topToBottom(of: collectionView)
+        commentInputView.edgesToSuperview(excluding: [.top, .bottom])
+        bottomViewBottomConstraint = commentInputView.bottomToSuperview(usingSafeArea: true)
         bottomViewBottomConstraint?.isActive = true
-        
-        bottomView.addSubview(commentTextView)
-        commentTextView.topToSuperview(bottomView.topAnchor, offset: 10, priority: .defaultLow)
-        commentTextView.edgesToSuperview(excluding: [.right, .top], insets: UIEdgeInsets(top: 0, left: 15, bottom: 10, right: 0))
-        
-        bottomView.addSubview(sendButton)
-        sendButton.trailingToSuperview(offset: 15)
-        sendButton.centerYToSuperview()
-        sendButton.leftToRight(of: commentTextView, offset: 15)
-        sendButton.size(.init(width: 40, height: 40))
-        
-        sendButton.addTarget(self, action: #selector(sendButtonDidTap), for: .touchUpInside)
-        refreshControl.addTarget(self, action: #selector(pullToRefreshValueChanged), for: .valueChanged)
     }
 }
 
@@ -125,14 +90,13 @@ extension CommentListViewController {
     private func configureContents() {
         navigationItem.title = viewModel.title
         keyboardHelper.delegate = self
-        
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.contentInset.bottom = 15
         collectionView.refreshControl = refreshControl
 
         if isKeyboardOpen {
-            commentTextView.becomeFirstResponder()
+            commentInputView.isKeyboardOpen = true
         }
     }
 }
@@ -140,13 +104,15 @@ extension CommentListViewController {
 // MARK: - Actions
 extension CommentListViewController {
     
-    @objc
-    private func sendButtonDidTap() {
-        guard let commentText = commentTextView.text, !commentText.isEmpty else {
-            showWarningToast(message: L10n.Error.empty(L10n.Error.Key.comment))
-            return
+    private func setSendButtonAction() {
+        commentInputView.sendButtonTappedCallBack = { [weak self] text in
+            guard let self = self else { return }
+            guard !text.isEmpty else {
+                self.showWarningToast(message: L10n.Error.empty(L10n.Error.Key.comment))
+                return
+            }
+            self.viewModel.sendButtonTapped(commentText: text)
         }
-        viewModel.sendButtonTapped(commentText: commentText)
     }
     
     @objc

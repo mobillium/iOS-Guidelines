@@ -30,10 +30,25 @@ public class CommentInputView: UIView {
     
     private let sendButton = UIButtonBuilder()
         .cornerRadius(20)
-        .backgroundColor(.appHeather)
-        .image(.icSend, for: .normal)
+        .clipsToBounds(true)
+        .backgroundColor(.appRed)
+        .image(UIImage.icSend.withRenderingMode(.alwaysTemplate))
         .tintColor(.appWhite)
         .build()
+    
+    public var textViewText: String? {
+        willSet {
+            textView.text = newValue
+        }
+    }
+    
+    public var isKeyboardOpen: Bool? {
+        didSet {
+            textView.becomeFirstResponder()
+        }
+    }
+    
+    public var sendButtonTappedCallBack: StringClosure?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,47 +63,39 @@ public class CommentInputView: UIView {
     private func commonInit() {
         addSubViews()
     }
+}
+
+// MARK: - UILayout
+extension CommentInputView {
     
     private func addSubViews() {
-        self.backgroundColor = .clear
-        
-        self.addSubview(textView)
-        textView.addSubview(placeholderLabel)
-        self.addSubview(sendButton)
-        
         textView.delegate = self
+        backgroundColor = .clear
+        addSubview(textView)
+        textView.topToSuperview(topAnchor, offset: 10, priority: .defaultLow)
+        textView.edgesToSuperview(excluding: [.right, .top], insets: UIEdgeInsets(top: 0, left: 15, bottom: 10, right: 0))
         
+        textView.addSubview(placeholderLabel)
         placeholderLabel.edgesToSuperview(excluding: [.leading, .top])
         placeholderLabel.topToSuperview().constant = 12
         placeholderLabel.leadingToSuperview().constant = 18
-        
-        textView.edgesToSuperview(excluding: [.trailing, .leading])
-        textView.leadingToSuperview().constant = 15
-        textView.trailingToLeading(of: sendButton).constant = -15
-        textView.height(40, relation: .equalOrGreater)
-        textView.textContainerInset = UIEdgeInsets(top: 12, left: 15, bottom: 10, right: 10)
-        
-        sendButton.height(40)
-        sendButton.width(40)
-        sendButton.leadingToTrailing(of: textView).constant = 15
-        sendButton.bottomToSuperview()
-        sendButton.trailingToSuperview().constant = -15
-        
-        sendButton.addTarget(self, action: #selector(touchUpInside(_:)), for: .touchUpInside)
+            
+        addSubview(sendButton)
+        sendButton.trailingToSuperview(offset: 15)
+        sendButton.centerYToSuperview()
+        sendButton.leftToRight(of: textView, offset: 15)
+        sendButton.size(.init(width: 40, height: 40))
+        sendButton.addTarget(self, action: #selector(sendButtonTapped), for: .touchUpInside)
     }
-    
 }
 
 // MARK: - Actions
 extension CommentInputView {
     
-    @IBAction private func touchUpInside(_ sender: UIButton) {
-        switch sender {
-        case sendButton:
-            print(textView.text ?? "")
-        default:
-            break
-        }
+    @objc
+    private func sendButtonTapped() {
+        textViewText = textView.text
+        sendButtonTappedCallBack?(textViewText ?? "")
     }
 }
 
