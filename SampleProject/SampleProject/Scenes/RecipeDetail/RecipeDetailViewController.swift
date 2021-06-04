@@ -216,8 +216,6 @@ extension RecipeDetailViewController {
         if DefaultsKey.userId.value == viewModel.userId {
             userView.isFollowButtonHidden = true
         }
-        commentsCollectionView.reloadData()
-        commentsCollectionView.layoutIfNeeded()
     }
 }
 

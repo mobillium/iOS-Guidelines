@@ -8,9 +8,9 @@
 
 "empty" = "%@ alanı boş olamaz.";
 "refresh" = "Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.";
+"emptyFields" = "Lütfen boş alanları doldurunuz.";
+"checkInformations" = "Lütfen bilgilerinizi kontrol ediniz.";
 
 // MARK: - Keys
 "Key.username" = "Username";
-
-"emptyFields" = "Lütfen boş alanları doldurunuz.";
-"checkInformations" = "Lütfen bilgilerinizi kontrol ediniz";"
+"Key.email" = "E-posta";
