@@ -128,6 +128,7 @@ extension RecipeDetailViewController {
         addScrollView()
         addContentStackView()
         addCommentsContainerView()
+        addShareRightBarButton()
     }
     
     private func addScrollView() {
@@ -174,6 +175,11 @@ extension RecipeDetailViewController {
         commentButtonContainerView.addSubview(commentButton)
         commentButton.edgesToSuperview(insets: .init(top: 0, left: 15, bottom: 15, right: 15))
         commentButton.addTarget(self, action: #selector(commentButtonTapped), for: .touchUpInside)
+    }
+    
+    private func addShareRightBarButton() {
+        let shareBarButton = UIBarButtonItem(image: .icShare, style: .plain, target: self, action: #selector(shareBarButtonTapped))
+        navigationItem.rightBarButtonItem = shareBarButton
     }
 }
 
@@ -237,6 +243,11 @@ extension RecipeDetailViewController {
     @objc
     private func commentButtonTapped() {
         viewModel.commentButtonTapped()
+    }
+    
+    @objc
+    private func shareBarButtonTapped() {
+        viewModel.shareBarButtonTapped()
     }
 }
 

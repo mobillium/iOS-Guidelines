@@ -60,6 +60,7 @@
 		A22C0B8426677A51003A6EFA /* RecipeCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */; };
 		A22C0B862667816A003A6EFA /* CategoryCellModel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */; };
 		A22C0B882667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */; };
+		A2463331266A1F4A00F85CB4 /* ShareSheetRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2463330266A1F4A00F85CB4 /* ShareSheetRoute.swift */; };
 		A24F29DA26664B5200B7211B /* RecipeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */; };
 		A24F29DD26667C4100B7211B /* UnfollowAlertViewRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */; };
 		A29A02D42660F5810078F2FA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D32660F5810078F2FA /* MainTabBarController.swift */; };
@@ -193,6 +194,7 @@
 		A22C0B8326677A51003A6EFA /* RecipeCellModel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeCellModel+Extension.swift"; sourceTree = "<group>"; };
 		A22C0B852667816A003A6EFA /* CategoryCellModel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CategoryCellModel+Extension.swift"; sourceTree = "<group>"; };
 		A22C0B872667970D003A6EFA /* AppDelegate+IQKeyboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+IQKeyboardManager.swift"; sourceTree = "<group>"; };
+		A2463330266A1F4A00F85CB4 /* ShareSheetRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareSheetRoute.swift; sourceTree = "<group>"; };
 		A24F29D926664B5200B7211B /* RecipeDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailHeaderView.swift; sourceTree = "<group>"; };
 		A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnfollowAlertViewRoute.swift; sourceTree = "<group>"; };
 		A29A02D32660F5810078F2FA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				A2D7BB622665184500E3F3A2 /* CommentEditDeleteAlertViewRoute.swift */,
 				840EB5A9264589790019C101 /* SKPhotoBrowserRoute.swift */,
 				A24F29DC26667C4100B7211B /* UnfollowAlertViewRoute.swift */,
+				A2463330266A1F4A00F85CB4 /* ShareSheetRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -979,6 +982,7 @@
 				7A980AB62553168400494520 /* HomeRouter.swift in Sources */,
 				7AC7AC3025CD49F700EA44C4 /* DateFormats.swift in Sources */,
 				5FFC3222261A1327004D4F15 /* LoginWarningPopupRoute.swift in Sources */,
+				A2463331266A1F4A00F85CB4 /* ShareSheetRoute.swift in Sources */,
 				A2176A2826161623008B3C46 /* WalkThroughViewModel.swift in Sources */,
 				7A980AF12553171A00494520 /* Transition.swift in Sources */,
 				7AFCDEA9261615A600D5D115 /* RecipeDetailViewModel.swift in Sources */,

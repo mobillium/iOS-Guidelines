@@ -44,6 +44,7 @@ protocol RecipeDetailViewProtocol: RecipeDetailViewDataSource, RecipeDetailViewE
     func followButtonTapped()
     func commentButtonTapped()
     func didSelectComment()
+    func shareBarButtonTapped()
 }
 
 final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDetailViewProtocol {
@@ -134,6 +135,14 @@ extension RecipeDetailViewModel {
     func resetData() {
         cellItems.removeAll()
         recipeHeaderCellItems.removeAll()
+    }
+    
+    func shareBarButtonTapped() {
+        let title = recipeName
+        let imageUrlString = userImageUrl
+        guard let imageUrl = URL(string: imageUrlString ?? "") else { return }
+        let items: [Any] = [title ?? "", imageUrl]
+        router.presentShareSheet(items: items)
     }
 }
 
