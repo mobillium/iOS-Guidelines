@@ -204,7 +204,7 @@ extension RecipeDetailViewModel {
                 self.isFollowing = response.user.isFollowing
                 self.followedId = response.user.id
                 response.images.forEach({ image in
-                    self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? ""))
+                    self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: response.isEditorChoice))
                 })
                 
                 self.reloadDetailData?()

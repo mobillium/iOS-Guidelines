@@ -10,6 +10,7 @@ import Foundation
 
 public protocol RecipeHeaderCellDataSource {
     var imageUrl: String { get }
+    var isEditorChoice: Bool { get }
 }
 
 public protocol RecipeHeaderCellEventSource {
@@ -22,8 +23,10 @@ public protocol RecipeHeaderCellProtocol: RecipeHeaderCellDataSource, RecipeHead
 
 public final class RecipeHeaderCellModel: RecipeHeaderCellProtocol {
     public var imageUrl: String
+    public var isEditorChoice: Bool
     
-    public init(imageUrl: String) {
+    public init(imageUrl: String, isEditorChoice: Bool) {
         self.imageUrl = imageUrl
+        self.isEditorChoice = isEditorChoice
     }
 }

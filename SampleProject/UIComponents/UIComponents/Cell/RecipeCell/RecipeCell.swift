@@ -36,20 +36,16 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .contentMode(.scaleAspectFill)
         .build()
     
-    private let editoryPickImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .center
-        let image = UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit)
-        imageView.image = image
-        imageView.size(.init(width: 40, height: 40))
-        imageView.layer.cornerRadius = 20
-        imageView.layer.shadowColor = UIColor.appCinder.cgColor
-        imageView.layer.shadowOpacity = 0.40
-        imageView.layer.shadowOffset = .zero
-        imageView.layer.shadowRadius = 4
-        imageView.backgroundColor = .appWhite
-        return imageView
-    }()
+    private let editoryPickImageView = UIImageViewBuilder()
+        .contentMode(.center)
+        .image(UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit))
+        .cornerRadius(20)
+        .shadowColor(UIColor.appCinder.cgColor)
+        .shadowOpacity(0.40)
+        .shadowOffset(.zero)
+        .shadowRadius(4)
+        .backgroundColor(.appWhite)
+        .build()
     
     private let recipeCommentAndLikeContainerView = UIView()
     private let recipeCommentAndLikeCountLabel = UILabelBuilder()
@@ -130,6 +126,7 @@ extension RecipeCell {
         contentView.addSubview(editoryPickImageView)
         editoryPickImageView.top(to: recipeImageView).constant = 15
         editoryPickImageView.trailing(to: recipeImageView).constant = -15
+        editoryPickImageView.size(.init(width: 40, height: 40))
     }
     
     private func addRecipeCommentAndLikeContainerView() {
