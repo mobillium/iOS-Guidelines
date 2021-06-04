@@ -204,6 +204,7 @@ extension RecipeDetailViewController {
     }
     
     private func fillData() {
+        navigationItem.title = viewModel.recipeName
         recipeHeaderView.recipeHeaderData = viewModel.recipeHeaderCellItems
         topTitleView.recipeName = viewModel.recipeName
         topTitleView.categoryName = viewModel.categoryName
