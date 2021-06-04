@@ -32,8 +32,10 @@ public enum L10n {
     /// Lütfen boş alanları doldurunuz.
     public static let emptyFields = L10n.tr("Error", "emptyFields")
     /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
-    public static let refresh = L10n.tr("Error", "refresh")
+    public static let refreshFromTop = L10n.tr("Error", "refreshFromTop")
     public enum Key {
+      /// Yorum
+      public static let comment = L10n.tr("Error", "Key.comment")
       /// E-posta
       public static let email = L10n.tr("Error", "Key.email")
       /// Username
@@ -49,6 +51,8 @@ public enum L10n {
     public static let comments = L10n.tr("General", "comments")
     /// Takip Et
     public static let follow = L10n.tr("General", "follow")
+    /// Takipçi
+    public static let follower = L10n.tr("General", "follower")
     /// Takip Ediliyor
     public static let following = L10n.tr("General", "following")
     /// Vazgeç
@@ -57,6 +61,8 @@ public enum L10n {
     public static let like = L10n.tr("General", "like")
     /// Giriş Yap
     public static let login = L10n.tr("General", "login")
+    /// Tarif
+    public static let recipe = L10n.tr("General", "recipe")
     /// Malzemeler
     public static let recipeIngredients = L10n.tr("General", "recipeIngredients")
     /// Yapılışı

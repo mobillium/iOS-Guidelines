@@ -85,7 +85,7 @@ extension CommentInputView {
     @IBAction private func touchUpInside(_ sender: UIButton) {
         switch sender {
         case sendButton:
-            print(textView.text)
+            print(textView.text ?? "")
         default:
             break
         }

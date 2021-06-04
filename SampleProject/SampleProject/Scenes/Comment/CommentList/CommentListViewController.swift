@@ -143,7 +143,7 @@ extension CommentListViewController {
     @objc
     private func sendButtonDidTap() {
         guard let commentText = commentTextView.text, !commentText.isEmpty else {
-            showWarningToast(message: L10n.Error.empty("Yorum"))
+            showWarningToast(message: L10n.Error.empty(L10n.Error.Key.comment))
             return
         }
         viewModel.sendButtonTapped(commentText: commentText)

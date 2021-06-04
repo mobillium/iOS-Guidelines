@@ -138,6 +138,7 @@ extension RecipeDetailViewModel {
 }
 
 // MARK: - Network
+// swiftlint:disable line_length
 extension RecipeDetailViewModel {
     
     func getRecipeComment() {
@@ -149,7 +150,7 @@ extension RecipeDetailViewModel {
                     self.cellItems.append(CommentCellModel(userId: comment.user!.id,
                                                            imageUrl: comment.user?.image?.url,
                                                            username: comment.user?.username,
-                                                           recipeAndFollowerCountText: "\(comment.user?.recipeCount ?? 0) Tarif \(comment.user?.followedCount ?? 0) Takipçi",
+                                                           recipeAndFollowerCountText: "\(comment.user?.recipeCount ?? 0) \(L10n.General.recipe) \(comment.user?.followedCount ?? 0) \(L10n.General.follower)",
                                                            timeDifferenceText: comment.difference,
                                                            commentId: comment.id,
                                                            commentText: comment.text))
@@ -172,7 +173,7 @@ extension RecipeDetailViewModel {
                 self.recipeName = response.title
                 self.categoryName = response.category.name
                 self.timeDifferenceText = response.timeDifference
-                self.recipeAndFollowerCountText = "\(response.user.recipeCount) Tarif \(response.user.followedCount) Takipçi"
+                self.recipeAndFollowerCountText = "\(response.user.recipeCount) \(L10n.General.recipe) \(response.user.followedCount) \(L10n.General.follower)"
                 self.ingredients = response.ingredients
                 self.numberOfPeople = response.numberOfPerson.text
                 self.steps = response.instructions
@@ -232,3 +233,4 @@ extension RecipeDetailViewModel {
         }
     }
 }
+// swiftlint:enable line_length

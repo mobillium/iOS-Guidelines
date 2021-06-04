@@ -101,6 +101,7 @@ extension CommentListViewModel {
 }
 
 // MARK: - Network
+// swiftlint:disable line_length
 extension CommentListViewModel {
     
     func fetchComments() {
@@ -118,7 +119,7 @@ extension CommentListViewModel {
                     self.cellItems.append(CommentCellModel(userId: comment.user.id,
                                                            imageUrl: comment.user.image?.url,
                                                            username: comment.user.username,
-                                                           recipeAndFollowerCountText: "\(comment.user.recipeCount) Tarif \(comment.user.followedCount) Takipçi",
+                                                           recipeAndFollowerCountText: "\(comment.user.recipeCount) \(L10n.General.recipe) \(comment.user.followedCount) \(L10n.General.follower)",
                                                            timeDifferenceText: comment.timeDifference,
                                                            commentId: comment.id,
                                                            commentText: comment.text))
@@ -127,10 +128,11 @@ extension CommentListViewModel {
                 if self.isPagingEnabled { self.page += 1 }
                 self.reloadData?()
             case .failure(_ ):
-                if self.page == 1 { self.showWarningToast?(L10n.Error.refresh) }
+                if self.page == 1 { self.showWarningToast?(L10n.Error.refreshFromTop) }
             }
         }
     }
+    // swiftlint:enable line_length
     
     private func deleteCommentRequest(indexPath: IndexPath) {
         let commentId = cellItems[indexPath.row].commentId
