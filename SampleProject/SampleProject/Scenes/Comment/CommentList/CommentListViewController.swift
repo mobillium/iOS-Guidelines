@@ -73,11 +73,13 @@ final class CommentListViewController: BaseViewController<CommentListViewModel> 
             guard let self = self else { return }
             self.commentTextView.text = ""
             self.view.endEditing(true)
+            self.viewModel.postNotification()
         }
         
         viewModel.deleteCommentDidSuccess = { [weak self] indexPath in
             guard let self = self else { return }
             self.collectionView.deleteItems(at: [indexPath])
+            self.viewModel.postNotification()
         }
     }
 }

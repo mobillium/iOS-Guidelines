@@ -27,6 +27,7 @@ protocol CommentListViewProtocol: CommentListViewDataSource, CommentListViewEven
     func moreButtonTapped(at indexPath: IndexPath)
     func fetchComments()
     func fetchMorePages()
+    func postNotification()
 }
 
 final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListViewProtocol {
@@ -88,6 +89,7 @@ extension CommentListViewModel {
             viewModel.commentText = text
             viewModel.commentTextDidChanged?()
             self?.reloadData?()
+            self?.postNotification()
             
         }
         
@@ -166,5 +168,9 @@ extension CommentListViewModel {
     
     func fetchMorePages() {
         fetchComments()
+    }
+    
+    func postNotification() {
+        NotificationCenter.default.post(name: .reloadDetailView, object: nil)
     }
 }

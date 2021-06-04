@@ -23,7 +23,7 @@ public enum L10n {
     }
   }
   public enum Error {
-    /// Lütfen bilgilerinizi kontrol ediniz
+    /// Lütfen bilgilerinizi kontrol ediniz.
     public static let checkInformations = L10n.tr("Error", "checkInformations")
     /// %@ alanı boş olamaz.
     public static func empty(_ p1: Any) -> String {
@@ -34,6 +34,8 @@ public enum L10n {
     /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
     public static let refresh = L10n.tr("Error", "refresh")
     public enum Key {
+      /// E-posta
+      public static let email = L10n.tr("Error", "Key.email")
       /// Username
       public static let username = L10n.tr("Error", "Key.username")
     }

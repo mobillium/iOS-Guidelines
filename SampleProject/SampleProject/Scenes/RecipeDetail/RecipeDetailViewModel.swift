@@ -172,7 +172,7 @@ extension RecipeDetailViewModel {
                 self.recipeName = response.title
                 self.categoryName = response.category.name
                 self.timeDifferenceText = response.timeDifference
-                self.recipeAndFollowerCountText = "\(response.user.recipeCount) Tarif \(response.user.followingCount) Takipçi"
+                self.recipeAndFollowerCountText = "\(response.user.recipeCount) Tarif \(response.user.followedCount) Takipçi"
                 self.ingredients = response.ingredients
                 self.numberOfPeople = response.numberOfPerson.text
                 self.steps = response.instructions
