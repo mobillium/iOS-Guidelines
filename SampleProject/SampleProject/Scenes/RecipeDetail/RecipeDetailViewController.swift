@@ -110,12 +110,13 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         viewModel.toggleIsFollowing = { [weak self] in
             guard let self = self else { return }
             self.userView.isFollowing.toggle()
+            self.viewModel.isFollowing.toggle()
             
             let isFollowing = self.viewModel.isFollowing
             if isFollowing {
-                self.viewModel.userFollowedCount? -= 1
-            } else {
                 self.viewModel.userFollowedCount? += 1
+            } else {
+                self.viewModel.userFollowedCount? -= 1
             }
             
             self.userView.recipeAndFollowerCountText = self.viewModel.recipeAndFollowerCountText

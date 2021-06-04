@@ -238,7 +238,6 @@ extension RecipeDetailViewModel {
     private func userFollowRequest(followType: UserFollowRequest.FollowType) {
         guard let followedId = followedId else { return }
         toggleIsFollowing?()
-        isFollowing.toggle()
         let request = UserFollowRequest(followedId: followedId, followType: followType)
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
@@ -248,7 +247,6 @@ extension RecipeDetailViewModel {
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsFollowing?()
-                self.isFollowing.toggle()
             }
         }
     }
