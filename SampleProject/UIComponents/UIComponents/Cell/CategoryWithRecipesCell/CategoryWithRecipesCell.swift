@@ -37,42 +37,12 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureConstraints()
-        addButtonTarget()
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureConstraints()
-        addButtonTarget()
-    }
-    
-    private func configureConstraints() {
-        backgroundColor = .white
-        
-        contentView.addSubview(topContainerView)
-        topContainerView.edgesToSuperview(excluding: .bottom)
-        topContainerView.height(44)
-        
-        topContainerView.addSubview(categoryImageView)
-        categoryImageView.edgesToSuperview(excluding: .right, insets: UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 0))
-        categoryImageView.size(CGSize(width: 24, height: 24))
-        
-        topContainerView.addSubview(categoryNameLabel)
-        categoryNameLabel.centerYToSuperview()
-        categoryNameLabel.leadingToTrailing(of: categoryImageView).constant = 5
-        
-        topContainerView.addSubview(seeAllButton)
-        seeAllButton.trailingToSuperview().constant = -15
-        seeAllButton.centerYToSuperview()
-        
-        contentView.addSubview(seperator)
-        seperator.topToBottom(of: topContainerView)
-        seperator.size(CGSize(width: contentView.frame.width, height: 1))
-        
-        contentView.addSubview(recipeSmallCellView)
-        recipeSmallCellView.edgesToSuperview(excluding: .top)
-        recipeSmallCellView.topToBottom(of: seperator)
+        addSubViews()
     }
     
     public override func prepareForReuse() {
@@ -80,21 +50,60 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         self.categoryImageView.image = nil
         self.categoryNameLabel.text = nil
     }
+}
+
+// MARK: - UILayout
+extension CategoryWithRecipesCell {
     
-    private func addButtonTarget() {
+    private func addSubViews() {
+        backgroundColor = .white
+        addTopContainerView()
+        addSeperator()
+        addRecipeSmallCellView()
+    }
+    
+    private func addTopContainerView() {
+        contentView.addSubview(topContainerView)
+        topContainerView.edgesToSuperview(excluding: .bottom)
+        topContainerView.height(44)
+        topContainerView.addSubview(categoryImageView)
+        categoryImageView.edgesToSuperview(excluding: .right, insets: UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 0))
+        categoryImageView.size(CGSize(width: 24, height: 24))
+        topContainerView.addSubview(categoryNameLabel)
+        categoryNameLabel.centerYToSuperview()
+        categoryNameLabel.leadingToTrailing(of: categoryImageView).constant = 5
+        topContainerView.addSubview(seeAllButton)
+        seeAllButton.trailingToSuperview().constant = -15
+        seeAllButton.centerYToSuperview()
         seeAllButton.addTarget(self, action: #selector(seeAllButtonTapped(_:)), for: .touchUpInside)
     }
+    
+    private func addSeperator() {
+        contentView.addSubview(seperator)
+        seperator.topToBottom(of: topContainerView)
+        seperator.size(CGSize(width: contentView.frame.width, height: 1))
+    }
+    
+    private func addRecipeSmallCellView() {
+        contentView.addSubview(recipeSmallCellView)
+        recipeSmallCellView.edgesToSuperview(excluding: .top)
+        recipeSmallCellView.topToBottom(of: seperator)
+    }
+}
+
+// MARK: - Actions
+extension CategoryWithRecipesCell {
     
     @objc
     private func seeAllButtonTapped(_ sender: UIButton) {
         guard let categoryId = viewModel?.categoryId, let categoryName = viewModel?.categoryName else { return }
         viewModel?.seeAllButtonTapped?(categoryId, categoryName)
     }
-
 }
 
 // MARK: - Set ViewModel
 public extension CategoryWithRecipesCell {
+    
     func set(with viewModel: CategoryWithRecipesCellProtocol) {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImageURL)

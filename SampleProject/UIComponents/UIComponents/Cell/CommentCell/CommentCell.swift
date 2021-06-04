@@ -77,7 +77,7 @@ extension CommentCell {
     private func addSubViews() {
         backgroundColor = .white
         contentView.addSubview(userView)
-        userView.edgesToSuperview(excluding: .bottom)
+        userView.edgesToSuperview(excluding: [.bottom, .trailing])
         userView.height(70)
         
         contentView.addSubview(timeDifferenceLabel)
@@ -92,6 +92,7 @@ extension CommentCell {
         contentView.addSubview(moreButton)
         moreButton.topToSuperview(offset: 10)
         moreButton.trailingToSuperview(offset: 15)
+        moreButton.leadingToTrailing(of: userView).constant = 15
         moreButton.size(CGSize(width: 18, height: 10))
         moreButton.addTarget(self, action: #selector(moreButtonTapped(_:)), for: .touchUpInside)
     }
