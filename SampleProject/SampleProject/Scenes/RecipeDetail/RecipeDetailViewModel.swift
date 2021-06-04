@@ -13,7 +13,9 @@ protocol RecipeDetailViewDataSource {
     var username: String? { get }
     var userId: Int? { get }
     var userImageUrl: String? { get }
+    var userFollowedCount: Int? { get }
     var recipeName: String? { get }
+    var recipeCount: Int? { get }
     var categoryName: String? { get }
     var timeDifferenceText: String? { get }
     var recipeAndFollowerCountText: String? { get }
@@ -53,6 +55,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var userId: Int?
     var userImageUrl: String?
     var recipeName: String?
+    var recipeCount: Int?
     var categoryName: String?
     var timeDifferenceText: String?
     var recipeAndFollowerCountText: String?
@@ -70,6 +73,12 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var reloadDetailData: VoidClosure?
     var toggleIsLiked: VoidClosure?
     var toggleIsFollowing: VoidClosure?
+    
+    var userFollowedCount: Int? {
+        didSet {
+            recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount ?? 0) \(L10n.General.follower)"
+        }
+    }
     
     let keychain = KeychainSwift()
     
@@ -179,10 +188,12 @@ extension RecipeDetailViewModel {
                 self.username = response.user.username
                 self.userId = response.user.id
                 self.userImageUrl = response.user.image?.url
+                self.userFollowedCount = response.user.followedCount
                 self.recipeName = response.title
+                self.recipeCount = response.user.recipeCount
                 self.categoryName = response.category.name
                 self.timeDifferenceText = response.timeDifference
-                self.recipeAndFollowerCountText = "\(response.user.recipeCount) \(L10n.General.recipe) \(response.user.followedCount) \(L10n.General.follower)"
+                self.recipeAndFollowerCountText = "\(self.recipeCount ?? 0) \(L10n.General.recipe) \(self.userFollowedCount ?? 0) \(L10n.General.follower)"
                 self.ingredients = response.ingredients
                 self.numberOfPeople = response.numberOfPerson.text
                 self.steps = response.instructions
