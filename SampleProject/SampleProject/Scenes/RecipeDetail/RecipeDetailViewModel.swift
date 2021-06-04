@@ -184,34 +184,37 @@ extension RecipeDetailViewModel {
         dataProvider.request(for: GetRecipeDetailRequest(recipeId: recipeId)) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                self.username = response.user.username
-                self.userId = response.user.id
-                self.userImageUrl = response.user.image?.url
-                self.userFollowedCount = response.user.followedCount
-                self.recipeName = response.title
-                self.recipeCount = response.user.recipeCount
-                self.categoryName = response.category.name
-                self.timeDifferenceText = response.timeDifference
-                self.recipeAndFollowerCountText = "\(self.recipeCount ?? 0) \(L10n.General.recipe) \(self.userFollowedCount ?? 0) \(L10n.General.follower)"
-                self.ingredients = response.ingredients
-                self.numberOfPeople = response.numberOfPerson.text
-                self.steps = response.instructions
-                self.time = response.timeOfRecipe.text
-                self.commentCount = response.commentCount
-                self.likeCount = response.likeCount
-                self.isLiked = response.isLiked
-                self.isFollowing = response.user.isFollowing
-                self.followedId = response.user.id
-                response.images.forEach({ image in
-                    self.recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: response.isEditorChoice))
-                })
-                
+            case .success(let recipeDetail):
+                self.setData(recipeDetail: recipeDetail)
                 self.reloadDetailData?()
             case .failure(let error ):
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    private func setData(recipeDetail: RecipeDetail) {
+        username = recipeDetail.user.username
+        userId = recipeDetail.user.id
+        userImageUrl = recipeDetail.user.image?.url
+        userFollowedCount = recipeDetail.user.followedCount
+        recipeName = recipeDetail.title
+        recipeCount = recipeDetail.user.recipeCount
+        categoryName = recipeDetail.category.name
+        timeDifferenceText = recipeDetail.timeDifference
+        recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount ?? 0) \(L10n.General.follower)"
+        ingredients = recipeDetail.ingredients
+        numberOfPeople = recipeDetail.numberOfPerson.text
+        steps = recipeDetail.instructions
+        time = recipeDetail.timeOfRecipe.text
+        commentCount = recipeDetail.commentCount
+        likeCount = recipeDetail.likeCount
+        isLiked = recipeDetail.isLiked
+        isFollowing = recipeDetail.user.isFollowing
+        followedId = recipeDetail.user.id
+        recipeDetail.images.forEach({ image in
+            recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
+        })
     }
     
     private func recipeLikeRequest() {
