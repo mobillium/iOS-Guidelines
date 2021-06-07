@@ -10,7 +10,7 @@ import UIKit
 class ModalTransition: NSObject {
 
     var animator: Animator?
-    var isAnimated: Bool = true
+    var isAnimated = true
 
     var modalTransitionStyle: UIModalTransitionStyle
     var modalPresentationStyle: UIModalPresentationStyle

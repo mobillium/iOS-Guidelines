@@ -55,6 +55,12 @@ public class UserView: UIView {
         }
     }
     
+    public var isFollowButtonHidden: Bool? {
+        willSet {
+            followButton.isHidden = newValue ?? false
+        }
+    }
+    
     public enum UserViewType {
         case withFollowButton
         case withoutFollowButton
@@ -63,9 +69,9 @@ public class UserView: UIView {
     let userViewType: UserViewType
     
     /// Only use this variable when you enable followButton
-    public var isFollowing: Bool = false {
+    public var isFollowing = false {
         didSet {
-            updateFollowButton()
+            updateFollowButtonState()
         }
     }
     
@@ -74,8 +80,7 @@ public class UserView: UIView {
     public init(userViewType: UserViewType) {
         self.userViewType = userViewType
         super.init(frame: .zero)
-        configureContents()
-        addButtonTarget()
+        addSubViews()
     }
     
     // swiftlint:disable fatal_error unavailable_function
@@ -84,7 +89,12 @@ public class UserView: UIView {
     }
     // swiftlint:enable fatal_error unavailable_function
     
-    private func configureContents() {
+}
+
+// MARK: - UILayout
+extension UserView {
+    
+    private func addSubViews() {
         backgroundColor = .appWhite
         addSubview(userImageView)
         userImageView.edgesToSuperview(excluding: .trailing, insets: .init(top: 15, left: 15, bottom: 15, right: 15))
@@ -103,20 +113,18 @@ public class UserView: UIView {
             followButton.leadingToTrailing(of: textStackView).constant = 10
             followButton.centerYToSuperview()
             followButton.width(120)
+            updateFollowButtonState()
         case .withoutFollowButton:
             textStackView.trailingToSuperview().constant = -15
         }
-    }
-    
-    private func addButtonTarget() {
         followButton.addTarget(self, action: #selector(followButtonTapped(_:)), for: .touchUpInside)
     }
+}
+
+// MARK: - Configure
+extension UserView {
     
-    @IBAction private func followButtonTapped(_ sender: Any?) {
-        followButtonTapped?()
-    }
-    
-    private func updateFollowButton() {
+    private func updateFollowButtonState() {
         if isFollowing {
             followButton.setTitle(L10n.General.following, for: .normal)
             followButton.setTitleColor(.white, for: .normal)
@@ -127,5 +135,13 @@ public class UserView: UIView {
             followButton.backgroundColor = .appWhite
         }
     }
+}
+
+// MARK: - Actions
+extension UserView {
     
+    @objc
+    private func followButtonTapped(_ sender: Any?) {
+        followButtonTapped?()
+    }
 }

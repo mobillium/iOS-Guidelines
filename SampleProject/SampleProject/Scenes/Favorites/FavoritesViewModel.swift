@@ -81,7 +81,7 @@ extension FavoritesViewModel {
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 self.didSuccessFetchCategories?()
             case .failure(_ ):
-                if self.page == 1 { self.showWarningToast?("æLütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.") }
+                if self.page == 1 { self.showWarningToast?(L10n.Error.refreshFromTop) }
             }
         }
     }

@@ -57,6 +57,10 @@ class BaseViewController<V: BaseViewModelProtocol>: UIViewController, BaseViewCo
         }
     }
     
+    func showWarningToast(message: String) {
+        ToastPresenter.showWarningToast(text: message)
+    }
+    
     #if DEBUG
     deinit {
         debugPrint("deinit \(self)")

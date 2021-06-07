@@ -19,7 +19,7 @@ final class AppRouter: Router, AppRouter.Routes {
     
     func startApp() {
         if DefaultsKey.isWalkThroughCompleted.value == true {
-            placeOnWindowMainTabBarController()
+            placeOnWindowMainTabBar()
         } else {
             placeOnWindowWalkThrough()
         }

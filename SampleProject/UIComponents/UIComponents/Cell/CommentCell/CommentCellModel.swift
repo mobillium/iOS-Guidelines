@@ -15,7 +15,7 @@ public protocol CommentCellDataSource: AnyObject {
     var recipeAndFollowerCountText: String? { get }
     var timeDifferenceText: String? { get }
     var commentId: Int { get }
-    var commentText: String? { get }
+    var commentText: String? { get set }
 }
 
 public protocol CommentCellEventSource: AnyObject {

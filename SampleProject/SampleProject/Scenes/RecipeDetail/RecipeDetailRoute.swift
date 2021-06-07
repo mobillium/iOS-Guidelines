@@ -17,7 +17,7 @@ extension RecipeDetailRoute where Self: RouterProtocol {
         let router = RecipeDetailRouter()
         let viewModel = RecipeDetailViewModel(recipeId: recipeId, router: router)
         let viewController = RecipeDetailViewController(viewModel: viewModel)
-
+        
         let transition = PushTransition()
         router.openTransition = transition
         router.viewController = viewController

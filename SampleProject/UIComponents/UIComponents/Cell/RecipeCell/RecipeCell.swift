@@ -17,17 +17,14 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let recipeTitlesContainerView = UIView()
-    
     private let recipeTitleStackView = UIStackViewBuilder()
         .axis(.vertical)
         .distribution(.fillEqually)
         .build()
-    
     private let recipeTitleLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xLarge))
         .textColor(.appCinder)
         .build()
-    
     private let recipeCategoryLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .xLarge))
         .textColor(.appRaven)
@@ -39,23 +36,18 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         .contentMode(.scaleAspectFill)
         .build()
     
-    private let editoryPickImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .center
-        let image = UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit)
-        imageView.image = image
-        imageView.size(.init(width: 40, height: 40))
-        imageView.layer.cornerRadius = 20
-        imageView.layer.shadowColor = UIColor.appCinder.cgColor
-        imageView.layer.shadowOpacity = 0.40
-        imageView.layer.shadowOffset = .zero
-        imageView.layer.shadowRadius = 4
-        imageView.backgroundColor = .appWhite
-        return imageView
-    }()
+    private let editoryPickImageView = UIImageViewBuilder()
+        .contentMode(.center)
+        .image(UIImage.imgEditorsPick.resize(to: .init(width: 20, height: 24), for: .scaleAspectFit))
+        .cornerRadius(20)
+        .shadowColor(UIColor.appCinder.cgColor)
+        .shadowOpacity(0.40)
+        .shadowOffset(.zero)
+        .shadowRadius(4)
+        .backgroundColor(.appWhite)
+        .build()
     
     private let recipeCommentAndLikeContainerView = UIView()
-    
     private let recipeCommentAndLikeCountLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .medium))
         .textColor(.appRaven)
@@ -65,57 +57,12 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureConstraints()
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureConstraints()
-    }
-    
-    private func configureConstraints() {
-        backgroundColor = .white
-        
-        contentView.addSubview(userView)
-        userView.edgesToSuperview(excluding: .bottom)
-        userView.height(70)
-        
-        contentView.addSubview(separatorLine)
-        separatorLine.topToBottom(of: userView)
-        separatorLine.edgesToSuperview(excluding: [.bottom, .top])
-        separatorLine.height(1)
-        
-        contentView.addSubview(recipeTitlesContainerView)
-        recipeTitlesContainerView.topToBottom(of: separatorLine)
-        recipeTitlesContainerView.leadingToSuperview().constant = 15
-        recipeTitlesContainerView.trailingToSuperview().constant = -15
-        recipeTitlesContainerView.height(61)
-        
-        recipeTitlesContainerView.addSubview(recipeTitleStackView)
-        recipeTitleStackView.edgesToSuperview(excluding: [.top, .bottom])
-        recipeTitleStackView.centerYToSuperview()
-        recipeTitleStackView.addArrangedSubview(recipeTitleLabel)
-        recipeTitleStackView.addArrangedSubview(recipeCategoryLabel)
-        
-        contentView.addSubview(recipeImageView)
-        recipeImageView.topToBottom(of: recipeTitlesContainerView)
-        recipeImageView.leadingToSuperview().constant = 15
-        recipeImageView.trailingToSuperview().constant = -15
-        recipeImageView.aspectRatio(1 / 1)
-        
-        contentView.addSubview(editoryPickImageView)
-        editoryPickImageView.top(to: recipeImageView).constant = 15
-        editoryPickImageView.trailing(to: recipeImageView).constant = -15
-        
-        contentView.addSubview(recipeCommentAndLikeContainerView)
-        recipeCommentAndLikeContainerView.topToBottom(of: recipeImageView)
-        recipeCommentAndLikeContainerView.leadingToSuperview().constant = 15
-        recipeCommentAndLikeContainerView.trailingToSuperview().constant = -15
-        recipeCommentAndLikeContainerView.height(43)
-        
-        recipeCommentAndLikeContainerView.addSubview(recipeCommentAndLikeCountLabel)
-        recipeCommentAndLikeCountLabel.centerYToSuperview()
-        recipeCommentAndLikeCountLabel.edgesToSuperview(excluding: [.top, .bottom])
+        addSubViews()
     }
     
     public override func prepareForReuse() {
@@ -128,11 +75,75 @@ public class RecipeCell: UICollectionViewCell, ReusableView {
         self.recipeImageView.image = nil
         self.recipeCommentAndLikeCountLabel.text = nil
     }
+}
+
+// MARK: - UILayout
+extension RecipeCell {
     
+    private func addSubViews() {
+        backgroundColor = .white
+        addUserView()
+        addSeperator()
+        addRecipeTitlesContainerView()
+        addRecipeImageAndEditoryPickImageView()
+        addRecipeCommentAndLikeContainerView()
+    }
+    
+    private func addUserView() {
+        contentView.addSubview(userView)
+        userView.edgesToSuperview(excluding: .bottom)
+        userView.height(70)
+    }
+    
+    private func addSeperator() {
+        contentView.addSubview(separatorLine)
+        separatorLine.topToBottom(of: userView)
+        separatorLine.edgesToSuperview(excluding: [.bottom, .top])
+        separatorLine.height(1)
+    }
+    
+    private func addRecipeTitlesContainerView() {
+        contentView.addSubview(recipeTitlesContainerView)
+        recipeTitlesContainerView.topToBottom(of: separatorLine)
+        recipeTitlesContainerView.leadingToSuperview().constant = 15
+        recipeTitlesContainerView.trailingToSuperview().constant = -15
+        recipeTitlesContainerView.height(61)
+        
+        recipeTitlesContainerView.addSubview(recipeTitleStackView)
+        recipeTitleStackView.edgesToSuperview(excluding: [.top, .bottom])
+        recipeTitleStackView.centerYToSuperview()
+        recipeTitleStackView.addArrangedSubview(recipeTitleLabel)
+        recipeTitleStackView.addArrangedSubview(recipeCategoryLabel)
+    }
+    
+    private func addRecipeImageAndEditoryPickImageView() {
+        contentView.addSubview(recipeImageView)
+        recipeImageView.topToBottom(of: recipeTitlesContainerView)
+        recipeImageView.leadingToSuperview().constant = 15
+        recipeImageView.trailingToSuperview().constant = -15
+        recipeImageView.aspectRatio(1 / 1)
+        
+        contentView.addSubview(editoryPickImageView)
+        editoryPickImageView.top(to: recipeImageView).constant = 15
+        editoryPickImageView.trailing(to: recipeImageView).constant = -15
+        editoryPickImageView.size(.init(width: 40, height: 40))
+    }
+    
+    private func addRecipeCommentAndLikeContainerView() {
+        contentView.addSubview(recipeCommentAndLikeContainerView)
+        recipeCommentAndLikeContainerView.topToBottom(of: recipeImageView)
+        recipeCommentAndLikeContainerView.leadingToSuperview().constant = 15
+        recipeCommentAndLikeContainerView.trailingToSuperview().constant = -15
+        recipeCommentAndLikeContainerView.height(43)
+        recipeCommentAndLikeContainerView.addSubview(recipeCommentAndLikeCountLabel)
+        recipeCommentAndLikeCountLabel.centerYToSuperview()
+        recipeCommentAndLikeCountLabel.edgesToSuperview(excluding: [.top, .bottom])
+    }
 }
 
 // MARK: - Set ViewModel
 public extension RecipeCell {
+    
     func set(viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
         userView.username = viewModel.username

@@ -6,4 +6,10 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-final class RecipeDetailRouter: Router {}
+final class RecipeDetailRouter: Router, RecipeDetailRouter.Routes {
+    typealias Routes = LoginWarningPopupRoute &
+        LoginRoute &
+        UnfollowAlertViewRoute &
+        CommentListRoute &
+        ShareSheetRoute
+}

@@ -60,34 +60,59 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureCellShadowAndRadius()
-        setupConstraints()
+        addSubViews()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureCellShadowAndRadius()
-        setupConstraints()
+        addSubViews()
     }
     
-    private func setupConstraints() {
+    public override func prepareForReuse() {
+        super.prepareForReuse()
+        self.recipeImageView.image = nil
+        self.userImageView.image = nil
+        self.usernameLabel.text = nil
+        self.recipeTitleLabel.text = nil
+        self.recipeCommentAndLikeCountLabel.text = nil
+    }
+}
+
+// MARK: - UILayout
+extension RecipeSmallCell {
+    
+    private func addSubViews() {
         contentView.backgroundColor = .white
-        
+        addRecipeImageView()
+        addUserImageView()
+        addUserNameLabel()
+        contentView.bringSubviewToFront(userImageView)
+        addRecipeInformationView()
+
+    }
+    
+    private func addRecipeImageView() {
         contentView.addSubview(recipeImageView)
         recipeImageView.edgesToSuperview(excluding: .bottom)
         recipeImageView.aspectRatio(1 / 1)
-        
+    }
+    
+    private func addUserImageView() {
         contentView.addSubview(userImageView)
         userImageView.top(to: recipeImageView).constant = 5
         userImageView.leading(to: recipeImageView).constant = 5
         userImageView.size(.init(width: 30, height: 30))
-        
+    }
+    
+    private func addUserNameLabel() {
         contentView.addSubview(usernameLabel)
         usernameLabel.leadingToTrailing(of: userImageView).constant = -12
         usernameLabel.centerY(to: userImageView)
         usernameLabel.height(20)
-        
-        contentView.bringSubviewToFront(userImageView)
-        
+    }
+    
+    private func addRecipeInformationView() {
         contentView.addSubview(recipeInformationView)
         recipeInformationView.topToBottom(of: recipeImageView)
         recipeInformationView.edgesToSuperview(excluding: .top)
@@ -99,15 +124,10 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
         recipeInformationStackView.addArrangedSubview(recipeTitleLabel)
         recipeInformationStackView.addArrangedSubview(recipeCommentAndLikeCountLabel)
     }
-    
-    public override func prepareForReuse() {
-        super.prepareForReuse()
-        self.recipeImageView.image = nil
-        self.userImageView.image = nil
-        self.usernameLabel.text = nil
-        self.recipeTitleLabel.text = nil
-        self.recipeCommentAndLikeCountLabel.text = nil
-    }
+}
+
+// MARK: - Configure
+extension RecipeSmallCell {
     
     private func configureCellShadowAndRadius() {
         contentView.layer.cornerRadius = 4
@@ -124,6 +144,7 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
 
 // MARK: - Set ViewModel
 public extension RecipeSmallCell {
+    
     func set(with viewModel: RecipeCellProtocol) {
         self.viewModel = viewModel
         self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)

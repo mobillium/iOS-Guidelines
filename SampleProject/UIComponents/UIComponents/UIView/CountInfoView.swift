@@ -29,7 +29,7 @@ public class CountInfoView: UIView {
         .textAlignment(.center)
         .build()
     
-    public var isSelected: Bool = false {
+    public var isSelected = false {
         willSet {
             iconButton.tintColor = newValue ? .appRed : .appCinder
         }
@@ -38,6 +38,12 @@ public class CountInfoView: UIView {
     public var icon: UIImage? {
         willSet {
             iconButton.setImage(newValue?.resize(to: .init(width: 20, height: 18), for: .scaleAspectFit), for: .normal)
+        }
+    }
+    
+    public var iconColor: UIColor? {
+        willSet {
+            iconButton.tintColor = newValue
         }
     }
     
@@ -67,6 +73,7 @@ public class CountInfoView: UIView {
     // swiftlint:enable fatal_error unavailable_function
     
     private func configureContents() {
+        backgroundColor = .appWhite
         addSubview(iconButton)
         iconButton.centerXToSuperview()
         iconButton.leadingToSuperview(relation: .equalOrGreater)

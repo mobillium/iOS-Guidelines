@@ -7,20 +7,21 @@
 //
 
 protocol LoginRoute {
-    func placeLoginOnWindow()
+    func presentLogin()
 }
 
 extension LoginRoute where Self: RouterProtocol {
     
-    func placeLoginOnWindow() {
+    func presentLogin() {
         let router = LoginRouter()
         let viewModel = LoginViewModel(router: router)
         let viewController = LoginViewController(viewModel: viewModel)
+        let navigationController = TransparentNavigationController(rootViewController: viewController)
+        let transition = ModalTransition(isAnimated: true, modalTransitionStyle: .coverVertical, modalPresentationStyle: .fullScreen)
         
-        let transition = PlaceOnWindowTransition()
         router.viewController = viewController
         router.openTransition = transition
         
-        open(viewController, transition: transition)
+        open(navigationController, transition: transition)
     }
 }

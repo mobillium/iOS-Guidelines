@@ -10,7 +10,7 @@ import UIKit
 class PushTransition: NSObject {
     
     var animator: Animator?
-    var isAnimated: Bool = true
+    var isAnimated = true
     var completionHandler: (() -> Void)?
     
     weak var viewController: UIViewController?

@@ -16,13 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        configureIQKeyboardManager()
         configureSKPhotoBrowser()
         let bounds = UIScreen.main.bounds
         self.window = UIWindow(frame: bounds)
         self.window?.makeKeyAndVisible()
         AppRouter.shared.startApp()
-        IQKeyboardManager.shared.enable = true
         return true
     }
-
 }

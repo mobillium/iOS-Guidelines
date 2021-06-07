@@ -27,8 +27,8 @@ final class LoginWarningPopupViewModel: BaseViewModel<LoginWarningPopupRouter>, 
         router.close()
     }
     func loginButtonAction() {
-        loginHandler?()
         router.close()
+        loginHandler?()
     }
     
 }

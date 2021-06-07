@@ -14,17 +14,17 @@ public class WalkThroughCell: UICollectionViewCell, ReusableView {
         .contentMode(.scaleAspectFit)
         .build()
     
+    private let bottomContainerView = UIView()
     private let textStackView = UIStackViewBuilder()
         .spacing(10)
         .axis(.vertical)
         .build()
-    
     private let titleLabel = UILabelBuilder()
         .font(.font(.nunitoBold, size: .xxLarge))
         .textAlignment(.center)
         .textColor(.appCinder)
+        .adjustsFontSizeToFitWidth(true)
         .build()
-    
     private let descriptionLabel = UILabelBuilder()
         .font(.font(.nunitoSemiBold, size: .xLarge))
         .textAlignment(.center)
@@ -36,33 +36,51 @@ public class WalkThroughCell: UICollectionViewCell, ReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configureContents()
+        addSubViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        configureContents()
+        addSubViews()
+    }
+}
+
+// MARK: - UILayout
+extension WalkThroughCell {
+  
+    private func addSubViews() {
+        contentView.backgroundColor = .appWhite
+        addImageView()
+        addBottomContainerView()
     }
     
-    private func configureContents() {
-        contentView.backgroundColor = .appWhite
-        
+    private func addImageView() {
         contentView.addSubview(imageView)
         imageView.edgesToSuperview(excluding: [.top, .bottom], insets: UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50))
         imageView.centerYToSuperview()
         imageView.aspectRatio(1)
-        
-        contentView.addSubview(textStackView)
-        textStackView.edgesToSuperview(excluding: .top, insets: UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50))
+    }
+    
+    private func addBottomContainerView() {
+        contentView.addSubview(bottomContainerView)
+        bottomContainerView.topToBottom(of: imageView)
+        bottomContainerView.edgesToSuperview(excluding: .top)
+        bottomContainerView.addSubview(textStackView)
+        textStackView.centerYToSuperview()
+        textStackView.leadingToSuperview().constant = 50
+        textStackView.trailingToSuperview().constant = -50
         textStackView.addArrangedSubview(titleLabel)
         textStackView.addArrangedSubview(descriptionLabel)
     }
+}
+
+// MARK: - Set ViewModel
+public extension WalkThroughCell {
     
-    public func set(viewModel: WalkThroughCellProtocol) {
+    func set(viewModel: WalkThroughCellProtocol) {
         self.viewModel = viewModel
         self.imageView.image = viewModel.image
         self.titleLabel.text = viewModel.titleText
         self.descriptionLabel.text = viewModel.descriptionText
     }
-    
 }

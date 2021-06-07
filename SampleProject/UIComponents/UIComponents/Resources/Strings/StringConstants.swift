@@ -23,11 +23,21 @@ public enum L10n {
     }
   }
   public enum Error {
-    /// %@ can not be empty.
+    /// Lütfen bilgilerinizi kontrol ediniz.
+    public static let checkInformations = L10n.tr("Error", "checkInformations")
+    /// %@ alanı boş olamaz.
     public static func empty(_ p1: Any) -> String {
       return L10n.tr("Error", "empty", String(describing: p1))
     }
+    /// Lütfen boş alanları doldurunuz.
+    public static let emptyFields = L10n.tr("Error", "emptyFields")
+    /// Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.
+    public static let refreshFromTop = L10n.tr("Error", "refreshFromTop")
     public enum Key {
+      /// Yorum
+      public static let comment = L10n.tr("Error", "Key.comment")
+      /// E-posta
+      public static let email = L10n.tr("Error", "Key.email")
       /// Username
       public static let username = L10n.tr("Error", "Key.username")
     }
@@ -41,6 +51,8 @@ public enum L10n {
     public static let comments = L10n.tr("General", "comments")
     /// Takip Et
     public static let follow = L10n.tr("General", "follow")
+    /// Takipçi
+    public static let follower = L10n.tr("General", "follower")
     /// Takip Ediliyor
     public static let following = L10n.tr("General", "following")
     /// Vazgeç
@@ -49,6 +61,8 @@ public enum L10n {
     public static let like = L10n.tr("General", "like")
     /// Giriş Yap
     public static let login = L10n.tr("General", "login")
+    /// Tarif
+    public static let recipe = L10n.tr("General", "recipe")
     /// Malzemeler
     public static let recipeIngredients = L10n.tr("General", "recipeIngredients")
     /// Yapılışı
@@ -57,6 +71,16 @@ public enum L10n {
     public static let register = L10n.tr("General", "register")
   }
   public enum Modules {
+    public enum CommentEditController {
+      /// Kaydet
+      public static let save = L10n.tr("Modules", "CommentEditController.save")
+      /// YORUM DÜZENLE
+      public static let title = L10n.tr("Modules", "CommentEditController.title")
+    }
+    public enum CommentListController {
+      /// YORUMLAR
+      public static let title = L10n.tr("Modules", "CommentListController.title")
+    }
     public enum Favorites {
       /// TÜMÜNÜ GÖR
       public static let seeAllButtonTitle = L10n.tr("Modules", "Favorites.seeAllButtonTitle")
@@ -78,8 +102,20 @@ public enum L10n {
     public enum LoginViewController {
       /// Hesabın mı yok?
       public static let bottomText = L10n.tr("Modules", "LoginViewController.bottomText")
+      /// Şifrenizi mi unuttunuz?
+      public static let forgotPassword = L10n.tr("Modules", "LoginViewController.forgotPassword")
       /// Giriş Yap
       public static let title = L10n.tr("Modules", "LoginViewController.title")
+    }
+    public enum PasswordResetController {
+      /// Sıfırla
+      public static let reset = L10n.tr("Modules", "PasswordResetController.reset")
+      /// Şifre Sıfırlama
+      public static let title = L10n.tr("Modules", "PasswordResetController.title")
+    }
+    public enum RecipeDetail {
+      /// Henüz yorum yapılmamıştır.
+      public static let noComment = L10n.tr("Modules", "RecipeDetail.noComment")
     }
     public enum RegisterViewController {
       /// Hesabın mı var?
@@ -92,7 +128,7 @@ public enum L10n {
       public static let navigationTitle = L10n.tr("Modules", "SignIn.navigationTitle")
     }
     public enum WalkThrough {
-      /// Fodamy is the best place to find your \n favorite recipes in all around the world.
+      /// Fodamy is the best place to find your favorite recipes in all around the world.
       public static let descriptionText = L10n.tr("Modules", "WalkThrough.descriptionText")
       /// Welcome to Fodamy Network!
       public static let firstTitle = L10n.tr("Modules", "WalkThrough.firstTitle")

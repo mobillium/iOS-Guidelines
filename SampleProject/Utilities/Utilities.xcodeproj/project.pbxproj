@@ -20,6 +20,7 @@
 		7AFC73C02552001F00B30789 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC73BC2552001F00B30789 /* UITextField+Extensions.swift */; };
 		7C29586D57A8D2AA126F7E9B /* Pods_Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75300BE7C777B2B4958676D3 /* Pods_Utilities.framework */; };
 		A29A02D82660FEB60078F2FA /* Keychain+Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29A02D72660FEB60078F2FA /* Keychain+Constants.swift */; };
+		A2D7BB6D2665289700E3F3A2 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D7BB6C2665289700E3F3A2 /* DefaultsKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		7AFC73BC2552001F00B30789 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		991AC14B641124572491F3D9 /* Pods-Utilities.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.development.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.development.xcconfig"; sourceTree = "<group>"; };
 		A29A02D72660FEB60078F2FA /* Keychain+Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keychain+Constants.swift"; sourceTree = "<group>"; };
+		A2D7BB6C2665289700E3F3A2 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		A63AD36711DBBA61CFB77839 /* Pods-Utilities.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Utilities.release.xcconfig"; path = "Target Support Files/Pods-Utilities/Pods-Utilities.release.xcconfig"; sourceTree = "<group>"; };
 		C280C6DE6AF952AD56767055 /* Pods_UtilitiesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UtilitiesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8DDC1263D8B88E7F5039A3 /* Pods-UtilitiesTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UtilitiesTests.development.xcconfig"; path = "Target Support Files/Pods-UtilitiesTests/Pods-UtilitiesTests.development.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7AFC73B92552001F00B30789 /* Closures.swift */,
+				A2D7BB6C2665289700E3F3A2 /* DefaultsKeys.swift */,
 				A29A02D72660FEB60078F2FA /* Keychain+Constants.swift */,
 			);
 			path = Constants;
@@ -344,6 +347,7 @@
 				7AFC73C02552001F00B30789 /* UITextField+Extensions.swift in Sources */,
 				7AFC73BF2552001F00B30789 /* String+Extensions.swift in Sources */,
 				A29A02D82660FEB60078F2FA /* Keychain+Constants.swift in Sources */,
+				A2D7BB6D2665289700E3F3A2 /* DefaultsKeys.swift in Sources */,
 				7AFC73BE2552001F00B30789 /* Closures.swift in Sources */,
 				7AC2B0FC260C8C77008160B0 /* Int+Extensions.swift in Sources */,
 			);
