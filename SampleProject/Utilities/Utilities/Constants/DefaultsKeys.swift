@@ -8,7 +8,7 @@
 
 import MobilliumUserDefaults
 
-extension DefaultsKey {
+public extension DefaultsKey {
     static let stringKey = Key<String>(key: "stringKey")
     static let isWalkThroughCompleted = Key<Bool>(key: "isWalkThroughCompleted")
     static let userId = Key<Int>(key: "userId")

@@ -53,6 +53,9 @@ target 'DataProvider' do
   # Network
   pod 'Alamofire', '~> 5.4'
   
+  # Helper
+  pod 'KeychainSwift', '~> 19.0'
+  
   target 'DataProviderTests' do
     inherit! :search_paths
     # Pods for testing
@@ -90,6 +93,9 @@ target 'Utilities' do
   project 'Utilities/Utilities.xcodeproj'
   
   # Pods for Utilities
+  
+  # Helper
+  pod 'MobilliumUserDefaults', '~> 2.0'
   
   target 'UtilitiesTests' do
     inherit! :search_paths

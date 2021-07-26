@@ -9,12 +9,12 @@
 import UIKit
 
 protocol MainTabBarRoute {
-    func placeOnWindowMainTabBarController()
+    func placeOnWindowMainTabBar()
 }
 
 extension MainTabBarRoute where Self: RouterProtocol {
     
-    func placeOnWindowMainTabBarController() {
+    func placeOnWindowMainTabBar() {
         let mainTabBarController = MainTabBarController()
         let transition = PlaceOnWindowTransition()
         
