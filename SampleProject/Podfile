@@ -25,10 +25,10 @@ target 'SampleProject' do
   pod "IQKeyboardManagerSwift", '~> 6.5'
   pod 'SwiftLint', '~> 0.42'
   pod 'MobilliumUserDefaults', '~> 2.0'
-  pod 'MobilliumDateFormatter', '~> 1.1'
-  pod 'MobilliumBuilders', '~> 1.2'
+  pod 'MobilliumDateFormatter', '~> 1.2'
+  pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
-  pod 'Kingfisher', '~> 6.2'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
   pod 'SKPhotoBrowser', '~> 6.1'
   pod 'KeychainSwift', '~> 19.0'
@@ -76,10 +76,11 @@ target 'UIComponents' do
   # Helper
   pod "TinyConstraints", '~> 4.0'
   pod 'SwiftGen', '~> 6.4'
-  pod 'MobilliumBuilders', '~> 1.2'
+  pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
-  pod 'Kingfisher', '~> 6.2'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
+  pod 'MobilliumUserDefaults', '~> 2.0'
   
   target 'UIComponentsTests' do
     inherit! :search_paths
@@ -102,4 +103,13 @@ target 'Utilities' do
     # Pods for testing
   end
   
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '11.0'
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
 end

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct BaseResponse<T: Codable>: Codable {
+public struct BaseResponse<T: Decodable>: Decodable {
     public let data: T
     public let pagination: Pagination
 }

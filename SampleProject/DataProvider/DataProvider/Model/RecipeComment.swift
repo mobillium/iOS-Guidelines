@@ -2,15 +2,20 @@
 //  RecipeComment.swift
 //  DataProvider
 //
-//  Created by Emirhan Battalbaş on 6.05.2021.
-//  Copyright © 2021 Mobillium. All rights reserved.
+//  Created by Murat Celebi on 25.03.2020.
+//  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - RecipeComment
-public struct RecipeComment: Codable {
+public struct RecipeComment: Decodable {
     public let id: Int
-    public let text, difference: String
-    public let user: User?
+    public let text: String?
+    public let timeDifference: String?
+    public let user: User
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text
+        case timeDifference = "difference"
+        case user
+    }
 }

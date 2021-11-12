@@ -6,6 +6,6 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct NumberOfPerson: Codable {
+public struct NumberOfPerson: Decodable {
     public let text: String?
 }

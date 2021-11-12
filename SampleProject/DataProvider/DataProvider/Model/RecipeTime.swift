@@ -6,6 +6,6 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct RecipeTime: Codable {
+public struct RecipeTime: Decodable {
     public let text: String?
 }

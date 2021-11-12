@@ -6,14 +6,12 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct RecipeLikeRequest: APIRequest {
+public struct RecipeLikeRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = SuccessResponse
     
     public var path: String = "recipe/{recipeId}/like"
     public var method: RequestMethod = .post
-    public var parameters: RequestParameters = [:]
-    public var headers: RequestHeaders = [:]
     public let likeType: LikeType
     
     public init(recipeId: Int, likeType: LikeType) {

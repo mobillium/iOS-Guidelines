@@ -6,9 +6,9 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct MainCategory: Codable {
+public struct MainCategory: Decodable {
     public let id: Int
-    public let name: String
+    public let name: String?
     public let recipes: [Recipe]
 
     enum CodingKeys: String, CodingKey {

@@ -39,11 +39,8 @@
 		7AFC72B42551FA1A00B30789 /* SampleProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC72B32551FA1A00B30789 /* SampleProjectTests.swift */; };
 		7AFC72BF2551FA1A00B30789 /* SampleProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC72BE2551FA1A00B30789 /* SampleProjectUITests.swift */; };
 		7AFC739E2551FF4F00B30789 /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC739D2551FF4F00B30789 /* DataProvider.framework */; };
-		7AFC739F2551FF4F00B30789 /* DataProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC739D2551FF4F00B30789 /* DataProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC73A42551FF5400B30789 /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A32551FF5400B30789 /* UIComponents.framework */; };
-		7AFC73A52551FF5400B30789 /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A32551FF5400B30789 /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFC73A92551FF5800B30789 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; };
-		7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFC73A82551FF5800B30789 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AFCDEA7261615A600D5D115 /* RecipeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCDEA4261615A600D5D115 /* RecipeDetailRouter.swift */; };
 		7AFCDEA8261615A600D5D115 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCDEA5261615A600D5D115 /* RecipeDetailViewController.swift */; };
 		7AFCDEA9261615A600D5D115 /* RecipeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFCDEA6261615A600D5D115 /* RecipeDetailViewModel.swift */; };
@@ -110,22 +107,6 @@
 			remoteInfo = BaseProject;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7AFC73A02551FF4F00B30789 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7AFC73A52551FF5400B30789 /* UIComponents.framework in Embed Frameworks */,
-				7AFC73AA2551FF5800B30789 /* Utilities.framework in Embed Frameworks */,
-				7AFC739F2551FF4F00B30789 /* DataProvider.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		005DB6B35F16FDAD2C7AC516 /* Pods-SampleProject-SampleProjectUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.development.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.development.xcconfig"; sourceTree = "<group>"; };
@@ -708,7 +689,6 @@
 				7AFC72952551FA1800B30789 /* Sources */,
 				7AFC72962551FA1800B30789 /* Frameworks */,
 				7AFC72972551FA1800B30789 /* Resources */,
-				7AFC73A02551FF4F00B30789 /* Embed Frameworks */,
 				C4C84BE3E8D582DABA1EFE81 /* [CP] Embed Pods Frameworks */,
 				7A6AED7025A755AD00BB1457 /* SwiftLint */,
 			);
@@ -1193,7 +1173,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6575F5C9303FE9C04D7EC30D /* Pods-SampleProject.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4PWC9KX3UT;
@@ -1214,7 +1193,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EE0AECC8D636877B9E99C637 /* Pods-SampleProject.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;
@@ -1380,7 +1358,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72A3D9B8ADC26756F3977644 /* Pods-SampleProject.development.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WJEW78823;

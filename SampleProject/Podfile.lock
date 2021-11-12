@@ -2,8 +2,8 @@ PODS:
   - Alamofire (5.4.2)
   - IQKeyboardManagerSwift (6.5.6)
   - KeychainSwift (19.0.0)
-  - Kingfisher (6.2.1)
-  - MobilliumBuilders (1.2.0)
+  - Kingfisher (6.3.1)
+  - MobilliumBuilders (1.4.0)
   - MobilliumDateFormatter (1.2.0)
   - MobilliumUserDefaults (2.0.0)
   - QuickLayout (3.0.0)
@@ -19,9 +19,9 @@ DEPENDENCIES:
   - Alamofire (~> 5.4)
   - IQKeyboardManagerSwift (~> 6.5)
   - KeychainSwift (~> 19.0)
-  - Kingfisher (~> 6.2)
-  - MobilliumBuilders (~> 1.2)
-  - MobilliumDateFormatter (~> 1.1)
+  - Kingfisher (from `https://github.com/onevcat/Kingfisher.git`, branch `version6-xcode13`)
+  - MobilliumBuilders (~> 1.4)
+  - MobilliumDateFormatter (~> 1.2)
   - MobilliumUserDefaults (~> 2.0)
   - Segmentio (~> 4.1)
   - SKPhotoBrowser (~> 6.1)
@@ -35,7 +35,6 @@ SPEC REPOS:
     - Alamofire
     - IQKeyboardManagerSwift
     - KeychainSwift
-    - Kingfisher
     - MobilliumBuilders
     - MobilliumDateFormatter
     - MobilliumUserDefaults
@@ -47,12 +46,22 @@ SPEC REPOS:
     - SwiftLint
     - TinyConstraints
 
+EXTERNAL SOURCES:
+  Kingfisher:
+    :branch: version6-xcode13
+    :git: https://github.com/onevcat/Kingfisher.git
+
+CHECKOUT OPTIONS:
+  Kingfisher:
+    :commit: 5ecd8df18f1750efaa57d1b9623090156da01ef3
+    :git: https://github.com/onevcat/Kingfisher.git
+
 SPEC CHECKSUMS:
   Alamofire: bfbc4c2fe5909b1d94fb4ef2277c6b3727ef5dae
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   KeychainSwift: a06190cf933ad46b1e0abc3d77d29c06331715c7
-  Kingfisher: e71c6fac2aebb1262888cabc2cb13d313362a48f
-  MobilliumBuilders: 5c5fbc2ba2f5f2bf9e1bf92a7022e3ddb09ffcaa
+  Kingfisher: 8b783c3d7be73a99b2172a743a5bc0a4dd331d79
+  MobilliumBuilders: 9990948aea3e132044431289dda869f524fcadac
   MobilliumDateFormatter: 398a47e62aeeda24385c362c61c213550b07f047
   MobilliumUserDefaults: 002aa4bb663127d2dcc0814c17430c918a1e1445
   QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
@@ -63,6 +72,6 @@ SPEC CHECKSUMS:
   SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: aadaec96615d2a91a81e58875cdb6b6a9b77e60e
+PODFILE CHECKSUM: 135dd7bb90e200a02ac1aadc58d55e7918d27d6b
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

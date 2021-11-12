@@ -6,6 +6,6 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Image: Codable {
+public struct Image: Decodable {
     public let url: String?
 }

@@ -34,7 +34,6 @@
 		7A716D5A260B6D9D008B91B7 /* ToastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716D59260B6D9D008B91B7 /* ToastPresenter.swift */; };
 		7A716D60260B6DEC008B91B7 /* TostWarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A716D5F260B6DEC008B91B7 /* TostWarningView.swift */; };
 		7A73C83825CC18AB00322233 /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; };
-		7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A73C83725CC18AB00322233 /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AC2B0DA260C8321008160B0 /* CountInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B0D9260C8321008160B0 /* CountInfoView.swift */; };
 		7AC2B13C260CA589008160B0 /* RecipeDetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B13B260CA589008160B0 /* RecipeDetailInfoView.swift */; };
 		7AC2B184260CBD90008160B0 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC2B183260CBD90008160B0 /* PageControl.swift */; };
@@ -82,20 +81,6 @@
 			remoteInfo = UIComponents;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7A73C83A25CC18AB00322233 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7A73C83925CC18AB00322233 /* Utilities.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		21582D1B374172423512A93A /* Pods_UIComponentsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIComponentsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -521,7 +506,6 @@
 				7AFC73512551FF1400B30789 /* Sources */,
 				7AFC73522551FF1400B30789 /* Frameworks */,
 				7AFC73532551FF1400B30789 /* Resources */,
-				7A73C83A25CC18AB00322233 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -831,7 +815,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.UIComponents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.uicoomponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -999,7 +983,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.UIComponents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.uicoomponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
@@ -1025,7 +1009,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.UIComponents;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.sampleproject.uicoomponents;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;

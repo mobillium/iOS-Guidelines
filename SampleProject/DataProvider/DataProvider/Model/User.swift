@@ -6,9 +6,9 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct User: Codable {
+public struct User: Decodable {
     public let id: Int
-    public let username: String
+    public let username: String?
     public let image: Image?
     public let followedCount: Int
     public let followingCount: Int

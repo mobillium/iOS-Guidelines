@@ -9,8 +9,8 @@
 public typealias DataProviderResult<T: Decodable> = ((Result<T, Error>) -> Void)
 
 public protocol DataProviderProtocol {
-        
-    func request<T: RequestProtocol>(for request: T,
-                                     result: DataProviderResult<T.ResponseType>?)
+    
+    func request<T: DecodableResponseRequest>(for request: T,
+                                              result: DataProviderResult<T.ResponseType>?)
     
 }

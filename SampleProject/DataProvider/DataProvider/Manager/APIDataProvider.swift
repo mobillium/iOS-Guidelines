@@ -30,7 +30,7 @@ public struct APIDataProvider: DataProviderProtocol {
         return request
     }
     
-    public func request<T: RequestProtocol>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
+    public func request<T: DecodableResponseRequest>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
         let request = createRequest(request)
         request.validate()
         request.responseDecodable(of: T.ResponseType.self) { (response) in
