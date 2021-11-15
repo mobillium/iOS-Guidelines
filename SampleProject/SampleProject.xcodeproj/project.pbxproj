@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3D5DC50A261F52DA002294B7 /* RecipeDetailRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */; };
+		3DD25A50274248770070567E /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD25A4F274248770070567E /* APIRequestInterceptor.swift */; };
+		3DD25A5427424AC50070567E /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD25A5327424AC50070567E /* APILogger.swift */; };
+		3DD25A5627424AF60070567E /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD25A5527424AF60070567E /* DataProvider.swift */; };
 		474C632BBD65AD2E7E622511 /* Pods_SampleProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */; };
 		5FFC3222261A1327004D4F15 /* LoginWarningPopupRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC321E261A1327004D4F15 /* LoginWarningPopupRoute.swift */; };
 		5FFC3223261A1328004D4F15 /* LoginWarningPopupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC321F261A1327004D4F15 /* LoginWarningPopupRouter.swift */; };
@@ -112,6 +115,9 @@
 		005DB6B35F16FDAD2C7AC516 /* Pods-SampleProject-SampleProjectUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProject-SampleProjectUITests.development.xcconfig"; path = "Target Support Files/Pods-SampleProject-SampleProjectUITests/Pods-SampleProject-SampleProjectUITests.development.xcconfig"; sourceTree = "<group>"; };
 		1E52FF46F5E4E48AE437A803 /* Pods-SampleProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SampleProjectTests/Pods-SampleProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3D5DC509261F52DA002294B7 /* RecipeDetailRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailRoute.swift; sourceTree = "<group>"; };
+		3DD25A4F274248770070567E /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
+		3DD25A5327424AC50070567E /* APILogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		3DD25A5527424AF60070567E /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4F8B42935ED6E88E86EC6AA7 /* Pods_SampleProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFC321E261A1327004D4F15 /* LoginWarningPopupRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWarningPopupRoute.swift; sourceTree = "<group>"; };
 		5FFC321F261A1327004D4F15 /* LoginWarningPopupRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWarningPopupRouter.swift; sourceTree = "<group>"; };
@@ -249,6 +255,16 @@
 				7A980AFB2553178000494520 /* AppRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		3DD25A4E2742486A0070567E /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				3DD25A4F274248770070567E /* APIRequestInterceptor.swift */,
+				3DD25A5327424AC50070567E /* APILogger.swift */,
+				3DD25A5527424AF60070567E /* DataProvider.swift */,
+			);
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		5FFC321D261A12EF004D4F15 /* LoginWarning */ = {
@@ -403,6 +419,7 @@
 		7AFC729B2551FA1800B30789 /* SampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				3DD25A4E2742486A0070567E /* DataProvider */,
 				7AFC72DC2551FBFC00B30789 /* AppDelegate */,
 				A2D7BB422664F3E300E3F3A2 /* Validation */,
 				840EB5A52645895B0019C101 /* Helper */,
@@ -977,8 +994,10 @@
 				FBA13ED726161C2B001E19B4 /* LoginRouter.swift in Sources */,
 				7A73C7FC25CC178000322233 /* AppDelegate.swift in Sources */,
 				7A980AE6255316BF00494520 /* BaseViewModel.swift in Sources */,
+				3DD25A5627424AF60070567E /* DataProvider.swift in Sources */,
 				7AFCDEA7261615A600D5D115 /* RecipeDetailRouter.swift in Sources */,
 				840EB5B426458B490019C101 /* SKPhotoBrowserKingfisherCache.swift in Sources */,
+				3DD25A50274248770070567E /* APIRequestInterceptor.swift in Sources */,
 				FBA13ED826161C2B001E19B4 /* LoginViewController.swift in Sources */,
 				FBA13ED926161C2B001E19B4 /* LoginViewModel.swift in Sources */,
 				FBA13EC826161062001E19B4 /* RegisterViewController.swift in Sources */,
@@ -1004,6 +1023,7 @@
 				6CFE5377262ED7DC0008FFCD /* FavoritesViewController.swift in Sources */,
 				A2D7BB68266524E200E3F3A2 /* CommentEditViewController.swift in Sources */,
 				B321F659263188A50082484C /* RecipesViewController.swift in Sources */,
+				3DD25A5427424AC50070567E /* APILogger.swift in Sources */,
 				5FFC3225261A1328004D4F15 /* LoginWarningPopupViewController.swift in Sources */,
 				FBA13ECD2616137A001E19B4 /* RegisterRoute.swift in Sources */,
 				7A716CDC260B4B83008B91B7 /* TransparentNavigationController.swift in Sources */,

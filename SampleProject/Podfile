@@ -52,10 +52,7 @@ target 'DataProvider' do
   
   # Network
   pod 'Alamofire', '~> 5.4'
-  
-  # Helper
-  pod 'KeychainSwift', '~> 19.0'
-  
+    
   target 'DataProviderTests' do
     inherit! :search_paths
     # Pods for testing
