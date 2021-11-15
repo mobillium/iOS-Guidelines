@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3D9C406F273E70930055388D /* DecodableResponseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C406E273E70930055388D /* DecodableResponseRequest.swift */; };
-		3D9C4071273E7FD40055388D /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D9C4070273E7FD40055388D /* Utilities.framework */; };
 		67F021DD2311EEAC6FA27BC5 /* Pods_DataProviderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453C23E160F8AEF9559B665C /* Pods_DataProviderTests.framework */; };
 		7A17BB89255203000086B35B /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB80255203000086B35B /* APIDataProvider.swift */; };
 		7A17BB8A255203000086B35B /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A17BB81255203000086B35B /* APIRequestAdapter.swift */; };
@@ -79,11 +78,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25BFC2CCD82B8B1169142259 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
-		3556722C15DE1D42C53CE0DD /* Pods-DataProviderTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.development.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.development.xcconfig"; sourceTree = "<group>"; };
+		005AA584DEE4A1DDD8576A21 /* Pods-DataProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.debug.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		02CA581460F32D73153AA5BE /* Pods-DataProvider.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.development.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.development.xcconfig"; sourceTree = "<group>"; };
 		3D9C406E273E70930055388D /* DecodableResponseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableResponseRequest.swift; sourceTree = "<group>"; };
 		3D9C4070273E7FD40055388D /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		453C23E160F8AEF9559B665C /* Pods_DataProviderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProviderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		530C17F043F207381128C531 /* Pods-DataProviderTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.development.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.development.xcconfig"; sourceTree = "<group>"; };
+		587FCB434B7AAFB0CCFCF54A /* Pods-DataProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.release.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A17BB80255203000086B35B /* APIDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
 		7A17BB81255203000086B35B /* APIRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
 		7A17BB82255203000086B35B /* APIDecodableResponseRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDecodableResponseRequest.swift; sourceTree = "<group>"; };
@@ -145,10 +146,8 @@
 		7AFC73342551FE8C00B30789 /* DataProviderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataProviderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AFC733B2551FE8C00B30789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D68F791B41615D09FC98E92 /* Pods_DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F783DD263A8087AE96549FE /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
-		928D7DDA0F8026B6F4B4D941 /* Pods-DataProviderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.release.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.release.xcconfig"; sourceTree = "<group>"; };
-		A571D8F95D58C08B3061AA5A /* Pods-DataProviderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProviderTests.debug.xcconfig"; path = "Target Support Files/Pods-DataProviderTests/Pods-DataProviderTests.debug.xcconfig"; sourceTree = "<group>"; };
-		B88C11B4684329EC28E1FA53 /* Pods-DataProvider.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.development.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.development.xcconfig"; sourceTree = "<group>"; };
+		9EDB794B66ECFEA91B1AC76A /* Pods-DataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.debug.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.debug.xcconfig"; sourceTree = "<group>"; };
+		E96C2D774716660288B03F95 /* Pods-DataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DataProvider.release.xcconfig"; path = "Target Support Files/Pods-DataProvider/Pods-DataProvider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +156,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA437F60DC149107572A5129 /* Pods_DataProvider.framework in Frameworks */,
-				3D9C4071273E7FD40055388D /* Utilities.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,20 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		112F859F6A529D08D3A72AEA /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8F783DD263A8087AE96549FE /* Pods-DataProvider.debug.xcconfig */,
-				25BFC2CCD82B8B1169142259 /* Pods-DataProvider.release.xcconfig */,
-				A571D8F95D58C08B3061AA5A /* Pods-DataProviderTests.debug.xcconfig */,
-				928D7DDA0F8026B6F4B4D941 /* Pods-DataProviderTests.release.xcconfig */,
-				B88C11B4684329EC28E1FA53 /* Pods-DataProvider.development.xcconfig */,
-				3556722C15DE1D42C53CE0DD /* Pods-DataProviderTests.development.xcconfig */,
-			);
-			name = Pods;
-			path = ../Pods;
-			sourceTree = "<group>";
-		};
 		29FB8C5FD6BC124804D7F407 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +180,20 @@
 				453C23E160F8AEF9559B665C /* Pods_DataProviderTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		558918D97C1F7739736C23D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EDB794B66ECFEA91B1AC76A /* Pods-DataProvider.debug.xcconfig */,
+				E96C2D774716660288B03F95 /* Pods-DataProvider.release.xcconfig */,
+				02CA581460F32D73153AA5BE /* Pods-DataProvider.development.xcconfig */,
+				005AA584DEE4A1DDD8576A21 /* Pods-DataProviderTests.debug.xcconfig */,
+				587FCB434B7AAFB0CCFCF54A /* Pods-DataProviderTests.release.xcconfig */,
+				530C17F043F207381128C531 /* Pods-DataProviderTests.development.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 		7A17BB7F255203000086B35B /* Manager */ = {
@@ -372,8 +370,8 @@
 				7AFC732D2551FE8C00B30789 /* DataProvider */,
 				7AFC73382551FE8C00B30789 /* DataProviderTests */,
 				7AFC732C2551FE8C00B30789 /* Products */,
-				112F859F6A529D08D3A72AEA /* Pods */,
 				29FB8C5FD6BC124804D7F407 /* Frameworks */,
+				558918D97C1F7739736C23D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -724,7 +722,7 @@
 		};
 		7A6118E92594B50400F4CC61 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B88C11B4684329EC28E1FA53 /* Pods-DataProvider.development.xcconfig */;
+			baseConfigurationReference = 02CA581460F32D73153AA5BE /* Pods-DataProvider.development.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -732,6 +730,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = DataProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -751,7 +750,7 @@
 		};
 		7A6118EA2594B50400F4CC61 /* Development */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3556722C15DE1D42C53CE0DD /* Pods-DataProviderTests.development.xcconfig */;
+			baseConfigurationReference = 530C17F043F207381128C531 /* Pods-DataProviderTests.development.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -895,7 +894,7 @@
 		};
 		7AFC73402551FE8C00B30789 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F783DD263A8087AE96549FE /* Pods-DataProvider.debug.xcconfig */;
+			baseConfigurationReference = 9EDB794B66ECFEA91B1AC76A /* Pods-DataProvider.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -903,6 +902,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = DataProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -922,7 +922,7 @@
 		};
 		7AFC73412551FE8C00B30789 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25BFC2CCD82B8B1169142259 /* Pods-DataProvider.release.xcconfig */;
+			baseConfigurationReference = E96C2D774716660288B03F95 /* Pods-DataProvider.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -930,6 +930,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = DataProvider/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -950,7 +951,7 @@
 		};
 		7AFC73432551FE8C00B30789 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A571D8F95D58C08B3061AA5A /* Pods-DataProviderTests.debug.xcconfig */;
+			baseConfigurationReference = 005AA584DEE4A1DDD8576A21 /* Pods-DataProviderTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;
@@ -973,7 +974,7 @@
 		};
 		7AFC73442551FE8C00B30789 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 928D7DDA0F8026B6F4B4D941 /* Pods-DataProviderTests.release.xcconfig */;
+			baseConfigurationReference = 587FCB434B7AAFB0CCFCF54A /* Pods-DataProviderTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CLANG_ENABLE_MODULES = YES;

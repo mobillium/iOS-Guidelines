@@ -16,6 +16,7 @@ public protocol CommentCellDataSource: AnyObject {
     var timeDifferenceText: String? { get }
     var commentId: Int { get }
     var commentText: String? { get set }
+    var isOwner: Bool { get set }
 }
 
 public protocol CommentCellEventSource: AnyObject {
@@ -26,6 +27,7 @@ public protocol CommentCellEventSource: AnyObject {
 public protocol CommentCellProtocol: CommentCellDataSource, CommentCellEventSource {}
 
 public final class CommentCellModel: CommentCellProtocol {
+    
     public var userId: Int
     public var imageUrl: String?
     public var username: String?
@@ -33,6 +35,7 @@ public final class CommentCellModel: CommentCellProtocol {
     public var timeDifferenceText: String?
     public var commentId: Int
     public var commentText: String?
+    public var isOwner: Bool
     public var moreButtonTapped: VoidClosure?
     public var commentTextDidChanged: VoidClosure?
 
@@ -42,7 +45,8 @@ public final class CommentCellModel: CommentCellProtocol {
                 recipeAndFollowerCountText: String?,
                 timeDifferenceText: String?,
                 commentId: Int,
-                commentText: String?) {
+                commentText: String?,
+                isOwner: Bool) {
         self.userId = userId
         self.imageUrl = imageUrl
         self.username = username
@@ -50,5 +54,6 @@ public final class CommentCellModel: CommentCellProtocol {
         self.timeDifferenceText = timeDifferenceText
         self.commentId = commentId
         self.commentText = commentText
+        self.isOwner = isOwner
     }
 }

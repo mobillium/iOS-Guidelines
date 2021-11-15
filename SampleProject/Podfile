@@ -6,11 +6,6 @@ use_frameworks!
 
 workspace 'SampleProject'
 
-project 'SampleProject.xcodeproj'
-project 'DataProvider/DataProvider.xcodeproj'
-project 'UIComponents/UIComponents.xcodeproj'
-project 'Utilities/Utilities.xcodeproj'
-
 target 'SampleProject' do
   
   project 'SampleProject.xcodeproj'
@@ -23,14 +18,14 @@ target 'SampleProject' do
   # Helper
   pod "TinyConstraints", '~> 4.0'
   pod "IQKeyboardManagerSwift", '~> 6.5'
-  pod 'SwiftLint', '~> 0.42'
+  pod 'SwiftLint', '~> 0.44'
   pod 'MobilliumUserDefaults', '~> 2.0'
   pod 'MobilliumDateFormatter', '~> 1.2'
   pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
   pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
-  pod 'SKPhotoBrowser', '~> 6.1'
+  pod 'SKPhotoBrowser', '~> 7.0'
   pod 'KeychainSwift', '~> 19.0'
   
   target 'SampleProjectTests' do
@@ -72,12 +67,11 @@ target 'UIComponents' do
   
   # Helper
   pod "TinyConstraints", '~> 4.0'
-  pod 'SwiftGen', '~> 6.4'
+  pod 'SwiftGen', '~> 6.5'
   pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
   pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
-  pod 'MobilliumUserDefaults', '~> 2.0'
   
   target 'UIComponentsTests' do
     inherit! :search_paths

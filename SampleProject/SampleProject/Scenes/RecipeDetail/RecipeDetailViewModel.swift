@@ -165,15 +165,8 @@ extension RecipeDetailViewModel {
             switch result {
             case .success(let response):
                 guard let self = self else { return }
-                response.data.forEach { comment in
-                    self.cellItems.append(CommentCellModel(userId: comment.user.id,
-                                                           imageUrl: comment.user.image?.url,
-                                                           username: comment.user.username,
-                                                           recipeAndFollowerCountText: "\(comment.user.recipeCount) \(L10n.General.recipe) \(comment.user.followedCount) \(L10n.General.follower)",
-                                                           timeDifferenceText: comment.timeDifference,
-                                                           commentId: comment.id,
-                                                           commentText: comment.text))
-                }
+                let cellItems = response.data.map({ CommentCellModel(comment: $0) })
+                self.cellItems = cellItems
                 self.reloadCommentData?()
             case .failure(_ ):
                 self?.reloadCommentData?()
