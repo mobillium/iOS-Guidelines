@@ -93,21 +93,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
         viewModel.reloadDetailData = { [weak self] in
             self?.fillData()
         }
-        
-        viewModel.toggleIsFollowing = { [weak self] in
-            guard let self = self else { return }
-            self.userView.isFollowing.toggle()
-            self.viewModel.isFollowing.toggle()
-            
-            let isFollowing = self.viewModel.isFollowing
-            if isFollowing {
-                self.viewModel.userFollowedCount? += 1
-            } else {
-                self.viewModel.userFollowedCount? -= 1
-            }
-            
-            self.userView.recipeAndFollowerCountText = self.viewModel.recipeAndFollowerCountText
-        }
     }
     
     private func addObserver() {
@@ -215,14 +200,17 @@ extension RecipeDetailViewController {
             .assign(to: \.count, on: likeCountView)
             .store(in: &cancellebles)
         viewModel.$isLiked
-            .sink { [weak self] isLiked in
-                self?.likeCountView.iconColor = isLiked ? .appRed : .appCinder
-            }
+            .map({ return $0 ? .appRed : .appCinder })
+            .assign(to: \.iconColor, on: likeCountView)
             .store(in: &cancellebles)
         userView.username = viewModel.username
-        userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
+        viewModel.$recipeAndFollowerCountText
+            .assign(to: \.recipeAndFollowerCountText, on: userView)
+            .store(in: &cancellebles)
         userView.userImageUrl = viewModel.userImageUrl
-        userView.isFollowing = viewModel.isFollowing
+        viewModel.$isFollowing
+            .assign(to: \.isFollowing, on: userView)
+            .store(in: &cancellebles)
         ingredientsView.iconSubtitle = viewModel.numberOfPeople
         ingredientsView.info = viewModel.ingredients
         stepsView.iconSubtitle = viewModel.time

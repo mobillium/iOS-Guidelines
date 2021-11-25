@@ -14,7 +14,7 @@ protocol RecipeDetailViewDataSource {
     var username: String? { get }
     var userId: Int? { get }
     var userImageUrl: String? { get }
-    var userFollowedCount: Int? { get }
+    var userFollowedCount: Int { get }
     var recipeName: String? { get }
     var recipeCount: Int? { get }
     var categoryName: String? { get }
@@ -34,7 +34,6 @@ protocol RecipeDetailViewDataSource {
 }
 
 protocol RecipeDetailViewEventSource {
-    var toggleIsFollowing: VoidClosure? { get set }
     var reloadCommentData: VoidClosure? { get set }
     var reloadDetailData: VoidClosure? { get set }
 }
@@ -58,7 +57,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var recipeCount: Int?
     var categoryName: String?
     var timeDifferenceText: String?
-    var recipeAndFollowerCountText: String?
+    @Published var recipeAndFollowerCountText: String?
     var ingredients: String?
     var numberOfPeople: String?
     var steps: String?
@@ -66,16 +65,15 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     @Published var commentCount: Int = 0
     @Published var likeCount: Int = 0
     @Published var isLiked = false
-    var isFollowing = false
+    @Published var isFollowing = false
     private let recipeId: Int
     private var followedId: Int?
     var reloadCommentData: VoidClosure?
     var reloadDetailData: VoidClosure?
-    var toggleIsFollowing: VoidClosure?
     
-    var userFollowedCount: Int? {
+    @Published var userFollowedCount: Int = 0 {
         didSet {
-            recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount ?? 0) \(L10n.General.follower)"
+            recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount) \(L10n.General.follower)"
         }
     }
     
@@ -103,24 +101,6 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
 // MARK: - Actions
 extension RecipeDetailViewModel {
     
-    func followButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.presentLogin()
-            })
-            return
-        }
-        
-        switch isFollowing {
-        case true:
-            router.presentUnfollowAlertView {
-                self.userFollowRequest(followType: .unfollow)
-            }
-        case false:
-            userFollowRequest(followType: .follow)
-        }
-    }
-    
     func commentButtonTapped() {
         router.pushCommentList(recipeId: recipeId, isKeyboardOpen: true)
     }
@@ -144,7 +124,6 @@ extension RecipeDetailViewModel {
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension RecipeDetailViewModel {
     
     func getRecipeComment() {
@@ -184,7 +163,7 @@ extension RecipeDetailViewModel {
         recipeCount = recipeDetail.user.recipeCount
         categoryName = recipeDetail.category.name
         timeDifferenceText = recipeDetail.timeDifference
-        recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount ?? 0) \(L10n.General.follower)"
+        recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount) \(L10n.General.follower)"
         ingredients = recipeDetail.ingredients
         numberOfPeople = recipeDetail.numberOfPerson.text
         steps = recipeDetail.instructions
@@ -198,26 +177,9 @@ extension RecipeDetailViewModel {
             recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
         })
     }
-    
-    private func userFollowRequest(followType: UserFollowRequest.FollowType) {
-        guard let followedId = followedId else { return }
-        toggleIsFollowing?()
-        let request = UserFollowRequest(followedId: followedId, followType: followType)
-        dataProvider.request(for: request) { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let response):
-                print(response.message)
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.toggleIsFollowing?()
-            }
-        }
-    }
 }
-// swiftlint:enable line_length
 
-// MARK: Like
+// MARK: - Like
 extension RecipeDetailViewModel {
     
     func likeButtonTapped() {
@@ -258,5 +220,49 @@ extension RecipeDetailViewModel {
     private func toggleIsLiked() {
         isLiked.toggle()
         likeCount += isLiked ? 1 : -1
+    }
+}
+
+// MARK: - Follow
+extension RecipeDetailViewModel {
+    
+    func followButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.presentLogin()
+            })
+            return
+        }
+        
+        guard let followedId = followedId else { return }
+
+        switch isFollowing {
+        case true:
+            router.presentUnfollowAlertView { [weak self] in
+                let request = UserUnFollowRequest(followedId: followedId)
+                self?.postFollowRequest(request: request)
+            }
+        case false:
+            let request = UserFollowRequest(followedId: followedId)
+            self.postFollowRequest(request: request)
+        }
+    }
+    
+    private func postFollowRequest<Request: DecodableResponseRequest>(request: Request) where Request.ResponseType == SuccessResponse {
+        toggleIsFollowing()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                break
+            case .failure:
+                self.toggleIsFollowing()
+            }
+        }
+    }
+    
+    private func toggleIsFollowing() {
+        isFollowing.toggle()
+        userFollowedCount += isFollowing ? 1 : -1
     }
 }
