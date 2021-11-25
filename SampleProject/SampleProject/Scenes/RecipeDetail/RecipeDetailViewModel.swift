@@ -24,7 +24,7 @@ protocol RecipeDetailViewDataSource {
     var numberOfPeople: String? { get }
     var steps: String? { get }
     var time: String? { get }
-    var commentCount: Int? { get }
+    var commentCount: Int { get }
     var likeCount: Int { get }
     var isLiked: Bool { get }
     var isFollowing: Bool { get }
@@ -63,7 +63,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var numberOfPeople: String?
     var steps: String?
     var time: String?
-    var commentCount: Int?
+    @Published var commentCount: Int = 0
     @Published var likeCount: Int = 0
     @Published var isLiked = false
     var isFollowing = false

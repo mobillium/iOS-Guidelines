@@ -17,6 +17,8 @@ extension CommentListRoute where Self: RouterProtocol {
         let viewModel = CommentListViewModel(recipeId: recipeId, router: router)
         let viewController = CommentListViewController(viewModel: viewModel)
         viewController.isKeyboardOpen = isKeyboardOpen ?? false
+        viewController.hidesBottomBarWhenPushed = true
+        
         let transition = PushTransition()
         router.viewController = viewController
         router.openTransition = transition

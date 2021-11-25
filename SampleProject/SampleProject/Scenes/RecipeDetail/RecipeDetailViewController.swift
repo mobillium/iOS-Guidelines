@@ -208,7 +208,9 @@ extension RecipeDetailViewController {
         topTitleView.recipeName = viewModel.recipeName
         topTitleView.categoryName = viewModel.categoryName
         topTitleView.timeDifferenceText = viewModel.timeDifferenceText
-        commentCountView.count = viewModel.commentCount ?? 0
+        viewModel.$commentCount
+            .assign(to: \.count, on: commentCountView)
+            .store(in: &cancellebles)
         viewModel.$likeCount
             .assign(to: \.count, on: likeCountView)
             .store(in: &cancellebles)
