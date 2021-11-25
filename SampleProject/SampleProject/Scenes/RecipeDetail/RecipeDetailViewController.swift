@@ -94,22 +94,6 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
             self?.fillData()
         }
         
-        viewModel.toggleIsLiked = { [weak self] in
-            guard let self = self else { return }
-            self.viewModel.isLiked.toggle()
-            
-            let isLiked = self.viewModel.isLiked
-            if isLiked {
-                self.likeCountView.iconColor = .appRed
-                self.viewModel.likeCount.value += 1
-//                self.likeCountView.count = self.viewModel.likeCount.value
-            } else {
-                self.likeCountView.iconColor = .appCinder
-                self.viewModel.likeCount.value -= 1
-//                self.likeCountView.count = self.viewModel.likeCount.value
-            }
-        }
-        
         viewModel.toggleIsFollowing = { [weak self] in
             guard let self = self else { return }
             self.userView.isFollowing.toggle()
@@ -225,10 +209,14 @@ extension RecipeDetailViewController {
         topTitleView.categoryName = viewModel.categoryName
         topTitleView.timeDifferenceText = viewModel.timeDifferenceText
         commentCountView.count = viewModel.commentCount ?? 0
-        viewModel.likeCount
+        viewModel.$likeCount
             .assign(to: \.count, on: likeCountView)
             .store(in: &cancellebles)
-        likeCountView.iconColor = viewModel.isLiked ? .appRed : .appCinder
+        viewModel.$isLiked
+            .sink { [weak self] isLiked in
+                self?.likeCountView.iconColor = isLiked ? .appRed : .appCinder
+            }
+            .store(in: &cancellebles)
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
         userView.userImageUrl = viewModel.userImageUrl

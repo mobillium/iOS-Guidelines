@@ -25,7 +25,7 @@ protocol RecipeDetailViewDataSource {
     var steps: String? { get }
     var time: String? { get }
     var commentCount: Int? { get }
-    var likeCount: CurrentValueSubject<Int, Never> { get }
+    var likeCount: Int { get }
     var isLiked: Bool { get }
     var isFollowing: Bool { get }
     
@@ -34,7 +34,6 @@ protocol RecipeDetailViewDataSource {
 }
 
 protocol RecipeDetailViewEventSource {
-    var toggleIsLiked: VoidClosure? { get set }
     var toggleIsFollowing: VoidClosure? { get set }
     var reloadCommentData: VoidClosure? { get set }
     var reloadDetailData: VoidClosure? { get set }
@@ -65,14 +64,13 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var steps: String?
     var time: String?
     var commentCount: Int?
-    var likeCount = CurrentValueSubject<Int, Never>(0)
-    var isLiked = false
+    @Published var likeCount: Int = 0
+    @Published var isLiked = false
     var isFollowing = false
     private let recipeId: Int
     private var followedId: Int?
     var reloadCommentData: VoidClosure?
     var reloadDetailData: VoidClosure?
-    var toggleIsLiked: VoidClosure?
     var toggleIsFollowing: VoidClosure?
     
     var userFollowedCount: Int? {
@@ -104,17 +102,6 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
 
 // MARK: - Actions
 extension RecipeDetailViewModel {
-    
-    func likeButtonTapped() {
-        guard keychain.get(Keychain.token) != nil else {
-            router.presentLoginWarningPopup(loginHandler: { [weak self] in
-                self?.router.presentLogin()
-            })
-            return
-        }
-        
-        recipeLikeRequest()
-    }
     
     func followButtonTapped() {
         guard keychain.get(Keychain.token) != nil else {
@@ -203,34 +190,13 @@ extension RecipeDetailViewModel {
         steps = recipeDetail.instructions
         time = recipeDetail.timeOfRecipe.text
         commentCount = recipeDetail.commentCount
-        likeCount.value = recipeDetail.likeCount
+        likeCount = recipeDetail.likeCount
         isLiked = recipeDetail.isLiked
         isFollowing = recipeDetail.user.isFollowing
         followedId = recipeDetail.user.id
         recipeDetail.images.forEach({ image in
             recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
         })
-    }
-    
-    private func recipeLikeRequest() {
-        let request: RecipeLikeRequest
-        switch isLiked {
-        case true:
-            request = RecipeLikeRequest(recipeId: recipeId, likeType: .unlike)
-        case false:
-            request = RecipeLikeRequest(recipeId: recipeId, likeType: .like)
-        }
-        toggleIsLiked?()
-        dataProvider.request(for: request) { [weak self] (result) in
-            guard let self = self else { return }
-            switch result {
-            case .success(let response):
-                print(response.message)
-            case .failure(let error):
-                print(error.localizedDescription)
-                self.toggleIsLiked?()
-            }
-        }
     }
     
     private func userFollowRequest(followType: UserFollowRequest.FollowType) {
@@ -250,3 +216,47 @@ extension RecipeDetailViewModel {
     }
 }
 // swiftlint:enable line_length
+
+// MARK: Like
+extension RecipeDetailViewModel {
+    
+    func likeButtonTapped() {
+        guard keychain.get(Keychain.token) != nil else {
+            router.presentLoginWarningPopup(loginHandler: { [weak self] in
+                self?.router.presentLogin()
+            })
+            return
+        }
+        
+        createLikeRequest()
+    }
+    
+    private func createLikeRequest() {
+        switch isLiked {
+        case true:
+            let request = RecipeDeleteLikeRequest(recipeId: recipeId)
+            postLikeRequest(request: request)
+        case false:
+            let request = RecipeLikeRequest(recipeId: recipeId)
+            postLikeRequest(request: request)
+        }
+    }
+    
+    private func postLikeRequest<Request: DecodableResponseRequest>(request: Request) where Request.ResponseType == SuccessResponse {
+        toggleIsLiked()
+        dataProvider.request(for: request) { [weak self] (result) in
+            guard let self = self else { return }
+            switch result {
+            case .success:
+                break
+            case .failure:
+                self.toggleIsLiked()
+            }
+        }
+    }
+    
+    private func toggleIsLiked() {
+        isLiked.toggle()
+        likeCount += isLiked ? 1 : -1
+    }
+}

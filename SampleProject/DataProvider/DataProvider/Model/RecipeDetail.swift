@@ -38,4 +38,38 @@ public struct RecipeDetail: Decodable {
         case category
         case images
     }
+    
+    public init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        id = try values.decode(Int.self, forKey: .id)
+        title = try? values.decode(String.self, forKey: .title)
+        ingredients = try? values.decode(String.self, forKey: .ingredients)
+        instructions = try? values.decode(String.self, forKey: .instructions)
+        if let isLiked = try? values.decode(Bool.self, forKey: .isLiked) {
+            self.isLiked = isLiked
+        } else {
+            self.isLiked = false
+        }
+        timeDifference = try? values.decode(String.self, forKey: .timeDifference)
+        if let isEditorChoice = try? values.decode(Bool.self, forKey: .isEditorChoice) {
+            self.isEditorChoice = isEditorChoice
+        } else {
+            self.isEditorChoice = false
+        }
+        if let likeCount = try? values.decode(Int.self, forKey: .likeCount) {
+            self.likeCount = likeCount
+        } else {
+            self.likeCount = 0
+        }
+        if let commentCount = try? values.decode(Int.self, forKey: .commentCount) {
+            self.commentCount = commentCount
+        } else {
+            self.commentCount = 0
+        }
+        user = try values.decode(User.self, forKey: .user)
+        timeOfRecipe = try values.decode(RecipeTime.self, forKey: .timeOfRecipe)
+        numberOfPerson = try values.decode(NumberOfPerson.self, forKey: .numberOfPerson)
+        category = try values.decode(CategoryDetail.self, forKey: .category)
+        images = try values.decode([Image].self, forKey: .images)
+    }
 }
