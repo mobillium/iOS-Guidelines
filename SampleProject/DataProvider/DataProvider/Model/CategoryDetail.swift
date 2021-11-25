@@ -6,9 +6,9 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct CategoryDetail: Codable {
+public struct CategoryDetail: Decodable {
     public let id: Int
-    public let name: String
+    public let name: String?
     public let mainCategoryId: Int?
     public let imageUrl: Image?
 

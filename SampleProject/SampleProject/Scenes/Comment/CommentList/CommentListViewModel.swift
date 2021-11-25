@@ -114,20 +114,15 @@ extension CommentListViewModel {
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                self.cellItems.removeAll()
-                response.data.forEach({ comment in
-                    self.cellItems.append(CommentCellModel(userId: comment.user.id,
-                                                           imageUrl: comment.user.image?.url,
-                                                           username: comment.user.username,
-                                                           recipeAndFollowerCountText: "\(comment.user.recipeCount) \(L10n.General.recipe) \(comment.user.followedCount) \(L10n.General.follower)",
-                                                           timeDifferenceText: comment.timeDifference,
-                                                           commentId: comment.id,
-                                                           commentText: comment.text))
-                })
+                if self.page == 1 {
+                    self.cellItems.removeAll()
+                }
+                let cellItems = response.data.map({ CommentCellModel(comment: $0) })
+                self.cellItems.append(contentsOf: cellItems)
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 if self.isPagingEnabled { self.page += 1 }
                 self.reloadData?()
-            case .failure(_ ):
+            case .failure:
                 if self.page == 1 { self.showWarningToast?(L10n.Error.refreshFromTop) }
             }
         }
@@ -142,7 +137,7 @@ extension CommentListViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success(_):
+            case .success:
                 self.cellItems.remove(at: indexPath.row)
                 self.deleteCommentDidSuccess?(indexPath)
             case .failure(let error):

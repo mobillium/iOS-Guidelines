@@ -1,15 +1,10 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 # Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!
 
 workspace 'SampleProject'
-
-project 'SampleProject.xcodeproj'
-project 'DataProvider/DataProvider.xcodeproj'
-project 'UIComponents/UIComponents.xcodeproj'
-project 'Utilities/Utilities.xcodeproj'
 
 target 'SampleProject' do
   
@@ -23,14 +18,14 @@ target 'SampleProject' do
   # Helper
   pod "TinyConstraints", '~> 4.0'
   pod "IQKeyboardManagerSwift", '~> 6.5'
-  pod 'SwiftLint', '~> 0.42'
+  pod 'SwiftLint', '~> 0.44'
   pod 'MobilliumUserDefaults', '~> 2.0'
-  pod 'MobilliumDateFormatter', '~> 1.1'
-  pod 'MobilliumBuilders', '~> 1.2'
+  pod 'MobilliumDateFormatter', '~> 1.2'
+  pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
-  pod 'Kingfisher', '~> 6.2'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
-  pod 'SKPhotoBrowser', '~> 6.1'
+  pod 'SKPhotoBrowser', '~> 7.0'
   pod 'KeychainSwift', '~> 19.0'
   
   target 'SampleProjectTests' do
@@ -52,10 +47,7 @@ target 'DataProvider' do
   
   # Network
   pod 'Alamofire', '~> 5.4'
-  
-  # Helper
-  pod 'KeychainSwift', '~> 19.0'
-  
+    
   target 'DataProviderTests' do
     inherit! :search_paths
     # Pods for testing
@@ -75,10 +67,10 @@ target 'UIComponents' do
   
   # Helper
   pod "TinyConstraints", '~> 4.0'
-  pod 'SwiftGen', '~> 6.4'
-  pod 'MobilliumBuilders', '~> 1.2'
+  pod 'SwiftGen', '~> 6.5'
+  pod 'MobilliumBuilders', '~> 1.4'
   pod 'Segmentio', '~> 4.1'
-  pod 'Kingfisher', '~> 6.2'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher.git', :branch => 'version6-xcode13'
   pod 'SwiftEntryKit', '~> 1.2'
   
   target 'UIComponentsTests' do
@@ -102,4 +94,13 @@ target 'Utilities' do
     # Pods for testing
   end
   
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+    end
+  end
 end

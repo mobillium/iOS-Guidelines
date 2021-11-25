@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Pagination: Codable {
+public struct Pagination: Decodable {
     public let currentPage: Int
     public let lastPage: Int
     

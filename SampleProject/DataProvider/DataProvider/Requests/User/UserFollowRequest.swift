@@ -6,14 +6,12 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct UserFollowRequest: APIRequest {
+public struct UserFollowRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = SuccessResponse
     
     public var path: String = "user/{followedId}/following"
     public var method: RequestMethod = .post
-    public var parameters: RequestParameters = [:]
-    public var headers: RequestHeaders = [:]
     
     public init(followedId: Int, followType: FollowType) {
         self.path = "user/\(followedId)/following"

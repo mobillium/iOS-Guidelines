@@ -6,9 +6,9 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Recipe: Codable {
+public struct Recipe: Decodable {
     public let id: Int
-    public let title: String
+    public let title: String?
     public let isEditorChoice: Bool
     public let likeCount: Int
     public let commentCount: Int

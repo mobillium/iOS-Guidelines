@@ -10,15 +10,15 @@ import Alamofire
 
 public struct APIDataProvider: DataProviderProtocol {
     
-    // Singleton
-    public static let shared = APIDataProvider()
-    #if DEBUG
-    private let session = Session(interceptor: APIRequestInterceptor.shared, eventMonitors: [APILogger.shared])
-    #else
-    private let session = Session(interceptor: APIRequestInterceptor.shared)
-    #endif
+    private let interceptor: RequestInterceptor?
+    private let session: Session
     
-    public init() {}
+    public init(interceptor: RequestInterceptor? = nil,
+                eventMonitors: [EventMonitor] = []) {
+        self.interceptor = interceptor
+        self.session = Session(interceptor: interceptor, eventMonitors: eventMonitors)
+        self.session.sessionConfiguration.timeoutIntervalForRequest = 20
+    }
     
     private func createRequest<T: RequestProtocol>(_ request: T) -> DataRequest {
         let adapter = APIRequestAdapter(request: request)
@@ -30,7 +30,7 @@ public struct APIDataProvider: DataProviderProtocol {
         return request
     }
     
-    public func request<T: RequestProtocol>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
+    public func request<T: DecodableResponseRequest>(for request: T, result: DataProviderResult<T.ResponseType>? = nil) {
         let request = createRequest(request)
         request.validate()
         request.responseDecodable(of: T.ResponseType.self) { (response) in

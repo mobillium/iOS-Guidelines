@@ -160,19 +160,13 @@ extension RecipeDetailViewModel {
 extension RecipeDetailViewModel {
     
     func getRecipeComment() {
-        dataProvider.request(for: RecipeCommentRequest(recipedId: recipeId)) { [weak self] result in
+        let request = GetRecipeCommentsRequest(recipeId: recipeId)
+        dataProvider.request(for: request) { [weak self] result in
             switch result {
             case .success(let response):
                 guard let self = self else { return }
-                response.data.forEach { comment in
-                    self.cellItems.append(CommentCellModel(userId: comment.user!.id,
-                                                           imageUrl: comment.user?.image?.url,
-                                                           username: comment.user?.username,
-                                                           recipeAndFollowerCountText: "\(comment.user?.recipeCount ?? 0) \(L10n.General.recipe) \(comment.user?.followedCount ?? 0) \(L10n.General.follower)",
-                                                           timeDifferenceText: comment.difference,
-                                                           commentId: comment.id,
-                                                           commentText: comment.text))
-                }
+                let cellItems = response.data.map({ CommentCellModel(comment: $0) })
+                self.cellItems = cellItems
                 self.reloadCommentData?()
             case .failure(_ ):
                 self?.reloadCommentData?()

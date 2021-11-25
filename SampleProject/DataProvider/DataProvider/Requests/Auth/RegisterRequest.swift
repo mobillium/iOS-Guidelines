@@ -6,14 +6,13 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct RegisterRequest: APIRequest {
+public struct RegisterRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = Auth
 
     public var path: String = "auth/register"
     public var method: RequestMethod = .post
     public var parameters: RequestParameters = [:]
-    public var headers: RequestHeaders = [:]
     
     public init(username: String, email: String, password: String) {
         parameters["username"] = username

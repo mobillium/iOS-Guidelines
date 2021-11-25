@@ -6,13 +6,13 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct RecipeDetail: Codable {
+public struct RecipeDetail: Decodable {
     public let id: Int
-    public let title: String
-    public let ingredients: String
-    public let instructions: String
+    public let title: String?
+    public let ingredients: String?
+    public let instructions: String?
     public let isLiked: Bool
-    public let timeDifference: String
+    public let timeDifference: String?
     public let isEditorChoice: Bool
     public let likeCount: Int
     public let commentCount: Int

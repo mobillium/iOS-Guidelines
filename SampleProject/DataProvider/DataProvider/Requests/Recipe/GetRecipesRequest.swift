@@ -6,14 +6,13 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct GetRecipesRequest: APIRequest {
+public struct GetRecipesRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = BaseResponse<[Recipe]>
     
     public var path: String = ""
     public var method: RequestMethod = .get
     public var parameters: RequestParameters = [:]
-    public var headers: RequestHeaders = [:]
     public let listType: ListType
     
     public init(page: Int, listType: ListType) {

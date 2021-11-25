@@ -6,6 +6,6 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct SuccessResponse: Codable {
-    public let message: String
+public struct SuccessResponse: Decodable {
+    public let message: String?
 }
