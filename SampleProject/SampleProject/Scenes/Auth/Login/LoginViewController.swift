@@ -42,7 +42,7 @@ final class LoginViewController: BaseViewController<LoginViewModel> {
     
     private let usernameTextField = FloatLabelTextField()
     private let passwordTextField = FloatLabelTextField()
-    private let ctaButton = ButtonFactory.createPrimaryButton(style: .large)
+    private let loginButton = ButtonFactory.createPrimaryButton(style: .large)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,9 +75,9 @@ extension LoginViewController {
         stackView.trailingToSuperview().constant = -15
         stackView.addArrangedSubview(usernameTextField)
         stackView.addArrangedSubview(passwordTextField)
-        stackView.addArrangedSubview(ctaButton)
+        stackView.addArrangedSubview(loginButton)
         registerButton.addTarget(self, action: #selector(regiserButtonTapped), for: .touchUpInside)
-        ctaButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(ctaButtonTapped), for: .touchUpInside)
     }
     
     private func addBottomStackView() {
@@ -114,7 +114,7 @@ extension LoginViewController {
         titleLabel.text = L10n.Modules.LoginViewController.title
         usernameTextField.title = L10n.Placeholder.username
         passwordTextField.title = L10n.Placeholder.password
-        ctaButton.setTitle(L10n.General.login, for: .normal)
+        loginButton.setTitle(L10n.General.login, for: .normal)
         forgotPasswordButton.setTitle(L10n.Modules.LoginViewController.forgotPassword, for: .normal)
         registerButton.setTitle(L10n.General.register, for: .normal)
         bottomLabel.text = L10n.Modules.LoginViewController.bottomText

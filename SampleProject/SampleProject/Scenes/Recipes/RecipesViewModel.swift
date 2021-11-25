@@ -7,16 +7,17 @@
 //
 
 import Foundation
+import Combine
+import SwiftUI
 
 protocol RecipesViewDataSource {
+    var cellItemsPublisher: CurrentValueSubject<[RecipeCellProtocol], Never> { get }
     var numberOfItems: Int { get }
     
     func cellItem(for indexPath: IndexPath) -> RecipeCellProtocol
 }
 
-protocol RecipesViewEventSource {
-    var didSuccessFetchRecipes: VoidClosure? { get set }
-}
+protocol RecipesViewEventSource {}
 
 protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
     func fetchRecipesListingType()
@@ -24,7 +25,7 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
     func fetchMorePages()
 }
 
-final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
+final class RecipesViewModel: BaseViewModel<RecipesRouter>, ObservableObject, RecipesViewProtocol {
     
     enum RecipesListingType {
         case editorChoiceRecipes
@@ -36,8 +37,8 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     var isPagingEnabled = false
     
     var page = 1
-    var cellItems: [RecipeCellProtocol] = []
-  
+    var cellItemsPublisher = CurrentValueSubject<[RecipeCellProtocol], Never>([])
+    
     var didSuccessFetchRecipes: VoidClosure?
     private var recipesListingType: RecipesListingType
     var title: String?
@@ -48,11 +49,11 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     }
     
     var numberOfItems: Int {
-        return cellItems.count
+        return cellItemsPublisher.value.count
     }
     
     func cellItem(for indexPath: IndexPath) -> RecipeCellProtocol {
-        let item = cellItems[indexPath.row]
+        let item = cellItemsPublisher.value[indexPath.row]
         return item
     }
 }
@@ -61,7 +62,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
 extension RecipesViewModel {
     
     func didSelectRecipe(at indexPath: IndexPath) {
-        let recipeId = cellItems[indexPath.row].recipeId
+        let recipeId = cellItemsPublisher.value[indexPath.row].recipeId
         router.pushRecipeDetail(recipeId: recipeId)
     }
 }
@@ -88,10 +89,9 @@ extension RecipesViewModel {
             switch result {
             case .success(let response):
                 let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
-                self.cellItems.append(contentsOf: cellItems)
+                self.cellItemsPublisher.value.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
-                self.didSuccessFetchRecipes?()
             case .failure(let error):
                 if self.page == 1 { self.showWarningToast?("\(error.localizedDescription) Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.") }
             }

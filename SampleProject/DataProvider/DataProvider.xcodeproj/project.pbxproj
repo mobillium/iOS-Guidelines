@@ -215,6 +215,7 @@
 				7A17BB86255203000086B35B /* RequestMethod.swift */,
 				7A17BB87255203000086B35B /* RequestEncoding.swift */,
 				7A17BB88255203000086B35B /* DataProviderProtocol.swift */,
+				3D9C406E273E70930055388D /* DecodableResponseRequest.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";

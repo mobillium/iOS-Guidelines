@@ -47,9 +47,9 @@ public class CountInfoView: UIView {
         }
     }
     
-    public var count: Int? {
+    public var count: Int = 0 {
         willSet {
-            countLabel.text = newValue?.toString
+            countLabel.text = newValue.toString
         }
     }
     

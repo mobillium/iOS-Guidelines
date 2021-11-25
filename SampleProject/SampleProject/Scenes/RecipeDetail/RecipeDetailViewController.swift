@@ -9,6 +9,7 @@
 import UIKit
 import TinyConstraints
 import MobilliumUserDefaults
+import Combine
 
 final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel> {
     
@@ -70,6 +71,8 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
     
     private var observer: NSObjectProtocol?
     
+    private var cancellebles: Set<AnyCancellable> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubviews()
@@ -98,12 +101,12 @@ final class RecipeDetailViewController: BaseViewController<RecipeDetailViewModel
             let isLiked = self.viewModel.isLiked
             if isLiked {
                 self.likeCountView.iconColor = .appRed
-                self.viewModel.likeCount? += 1
-                self.likeCountView.count = self.viewModel.likeCount
+                self.viewModel.likeCount.value += 1
+//                self.likeCountView.count = self.viewModel.likeCount.value
             } else {
                 self.likeCountView.iconColor = .appCinder
-                self.viewModel.likeCount? -= 1
-                self.likeCountView.count = self.viewModel.likeCount
+                self.viewModel.likeCount.value -= 1
+//                self.likeCountView.count = self.viewModel.likeCount.value
             }
         }
         
@@ -221,8 +224,10 @@ extension RecipeDetailViewController {
         topTitleView.recipeName = viewModel.recipeName
         topTitleView.categoryName = viewModel.categoryName
         topTitleView.timeDifferenceText = viewModel.timeDifferenceText
-        commentCountView.count = viewModel.commentCount
-        likeCountView.count = viewModel.likeCount
+        commentCountView.count = viewModel.commentCount ?? 0
+        viewModel.likeCount
+            .assign(to: \.count, on: likeCountView)
+            .store(in: &cancellebles)
         likeCountView.iconColor = viewModel.isLiked ? .appRed : .appCinder
         userView.username = viewModel.username
         userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText

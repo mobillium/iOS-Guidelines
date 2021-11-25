@@ -8,6 +8,7 @@
 
 import Foundation
 import KeychainSwift
+import Combine
 
 protocol RecipeDetailViewDataSource {
     var username: String? { get }
@@ -24,7 +25,7 @@ protocol RecipeDetailViewDataSource {
     var steps: String? { get }
     var time: String? { get }
     var commentCount: Int? { get }
-    var likeCount: Int? { get }
+    var likeCount: CurrentValueSubject<Int, Never> { get }
     var isLiked: Bool { get }
     var isFollowing: Bool { get }
     
@@ -64,7 +65,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     var steps: String?
     var time: String?
     var commentCount: Int?
-    var likeCount: Int?
+    var likeCount = CurrentValueSubject<Int, Never>(0)
     var isLiked = false
     var isFollowing = false
     private let recipeId: Int
@@ -202,7 +203,7 @@ extension RecipeDetailViewModel {
         steps = recipeDetail.instructions
         time = recipeDetail.timeOfRecipe.text
         commentCount = recipeDetail.commentCount
-        likeCount = recipeDetail.likeCount
+        likeCount.value = recipeDetail.likeCount
         isLiked = recipeDetail.isLiked
         isFollowing = recipeDetail.user.isFollowing
         followedId = recipeDetail.user.id

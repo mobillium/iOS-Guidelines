@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
@@ -18,6 +19,7 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     
     private let refreshControl = UIRefreshControl()
     private var loadingFooterView: ActivityIndicatorFooterView?
+    private var cancellables: Set<AnyCancellable> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,10 +30,12 @@ final class RecipesViewController: BaseViewController<RecipesViewModel> {
     }
     
     private func subscribeViewModelEvents() {
-        viewModel.didSuccessFetchRecipes = { [weak self] in
-            guard let self = self else { return }
-            self.collectionView.reloadData()
-        }
+        viewModel.cellItemsPublisher
+            .sink { [weak self] cellItems in
+                guard let self = self else { return }
+                self.collectionView.reloadData()
+            }
+            .store(in: &cancellables)
     }
 }
 
@@ -64,7 +68,7 @@ extension RecipesViewController {
     
     @objc
     private func pullToRefreshValueChanged() {
-        viewModel.cellItems.isEmpty ? viewModel.fetchRecipesListingType() : collectionView.reloadData()
+        viewModel.cellItemsPublisher.value.isEmpty ? viewModel.fetchRecipesListingType() : collectionView.reloadData()
         refreshControl.endRefreshing()
     }
 }
