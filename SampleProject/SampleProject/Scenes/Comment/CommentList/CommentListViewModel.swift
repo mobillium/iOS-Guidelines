@@ -101,7 +101,6 @@ extension CommentListViewModel {
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension CommentListViewModel {
     
     func fetchComments() {
@@ -127,7 +126,6 @@ extension CommentListViewModel {
             }
         }
     }
-    // swiftlint:enable line_length
     
     private func deleteCommentRequest(indexPath: IndexPath) {
         let commentId = cellItems[indexPath.row].commentId

@@ -156,7 +156,6 @@ extension RecipeDetailViewModel {
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension RecipeDetailViewModel {
     
     func getRecipeComment() {
@@ -168,7 +167,7 @@ extension RecipeDetailViewModel {
                 let cellItems = response.data.map({ CommentCellModel(comment: $0) })
                 self.cellItems = cellItems
                 self.reloadCommentData?()
-            case .failure(_ ):
+            case .failure:
                 self?.reloadCommentData?()
             }
         }
@@ -223,8 +222,8 @@ extension RecipeDetailViewModel {
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                print(response.message)
+            case .success:
+                break
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsLiked?()
@@ -239,8 +238,8 @@ extension RecipeDetailViewModel {
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                print(response.message)
+            case .success:
+                break
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsFollowing?()
@@ -248,4 +247,3 @@ extension RecipeDetailViewModel {
         }
     }
 }
-// swiftlint:enable line_length

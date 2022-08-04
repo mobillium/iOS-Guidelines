@@ -55,7 +55,7 @@ public class RecipeSmallCell: UICollectionViewCell, ReusableView {
         .textColor(.appRaven)
         .build()
     
-    weak var viewModel: RecipeCellProtocol?
+    weak var viewModel: RecipeSmallCellProtocol?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -145,7 +145,7 @@ extension RecipeSmallCell {
 // MARK: - Set ViewModel
 public extension RecipeSmallCell {
     
-    func set(with viewModel: RecipeCellProtocol) {
+    func set(with viewModel: RecipeSmallCellProtocol) {
         self.viewModel = viewModel
         self.recipeImageView.setImageScaled(viewModel.recipeImageUrl)
         self.userImageView.setImageScaled(viewModel.userImageUrl)
