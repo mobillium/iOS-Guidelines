@@ -10,6 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum Localizable {
+  internal enum CommentList {
+    /// %d Tarif %d Takipçi
+    internal static func userStats(_ p1: Int, _ p2: Int) -> String {
+      return Localizable.tr("CommentList", "userStats", p1, p2)
+    }
+  }
   internal enum Favorites {
     /// %d Yorum %d Beğeni
     internal static func recipeStats(_ p1: Int, _ p2: Int) -> String {
@@ -20,6 +26,12 @@ internal enum Localizable {
     /// %d Tarif %d Takipçi
     internal static func userStats(_ p1: Int, _ p2: Int) -> String {
       return Localizable.tr("Favorites", "userStats", p1, p2)
+    }
+  }
+  internal enum RecipeDetail {
+    /// %d Tarif %d Takipçi
+    internal static func userStats(_ p1: Int, _ p2: Int) -> String {
+      return Localizable.tr("RecipeDetail", "userStats", p1, p2)
     }
   }
   internal enum Recipes {

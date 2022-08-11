@@ -20,13 +20,3 @@ public protocol RecipeHeaderCellEventSource {
 public protocol RecipeHeaderCellProtocol: RecipeHeaderCellDataSource, RecipeHeaderCellEventSource {
     
 }
-
-public final class RecipeHeaderCellModel: RecipeHeaderCellProtocol {
-    public var imageUrl: String
-    public var isEditorChoice: Bool
-    
-    public init(imageUrl: String, isEditorChoice: Bool) {
-        self.imageUrl = imageUrl
-        self.isEditorChoice = isEditorChoice
-    }
-}
