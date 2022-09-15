@@ -11,7 +11,8 @@ import SwiftUI
 struct SampleProjectSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let viewModel = SplashSceneModel()
+            SplashScene(viewModel: viewModel)
         }
     }
 }
