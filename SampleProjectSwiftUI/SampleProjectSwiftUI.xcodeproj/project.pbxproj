@@ -44,6 +44,7 @@
 		3DDAA04C28D365230015840C /* SampleProjectSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITests.swift; sourceTree = "<group>"; };
 		3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3DDAA0F028D367310015840C /* SampleProjectSwiftUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProjectSwiftUI-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +95,7 @@
 		3DDAA03428D365220015840C /* SampleProjectSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				3DDAA0EF28D3671A0015840C /* Configurations */,
 				3DDAA03528D365220015840C /* SampleProjectSwiftUIApp.swift */,
 				3DDAA03728D365220015840C /* ContentView.swift */,
 				3DDAA03928D365230015840C /* Assets.xcassets */,
@@ -125,6 +127,14 @@
 				3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */,
 			);
 			path = SampleProjectSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		3DDAA0EF28D3671A0015840C /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				3DDAA0F028D367310015840C /* SampleProjectSwiftUI-Bridging-Header.h */,
+			);
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +205,7 @@
 				TargetAttributes = {
 					3DDAA03128D365220015840C = {
 						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
 					};
 					3DDAA04128D365230015840C = {
 						CreatedOnToolsVersion = 14.0;
@@ -414,6 +425,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleProjectSwiftUI/Preview Content\"";
@@ -433,6 +445,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.SampleProjectSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectSwiftUI/Configurations/SampleProjectSwiftUI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -443,6 +457,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SampleProjectSwiftUI/Preview Content\"";
@@ -462,6 +477,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.SampleProjectSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectSwiftUI/Configurations/SampleProjectSwiftUI-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
