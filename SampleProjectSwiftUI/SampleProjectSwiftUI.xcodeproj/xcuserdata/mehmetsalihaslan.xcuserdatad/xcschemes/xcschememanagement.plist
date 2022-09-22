@@ -6,8 +6,28 @@
 	<dict>
 		<key>SampleProjectSwiftUI.xcscheme_^#shared#^_</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3DDAA03128D365220015840C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DDAA04128D365230015840C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3DDAA04B28D365230015840C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

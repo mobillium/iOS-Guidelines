@@ -1,0 +1,52 @@
+/*
+ Modules.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+// MARK: - SignInPassword
+"SignIn.navigationTitle" = "Sign In";
+
+// MARK: - Favorites
+"Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - Home
+"Home.editorChoiceRecipes" = "EDİTÖR SEÇİMİ";
+"Home.lastAddedRecipes" = "SON EKLENENLER";
+"Home.recipeCommnetAndLikeCount" = "%@ Yorum %@ Beğeni";
+"Home.userRecipeAndFollowerCount" = "%@ Tarif %@ Takipçi";
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";
+"WalkThrough.firstTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your favorite recipes in all around the world.";
+
+
+// MARK: - Login
+"LoginViewController.title" = "Giriş Yap";
+"LoginViewController.bottomText" = "Hesabın mı yok?";
+"LoginViewController.forgotPassword" = "Şifrenizi mi unuttunuz?";
+
+// MARK: - Register
+"RegisterViewController.title" = "Üye Ol";
+"RegisterViewController.bottomText" = "Hesabın mı var?";
+
+// MARK: - CommentEdit
+"CommentEditController.title" = "YORUM DÜZENLE";
+"CommentEditController.save" = "Kaydet";
+
+// MARK: - CommentList
+"CommentListController.title" = "YORUMLAR";
+
+// MARK: - PasswordReset
+"PasswordResetController.title" = "Şifre Sıfırlama";
+"PasswordResetController.reset" = "Sıfırla";
+
+// MARK: RecipeDetail
+"RecipeDetail.noComment" = "Henüz yorum yapılmamıştır.";
