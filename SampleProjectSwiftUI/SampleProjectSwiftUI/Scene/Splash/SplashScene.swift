@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashScene<ViewModel: SplashSceneModel>: View {
     
-    @ObservedObject var viewModel: SplashSceneModel
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         BaseScene(content: {

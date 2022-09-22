@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
+		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
 		3DDAA03A28D365230015840C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03928D365230015840C /* Assets.xcassets */; };
 		3DDAA03D28D365230015840C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03C28D365230015840C /* Preview Assets.xcassets */; };
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
+		3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSceneModel.swift; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA03928D365230015840C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DDAA03C28D365230015840C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -107,6 +111,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D6962B928DCAAE5004CB727 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3D6962C428DCAE2D004CB727 /* New Group */,
+				3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */,
+				3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3D6962C428DCAE2D004CB727 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		3DDAA02928D365220015840C = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +198,7 @@
 		3DDAA10C28D36E6C0015840C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3D6962B928DCAAE5004CB727 /* Onboarding */,
 				3DDAA12628D375450015840C /* Splash */,
 				3DDAA11828D36F520015840C /* Base */,
 			);
@@ -380,7 +402,9 @@
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
 				3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */,
 				3DDAA12828D375520015840C /* SplashScene.swift in Sources */,
+				3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */,
 				3DDAA12A28D375650015840C /* SplashSceneModel.swift in Sources */,
+				3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */,
 				3DDAA11C28D36F660015840C /* BaseSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

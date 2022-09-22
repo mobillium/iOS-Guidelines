@@ -1,6 +1,6 @@
-import UIKit
+import SwiftUI
 
-public extension FontConvertible.Font {
+public extension SwiftUI.Font {
     
     enum FontWeight {
         case nunitoSemiBold
@@ -43,15 +43,15 @@ public extension FontConvertible.Font {
         }
     }
     
-    static func font(_ weight: FontWeight, size: FontSize) -> UIFont {
-        let font: UIFont
+    static func font(_ weight: FontWeight, size: FontSize) -> SwiftUI.Font {
+        let font: SwiftUI.Font
         switch weight {
         case .nunitoSemiBold:
-            font = FontFamily.Nunito.semiBold.font(size: size.rawValue)
+            font = FontFamily.Nunito.semiBold.swiftUIFont(size: size.rawValue)
         case .nunitoBold:
-            font = FontFamily.Nunito.bold.font(size: size.rawValue)
+            font = FontFamily.Nunito.bold.swiftUIFont(size: size.rawValue)
         case .nunitoExtraBold:
-            font = FontFamily.Nunito.extraBold.font(size: size.rawValue)
+            font = FontFamily.Nunito.extraBold.swiftUIFont(size: size.rawValue)
         }
         return font
     }

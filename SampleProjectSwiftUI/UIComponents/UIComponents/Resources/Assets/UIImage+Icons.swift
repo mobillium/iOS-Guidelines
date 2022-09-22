@@ -1,77 +1,77 @@
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
-import UIKit
+import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-public extension UIImage {
+public extension Image {
 
-  static var icBack: UIImage {
-      return Asset.Icons.icBack.image
+  static var icBack: Image {
+      return Asset.Icons.icBack.swiftUIImage
   }
 
-  static var icClock: UIImage {
-      return Asset.Icons.icClock.image
+  static var icClock: Image {
+      return Asset.Icons.icClock.swiftUIImage
   }
 
-  static var icClose: UIImage {
-      return Asset.Icons.icClose.image
+  static var icClose: Image {
+      return Asset.Icons.icClose.swiftUIImage
   }
 
-  static var icComment: UIImage {
-      return Asset.Icons.icComment.image
+  static var icComment: Image {
+      return Asset.Icons.icComment.swiftUIImage
   }
 
-  static var icHeart: UIImage {
-      return Asset.Icons.icHeart.image
+  static var icHeart: Image {
+      return Asset.Icons.icHeart.swiftUIImage
   }
 
-  static var icHome: UIImage {
-      return Asset.Icons.icHome.image
+  static var icHome: Image {
+      return Asset.Icons.icHome.swiftUIImage
   }
 
-  static var icLogout: UIImage {
-      return Asset.Icons.icLogout.image
+  static var icLogout: Image {
+      return Asset.Icons.icLogout.swiftUIImage
   }
 
-  static var icMail: UIImage {
-      return Asset.Icons.icMail.image
+  static var icMail: Image {
+      return Asset.Icons.icMail.swiftUIImage
   }
 
-  static var icMenu: UIImage {
-      return Asset.Icons.icMenu.image
+  static var icMenu: Image {
+      return Asset.Icons.icMenu.swiftUIImage
   }
 
-  static var icMore: UIImage {
-      return Asset.Icons.icMore.image
+  static var icMore: Image {
+      return Asset.Icons.icMore.swiftUIImage
   }
 
-  static var icPassword: UIImage {
-      return Asset.Icons.icPassword.image
+  static var icPassword: Image {
+      return Asset.Icons.icPassword.swiftUIImage
   }
 
-  static var icRestaurant: UIImage {
-      return Asset.Icons.icRestaurant.image
+  static var icRestaurant: Image {
+      return Asset.Icons.icRestaurant.swiftUIImage
   }
 
-  static var icSend: UIImage {
-      return Asset.Icons.icSend.image
+  static var icSend: Image {
+      return Asset.Icons.icSend.swiftUIImage
   }
 
-  static var icShare: UIImage {
-      return Asset.Icons.icShare.image
+  static var icShare: Image {
+      return Asset.Icons.icShare.swiftUIImage
   }
 
-  static var icUser: UIImage {
-      return Asset.Icons.icUser.image
+  static var icUser: Image {
+      return Asset.Icons.icUser.swiftUIImage
   }
 
-  static var icUsers: UIImage {
-      return Asset.Icons.icUsers.image
+  static var icUsers: Image {
+      return Asset.Icons.icUsers.swiftUIImage
   }
 
-  static var icWarning: UIImage {
-      return Asset.Icons.icWarning.image
+  static var icWarning: Image {
+      return Asset.Icons.icWarning.swiftUIImage
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

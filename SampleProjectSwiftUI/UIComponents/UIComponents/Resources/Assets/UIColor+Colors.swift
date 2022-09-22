@@ -1,45 +1,45 @@
 // swiftlint:disable all
 // Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
 
-import UIKit
+import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-public extension UIColor {
+public extension Color {
 
-  static var appPrimaryBackground: UIColor {
-      return Asset.Colors.appPrimaryBackground.color
+  static var appPrimaryBackground: Color {
+      return Asset.Colors.appPrimaryBackground.swiftUIColor
   }
 
-  static var appSecondaryBackground: UIColor {
-      return Asset.Colors.appSecondaryBackground.color
+  static var appSecondaryBackground: Color {
+      return Asset.Colors.appSecondaryBackground.swiftUIColor
   }
 
-  static var appCinder: UIColor {
-      return Asset.Colors.appCinder.color
+  static var appCinder: Color {
+      return Asset.Colors.appCinder.swiftUIColor
   }
 
-  static var appHeather: UIColor {
-      return Asset.Colors.appHeather.color
+  static var appHeather: Color {
+      return Asset.Colors.appHeather.swiftUIColor
   }
 
-  static var appRaven: UIColor {
-      return Asset.Colors.appRaven.color
+  static var appRaven: Color {
+      return Asset.Colors.appRaven.swiftUIColor
   }
 
-  static var appRed: UIColor {
-      return Asset.Colors.appRed.color
+  static var appRed: Color {
+      return Asset.Colors.appRed.swiftUIColor
   }
 
-  static var appWhite: UIColor {
-      return Asset.Colors.appWhite.color
+  static var appWhite: Color {
+      return Asset.Colors.appWhite.swiftUIColor
   }
 
-  static var appYellow: UIColor {
-      return Asset.Colors.appYellow.color
+  static var appYellow: Color {
+      return Asset.Colors.appYellow.swiftUIColor
   }
 
-  static var appZircon: UIColor {
-      return Asset.Colors.appZircon.color
+  static var appZircon: Color {
+      return Asset.Colors.appZircon.swiftUIColor
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

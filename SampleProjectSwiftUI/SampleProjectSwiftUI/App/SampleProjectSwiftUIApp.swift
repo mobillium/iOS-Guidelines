@@ -11,8 +11,8 @@ import SwiftUI
 struct SampleProjectSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            let viewModel = SplashSceneModel()
-            SplashScene(viewModel: viewModel)
+            let viewModel = OnboardingSceneModel()
+            OnboardingScene(viewModel: viewModel)
         }
     }
 }

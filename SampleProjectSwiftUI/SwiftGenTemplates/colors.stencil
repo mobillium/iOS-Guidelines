@@ -11,8 +11,8 @@
   {% for asset in assets %}
   {% if asset.type == "color" %}
 
-  static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIColor {
-      return {{enumName}}.Colors.{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}.color
+  static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: Color {
+      return {{enumName}}.Colors.{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}.swiftUIColor
   }
   {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
   {% call casesBlock asset.items %}
@@ -22,10 +22,10 @@
   {% endfor %}
 {% endmacro %}
 
-import UIKit
+import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-{{accessModifier}} extension UIColor {
+{{accessModifier}} extension Color {
   {% if catalogs.count > 1 or param.forceFileNameEnum %}
   {% for catalog in catalogs %}
   {% call enumBlock catalog.assets %}
