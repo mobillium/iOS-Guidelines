@@ -18,7 +18,7 @@ public protocol CategoryWithRecipesCellDataSource: AnyObject {
 
 public protocol CategoryWithRecipesCellEventSource: AnyObject {
     var didSelectRecipe: IntClosure? { get set }
-    var seeAllButtonTapped: DoubleVariableClosure<Int, String>? { get set }
+    var seeAllButtonTapped: TwoVariableClosure<Int, String>? { get set }
 }
 
 public protocol CategoryWithRecipesCellProtocol: CategoryWithRecipesCellDataSource, CategoryWithRecipesCellEventSource {}
