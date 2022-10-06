@@ -13,7 +13,7 @@ public final class FavoritesCellModel: CategoryWithRecipesCellProtocol {
     public let categoryImageURL: String?
     public let categoryName: String?
     public let seeAllButtonTitle: String? = Localizable.Favorites.seeAllButtonTitle
-    public var seeAllButtonTapped: TwoVariableClosure<Int, String>?
+    public var seeAllButtonTapped: TwoVariablesClosure<Int, String>?
     public let cellItems: [RecipeSmallCellProtocol]
     public var didSelectRecipe: IntClosure?
     
