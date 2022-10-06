@@ -22,7 +22,6 @@ public class CategoryWithRecipesCell: UICollectionViewCell, ReusableView {
         .build()
     
     private let seeAllButton = UIButtonBuilder()
-        .title(L10n.Modules.Favorites.seeAllButtonTitle)
         .titleColor(.appRed)
         .titleFont(.font(.nunitoBold, size: .small))
         .backgroundColor(.clear)
@@ -108,6 +107,7 @@ public extension CategoryWithRecipesCell {
         self.viewModel = viewModel
         self.categoryImageView.setImage(viewModel.categoryImageURL)
         self.categoryNameLabel.text = viewModel.categoryName
+        self.seeAllButton.setTitle(viewModel.seeAllButtonTitle, for: .normal)
         self.recipeSmallCellView.didSelectRecipe = viewModel.didSelectRecipe
         self.recipeSmallCellView.cellItems = viewModel.cellItems
     }

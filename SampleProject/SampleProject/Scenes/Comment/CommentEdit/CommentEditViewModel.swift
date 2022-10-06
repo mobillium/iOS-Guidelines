@@ -47,7 +47,7 @@ extension CommentEditViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success(_):
+            case .success:
                 self.editCommentDidSuccess?(commentText)
                 self.router.close()
             case .failure(let error):

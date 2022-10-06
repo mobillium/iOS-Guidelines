@@ -26,7 +26,7 @@ final class RecipeDetailHeaderView: UIView {
     var photoBrowserDelegate: PhotoBrowserDelegate?
     // swiftlint:enable weak_delegate
     
-    var recipeHeaderData: [RecipeHeaderCellProtocol] = [] {
+    var recipeHeaderData: [RecipeDetailCommentHeaderCell] = [] {
         didSet {
             collectionView.reloadData()
             pageControl.numberOfPages = recipeHeaderData.count
@@ -67,7 +67,7 @@ extension RecipeDetailHeaderView {
     
     private func configurePhotoBrowserDelegate() {
         photoBrowserDelegate = PhotoBrowserDelegate()
-        photoBrowserDelegate?.willDismissAtPage = { [weak self] (index) in
+        photoBrowserDelegate?.didScrollToRow = { [weak self] (index) in
             guard let self = self else { return }
             let indexPath = IndexPath(item: index, section: 0)
             self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)

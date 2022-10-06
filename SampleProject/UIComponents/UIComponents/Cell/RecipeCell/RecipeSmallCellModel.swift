@@ -1,19 +1,17 @@
 //
-//  RecipeCellModel.swift
+//  Model.swift
 //  UIComponents
 //
-//  Created by Murat Celebi on 24.03.2021.
-//  Copyright © 2021 Mobillium. All rights reserved.
+//  Created by Mehmet Salih Aslan on 27.07.2022.
+//  Copyright © 2022 Mobillium. All rights reserved.
 //
 
 import UIKit
 
-public protocol RecipeCellDataSource: AnyObject {
+public protocol RecipeSmallCellDataSource: AnyObject {
+    var recipeId: Int { get }
     var userImageUrl: String? { get }
     var username: String? { get }
-    var userFollowerCount: Int { get }
-    var userRecipeCount: Int { get }
-    var userRecipeAndFollowerCountText: String? { get }
     var recipeTitle: String? { get }
     var categoryName: String? { get }
     var recipeImageUrl: String? { get }
@@ -23,8 +21,9 @@ public protocol RecipeCellDataSource: AnyObject {
     var isEditorChoice: Bool { get }
 }
 
-public protocol RecipeCellEventSource: AnyObject {
+public protocol RecipeSmallCellEventSource: AnyObject {
     var followButtonTapped: VoidClosure? { get set }
 }
 
-public protocol RecipeCellProtocol: RecipeCellDataSource, RecipeCellEventSource {}
+public protocol RecipeSmallCellProtocol: RecipeSmallCellDataSource, RecipeSmallCellEventSource {}
+

@@ -48,9 +48,8 @@ extension HomeViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success(let response):
+            case .success:
                 self.didSuccesLogout?()
-                print(response.message)
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)
             }

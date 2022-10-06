@@ -24,7 +24,7 @@ protocol RecipesViewProtocol: RecipesViewDataSource, RecipesViewEventSource {
     func fetchMorePages()
 }
 
-final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {
+final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol {    
     
     enum RecipesListingType {
         case editorChoiceRecipes
@@ -36,7 +36,7 @@ final class RecipesViewModel: BaseViewModel<RecipesRouter>, RecipesViewProtocol 
     var isPagingEnabled = false
     
     var page = 1
-    var cellItems: [RecipeCellProtocol] = []
+    var cellItems: [RecipesCellModel] = []
   
     var didSuccessFetchRecipes: VoidClosure?
     private var recipesListingType: RecipesListingType
@@ -87,7 +87,7 @@ extension RecipesViewModel {
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                let cellItems = response.data.map({ RecipeCellModel(recipe: $0) })
+                let cellItems = response.data.map({ RecipesCellModel(recipe: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage

@@ -21,7 +21,7 @@ public class ActivityIndicatorView: UIActivityIndicatorView {
     }
     
     private func commonInit() {
-        style = .gray
+        style = .medium
         tintColor = .appCinder
         hidesWhenStopped = true
     }

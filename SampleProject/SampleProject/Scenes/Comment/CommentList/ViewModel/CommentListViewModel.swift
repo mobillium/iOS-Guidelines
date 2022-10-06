@@ -13,7 +13,7 @@ protocol CommentListViewDataSource {
     var title: String { get }
     
     func numberOfItemsAt(section: Int) -> Int
-    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
+    func cellItemAt(indexPath: IndexPath) -> CommentListCellModel
 }
 
 protocol CommentListViewEventSource {
@@ -52,11 +52,11 @@ final class CommentListViewModel: BaseViewModel<CommentListRouter>, CommentListV
         return cellItems.count
     }
     
-    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol {
+    func cellItemAt(indexPath: IndexPath) -> CommentListCellModel {
         return cellItems[indexPath.row]
     }
     
-    var cellItems: [CommentCellProtocol] = []
+    var cellItems: [CommentListCellModel] = []
 }
 
 // MARK: - Actions
@@ -101,7 +101,6 @@ extension CommentListViewModel {
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension CommentListViewModel {
     
     func fetchComments() {
@@ -117,7 +116,7 @@ extension CommentListViewModel {
                 if self.page == 1 {
                     self.cellItems.removeAll()
                 }
-                let cellItems = response.data.map({ CommentCellModel(comment: $0) })
+                let cellItems = response.data.map({ CommentListCellModel(comment: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 if self.isPagingEnabled { self.page += 1 }
@@ -127,7 +126,6 @@ extension CommentListViewModel {
             }
         }
     }
-    // swiftlint:enable line_length
     
     private func deleteCommentRequest(indexPath: IndexPath) {
         let commentId = cellItems[indexPath.row].commentId
