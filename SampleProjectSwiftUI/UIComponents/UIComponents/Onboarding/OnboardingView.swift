@@ -30,7 +30,6 @@ public struct OnboardingView: View {
                         .font(.font(.nunitoSemiBold, size: .xLarge))
                 }
             }
-            .padding(50)
             Spacer()
         }
     }

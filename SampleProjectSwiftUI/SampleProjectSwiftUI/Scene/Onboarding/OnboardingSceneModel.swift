@@ -9,6 +9,10 @@ import SwiftUI
 
 class OnboardingSceneModel: BaseSceneModel {
     
+    var numberOfPages: Int {
+        return items.count
+    }
+    
     @Published var items: [OnboardingViewModel] = [OnboardingViewModel(imageName: "img_walkthrough_1",
                                                                        title: L10n.Modules.WalkThrough.firstTitle,
                                                                        description: L10n.Modules.WalkThrough.descriptionText),

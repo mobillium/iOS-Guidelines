@@ -114,18 +114,10 @@
 		3D6962B928DCAAE5004CB727 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				3D6962C428DCAE2D004CB727 /* New Group */,
 				3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */,
 				3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		3D6962C428DCAE2D004CB727 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		3DDAA02928D365220015840C = {
@@ -572,6 +564,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -603,6 +596,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
