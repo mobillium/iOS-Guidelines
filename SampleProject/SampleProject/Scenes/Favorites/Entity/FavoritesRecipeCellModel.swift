@@ -15,14 +15,13 @@ class FavoritesRecipeCellModel: RecipeSmallCellProtocol {
     let recipeTitle: String?
     let categoryName: String?
     let recipeImageUrl: String?
-    var commentCount: Int
-    var likeCount: Int
-    let isEditorChoice: Bool
-    var followButtonTapped: VoidClosure?
-    
+    let commentCount: Int
+    let likeCount: Int
     lazy var recipeCommnetAndLikeCountText: String? = {
         return Localizable.Recipes.recipeStats(commentCount, likeCount)
     }()
+    let isEditorChoice: Bool
+    var followButtonTapped: VoidClosure?
     
     init(recipe: Recipe) {
         self.recipeId = recipe.id

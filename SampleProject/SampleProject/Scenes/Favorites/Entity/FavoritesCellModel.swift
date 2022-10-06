@@ -9,14 +9,12 @@
 import Foundation
 
 public final class FavoritesCellModel: CategoryWithRecipesCellProtocol {
-    public var categoryId: Int
-    public var categoryImageURL: String?
-    public var categoryName: String?
-    public var seeAllButtonTitle: String? = {
-        return Localizable.Favorites.seeAllButtonTitle
-    }()
-    public var seeAllButtonTapped: ((Int, String) -> Void)?
-    public var cellItems: [RecipeSmallCellProtocol]
+    public let categoryId: Int
+    public let categoryImageURL: String?
+    public let categoryName: String?
+    public let seeAllButtonTitle: String? = Localizable.Favorites.seeAllButtonTitle
+    public var seeAllButtonTapped: DoubleVariableClosure<Int, String>?
+    public let cellItems: [RecipeSmallCellProtocol]
     public var didSelectRecipe: IntClosure?
     
     init(category: MainCategory) {
