@@ -95,7 +95,6 @@ xcuserdata
 ## Xcode 8 and earlier
 
 ### Xcode Patch ###
-*.xcodeproj/*
 *.xcodeproj/xcuserdata
 !*.xcodeproj/project.pbxproj
 /*.gcno
