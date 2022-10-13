@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
 		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
+		3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164D928F85C2700B43797 /* DefaultKeys.swift */; };
+		3DC164DC28F85C4300B43797 /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */; };
+		3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DE28F85CD400B43797 /* RootSceneModel.swift */; };
+		3DC164E128F85CD400B43797 /* RootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DF28F85CD400B43797 /* RootScene.swift */; };
 		3DDAA03A28D365230015840C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03928D365230015840C /* Assets.xcassets */; };
 		3DDAA03D28D365230015840C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03C28D365230015840C /* Preview Assets.xcassets */; };
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
@@ -64,6 +68,9 @@
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSceneModel.swift; sourceTree = "<group>"; };
+		3DC164D928F85C2700B43797 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
+		3DC164DE28F85CD400B43797 /* RootSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSceneModel.swift; sourceTree = "<group>"; };
+		3DC164DF28F85CD400B43797 /* RootScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScene.swift; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA03928D365230015840C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DDAA03C28D365230015840C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -91,6 +98,7 @@
 				3DDAA11328D36F3B0015840C /* UIComponents.framework in Frameworks */,
 				3DDAA11628D36F3E0015840C /* Utilities.framework in Frameworks */,
 				3DDAA11028D36F370015840C /* DataProvider.framework in Frameworks */,
+				3DC164DC28F85C4300B43797 /* SampleProjectSwiftUIPackages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +128,23 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		3DC164D628F85C1600B43797 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				3DC164D928F85C2700B43797 /* DefaultKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		3DC164DD28F85CC100B43797 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3DC164DF28F85CD400B43797 /* RootScene.swift */,
+				3DC164DE28F85CD400B43797 /* RootSceneModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		3DDAA02928D365220015840C = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +170,7 @@
 		3DDAA03428D365220015840C /* SampleProjectSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				3DC164D628F85C1600B43797 /* Constants */,
 				3DDAA11D28D370240015840C /* App */,
 				3DDAA0EF28D3671A0015840C /* Configurations */,
 				3DDAA10C28D36E6C0015840C /* Scene */,
@@ -190,6 +216,7 @@
 		3DDAA10C28D36E6C0015840C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3DC164DD28F85CC100B43797 /* Root */,
 				3D6962B928DCAAE5004CB727 /* Onboarding */,
 				3DDAA12628D375450015840C /* Splash */,
 				3DDAA11828D36F520015840C /* Base */,
@@ -252,6 +279,7 @@
 			);
 			name = SampleProjectSwiftUI;
 			packageProductDependencies = (
+				3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -394,9 +422,12 @@
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
 				3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */,
 				3DDAA12828D375520015840C /* SplashScene.swift in Sources */,
+				3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */,
 				3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */,
 				3DDAA12A28D375650015840C /* SplashSceneModel.swift in Sources */,
+				3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */,
 				3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */,
+				3DC164E128F85CD400B43797 /* RootScene.swift in Sources */,
 				3DDAA11C28D36F660015840C /* BaseSceneModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -727,6 +758,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SampleProjectSwiftUIPackages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3DDAA02A28D365220015840C /* Project object */;
 }

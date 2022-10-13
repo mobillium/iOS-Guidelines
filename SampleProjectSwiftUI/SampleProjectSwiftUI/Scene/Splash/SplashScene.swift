@@ -14,14 +14,24 @@ struct SplashScene<ViewModel: SplashSceneModel>: View {
     var body: some View {
         BaseScene(content: {
             
+            Color.appRed
+                .ignoresSafeArea()
+            
+            Image("fodamy-logo")
+                .padding([.leading, .trailing], 64)
+                .foregroundColor(.appWhite)
+            
         }, viewModel: viewModel)
+        .onAppear {
+            viewModel.checkState()
+        }
     }
 }
 
 struct SplashScene_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = SplashSceneModel()
-        viewModel.showLoading = true
-        return SplashScene(viewModel: viewModel)
+        
+        SplashScene(viewModel: viewModel)
     }
 }

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import MobilliumUserDefaults
 
 struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
     
@@ -43,7 +44,7 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
                 PageControl(numberOfPages: viewModel.numberOfPages, currentPage: $currentPage)
                 Button(buttonTitle) {
                     if currentPage >= viewModel.numberOfPages - 1 {
-                        // FIXME: navigate to next screen
+                        // FIXME: set isFirstStart to false or true and route to dashboard
                     } else {
                         currentPage += 1
                         updateButtonTitle()
@@ -75,5 +76,6 @@ struct OnboardingScene_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = OnboardingSceneModel()
         return OnboardingScene(viewModel: viewModel)
+            .previewDevice(PreviewDevice(stringLiteral: DeviceName.iPhone_SE.rawValue))
     }
 }

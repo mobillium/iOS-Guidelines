@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mobilliumuserdefaults",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mobillium/MobilliumUserDefaults",
+      "state" : {
+        "revision" : "6b1e8d133c44e1da696e14b05da27f5ffeb4bbdc",
+        "version" : "2.0.1"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -7,7 +7,14 @@
 
 import SwiftUI
 
-public struct OnboardingViewModel: Identifiable {
+public protocol OnboardingViewProtocol: Identifiable {
+    var id: UUID { get }
+    var imageName: String { get }
+    var title: String { get }
+    var description: String { get }
+}
+
+public struct OnboardingViewModel: OnboardingViewProtocol {
     public var id = UUID()
     public let imageName: String
     public let title: String

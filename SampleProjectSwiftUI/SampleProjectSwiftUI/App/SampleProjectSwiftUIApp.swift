@@ -12,8 +12,7 @@ struct SampleProjectSwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            let viewModel = OnboardingSceneModel()
-            OnboardingScene(viewModel: viewModel)
+            RootScene()
         }
     }
 }

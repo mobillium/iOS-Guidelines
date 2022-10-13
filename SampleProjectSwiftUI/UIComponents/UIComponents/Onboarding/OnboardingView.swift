@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct OnboardingView: View {
     
-    var viewModel: OnboardingViewModel
+    var viewModel: any OnboardingViewProtocol
     
     public var body: some View {
         VStack {
@@ -34,7 +34,7 @@ public struct OnboardingView: View {
         }
     }
     
-    public init(viewModel: OnboardingViewModel) {
+    public init(viewModel: any OnboardingViewProtocol) {
         self.viewModel = viewModel
     }
 }
@@ -46,5 +46,6 @@ struct OnboardingView_Previews: PreviewProvider {
                                             description: "this is description")
         let view = OnboardingView(viewModel: viewModel)
         return view
+            .previewDevice(PreviewDevice(rawValue: DeviceName.iPhone_8.rawValue))
     }
 }
