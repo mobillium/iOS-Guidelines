@@ -20,6 +20,8 @@ struct RootScene<ViewModel: RootSceneModel>: View {
                     SplashScene(viewModel: viewModel)
                 case .onboarding(let viewModel):
                     OnboardingScene(viewModel: viewModel)
+                case .mainTab(let viewModel):
+                    MainTabScene(viewModel: viewModel)
                 }
             }
             

@@ -16,5 +16,6 @@ class RootSceneModel: BaseSceneModel {
     enum State {
         case splash(viewModel: SplashSceneModel)
         case onboarding(viewModel: OnboardingSceneModel)
+        case mainTab(viewModel: MainTabSceneModel)
     }
 }

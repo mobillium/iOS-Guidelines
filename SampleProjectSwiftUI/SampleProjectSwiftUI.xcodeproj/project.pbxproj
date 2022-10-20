@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4D4C41290189D100E8B7C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */; };
+		3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4429018B7100E8B7C9 /* MainTabSceneModel.swift */; };
+		3D4D4C4729018B7100E8B7C9 /* MainTabScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4529018B7100E8B7C9 /* MainTabScene.swift */; };
+		3D4D4C4B29018BC100E8B7C9 /* FavoritesSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4929018BC100E8B7C9 /* FavoritesSceneModel.swift */; };
+		3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4A29018BC100E8B7C9 /* FavoritesScene.swift */; };
+		3D4D4C4F29018BC900E8B7C9 /* HomeSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4D29018BC900E8B7C9 /* HomeSceneModel.swift */; };
+		3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4E29018BC900E8B7C9 /* HomeScene.swift */; };
 		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
 		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
 		3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164D928F85C2700B43797 /* DefaultKeys.swift */; };
@@ -65,6 +72,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D4D4C3E290188C000E8B7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D4D4C4429018B7100E8B7C9 /* MainTabSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabSceneModel.swift; sourceTree = "<group>"; };
+		3D4D4C4529018B7100E8B7C9 /* MainTabScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabScene.swift; sourceTree = "<group>"; };
+		3D4D4C4929018BC100E8B7C9 /* FavoritesSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesSceneModel.swift; sourceTree = "<group>"; };
+		3D4D4C4A29018BC100E8B7C9 /* FavoritesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesScene.swift; sourceTree = "<group>"; };
+		3D4D4C4D29018BC900E8B7C9 /* HomeSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneModel.swift; sourceTree = "<group>"; };
+		3D4D4C4E29018BC900E8B7C9 /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSceneModel.swift; sourceTree = "<group>"; };
@@ -119,6 +134,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D4D4C3F290189C100E8B7C9 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		3D4D4C4229018B2D00E8B7C9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D4C4D29018BC900E8B7C9 /* HomeSceneModel.swift */,
+				3D4D4C4E29018BC900E8B7C9 /* HomeScene.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3D4D4C4329018B4D00E8B7C9 /* MainTabScene */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D4C4429018B7100E8B7C9 /* MainTabSceneModel.swift */,
+				3D4D4C4529018B7100E8B7C9 /* MainTabScene.swift */,
+			);
+			path = MainTabScene;
+			sourceTree = "<group>";
+		};
+		3D4D4C4829018BB800E8B7C9 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D4C4929018BC100E8B7C9 /* FavoritesSceneModel.swift */,
+				3D4D4C4A29018BC100E8B7C9 /* FavoritesScene.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		3D6962B928DCAAE5004CB727 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +220,7 @@
 		3DDAA03428D365220015840C /* SampleProjectSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				3D4D4C3E290188C000E8B7C9 /* Info.plist */,
 				3DC164D628F85C1600B43797 /* Constants */,
 				3DDAA11D28D370240015840C /* App */,
 				3DDAA0EF28D3671A0015840C /* Configurations */,
@@ -216,7 +267,11 @@
 		3DDAA10C28D36E6C0015840C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3D4D4C3F290189C100E8B7C9 /* Launch */,
 				3DC164DD28F85CC100B43797 /* Root */,
+				3D4D4C4329018B4D00E8B7C9 /* MainTabScene */,
+				3D4D4C4229018B2D00E8B7C9 /* Home */,
+				3D4D4C4829018BB800E8B7C9 /* Favorites */,
 				3D6962B928DCAAE5004CB727 /* Onboarding */,
 				3DDAA12628D375450015840C /* Splash */,
 				3DDAA11828D36F520015840C /* Base */,
@@ -372,6 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4D4C41290189D100E8B7C9 /* LaunchScreen.storyboard in Resources */,
 				3DDAA03D28D365230015840C /* Preview Assets.xcassets in Resources */,
 				3DDAA03A28D365230015840C /* Assets.xcassets in Resources */,
 			);
@@ -419,9 +475,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4D4C4B29018BC100E8B7C9 /* FavoritesSceneModel.swift in Sources */,
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
+				3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */,
+				3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */,
+				3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */,
 				3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */,
 				3DDAA12828D375520015840C /* SplashScene.swift in Sources */,
+				3D4D4C4729018B7100E8B7C9 /* MainTabScene.swift in Sources */,
+				3D4D4C4F29018BC900E8B7C9 /* HomeSceneModel.swift in Sources */,
 				3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */,
 				3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */,
 				3DDAA12A28D375650015840C /* SplashSceneModel.swift in Sources */,
@@ -591,9 +653,10 @@
 				DEVELOPMENT_TEAM = 4PWC9KX3UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SampleProjectSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -623,9 +686,10 @@
 				DEVELOPMENT_TEAM = 4PWC9KX3UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SampleProjectSwiftUI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (

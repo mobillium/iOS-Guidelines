@@ -44,7 +44,9 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
                 PageControl(numberOfPages: viewModel.numberOfPages, currentPage: $currentPage)
                 Button(buttonTitle) {
                     if currentPage >= viewModel.numberOfPages - 1 {
-                        // FIXME: set isFirstStart to false or true and route to dashboard
+                        DefaultsKey.isFirstStart.value = false
+                        let viewModel = MainTabSceneModel()
+                        RootSceneModel.shared.state = .mainTab(viewModel: viewModel)
                     } else {
                         currentPage += 1
                         updateButtonTitle()

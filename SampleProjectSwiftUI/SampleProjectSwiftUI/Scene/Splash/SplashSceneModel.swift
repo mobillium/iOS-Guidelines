@@ -10,7 +10,8 @@ import MobilliumUserDefaults
 class SplashSceneModel: BaseSceneModel {
     func checkState() {
         if DefaultsKey.isFirstStart.has {
-            // FIXME: route to dashboard
+            let viewModel = MainTabSceneModel()
+            RootSceneModel.shared.state = .mainTab(viewModel: viewModel)
         } else {
             let viewModel = OnboardingSceneModel()
             RootSceneModel.shared.state = .onboarding(viewModel: viewModel)
