@@ -43,6 +43,19 @@ public extension SwiftUI.Font {
         }
     }
     
+    static func uiFont(_ weight: FontWeight, size: FontSize) -> UIFont {
+        let font: UIFont
+        switch weight {
+        case .nunitoSemiBold:
+            font = FontFamily.Nunito.semiBold.font(size: size.rawValue)
+        case .nunitoBold:
+            font = FontFamily.Nunito.bold.font(size: size.rawValue)
+        case .nunitoExtraBold:
+            font = FontFamily.Nunito.extraBold.font(size: size.rawValue)
+        }
+        return font
+    }
+    
     static func font(_ weight: FontWeight, size: FontSize) -> SwiftUI.Font {
         let font: SwiftUI.Font
         switch weight {

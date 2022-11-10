@@ -12,6 +12,11 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
     
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+        setupAppearance()
+    }
+    
     var body: some View {
         TabView {
             HomeScene(viewModel: HomeSceneModel())
@@ -31,6 +36,15 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
                 .tag(1)
         }
         .accentColor(.appRed)
+    }
+    
+    func setupAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = Color.appWhite.uiColor
+        UITabBar.appearance().standardAppearance = appearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = appearance
+        }
     }
 }
 
