@@ -30,6 +30,10 @@ public extension Color {
       return Asset.Colors.appRed.swiftUIColor
   }
 
+  static var appSeparator: Color {
+      return Asset.Colors.appSeparator.swiftUIColor
+  }
+
   static var appWhite: Color {
       return Asset.Colors.appWhite.swiftUIColor
   }

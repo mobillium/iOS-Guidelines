@@ -7,10 +7,13 @@
 
 import Combine
 import SwiftUI
+import UIComponents
 
 struct HomeScene<ViewModel: HomeSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
+    @State var selectedIndex = 0
+    @State var options = [L10n.Modules.Home.editorChoiceRecipes, L10n.Modules.Home.lastAddedRecipes]
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -20,9 +23,14 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     var body: some View {
         NavigationView {
             BaseScene(content: {
-                
+                VStack {
+                    AppSegmentView(selectedIndex: $selectedIndex, options: $options)
+                    
+                    Spacer()
+                }
+
             }, viewModel: viewModel)
-                        
+            
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal, content: {
