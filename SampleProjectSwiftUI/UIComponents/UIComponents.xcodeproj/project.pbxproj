@@ -36,6 +36,10 @@
 		3DAE91C928EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE91C828EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift */; };
 		3DBA3EE528F84EF80050310C /* DeviceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DBA3EE428F84EF80050310C /* DeviceName.swift */; };
 		3DCBDA2928EF135700F69962 /* PrimaryLargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCBDA2828EF135700F69962 /* PrimaryLargeButton.swift */; };
+		3DD54E39292FAC0C007AD544 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E37292FAC0C007AD544 /* RecipeView.swift */; };
+		3DD54E3A292FAC0C007AD544 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E38292FAC0C007AD544 /* RecipeViewModel.swift */; };
+		3DD54E3E292FB380007AD544 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E3C292FB380007AD544 /* UserView.swift */; };
+		3DD54E3F292FB380007AD544 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E3D292FB380007AD544 /* UserViewModel.swift */; };
 		3DDAA06E28D3661F0015840C /* UIComponents.docc in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA06D28D3661F0015840C /* UIComponents.docc */; };
 		3DDAA07428D3661F0015840C /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA06928D3661F0015840C /* UIComponents.framework */; };
 		3DDAA07928D3661F0015840C /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA07828D3661F0015840C /* UIComponentsTests.swift */; };
@@ -83,6 +87,10 @@
 		3DAE91C828EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		3DBA3EE428F84EF80050310C /* DeviceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceName.swift; sourceTree = "<group>"; };
 		3DCBDA2828EF135700F69962 /* PrimaryLargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryLargeButton.swift; sourceTree = "<group>"; };
+		3DD54E37292FAC0C007AD544 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		3DD54E38292FAC0C007AD544 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		3DD54E3C292FB380007AD544 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		3DD54E3D292FB380007AD544 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		3DDAA06928D3661F0015840C /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA06C28D3661F0015840C /* UIComponents.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponents.h; sourceTree = "<group>"; };
 		3DDAA06D28D3661F0015840C /* UIComponents.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = UIComponents.docc; sourceTree = "<group>"; };
@@ -226,6 +234,24 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		3DD54E36292FABFA007AD544 /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				3DD54E37292FAC0C007AD544 /* RecipeView.swift */,
+				3DD54E38292FAC0C007AD544 /* RecipeViewModel.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		3DD54E3B292FB372007AD544 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				3DD54E3C292FB380007AD544 /* UserView.swift */,
+				3DD54E3D292FB380007AD544 /* UserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		3DDAA05F28D3661F0015840C = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +275,8 @@
 		3DDAA06B28D3661F0015840C /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3DD54E3B292FB372007AD544 /* User */,
+				3DD54E36292FABFA007AD544 /* Recipe */,
 				3D6658352926737F00430D7B /* View */,
 				3DBA3EE328F84EE90050310C /* Entity */,
 				3DAE91C328EF1988003FF3AA /* PageControl */,
@@ -435,10 +463,14 @@
 				3D66583D292677F600430D7B /* AppSegmentView.swift in Sources */,
 				3DAE91C528EF1996003FF3AA /* PageControl.swift in Sources */,
 				3D342BDA28DCA56700BA422F /* UIImage+Images.swift in Sources */,
+				3DD54E3F292FB380007AD544 /* UserViewModel.swift in Sources */,
+				3DD54E3A292FAC0C007AD544 /* RecipeViewModel.swift in Sources */,
+				3DD54E3E292FB380007AD544 /* UserView.swift in Sources */,
 				3D342BDC28DCA56700BA422F /* UIImage+Icons.swift in Sources */,
 				3D342BDB28DCA56700BA422F /* Assets.swift in Sources */,
 				3D6962C928DCAE5C004CB727 /* OnboardingViewModel.swift in Sources */,
 				3DDAA12528D3741C0015840C /* FullScreenLoadingView.swift in Sources */,
+				3DD54E39292FAC0C007AD544 /* RecipeView.swift in Sources */,
 				3DAE91C928EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift in Sources */,
 				3DDAA06E28D3661F0015840C /* UIComponents.docc in Sources */,
 				3DAE91C228EF18D3003FF3AA /* Color+Extensions.swift in Sources */,

@@ -27,6 +27,18 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                     AppSegmentView(selectedIndex: $selectedIndex, options: $options)
                     
                     Spacer()
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        TabView(selection: $selectedIndex) {
+                            RecipesScene(viewModel: RecipesSceneModel(listType: .lastAddedRecipes))
+                                .tag(0)
+                            RecipesScene(viewModel: RecipesSceneModel(listType: .editorChoiceRecipes))
+                                .tag(1)
+                        }
+                        .frame(width: UIScreen.main.bounds.width)
+                        .tabViewStyle(.page(indexDisplayMode: .never))
+                    }
+                    
                 }
 
             }, viewModel: viewModel)

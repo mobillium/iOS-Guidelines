@@ -20,6 +20,13 @@
 		3DC164DC28F85C4300B43797 /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */; };
 		3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DE28F85CD400B43797 /* RootSceneModel.swift */; };
 		3DC164E128F85CD400B43797 /* RootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DF28F85CD400B43797 /* RootScene.swift */; };
+		3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */; };
+		3DD54E35292FAB22007AD544 /* RecipesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E33292FAB22007AD544 /* RecipesScene.swift */; };
+		3DD54F3C292FC0D6007AD544 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F37292FC0D6007AD544 /* DataProvider.swift */; };
+		3DD54F3D292FC0D6007AD544 /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */; };
+		3DD54F3E292FC0D6007AD544 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F39292FC0D6007AD544 /* APILogger.swift */; };
+		3DD54F3F292FC0D6007AD544 /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */; };
+		3DD54F40292FC0D6007AD544 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */; };
 		3DDAA03A28D365230015840C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03928D365230015840C /* Assets.xcassets */; };
 		3DDAA03D28D365230015840C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03C28D365230015840C /* Preview Assets.xcassets */; };
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
@@ -86,6 +93,13 @@
 		3DC164D928F85C2700B43797 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		3DC164DE28F85CD400B43797 /* RootSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSceneModel.swift; sourceTree = "<group>"; };
 		3DC164DF28F85CD400B43797 /* RootScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScene.swift; sourceTree = "<group>"; };
+		3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSceneModel.swift; sourceTree = "<group>"; };
+		3DD54E33292FAB22007AD544 /* RecipesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesScene.swift; sourceTree = "<group>"; };
+		3DD54F37292FC0D6007AD544 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
+		3DD54F39292FC0D6007AD544 /* APILogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
+		3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
+		3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA03928D365230015840C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DDAA03C28D365230015840C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -195,6 +209,27 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		3DD54E2F292FAAFE007AD544 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				3DD54E33292FAB22007AD544 /* RecipesScene.swift */,
+				3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
+		3DD54F36292FC0D6007AD544 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				3DD54F37292FC0D6007AD544 /* DataProvider.swift */,
+				3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */,
+				3DD54F39292FC0D6007AD544 /* APILogger.swift */,
+				3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */,
+				3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
 		3DDAA02928D365220015840C = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				3D4D4C3E290188C000E8B7C9 /* Info.plist */,
+				3DD54F36292FC0D6007AD544 /* DataProvider */,
 				3DC164D628F85C1600B43797 /* Constants */,
 				3DDAA11D28D370240015840C /* App */,
 				3DDAA0EF28D3671A0015840C /* Configurations */,
@@ -267,6 +303,7 @@
 		3DDAA10C28D36E6C0015840C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3DD54E2F292FAAFE007AD544 /* Recipes */,
 				3D4D4C3F290189C100E8B7C9 /* Launch */,
 				3DC164DD28F85CC100B43797 /* Root */,
 				3D4D4C4329018B4D00E8B7C9 /* MainTabScene */,
@@ -477,11 +514,18 @@
 			files = (
 				3D4D4C4B29018BC100E8B7C9 /* FavoritesSceneModel.swift in Sources */,
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
+				3DD54F40292FC0D6007AD544 /* APIRequestInterceptor.swift in Sources */,
+				3DD54F3F292FC0D6007AD544 /* APIRequestAdapter.swift in Sources */,
+				3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */,
+				3DD54F3E292FC0D6007AD544 /* APILogger.swift in Sources */,
+				3DD54F3D292FC0D6007AD544 /* APIDataProvider.swift in Sources */,
 				3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */,
 				3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */,
 				3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */,
 				3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */,
+				3DD54F3C292FC0D6007AD544 /* DataProvider.swift in Sources */,
 				3DDAA12828D375520015840C /* SplashScene.swift in Sources */,
+				3DD54E35292FAB22007AD544 /* RecipesScene.swift in Sources */,
 				3D4D4C4729018B7100E8B7C9 /* MainTabScene.swift in Sources */,
 				3D4D4C4F29018BC900E8B7C9 /* HomeSceneModel.swift in Sources */,
 				3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */,
