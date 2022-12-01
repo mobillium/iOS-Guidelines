@@ -30,6 +30,7 @@
 		3D66583D292677F600430D7B /* AppSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D66583C292677F600430D7B /* AppSegmentView.swift */; };
 		3D6962C728DCAE54004CB727 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C628DCAE54004CB727 /* OnboardingView.swift */; };
 		3D6962C928DCAE5C004CB727 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C828DCAE5C004CB727 /* OnboardingViewModel.swift */; };
+		3D8A54472938EAEF003B25FA /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A54462938EAEF003B25FA /* Int+Extensions.swift */; };
 		3DAE91C228EF18D3003FF3AA /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE91C128EF18D3003FF3AA /* Color+Extensions.swift */; };
 		3DAE91C528EF1996003FF3AA /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE91C428EF1996003FF3AA /* PageControl.swift */; };
 		3DAE91C728EF267C003FF3AA /* EnvironmentValues+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE91C628EF267C003FF3AA /* EnvironmentValues+Extensions.swift */; };
@@ -81,6 +82,7 @@
 		3D66583C292677F600430D7B /* AppSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSegmentView.swift; sourceTree = "<group>"; };
 		3D6962C628DCAE54004CB727 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3D6962C828DCAE5C004CB727 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		3D8A54462938EAEF003B25FA /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 		3DAE91C128EF18D3003FF3AA /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		3DAE91C428EF1996003FF3AA /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		3DAE91C628EF267C003FF3AA /* EnvironmentValues+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+Extensions.swift"; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				3DAE91C128EF18D3003FF3AA /* Color+Extensions.swift */,
 				3DAE91C628EF267C003FF3AA /* EnvironmentValues+Extensions.swift */,
 				3DAE91C828EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift */,
+				3D8A54462938EAEF003B25FA /* Int+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				3DAE91C928EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift in Sources */,
 				3DDAA06E28D3661F0015840C /* UIComponents.docc in Sources */,
 				3DAE91C228EF18D3003FF3AA /* Color+Extensions.swift in Sources */,
+				3D8A54472938EAEF003B25FA /* Int+Extensions.swift in Sources */,
 				3D342BC228DCA3A900BA422F /* swiftgen.yml in Sources */,
 				3D6962C728DCAE54004CB727 /* OnboardingView.swift in Sources */,
 			);
