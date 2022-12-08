@@ -34,13 +34,7 @@ class RecipesSceneModel: BaseSceneModel {
             self.showLoading = false
             switch result {
             case .success(let response):
-                let viewModels = response.data.map({ RecipeViewModel(userViewModel: UserViewModel(imageUrl: $0.user.image?.url ?? "",
-                                                                                                  username: $0.user.username ?? "",
-                                                                                                  stat: "\($0.user.recipeCount) Tarif \($0.user.followedCount) Takipçi"),
-                                                                     name: $0.title ?? "",
-                                                                     category: $0.category.name ?? "",
-                                                                     imageUrl: $0.images.first?.url ?? "",
-                                                                     stat: "\($0.commentCount) Yorum \($0.likeCount) Beğeni")})
+                let viewModels = response.data.map({ RecipeViewModel(recipe: $0) })
                 self.viewModels.append(contentsOf: viewModels)
             case .failure:
 //                self.showWarningToast?(error.localizedDescription)

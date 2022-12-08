@@ -14,6 +14,7 @@ public protocol RecipeViewProtocol: Identifiable {
     var category: String { get }
     var imageUrl: String { get }
     var stat: String { get }
+    var isEditorChoice: Bool { get }
 }
 
 public struct RecipeViewModel: RecipeViewProtocol {
@@ -23,12 +24,14 @@ public struct RecipeViewModel: RecipeViewProtocol {
     public var category: String
     public var imageUrl: String
     public var stat: String
+    public var isEditorChoice: Bool
     
-    public init(userViewModel: UserViewModel, name: String, category: String, imageUrl: String, stat: String) {
+    public init(userViewModel: UserViewModel, name: String, category: String, imageUrl: String, stat: String, isEditorChoice: Bool) {
         self.userViewModel = userViewModel
         self.name = name
         self.category = category
         self.imageUrl = imageUrl
         self.stat = stat
+        self.isEditorChoice = isEditorChoice
     }
 }

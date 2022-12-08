@@ -17,6 +17,7 @@ public struct UserView: View {
             KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://")!)
                 .resizable()
                 .frame(width: 40, height: 40)
+                .background(Color.appSecondaryBackground)
                 .clipShape(Circle())
             
             VStack(alignment: .leading) {

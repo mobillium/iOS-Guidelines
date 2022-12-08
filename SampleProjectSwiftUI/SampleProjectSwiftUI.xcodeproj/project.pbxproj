@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D495F6E29422A0900AA7A06 /* RecipeViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */; };
+		3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */; };
 		3D4D4C41290189D100E8B7C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */; };
 		3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4429018B7100E8B7C9 /* MainTabSceneModel.swift */; };
 		3D4D4C4729018B7100E8B7C9 /* MainTabScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4529018B7100E8B7C9 /* MainTabScene.swift */; };
@@ -79,6 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeViewModel+Extensions.swift"; sourceTree = "<group>"; };
+		3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		3D4D4C3E290188C000E8B7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D4D4C4429018B7100E8B7C9 /* MainTabSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabSceneModel.swift; sourceTree = "<group>"; };
@@ -148,6 +152,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D495F6B294229EF00AA7A06 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */,
+				3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		3D4D4C3F290189C100E8B7C9 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				3D4D4C3E290188C000E8B7C9 /* Info.plist */,
+				3D495F6B294229EF00AA7A06 /* UIComponents */,
 				3DD54F36292FC0D6007AD544 /* DataProvider */,
 				3DC164D628F85C1600B43797 /* Constants */,
 				3DDAA11D28D370240015840C /* App */,
@@ -520,6 +534,7 @@
 				3DD54F3E292FC0D6007AD544 /* APILogger.swift in Sources */,
 				3DD54F3D292FC0D6007AD544 /* APIDataProvider.swift in Sources */,
 				3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */,
+				3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */,
 				3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */,
 				3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */,
 				3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */,
@@ -532,6 +547,7 @@
 				3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */,
 				3DDAA12A28D375650015840C /* SplashSceneModel.swift in Sources */,
 				3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */,
+				3D495F6E29422A0900AA7A06 /* RecipeViewModel+Extensions.swift in Sources */,
 				3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */,
 				3DC164E128F85CD400B43797 /* RootScene.swift in Sources */,
 				3DDAA11C28D36F660015840C /* BaseSceneModel.swift in Sources */,
