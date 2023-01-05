@@ -13,7 +13,40 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        Text("Favorites")
+        BaseScene(content: {
+            ScrollView(.vertical) {
+                ForEach(viewModel.viewModels) { viewModel in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(viewModel.title ?? "")
+                                .font(.font(.nunitoBold, size: .xxLarge))
+                                .foregroundColor(.appCinder)
+                                .padding(.leading, 8)
+                            
+                            Spacer()
+                            
+                            Button("TÜMÜNÜ GÖR") {
+                                
+                            }
+                        }
+                        .frame(height: 48)
+                        .background(Color.appWhite)
+                        
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(viewModel.viewModels) { viewModel in
+                                    HorizontalRecipeView(viewModel: viewModel)
+                                }
+                            }
+                        }
+                        .frame(height: 217)
+                    }
+                }
+            }
+        }, viewModel: viewModel)
+        .onAppear {
+            viewModel.fetchRecipes()
+        }
     }
 }
 

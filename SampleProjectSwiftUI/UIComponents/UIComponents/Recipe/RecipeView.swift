@@ -26,7 +26,7 @@ public struct RecipeView: View {
                     .font(.font(.nunitoBold, size: .xLarge))
                     .foregroundColor(.appCinder)
                 
-                Text(viewModel.name)
+                Text(viewModel.category)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
                     .foregroundColor(.appRaven)
             }

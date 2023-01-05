@@ -190,8 +190,8 @@
 		3D4D4C4829018BB800E8B7C9 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				3D4D4C4929018BC100E8B7C9 /* FavoritesSceneModel.swift */,
 				3D4D4C4A29018BC100E8B7C9 /* FavoritesScene.swift */,
+				3D4D4C4929018BC100E8B7C9 /* FavoritesSceneModel.swift */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
