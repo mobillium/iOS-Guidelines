@@ -13,40 +13,41 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        BaseScene(content: {
-            ScrollView(.vertical) {
-                ForEach(viewModel.viewModels) { viewModel in
-                    VStack(alignment: .leading) {
-                        HStack {
-                            Text(viewModel.title ?? "")
-                                .font(.font(.nunitoBold, size: .xxLarge))
-                                .foregroundColor(.appCinder)
-                                .padding(.leading, 8)
-                            
-                            Spacer()
-                            
-                            Button("TÜMÜNÜ GÖR") {
-                                
-                            }
+        NavigationView {
+            BaseScene(content: {
+                ScrollView(.vertical, showsIndicators: false) {
+                    Spacer()
+                        .frame(height: 16)
+                    ForEach(viewModel.viewModels) { viewModel in
+                        VStack(alignment: .leading, spacing: 0) {
+                            HorizontalRecipesHeaderView(viewModel: viewModel.headerViewModel)
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(.appSeparator)
+                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel)
                         }
-                        .frame(height: 48)
-                        .background(Color.appWhite)
-                        
-                        ScrollView(.horizontal) {
-                            HStack {
-                                ForEach(viewModel.viewModels) { viewModel in
-                                    HorizontalRecipeView(viewModel: viewModel)
-                                }
-                            }
-                        }
-                        .frame(height: 217)
+                        .padding(.bottom, 16)
                     }
                 }
+            }, viewModel: viewModel)
+            .frame(width: UIScreen.main.bounds.size.width)
+            .background(Color.appSecondaryBackground)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .principal, content: {
+                    Image("fodamy-logo")
+                        .resizable()
+                        .frame(width: 110, height: 30)
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(.appWhite)
+                })
             }
-        }, viewModel: viewModel)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
             viewModel.fetchRecipes()
         }
+        
     }
 }
 

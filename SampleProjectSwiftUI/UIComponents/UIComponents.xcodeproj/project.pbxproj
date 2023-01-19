@@ -49,6 +49,10 @@
 		3DDAA07928D3661F0015840C /* UIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA07828D3661F0015840C /* UIComponentsTests.swift */; };
 		3DDAA07A28D3661F0015840C /* UIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = 3DDAA06C28D3661F0015840C /* UIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DDAA12528D3741C0015840C /* FullScreenLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA12428D3741C0015840C /* FullScreenLoadingView.swift */; };
+		3DE863C7297982C200FBC57B /* HorizontalRecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE863C5297982C200FBC57B /* HorizontalRecipesView.swift */; };
+		3DE863C8297982C200FBC57B /* HorizontalRecipesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE863C6297982C200FBC57B /* HorizontalRecipesViewModel.swift */; };
+		3DE863CC297989AB00FBC57B /* HorizontalRecipesHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE863CA297989AB00FBC57B /* HorizontalRecipesHeaderView.swift */; };
+		3DE863CD297989AB00FBC57B /* HorizontalRecipesHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE863CB297989AB00FBC57B /* HorizontalRecipesHeaderViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		3DDAA07328D3661F0015840C /* UIComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA07828D3661F0015840C /* UIComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIComponentsTests.swift; sourceTree = "<group>"; };
 		3DDAA12428D3741C0015840C /* FullScreenLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenLoadingView.swift; sourceTree = "<group>"; };
+		3DE863C5297982C200FBC57B /* HorizontalRecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRecipesView.swift; sourceTree = "<group>"; };
+		3DE863C6297982C200FBC57B /* HorizontalRecipesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRecipesViewModel.swift; sourceTree = "<group>"; };
+		3DE863CA297989AB00FBC57B /* HorizontalRecipesHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRecipesHeaderView.swift; sourceTree = "<group>"; };
+		3DE863CB297989AB00FBC57B /* HorizontalRecipesHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalRecipesHeaderViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +302,8 @@
 		3DDAA06B28D3661F0015840C /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
+				3DE863C92979898700FBC57B /* HorizontalRecipesHeaderView */,
+				3DE863C42979829F00FBC57B /* HorizontalRecipesView */,
 				3D5EA40A29671AD100C3CC34 /* Style */,
 				3DD54E3B292FB372007AD544 /* User */,
 				3DD54E36292FABFA007AD544 /* Recipe */,
@@ -326,6 +336,24 @@
 				3DDAA12428D3741C0015840C /* FullScreenLoadingView.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		3DE863C42979829F00FBC57B /* HorizontalRecipesView */ = {
+			isa = PBXGroup;
+			children = (
+				3DE863C5297982C200FBC57B /* HorizontalRecipesView.swift */,
+				3DE863C6297982C200FBC57B /* HorizontalRecipesViewModel.swift */,
+			);
+			path = HorizontalRecipesView;
+			sourceTree = "<group>";
+		};
+		3DE863C92979898700FBC57B /* HorizontalRecipesHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				3DE863CA297989AB00FBC57B /* HorizontalRecipesHeaderView.swift */,
+				3DE863CB297989AB00FBC57B /* HorizontalRecipesHeaderViewModel.swift */,
+			);
+			path = HorizontalRecipesHeaderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,7 +502,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D342BC428DCA40000BA422F /* Fonts.swift in Sources */,
+				3DE863C8297982C200FBC57B /* HorizontalRecipesViewModel.swift in Sources */,
 				3D5EA4082967128000C3CC34 /* UserInfoView.swift in Sources */,
+				3DE863CD297989AB00FBC57B /* HorizontalRecipesHeaderViewModel.swift in Sources */,
+				3DE863CC297989AB00FBC57B /* HorizontalRecipesHeaderView.swift in Sources */,
 				3DAE91C728EF267C003FF3AA /* EnvironmentValues+Extensions.swift in Sources */,
 				3DBA3EE528F84EF80050310C /* DeviceName.swift in Sources */,
 				3D5EA40C29671AE600C3CC34 /* CornerRadiusStyle.swift in Sources */,
@@ -495,6 +526,7 @@
 				3DDAA12528D3741C0015840C /* FullScreenLoadingView.swift in Sources */,
 				3DD54E39292FAC0C007AD544 /* RecipeView.swift in Sources */,
 				3DAE91C928EF26C3003FF3AA /* UIEdgeInsets+Extensions.swift in Sources */,
+				3DE863C7297982C200FBC57B /* HorizontalRecipesView.swift in Sources */,
 				3DDAA06E28D3661F0015840C /* UIComponents.docc in Sources */,
 				3DAE91C228EF18D3003FF3AA /* Color+Extensions.swift in Sources */,
 				3D8A54472938EAEF003B25FA /* Int+Extensions.swift in Sources */,

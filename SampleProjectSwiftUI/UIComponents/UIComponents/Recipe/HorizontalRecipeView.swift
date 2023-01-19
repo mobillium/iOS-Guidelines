@@ -33,15 +33,17 @@ public struct HorizontalRecipeView: View {
                 Text(viewModel.name)
                     .font(.font(.nunitoBold, size: .xLarge))
                     .foregroundColor(.appCinder)
+                    .lineLimit(1)
                 
                 Text(viewModel.stat)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
                     .foregroundColor(.appRaven)
             }
+            
         }
         
         .cornerRadius(6)
-        .shadow(color: Color.appShadow.opacity(0.2), radius: 6, x: 0, y: 0)
+
     }
     
     public init(viewModel: any RecipeViewProtocol) {

@@ -10,10 +10,12 @@ public struct MainCategory: Decodable {
     public let id: Int
     public let name: String?
     public let recipes: [Recipe]
+    public let image: Image?
 
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case recipes
+        case image
     }
 }
