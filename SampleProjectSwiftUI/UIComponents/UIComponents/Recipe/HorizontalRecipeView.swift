@@ -13,7 +13,7 @@ public struct HorizontalRecipeView: View {
     var viewModel: any RecipeViewProtocol
     
     public var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 0) {
             KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://"))
                 .fade(duration: 0.15)
                 .resizable()
@@ -39,11 +39,17 @@ public struct HorizontalRecipeView: View {
                     .font(.font(.nunitoSemiBold, size: .xLarge))
                     .foregroundColor(.appRaven)
             }
+            .padding([.leading, .trailing], 8)
+            .padding([.bottom, .top], 12)
             
         }
         
         .cornerRadius(6)
-
+        .background(Color.appPrimaryBackground)
+        .shadow(color: Color.appShadow.opacity(0.25),
+                radius: 6.0,
+                x: 0.0,
+                y: 0.0)
     }
     
     public init(viewModel: any RecipeViewProtocol) {
