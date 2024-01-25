@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import MobilliumUserDefaults
+import Components
 
 struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
     

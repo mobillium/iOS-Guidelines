@@ -5,6 +5,7 @@
 //  Created by Mehmet Salih Aslan on 22.09.2022.
 //
 
+import Components
 import SwiftUI
 
 class OnboardingSceneModel: BaseSceneModel {

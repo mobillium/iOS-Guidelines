@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import DataProvider
 
 struct APIRequestAdapter {
     

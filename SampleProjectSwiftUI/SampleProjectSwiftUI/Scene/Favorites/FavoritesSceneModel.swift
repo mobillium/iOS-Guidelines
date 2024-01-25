@@ -5,6 +5,9 @@
 //  Created by Mehmet Salih Aslan on 20.10.2022.
 //
 
+import Foundation
+import Components
+import DataProvider
 import Combine
 
 struct MainCategoryViewModel: Identifiable {

@@ -5,6 +5,8 @@
 //  Created by Mehmet Salih Aslan on 8.12.2022.
 //
 
+import DataProvider
+import Components
 import Foundation
 
 extension UserViewModel {

@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import Components
 
 struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     

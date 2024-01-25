@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2CAFCA2B62A513005CAE18 /* MobilliumUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFC92B62A513005CAE18 /* MobilliumUserDefaults */; };
+		3D2CAFCD2B62A56C005CAE18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFCC2B62A56C005CAE18 /* Alamofire */; };
+		3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFCE2B62A5B1005CAE18 /* Components */; };
+		3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD02B62A5B1005CAE18 /* DataProvider */; };
+		3D2CAFD32B62A5B1005CAE18 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD22B62A5B1005CAE18 /* Utilities */; };
+		3D3E78FC2B62A760004D99B2 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3E78FB2B62A760004D99B2 /* KeychainSwift */; };
 		3D495F6E29422A0900AA7A06 /* RecipeViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */; };
 		3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */; };
 		3D4D4C41290189D100E8B7C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D4D4C40290189D100E8B7C9 /* LaunchScreen.storyboard */; };
@@ -19,7 +25,6 @@
 		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
 		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
 		3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164D928F85C2700B43797 /* DefaultKeys.swift */; };
-		3DC164DC28F85C4300B43797 /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */; };
 		3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DE28F85CD400B43797 /* RootSceneModel.swift */; };
 		3DC164E128F85CD400B43797 /* RootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DF28F85CD400B43797 /* RootScene.swift */; };
 		3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */; };
@@ -34,12 +39,6 @@
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
 		3DDAA05128D365230015840C /* SampleProjectSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */; };
 		3DDAA05328D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */; };
-		3DDAA11028D36F370015840C /* DataProvider.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA10F28D36F370015840C /* DataProvider.framework */; };
-		3DDAA11128D36F370015840C /* DataProvider.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA10F28D36F370015840C /* DataProvider.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DDAA11328D36F3B0015840C /* UIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA11228D36F3B0015840C /* UIComponents.framework */; };
-		3DDAA11428D36F3B0015840C /* UIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA11228D36F3B0015840C /* UIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3DDAA11628D36F3E0015840C /* Utilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA11528D36F3E0015840C /* Utilities.framework */; };
-		3DDAA11728D36F3E0015840C /* Utilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3DDAA11528D36F3E0015840C /* Utilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA11928D36F5D0015840C /* BaseScene.swift */; };
 		3DDAA11C28D36F660015840C /* BaseSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA11B28D36F660015840C /* BaseSceneModel.swift */; };
 		3DDAA11F28D370240015840C /* SampleProjectSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA11E28D370240015840C /* SampleProjectSwiftUIApp.swift */; };
@@ -64,23 +63,10 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3DDAA0FD28D36AFF0015840C /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3DDAA11428D36F3B0015840C /* UIComponents.framework in Embed Frameworks */,
-				3DDAA11728D36F3E0015840C /* Utilities.framework in Embed Frameworks */,
-				3DDAA11128D36F370015840C /* DataProvider.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		3D2CAFC52B62A227005CAE18 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
+		3D2CAFC62B62A235005CAE18 /* Components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Components; sourceTree = "<group>"; };
+		3D2CAFC72B62A245005CAE18 /* DataProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataProvider; sourceTree = "<group>"; };
 		3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RecipeViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserViewModel+Extensions.swift"; sourceTree = "<group>"; };
 		3D4D4C3E290188C000E8B7C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +98,6 @@
 		3DDAA04C28D365230015840C /* SampleProjectSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITests.swift; sourceTree = "<group>"; };
 		3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		3DDAA0F028D367310015840C /* SampleProjectSwiftUI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProjectSwiftUI-Bridging-Header.h"; sourceTree = "<group>"; };
 		3DDAA10F28D36F370015840C /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11228D36F3B0015840C /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11528D36F3E0015840C /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,10 +113,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DDAA11328D36F3B0015840C /* UIComponents.framework in Frameworks */,
-				3DDAA11628D36F3E0015840C /* Utilities.framework in Frameworks */,
-				3DDAA11028D36F370015840C /* DataProvider.framework in Frameworks */,
-				3DC164DC28F85C4300B43797 /* SampleProjectSwiftUIPackages in Frameworks */,
+				3D3E78FC2B62A760004D99B2 /* KeychainSwift in Frameworks */,
+				3D2CAFCA2B62A513005CAE18 /* MobilliumUserDefaults in Frameworks */,
+				3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */,
+				3D2CAFCD2B62A56C005CAE18 /* Alamofire in Frameworks */,
+				3D2CAFD32B62A5B1005CAE18 /* Utilities in Frameworks */,
+				3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +139,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D2CAFC22B62A0CD005CAE18 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3D2CAFC72B62A245005CAE18 /* DataProvider */,
+				3D2CAFC62B62A235005CAE18 /* Components */,
+				3D2CAFC52B62A227005CAE18 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		3D495F6B294229EF00AA7A06 /* UIComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +245,7 @@
 			children = (
 				3D6962B728DCA7ED004CB727 /* .swiftlint.yml */,
 				3DDAA03428D365220015840C /* SampleProjectSwiftUI */,
+				3D2CAFC22B62A0CD005CAE18 /* Core */,
 				3DDAA04528D365230015840C /* SampleProjectSwiftUITests */,
 				3DDAA04F28D365230015840C /* SampleProjectSwiftUIUITests */,
 				3DDAA03328D365220015840C /* Products */,
@@ -309,7 +307,6 @@
 		3DDAA0EF28D3671A0015840C /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				3DDAA0F028D367310015840C /* SampleProjectSwiftUI-Bridging-Header.h */,
 			);
 			path = Configurations;
 			sourceTree = "<group>";
@@ -377,7 +374,6 @@
 				3DDAA02E28D365220015840C /* Sources */,
 				3DDAA02F28D365220015840C /* Frameworks */,
 				3DDAA03028D365220015840C /* Resources */,
-				3DDAA0FD28D36AFF0015840C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -385,7 +381,12 @@
 			);
 			name = SampleProjectSwiftUI;
 			packageProductDependencies = (
-				3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */,
+				3D2CAFC92B62A513005CAE18 /* MobilliumUserDefaults */,
+				3D2CAFCC2B62A56C005CAE18 /* Alamofire */,
+				3D2CAFCE2B62A5B1005CAE18 /* Components */,
+				3D2CAFD02B62A5B1005CAE18 /* DataProvider */,
+				3D2CAFD22B62A5B1005CAE18 /* Utilities */,
+				3D3E78FB2B62A760004D99B2 /* KeychainSwift */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -461,6 +462,9 @@
 			);
 			mainGroup = 3DDAA02928D365220015840C;
 			packageReferences = (
+				3D2CAFC82B62A513005CAE18 /* XCRemoteSwiftPackageReference "MobilliumUserDefaults" */,
+				3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 3DDAA03328D365220015840C /* Products */;
 			projectDirPath = "";
@@ -727,7 +731,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.SampleProjectSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectSwiftUI/Configurations/SampleProjectSwiftUI-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -760,7 +764,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobillium.SampleProjectSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "SampleProjectSwiftUI/Configurations/SampleProjectSwiftUI-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -883,10 +887,60 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		3D2CAFC82B62A513005CAE18 /* XCRemoteSwiftPackageReference "MobilliumUserDefaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobillium/MobilliumUserDefaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
+		3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 21.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		3DC164DB28F85C4300B43797 /* SampleProjectSwiftUIPackages */ = {
+		3D2CAFC92B62A513005CAE18 /* MobilliumUserDefaults */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SampleProjectSwiftUIPackages;
+			package = 3D2CAFC82B62A513005CAE18 /* XCRemoteSwiftPackageReference "MobilliumUserDefaults" */;
+			productName = MobilliumUserDefaults;
+		};
+		3D2CAFCC2B62A56C005CAE18 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		3D2CAFCE2B62A5B1005CAE18 /* Components */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Components;
+		};
+		3D2CAFD02B62A5B1005CAE18 /* DataProvider */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DataProvider;
+		};
+		3D2CAFD22B62A5B1005CAE18 /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
+		};
+		3D3E78FB2B62A760004D99B2 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

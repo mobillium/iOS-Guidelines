@@ -6,6 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import DataProvider
 import Alamofire
 
 public struct APIDataProvider: DataProviderProtocol {

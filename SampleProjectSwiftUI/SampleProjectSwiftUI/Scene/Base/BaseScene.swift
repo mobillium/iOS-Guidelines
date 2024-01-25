@@ -5,7 +5,7 @@
 //  Created by Mehmet Salih Aslan on 15.09.2022.
 //
 
-import UIComponents
+import Components
 import SwiftUI
 
 struct BaseScene<Content: View, ViewModel: BaseSceneModel>: View {

@@ -7,7 +7,7 @@
 
 import Combine
 import SwiftUI
-import UIComponents
+import Components
 
 struct HomeScene<ViewModel: HomeSceneModel>: View {
     

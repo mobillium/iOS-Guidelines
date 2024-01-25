@@ -6,6 +6,7 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 //import KeychainSwift
 

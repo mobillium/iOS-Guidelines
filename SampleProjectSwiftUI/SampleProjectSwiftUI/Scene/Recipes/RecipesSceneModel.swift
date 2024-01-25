@@ -6,6 +6,8 @@
 //
 
 import Combine
+import Components
+import DataProvider
 
 class RecipesSceneModel: BaseSceneModel {
     
