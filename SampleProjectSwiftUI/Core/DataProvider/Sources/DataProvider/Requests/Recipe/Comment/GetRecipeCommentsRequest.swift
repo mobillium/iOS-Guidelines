@@ -6,17 +6,19 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public struct GetRecipeCommentsRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = BaseResponse<[RecipeComment]>
     
     public var path: String = "recipe/{recipeId}/comment"
     public var method: RequestMethod = .get
-    public var parameters: RequestParameters = [:]
+    public var queryParameters: RequestParameters = [:]
     
     public init(recipeId: Int, page: Int? = 1) {
         self.path = "recipe/\(recipeId)/comment"
-        self.parameters["page"] = page
+        self.queryParameters["page"] = page
     }
     
 }

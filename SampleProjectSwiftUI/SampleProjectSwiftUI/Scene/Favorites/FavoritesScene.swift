@@ -46,7 +46,9 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-            viewModel.fetchRecipes()
+            Task {
+                await viewModel.fetchRecipes()
+            }
         }
         
     }

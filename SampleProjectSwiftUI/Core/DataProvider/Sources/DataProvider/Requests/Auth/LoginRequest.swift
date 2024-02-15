@@ -6,17 +6,19 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public struct LoginRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = Auth
 
     public var path: String = "auth/login"
     public var method: RequestMethod = .post
-    public var parameters: RequestParameters = [:]
+    public var bodyParameters: RequestParameters = [:]
     
     public init(username: String, password: String) {
-        parameters["username"] = username
-        parameters["password"] = password
+        bodyParameters["username"] = username
+        bodyParameters["password"] = password
     }
     
 }

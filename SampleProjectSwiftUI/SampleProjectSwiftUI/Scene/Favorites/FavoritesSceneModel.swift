@@ -7,6 +7,7 @@
 
 import Foundation
 import Components
+import Network
 import DataProvider
 import Combine
 
@@ -27,27 +28,26 @@ struct MainCategoryViewModel: Identifiable {
 class FavoritesSceneModel: BaseSceneModel {
     
     @Published var viewModels: [MainCategoryViewModel] = []
-    
+    private let recipeRepository = RecipeRepository(dataProvider: apiDataProvider)
     private var page = 1
     
-    func fetchRecipes() {
+    func fetchRecipes() async {
         showLoading = true
-        let request = GetCategoriesWithRecipesRequest(page: 1)
-        apiDataProvider.request(for: request) { [weak self] result in
-            guard let self = self else { return }
-            self.showLoading = false
-            switch result {
-            case .success(let response):
-                let viewModels = response.data
-                    .filter({ !$0.recipes.isEmpty })
-                    .map({ MainCategoryViewModel(categoryImageUrl: $0.image?.url,
-                                                 title: $0.name,
-                                                 viewModels: $0.recipes.map({ RecipeViewModel(recipe: $0) })) })
+        let result = await recipeRepository.getCategoriesWithRecipes(page: 1)
+        self.showLoading = false
+        switch result {
+        case .success(let response):
+            let viewModels = response.data
+                .filter({ !$0.recipes.isEmpty })
+                .map({ MainCategoryViewModel(categoryImageUrl: $0.image?.url,
+                                             title: $0.name,
+                                             viewModels: $0.recipes.map({ RecipeViewModel(recipe: $0) })) })
+            DispatchQueue.main.async {
                 self.viewModels = viewModels
-            case .failure:
-                //               self.showWarningToast?(error.localizedDescription)
-                break
             }
+        case .failure:
+            //               self.showWarningToast?(error.localizedDescription)
+            break
         }
     }
 }

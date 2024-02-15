@@ -22,7 +22,9 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
             }
         }, viewModel: viewModel)
         .onAppear {
-            viewModel.fetchRecipes()
+            Task {
+                await viewModel.fetchRecipes()
+            }
         }
     }
 }

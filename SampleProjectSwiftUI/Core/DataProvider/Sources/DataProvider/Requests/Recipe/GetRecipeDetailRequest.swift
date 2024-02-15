@@ -5,6 +5,7 @@
 //  Created by Mehmet Salih Aslan on 25.03.2020.
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
+import Network
 
 public struct GetRecipeDetailRequest: APIDecodableResponseRequest {
     

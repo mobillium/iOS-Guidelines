@@ -1,8 +1,9 @@
 included:
   - SampleProjectSwiftUI
-  - Utilities
-  - DataProvider
-  - UIComponents
+  - Core/Utilities
+  - Core/DataProvider
+  - Core/Components
+  - Core/Network
 excluded:
   - .git
 analyzer_rules:

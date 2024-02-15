@@ -1,13 +1,13 @@
 //
 //  APIRequestAdapter.swift
-//  SampleProject
+//  DataProvider
 //
 //  Created by Mehmet Salih Aslan on 4.11.2020.
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
 import Alamofire
-import DataProvider
 
 struct APIRequestAdapter {
     
@@ -19,7 +19,7 @@ struct APIRequestAdapter {
     
     init<T: RequestProtocol>(request: T) {
         self.method = request.method.toAlamofireHTTPMethod
-        self.parameters = request.parameters
+        self.parameters = request.bodyParameters
         var headers: HTTPHeaders = [:]
         request.headers.forEach({ headers[$0.key] = $0.value })
         self.headers = headers

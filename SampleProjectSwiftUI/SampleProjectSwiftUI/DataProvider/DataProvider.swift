@@ -6,6 +6,9 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
+import Alamofire
+import DataProvider
+
 #if DEBUG
 let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared,
                                       eventMonitors: [APILogger.shared])

@@ -6,16 +6,18 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public struct ForgotPasswordRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = Auth
 
     public var path: String = "auth/forgot"
     public var method: RequestMethod = .post
-    public var parameters: RequestParameters = [:]
+    public var bodyParameters: RequestParameters = [:]
     
     public init(email: String) {
-        parameters["email"] = email
+        bodyParameters["email"] = email
     }
     
 }

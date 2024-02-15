@@ -6,18 +6,18 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public struct GetRecipesRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = BaseResponse<[Recipe]>
     
     public var path: String = ""
     public var method: RequestMethod = .get
-    public var parameters: RequestParameters = [:]
-    public let listType: ListType
+    public var queryParameters: RequestParameters = [:]
     
-    public init(page: Int, listType: ListType) {
-        self.parameters["page"] = page
-        self.listType = listType
+    public init(page: Int, listType: RecipeListType) {
+        self.queryParameters["page"] = page
         switch listType {
         case .editorChoiceRecipes:
             path = "editor-choices"
@@ -29,8 +29,3 @@ public struct GetRecipesRequest: APIDecodableResponseRequest {
     }
 }
 
-public enum ListType {
-    case editorChoiceRecipes
-    case lastAddedRecipes
-    case categoryRecipes(categoryId: Int)
-}

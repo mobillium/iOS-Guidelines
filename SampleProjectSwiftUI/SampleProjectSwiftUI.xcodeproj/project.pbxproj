@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D2CAFCA2B62A513005CAE18 /* MobilliumUserDefaults in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFC92B62A513005CAE18 /* MobilliumUserDefaults */; };
-		3D2CAFCD2B62A56C005CAE18 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFCC2B62A56C005CAE18 /* Alamofire */; };
 		3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFCE2B62A5B1005CAE18 /* Components */; };
 		3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD02B62A5B1005CAE18 /* DataProvider */; };
-		3D2CAFD32B62A5B1005CAE18 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD22B62A5B1005CAE18 /* Utilities */; };
 		3D3E78FC2B62A760004D99B2 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3D3E78FB2B62A760004D99B2 /* KeychainSwift */; };
 		3D495F6E29422A0900AA7A06 /* RecipeViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6D29422A0900AA7A06 /* RecipeViewModel+Extensions.swift */; };
 		3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D495F6F29422A1A00AA7A06 /* UserViewModel+Extensions.swift */; };
@@ -24,16 +22,13 @@
 		3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4E29018BC900E8B7C9 /* HomeScene.swift */; };
 		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
 		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
+		3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D7A3FAC2B6BE13100135923 /* Utilities */; };
 		3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164D928F85C2700B43797 /* DefaultKeys.swift */; };
 		3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DE28F85CD400B43797 /* RootSceneModel.swift */; };
 		3DC164E128F85CD400B43797 /* RootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DF28F85CD400B43797 /* RootScene.swift */; };
 		3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */; };
 		3DD54E35292FAB22007AD544 /* RecipesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54E33292FAB22007AD544 /* RecipesScene.swift */; };
 		3DD54F3C292FC0D6007AD544 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F37292FC0D6007AD544 /* DataProvider.swift */; };
-		3DD54F3D292FC0D6007AD544 /* APIDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */; };
-		3DD54F3E292FC0D6007AD544 /* APILogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F39292FC0D6007AD544 /* APILogger.swift */; };
-		3DD54F3F292FC0D6007AD544 /* APIRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */; };
-		3DD54F40292FC0D6007AD544 /* APIRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */; };
 		3DDAA03A28D365230015840C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03928D365230015840C /* Assets.xcassets */; };
 		3DDAA03D28D365230015840C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DDAA03C28D365230015840C /* Preview Assets.xcassets */; };
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
@@ -80,16 +75,13 @@
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSceneModel.swift; sourceTree = "<group>"; };
+		3DA28CBA2B6BD9A4006F6495 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
 		3DC164D928F85C2700B43797 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		3DC164DE28F85CD400B43797 /* RootSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSceneModel.swift; sourceTree = "<group>"; };
 		3DC164DF28F85CD400B43797 /* RootScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootScene.swift; sourceTree = "<group>"; };
 		3DD54E32292FAB22007AD544 /* RecipesSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesSceneModel.swift; sourceTree = "<group>"; };
 		3DD54E33292FAB22007AD544 /* RecipesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesScene.swift; sourceTree = "<group>"; };
 		3DD54F37292FC0D6007AD544 /* DataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIDataProvider.swift; sourceTree = "<group>"; };
-		3DD54F39292FC0D6007AD544 /* APILogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APILogger.swift; sourceTree = "<group>"; };
-		3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestAdapter.swift; sourceTree = "<group>"; };
-		3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestInterceptor.swift; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA03928D365230015840C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DDAA03C28D365230015840C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -116,8 +108,7 @@
 				3D3E78FC2B62A760004D99B2 /* KeychainSwift in Frameworks */,
 				3D2CAFCA2B62A513005CAE18 /* MobilliumUserDefaults in Frameworks */,
 				3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */,
-				3D2CAFCD2B62A56C005CAE18 /* Alamofire in Frameworks */,
-				3D2CAFD32B62A5B1005CAE18 /* Utilities in Frameworks */,
+				3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */,
 				3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +133,7 @@
 		3D2CAFC22B62A0CD005CAE18 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				3DA28CBA2B6BD9A4006F6495 /* Network */,
 				3D2CAFC72B62A245005CAE18 /* DataProvider */,
 				3D2CAFC62B62A235005CAE18 /* Components */,
 				3D2CAFC52B62A227005CAE18 /* Utilities */,
@@ -232,10 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				3DD54F37292FC0D6007AD544 /* DataProvider.swift */,
-				3DD54F38292FC0D6007AD544 /* APIDataProvider.swift */,
-				3DD54F39292FC0D6007AD544 /* APILogger.swift */,
-				3DD54F3A292FC0D6007AD544 /* APIRequestAdapter.swift */,
-				3DD54F3B292FC0D6007AD544 /* APIRequestInterceptor.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -382,11 +370,10 @@
 			name = SampleProjectSwiftUI;
 			packageProductDependencies = (
 				3D2CAFC92B62A513005CAE18 /* MobilliumUserDefaults */,
-				3D2CAFCC2B62A56C005CAE18 /* Alamofire */,
 				3D2CAFCE2B62A5B1005CAE18 /* Components */,
 				3D2CAFD02B62A5B1005CAE18 /* DataProvider */,
-				3D2CAFD22B62A5B1005CAE18 /* Utilities */,
 				3D3E78FB2B62A760004D99B2 /* KeychainSwift */,
+				3D7A3FAC2B6BE13100135923 /* Utilities */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -463,7 +450,6 @@
 			mainGroup = 3DDAA02928D365220015840C;
 			packageReferences = (
 				3D2CAFC82B62A513005CAE18 /* XCRemoteSwiftPackageReference "MobilliumUserDefaults" */,
-				3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 3DDAA03328D365220015840C /* Products */;
@@ -532,11 +518,7 @@
 			files = (
 				3D4D4C4B29018BC100E8B7C9 /* FavoritesSceneModel.swift in Sources */,
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
-				3DD54F40292FC0D6007AD544 /* APIRequestInterceptor.swift in Sources */,
-				3DD54F3F292FC0D6007AD544 /* APIRequestAdapter.swift in Sources */,
 				3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */,
-				3DD54F3E292FC0D6007AD544 /* APILogger.swift in Sources */,
-				3DD54F3D292FC0D6007AD544 /* APIDataProvider.swift in Sources */,
 				3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */,
 				3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */,
 				3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */,
@@ -896,14 +878,6 @@
 				minimumVersion = 2.0.1;
 			};
 		};
-		3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
-		};
 		3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
@@ -920,11 +894,6 @@
 			package = 3D2CAFC82B62A513005CAE18 /* XCRemoteSwiftPackageReference "MobilliumUserDefaults" */;
 			productName = MobilliumUserDefaults;
 		};
-		3D2CAFCC2B62A56C005CAE18 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3D2CAFCB2B62A56C005CAE18 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		3D2CAFCE2B62A5B1005CAE18 /* Components */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Components;
@@ -933,14 +902,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = DataProvider;
 		};
-		3D2CAFD22B62A5B1005CAE18 /* Utilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Utilities;
-		};
 		3D3E78FB2B62A760004D99B2 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3D3E78FA2B62A760004D99B2 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		3D7A3FAC2B6BE13100135923 /* Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Utilities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

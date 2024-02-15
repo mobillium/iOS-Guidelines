@@ -6,6 +6,8 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public struct DeleteRecipeCommentRequest: APIDecodableResponseRequest {
     
     public typealias ResponseType = SuccessResponse

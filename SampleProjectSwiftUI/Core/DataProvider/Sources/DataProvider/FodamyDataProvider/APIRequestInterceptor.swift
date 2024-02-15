@@ -1,6 +1,6 @@
 //
 //  ApiRequestInterceptor.swift
-//  SampleProject
+//  DataProvider
 //
 //  Created by Mehmet Salih Aslan on 15.11.2021.
 //  Copyright © 2021 Mobillium. All rights reserved.

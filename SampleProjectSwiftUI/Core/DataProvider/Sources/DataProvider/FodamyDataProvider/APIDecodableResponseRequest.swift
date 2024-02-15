@@ -6,6 +6,8 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
+import Network
+
 public protocol APIDecodableResponseRequest: DecodableResponseRequest {}
 
 // MARK: - RequestEncoding
@@ -29,7 +31,10 @@ public extension APIDecodableResponseRequest {
 
 // MARK: - RequestParameters
 public extension APIDecodableResponseRequest {
-    var parameters: RequestParameters {
+    var bodyParameters: RequestParameters {
+        return [:]
+    }
+    var queryParameters: RequestParameters {
         return [:]
     }
 }
