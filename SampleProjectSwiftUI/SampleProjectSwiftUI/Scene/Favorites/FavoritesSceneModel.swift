@@ -25,6 +25,7 @@ struct MainCategoryViewModel: Identifiable {
     }
 }
 
+@MainActor
 class FavoritesSceneModel: BaseSceneModel {
     
     @Published var viewModels: [MainCategoryViewModel] = []
@@ -42,9 +43,7 @@ class FavoritesSceneModel: BaseSceneModel {
                 .map({ MainCategoryViewModel(categoryImageUrl: $0.image?.url,
                                              title: $0.name,
                                              viewModels: $0.recipes.map({ RecipeViewModel(recipe: $0) })) })
-            DispatchQueue.main.async {
-                self.viewModels = viewModels
-            }
+            self.viewModels = viewModels
         case .failure:
             //               self.showWarningToast?(error.localizedDescription)
             break

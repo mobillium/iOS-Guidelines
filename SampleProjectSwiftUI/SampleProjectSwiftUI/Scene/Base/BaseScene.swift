@@ -39,11 +39,9 @@ struct BaseScene<Content: View, ViewModel: BaseSceneModel>: View {
     }
 }
 
-struct BaseScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = BaseSceneModel()
-        return BaseScene(content: {
-            
-        }, viewModel: viewModel)
-    }
+#Preview {
+    let viewModel = BaseSceneModel(dataProvider: apiDataProvider)
+    return BaseScene(content: {
+        
+    }, viewModel: viewModel)
 }

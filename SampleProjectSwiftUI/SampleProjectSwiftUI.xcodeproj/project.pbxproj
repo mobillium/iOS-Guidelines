@@ -22,7 +22,10 @@
 		3D4D4C5029018BC900E8B7C9 /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D4C4E29018BC900E8B7C9 /* HomeScene.swift */; };
 		3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */; };
 		3D6962C328DCAB57004CB727 /* OnboardingSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */; };
+		3D72C50A2B7E573C0086C963 /* RecipeDetailSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72C5082B7E573C0086C963 /* RecipeDetailSceneModel.swift */; };
+		3D72C50B2B7E573C0086C963 /* RecipeDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D72C5092B7E573C0086C963 /* RecipeDetailScene.swift */; };
 		3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D7A3FAC2B6BE13100135923 /* Utilities */; };
+		3D7ECEF72B838B9000182292 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D7ECEF62B838B9000182292 /* Router.swift */; };
 		3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164D928F85C2700B43797 /* DefaultKeys.swift */; };
 		3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DE28F85CD400B43797 /* RootSceneModel.swift */; };
 		3DC164E128F85CD400B43797 /* RootScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC164DF28F85CD400B43797 /* RootScene.swift */; };
@@ -75,6 +78,9 @@
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3D6962C028DCAB4F004CB727 /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		3D6962C228DCAB57004CB727 /* OnboardingSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSceneModel.swift; sourceTree = "<group>"; };
+		3D72C5082B7E573C0086C963 /* RecipeDetailSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailSceneModel.swift; sourceTree = "<group>"; };
+		3D72C5092B7E573C0086C963 /* RecipeDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailScene.swift; sourceTree = "<group>"; };
+		3D7ECEF62B838B9000182292 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3DA28CBA2B6BD9A4006F6495 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
 		3DC164D928F85C2700B43797 /* DefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeys.swift; sourceTree = "<group>"; };
 		3DC164DE28F85CD400B43797 /* RootSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSceneModel.swift; sourceTree = "<group>"; };
@@ -194,6 +200,23 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		3D72C5072B7E56200086C963 /* RecipeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3D72C5082B7E573C0086C963 /* RecipeDetailSceneModel.swift */,
+				3D72C5092B7E573C0086C963 /* RecipeDetailScene.swift */,
+			);
+			path = RecipeDetail;
+			sourceTree = "<group>";
+		};
+		3D72C50C2B7E5A310086C963 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3D7ECEF62B838B9000182292 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		3DC164D628F85C1600B43797 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +283,7 @@
 				3DC164D628F85C1600B43797 /* Constants */,
 				3DDAA11D28D370240015840C /* App */,
 				3DDAA0EF28D3671A0015840C /* Configurations */,
+				3D72C50C2B7E5A310086C963 /* Router */,
 				3DDAA10C28D36E6C0015840C /* Scene */,
 				3DDAA03928D365230015840C /* Assets.xcassets */,
 				3DDAA03B28D365230015840C /* Preview Content */,
@@ -302,6 +326,7 @@
 		3DDAA10C28D36E6C0015840C /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				3D72C5072B7E56200086C963 /* RecipeDetail */,
 				3DD54E2F292FAAFE007AD544 /* Recipes */,
 				3D4D4C3F290189C100E8B7C9 /* Launch */,
 				3DC164DD28F85CC100B43797 /* Root */,
@@ -519,6 +544,7 @@
 				3D4D4C4B29018BC100E8B7C9 /* FavoritesSceneModel.swift in Sources */,
 				3DDAA11A28D36F5D0015840C /* BaseScene.swift in Sources */,
 				3DD54E34292FAB22007AD544 /* RecipesSceneModel.swift in Sources */,
+				3D72C50A2B7E573C0086C963 /* RecipeDetailSceneModel.swift in Sources */,
 				3D4D4C4629018B7100E8B7C9 /* MainTabSceneModel.swift in Sources */,
 				3D495F7029422A1A00AA7A06 /* UserViewModel+Extensions.swift in Sources */,
 				3D4D4C4C29018BC100E8B7C9 /* FavoritesScene.swift in Sources */,
@@ -527,9 +553,11 @@
 				3DD54F3C292FC0D6007AD544 /* DataProvider.swift in Sources */,
 				3DDAA12828D375520015840C /* SplashScene.swift in Sources */,
 				3DD54E35292FAB22007AD544 /* RecipesScene.swift in Sources */,
+				3D72C50B2B7E573C0086C963 /* RecipeDetailScene.swift in Sources */,
 				3D4D4C4729018B7100E8B7C9 /* MainTabScene.swift in Sources */,
 				3D4D4C4F29018BC900E8B7C9 /* HomeSceneModel.swift in Sources */,
 				3DC164E028F85CD400B43797 /* RootSceneModel.swift in Sources */,
+				3D7ECEF72B838B9000182292 /* Router.swift in Sources */,
 				3D6962C128DCAB4F004CB727 /* OnboardingScene.swift in Sources */,
 				3DDAA12A28D375650015840C /* SplashSceneModel.swift in Sources */,
 				3DC164DA28F85C2700B43797 /* DefaultKeys.swift in Sources */,
@@ -623,7 +651,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -677,7 +705,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

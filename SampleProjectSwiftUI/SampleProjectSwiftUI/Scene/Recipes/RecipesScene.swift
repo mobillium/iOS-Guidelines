@@ -18,20 +18,21 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
             ScrollView(.vertical) {
                 ForEach(viewModel.viewModels) { viewModel in
                     RecipeView(viewModel: viewModel)
+                        .onTapGesture {
+                            self.viewModel.recipeDidTapped(viewModel: viewModel)
+                        }
                 }
             }
         }, viewModel: viewModel)
         .onAppear {
-            Task {
+            Task { @MainActor in
                 await viewModel.fetchRecipes()
             }
         }
     }
 }
 
-struct RecipesScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = RecipesSceneModel(listType: .editorChoiceRecipes)
-        return RecipesScene(viewModel: viewModel)
-    }
+#Preview {
+    let viewModel = RecipesSceneModel(dataProvider: apiDataProvider, listType: .editorChoiceRecipes)
+    return RecipesScene(viewModel: viewModel)
 }

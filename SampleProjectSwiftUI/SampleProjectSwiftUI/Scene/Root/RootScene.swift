@@ -24,15 +24,11 @@ struct RootScene<ViewModel: RootSceneModel>: View {
                     MainTabScene(viewModel: viewModel)
                 }
             }
-            
         }
-
     }
 }
 
-struct RootScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let view = RootScene()
-        return view
-    }
+#Preview {
+    let view = RootScene()
+    return view
 }

@@ -28,10 +28,8 @@ struct SplashScene<ViewModel: SplashSceneModel>: View {
     }
 }
 
-struct SplashScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = SplashSceneModel()
-        
-        SplashScene(viewModel: viewModel)
-    }
+#Preview {
+    let viewModel = SplashSceneModel(dataProvider: apiDataProvider)
+    let view = SplashScene(viewModel: viewModel)
+    return view
 }

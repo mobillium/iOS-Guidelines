@@ -46,7 +46,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear {
-            Task {
+            Task { @MainActor in
                 await viewModel.fetchRecipes()
             }
         }
@@ -54,9 +54,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     }
 }
 
-struct FavoritesScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = FavoritesSceneModel()
-        return FavoritesScene(viewModel: viewModel)
-    }
+#Preview {
+    let viewModel = FavoritesSceneModel(dataProvider: apiDataProvider)
+    return FavoritesScene(viewModel: viewModel)
 }

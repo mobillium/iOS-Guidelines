@@ -30,9 +30,11 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         TabView(selection: $selectedIndex) {
-                            RecipesScene(viewModel: RecipesSceneModel(listType: .editorChoiceRecipes))
+                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider, 
+                                                                      listType: .editorChoiceRecipes))
                                 .tag(0)
-                            RecipesScene(viewModel: RecipesSceneModel(listType: .lastAddedRecipes))
+                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider,
+                                                                      listType: .lastAddedRecipes))
                                 .tag(1)
                         }
                         .frame(width: UIScreen.main.bounds.width)
@@ -68,9 +70,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     }
 }
 
-struct HomeScene_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = HomeSceneModel()
-        return HomeScene(viewModel: viewModel)
-    }
+#Preview {
+    let viewModel = HomeSceneModel(dataProvider: apiDataProvider)
+    return HomeScene(viewModel: viewModel)
 }
