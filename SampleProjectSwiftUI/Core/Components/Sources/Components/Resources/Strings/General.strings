@@ -1,0 +1,22 @@
+/*
+ General.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+"login" = "Giriş Yap";
+"register" = "Üye Ol";
+"comment" = "Yorum";
+"like" = "Beğeni";
+"follow" = "Takip Et";
+"following" = "Takip Ediliyor";
+"recipeIngredients" = "Malzemeler";
+"recipeSteps" = "Yapılışı";
+"addComment" = "Yorum Ekle";
+"comments" = "Yorumlar";
+"giveUp" = "Vazgeç";
+"login" = "Giriş Yap";
+"recipe" = "Tarif";
+"follower" = "Takipçi";
