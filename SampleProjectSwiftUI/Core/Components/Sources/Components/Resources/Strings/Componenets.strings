@@ -1,0 +1,12 @@
+/* 
+ Components.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+// MARK: - Action
+"Action.block" = "Block";
+"Action.loginWarning" = "Giriş yapmanız gereklidir.";
+"Comment.placeholder" = "Bir şeyler yazın..";
