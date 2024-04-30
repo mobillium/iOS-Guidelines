@@ -21,7 +21,7 @@ final public class RecipeSmallCellView: UIView {
     
     var didSelectRecipe: IntClosure?
     
-    public var cellItems: [RecipeCellProtocol]? {
+    public var cellItems: [RecipeSmallCellProtocol]? {
         didSet {
             self.collecitonView.reloadData()
         }

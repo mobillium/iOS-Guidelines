@@ -12,30 +12,13 @@ public protocol CategoryWithRecipesCellDataSource: AnyObject {
     var categoryId: Int { get }
     var categoryImageURL: String? { get }
     var categoryName: String? { get }
-    var cellItems: [RecipeCellProtocol] { get }
+    var seeAllButtonTitle: String? { get }
+    var cellItems: [RecipeSmallCellProtocol] { get }
 }
 
 public protocol CategoryWithRecipesCellEventSource: AnyObject {
     var didSelectRecipe: IntClosure? { get set }
-    var seeAllButtonTapped: ((Int, String) -> Void)? { get set }
+    var seeAllButtonTapped: TwoVariablesClosure<Int, String>? { get set }
 }
 
-public protocol CategoryWithRecipesCellProtocol: CategoryWithRecipesCellDataSource, CategoryWithRecipesCellEventSource {
-    
-}
-
-public final class CategoryWithRecipesCellModel: CategoryWithRecipesCellProtocol {
-    public var categoryId: Int
-    public var categoryImageURL: String?
-    public var categoryName: String?
-    public var seeAllButtonTapped: ((Int, String) -> Void)?
-    public var cellItems: [RecipeCellProtocol]
-    public var didSelectRecipe: IntClosure?
-    
-    public init(categoryId: Int, categoryImageURL: String?, categoryName: String?, cellItems: [RecipeCellProtocol]) {
-        self.categoryId = categoryId
-        self.categoryImageURL = categoryImageURL
-        self.categoryName = categoryName
-        self.cellItems = cellItems
-    }
-}
+public protocol CategoryWithRecipesCellProtocol: CategoryWithRecipesCellDataSource, CategoryWithRecipesCellEventSource {}

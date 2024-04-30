@@ -32,7 +32,7 @@ final class FavoritesViewModel: BaseViewModel<FavoritesRouter>, FavoritesViewPro
     private var page = 1
     var isRequestEnabled = false
     var isPagingEnabled = false
-    var cellItems: [CategoryWithRecipesCellModel] = []
+    var cellItems: [FavoritesCellModel] = []
     var didSuccessFetchCategories: VoidClosure?
     var didSuccesLogout: VoidClosure?
     
@@ -75,12 +75,12 @@ extension FavoritesViewModel {
             self.isRequestEnabled = true
             switch result {
             case .success(let response):
-                let cellItems = response.data.map({ CategoryWithRecipesCellModel(category: $0) })
+                let cellItems = response.data.map({ FavoritesCellModel(category: $0) })
                 self.cellItems.append(contentsOf: cellItems)
                 self.page += 1
                 self.isPagingEnabled = response.pagination.currentPage < response.pagination.lastPage
                 self.didSuccessFetchCategories?()
-            case .failure(_ ):
+            case .failure:
                 if self.page == 1 { self.showWarningToast?(L10n.Error.refreshFromTop) }
             }
         }
@@ -93,7 +93,7 @@ extension FavoritesViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success(_ ):
+            case .success:
                 self.didSuccesLogout?()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)

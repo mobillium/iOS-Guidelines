@@ -29,7 +29,7 @@ protocol RecipeDetailViewDataSource {
     var isFollowing: Bool { get }
     
     func numberOfItemsAt(section: Int) -> Int
-    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol
+    func cellItemAt(indexPath: IndexPath) -> RecipeDetailComentCellModel
 }
 
 protocol RecipeDetailViewEventSource {
@@ -82,7 +82,7 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
     
     let keychain = KeychainSwift()
     
-    var recipeHeaderCellItems: [RecipeHeaderCellProtocol] = []
+    var recipeHeaderCellItems: [RecipeDetailCommentHeaderCell] = []
     
     init(recipeId: Int, router: RecipeDetailRouter) {
         self.recipeId = recipeId
@@ -93,11 +93,11 @@ final class RecipeDetailViewModel: BaseViewModel<RecipeDetailRouter>, RecipeDeta
         return cellItems.count
     }
     
-    func cellItemAt(indexPath: IndexPath) -> CommentCellProtocol {
+    func cellItemAt(indexPath: IndexPath) -> RecipeDetailComentCellModel {
         return cellItems[indexPath.row]
     }
     
-    var cellItems: [CommentCellProtocol] = []
+    var cellItems: [RecipeDetailComentCellModel] = []
     
 }
 
@@ -156,7 +156,6 @@ extension RecipeDetailViewModel {
 }
 
 // MARK: - Network
-// swiftlint:disable line_length
 extension RecipeDetailViewModel {
     
     func getRecipeComment() {
@@ -165,10 +164,10 @@ extension RecipeDetailViewModel {
             switch result {
             case .success(let response):
                 guard let self = self else { return }
-                let cellItems = response.data.map({ CommentCellModel(comment: $0) })
+                let cellItems = response.data.map({ RecipeDetailComentCellModel(comment: $0) })
                 self.cellItems = cellItems
                 self.reloadCommentData?()
-            case .failure(_ ):
+            case .failure:
                 self?.reloadCommentData?()
             }
         }
@@ -196,7 +195,7 @@ extension RecipeDetailViewModel {
         recipeCount = recipeDetail.user.recipeCount
         categoryName = recipeDetail.category.name
         timeDifferenceText = recipeDetail.timeDifference
-        recipeAndFollowerCountText = "\(recipeCount ?? 0) \(L10n.General.recipe) \(userFollowedCount ?? 0) \(L10n.General.follower)"
+        recipeAndFollowerCountText = Localizable.RecipeDetail.userStats(recipeCount ?? 0, userFollowedCount ?? 0)
         ingredients = recipeDetail.ingredients
         numberOfPeople = recipeDetail.numberOfPerson.text
         steps = recipeDetail.instructions
@@ -206,9 +205,7 @@ extension RecipeDetailViewModel {
         isLiked = recipeDetail.isLiked
         isFollowing = recipeDetail.user.isFollowing
         followedId = recipeDetail.user.id
-        recipeDetail.images.forEach({ image in
-            recipeHeaderCellItems.append(RecipeHeaderCellModel(imageUrl: image.url ?? "", isEditorChoice: recipeDetail.isEditorChoice))
-        })
+        recipeHeaderCellItems = recipeDetail.images.compactMap({ RecipeDetailCommentHeaderCell(imageUrl: $0.url, isEditorChoice: recipeDetail.isEditorChoice) })
     }
     
     private func recipeLikeRequest() {
@@ -223,8 +220,8 @@ extension RecipeDetailViewModel {
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                print(response.message)
+            case .success:
+                break
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsLiked?()
@@ -239,8 +236,8 @@ extension RecipeDetailViewModel {
         dataProvider.request(for: request) { [weak self] (result) in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                print(response.message)
+            case .success:
+                break
             case .failure(let error):
                 print(error.localizedDescription)
                 self.toggleIsFollowing?()
@@ -248,4 +245,3 @@ extension RecipeDetailViewModel {
         }
     }
 }
-// swiftlint:enable line_length

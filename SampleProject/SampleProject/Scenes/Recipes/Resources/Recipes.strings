@@ -1,0 +1,10 @@
+/* 
+  Recipes.strings
+  SampleProject
+
+  Created by Mehmet Salih Aslan on 4.08.2022.
+  Copyright © 2022 Mobillium. All rights reserved.
+*/
+
+"userStats" = "%d Tarif %d Takipçi";
+"recipeStats" = "%d Yorum %d Beğeni";

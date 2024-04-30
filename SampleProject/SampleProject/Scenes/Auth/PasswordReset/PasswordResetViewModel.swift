@@ -30,7 +30,7 @@ extension PasswordResetViewModel {
             guard let self = self else { return }
             self.hideLoading?()
             switch result {
-            case .success(_):
+            case .success:
                 self.router.close()
             case .failure(let error):
                 self.showWarningToast?(error.localizedDescription)

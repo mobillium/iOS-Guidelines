@@ -1,0 +1,8 @@
+strings:
+  inputs: SampleProject
+  filter: .+\.strings$
+  outputs:
+    - templateName: structured-swift5
+      output: SampleProject/Resources/Localizable.swift
+      params:
+          enumName: Localizable

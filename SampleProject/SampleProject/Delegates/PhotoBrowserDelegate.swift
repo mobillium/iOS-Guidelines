@@ -10,12 +10,10 @@ import SKPhotoBrowser
 
 final class PhotoBrowserDelegate: SKPhotoBrowserDelegate {
 
-    var willDismissAtPage: IntClosure?
-
-    func willDismissAtPageIndex(_ index: Int) {
-        if let didDismiss = willDismissAtPage {
-            didDismiss(index)
-        }
+    var didScrollToRow: IntClosure?
+    
+    func didScrollToIndex(_ browser: SKPhotoBrowser, index: Int) {
+        didScrollToRow?(index)
     }
     
 }

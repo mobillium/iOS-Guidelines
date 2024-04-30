@@ -114,7 +114,7 @@ public extension CommentCell {
         self.viewModel = viewModel
         self.userView.userImageUrl = viewModel.imageUrl
         self.userView.username = viewModel.username
-        self.userView.recipeAndFollowerCountText = viewModel.recipeAndFollowerCountText
+        self.userView.recipeAndFollowerCountText = viewModel.userRecipeAndFollowerCountText
         self.timeDifferenceLabel.text = viewModel.timeDifferenceText
         self.commentLabel.text = viewModel.commentText
         self.moreButton.isHidden = !viewModel.isOwner
