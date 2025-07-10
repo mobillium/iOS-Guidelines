@@ -12,6 +12,7 @@ import Components
 struct RecipesScene<ViewModel: RecipesSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject private var router: Router
     
     var body: some View {
         BaseScene(content: {
@@ -19,7 +20,7 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
                 ForEach(viewModel.viewModels) { viewModel in
                     RecipeView(viewModel: viewModel)
                         .onTapGesture {
-                            self.viewModel.recipeDidTapped(viewModel: viewModel)
+                            self.router.navigate(to: HomeDestinations.recipeDetail)
                         }
                 }
             }

@@ -14,6 +14,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     @ObservedObject var viewModel: ViewModel
     @State var selectedIndex = 0
     @State var options = [L10n.Modules.Home.editorChoiceRecipes, L10n.Modules.Home.lastAddedRecipes]
+    @ObservedObject var router = Router()
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -21,7 +22,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.navPath) {
             BaseScene(content: {
                 VStack {
                     AppSegmentView(selectedIndex: $selectedIndex, options: $options)
@@ -30,7 +31,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         TabView(selection: $selectedIndex) {
-                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider, 
+                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider,
                                                                       listType: .editorChoiceRecipes))
                                 .tag(0)
                             RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider,
@@ -40,11 +41,9 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                         .frame(width: UIScreen.main.bounds.width)
                         .tabViewStyle(.page(indexDisplayMode: .never))
                     }
-                    
                 }
-
             }, viewModel: viewModel)
-            
+            .navigationDestination(for: HomeDestinations.self)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal, content: {
@@ -57,6 +56,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .environmentObject(router)
     }
     
     func setupAppearance() {

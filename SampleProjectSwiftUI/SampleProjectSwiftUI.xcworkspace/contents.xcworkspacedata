@@ -7,13 +7,4 @@
    <FileRef
       location = "group:SampleProjectSwiftUI.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Utilities/Utilities.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:DataProvider/DataProvider.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:UIComponents/UIComponents.xcodeproj">
-   </FileRef>
 </Workspace>

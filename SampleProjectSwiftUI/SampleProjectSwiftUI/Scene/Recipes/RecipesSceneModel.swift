@@ -39,9 +39,4 @@ class RecipesSceneModel: BaseSceneModel {
             break
         }
     }
-    
-    func recipeDidTapped(viewModel: RecipeViewModel) {
-        
-    }
-    
 }

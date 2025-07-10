@@ -12,9 +12,10 @@ import Components
 struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
+    @ObservedObject var router = Router()
     
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $router.navPath) {
             BaseScene(content: {
                 ScrollView(.vertical, showsIndicators: false) {
                     Spacer()
@@ -25,12 +26,15 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                             Rectangle()
                                 .frame(height: 1)
                                 .foregroundColor(.appSeparator)
-                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel)
+                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel) {
+                                router.navigate(to: FavoritesDestinations.recipeDetail)
+                            }
                         }
                         .padding(.bottom, 16)
                     }
                 }
             }, viewModel: viewModel)
+            .navigationDestination(for: FavoritesDestinations.self)
             .frame(width: UIScreen.main.bounds.size.width)
             .background(Color.appSecondaryBackground)
             .navigationBarTitleDisplayMode(.inline)
@@ -50,7 +54,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                 await viewModel.fetchRecipes()
             }
         }
-        
+        .environmentObject(router)
     }
 }
 

@@ -25,11 +25,9 @@ public struct PrimaryLargeButton: ButtonStyle {
     
 }
 
-struct PrimaryLargeButton_Previews: PreviewProvider {
-    static var previews: some View {
-        Button("press me") {
-            
-        }
-        .buttonStyle(PrimaryLargeButton())
+#Preview {
+    Button("press me") {
+        
     }
+    .buttonStyle(PrimaryLargeButton())
 }

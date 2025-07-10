@@ -11,6 +11,7 @@ import Kingfisher
 public struct HorizontalRecipeView: View {
     
     var viewModel: any RecipeViewProtocol
+    let recipeDidTapped: (() -> Void)?
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -43,17 +44,20 @@ public struct HorizontalRecipeView: View {
             .padding([.bottom, .top], 12)
             
         }
-        
         .cornerRadius(6)
         .background(Color.appPrimaryBackground)
         .shadow(color: Color.appShadow.opacity(0.25),
                 radius: 6.0,
                 x: 0.0,
                 y: 0.0)
+        .onTapGesture {
+            recipeDidTapped?()
+        }
     }
     
-    public init(viewModel: any RecipeViewProtocol) {
+    public init(viewModel: any RecipeViewProtocol, recipeDidTapped: (() -> Void)?) {
         self.viewModel = viewModel
+        self.recipeDidTapped = recipeDidTapped
     }
 }
 
@@ -68,7 +72,7 @@ struct HorizontalRecipeView_Previews: PreviewProvider {
                                         imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
                                         stat: "O Yorum O Beğeni",
                                         isEditorChoice: true)
-        HorizontalRecipeView(viewModel: viewModel)
+        HorizontalRecipeView(viewModel: viewModel, recipeDidTapped: nil)
             .frame(width: 200)
             .previewLayout(PreviewLayout.sizeThatFits)
     }

@@ -10,12 +10,13 @@ import SwiftUI
 public struct HorizontalRecipesView: View {
     
     var viewModel: any HorizontalRecipesViewProtocol
+    let recipeDidTapped: (() -> Void)?
     
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 16) {
                 ForEach(viewModel.viewModels) { viewModel in
-                    HorizontalRecipeView(viewModel: viewModel)
+                    HorizontalRecipeView(viewModel: viewModel, recipeDidTapped: recipeDidTapped)
                         .frame(width: (UIScreen.main.bounds.size.width - 48) / 2.12)
                 }
             }
@@ -24,8 +25,9 @@ public struct HorizontalRecipesView: View {
         .background(Color.appPrimaryBackground)
     }
     
-    public init(viewModel: any HorizontalRecipesViewProtocol) {
+    public init(viewModel: any HorizontalRecipesViewProtocol, recipeDidTapped: (() -> Void)?) {
         self.viewModel = viewModel
+        self.recipeDidTapped = recipeDidTapped
     }
 }
 
@@ -41,7 +43,7 @@ struct HorizontalRecipesView_Previews: PreviewProvider {
                                               stat: "O Yorum O Beğeni",
                                               isEditorChoice: true)
         let viewModel = HorizontalRecipesViewModel(viewModels: [recipeViewModel, recipeViewModel, recipeViewModel, recipeViewModel])
-        let view = HorizontalRecipesView(viewModel: viewModel)
+        let view = HorizontalRecipesView(viewModel: viewModel, recipeDidTapped: nil)
         return view
             .previewLayout(PreviewLayout.sizeThatFits)
     }
