@@ -1,13 +1,13 @@
 //
 //  Router.swift
-//  SampleProjectSwiftUI
+//  Router
 //
-//  Created by Mehmet Salih Aslan on 19.02.2024.
+//  Created by Mehmet Salih Aslan on 17.07.2025.
 //
 
 import SwiftUI
 
-class AnyIdentifiable: Identifiable {
+public class AnyIdentifiable: Identifiable {
     let destination: any Identifiable
     
     init(destination: any Identifiable) {
@@ -15,25 +15,25 @@ class AnyIdentifiable: Identifiable {
     }
 }
 
-final class Router: ObservableObject {
+public final class Router: ObservableObject {
     @Published public var navPath = NavigationPath()
     @Published public var presentedSheet: AnyIdentifiable?
     
-    init() {}
+    public init() {}
     
-    func presentSheet(destination: any Identifiable) {
+    public func presentSheet(destination: any Identifiable) {
         presentedSheet = AnyIdentifiable(destination: destination)
     }
     
-    func navigate(to destination: any Hashable) {
+    public func navigate(to destination: any Hashable) {
         navPath.append(destination)
     }
     
-    func navigateBack() {
+    public func navigateBack() {
         navPath.removeLast()
     }
     
-    func navigateToRoot() {
+    public func navigateToRoot() {
         navPath.removeLast(navPath.count)
     }
 }

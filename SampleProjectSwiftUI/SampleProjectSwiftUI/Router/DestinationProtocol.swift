@@ -9,6 +9,7 @@ import SwiftUI
 
 protocol DestinationProtocol: Hashable, Equatable {
     associatedtype DestinationView: View
+    
     @ViewBuilder var view: DestinationView { get }
 }
 
@@ -21,7 +22,7 @@ extension DestinationProtocol {
         hasher.combine(caseString)
     }
     
-    static func ==(lhs: Self, rhs: Self) -> Bool {
+    static func == (lhs: Self, rhs: Self) -> Bool {
         let typeCheck = String(describing: lhs.self) == String(describing: rhs.self)
         let caseCheck = String(describing: lhs) == String(describing: rhs)
         return typeCheck && caseCheck

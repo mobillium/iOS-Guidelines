@@ -8,6 +8,7 @@
 import Combine
 import SwiftUI
 import Components
+import Router
 
 struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     

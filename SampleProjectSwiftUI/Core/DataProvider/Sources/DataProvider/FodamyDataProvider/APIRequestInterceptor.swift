@@ -8,14 +8,14 @@
 
 import Foundation
 import Alamofire
-//import KeychainSwift
+// import KeychainSwift
 
 public class APIRequestInterceptor: RequestInterceptor {
     
     public static let shared = APIRequestInterceptor()
     
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        var urlRequest = urlRequest
+        let urlRequest = urlRequest
 //        let accessToken = KeychainSwift().get("token")
         
 //        if let accessToken = accessToken {
