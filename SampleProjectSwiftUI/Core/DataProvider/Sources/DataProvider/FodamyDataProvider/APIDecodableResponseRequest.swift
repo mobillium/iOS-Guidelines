@@ -8,10 +8,10 @@
 
 import Network
 
-public protocol APIDecodableResponseRequest: DecodableResponseRequest {}
+protocol APIDecodableResponseRequest: DecodableResponseRequest {}
 
 // MARK: - RequestEncoding
-public extension APIDecodableResponseRequest {
+extension APIDecodableResponseRequest {
     var encoding: RequestEncoding {
         switch method {
         case .get:
@@ -23,14 +23,14 @@ public extension APIDecodableResponseRequest {
 }
 
 // MARK: - url
-public extension APIDecodableResponseRequest {
+extension APIDecodableResponseRequest {
     var url: String {
         return "https://fodamy.mobillium.com/api/" + path
     }
 }
 
 // MARK: - RequestParameters
-public extension APIDecodableResponseRequest {
+extension APIDecodableResponseRequest {
     var bodyParameters: RequestParameters {
         return [:]
     }
@@ -40,7 +40,7 @@ public extension APIDecodableResponseRequest {
 }
 
 // MARK: - RequestHeaders
-public extension APIDecodableResponseRequest {
+extension APIDecodableResponseRequest {
     var headers: RequestHeaders {
         return [:]
     }

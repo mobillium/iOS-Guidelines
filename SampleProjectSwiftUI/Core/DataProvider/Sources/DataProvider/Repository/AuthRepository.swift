@@ -7,33 +7,27 @@
 
 import Foundation
 import Network
-
-public protocol AuthRepositoryProtocol {
-    func forgotPassword(email: String) async -> DecodableResult<Auth>
-    func login(username: String, password: String) async -> DecodableResult<Auth>
-    func logout() async -> DecodableResult<SuccessResponse>
-    func register(username: String, email: String, password: String) async -> DecodableResult<Auth>
-}
+import Domain
 
 public final class AuthRepository: BaseRepository, AuthRepositoryProtocol {
     
-    public func forgotPassword(email: String) async -> DecodableResult<Auth> {
+    public func forgotPassword(email: String) async -> NetworkResult<Auth> {
         let request = ForgotPasswordRequest(email: email)
-        return await decodableResponse(request: request)
+        return await networkResponse(request: request, mapper: AuthResponseMapper())
     }
     
-    public func login(username: String, password: String) async -> DecodableResult<Auth> {
+    public func login(username: String, password: String) async -> NetworkResult<Auth> {
         let request = LoginRequest(username: username, password: password)
-        return await decodableResponse(request: request)
+        return await networkResponse(request: request, mapper: AuthResponseMapper())
     }
     
-    public func logout() async -> DecodableResult<SuccessResponse> {
+    public func logout() async -> NetworkResult<SuccessModel> {
         let request = LogoutRequest()
-        return await decodableResponse(request: request)
+        return await networkResponse(request: request, mapper: SuccessResponseMapper())
     }
     
-    public func register(username: String, email: String, password: String) async -> DecodableResult<Auth> {
+    public func register(username: String, email: String, password: String) async -> NetworkResult<Auth> {
         let request = RegisterRequest(username: username, email: email, password: password)
-        return await decodableResponse(request: request)
+        return await networkResponse(request: request, mapper: AuthResponseMapper())
     }
 }

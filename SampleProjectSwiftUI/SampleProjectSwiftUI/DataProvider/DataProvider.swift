@@ -10,9 +10,7 @@ import Alamofire
 import DataProvider
 
 #if DEBUG
-let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared,
-                                      eventMonitors: [APILogger.shared])
+let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared)
 #else
-let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared,
-                                      eventMonitors: [])
+let apiDataProvider = APIDataProvider(interceptor: APIRequestInterceptor.shared)
 #endif

@@ -8,13 +8,12 @@
 
 import Network
 
-public struct LogoutRequest: APIDecodableResponseRequest {
+struct LogoutRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
 
-    public var path: String = "auth/logout"
-    public var method: RequestMethod = .post
+    var path: String = "auth/logout"
+    var method: RequestMethod = .post
     
-    public init() {}
-    
+    init() {}
 }

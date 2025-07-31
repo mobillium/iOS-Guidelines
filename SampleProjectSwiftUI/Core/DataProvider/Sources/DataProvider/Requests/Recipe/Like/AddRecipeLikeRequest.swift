@@ -8,14 +8,14 @@
 
 import Network
 
-public struct AddRecipeLikeRequest: APIDecodableResponseRequest {
+struct AddRecipeLikeRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
     
-    public var path: String = "recipe/{recipeId}/like"
-    public var method: RequestMethod = .post
+    var path: String = "recipe/{recipeId}/like"
+    var method: RequestMethod = .post
     
-    public init(recipeId: Int) {
+    init(recipeId: Int) {
         self.path = "recipe/\(recipeId)/like"
     }
 }

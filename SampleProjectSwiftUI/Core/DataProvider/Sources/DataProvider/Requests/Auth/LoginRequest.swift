@@ -8,17 +8,16 @@
 
 import Network
 
-public struct LoginRequest: APIDecodableResponseRequest {
+struct LoginRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = Auth
+    typealias ResponseType = AuthResponse
 
-    public var path: String = "auth/login"
-    public var method: RequestMethod = .post
-    public var bodyParameters: RequestParameters = [:]
+    var path: String = "auth/login"
+    var method: RequestMethod = .post
+    var bodyParameters: RequestParameters = [:]
     
-    public init(username: String, password: String) {
+    init(username: String, password: String) {
         bodyParameters["username"] = username
         bodyParameters["password"] = password
     }
-    
 }

@@ -7,14 +7,14 @@
 
 import Network
 
-public struct DeleteRecipeLikeRequest: APIDecodableResponseRequest {
+struct DeleteRecipeLikeRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
     
-    public var path: String = "recipe/{recipeId}/like"
-    public var method: RequestMethod = .delete
+    var path: String = "recipe/{recipeId}/like"
+    var method: RequestMethod = .delete
     
-    public init(recipeId: Int) {
+    init(recipeId: Int) {
         self.path = "recipe/\(recipeId)/like"
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Mehmet Salih Aslan on 8.12.2022.
 //
 
-import DataProvider
+import Domain
 import Foundation
 import Components
 

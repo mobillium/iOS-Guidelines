@@ -7,16 +7,17 @@
 //
 
 import Network
+import Domain
 
-public struct GetRecipesRequest: APIDecodableResponseRequest {
+struct GetRecipesRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = BaseResponse<[Recipe]>
+    typealias ResponseType = BaseArrayResponse<RecipeResponse>
     
-    public var path: String = ""
-    public var method: RequestMethod = .get
-    public var queryParameters: RequestParameters = [:]
+    var path: String = ""
+    var method: RequestMethod = .get
+    var queryParameters: RequestParameters = [:]
     
-    public init(page: Int, listType: RecipeListType) {
+    init(page: Int, listType: RecipeListType) {
         self.queryParameters["page"] = page
         switch listType {
         case .editorChoiceRecipes:
@@ -28,4 +29,3 @@ public struct GetRecipesRequest: APIDecodableResponseRequest {
         }
     }
 }
-

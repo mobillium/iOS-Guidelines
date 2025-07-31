@@ -14,7 +14,6 @@ class BaseSceneModel: ObservableObject {
     @Published var showFullScreenLoading = false
     @Published var showTryAgainButton = false
     
-//    @EnvironmentObject private var router: Router
     private var dataProvider: DataProviderProtocol
     
     init(dataProvider: DataProviderProtocol) {

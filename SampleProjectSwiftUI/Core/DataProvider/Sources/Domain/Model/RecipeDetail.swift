@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct RecipeDetail: Decodable {
+public struct RecipeDetail {
     public let id: Int
     public let title: String?
     public let ingredients: String?
@@ -20,7 +20,37 @@ public struct RecipeDetail: Decodable {
     public let timeOfRecipe: RecipeTime
     public let numberOfPerson: NumberOfPerson
     public let category: CategoryDetail
-    public let images: [Image]
+    public let images: [ImageModel]
+    
+    public init(id: Int,
+                title: String?,
+                ingredients: String?,
+                instructions: String?,
+                isLiked: Bool,
+                timeDifference: String?,
+                isEditorChoice: Bool,
+                likeCount: Int,
+                commentCount: Int,
+                user: User,
+                timeOfRecipe: RecipeTime,
+                numberOfPerson: NumberOfPerson,
+                category: CategoryDetail,
+                images: [ImageModel]) {
+        self.id = id
+        self.title = title
+        self.ingredients = ingredients
+        self.instructions = instructions
+        self.isLiked = isLiked
+        self.timeDifference = timeDifference
+        self.isEditorChoice = isEditorChoice
+        self.likeCount = likeCount
+        self.commentCount = commentCount
+        self.user = user
+        self.timeOfRecipe = timeOfRecipe
+        self.numberOfPerson = numberOfPerson
+        self.category = category
+        self.images = images
+    }
     
     enum CodingKeys: String, CodingKey {
         case id

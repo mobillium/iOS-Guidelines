@@ -6,6 +6,10 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct NumberOfPerson: Decodable {
+public struct NumberOfPerson {
     public let text: String?
+    
+    public init(text: String?) {
+        self.text = text
+    }
 }

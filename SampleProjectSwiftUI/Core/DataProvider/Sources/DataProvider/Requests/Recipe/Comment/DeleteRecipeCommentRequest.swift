@@ -8,15 +8,14 @@
 
 import Network
 
-public struct DeleteRecipeCommentRequest: APIDecodableResponseRequest {
+struct DeleteRecipeCommentRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
     
-    public var path: String = "recipe/{recipeId}/comment/{commentId}"
-    public var method: RequestMethod = .delete
+    var path: String = "recipe/{recipeId}/comment/{commentId}"
+    var method: RequestMethod = .delete
     
-    public init(recipeId: Int, commentId: Int) {
+    init(recipeId: Int, commentId: Int) {
         self.path = "recipe/\(recipeId)/comment/\(commentId)"
     }
-    
 }

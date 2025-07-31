@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Recipe: Decodable {
+public struct Recipe {
     public let id: Int
     public let title: String?
     public let isEditorChoice: Bool
@@ -14,7 +14,25 @@ public struct Recipe: Decodable {
     public let commentCount: Int
     public let user: User
     public let category: CategoryDetail
-    public let images: [Image]
+    public let images: [ImageModel]
+    
+    public init(id: Int,
+                title: String?,
+                isEditorChoice: Bool,
+                likeCount: Int,
+                commentCount: Int,
+                user: User,
+                category: CategoryDetail,
+                images: [ImageModel]) {
+        self.id = id
+        self.title = title
+        self.isEditorChoice = isEditorChoice
+        self.likeCount = likeCount
+        self.commentCount = commentCount
+        self.user = user
+        self.category = category
+        self.images = images
+    }
     
     enum CodingKeys: String, CodingKey {
         case id

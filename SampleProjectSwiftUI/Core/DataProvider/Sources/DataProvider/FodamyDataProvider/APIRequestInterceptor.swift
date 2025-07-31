@@ -24,4 +24,8 @@ public class APIRequestInterceptor: RequestInterceptor {
 
         completion(.success(urlRequest))
     }
+    
+    public func retry(_ request: Request, for session: Session, dueTo error: any Error, completion: @escaping (RetryResult) -> Void) {
+        // todo
+    }
 }

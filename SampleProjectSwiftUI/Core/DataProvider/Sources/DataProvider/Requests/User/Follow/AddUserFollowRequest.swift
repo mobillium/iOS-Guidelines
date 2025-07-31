@@ -8,14 +8,14 @@
 
 import Network
 
-public struct AddUserFollowRequest: APIDecodableResponseRequest {
+struct AddUserFollowRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
     
-    public var path: String = "user/{followedId}/following"
-    public var method: RequestMethod = .post
+    var path: String = "user/{followedId}/following"
+    var method: RequestMethod = .post
     
-    public init(followedId: Int) {
+    init(followedId: Int) {
         self.path = "user/\(followedId)/following"
     }
 }

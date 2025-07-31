@@ -8,16 +8,15 @@
 
 import Network
 
-public struct GetCategoriesWithRecipesRequest: APIDecodableResponseRequest {
+struct GetCategoriesWithRecipesRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = BaseResponse<[MainCategory]>
+    typealias ResponseType = BaseArrayResponse<MainCategoryResponse>
 
-    public var path: String = "category-recipes"
-    public var method: RequestMethod = .get
-    public var queryParameters: RequestParameters = [:]
+    var path: String = "category-recipes"
+    var method: RequestMethod = .get
+    var queryParameters: RequestParameters = [:]
     
-    public init(page: Int) {
+    init(page: Int) {
         queryParameters["page"] = page
     }
-    
 }

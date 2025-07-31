@@ -6,7 +6,12 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Auth: Decodable {
+public struct Auth {
     public let token: String
     public let user: User
+    
+    public init(token: String, user: User) {
+        self.token = token
+        self.user = user
+    }
 }

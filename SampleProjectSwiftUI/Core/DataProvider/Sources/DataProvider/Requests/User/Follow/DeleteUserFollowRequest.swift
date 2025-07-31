@@ -7,14 +7,14 @@
 
 import Network
 
-public struct DeleteUserFollowRequest: APIDecodableResponseRequest {
+struct DeleteUserFollowRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = SuccessResponse
+    typealias ResponseType = SuccessResponse
     
-    public var path: String = "user/{followedId}/following"
-    public var method: RequestMethod = .delete
+    var path: String = "user/{followedId}/following"
+    var method: RequestMethod = .delete
     
-    public init(followedId: Int) {
+    init(followedId: Int) {
         self.path = "user/\(followedId)/following"
     }
 }

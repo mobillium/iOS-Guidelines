@@ -11,6 +11,7 @@ import Components
 import DataProvider
 import Network
 import SwiftUI
+import Domain
 
 @MainActor
 class RecipesSceneModel: BaseSceneModel {

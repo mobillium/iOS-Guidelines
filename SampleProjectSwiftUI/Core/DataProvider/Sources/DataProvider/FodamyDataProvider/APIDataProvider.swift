@@ -19,6 +19,7 @@ public enum APIError: Error {
 
 public struct APIDataProvider: DataProviderProtocol {
     
+    public var networkLogger: (any NetworkLogger)?
     private let interceptor: RequestInterceptor?
     
     // MARK: - URLSession
@@ -27,8 +28,9 @@ public struct APIDataProvider: DataProviderProtocol {
     private let jsonDecoder: JSONDecoder
     
     public init(interceptor: RequestInterceptor? = nil,
-                eventMonitors: [EventMonitor] = []) {
+                networkLogger: NetworkLogger? = APILogger(label: "FodamyDataProvider")) {
         self.interceptor = interceptor
+        self.networkLogger = networkLogger
         self.configuration = URLSessionConfiguration.default
         self.configuration.timeoutIntervalForRequest = 20
         self.configuration.timeoutIntervalForResource = 45
@@ -66,6 +68,8 @@ public struct APIDataProvider: DataProviderProtocol {
         
         do {
             let (data, response) = try await urlSession.data(for: urlRequest)
+            networkLogger?.log(request: urlRequest, data: data, response: response as? HTTPURLResponse, error: nil)
+            
             if let httpResponse = response as? HTTPURLResponse,
                (200 ..< 400).contains(httpResponse.statusCode),
                let response = try? jsonDecoder.decode(T.ResponseType.self, from: data) {
@@ -74,7 +78,22 @@ public struct APIDataProvider: DataProviderProtocol {
                 return .failure(APIError.badServerResponse)
             }
         } catch {
+            networkLogger?.log(request: nil, data: nil, response: nil, error: error)
             return .failure(error)
         }
     }
+    
+    // swiftlint:disable line_length
+    public func request<T: DecodableResponseRequest, M: ResponseMappable>(for request: T, mapper: M) async -> NetworkResult<M.DomainType> where T.ResponseType == M.ResponseType {
+        let result = await self.request(for: request)
+        
+        switch result {
+        case .success(let response):
+            let responseModel = mapper.map(from: response)
+            return .success(responseModel)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+    // swiftlint:enable line_length
 }

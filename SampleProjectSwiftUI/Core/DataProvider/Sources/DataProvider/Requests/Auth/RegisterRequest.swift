@@ -8,18 +8,17 @@
 
 import Network
 
-public struct RegisterRequest: APIDecodableResponseRequest {
+struct RegisterRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = Auth
-
-    public var path: String = "auth/register"
-    public var method: RequestMethod = .post
-    public var bodyParameters: RequestParameters = [:]
+    typealias ResponseType = AuthResponse
     
-    public init(username: String, email: String, password: String) {
+    var path: String = "auth/register"
+    var method: RequestMethod = .post
+    var bodyParameters: RequestParameters = [:]
+    
+    init(username: String, email: String, password: String) {
         bodyParameters["username"] = username
         bodyParameters["email"] = email
         bodyParameters["password"] = password
     }
-    
 }

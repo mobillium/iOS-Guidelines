@@ -6,6 +6,18 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct SuccessResponse: Decodable {
-    public let message: String?
+import Domain
+import Network
+
+struct SuccessResponse: Decodable {
+    let message: String?
+}
+
+struct SuccessResponseMapper: ResponseMappable {
+    typealias ResponseType = SuccessResponse
+    typealias DomainType = SuccessModel
+    
+    func map(from response: ResponseType) -> DomainType {
+        return SuccessModel(message: response.message)
+    }
 }

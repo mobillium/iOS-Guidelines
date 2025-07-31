@@ -6,29 +6,32 @@
 //  Copyright © 2021 Mobillium. All rights reserved.
 //
 
-import Alamofire
-import Foundation
+import Logging
+import Network
 
-public final class APILogger: EventMonitor {
-    
-    public static let shared = APILogger()
-    
-    public let queue = DispatchQueue(label: "com.mobillium.sampleproject.networklogger")
-    
-    public func request(_ request: Request, didCreateURLRequest urlRequest: URLRequest) {
-        print("---> Request Created <---")
-        print(request.description)
+public struct APILogger: NetworkLogger {
+    private let logger: Logging.Logger
+
+    public init(label: String) {
+        logger = Logging.Logger(label: label)
     }
-    
-    public func requestDidFinish(_ request: Request) {
-        print("---> Request Finished <---")
-        print(request.description)
+
+    public func log(level: LogLevel, message: @autoclosure () -> String) {
+        logger.log(
+            level: level.toLoggingLevel(),
+            .init(stringLiteral: message())
+        )
     }
-    
-    public func request<Value>(_ request: DataRequest, didParseResponse response: DataResponse<Value, AFError>) {
-        print("---> Request JSONResponse <---")
-        if let data = response.data, let json = String(data: data, encoding: .utf8) {
-            print(json)
-        }
+}
+
+public struct APINoLogger: NetworkLogger {
+    private let logger: Logging.Logger
+
+    public init(label: String) {
+        logger = Logging.Logger(label: label)
+    }
+
+    public func log(level _: LogLevel, message _: @autoclosure () -> String) {
+        // Do nothing
     }
 }

@@ -8,16 +8,15 @@
 
 import Network
 
-public struct ForgotPasswordRequest: APIDecodableResponseRequest {
+struct ForgotPasswordRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = Auth
+    typealias ResponseType = AuthResponse
 
-    public var path: String = "auth/forgot"
-    public var method: RequestMethod = .post
-    public var bodyParameters: RequestParameters = [:]
+    var path: String = "auth/forgot"
+    var method: RequestMethod = .post
+    var bodyParameters: RequestParameters = [:]
     
-    public init(email: String) {
+    init(email: String) {
         bodyParameters["email"] = email
     }
-    
 }

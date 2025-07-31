@@ -8,17 +8,16 @@
 
 import Network
 
-public struct AddRecipeCommentRequest: APIDecodableResponseRequest {
+struct AddRecipeCommentRequest: APIDecodableResponseRequest {
     
-    public typealias ResponseType = RecipeComment
+    typealias ResponseType = RecipeCommentResponse
 
-    public var path: String = "recipe/{recipeId}/comment"
-    public var method: RequestMethod = .post
-    public var bodyParameters: RequestParameters = [:]
+    var path: String = "recipe/{recipeId}/comment"
+    var method: RequestMethod = .post
+    var bodyParameters: RequestParameters = [:]
     
-    public init(recipeId: Int, commentText: String) {
+    init(recipeId: Int, commentText: String) {
         self.path = "recipe/\(recipeId)/comment"
         self.bodyParameters["text"] = commentText
     }
-    
 }
