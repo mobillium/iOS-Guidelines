@@ -10,6 +10,8 @@ import Network
 
 protocol APIDecodableResponseRequest: DecodableResponseRequest {}
 
+public var apiBaseUrl: String = ""
+
 // MARK: - RequestEncoding
 extension APIDecodableResponseRequest {
     var encoding: RequestEncoding {
@@ -25,7 +27,7 @@ extension APIDecodableResponseRequest {
 // MARK: - url
 extension APIDecodableResponseRequest {
     var url: String {
-        return "https://fodamy.mobillium.com/api/" + path
+        return apiBaseUrl + path
     }
 }
 

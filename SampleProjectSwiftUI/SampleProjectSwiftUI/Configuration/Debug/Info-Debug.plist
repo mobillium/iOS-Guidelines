@@ -4,5 +4,7 @@
 <dict>
 	<key>UILaunchScreen</key>
 	<dict/>
+    <key>APIBaseURL</key>
+    <string>$(API_BASE_URL)</string>
 </dict>
 </plist>

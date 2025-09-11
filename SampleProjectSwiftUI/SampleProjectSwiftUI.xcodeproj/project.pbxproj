@@ -51,13 +51,15 @@
 		3DDAA10F28D36F370015840C /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11228D36F3B0015840C /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11528D36F3E0015840C /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DFCF17A2E730A81001A097B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		3DFCF17B2E730A88001A097B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		3D8699792E6093AB00904421 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				"Configuration/Debug/Info-Debug.plist",
 			);
 			target = 3DDAA03128D365220015840C /* SampleProjectSwiftUI */;
 		};
@@ -120,6 +122,8 @@
 				3DDAA04F28D365230015840C /* SampleProjectSwiftUIUITests */,
 				3DDAA03328D365220015840C /* Products */,
 				3DDAA10E28D36F370015840C /* Frameworks */,
+				3DFCF17A2E730A81001A097B /* Debug.xcconfig */,
+				3DFCF17B2E730A88001A097B /* Release.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,6 +384,7 @@
 /* Begin XCBuildConfiguration section */
 		3DDAA05428D365230015840C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFCF17A2E730A81001A097B /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -440,6 +445,7 @@
 		};
 		3DDAA05528D365230015840C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3DFCF17B2E730A88001A097B /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -504,7 +510,7 @@
 				DEVELOPMENT_TEAM = 4PWC9KX3UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleProjectSwiftUI/Info.plist;
+				INFOPLIST_FILE = "SampleProjectSwiftUI/Configuration/Debug/Info-Debug.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
@@ -537,7 +543,7 @@
 				DEVELOPMENT_TEAM = 4PWC9KX3UT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SampleProjectSwiftUI/Info.plist;
+				INFOPLIST_FILE = "SampleProjectSwiftUI/Configuration/Release/Info-Release.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
