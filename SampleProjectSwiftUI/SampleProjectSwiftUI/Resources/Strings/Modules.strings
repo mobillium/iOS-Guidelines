@@ -1,0 +1,39 @@
+/*
+ Modules.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+// MARK: - Favorites
+"Favorites.seeAllButtonTitle" = "TÜMÜNÜ GÖR";
+
+// MARK: - Home
+"Home.editorChoiceRecipes" = "EDİTÖR SEÇİMİ";
+"Home.lastAddedRecipes" = "SON EKLENENLER";
+"Home.recipeCommnetAndLikeCount" = "%@ Yorum %@ Beğeni";
+"Home.userRecipeAndFollowerCount" = "%@ Tarif %@ Takipçi";
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";
+"WalkThrough.firstTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your favorite recipes in all around the world.";
+
+// MARK: - CommentEdit
+"CommentEdit.title" = "YORUM DÜZENLE";
+"CommentEdit.save" = "Kaydet";
+
+// MARK: - CommentList
+"CommentList.title" = "YORUMLAR";
+
+// MARK: - PasswordReset
+"ResetPassword.title" = "Şifre Sıfırlama";
+"ResetPassword.reset" = "Sıfırla";
+
+// MARK: RecipeDetail
+"RecipeDetail.noComment" = "Henüz yorum yapılmamıştır.";

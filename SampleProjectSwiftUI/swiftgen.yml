@@ -1,0 +1,7 @@
+strings:
+  inputs: SampleProjectSwiftUI/Resources/Strings
+  outputs:
+    - templatePath: SwiftGenTemplates/strings.stencil
+      output: SampleProjectSwiftUI/Resources/Strings/StringConstants.swift
+      params:
+          publicAccess: public

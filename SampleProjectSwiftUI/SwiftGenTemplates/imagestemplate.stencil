@@ -1,0 +1,28 @@
+// Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+
+{% if catalogs %}
+{% set accessModifier %}{% if param.publicAccess %}public{% else %}internal{% endif %}{% endset %}
+import UIKit
+
+{% macro imagesBlock assets %}
+  {% for asset in assets %}
+
+    static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIImage {
+        return UIImage(named: "{{asset.value}}")!
+    }
+  {% endfor %}
+{% endmacro %}
+// swiftlint:disable object_literal
+{{accessModifier}} extension UIImage {
+  {% if catalogs.count > 1 %}
+  {% for catalog in catalogs %}
+  {% call imagesBlock catalog.assets %}
+  {% endfor %}
+  {% else %}
+  {% call imagesBlock catalogs.first.assets %}
+  {% endif %}
+}
+// swiftlint:disable object_literal
+{% else %}
+// No assets found
+{% endif %}

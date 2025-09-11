@@ -14,7 +14,7 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
     
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     @ObservedObject var viewModel: ViewModel
-    @State private var buttonTitle: String = L10n.Modules.WalkThrough.next
+    @State private var buttonTitle: String = L10n.WalkThrough.next
     @State private var currentPage: Int = 0
     
     init(viewModel: ViewModel) {
@@ -64,9 +64,9 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
     
     private func updateButtonTitle() {
         if currentPage < viewModel.numberOfPages - 1 {
-            self.buttonTitle = L10n.Modules.WalkThrough.next
+            self.buttonTitle = L10n.WalkThrough.next
         } else {
-            self.buttonTitle = L10n.Modules.WalkThrough.start
+            self.buttonTitle = L10n.WalkThrough.start
         }
     }
     

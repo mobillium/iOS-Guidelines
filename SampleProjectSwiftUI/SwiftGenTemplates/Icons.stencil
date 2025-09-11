@@ -11,8 +11,8 @@
   {% for asset in assets %}
   {% if asset.type == "image" %}
 
-  static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: Image {
-      return {{enumName}}.Icons.{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}.swiftUIImage
+  static var {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}: UIImage {
+      return {{enumName}}.Icons.{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}}.image
   }
   {% elif asset.items and ( forceNamespaces == "true" or asset.isNamespaced == "true" ) %}
   {% call casesBlock asset.items %}
@@ -22,10 +22,10 @@
   {% endfor %}
 {% endmacro %}
 
-import SwiftUI
+import UIKit
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-{{accessModifier}} extension Image {
+{{accessModifier}} extension UIImage {
   {% if catalogs.count > 1 or param.forceFileNameEnum %}
   {% for catalog in catalogs %}
   {% call enumBlock catalog.assets %}

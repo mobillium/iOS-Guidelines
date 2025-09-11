@@ -14,7 +14,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
     @State var selectedIndex = 0
-    @State var options = [L10n.Modules.Home.editorChoiceRecipes, L10n.Modules.Home.lastAddedRecipes]
+    @State var options = [L10n.Home.editorChoiceRecipes, L10n.Home.lastAddedRecipes]
     @ObservedObject var router = Router()
     
     init(viewModel: ViewModel) {

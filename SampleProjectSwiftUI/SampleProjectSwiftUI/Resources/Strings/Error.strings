@@ -1,0 +1,17 @@
+/*
+ Error.strings
+ SampleProject
+ 
+ Created by Mehmet Salih Aslan on 26.02.2021.
+ Copyright © 2021 SampleProject. All rights reserved.
+ */
+
+"Error.empty" = "%@ alanı boş olamaz.";
+"Error.refreshFromTop" = "Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.";
+"Error.emptyFields" = "Lütfen boş alanları doldurunuz.";
+"Error.checkInformations" = "Lütfen bilgilerinizi kontrol ediniz.";
+
+// MARK: - Keys
+"Error.Key.username" = "Username";
+"Error.Key.email" = "E-posta";
+"Error.Key.comment" = "Yorum";
