@@ -19,7 +19,7 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
     
     var body: some View {
         TabView {
-            HomeScene(viewModel: HomeSceneModel(dataProvider: apiDataProvider))
+            HomeScene(viewModel: HomeSceneModel())
                 .tabItem {
                     Image("ic_home")
                         .renderingMode(.template)
@@ -27,7 +27,7 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
                 }
                 .tag(0)
             
-            FavoritesScene(viewModel: FavoritesSceneModel(dataProvider: apiDataProvider))
+            FavoritesScene(viewModel: FavoritesSceneModel())
                 .tabItem {
                     Image("ic_heart")
                         .renderingMode(.template)
@@ -49,6 +49,6 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = MainTabSceneModel(dataProvider: apiDataProvider)
+    let viewModel = MainTabSceneModel()
     return MainTabScene(viewModel: viewModel)
 }

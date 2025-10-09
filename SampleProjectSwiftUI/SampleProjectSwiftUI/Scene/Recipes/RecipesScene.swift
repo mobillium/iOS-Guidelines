@@ -12,7 +12,7 @@ import Router
 
 struct RecipesScene<ViewModel: RecipesSceneModel>: View {
     
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @EnvironmentObject private var router: Router
     
     var body: some View {
@@ -21,7 +21,9 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
                 ForEach(viewModel.viewModels) { viewModel in
                     RecipeView(viewModel: viewModel)
                         .onTapGesture {
-                            self.router.navigate(to: HomeDestinations.recipeDetail)
+                            let recipeId = viewModel.recipeId
+                            let destination = HomeDestinations.recipeDetail(recipeId: recipeId)
+                            self.router.navigate(to: destination)
                         }
                 }
             }
@@ -35,6 +37,6 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = RecipesSceneModel(dataProvider: apiDataProvider, listType: .editorChoiceRecipes)
+    let viewModel = RecipesSceneModel(listType: .editorChoiceRecipes)
     return RecipesScene(viewModel: viewModel)
 }

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 public struct UserInfoView: View {
     
@@ -14,13 +13,26 @@ public struct UserInfoView: View {
     
     public var body: some View {
         HStack(spacing: 0) {
-            KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://")!)
-                .resizable()
-                .frame(width: 40, height: 40)
-                .cornerRadius(20)
-                .background(Color.appSecondaryBackground)
-                .clipShape(Circle())
-                .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appRed, lineWidth: 1))
+            AsyncImage(url: URL(string: viewModel.imageUrl)) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .cornerRadius(20)
+                        .background(Color.appSecondaryBackground)
+                        .clipShape(Circle())
+                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appRed, lineWidth: 1))
+                        .transition(.opacity.animation(.easeIn(duration: 0.25)))
+                case .failure:
+                    EmptyView()
+                @unknown default:
+                    EmptyView()
+                }
+            }
+            .frame(width: 40, height: 40)
             
             Rectangle()
                 .frame(width: 22, height: 20)

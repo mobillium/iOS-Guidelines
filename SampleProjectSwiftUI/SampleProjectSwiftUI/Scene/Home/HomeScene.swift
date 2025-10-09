@@ -32,11 +32,9 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                     
                     ScrollView(.horizontal, showsIndicators: false) {
                         TabView(selection: $selectedIndex) {
-                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider,
-                                                                      listType: .editorChoiceRecipes))
+                            RecipesScene(viewModel: RecipesSceneModel(listType: .editorChoiceRecipes))
                                 .tag(0)
-                            RecipesScene(viewModel: RecipesSceneModel(dataProvider: apiDataProvider,
-                                                                      listType: .lastAddedRecipes))
+                            RecipesScene(viewModel: RecipesSceneModel(listType: .lastAddedRecipes))
                                 .tag(1)
                         }
                         .frame(width: UIScreen.main.bounds.width)
@@ -62,16 +60,32 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     
     func setupAppearance() {
         let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = Color.appRed.uiColor
-        appearance.titleTextAttributes = [.foregroundColor: Color.appWhite.uiColor,
-                                          .font: Font.uiFont(.nunitoExtraBold, size: .medium)]
+        appearance.titleTextAttributes = [
+            .foregroundColor: Color.appWhite.uiColor,
+            .font: Font.uiFont(.nunitoExtraBold, size: .medium)
+        ]
+        
+//         Geri buton rengi (ikon + text)
+        appearance.setBackIndicatorImage(
+            UIImage(systemName: "chevron.left"),
+            transitionMaskImage: UIImage(systemName: "chevron.left")
+        )
+
+        appearance.backButtonAppearance.normal.titleTextAttributes = [
+            .foregroundColor: Color.appWhite.uiColor
+        ]
+        
+        UINavigationBar.appearance().tintColor = Color.appWhite.uiColor
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
+
 }
 
 #Preview {
-    let viewModel = HomeSceneModel(dataProvider: apiDataProvider)
-    return HomeScene(viewModel: viewModel)
+    let viewModel = HomeSceneModel()
+    return HomeScene(viewModel: viewModel) 
 }

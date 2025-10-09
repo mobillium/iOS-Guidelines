@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 public struct HorizontalRecipesHeaderView: View {
     
@@ -15,10 +14,23 @@ public struct HorizontalRecipesHeaderView: View {
     public var body: some View {
         HStack {
             HStack {
-                KFImage(URL(string: viewModel.categoryImageUrl) ?? URL(string: "https://")!)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
+                AsyncImage(url: URL(string: viewModel.categoryImageUrl)) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .transition(.opacity.animation(.easeIn(duration: 0.25)))
+                    case .failure:
+                        EmptyView()
+                    @unknown default:
+                        EmptyView()
+                    }
+                }
+                .frame(width: 24, height: 24)
                 
                 Text(viewModel.title ?? "")
                     .font(.font(.nunitoBold, size: .xxLarge))

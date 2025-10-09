@@ -8,14 +8,14 @@
 import SwiftUI
 
 enum RecipeDetailDestination: DestinationProtocol {
-    case recipeDetail
+    case recipeDetail(recipeId: Int)
 
     @MainActor
     @ViewBuilder
     var view: some View {
         switch self {
-        case .recipeDetail:
-            RecipeDetailScene(viewModel: RecipeDetailSceneModel(dataProvider: apiDataProvider))
+        case .recipeDetail(let recipeId):
+            RecipeDetailScene(viewModel: RecipeDetailSceneModel(recipeId: recipeId))
         }
     }
 }

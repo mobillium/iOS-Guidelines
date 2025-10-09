@@ -6,29 +6,47 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 public struct HorizontalRecipeView: View {
     
     var viewModel: any RecipeViewProtocol
-    let recipeDidTapped: (() -> Void)?
+    let recipeDidTapped: ((Int) -> Void)?
+    
+    public init(viewModel: any RecipeViewProtocol, recipeDidTapped: ((Int) -> Void)?) {
+        self.viewModel = viewModel
+        self.recipeDidTapped = recipeDidTapped
+    }
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://"))
-                .fade(duration: 0.15)
-                .resizable()
-                .aspectRatio(1.0, contentMode: .fit)
-                .cornerRadius(4)
-                .background(Color.appSecondaryBackground)
-                .clipped()
-                .overlay(
-                    VStack {
-                        UserInfoView(viewModel: viewModel.userViewModel)
-                            .padding([.leading, .top], 8)
-                        Spacer()
-                    }
-                )
+            
+            AsyncImage(url: URL(string: viewModel.imageUrl)) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .cornerRadius(4)
+                        .background(Color.appSecondaryBackground)
+                        .clipped()
+                        .transition(.opacity.animation(.easeIn(duration: 0.25)))
+                case .failure:
+                    EmptyView()
+                @unknown default:
+                    EmptyView()
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .aspectRatio(1.0, contentMode: .fit)
+            .overlay(
+                VStack {
+                    UserInfoView(viewModel: viewModel.userViewModel)
+                        .padding([.leading, .top], 8)
+                    Spacer()
+                }
+            )
             
             VStack(alignment: .leading) {
                 Text(viewModel.name)
@@ -51,13 +69,8 @@ public struct HorizontalRecipeView: View {
                 x: 0.0,
                 y: 0.0)
         .onTapGesture {
-            recipeDidTapped?()
+            recipeDidTapped?(viewModel.recipeId)
         }
-    }
-    
-    public init(viewModel: any RecipeViewProtocol, recipeDidTapped: (() -> Void)?) {
-        self.viewModel = viewModel
-        self.recipeDidTapped = recipeDidTapped
     }
 }
 
@@ -67,6 +80,7 @@ struct HorizontalRecipeView_Previews: PreviewProvider {
                                           username: "fodamy",
                                           stat: "3 Tarif 0 Takipçi")
         let viewModel = RecipeViewModel(userViewModel: userViewModel,
+                                        recipeId: 19,
                                         name: "Tarhana Çorbası",
                                         category: "Hamur İşi",
                                         imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",

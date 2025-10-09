@@ -9,9 +9,9 @@ import Combine
 
 class RootSceneModel: BaseSceneModel {
     
-    static let shared = RootSceneModel(dataProvider: apiDataProvider)
+    static let shared = RootSceneModel()
     
-    @Published var state: State = .splash(viewModel: SplashSceneModel(dataProvider: apiDataProvider))
+    @Published var state: State = .splash(viewModel: SplashSceneModel())
     
     enum State {
         case splash(viewModel: SplashSceneModel)

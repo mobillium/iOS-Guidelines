@@ -6,7 +6,10 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct ImageModel {
+import Foundation
+
+public struct ImageModel: Identifiable {
+    public var id = UUID()
     public let url: String?
     
     public init(url: String?) {

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 public struct UserView: View {
     
@@ -14,11 +13,25 @@ public struct UserView: View {
     
     public var body: some View {
         HStack {
-            KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://")!)
-                .resizable()
-                .frame(width: 40, height: 40)
-                .background(Color.appSecondaryBackground)
-                .clipShape(Circle())
+            AsyncImage(url: URL(string: viewModel.imageUrl)) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .frame(width: 40, height: 40)
+                        .background(Color.appSecondaryBackground)
+                        .clipShape(Circle())
+                        .transition(.opacity.animation(.easeIn(duration: 0.25)))
+                    
+                case .failure:
+                    EmptyView()
+                @unknown default:
+                    EmptyView()
+                }
+            }
+            .frame(width: 40, height: 40)
             
             VStack(alignment: .leading) {
                 Text(viewModel.username)

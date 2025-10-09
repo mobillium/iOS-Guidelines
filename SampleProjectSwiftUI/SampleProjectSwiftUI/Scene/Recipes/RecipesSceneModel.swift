@@ -22,9 +22,9 @@ class RecipesSceneModel: BaseSceneModel {
     private var page = 1
     private let recipeRepository = RecipeRepository(dataProvider: apiDataProvider)
     
-    init(dataProvider: DataProviderProtocol, listType: RecipeListType) {
+    init(listType: RecipeListType) {
         self.listType = listType
-        super.init(dataProvider: dataProvider)
+        super.init()
     }
     
     func fetchRecipes() async {

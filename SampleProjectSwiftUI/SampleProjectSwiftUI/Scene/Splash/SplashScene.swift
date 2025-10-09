@@ -29,7 +29,7 @@ struct SplashScene<ViewModel: SplashSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = SplashSceneModel(dataProvider: apiDataProvider)
+    let viewModel = SplashSceneModel()
     let view = SplashScene(viewModel: viewModel)
     return view
 }

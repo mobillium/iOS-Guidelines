@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 
 public struct RecipeView: View {
     
@@ -16,12 +15,12 @@ public struct RecipeView: View {
         VStack(alignment: .leading, spacing: 12) {
             UserView(viewModel: viewModel.userViewModel)
                 .padding(-16)
-            Rectangle()
-                .frame(height: 1)
+            
+            Divider()
                 .foregroundColor(.appSeparator)
                 .padding([.leading, .trailing], -16)
             
-            VStack {
+            VStack(alignment: .leading) {
                 Text(viewModel.name)
                     .font(.font(.nunitoBold, size: .xLarge))
                     .foregroundColor(.appCinder)
@@ -31,36 +30,15 @@ public struct RecipeView: View {
                     .foregroundColor(.appRaven)
             }
             
-            KFImage(URL(string: viewModel.imageUrl) ?? URL(string: "https://"))
-                .fade(duration: 0.15)
-                .resizable()
-                .aspectRatio(1.0, contentMode: .fit)
+            RecipeImageView(imageUrl: viewModel.imageUrl)
                 .cornerRadius(4)
-                .background(Color.appSecondaryBackground)
-                .clipped()
+                .aspectRatio(1, contentMode: .fit)
                 .overlay(
-                    VStack {
-                        HStack {
-                            Spacer()
-                            if viewModel.isEditorChoice {
-                                Image.imgEditorsPick
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 24, height: 24)
-                                    .padding(.init(top: 8, leading: 8, bottom: 8, trailing: 8))
-                                    .background(Color.appPrimaryBackground)
-                                    .clipShape(Circle())
-                            } else {
-                                Rectangle()
-                                    .frame(width: 0, height: 0)
-                            }
+                    ZStack {
+                        if viewModel.isEditorChoice {
+                            EditorChoiceBadgeView()
                         }
-                        .padding(.trailing, 15)
-
-                        Spacer()
                     }
-                        .padding(.top, 15)
-
                 )
             
             Text(viewModel.stat)
@@ -82,6 +60,7 @@ struct RecipeView_Previews: PreviewProvider {
                                           username: "fodamy",
                                           stat: "3 Tarif 0 Takipçi")
         let viewModel = RecipeViewModel(userViewModel: userViewModel,
+                                        recipeId: 19,
                                         name: "Tarhana Çorbası",
                                         category: "Hamur İşi",
                                         imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",

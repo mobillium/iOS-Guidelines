@@ -10,10 +10,10 @@ import MobilliumUserDefaults
 class SplashSceneModel: BaseSceneModel {
     func checkState() {
         if DefaultsKey.isFirstStart.has {
-            let viewModel = MainTabSceneModel(dataProvider: apiDataProvider)
+            let viewModel = MainTabSceneModel()
             RootSceneModel.shared.state = .mainTab(viewModel: viewModel)
         } else {
-            let viewModel = OnboardingSceneModel(dataProvider: apiDataProvider)
+            let viewModel = OnboardingSceneModel()
             RootSceneModel.shared.state = .onboarding(viewModel: viewModel)
         }
         

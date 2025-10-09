@@ -27,8 +27,9 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                             Rectangle()
                                 .frame(height: 1)
                                 .foregroundColor(.appSeparator)
-                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel) {
-                                router.navigate(to: FavoritesDestinations.recipeDetail)
+                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel) { recipeId in
+                                let destination = FavoritesDestinations.recipeDetail(recipeId: recipeId)
+                                router.navigate(to: destination)
                             }
                         }
                         .padding(.bottom, 16)
@@ -60,6 +61,6 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = FavoritesSceneModel(dataProvider: apiDataProvider)
+    let viewModel = FavoritesSceneModel()
     return FavoritesScene(viewModel: viewModel)
 }

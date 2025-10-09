@@ -47,7 +47,7 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
                     Button(buttonTitle) {
                         if currentPage >= viewModel.numberOfPages - 1 {
                             DefaultsKey.isFirstStart.value = false
-                            let viewModel = MainTabSceneModel(dataProvider: apiDataProvider)
+                            let viewModel = MainTabSceneModel()
                             RootSceneModel.shared.state = .mainTab(viewModel: viewModel)
                         } else {
                             currentPage += 1
@@ -78,8 +78,7 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = OnboardingSceneModel(dataProvider: apiDataProvider)
+    let viewModel = OnboardingSceneModel()
     let view = OnboardingScene(viewModel: viewModel)
-        .previewDevice(PreviewDevice(stringLiteral: DeviceName.iPhone_SE.rawValue))
     return view
 }

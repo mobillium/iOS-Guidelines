@@ -40,7 +40,7 @@ struct BaseScene<Content: View, ViewModel: BaseSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = BaseSceneModel(dataProvider: apiDataProvider)
+    let viewModel = BaseSceneModel()
     return BaseScene(content: {
         
     }, viewModel: viewModel)

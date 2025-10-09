@@ -10,7 +10,13 @@ import SwiftUI
 public struct HorizontalRecipesView: View {
     
     var viewModel: any HorizontalRecipesViewProtocol
-    let recipeDidTapped: (() -> Void)?
+    let recipeDidTapped: ((Int) -> Void)?
+    
+    public init(viewModel: any HorizontalRecipesViewProtocol,
+                recipeDidTapped: ((Int) -> Void)?) {
+        self.viewModel = viewModel
+        self.recipeDidTapped = recipeDidTapped
+    }
     
     public var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -24,11 +30,6 @@ public struct HorizontalRecipesView: View {
         }
         .background(Color.appPrimaryBackground)
     }
-    
-    public init(viewModel: any HorizontalRecipesViewProtocol, recipeDidTapped: (() -> Void)?) {
-        self.viewModel = viewModel
-        self.recipeDidTapped = recipeDidTapped
-    }
 }
 
 struct HorizontalRecipesView_Previews: PreviewProvider {
@@ -37,6 +38,7 @@ struct HorizontalRecipesView_Previews: PreviewProvider {
                                           username: "fodamy",
                                           stat: "3 Tarif 0 Takipçi")
         let recipeViewModel = RecipeViewModel(userViewModel: userViewModel,
+                                              recipeId: 1,
                                               name: "Tarhana Çorbası",
                                               category: "Hamur İşi",
                                               imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",

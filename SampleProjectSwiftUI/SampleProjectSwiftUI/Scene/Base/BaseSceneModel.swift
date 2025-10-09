@@ -13,12 +13,8 @@ class BaseSceneModel: ObservableObject {
     @Published var showLoading = false
     @Published var showFullScreenLoading = false
     @Published var showTryAgainButton = false
-    
-    private var dataProvider: DataProviderProtocol
-    
-    init(dataProvider: DataProviderProtocol) {
-        self.dataProvider = dataProvider
-    }
+        
+    init() {}
     
     func tryAgainButtonAction() {}
     

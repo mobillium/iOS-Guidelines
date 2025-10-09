@@ -14,6 +14,7 @@ extension RecipeViewModel {
         let userViewModel = UserViewModel(recipe: recipe)
         let stat = L10n.Home.recipeCommnetAndLikeCount(recipe.commentCount, recipe.likeCount)
         self.init(userViewModel: userViewModel,
+                  recipeId: recipe.id,
                   name: recipe.title ?? "",
                   category: recipe.category.name ?? "",
                   imageUrl: recipe.images.first?.url ?? "",
