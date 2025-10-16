@@ -29,7 +29,7 @@ public struct HorizontalRecipeView: View {
                         .resizable()
                         .aspectRatio(1.0, contentMode: .fit)
                         .cornerRadius(4)
-                        .background(Color.appSecondaryBackground)
+                        .background(Color.appElevation1)
                         .clipped()
                         .transition(.opacity.animation(.easeIn(duration: 0.25)))
                 case .failure:
@@ -51,20 +51,20 @@ public struct HorizontalRecipeView: View {
             VStack(alignment: .leading) {
                 Text(viewModel.name)
                     .font(.font(.nunitoBold, size: .xLarge))
-                    .foregroundColor(.appCinder)
+                    .foregroundColor(.appFocus)
                     .lineLimit(1)
                 
                 Text(viewModel.stat)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
-                    .foregroundColor(.appRaven)
+                    .foregroundColor(.appText)
             }
             .padding([.leading, .trailing], 8)
             .padding([.bottom, .top], 12)
             
         }
         .cornerRadius(6)
-        .background(Color.appPrimaryBackground)
-        .shadow(color: Color.appShadow.opacity(0.25),
+        .background(Color.appPureWhite)
+        .shadow(color: Color.appFocus.opacity(0.25),
                 radius: 6.0,
                 x: 0.0,
                 y: 0.0)

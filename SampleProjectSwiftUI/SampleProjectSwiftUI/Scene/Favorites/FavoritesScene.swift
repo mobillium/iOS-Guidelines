@@ -24,9 +24,8 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                     ForEach(viewModel.viewModels) { viewModel in
                         VStack(alignment: .leading, spacing: 0) {
                             HorizontalRecipesHeaderView(viewModel: viewModel.headerViewModel)
-                            Rectangle()
-                                .frame(height: 1)
-                                .foregroundColor(.appSeparator)
+                            Divider()
+                                .foregroundColor(.appElevation2)
                             HorizontalRecipesView(viewModel: viewModel.recipesViewModel) { recipeId in
                                 let destination = FavoritesDestinations.recipeDetail(recipeId: recipeId)
                                 router.navigate(to: destination)
@@ -38,7 +37,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
             }, viewModel: viewModel)
             .navigationDestination(for: FavoritesDestinations.self)
             .frame(width: UIScreen.main.bounds.size.width)
-            .background(Color.appSecondaryBackground)
+            .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal, content: {
@@ -46,7 +45,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                         .resizable()
                         .frame(width: 110, height: 30)
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.appWhite)
+                        .foregroundColor(.appPureWhite)
                 })
             }
         }

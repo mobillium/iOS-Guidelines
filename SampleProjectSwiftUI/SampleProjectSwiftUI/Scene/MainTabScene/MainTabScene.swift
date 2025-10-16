@@ -7,6 +7,7 @@
 
 import Combine
 import SwiftUI
+import Components
 
 struct MainTabScene<ViewModel: MainTabSceneModel>: View {
     
@@ -23,7 +24,7 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
                 .tabItem {
                     Image("ic_home")
                         .renderingMode(.template)
-                        .foregroundColor(.appCinder)
+                        .foregroundColor(.appFocus)
                 }
                 .tag(0)
             
@@ -31,16 +32,16 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
                 .tabItem {
                     Image("ic_heart")
                         .renderingMode(.template)
-                        .foregroundColor(.appCinder)
+                        .foregroundColor(.appFocus)
                 }
                 .tag(1)
         }
-        .accentColor(.appRed)
+        .accentColor(.appPrimary)
     }
     
     func setupAppearance() {
         let appearance = UITabBarAppearance()
-        appearance.backgroundColor = Color.appWhite.uiColor
+        appearance.backgroundColor = Color.appPureWhite.uiColor
         UITabBar.appearance().standardAppearance = appearance
         if #available(iOS 15.0, *) {
             UITabBar.appearance().scrollEdgeAppearance = appearance

@@ -34,7 +34,7 @@ public struct HorizontalRecipesHeaderView: View {
                 
                 Text(viewModel.title ?? "")
                     .font(.font(.nunitoBold, size: .xxLarge))
-                    .foregroundColor(.appCinder)
+                    .foregroundColor(.appFocus)
             }
 
             Spacer()
@@ -42,12 +42,12 @@ public struct HorizontalRecipesHeaderView: View {
             Button("TÜMÜNÜ GÖR") {
                 
             }
-            .foregroundColor(.appRed)
+            .foregroundColor(.appPrimary)
             .font(.font(.nunitoBold, size: .xxLarge))
         }
         .padding([.leading, .trailing], 16)
         .frame(height: 48)
-        .background(Color.appPrimaryBackground)
+        .background(Color.appPureWhite)
     }
     
     public init(viewModel: any HorizontalRecipesHeaderViewProtocol) {

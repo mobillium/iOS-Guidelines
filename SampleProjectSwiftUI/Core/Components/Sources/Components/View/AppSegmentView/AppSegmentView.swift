@@ -10,6 +10,7 @@ import SwiftUI
 public struct AppSegmentView: View {
     
     @State var spearatorLeading: CGFloat = 0
+    @State var separatorWidth: CGFloat = 0
     @Binding var selectedIndex: Int
     @Binding var options: [String]
     
@@ -28,13 +29,13 @@ public struct AppSegmentView: View {
                             HStack {
                                 Spacer()
                                 Text(options[index])
-                                    .foregroundColor(isSelected ? Color.appRed : Color.appCinder)
+                                    .foregroundColor(isSelected ? Color.appPrimary : Color.appFocus)
                                     .font(.font(.nunitoBold, size: .medium))
                                     .padding()
                                 Spacer()
                             }
                         }
-                        .background(Color.appPrimaryBackground)
+                        .background(Color.appPureWhite)
                         .onTapGesture {
                             self.selectedIndex = index
                             self.calculateSeparatorLeading(geometry: geometry, selectedIndex: index)
@@ -46,29 +47,35 @@ public struct AppSegmentView: View {
                     Spacer()
                     HStack {
                         Rectangle()
-                            .cornerRadius(1)
-                            .foregroundColor(Color.appRed)
-                            .frame(width: getSeparatorWidth(geometry: geometry), height: 2)
+                            .foregroundColor(Color.appPrimary)
+                            .frame(width: separatorWidth, height: 2)
                             .offset(x: spearatorLeading, y: 0)
                         Spacer()
                     }
                     .frame(height: 2)
                 }
-
+                .onAppear {
+                    DispatchQueue.main.async {
+                        calculateSeparatorWidth(geometry: geometry)
+                    }
+                }
+                
             }
             .onAppear {
-                self.calculateSeparatorLeading(geometry: geometry, selectedIndex: selectedIndex)
+                DispatchQueue.main.async {
+                    calculateSeparatorLeading(geometry: geometry, selectedIndex: selectedIndex)
+                }
             }
         }
-        .background(Color.appSeparator)
+        .background(Color.appElevation2)
         .frame(height: 46)
     }
     
-    private func getSeparatorWidth(geometry: GeometryProxy) -> CGFloat {
+    private func calculateSeparatorWidth(geometry: GeometryProxy) {
         let segmentCount = options.count.toCGFloat
         let width = geometry.size.width - (segmentCount - 1)
         let separatorWidth = (width / segmentCount) / 3
-        return separatorWidth
+        self.separatorWidth = separatorWidth
     }
     
     private func calculateSeparatorLeading(geometry: GeometryProxy, selectedIndex: Int) {

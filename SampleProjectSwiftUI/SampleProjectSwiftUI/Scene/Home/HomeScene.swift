@@ -43,6 +43,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                 }
             }, viewModel: viewModel)
             .navigationDestination(for: HomeDestinations.self)
+            .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal, content: {
@@ -50,7 +51,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                         .resizable()
                         .frame(width: 110, height: 30)
                         .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.appWhite)
+                        .foregroundColor(.appPureWhite)
                 })
             }
         }
@@ -61,9 +62,9 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     func setupAppearance() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = Color.appRed.uiColor
+        appearance.backgroundColor = Color.appPrimary.uiColor
         appearance.titleTextAttributes = [
-            .foregroundColor: Color.appWhite.uiColor,
+            .foregroundColor: Color.appPureWhite.uiColor,
             .font: Font.uiFont(.nunitoExtraBold, size: .medium)
         ]
         
@@ -74,10 +75,10 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
         )
 
         appearance.backButtonAppearance.normal.titleTextAttributes = [
-            .foregroundColor: Color.appWhite.uiColor
+            .foregroundColor: Color.appPureWhite.uiColor
         ]
         
-        UINavigationBar.appearance().tintColor = Color.appWhite.uiColor
+        UINavigationBar.appearance().tintColor = Color.appPureWhite.uiColor
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().compactAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance

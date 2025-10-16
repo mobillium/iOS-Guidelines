@@ -22,11 +22,11 @@ public struct OnboardingView: View {
                 
                 VStack(spacing: 10) {
                     Text(viewModel.title)
-                        .foregroundColor(Color.appCinder)
+                        .foregroundColor(.appFocus)
                         .font(.font(.nunitoBold, size: .xxLarge))
                                     
                     Text(viewModel.description)
-                        .foregroundColor(Color.appCinder)
+                        .foregroundColor(.appText)
                         .font(.font(.nunitoSemiBold, size: .xLarge))
                 }
             }

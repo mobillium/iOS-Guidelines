@@ -72,8 +72,8 @@ struct OnboardingScene<ViewModel: OnboardingSceneModel>: View {
     
     func setupAppearance() {
         UIScrollView.appearance().bounces = false
-        UIPageControl.appearance().currentPageIndicatorTintColor = Color.appRed.uiColor
-        UIPageControl.appearance().pageIndicatorTintColor = Color.appRed.uiColor.withAlphaComponent(0.3)
+        UIPageControl.appearance().currentPageIndicatorTintColor = Color.appPrimary.uiColor
+        UIPageControl.appearance().pageIndicatorTintColor = Color.appPrimary.uiColor.withAlphaComponent(0.3)
     }
 }
 

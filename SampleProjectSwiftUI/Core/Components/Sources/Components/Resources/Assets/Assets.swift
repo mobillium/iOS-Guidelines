@@ -25,18 +25,15 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum Asset {
     public enum Colors {
+        public static let appAction1 = ColorAsset(name: "appAction1")
+        public static let appAction2 = ColorAsset(name: "appAction2")
+        public static let appElevation0 = ColorAsset(name: "appElevation0")
+        public static let appElevation1 = ColorAsset(name: "appElevation1")
+        public static let appElevation2 = ColorAsset(name: "appElevation2")
         public static let appFocus = ColorAsset(name: "appFocus")
-        public static let appPrimaryBackground = ColorAsset(name: "appPrimaryBackground")
-        public static let appSecondaryBackground = ColorAsset(name: "appSecondaryBackground")
-        public static let appCinder = ColorAsset(name: "appCinder")
-        public static let appHeather = ColorAsset(name: "appHeather")
-        public static let appRaven = ColorAsset(name: "appRaven")
-        public static let appRed = ColorAsset(name: "appRed")
-        public static let appSeparator = ColorAsset(name: "appSeparator")
-        public static let appShadow = ColorAsset(name: "appShadow")
-        public static let appWhite = ColorAsset(name: "appWhite")
-        public static let appYellow = ColorAsset(name: "appYellow")
-        public static let appZircon = ColorAsset(name: "appZircon")
+        public static let appPrimary = ColorAsset(name: "appPrimary")
+        public static let appPureBlack = ColorAsset(name: "appPureBlack")
+        public static let appPureWhite = ColorAsset(name: "appPureWhite")
         public static let appText = ColorAsset(name: "appText")
     }
     public enum Icons {

@@ -24,7 +24,7 @@ public struct RecipeImageView: View {
                 image
                     .resizable()
                     .aspectRatio(1.0, contentMode: .fit)
-                    .background(Color.appSecondaryBackground)
+                    .background(Color.appElevation1)
                     .clipped()
                     .transition(.opacity.animation(.easeIn(duration: 0.25)))
             case .failure:

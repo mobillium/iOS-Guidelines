@@ -14,12 +14,12 @@ struct SplashScene<ViewModel: SplashSceneModel>: View {
     var body: some View {
         BaseScene(content: {
             
-            Color.appRed
+            Color.appPrimary
                 .ignoresSafeArea()
             
             Image("fodamy-logo")
                 .padding([.leading, .trailing], 64)
-                .foregroundColor(.appWhite)
+                .foregroundColor(.appPureWhite)
             
         }, viewModel: viewModel)
         .onAppear {

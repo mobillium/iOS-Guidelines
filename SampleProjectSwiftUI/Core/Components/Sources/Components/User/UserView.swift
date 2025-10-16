@@ -21,7 +21,7 @@ public struct UserView: View {
                     image
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .background(Color.appSecondaryBackground)
+                        .background(Color.appElevation1)
                         .clipShape(Circle())
                         .transition(.opacity.animation(.easeIn(duration: 0.25)))
                     
@@ -36,11 +36,11 @@ public struct UserView: View {
             VStack(alignment: .leading) {
                 Text(viewModel.username)
                     .font(.font(.nunitoBold, size: .medium))
-                    .foregroundColor(.appCinder)
+                    .foregroundColor(.appFocus)
                 
                 Text(viewModel.stat)
                     .font(.font(.nunitoSemiBold, size: .medium))
-                    .foregroundColor(.appRaven)
+                    .foregroundColor(.appText)
             }
             Spacer()
         }

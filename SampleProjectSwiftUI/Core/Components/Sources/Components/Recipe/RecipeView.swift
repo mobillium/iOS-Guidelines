@@ -17,17 +17,17 @@ public struct RecipeView: View {
                 .padding(-16)
             
             Divider()
-                .foregroundColor(.appSeparator)
+                .foregroundColor(.appElevation2)
                 .padding([.leading, .trailing], -16)
             
             VStack(alignment: .leading) {
                 Text(viewModel.name)
                     .font(.font(.nunitoBold, size: .xLarge))
-                    .foregroundColor(.appCinder)
+                    .foregroundColor(.appFocus)
                 
                 Text(viewModel.category)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
-                    .foregroundColor(.appRaven)
+                    .foregroundColor(.appText)
             }
             
             RecipeImageView(imageUrl: viewModel.imageUrl)
@@ -43,9 +43,10 @@ public struct RecipeView: View {
             
             Text(viewModel.stat)
                 .font(.font(.nunitoSemiBold, size: .medium))
-                .foregroundColor(.appRaven)
+                .foregroundColor(.appText)
         }
         .padding(16)
+        .background(Color.appPureWhite)
         
     }
     

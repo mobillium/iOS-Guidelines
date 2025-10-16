@@ -28,7 +28,7 @@ public struct HorizontalRecipesView: View {
             }
             .padding(16)
         }
-        .background(Color.appPrimaryBackground)
+        .background(Color.appPureWhite)
     }
 }
 

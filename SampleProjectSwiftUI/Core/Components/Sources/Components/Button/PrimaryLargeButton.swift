@@ -17,8 +17,8 @@ public struct PrimaryLargeButton: ButtonStyle {
             .frame(height: 60)
             .padding(.leading, 16)
             .padding(.trailing, 16)
-            .background(Color.appRed)
-            .foregroundColor(Color.appWhite)
+            .background(Color.appPrimary)
+            .foregroundColor(Color.appPureWhite)
             .font(.font(.nunitoBold, size: .xLarge))
             .cornerRadius(4)
     }

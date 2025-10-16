@@ -5,57 +5,44 @@ import SwiftUI
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public extension Color {
+    static var appAction1: Color {
+        return Asset.Colors.appAction1.swiftUIColor
+    }
     
-    static var appText: Color {
-        return Asset.Colors.appText.swiftUIColor
+    static var appAction2: Color {
+        return Asset.Colors.appAction2.swiftUIColor
+    }
+    
+    static var appElevation0: Color {
+        return Asset.Colors.appElevation0.swiftUIColor
+    }
+    
+    static var appElevation1: Color {
+        return Asset.Colors.appElevation1.swiftUIColor
+    }
+    
+    static var appElevation2: Color {
+        return Asset.Colors.appElevation2.swiftUIColor
     }
     
     static var appFocus: Color {
         return Asset.Colors.appFocus.swiftUIColor
     }
     
-    static var appPrimaryBackground: Color {
-        return Asset.Colors.appPrimaryBackground.swiftUIColor
+    static var appPrimary: Color {
+        return Asset.Colors.appPrimary.swiftUIColor
     }
     
-    static var appSecondaryBackground: Color {
-        return Asset.Colors.appSecondaryBackground.swiftUIColor
+    static var appPureBlack: Color {
+        return Asset.Colors.appPureBlack.swiftUIColor
     }
     
-    static var appCinder: Color {
-        return Asset.Colors.appCinder.swiftUIColor
+    static var appPureWhite: Color {
+        return Asset.Colors.appPureWhite.swiftUIColor
     }
     
-    static var appHeather: Color {
-        return Asset.Colors.appHeather.swiftUIColor
-    }
-    
-    static var appRaven: Color {
-        return Asset.Colors.appRaven.swiftUIColor
-    }
-    
-    static var appRed: Color {
-        return Asset.Colors.appRed.swiftUIColor
-    }
-    
-    static var appSeparator: Color {
-        return Asset.Colors.appSeparator.swiftUIColor
-    }
-    
-    static var appShadow: Color {
-        return Asset.Colors.appShadow.swiftUIColor
-    }
-    
-    static var appWhite: Color {
-        return Asset.Colors.appWhite.swiftUIColor
-    }
-    
-    static var appYellow: Color {
-        return Asset.Colors.appYellow.swiftUIColor
-    }
-    
-    static var appZircon: Color {
-        return Asset.Colors.appZircon.swiftUIColor
+    static var appText: Color {
+        return Asset.Colors.appText.swiftUIColor
     }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
