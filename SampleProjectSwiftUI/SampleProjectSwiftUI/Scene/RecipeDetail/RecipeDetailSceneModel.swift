@@ -18,6 +18,9 @@ class RecipeDetailSceneModel: BaseSceneModel {
     @Published var categoryName: String = ""
     @Published var timeStamp: String = ""
     @Published var isEditorChoice = false
+    @Published var user: User?
+    @Published var commentCount: Int = 0
+    @Published var likeCount: Int = 0
     
     private let recipeId: Int
     private var page = 1
@@ -39,6 +42,9 @@ class RecipeDetailSceneModel: BaseSceneModel {
             categoryName = response.category.name ?? ""
             isEditorChoice = response.isEditorChoice
             timeStamp = response.timeDifference ?? ""
+            user = response.user
+            commentCount = response.commentCount
+            likeCount = response.likeCount
         case .failure:
 //                self.showWarningToast?(error.localizedDescription)
             break

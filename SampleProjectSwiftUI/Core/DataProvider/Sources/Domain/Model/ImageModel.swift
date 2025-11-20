@@ -9,7 +9,7 @@
 import Foundation
 
 public struct ImageModel: Identifiable {
-    public var id = UUID()
+    public let id = UUID()
     public let url: String?
     
     public init(url: String?) {

@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Components",
     platforms: [
-        .iOS(.v16)
+        .iOS(.v17)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -16,6 +16,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "./Utilities"),
+        .package(path: "./DataProvider"),
         .package(url: "https://github.com/onevcat/Kingfisher", "7.0.0"..."8.0.0")
     ],
     targets: [
@@ -24,6 +25,7 @@ let package = Package(
         .target(
             name: "Components",
             dependencies: [
+                .product(name: "Domain", package: "DataProvider"),
                 "Utilities",
                 "Kingfisher"
             ],

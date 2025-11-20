@@ -17,20 +17,29 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     var body: some View {
         BaseScene(content: {
             ScrollView(.vertical) {
-                VStack {
+                VStack(spacing: 0) {
                     imagesView
                     headerView
                     Divider()
+                    statsView
+                    
+                    Spacer(minLength: 20)
+                    
+                    if let user = viewModel.user {
+                        UserFollowView(user: user, stat: "\(user.recipeCount) Tarif \(user.followedCount) Takipçi")
+                    }
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
         }, viewModel: viewModel)
+        .toolbar(.hidden, for: .tabBar)
         .onAppear {
             Task { @MainActor in
                 await viewModel.fetchRecipe()
             }
         }
         .navigationTitle(viewModel.recipeName)
+        .background(Color.appElevation1)
     }
     
     var imagesView: some View {
@@ -81,10 +90,24 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                 .font(.font(.nunitoBold, size: .xxLarge))
                 .foregroundStyle(Color.appText)
         }
+        .padding([.top, .bottom], 12)
+        .background(Color.appPureWhite)
     }
+    
+    var statsView: some View {
+        HStack(alignment: .center) {
+            StatView(imageName: "ic_comment", count: viewModel.commentCount, stat: "Yorum")
+                .frame(maxWidth: .infinity)
+            Divider()
+            StatView(imageName: "ic_heart", count: viewModel.likeCount, stat: "Beğeni")
+                .frame(maxWidth: .infinity)
+        }
+        .background(Color.appPureWhite)
+    }
+
 }
 
 #Preview {
-    let viewModel = RecipeDetailSceneModel(recipeId: 1)
+    let viewModel = RecipeDetailSceneModel(recipeId: 5)
     return RecipeDetailScene(viewModel: viewModel)
 }

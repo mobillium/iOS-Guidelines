@@ -52,12 +52,16 @@ public struct UserView: View {
     }
 }
 
-struct UserView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview(traits: .sizeThatFitsLayout) {
+    struct UserViewPreview: View {
         let viewModel = UserViewModel(imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
                                       username: "fodamy",
                                       stat: "3 Tarif 0 Takipçi")
-        let view = UserView(viewModel: viewModel)
-        return view
+        
+        var body: some View {
+            UserView(viewModel: viewModel)
+        }
     }
+    return UserViewPreview()
+
 }
