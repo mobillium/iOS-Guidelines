@@ -28,6 +28,14 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                     if let user = viewModel.user {
                         UserFollowView(user: user, stat: "\(user.recipeCount) Tarif \(user.followedCount) Takipçi")
                     }
+                    
+                    Spacer(minLength: 20)
+                    
+                    ingredientsView
+                    
+                    Spacer(minLength: 20)
+                    
+                    instructionsView
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -104,7 +112,24 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
         }
         .background(Color.appPureWhite)
     }
-
+    
+    var ingredientsView: some View {
+        RecipeDetailDescriptionSectionView(
+            title: viewModel.ingredientsTitle,
+            topRightImageName: viewModel.ingredientsIconName,
+            topRightText: viewModel.numberOfPerson,
+            contentText: viewModel.ingredients
+        )
+    }
+    
+    var instructionsView: some View {
+        RecipeDetailDescriptionSectionView(
+            title: viewModel.instructionsTitle,
+            topRightImageName: viewModel.instructionsIconName,
+            topRightText: viewModel.timeOfRecipe,
+            contentText: viewModel.instructions
+        )
+    }
 }
 
 #Preview {

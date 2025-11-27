@@ -21,6 +21,15 @@ class RecipeDetailSceneModel: BaseSceneModel {
     @Published var user: User?
     @Published var commentCount: Int = 0
     @Published var likeCount: Int = 0
+    @Published var ingredients: String = ""
+    @Published var numberOfPerson: String = ""
+    @Published var instructions: String = ""
+    @Published var timeOfRecipe: String = ""
+    
+    let ingredientsTitle: String = "Malzemeler"
+    let instructionsTitle: String = "Yapılışı"
+    let ingredientsIconName: String = "ic_restaurant"
+    let instructionsIconName: String = "ic_clock"
     
     private let recipeId: Int
     private var page = 1
@@ -45,6 +54,10 @@ class RecipeDetailSceneModel: BaseSceneModel {
             user = response.user
             commentCount = response.commentCount
             likeCount = response.likeCount
+            ingredients = response.ingredients ?? ""
+            numberOfPerson = response.numberOfPerson.text ?? ""
+            instructions = response.instructions ?? ""
+            timeOfRecipe = (response.timeOfRecipe.text ?? "-") + " dk"
         case .failure:
 //                self.showWarningToast?(error.localizedDescription)
             break
