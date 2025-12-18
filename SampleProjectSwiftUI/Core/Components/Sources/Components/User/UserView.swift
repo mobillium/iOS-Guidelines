@@ -62,8 +62,19 @@ public struct UserView: View {
             stat: "3 Tarif 0 Takipçi"
         )
         
+        let viewModel2 = UserViewModel(
+            imageUrl: nil,
+            username: "fodamy",
+            stat: "3 Tarif 0 Takipçi"
+        )
+        
         var body: some View {
-            UserView(viewModel: viewModel)
+            VStack(spacing: 0) {
+                UserView(viewModel: viewModel)
+                Divider()
+                UserView(viewModel: viewModel2)
+            }
+            
         }
     }
     return UserViewPreview()

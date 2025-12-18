@@ -15,8 +15,20 @@ public struct RecipeCommentView: View {
     var commentDate: String?
     var comment: String?
     
+    public init(userName: String? = nil,
+                userImageUrl: String? = nil,
+                userStat: String,
+                commentDate: String? = nil,
+                comment: String? = nil) {
+        self.userName = userName
+        self.userImageUrl = userImageUrl
+        self.userStat = userStat
+        self.commentDate = commentDate
+        self.comment = comment
+    }
+    
     public var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             UserView(
                 viewModel: UserViewModel(
                     imageUrl: userImageUrl,
@@ -49,6 +61,7 @@ public struct RecipeCommentView: View {
                     .padding(.horizontal, 16)
             }
         }
+        .padding(.vertical, 12)
     }
 }
 

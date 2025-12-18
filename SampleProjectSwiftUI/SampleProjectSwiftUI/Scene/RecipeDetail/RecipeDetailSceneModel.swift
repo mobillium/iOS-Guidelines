@@ -32,7 +32,7 @@ class RecipeDetailSceneModel: BaseSceneModel {
     let ingredientsIconName: String = "ic_restaurant"
     let instructionsIconName: String = "ic_clock"
     
-    private let recipeId: Int
+    let recipeId: Int
     private var page = 1
     private let recipeRepository = RecipeRepository(dataProvider: apiDataProvider)
     

@@ -16,7 +16,7 @@ public struct RecipeDetailCommentsSectionView: View {
     
     public init(title: String, recipeComments: [RecipeComment]) {
         self.title = title
-        self.recipeComments = Array(recipeComments.prefix(3))
+        self.recipeComments = Array(recipeComments)
     }
     
     public var body: some View {

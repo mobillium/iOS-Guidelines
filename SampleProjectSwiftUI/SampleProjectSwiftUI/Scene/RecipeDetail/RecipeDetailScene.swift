@@ -8,11 +8,13 @@
 import Combine
 import SwiftUI
 import Components
+import Router
 
 struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     
     @StateObject var viewModel: ViewModel
     @State private var currentPage: Int = 0
+    @EnvironmentObject private var router: Router
     
     var body: some View {
         BaseScene(content: {
@@ -40,6 +42,10 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                     Spacer(minLength: 20)
                     
                     recipeCommentsView
+                    
+                    Spacer(minLength: 20)
+    
+                    addCommentButton
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -140,6 +146,16 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
             title: "Yorumlar",
             recipeComments: Array(viewModel.recipeComments.prefix(3))
         )
+    }
+    
+    var addCommentButton: some View {
+        Button("Yorum Ekle") {
+            let recipeId = viewModel.recipeId
+            let destination = HomeDestinations.recipeComments(recipeId: recipeId)
+            self.router.navigate(to: destination)
+        }
+        .buttonStyle(PrimaryLargeButton())
+        .padding(.horizontal, 20)
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 enum HomeDestinations: DestinationProtocol {
     case recipeDetail(recipeId: Int)
+    case recipeComments(recipeId: Int)
 
     @MainActor
     @ViewBuilder
@@ -16,6 +17,8 @@ enum HomeDestinations: DestinationProtocol {
         switch self {
         case .recipeDetail(let recipeId):
             RecipeDetailDestination.recipeDetail(recipeId: recipeId).view
+        case .recipeComments(let recipeId):
+            RecipeCommentsDestination.recipeComments(recipeId: recipeId).view
         }
     }
 }
