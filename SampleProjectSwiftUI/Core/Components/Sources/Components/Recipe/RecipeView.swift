@@ -57,16 +57,20 @@ public struct RecipeView: View {
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        let userViewModel = UserViewModel(imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-                                          username: "fodamy",
-                                          stat: "3 Tarif 0 Takipçi")
-        let viewModel = RecipeViewModel(userViewModel: userViewModel,
-                                        recipeId: 19,
-                                        name: "Tarhana Çorbası",
-                                        category: "Hamur İşi",
-                                        imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-                                        stat: "O Yorum O Beğeni",
-                                        isEditorChoice: true)
+        let userViewModel = UserViewModel(
+            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+            username: "fodamy",
+            stat: "3 Tarif 0 Takipçi"
+        )
+        let viewModel = RecipeViewModel(
+            userViewModel: userViewModel,
+            recipeId: 19,
+            name: "Tarhana Çorbası",
+            category: "Hamur İşi",
+            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+            stat: "O Yorum O Beğeni",
+            isEditorChoice: true
+        )
         let view = RecipeView(viewModel: viewModel)
         return view
     }

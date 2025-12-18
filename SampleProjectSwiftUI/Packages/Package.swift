@@ -15,7 +15,7 @@ let package = Package(
             targets: ["UIComponentsPackages"]),
         .library(
             name: "SampleProjectSwiftUIPackages",
-            targets: ["SampleProjectSwiftUIPackages"]),
+            targets: ["SampleProjectSwiftUIPackages"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -23,8 +23,7 @@ let package = Package(
         .package(url: "https://github.com/mobillium/MobilliumUserDefaults", "2.0.0"..."3.0.0"),
         .package(url: "https://github.com/onevcat/Kingfisher", "7.0.0"..."8.0.0"),
         .package(url: "https://github.com/Alamofire/Alamofire", "5.0.0"..."6.0.0"),
-        .package(url: "https://github.com/evgenyneu/keychain-swift", "20.0.0"..."21.0.0"),
-        
+        .package(url: "https://github.com/evgenyneu/keychain-swift", "20.0.0"..."21.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -39,7 +38,7 @@ let package = Package(
             dependencies: [
                 "MobilliumUserDefaults",
                 "Alamofire",
-            ],
-        ),
+            ]
+        )
     ]
 )

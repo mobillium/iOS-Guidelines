@@ -25,6 +25,7 @@ class RecipeDetailSceneModel: BaseSceneModel {
     @Published var numberOfPerson: String = ""
     @Published var instructions: String = ""
     @Published var timeOfRecipe: String = ""
+    @Published var recipeComments: [RecipeComment] = []
     
     let ingredientsTitle: String = "Malzemeler"
     let instructionsTitle: String = "Yapılışı"
@@ -43,6 +44,7 @@ class RecipeDetailSceneModel: BaseSceneModel {
     func fetchRecipe() async {
         showLoading = true
         let result = await recipeRepository.getRecipeDetail(recipeId: recipeId)
+        let commentResult = await recipeRepository.getRecipeComments(recipeId: recipeId, page: 1)
         showLoading = false
         switch result {
         case .success(let response):
@@ -60,6 +62,13 @@ class RecipeDetailSceneModel: BaseSceneModel {
             timeOfRecipe = (response.timeOfRecipe.text ?? "-") + " dk"
         case .failure:
 //                self.showWarningToast?(error.localizedDescription)
+            break
+        }
+        
+        switch commentResult {
+        case .success(let response):
+            recipeComments = response.data
+        case .failure:
             break
         }
     }

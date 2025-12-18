@@ -36,6 +36,10 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                     Spacer(minLength: 20)
                     
                     instructionsView
+                    
+                    Spacer(minLength: 20)
+                    
+                    recipeCommentsView
                 }
             }
             .frame(width: UIScreen.main.bounds.width)
@@ -128,6 +132,13 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
             topRightImageName: viewModel.instructionsIconName,
             topRightText: viewModel.timeOfRecipe,
             contentText: viewModel.instructions
+        )
+    }
+    
+    var recipeCommentsView: some View {
+        RecipeDetailCommentsSectionView(
+            title: "Yorumlar",
+            recipeComments: Array(viewModel.recipeComments.prefix(3))
         )
     }
 }

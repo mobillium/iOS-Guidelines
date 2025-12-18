@@ -13,8 +13,8 @@ extension UserViewModel {
     
     init(recipe: Recipe) {
         let stat = L10n.Home.userRecipeAndFollowerCount(recipe.user.recipeCount, recipe.user.followingCount)
-        self.init(imageUrl: recipe.user.image?.url ?? "",
-                  username: recipe.user.username ?? "",
+        self.init(imageUrl: recipe.user.image?.url,
+                  username: recipe.user.username,
                   stat: stat)
     }
 }

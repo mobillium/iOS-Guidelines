@@ -13,43 +13,44 @@ public struct UserInfoView: View {
     
     public var body: some View {
         HStack(spacing: 0) {
-            AsyncImage(url: URL(string: viewModel.imageUrl)) { phase in
-                switch phase {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(20)
-                        .background(Color.appElevation1)
-                        .clipShape(Circle())
-                        .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appPrimary, lineWidth: 1))
-                        .transition(.opacity.animation(.easeIn(duration: 0.25)))
-                case .failure:
-                    EmptyView()
-                @unknown default:
-                    EmptyView()
+            if let imageUrl = viewModel.imageUrl {
+                AsyncImage(url: URL(string: imageUrl)) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(20)
+                            .background(Color.appElevation1)
+                            .clipShape(Circle())
+                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.appPrimary, lineWidth: 1))
+                            .transition(.opacity.animation(.easeIn(duration: 0.25)))
+                    case .failure:
+                        EmptyView()
+                    @unknown default:
+                        EmptyView()
+                    }
                 }
+                .frame(width: 40, height: 40)
             }
-            .frame(width: 40, height: 40)
-            
             Rectangle()
                 .frame(width: 22, height: 20)
                 .padding(.leading, -20)
                 .foregroundColor(.appPrimary)
                 .zIndex(-1)
-                
-            ZStack {
-                Text(viewModel.username)
-                    .font(.font(.nunitoBold, size: .medium))
-                    .foregroundColor(.appPureWhite)
+            if let username = viewModel.username {
+                ZStack {
+                    Text(username)
+                        .font(.font(.nunitoBold, size: .medium))
+                        .foregroundColor(.appPureWhite)
+                }
+                .frame(height: 20)
+                .padding(.trailing, 2)
+                .background(Color.appPrimary)
+                .cornerRadius(6, corners: [.topRight, .bottomRight])
             }
-            .frame(height: 20)
-            .padding(.trailing, 2)
-            .background(Color.appPrimary)
-            .cornerRadius(6, corners: [.topRight, .bottomRight])
-
             Spacer()
         }
     }
