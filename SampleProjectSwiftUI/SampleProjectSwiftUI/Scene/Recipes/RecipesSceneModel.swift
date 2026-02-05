@@ -16,7 +16,7 @@ import Domain
 @MainActor
 class RecipesSceneModel: BaseSceneModel {
     
-    @Published var viewModels: [RecipeViewModel] = []
+    @Published var recipes: [Recipe] = []
     
     let listType: RecipeListType
     private var page = 1
@@ -33,8 +33,7 @@ class RecipesSceneModel: BaseSceneModel {
         showLoading = false
         switch result {
         case .success(let response):
-            let viewModels = response.data.map({ RecipeViewModel(recipe: $0) })
-            self.viewModels.append(contentsOf: viewModels)
+            self.recipes.append(contentsOf: response.data)
         case .failure:
 //                self.showWarningToast?(error.localizedDescription)
             break

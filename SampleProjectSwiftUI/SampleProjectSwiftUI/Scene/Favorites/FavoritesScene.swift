@@ -26,7 +26,9 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                             HorizontalRecipesHeaderView(viewModel: viewModel.headerViewModel)
                             Divider()
                                 .foregroundColor(.appElevation2)
-                            HorizontalRecipesView(viewModel: viewModel.recipesViewModel) { recipeId in
+                            HorizontalRecipesView(
+                                viewModel: viewModel.recipesViewModel,
+                            ) { recipeId in
                                 let destination = FavoritesDestinations.recipeDetail(recipeId: recipeId)
                                 router.navigate(to: destination)
                             }

@@ -28,7 +28,12 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                     Spacer(minLength: 20)
                     
                     if let user = viewModel.user {
-                        UserFollowView(user: user, stat: "\(user.recipeCount) Tarif \(user.followedCount) Takipçi")
+                        UserFollowView(
+                            imageUrl: user.image?.url,
+                            username: user.username,
+                            stat: "\(user.recipeCount) Tarif \(user.followedCount) Takipçi",
+                            isFollowing: user.isFollowing
+                        )
                     }
                     
                     Spacer(minLength: 20)
@@ -44,7 +49,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                     recipeCommentsView
                     
                     Spacer(minLength: 20)
-    
+                    
                     addCommentButton
                 }
             }

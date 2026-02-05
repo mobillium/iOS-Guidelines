@@ -9,11 +9,20 @@ import SwiftUI
 
 public struct UserInfoView: View {
     
-    var viewModel: any UserViewProtocol
+    private var imageUrl: String?
+    private var username: String?
+    
+    public init (
+        imageUrl: String?,
+        username: String?,
+    ) {
+        self.imageUrl = imageUrl
+        self.username = username
+    }
     
     public var body: some View {
         HStack(spacing: 0) {
-            if let imageUrl = viewModel.imageUrl {
+            if let imageUrl {
                 AsyncImage(url: URL(string: imageUrl)) { phase in
                     switch phase {
                     case .empty:
@@ -40,7 +49,7 @@ public struct UserInfoView: View {
                 .padding(.leading, -20)
                 .foregroundColor(.appPrimary)
                 .zIndex(-1)
-            if let username = viewModel.username {
+            if let username {
                 ZStack {
                     Text(username)
                         .font(.font(.nunitoBold, size: .medium))
@@ -54,18 +63,14 @@ public struct UserInfoView: View {
             Spacer()
         }
     }
-    
-    public init(viewModel: any UserViewProtocol) {
-        self.viewModel = viewModel
-    }
 }
 
 struct UserInfoView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = UserViewModel(imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-                                      username: "fodamy",
-                                      stat: "3 Tarif 0 Takipçi")
-        let view = UserInfoView(viewModel: viewModel)
+        let view = UserInfoView(
+            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+            username: "fodamy",
+        )
         return view
             .previewLayout(PreviewLayout.sizeThatFits)
     }

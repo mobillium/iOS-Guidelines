@@ -9,18 +9,39 @@ import SwiftUI
 
 public struct HorizontalRecipeView: View {
     
-    var viewModel: any RecipeViewProtocol
-    let recipeDidTapped: ((Int) -> Void)?
+    private var recipeId: Int
+    private var name: String
+    private var category: String
+    private var imageUrl: String
+    private var stat: String
+    private var isEditorChoice: Bool
+    private var userImageUrl: String?
+    private var username: String?
     
-    public init(viewModel: any RecipeViewProtocol, recipeDidTapped: ((Int) -> Void)?) {
-        self.viewModel = viewModel
-        self.recipeDidTapped = recipeDidTapped
+    public init(
+        recipeId: Int,
+        name: String,
+        category: String,
+        imageUrl: String,
+        stat: String,
+        isEditorChoice: Bool,
+        userImageUrl: String?,
+        username: String?,
+    ) {
+        self.recipeId = recipeId
+        self.name = name
+        self.category = category
+        self.imageUrl = imageUrl
+        self.stat = stat
+        self.isEditorChoice = isEditorChoice
+        self.userImageUrl = userImageUrl
+        self.username = username
     }
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             
-            AsyncImage(url: URL(string: viewModel.imageUrl)) { phase in
+            AsyncImage(url: URL(string: imageUrl)) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
@@ -42,19 +63,22 @@ public struct HorizontalRecipeView: View {
             .aspectRatio(1.0, contentMode: .fit)
             .overlay(
                 VStack {
-                    UserInfoView(viewModel: viewModel.userViewModel)
-                        .padding([.leading, .top], 8)
+                    UserInfoView(
+                        imageUrl: userImageUrl,
+                        username: username,
+                    )
+                    .padding([.leading, .top], 8)
                     Spacer()
                 }
             )
             
             VStack(alignment: .leading) {
-                Text(viewModel.name)
+                Text(name)
                     .font(.font(.nunitoBold, size: .xLarge))
                     .foregroundColor(.appFocus)
                     .lineLimit(1)
                 
-                Text(viewModel.stat)
+                Text(stat)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
                     .foregroundColor(.appText)
             }
@@ -68,29 +92,21 @@ public struct HorizontalRecipeView: View {
                 radius: 6.0,
                 x: 0.0,
                 y: 0.0)
-        .onTapGesture {
-            recipeDidTapped?(viewModel.recipeId)
-        }
     }
 }
 
 struct HorizontalRecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        let userViewModel = UserViewModel(
-            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-            username: "fodamy",
-            stat: "3 Tarif 0 Takipçi"
-        )
-        let viewModel = RecipeViewModel(
-            userViewModel: userViewModel,
+        HorizontalRecipeView(
             recipeId: 19,
             name: "Tarhana Çorbası",
             category: "Hamur İşi",
             imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
             stat: "O Yorum O Beğeni",
-            isEditorChoice: true
+            isEditorChoice: true,
+            userImageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+            username: "fodamy",
         )
-        HorizontalRecipeView(viewModel: viewModel, recipeDidTapped: nil)
             .frame(width: 200)
             .previewLayout(PreviewLayout.sizeThatFits)
     }

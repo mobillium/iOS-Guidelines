@@ -8,40 +8,78 @@
 import SwiftUI
 
 public struct RecipeView: View {
+        
+    private var recipeId: Int
+    private var name: String
+    private var category: String
+    private var imageUrl: String
+    private var stat: String
+    private var isEditorChoice: Bool
+    private var userImageUrl: String?
+    private var username: String?
+    private var userStat: String
+    private var userImageSize: UserViewImageSize
     
-    var viewModel: any RecipeViewProtocol
+    public init(
+        recipeId: Int,
+        name: String,
+        category: String,
+        imageUrl: String,
+        stat: String,
+        isEditorChoice: Bool,
+        userImageUrl: String?,
+        username: String?,
+        userStat: String,
+        userImageSize: UserViewImageSize = .large
+    ) {
+        self.recipeId = recipeId
+        self.name = name
+        self.category = category
+        self.imageUrl = imageUrl
+        self.stat = stat
+        self.isEditorChoice = isEditorChoice
+        self.userImageUrl = userImageUrl
+        self.username = username
+        self.userStat = userStat
+        self.userImageSize = userImageSize
+    }
     
     public var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            UserView(viewModel: viewModel.userViewModel)
-                .padding(-16)
+            UserView(
+                imageUrl: userImageUrl,
+                username: username,
+                stat: userStat,
+                imageSize: userImageSize
+            )
+            .padding(-16)
             
             Divider()
                 .foregroundColor(.appElevation2)
                 .padding([.leading, .trailing], -16)
             
             VStack(alignment: .leading) {
-                Text(viewModel.name)
+                Text(name)
                     .font(.font(.nunitoBold, size: .xLarge))
                     .foregroundColor(.appFocus)
                 
-                Text(viewModel.category)
+                Text(category)
                     .font(.font(.nunitoSemiBold, size: .xLarge))
                     .foregroundColor(.appText)
             }
             
-            RecipeImageView(imageUrl: viewModel.imageUrl)
+            RecipeImageView(imageUrl: imageUrl)
                 .cornerRadius(4)
                 .aspectRatio(1, contentMode: .fit)
                 .overlay(
                     ZStack {
-                        if viewModel.isEditorChoice {
+                        if isEditorChoice {
                             EditorChoiceBadgeView()
                         }
                     }
                 )
             
-            Text(viewModel.stat)
+            Text(stat)
                 .font(.font(.nunitoSemiBold, size: .medium))
                 .foregroundColor(.appText)
         }
@@ -49,29 +87,21 @@ public struct RecipeView: View {
         .background(Color.appPureWhite)
         
     }
-    
-    public init(viewModel: any RecipeViewProtocol) {
-        self.viewModel = viewModel
-    }
 }
 
 struct RecipeView_Previews: PreviewProvider {
     static var previews: some View {
-        let userViewModel = UserViewModel(
-            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-            username: "fodamy",
-            stat: "3 Tarif 0 Takipçi"
-        )
-        let viewModel = RecipeViewModel(
-            userViewModel: userViewModel,
+        let view = RecipeView(
             recipeId: 19,
             name: "Tarhana Çorbası",
             category: "Hamur İşi",
             imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
             stat: "O Yorum O Beğeni",
-            isEditorChoice: true
+            isEditorChoice: true,
+            userImageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+            username: "fodamy",
+            userStat: "3 Tarif 0 Takipçi"
         )
-        let view = RecipeView(viewModel: viewModel)
         return view
     }
 }

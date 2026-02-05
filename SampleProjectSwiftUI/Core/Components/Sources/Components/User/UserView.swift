@@ -9,11 +9,26 @@ import SwiftUI
 
 public struct UserView: View {
     
-    var viewModel: any UserViewProtocol
+    private var imageUrl: String?
+    private var username: String?
+    private var stat: String
+    private var imageSize: UserViewImageSize
+    
+    public init (
+        imageUrl: String?,
+        username: String?,
+        stat: String,
+        imageSize: UserViewImageSize = .large
+    ) {
+        self.imageUrl = imageUrl
+        self.username = username
+        self.stat = stat
+        self.imageSize = imageSize
+    }
     
     public var body: some View {
         HStack {
-            if let imageUrl = viewModel.imageUrl {
+            if let imageUrl {
                 AsyncImage(url: URL(string: imageUrl)) { phase in
                     switch phase {
                     case .empty:
@@ -21,7 +36,7 @@ public struct UserView: View {
                     case .success(let image):
                         image
                             .resizable()
-                            .frame(width: self.viewModel.imageSize.cgFloatValue, height: self.viewModel.imageSize.cgFloatValue)
+                            .frame(width: imageSize.cgFloatValue, height: imageSize.cgFloatValue)
                             .background(Color.appElevation1)
                             .clipShape(Circle())
                             .transition(.opacity.animation(.easeIn(duration: 0.25)))
@@ -32,15 +47,15 @@ public struct UserView: View {
                         EmptyView()
                     }
                 }
-                .frame(width: viewModel.imageSize.cgFloatValue, height: viewModel.imageSize.cgFloatValue)
+                .frame(width: imageSize.cgFloatValue, height: imageSize.cgFloatValue)
             }
             VStack(alignment: .leading) {
-                if let username = viewModel.username {
+                if let username {
                     Text(username)
                         .font(.font(.nunitoBold, size: .medium))
                         .foregroundColor(.appFocus)
                 }
-                Text(viewModel.stat)
+                Text(stat)
                     .font(.font(.nunitoSemiBold, size: .medium))
                     .foregroundColor(.appText)
             }
@@ -48,35 +63,27 @@ public struct UserView: View {
         }
         .padding(16)
     }
-    
-    public init(viewModel: any UserViewProtocol) {
-        self.viewModel = viewModel
-    }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
     struct UserViewPreview: View {
-        let viewModel = UserViewModel(
-            imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
-            username: "fodamy",
-            stat: "3 Tarif 0 Takipçi"
-        )
-        
-        let viewModel2 = UserViewModel(
-            imageUrl: nil,
-            username: "fodamy",
-            stat: "3 Tarif 0 Takipçi"
-        )
-        
         var body: some View {
             VStack(spacing: 0) {
-                UserView(viewModel: viewModel)
+                UserView(
+                    imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+                    username: "fodamy",
+                    stat: "3 Tarif 0 Takipçi"
+                )
                 Divider()
-                UserView(viewModel: viewModel2)
+                UserView(
+                    imageUrl: nil,
+                    username: "fodamy",
+                    stat: "3 Tarif 0 Takipçi"
+                )
             }
             
         }
     }
     return UserViewPreview()
-
+    
 }

@@ -18,13 +18,23 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
     var body: some View {
         BaseScene(content: {
             ScrollView(.vertical) {
-                ForEach(viewModel.viewModels) { viewModel in
-                    RecipeView(viewModel: viewModel)
-                        .onTapGesture {
-                            let recipeId = viewModel.recipeId
-                            let destination = HomeDestinations.recipeDetail(recipeId: recipeId)
-                            self.router.navigate(to: destination)
-                        }
+                ForEach(viewModel.recipes) { recipe in
+                    RecipeView(
+                        recipeId: recipe.id,
+                        name: recipe.title ?? "",
+                        category: recipe.category.name ?? "",
+                        imageUrl: recipe.images.first?.url ?? "",
+                        stat: L10n.Home.recipeCommnetAndLikeCount(recipe.commentCount, recipe.likeCount),
+                        isEditorChoice: recipe.isEditorChoice,
+                        userImageUrl: recipe.user.image?.url,
+                        username: recipe.user.username,
+                        userStat: L10n.Home.userRecipeAndFollowerCount(recipe.user.recipeCount, recipe.user.followingCount),
+                    )
+                    .onTapGesture {
+                        let recipeId = recipe.id
+                        let destination = HomeDestinations.recipeDetail(recipeId: recipeId)
+                        self.router.navigate(to: destination)
+                    }
                 }
             }
         }, viewModel: viewModel)

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Mobillium. All rights reserved.
 //
 
-public struct Recipe {
+public struct Recipe: Identifiable {
     public let id: Int
     public let title: String?
     public let isEditorChoice: Bool

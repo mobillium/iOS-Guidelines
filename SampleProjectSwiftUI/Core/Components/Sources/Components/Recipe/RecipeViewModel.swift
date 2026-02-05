@@ -10,7 +10,6 @@ import Combine
 
 public protocol RecipeViewProtocol: Identifiable {
     var id: UUID { get }
-    var userViewModel: UserViewModel { get }
     var recipeId: Int { get }
     var name: String { get }
     var category: String { get }
@@ -21,27 +20,32 @@ public protocol RecipeViewProtocol: Identifiable {
 
 public struct RecipeViewModel: RecipeViewProtocol {
     public var id = UUID()
-    public var userViewModel: UserViewModel
     public var recipeId: Int
     public var name: String
     public var category: String
     public var imageUrl: String
     public var stat: String
     public var isEditorChoice: Bool
+    public var userImageUrl: String?
+    public var username: String?
     
-    public init(userViewModel: UserViewModel,
-                recipeId: Int,
-                name: String,
-                category: String,
-                imageUrl: String,
-                stat: String,
-                isEditorChoice: Bool) {
-        self.userViewModel = userViewModel
+    public init(
+        recipeId: Int,
+        name: String,
+        category: String,
+        imageUrl: String,
+        stat: String,
+        isEditorChoice: Bool,
+        userImageUrl: String?,
+        username: String?
+    ) {
         self.recipeId = recipeId
         self.name = name
         self.category = category
         self.imageUrl = imageUrl
         self.stat = stat
         self.isEditorChoice = isEditorChoice
+        self.userImageUrl = userImageUrl
+        self.username = username
     }
 }

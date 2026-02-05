@@ -11,15 +11,16 @@ import Components
 
 extension RecipeViewModel {
     init(recipe: Recipe) {
-        let userViewModel = UserViewModel(recipe: recipe)
         let stat = L10n.Home.recipeCommnetAndLikeCount(recipe.commentCount, recipe.likeCount)
-        self.init(userViewModel: userViewModel,
-                  recipeId: recipe.id,
-                  name: recipe.title ?? "",
-                  category: recipe.category.name ?? "",
-                  imageUrl: recipe.images.first?.url ?? "",
-                  stat: stat,
-                  isEditorChoice: recipe.isEditorChoice)
-
+        self.init(
+            recipeId: recipe.id,
+            name: recipe.title ?? "",
+            category: recipe.category.name ?? "",
+            imageUrl: recipe.images.first?.url ?? "",
+            stat: stat,
+            isEditorChoice: recipe.isEditorChoice,
+            userImageUrl: recipe.user.image?.url,
+            username: recipe.user.username,
+        )
     }
 }

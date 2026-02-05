@@ -10,17 +10,26 @@ import Domain
 
 public struct UserFollowView: View {
     
-    var user: User
-    var stat: String
+    private var imageUrl: String?
+    private var username: String?
+    private var stat: String
+    private var isFollowing: Bool
     
-    public init(user: User, stat: String) {
-        self.user = user
+    public init(
+        imageUrl: String?,
+        username: String?,
+        stat: String,
+        isFollowing: Bool
+    ) {
+        self.imageUrl = imageUrl
+        self.username = username
         self.stat = stat
+        self.isFollowing = isFollowing
     }
     
     public var body: some View {
         HStack {
-            AsyncImage(url: URL(string: user.image?.url ?? "")) { phase in
+            AsyncImage(url: URL(string: imageUrl ?? "")) { phase in
                 switch phase {
                 case .empty:
                     ProgressView()
@@ -41,7 +50,7 @@ public struct UserFollowView: View {
             .frame(width: 40, height: 40)
             
             VStack(alignment: .leading) {
-                Text(user.username ?? "")
+                Text(username ?? "")
                     .font(.font(.nunitoBold, size: .medium))
                     .foregroundColor(.appFocus)
                 
@@ -54,7 +63,7 @@ public struct UserFollowView: View {
             Button("Takip Et") {
                 
             }
-            .buttonStyle(FollowButtonStyle(isFollow: user.isFollowing))
+            .buttonStyle(FollowButtonStyle(isFollow: isFollowing))
         }
         .padding(16)
         .background(Color.appPureWhite)
@@ -64,33 +73,21 @@ public struct UserFollowView: View {
 #Preview(traits: .sizeThatFitsLayout) {
     
     struct UserFollowViewPreview: View {
-        let userFollowed = User(id: 1,
-                                username: "fodamy",
-                                image: ImageModel(url: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg"),
-                                followedCount: 100,
-                                followingCount: 99,
-                                recipeCount: 50,
-                                isFollowing: true,
-                                favoritesCount: 2323,
-                                likesCount: 3434)
-        
-        let userNotFollowed = User(id: 1,
-                                   username: "fodamy",
-                                   image: ImageModel(url: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg"),
-                                   followedCount: 100,
-                                   followingCount: 99,
-                                   recipeCount: 50,
-                                   isFollowing: false,
-                                   favoritesCount: 2323,
-                                   likesCount: 3434)
-        
         var body: some View {
             VStack(spacing: 16) {
                 Group {
-                    UserFollowView(user: userFollowed,
-                                   stat: "\(userFollowed.recipeCount) Tarif \(userFollowed.followedCount) Takipçi")
-                    UserFollowView(user: userNotFollowed,
-                                   stat: "\(userNotFollowed.recipeCount) Tarif \(userNotFollowed.followedCount) Takipçi")
+                    UserFollowView(
+                        imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+                        username: "fodamy",
+                        stat: "50 Tarif 100 Takipçi",
+                        isFollowing: true
+                    )
+                    UserFollowView(
+                        imageUrl: "https://fodamy.mobillium.com/images/60b0be39-5534-48eb-a8ec-3b8741380182.jpg",
+                        username: "fodamy",
+                        stat: "50 Tarif 99 Takipçi",
+                        isFollowing: false
+                    )
                 }
             }
         }

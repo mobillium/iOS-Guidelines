@@ -30,12 +30,10 @@ public struct RecipeCommentView: View {
     public var body: some View {
         VStack(spacing: 0) {
             UserView(
-                viewModel: UserViewModel(
-                    imageUrl: userImageUrl,
-                    username: userName,
-                    stat: userStat,
-                    imageSize: .small
-                )
+                imageUrl: userImageUrl,
+                username: userName,
+                stat: userStat,
+                imageSize: .small
             )
             commentTextView
         }
