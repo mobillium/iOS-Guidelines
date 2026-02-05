@@ -7,6 +7,7 @@
 
 import Components
 import SwiftUI
+import LocalizationKit
 
 class OnboardingSceneModel: BaseSceneModel {
     

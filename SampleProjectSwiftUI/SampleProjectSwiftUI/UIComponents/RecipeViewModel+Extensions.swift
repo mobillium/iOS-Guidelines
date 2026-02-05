@@ -8,6 +8,7 @@
 import Domain
 import Foundation
 import Components
+import LocalizationKit
 
 extension RecipeViewModel {
     init(recipe: Recipe) {

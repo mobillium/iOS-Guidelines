@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 import Components
 import Router
+import LocalizationKit
 
 struct HomeScene<ViewModel: HomeSceneModel>: View {
     
