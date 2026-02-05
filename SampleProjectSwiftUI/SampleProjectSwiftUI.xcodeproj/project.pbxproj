@@ -11,6 +11,7 @@
 		3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD02B62A5B1005CAE18 /* DataProvider */; };
 		3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D7A3FAC2B6BE13100135923 /* Utilities */; };
 		3D8699882E60999400904421 /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */; };
+		3DAC32B82F34D59C00EF9EE9 /* LocalizationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */; };
 		3DB6FACD2E29373700F08C64 /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = 3DB6FACC2E29373700F08C64 /* Router */; };
 		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
 		3DDAA05128D365230015840C /* SampleProjectSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */; };
@@ -41,6 +42,7 @@
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3D8699212E60930000904421 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		3DA28CBA2B6BD9A4006F6495 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
+		3DAC32B62F34D34600EF9EE9 /* LocalizationKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalizationKit; sourceTree = "<group>"; };
 		3DB6FACB2E2935DC00F08C64 /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Router; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA04228D365230015840C /* SampleProjectSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +80,7 @@
 				3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */,
 				3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */,
 				3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */,
+				3DAC32B82F34D59C00EF9EE9 /* LocalizationKit in Frameworks */,
 				3D8699882E60999400904421 /* SampleProjectSwiftUIPackages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				3DB6FACB2E2935DC00F08C64 /* Router */,
+				3DAC32B62F34D34600EF9EE9 /* LocalizationKit */,
 				3DA28CBA2B6BD9A4006F6495 /* Network */,
 				3D2CAFC72B62A245005CAE18 /* DataProvider */,
 				3D2CAFC62B62A235005CAE18 /* Components */,
@@ -171,8 +175,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DDAA05628D365230015840C /* Build configuration list for PBXNativeTarget "SampleProjectSwiftUI" */;
 			buildPhases = (
-				3DDAA0F828D3690F0015840C /* Swiftlint */,
 				3D7C8A7E2E61A190009A9381 /* Swiftgen */,
+				3DDAA0F828D3690F0015840C /* Swiftlint */,
 				3DDAA02E28D365220015840C /* Sources */,
 				3DDAA02F28D365220015840C /* Frameworks */,
 				3DDAA03028D365220015840C /* Resources */,
@@ -191,6 +195,7 @@
 				3D7A3FAC2B6BE13100135923 /* Utilities */,
 				3DB6FACC2E29373700F08C64 /* Router */,
 				3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */,
+				3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -319,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Homebrew ile kurulan SwiftGen'i bul (Apple Silicon ve Intel için)\nif [[ -x \"/opt/homebrew/bin/swiftgen\" ]]; then\n  /opt/homebrew/bin/swiftgen config run --config \"${SRCROOT}/swiftgen.yml\"\nelif [[ -x \"/usr/local/bin/swiftgen\" ]]; then\n  /usr/local/bin/swiftgen config run --config \"${SRCROOT}/swiftgen.yml\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'brew install swiftgen'\"\nfi\n";
+			shellScript = "# 1. Paket yolunu ana projeye göre tanımla\nPACKAGE_DIR=\"${SRCROOT}/Core/LocalizationKit\"\n\n# 2. Paket dizinine gir\nif [ -d \"$PACKAGE_DIR\" ]; then\n    cd \"$PACKAGE_DIR\"\nelse\n    echo \"error: LocalizationKit dizini bulunamadı: $PACKAGE_DIR\"\n    exit 1\nfi\n\n# 3. Homebrew yollarını kontrol et ve SwiftGen'i çalıştır\nif [[ -x \"/opt/homebrew/bin/swiftgen\" ]]; then\n    /opt/homebrew/bin/swiftgen config run --config \"swiftgen.yml\"\nelif [[ -x \"/usr/local/bin/swiftgen\" ]]; then\n    /usr/local/bin/swiftgen config run --config \"swiftgen.yml\"\nelse\n    echo \"error: SwiftGen kurulu değil. 'brew install swiftgen' komutu ile kurun.\"\n    exit 1\nfi\n";
 		};
 		3DDAA0F828D3690F0015840C /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -696,6 +701,10 @@
 		3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SampleProjectSwiftUIPackages;
+		};
+		3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocalizationKit;
 		};
 		3DB6FACC2E29373700F08C64 /* Router */ = {
 			isa = XCSwiftPackageProductDependency;

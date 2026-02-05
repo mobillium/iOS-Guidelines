@@ -1,0 +1,7 @@
+strings:
+  inputs: Sources/Resources
+  outputs:
+    - templatePath: strings.stencil
+      output: Sources/Generated/StringConstants.swift
+      params:
+          publicAccess: public
