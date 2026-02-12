@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Utilities
+import AssetsKit
 
 public struct StatView: View {
     
@@ -22,7 +23,7 @@ public struct StatView: View {
     
     public var body: some View {
         VStack(spacing: 4) {
-            Image(imageName, bundle: .module)
+            Image(imageName, bundle: .assetsKit)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .aspectRatio(contentMode: .fit)

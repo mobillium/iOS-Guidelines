@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetsKit
 
 public struct HorizontalRecipesHeaderView: View {
     

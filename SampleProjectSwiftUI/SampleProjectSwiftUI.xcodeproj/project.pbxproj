@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D1177522F3E121E00E182C4 /* AssetsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D1177512F3E121E00E182C4 /* AssetsKit */; };
 		3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFCE2B62A5B1005CAE18 /* Components */; };
 		3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD02B62A5B1005CAE18 /* DataProvider */; };
 		3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D7A3FAC2B6BE13100135923 /* Utilities */; };
@@ -36,11 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1177502F3E0E0E00E182C4 /* AssetsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AssetsKit; sourceTree = "<group>"; };
 		3D2CAFC52B62A227005CAE18 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
 		3D2CAFC62B62A235005CAE18 /* Components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Components; sourceTree = "<group>"; };
 		3D2CAFC72B62A245005CAE18 /* DataProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataProvider; sourceTree = "<group>"; };
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		3D8699212E60930000904421 /* swiftgen.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		3DA28CBA2B6BD9A4006F6495 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
 		3DAC32B62F34D34600EF9EE9 /* LocalizationKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalizationKit; sourceTree = "<group>"; };
 		3DB6FACB2E2935DC00F08C64 /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Router; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 				3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */,
 				3DAC32B82F34D59C00EF9EE9 /* LocalizationKit in Frameworks */,
 				3D8699882E60999400904421 /* SampleProjectSwiftUIPackages in Frameworks */,
+				3D1177522F3E121E00E182C4 /* AssetsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +109,7 @@
 			children = (
 				3DB6FACB2E2935DC00F08C64 /* Router */,
 				3DAC32B62F34D34600EF9EE9 /* LocalizationKit */,
+				3D1177502F3E0E0E00E182C4 /* AssetsKit */,
 				3DA28CBA2B6BD9A4006F6495 /* Network */,
 				3D2CAFC72B62A245005CAE18 /* DataProvider */,
 				3D2CAFC62B62A235005CAE18 /* Components */,
@@ -118,7 +121,6 @@
 		3DDAA02928D365220015840C = {
 			isa = PBXGroup;
 			children = (
-				3D8699212E60930000904421 /* swiftgen.yml */,
 				3D6962B728DCA7ED004CB727 /* .swiftlint.yml */,
 				3D8699582E6093AB00904421 /* SampleProjectSwiftUI */,
 				3D2CAFC22B62A0CD005CAE18 /* Core */,
@@ -196,6 +198,7 @@
 				3DB6FACC2E29373700F08C64 /* Router */,
 				3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */,
 				3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */,
+				3D1177512F3E121E00E182C4 /* AssetsKit */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -324,7 +327,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# 1. Paket yolunu ana projeye göre tanımla\nPACKAGE_DIR=\"${SRCROOT}/Core/LocalizationKit\"\n\n# 2. Paket dizinine gir\nif [ -d \"$PACKAGE_DIR\" ]; then\n    cd \"$PACKAGE_DIR\"\nelse\n    echo \"error: LocalizationKit dizini bulunamadı: $PACKAGE_DIR\"\n    exit 1\nfi\n\n# 3. Homebrew yollarını kontrol et ve SwiftGen'i çalıştır\nif [[ -x \"/opt/homebrew/bin/swiftgen\" ]]; then\n    /opt/homebrew/bin/swiftgen config run --config \"swiftgen.yml\"\nelif [[ -x \"/usr/local/bin/swiftgen\" ]]; then\n    /usr/local/bin/swiftgen config run --config \"swiftgen.yml\"\nelse\n    echo \"error: SwiftGen kurulu değil. 'brew install swiftgen' komutu ile kurun.\"\n    exit 1\nfi\n";
+			shellScript = "# 1. Paket yollarını bir dizi (array) olarak tanımla\nPACKAGES=(\n    \"${SRCROOT}/Core/LocalizationKit\"\n    \"${SRCROOT}/Core/AssetsKit\"\n)\n\n# 2. SwiftGen yolunu belirle\nif [[ -x \"/opt/homebrew/bin/swiftgen\" ]]; then\n    SWIFTGEN_PATH=\"/opt/homebrew/bin/swiftgen\"\nelif [[ -x \"/usr/local/bin/swiftgen\" ]]; then\n    SWIFTGEN_PATH=\"/usr/local/bin/swiftgen\"\nelse\n    echo \"error: SwiftGen kurulu değil. 'brew install swiftgen' komutu ile kurun.\"\n    exit 1\nfi\n\n# 3. Her bir paket için işlemi tekrarla\nfor PACKAGE_DIR in \"${PACKAGES[@]}\"; do\n    if [ -d \"$PACKAGE_DIR\" ]; then\n        echo \"SwiftGen çalıştırılıyor: $PACKAGE_DIR\"\n        cd \"$PACKAGE_DIR\"\n        \n        # SwiftGen'i çalıştır (Paket içinde swiftgen.yml olduğu varsayılır)\n        \"$SWIFTGEN_PATH\" config run --config \"swiftgen.yml\"\n    else\n        echo \"warning: Dizin bulunamadı, atlanıyor: $PACKAGE_DIR\"\n    fi\ndone\n";
 		};
 		3DDAA0F828D3690F0015840C /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -532,6 +535,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,6 +569,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_STRICT_CONCURRENCY = minimal;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -686,6 +691,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D1177512F3E121E00E182C4 /* AssetsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AssetsKit;
+		};
 		3D2CAFCE2B62A5B1005CAE18 /* Components */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Components;

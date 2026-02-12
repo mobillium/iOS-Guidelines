@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AssetsKit
 
 public struct RecipeDetailDescriptionSectionView: View {
     
@@ -36,7 +37,7 @@ public struct RecipeDetailDescriptionSectionView: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 8)
-            Image(topRightImageName, bundle: .module)
+            Image(topRightImageName, bundle: .assetsKit)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .aspectRatio(contentMode: .fit)

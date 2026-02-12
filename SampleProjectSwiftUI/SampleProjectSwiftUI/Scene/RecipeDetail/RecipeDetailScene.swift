@@ -119,10 +119,14 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     
     var statsView: some View {
         HStack(alignment: .center) {
-            StatView(imageName: "ic_comment", count: viewModel.commentCount, stat: "Yorum")
+            StatView(imageName: "ic_comment",
+                     count: viewModel.commentCount,
+                     stat: "Yorum")
                 .frame(maxWidth: .infinity)
             Divider()
-            StatView(imageName: "ic_heart", count: viewModel.likeCount, stat: "Beğeni")
+            StatView(imageName: "ic_heart",
+                     count: viewModel.likeCount,
+                     stat: "Beğeni")
                 .frame(maxWidth: .infinity)
         }
         .background(Color.appPureWhite)

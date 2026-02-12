@@ -17,6 +17,7 @@ let package = Package(
     dependencies: [
         .package(path: "./Utilities"),
         .package(path: "./DataProvider"),
+        .package(path: "./AssetsKit"),
         .package(url: "https://github.com/onevcat/Kingfisher", "7.0.0"..."8.0.0")
     ],
     targets: [
@@ -27,12 +28,10 @@ let package = Package(
             dependencies: [
                 .product(name: "Domain", package: "DataProvider"),
                 "Utilities",
-                "Kingfisher"
+                "Kingfisher",
+                "AssetsKit"
             ],
             resources: [
-                .process("Resources/Assets/Colors.xcassets"),
-                .process("Resources/Assets/Icons.xcassets"),
-                .process("Resources/Assets/Images.xcassets"),
                 .process("Resources/Fonts/Nunito-Bold.ttf"),
                 .process("Resources/Fonts/Nunito-ExtraBold.ttf"),
                 .process("Resources/Fonts/Nunito-SemiBold.ttf")

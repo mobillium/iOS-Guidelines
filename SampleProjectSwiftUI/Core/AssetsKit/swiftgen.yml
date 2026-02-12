@@ -1,0 +1,34 @@
+xcassets:
+  - inputs:
+    - Sources/Resources/Images.xcassets
+    - Sources/Resources/Icons.xcassets
+    - Sources/Resources/Colors.xcassets
+    outputs:
+      - templatePath: assets.stencil
+        output: Sources/Generated/Assets.swift
+        params:
+            publicAccess: public
+              
+  - inputs:
+    - Sources/Resources/Images.xcassets
+    outputs:
+      - templatePath: images.stencil
+        output: Sources/Generated/UIImage+Images.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - Sources/Resources/Icons.xcassets
+    outputs:
+      - templatePath: icons.stencil
+        output: Sources/Generated/UIImage+Icons.swift
+        params:
+            publicAccess: public
+            
+  - inputs:
+    - Sources/Resources/Colors.xcassets
+    outputs:
+      - templatePath: colors.stencil
+        output: Sources/Generated/UIColor+Colors.swift
+        params:
+            publicAccess: public
