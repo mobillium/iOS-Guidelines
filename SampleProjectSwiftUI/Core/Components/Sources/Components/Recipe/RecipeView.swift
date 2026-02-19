@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FontsKit
 
 public struct RecipeView: View {
         

@@ -9,6 +9,8 @@ import Combine
 import Network
 import Domain
 import DataProvider
+import AssetsKit
+import Components
 
 @MainActor
 class RecipeDetailSceneModel: BaseSceneModel {
@@ -29,8 +31,8 @@ class RecipeDetailSceneModel: BaseSceneModel {
     
     let ingredientsTitle: String = "Malzemeler"
     let instructionsTitle: String = "Yapılışı"
-    let ingredientsIconName: String = "ic_restaurant"
-    let instructionsIconName: String = "ic_clock"
+    let ingredientsImage: ImageComponent = ImageComponent(imageName: "ic_restaurant", bundle: .assetsKit)
+    let instructionsImage: ImageComponent = ImageComponent(imageName: "ic_clock", bundle: .assetsKit)
     
     let recipeId: Int
     private var page = 1

@@ -135,7 +135,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     var ingredientsView: some View {
         RecipeDetailDescriptionSectionView(
             title: viewModel.ingredientsTitle,
-            topRightImageName: viewModel.ingredientsIconName,
+            topRightImage: viewModel.ingredientsImage,
             topRightText: viewModel.numberOfPerson,
             contentText: viewModel.ingredients
         )
@@ -144,7 +144,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     var instructionsView: some View {
         RecipeDetailDescriptionSectionView(
             title: viewModel.instructionsTitle,
-            topRightImageName: viewModel.instructionsIconName,
+            topRightImage: viewModel.instructionsImage,
             topRightText: viewModel.timeOfRecipe,
             contentText: viewModel.instructions
         )

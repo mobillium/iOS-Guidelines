@@ -4,38 +4,30 @@
 import PackageDescription
 
 let package = Package(
-    name: "Components",
+    name: "FontsKit",
     platforms: [
         .iOS(.v17)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "Components",
-            targets: ["Components"])
+            name: "FontsKit",
+            targets: ["FontsKit"]),
     ],
     dependencies: [
-        .package(path: "./Utilities"),
-        .package(path: "./DataProvider"),
-        .package(path: "./AssetsKit"),
-        .package(path: "./FontsKit"),
-        .package(url: "https://github.com/onevcat/Kingfisher", "7.0.0"..."8.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "Components",
-            dependencies: [
-                .product(name: "Domain", package: "DataProvider"),
-                "Utilities",
-                "Kingfisher",
-                "AssetsKit",
-                "FontsKit"
-            ]
+            name: "FontsKit",
+            resources: [
+                .process("Resources"),
+            ],
         ),
         .testTarget(
-            name: "ComponentsTests",
-            dependencies: ["Components"])
+            name: "FontsKitTests",
+            dependencies: ["FontsKit"]
+        ),
     ]
 )

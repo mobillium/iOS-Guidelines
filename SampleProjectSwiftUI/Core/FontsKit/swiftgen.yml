@@ -1,0 +1,7 @@
+fonts:
+  inputs: Sources/Resources
+  outputs:
+    templateName: swift5
+    output: Sources/Generated/Fonts.swift
+    params:
+        publicAccess: public

@@ -11,13 +11,13 @@ import AssetsKit
 public struct RecipeDetailDescriptionSectionView: View {
     
     var title: String
-    var topRightImageName: String
+    var topRightImage: ImageComponent
     var topRightText: String
     var contentText: String
     
-    public init(title: String, topRightImageName: String, topRightText: String, contentText: String) {
+    public init(title: String, topRightImage: ImageComponent, topRightText: String, contentText: String) {
         self.title = title
-        self.topRightImageName = topRightImageName
+        self.topRightImage = topRightImage
         self.topRightText = topRightText
         self.contentText = contentText
     }
@@ -37,7 +37,7 @@ public struct RecipeDetailDescriptionSectionView: View {
             Text(title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.vertical, 8)
-            Image(topRightImageName, bundle: .assetsKit)
+            Image(topRightImage.imageName, bundle: topRightImage.bundle)
                 .resizable()
                 .frame(width: 20, height: 20)
                 .aspectRatio(contentMode: .fit)
@@ -60,7 +60,7 @@ public struct RecipeDetailDescriptionSectionView: View {
         Group {
             RecipeDetailDescriptionSectionView(
                 title: "Malzemeler",
-                topRightImageName: "ic_restaurant",
+                topRightImage: ImageComponent(imageName: "ic_restaurant", bundle: .assetsKit),
                 topRightText: "4-6",
                 contentText: """
                     8 su bardağı su
@@ -73,7 +73,10 @@ public struct RecipeDetailDescriptionSectionView: View {
             )
             RecipeDetailDescriptionSectionView(
                 title: "Yapılışı",
-                topRightImageName: "ic_clock",
+                topRightImage: ImageComponent(
+                    imageName: "ic_clock",
+                    bundle: .assetsKit
+                ),
                 topRightText: "4-6",
                 contentText: """
                     Öncelikle tencereye 8 bardak suyu ekleyin. Kaynaya suyun içerisinde tuzu ve sıvı yağı ekleyerek kaynaya kadar kapağı kapalı bir şekilde bekleyin.
