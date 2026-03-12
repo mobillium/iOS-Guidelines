@@ -26,24 +26,20 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     var body: some View {
         NavigationStack(path: $router.navPath) {
             BaseScene(content: {
-                VStack {
+                VStack(spacing: 8) {
                     AppSegmentView(selectedIndex: $selectedIndex, options: $options)
-                    
-                    Spacer()
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        TabView(selection: $selectedIndex) {
-                            RecipesScene(viewModel: RecipesSceneModel(listType: .editorChoiceRecipes))
-                                .tag(0)
-                            RecipesScene(viewModel: RecipesSceneModel(listType: .lastAddedRecipes))
-                                .tag(1)
-                        }
-                        .frame(width: UIScreen.main.bounds.width)
-                        .tabViewStyle(.page(indexDisplayMode: .never))
+                                        
+                    TabView(selection: $selectedIndex) {
+                        RecipesScene(viewModel: RecipesSceneModel(listType: .editorChoiceRecipes))
+                            .tag(0)
+                        RecipesScene(viewModel: RecipesSceneModel(listType: .lastAddedRecipes))
+                            .tag(1)
                     }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
             }, viewModel: viewModel)
             .navigationDestination(for: HomeDestinations.self)
+            .ignoresSafeArea(edges: .bottom)
             .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

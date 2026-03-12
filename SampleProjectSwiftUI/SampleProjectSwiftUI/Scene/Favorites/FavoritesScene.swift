@@ -12,7 +12,7 @@ import Router
 
 struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
     
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @ObservedObject var router = Router()
     
     var body: some View {

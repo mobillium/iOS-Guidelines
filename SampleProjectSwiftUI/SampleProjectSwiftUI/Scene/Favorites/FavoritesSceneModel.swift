@@ -12,12 +12,12 @@ import DataProvider
 import Combine
 
 struct MainCategoryViewModel: Identifiable {
-    var id = UUID()
+    var id: Int
     var title: String?
     var headerViewModel: HorizontalRecipesHeaderViewModel
     var recipesViewModel: HorizontalRecipesViewModel
     
-    init(id: UUID = UUID(), categoryImageUrl: String?, title: String? = nil, viewModels: [RecipeViewModel]) {
+    init(id: Int, categoryImageUrl: String?, title: String? = nil, viewModels: [RecipeViewModel]) {
         self.id = id
         let headerViewModel = HorizontalRecipesHeaderViewModel(categoryImageUrl: categoryImageUrl ?? "", title: title)
         self.headerViewModel = headerViewModel
@@ -33,14 +33,17 @@ class FavoritesSceneModel: BaseSceneModel {
     private var page = 1
     
     func fetchRecipes() async {
-        showLoading = true
+        if viewModels.isEmpty {
+            showLoading = true
+        }
         let result = await recipeRepository.getCategoriesWithRecipes(page: 1)
-        self.showLoading = false
+        showLoading = false
         switch result {
         case .success(let response):
             let viewModels = response.data
                 .filter({ !$0.recipes.isEmpty })
-                .map({ MainCategoryViewModel(categoryImageUrl: $0.image?.url,
+                .map({ MainCategoryViewModel(id: $0.id,
+                                             categoryImageUrl: $0.image?.url,
                                              title: $0.name,
                                              viewModels: $0.recipes.map({ RecipeViewModel(recipe: $0) })) })
             self.viewModels = viewModels

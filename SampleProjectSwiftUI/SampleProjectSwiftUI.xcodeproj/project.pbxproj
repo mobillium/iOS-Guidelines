@@ -12,12 +12,9 @@
 		3D2CAFD12B62A5B1005CAE18 /* DataProvider in Frameworks */ = {isa = PBXBuildFile; productRef = 3D2CAFD02B62A5B1005CAE18 /* DataProvider */; };
 		3D635F2E2F474DA3008D39FB /* FontsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3D635F2D2F474DA3008D39FB /* FontsKit */; };
 		3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 3D7A3FAC2B6BE13100135923 /* Utilities */; };
-		3D8699882E60999400904421 /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */; };
 		3DAC32B82F34D59C00EF9EE9 /* LocalizationKit in Frameworks */ = {isa = PBXBuildFile; productRef = 3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */; };
 		3DB6FACD2E29373700F08C64 /* Router in Frameworks */ = {isa = PBXBuildFile; productRef = 3DB6FACC2E29373700F08C64 /* Router */; };
-		3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */; };
-		3DDAA05128D365230015840C /* SampleProjectSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */; };
-		3DDAA05328D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */; };
+		3DCF6CCD2F62FC1900876BDC /* SampleProjectSwiftUIPackages in Frameworks */ = {isa = PBXBuildFile; productRef = 3DCF6CCC2F62FC1900876BDC /* SampleProjectSwiftUIPackages */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,21 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D1177502F3E0E0E00E182C4 /* AssetsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AssetsKit; sourceTree = "<group>"; };
-		3D2CAFC52B62A227005CAE18 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Utilities; sourceTree = "<group>"; };
-		3D2CAFC62B62A235005CAE18 /* Components */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Components; sourceTree = "<group>"; };
-		3D2CAFC72B62A245005CAE18 /* DataProvider */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataProvider; sourceTree = "<group>"; };
-		3D635ECA2F474B60008D39FB /* FontsKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = FontsKit; sourceTree = "<group>"; };
 		3D6962B728DCA7ED004CB727 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		3DA28CBA2B6BD9A4006F6495 /* Network */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Network; sourceTree = "<group>"; };
-		3DAC32B62F34D34600EF9EE9 /* LocalizationKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = LocalizationKit; sourceTree = "<group>"; };
-		3DB6FACB2E2935DC00F08C64 /* Router */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Router; sourceTree = "<group>"; };
 		3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProjectSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA04228D365230015840C /* SampleProjectSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUITests.swift; sourceTree = "<group>"; };
 		3DDAA04C28D365230015840C /* SampleProjectSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleProjectSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITests.swift; sourceTree = "<group>"; };
-		3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleProjectSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3DDAA10F28D36F370015840C /* DataProvider.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DataProvider.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11228D36F3B0015840C /* UIComponents.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponents.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DDAA11528D36F3E0015840C /* Utilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +58,9 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3D8699582E6093AB00904421 /* SampleProjectSwiftUI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (3D8699792E6093AB00904421 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SampleProjectSwiftUI; sourceTree = "<group>"; };
+		3DCF6C522F62FAE700876BDC /* Core */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Core; sourceTree = "<group>"; };
+		3DCF6C552F62FAEF00876BDC /* SampleProjectSwiftUIUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SampleProjectSwiftUIUITests; sourceTree = "<group>"; };
+		3DCF6C592F62FAF100876BDC /* SampleProjectSwiftUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = SampleProjectSwiftUITests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +74,8 @@
 				3D7A3FAD2B6BE13100135923 /* Utilities in Frameworks */,
 				3D2CAFCF2B62A5B1005CAE18 /* Components in Frameworks */,
 				3DAC32B82F34D59C00EF9EE9 /* LocalizationKit in Frameworks */,
-				3D8699882E60999400904421 /* SampleProjectSwiftUIPackages in Frameworks */,
 				3D1177522F3E121E00E182C4 /* AssetsKit in Frameworks */,
+				3DCF6CCD2F62FC1900876BDC /* SampleProjectSwiftUIPackages in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,29 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D2CAFC22B62A0CD005CAE18 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				3DB6FACB2E2935DC00F08C64 /* Router */,
-				3DAC32B62F34D34600EF9EE9 /* LocalizationKit */,
-				3D1177502F3E0E0E00E182C4 /* AssetsKit */,
-				3D635ECA2F474B60008D39FB /* FontsKit */,
-				3DA28CBA2B6BD9A4006F6495 /* Network */,
-				3D2CAFC72B62A245005CAE18 /* DataProvider */,
-				3D2CAFC62B62A235005CAE18 /* Components */,
-				3D2CAFC52B62A227005CAE18 /* Utilities */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		3DDAA02928D365220015840C = {
 			isa = PBXGroup;
 			children = (
 				3D6962B728DCA7ED004CB727 /* .swiftlint.yml */,
 				3D8699582E6093AB00904421 /* SampleProjectSwiftUI */,
-				3D2CAFC22B62A0CD005CAE18 /* Core */,
-				3DDAA04528D365230015840C /* SampleProjectSwiftUITests */,
-				3DDAA04F28D365230015840C /* SampleProjectSwiftUIUITests */,
+				3DCF6C522F62FAE700876BDC /* Core */,
+				3DCF6C592F62FAF100876BDC /* SampleProjectSwiftUITests */,
+				3DCF6C552F62FAEF00876BDC /* SampleProjectSwiftUIUITests */,
 				3DDAA03328D365220015840C /* Products */,
 				3DDAA10E28D36F370015840C /* Frameworks */,
 				3DFCF17A2E730A81001A097B /* Debug.xcconfig */,
@@ -145,23 +119,6 @@
 				3DDAA04C28D365230015840C /* SampleProjectSwiftUIUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		3DDAA04528D365230015840C /* SampleProjectSwiftUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3DDAA04628D365230015840C /* SampleProjectSwiftUITests.swift */,
-			);
-			path = SampleProjectSwiftUITests;
-			sourceTree = "<group>";
-		};
-		3DDAA04F28D365230015840C /* SampleProjectSwiftUIUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3DDAA05028D365230015840C /* SampleProjectSwiftUIUITests.swift */,
-				3DDAA05228D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift */,
-			);
-			path = SampleProjectSwiftUIUITests;
 			sourceTree = "<group>";
 		};
 		3DDAA10E28D36F370015840C /* Frameworks */ = {
@@ -200,10 +157,10 @@
 				3D2CAFD02B62A5B1005CAE18 /* DataProvider */,
 				3D7A3FAC2B6BE13100135923 /* Utilities */,
 				3DB6FACC2E29373700F08C64 /* Router */,
-				3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */,
 				3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */,
 				3D1177512F3E121E00E182C4 /* AssetsKit */,
 				3D635F2D2F474DA3008D39FB /* FontsKit */,
+				3DCF6CCC2F62FC1900876BDC /* SampleProjectSwiftUIPackages */,
 			);
 			productName = SampleProjectSwiftUI;
 			productReference = 3DDAA03228D365220015840C /* SampleProjectSwiftUI.app */;
@@ -222,6 +179,9 @@
 			dependencies = (
 				3DDAA04428D365230015840C /* PBXTargetDependency */,
 			);
+			fileSystemSynchronizedGroups = (
+				3DCF6C592F62FAF100876BDC /* SampleProjectSwiftUITests */,
+			);
 			name = SampleProjectSwiftUITests;
 			productName = SampleProjectSwiftUITests;
 			productReference = 3DDAA04228D365230015840C /* SampleProjectSwiftUITests.xctest */;
@@ -239,6 +199,9 @@
 			);
 			dependencies = (
 				3DDAA04E28D365230015840C /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3DCF6C552F62FAEF00876BDC /* SampleProjectSwiftUIUITests */,
 			);
 			name = SampleProjectSwiftUIUITests;
 			productName = SampleProjectSwiftUIUITests;
@@ -366,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DDAA04728D365230015840C /* SampleProjectSwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,8 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DDAA05328D365230015840C /* SampleProjectSwiftUIUITestsLaunchTests.swift in Sources */,
-				3DDAA05128D365230015840C /* SampleProjectSwiftUIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,10 +676,6 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Utilities;
 		};
-		3D8699872E60999400904421 /* SampleProjectSwiftUIPackages */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SampleProjectSwiftUIPackages;
-		};
 		3DAC32B72F34D59C00EF9EE9 /* LocalizationKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LocalizationKit;
@@ -727,6 +683,10 @@
 		3DB6FACC2E29373700F08C64 /* Router */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Router;
+		};
+		3DCF6CCC2F62FC1900876BDC /* SampleProjectSwiftUIPackages */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SampleProjectSwiftUIPackages;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

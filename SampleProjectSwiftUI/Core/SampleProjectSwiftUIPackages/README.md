@@ -1,3 +1,3 @@
-# Packages
+# SampleProjectSwiftUIPackages
 
 A description of this package.

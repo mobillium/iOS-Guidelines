@@ -11,6 +11,7 @@ public struct AppSegmentView: View {
     
     @State var spearatorLeading: CGFloat = 0
     @State var separatorWidth: CGFloat = 0
+    @State var containerWidth: CGFloat = 0
     @Binding var selectedIndex: Int
     @Binding var options: [String]
     
@@ -56,6 +57,7 @@ public struct AppSegmentView: View {
                 }
                 .onAppear {
                     DispatchQueue.main.async {
+                        self.containerWidth = geometry.size.width
                         calculateSeparatorWidth(geometry: geometry)
                     }
                 }
@@ -63,12 +65,21 @@ public struct AppSegmentView: View {
             }
             .onAppear {
                 DispatchQueue.main.async {
+                    self.containerWidth = geometry.size.width
                     calculateSeparatorLeading(geometry: geometry, selectedIndex: selectedIndex)
                 }
             }
         }
         .background(Color.appElevation2)
         .frame(height: 46)
+        .onChange(of: selectedIndex) { newValue in
+            let segmentCount = options.count.toCGFloat
+            let width = containerWidth - (segmentCount - 1)
+            let separatorWidth = width / segmentCount
+            withAnimation(.linear(duration: 0.25)) {
+                spearatorLeading = (newValue.toCGFloat * separatorWidth) + (separatorWidth / 3) + newValue.toCGFloat * 1
+            }
+        }
     }
     
     private func calculateSeparatorWidth(geometry: GeometryProxy) {

@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 public protocol RecipeViewProtocol: Identifiable {
-    var id: UUID { get }
+    var id: Int { get }
     var recipeId: Int { get }
     var name: String { get }
     var category: String { get }
@@ -19,7 +19,7 @@ public protocol RecipeViewProtocol: Identifiable {
 }
 
 public struct RecipeViewModel: RecipeViewProtocol {
-    public var id = UUID()
+    public var id: Int
     public var recipeId: Int
     public var name: String
     public var category: String
@@ -39,6 +39,7 @@ public struct RecipeViewModel: RecipeViewProtocol {
         userImageUrl: String?,
         username: String?
     ) {
+        self.id = recipeId
         self.recipeId = recipeId
         self.name = name
         self.category = category
