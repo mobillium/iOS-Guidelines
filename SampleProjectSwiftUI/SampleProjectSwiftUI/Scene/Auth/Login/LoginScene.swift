@@ -19,43 +19,49 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
     
     var body: some View {
         BaseScene(content: {
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 24) {
-                    headerView
-                    
-                    Spacer(minLength: 40)
-                    
-                    emailFieldView
-                    passwordFieldView
-                    
-                    forgotPasswordButton
-                    
-                    Spacer(minLength: 24)
-                    
-                    loginButton
-                    
-                    Spacer(minLength: 40)
-                    
-                    bottomSignUpSection
-                    
+            VStack(spacing: .zero) {
+                HStack(spacing: .zero) {
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image("ic_back", bundle: Bundle.assetsKit)
+                            .tint(Color.appText)
+                            .frame(width: 48, height: 48)
+                    }
+                    .padding([.leading], -18.5)
                     Spacer()
                 }
-                .padding([.leading, .trailing], 16)
-                .padding(.top, 16)
+                .padding([.leading], 16)
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: .zero) {
+                        headerView
+                        
+                        Spacer(minLength: 32)
+                        
+                        emailFieldView
+                        
+                        Spacer(minLength: 20)
+                        
+                        passwordFieldView
+                        
+                        Spacer(minLength: 32)
+                        
+                        loginButton
+                        
+                        Spacer(minLength: 12)
+                        
+                        forgotPasswordButton
+                    }
+                    .padding([.top, .leading, .trailing], 16)
+                }
+                Spacer()
+                
+                bottomSignUpSection
             }
         }, viewModel: viewModel)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.appElevation1)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.appPrimary)
-                }
-            }
-        }
+        .navigationBarHidden(true)
     }
     
     // MARK: - Header View
@@ -85,7 +91,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                         viewModel.validateEmail()
                     }
                     .foregroundColor(.appText)
-                    .font(.font(.nunitoSemiBold, size: .large))
+                    .font(.font(.nunitoSemiBold, size: .xxLarge))
             }
             .frame(height: 56)
             .padding([.leading, .trailing], 12)
@@ -124,7 +130,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                         viewModel.validatePassword()
                     }
                     .foregroundColor(.appText)
-                    .font(.font(.nunitoSemiBold, size: .large))
+                    .font(.font(.nunitoSemiBold, size: .xxLarge))
             }
             .frame(height: 56)
             .padding([.leading, .trailing], 12)

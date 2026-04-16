@@ -17,7 +17,7 @@ public struct OnboardingView: View {
             Spacer()
             VStack(spacing: 64) {
                 
-                Image(viewModel.imageName, bundle: Bundle(identifier: "com.mobillium.UIComponents"))
+                Image(viewModel.imageName, bundle: Bundle.assetsKit)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                 
