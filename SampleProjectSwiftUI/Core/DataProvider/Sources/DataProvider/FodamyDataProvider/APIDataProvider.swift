@@ -62,10 +62,25 @@ public struct APIDataProvider: DataProviderProtocol {
         return urlRequest
     }
     
+    private func adaptRequest(_ urlRequest: URLRequest) async -> URLRequest {
+        guard let interceptor else { return urlRequest }
+        return await withCheckedContinuation { continuation in
+            interceptor.adapt(urlRequest, for: Session.default) { result in
+                switch result {
+                case .success(let adapted):
+                    continuation.resume(returning: adapted)
+                case .failure:
+                    continuation.resume(returning: urlRequest)
+                }
+            }
+        }
+    }
+
     @discardableResult
     public func request<T: DecodableResponseRequest>(for request: T) async -> DecodableResult<T.ResponseType> {
-        guard let urlRequest = createUrlRequest(request) else { return .failure(APIError.invalidEndpoint)}
-        
+        guard let baseRequest = createUrlRequest(request) else { return .failure(APIError.invalidEndpoint) }
+        let urlRequest = await adaptRequest(baseRequest)
+
         do {
             let (data, response) = try await urlSession.data(for: urlRequest)
             networkLogger?.log(request: urlRequest, data: data, response: response as? HTTPURLResponse, error: nil)

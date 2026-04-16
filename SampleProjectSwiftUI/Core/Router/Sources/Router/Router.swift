@@ -8,7 +8,7 @@
 import SwiftUI
 
 public class AnyIdentifiable: Identifiable {
-    let destination: any Identifiable
+    public let destination: any Identifiable
     
     init(destination: any Identifiable) {
         self.destination = destination

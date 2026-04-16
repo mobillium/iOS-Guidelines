@@ -74,4 +74,12 @@ class RecipeDetailSceneModel: BaseSceneModel {
             break
         }
     }
+
+    func followUser() {
+        // TODO: Implement follow/unfollow network request
+    }
+
+    func likeRecipe() {
+        // TODO: Implement like network request
+    }
 }

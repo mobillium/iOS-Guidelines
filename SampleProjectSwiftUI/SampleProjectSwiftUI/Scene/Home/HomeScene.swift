@@ -54,6 +54,11 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .environmentObject(router)
+        .sheet(item: $router.presentedSheet) { item in
+            if let destination = item.destination as? AuthSheetDestinations {
+                destination.view
+            }
+        }
     }
     
     func setupAppearance() {

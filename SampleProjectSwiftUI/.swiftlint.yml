@@ -6,6 +6,15 @@ included:
   - Core/Network
 excluded:
   - .git
+  - Core/DataProvider/.build
+  - Core/Components/.build
+  - Core/Network/.build
+  - Core/Utilities/.build
+  - Core/Router/.build
+  - Core/AssetsKit/.build
+  - Core/FontsKit/.build
+  - Core/LocalizationKit/.build
+  - Core/SampleProjectSwiftUIPackages/.build
 analyzer_rules:
   - unused_declaration
   - unused_import

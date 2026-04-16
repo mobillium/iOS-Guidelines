@@ -9,6 +9,7 @@ import Combine
 import SwiftUI
 import Components
 import Router
+import DataProvider
 
 struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     
@@ -32,7 +33,14 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                             imageUrl: user.image?.url,
                             username: user.username,
                             stat: "\(user.recipeCount) Tarif \(user.followedCount) Takipçi",
-                            isFollowing: user.isFollowing
+                            isFollowing: user.isFollowing,
+                            onFollowTap: {
+                                guard TokenStorage.isLoggedIn else {
+                                    router.presentSheet(destination: AuthSheetDestinations.login)
+                                    return
+                                }
+                                viewModel.followUser()
+                            }
                         )
                     }
                     

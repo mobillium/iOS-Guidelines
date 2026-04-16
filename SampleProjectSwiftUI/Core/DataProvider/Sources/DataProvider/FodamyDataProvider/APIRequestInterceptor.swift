@@ -8,19 +8,18 @@
 
 import Foundation
 import Alamofire
-// import KeychainSwift
+import KeychainSwift
 
 public class APIRequestInterceptor: RequestInterceptor {
     
     public static let shared = APIRequestInterceptor()
     
     public func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        let urlRequest = urlRequest
-//        let accessToken = KeychainSwift().get("token")
-        
-//        if let accessToken = accessToken {
-//            urlRequest.headers.add(name: "X-Fodamy-Token", value: accessToken)
-//        }
+        var urlRequest = urlRequest
+
+        if let accessToken = TokenStorage.token {
+            urlRequest.setValue(accessToken, forHTTPHeaderField: "X-Fodamy-Token")
+        }
 
         completion(.success(urlRequest))
     }

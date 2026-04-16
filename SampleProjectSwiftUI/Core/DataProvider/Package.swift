@@ -19,7 +19,8 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "./Network"),
-        .package(url: "https://github.com/Alamofire/Alamofire", "5.8.1"..."6.0.0")
+        .package(url: "https://github.com/Alamofire/Alamofire", "5.8.1"..."6.0.0"),
+        .package(url: "https://github.com/evgenyneu/keychain-swift", "20.0.0"..<"21.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -32,7 +33,8 @@ let package = Package(
             dependencies: [
                 "Domain",
                 "Network",
-                .product(name: "Alamofire", package: "Alamofire")
+                .product(name: "Alamofire", package: "Alamofire"),
+                .product(name: "KeychainSwift", package: "keychain-swift")
             ]),
         .testTarget(
             name: "DataProviderTests",

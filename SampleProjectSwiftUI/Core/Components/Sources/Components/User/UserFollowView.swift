@@ -14,17 +14,20 @@ public struct UserFollowView: View {
     private var username: String?
     private var stat: String
     private var isFollowing: Bool
+    private var onFollowTap: () -> Void
     
     public init(
         imageUrl: String?,
         username: String?,
         stat: String,
-        isFollowing: Bool
+        isFollowing: Bool,
+        onFollowTap: @escaping () -> Void = {}
     ) {
         self.imageUrl = imageUrl
         self.username = username
         self.stat = stat
         self.isFollowing = isFollowing
+        self.onFollowTap = onFollowTap
     }
     
     public var body: some View {
@@ -61,7 +64,7 @@ public struct UserFollowView: View {
             Spacer()
             
             Button("Takip Et") {
-                
+                onFollowTap()
             }
             .buttonStyle(FollowButtonStyle(isFollow: isFollowing))
         }
