@@ -39,6 +39,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                 }
             }, viewModel: viewModel)
             .navigationDestination(for: HomeDestinations.self)
+            .sheetDestination(router: router, for: HomeSheetDestinations.self)
             .ignoresSafeArea(edges: .bottom)
             .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)
@@ -54,11 +55,6 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
         }
         .navigationViewStyle(StackNavigationViewStyle())
         .environmentObject(router)
-        .fullScreenCover(item: $router.presentedSheet) { item in
-            if let destination = item.destination as? AuthSheetDestinations {
-                destination.view
-            }
-        }
     }
     
     func setupAppearance() {

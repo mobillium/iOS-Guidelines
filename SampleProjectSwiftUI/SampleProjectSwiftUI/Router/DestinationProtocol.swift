@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Router
 
 protocol DestinationProtocol: Hashable, Equatable {
     associatedtype DestinationView: View
@@ -35,5 +36,27 @@ extension View {
         return self.navigationDestination(for: destination.self, destination: { destination in
             destination.view
         })
+    }
+}
+
+protocol SheetDestinationProtocol: Identifiable {
+    associatedtype DestinationView: View
+    
+    @ViewBuilder var view: DestinationView { get }
+}
+
+extension SheetDestinationProtocol {
+    var id: String { String(describing: self) }
+}
+
+extension View {
+    
+    func sheetDestination<D: SheetDestinationProtocol>(router: Router, for destination: D.Type) -> some View {
+        self.sheet(item: Binding<D?>(
+            get: { router.presentedSheet?.destination as? D },
+            set: { _ in router.presentedSheet = nil }
+        )) { destination in
+            destination.view
+        }
     }
 }

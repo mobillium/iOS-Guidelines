@@ -1,20 +1,20 @@
 //
-//  AuthSheetDestinations.swift
+//  HomeSheetDestinations.swift
 //  SampleProjectSwiftUI
 //
-//  Created by Mehmet Salih Aslan on 9.04.2026.
+//  Created by Mehmet Salih Aslan on 16.04.2026.
 //
 
 import SwiftUI
 
-enum AuthSheetDestinations: SheetDestinationProtocol {
-    case login
-
+enum HomeSheetDestinations: SheetDestinationProtocol {
+    case auth
+    
     @MainActor
     @ViewBuilder
     var view: some View {
         switch self {
-        case .login:
+        case .auth:
             AuthNavigationScene()
         }
     }
