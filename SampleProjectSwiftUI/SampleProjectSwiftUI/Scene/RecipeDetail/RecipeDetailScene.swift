@@ -36,7 +36,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                             isFollowing: user.isFollowing,
                             onFollowTap: {
                                 guard TokenStorage.isLoggedIn else {
-                                    router.presentSheet(destination: AuthSheetDestinations.login)
+                                    router.presentSheet(destination: HomeSheetDestinations.auth)
                                     return
                                 }
                                 viewModel.followUser()
@@ -65,6 +65,11 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
         }, viewModel: viewModel)
         .toolbar(.hidden, for: .tabBar)
         .onAppear {
+            Task { @MainActor in
+                await viewModel.fetchRecipe()
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .loginSuccess)) { _ in
             Task { @MainActor in
                 await viewModel.fetchRecipe()
             }

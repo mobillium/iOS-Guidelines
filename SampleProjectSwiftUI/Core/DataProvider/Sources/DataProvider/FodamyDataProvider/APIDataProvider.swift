@@ -58,6 +58,8 @@ public struct APIDataProvider: DataProviderProtocol {
             let jsonData = try? JSONSerialization.data(withJSONObject: request.bodyParameters, options: [])
             urlRequest.httpBody = jsonData
         }
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         
         return urlRequest
     }

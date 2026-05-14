@@ -8,16 +8,15 @@
 import Foundation
 import Combine
 import DataProvider
+import Utilities
 
 @MainActor
 class LoginSceneModel: BaseSceneModel {
 
-    @Published var email: String = ""
+    @Published var username: String = ""
     @Published var password: String = ""
-    @Published var emailError: String? = nil
-    @Published var passwordError: String? = nil
-
-    var onLoginSuccess: (() -> Void)?
+    @Published var usernameError: String?
+    @Published var passwordError: String?
 
     private let authRepository = AuthRepository(dataProvider: apiDataProvider)
 
@@ -25,13 +24,13 @@ class LoginSceneModel: BaseSceneModel {
         super.init()
     }
 
-    func validateEmail() {
-        if email.isEmpty {
-            emailError = "E-posta alanı boş olamaz."
-        } else if !isValidEmail(email) {
-            emailError = "Geçerli bir e-posta adresi giriniz."
+    func validateUsername() {
+        if username.isEmpty {
+            usernameError = "Kullanıcı adı boş olamaz."
+        } else if username.count < 3 {
+            usernameError = "Kullanıcı adı en az 3 karakter olmalıdır."
         } else {
-            emailError = nil
+            usernameError = nil
         }
     }
 
@@ -51,29 +50,33 @@ class LoginSceneModel: BaseSceneModel {
         return emailTest.evaluate(with: email)
     }
 
-    func login() {
-        validateEmail()
+    func login(successCompletion: VoidClosure?) {
+        validateUsername()
         validatePassword()
 
-        if emailError == nil && passwordError == nil {
+        if usernameError == nil && !username.isEmpty && passwordError == nil {
             Task {
-                await loginRequest()
+                let isSuccess = await loginRequest()
+                if isSuccess {
+                    successCompletion?()
+                }
             }
         }
     }
 
-    private func loginRequest() async {
+    private func loginRequest() async -> Bool {
         showLoading = true
-        let result = await authRepository.login(username: email, password: password)
+        let result = await authRepository.login(username: username, password: password)
         showLoading = false
 
         switch result {
         case .success(let auth):
             TokenStorage.save(token: auth.token)
-            onLoginSuccess?()
+            NotificationCenter.default.post(name: .loginSuccess, object: nil)
+            return true
         case .failure:
             passwordError = "Hatalı şifre"
+            return false
         }
     }
 }
-

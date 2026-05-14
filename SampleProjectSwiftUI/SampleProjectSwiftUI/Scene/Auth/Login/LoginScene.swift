@@ -38,7 +38,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                         
                         Spacer(minLength: 32)
                         
-                        emailFieldView
+                        usernameFieldView
                         
                         Spacer(minLength: 20)
                         
@@ -72,23 +72,22 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
             .frame(maxWidth: .infinity, alignment: .center)
     }
     
-    // MARK: - Email Field View
-    private var emailFieldView: some View {
+    // MARK: - Username Field View
+    private var usernameFieldView: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(spacing: 8) {
-                Image("ic_mail", bundle: .assetsKit)
+                Image("ic_user", bundle: .assetsKit)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.appText)
-                
-                TextField("E-mail Adresi", text: $viewModel.email)
-                    .textContentType(.emailAddress)
-                    .keyboardType(.emailAddress)
+
+                TextField("Kullanıcı Adı", text: $viewModel.username)
+                    .textContentType(.username)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
-                    .onChange(of: viewModel.email) { _ in
-                        viewModel.validateEmail()
+                    .onChange(of: viewModel.username) { _ in
+                        viewModel.validateUsername()
                     }
                     .foregroundColor(.appText)
                     .font(.font(.nunitoSemiBold, size: .xxLarge))
@@ -100,13 +99,13 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
                     .stroke(
-                        viewModel.emailError != nil ? Color.appPrimary : Color.appElevation2,
+                        viewModel.usernameError != nil ? Color.appPrimary : Color.appElevation2,
                         lineWidth: 2
                     )
             )
-            
-            if let emailError = viewModel.emailError {
-                Text(emailError)
+
+            if let usernameError = viewModel.usernameError {
+                Text(usernameError)
                     .font(.font(.nunitoSemiBold, size: .medium))
                     .foregroundColor(.appPrimary)
                     .lineLimit(1)
@@ -170,14 +169,16 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
     // MARK: - Login Button
     private var loginButton: some View {
         Button(action: {
-            viewModel.login()
+            viewModel.login(successCompletion: {
+                dismiss()
+            })
         }) {
             Text(L10n.Login.title)
                 .frame(maxWidth: .infinity)
                 .frame(height: 56)
         }
         .buttonStyle(PrimaryLargeButton())
-        .disabled(viewModel.showLoading || viewModel.email.isEmpty || viewModel.password.isEmpty)
+        .disabled(viewModel.showLoading || viewModel.username.isEmpty || viewModel.password.isEmpty)
     }
     
     // MARK: - Bottom Sign Up Section

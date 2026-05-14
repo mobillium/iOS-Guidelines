@@ -17,11 +17,6 @@ struct AuthNavigationScene: View {
         NavigationStack {
             LoginScene(viewModel: loginViewModel)
         }
-        .onAppear {
-            loginViewModel.onLoginSuccess = {
-                dismiss()
-            }
-        }
     }
 }
 

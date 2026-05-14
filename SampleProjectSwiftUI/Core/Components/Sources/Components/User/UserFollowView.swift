@@ -63,7 +63,7 @@ public struct UserFollowView: View {
             }
             Spacer()
             
-            Button("Takip Et") {
+            Button(isFollowing ? "Takip Ediliyor" : "Takip Et") {
                 onFollowTap()
             }
             .buttonStyle(FollowButtonStyle(isFollow: isFollowing))
