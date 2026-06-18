@@ -1,8 +1,8 @@
 //
-//  LoginScene.swift
+//  RegisterScene.swift
 //  SampleProjectSwiftUI
 //
-//  Created by Mehmet Salih Aslan on 9.04.2026.
+//  Created by Mehmet Salih Aslan on 18.06.2026.
 //
 
 import Combine
@@ -12,16 +12,17 @@ import Components
 import Router
 import LocalizationKit
 
-struct LoginScene<ViewModel: LoginSceneModel>: View {
-    
+struct RegisterScene<ViewModel: RegisterSceneModel>: View {
+
     @ObservedObject var viewModel: ViewModel
-    
+    @EnvironmentObject private var router: Router
+
     var body: some View {
         BaseScene(content: {
             VStack(spacing: .zero) {
                 HStack(spacing: .zero) {
                     Button(action: {
-                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
+                        router.navigateBack()
                     }) {
                         Image("ic_back", bundle: Bundle.assetsKit)
                             .tint(Color.appText)
@@ -34,43 +35,85 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: .zero) {
                         headerView
-                        
+
                         Spacer(minLength: 32)
-                        
-                        usernameFieldView
-                        
+
+                        emailFieldView
+
                         Spacer(minLength: 20)
-                        
+
+                        usernameFieldView
+
+                        Spacer(minLength: 20)
+
                         passwordFieldView
-                        
+
                         Spacer(minLength: 32)
-                        
-                        loginButton
-                        
-                        Spacer(minLength: 12)
-                        
-                        forgotPasswordButton
+
+                        registerButton
                     }
                     .padding([.top, .leading, .trailing], 16)
                 }
                 Spacer()
-                
-                bottomSignUpSection
+
+                bottomSignInSection
             }
         }, viewModel: viewModel)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.appElevation1)
         .navigationBarHidden(true)
     }
-    
+
     // MARK: - Header View
     private var headerView: some View {
-        Text(L10n.Login.title)
+        Text(L10n.Register.title)
             .font(.font(.nunitoBold, size: .xxLarge))
             .foregroundColor(.appFocus)
             .frame(maxWidth: .infinity, alignment: .center)
     }
-    
+
+    // MARK: - Email Field View
+    private var emailFieldView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+                Image("ic_mail", bundle: .assetsKit)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20, height: 20)
+                    .foregroundColor(.appText)
+
+                TextField("E-posta", text: $viewModel.email)
+                    .textContentType(.emailAddress)
+                    .keyboardType(.emailAddress)
+                    .autocorrectionDisabled()
+                    .textInputAutocapitalization(.never)
+                    .onChange(of: viewModel.email) {
+                        viewModel.validateEmail()
+                    }
+                    .foregroundColor(.appText)
+                    .font(.font(.nunitoSemiBold, size: .xxLarge))
+            }
+            .frame(height: 56)
+            .padding([.leading, .trailing], 12)
+            .background(Color.clear)
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(
+                        viewModel.emailError != nil ? Color.appPrimary : Color.appElevation2,
+                        lineWidth: 2
+                    )
+            )
+
+            if let emailError = viewModel.emailError {
+                Text(emailError)
+                    .font(.font(.nunitoSemiBold, size: .medium))
+                    .foregroundColor(.appPrimary)
+                    .lineLimit(1)
+            }
+        }
+    }
+
     // MARK: - Username Field View
     private var usernameFieldView: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -85,8 +128,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                     .textContentType(.username)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
-                    .onChange(of: viewModel.username) {
-                        viewModel.validateUsername()
+                    .onChange(of: viewModel.username) {                        viewModel.validateUsername()
                     }
                     .foregroundColor(.appText)
                     .font(.font(.nunitoSemiBold, size: .xxLarge))
@@ -111,7 +153,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
             }
         }
     }
-    
+
     // MARK: - Password Field View
     private var passwordFieldView: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -121,9 +163,9 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                     .scaledToFit()
                     .frame(width: 20, height: 20)
                     .foregroundColor(.appText)
-                
+
                 SecureField("Şifre", text: $viewModel.password)
-                    .textContentType(.password)
+                    .textContentType(.newPassword)
                     .onChange(of: viewModel.password) { _ in
                         viewModel.validatePassword()
                     }
@@ -141,7 +183,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                         lineWidth: 2
                     )
             )
-            
+
             if let passwordError = viewModel.passwordError {
                 Text(passwordError)
                     .font(.font(.nunitoSemiBold, size: .medium))
@@ -150,43 +192,31 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
             }
         }
     }
-    
-    // MARK: - Forgot Password Button
-    private var forgotPasswordButton: some View {
-        HStack {
-            Spacer()
-            Button(action: {
-                // TODO: Navigate to forgot password screen
-            }) {
-                Text(L10n.Login.forgotPassword)
-                    .font(.font(.nunitoSemiBold, size: .small))
-                    .foregroundColor(.appPrimary)
-            }
-        }
-    }
-    
-    // MARK: - Login Button
-    private var loginButton: some View {
+
+    // MARK: - Register Button
+    private var registerButton: some View {
         Button(action: {
-            viewModel.login()
+            viewModel.register()
         }) {
-            Text(L10n.Login.title)
+            Text(L10n.Register.title)
                 .frame(maxWidth: .infinity)
                 .frame(height: 56)
         }
         .buttonStyle(PrimaryLargeButton())
-        .disabled(viewModel.showLoading || viewModel.username.isEmpty || viewModel.password.isEmpty)
+        .disabled(viewModel.showLoading || viewModel.email.isEmpty || viewModel.username.isEmpty || viewModel.password.isEmpty)
     }
-    
-    // MARK: - Bottom Sign Up Section
-    private var bottomSignUpSection: some View {
+
+    // MARK: - Bottom Sign In Section
+    private var bottomSignInSection: some View {
         HStack(spacing: 4) {
-            Text(L10n.Login.bottomText)
+            Text(L10n.Register.bottomText)
                 .font(.font(.nunitoSemiBold, size: .small))
                 .foregroundColor(.appText)
-            
-            NavigationLink(value: AuthDestinations.register) {
-                Text("Üye Ol")
+
+            Button(action: {
+                router.navigateBack()
+            }) {
+                Text(L10n.Login.title)
                     .font(.font(.nunitoBold, size: .small))
                     .foregroundColor(.appPrimary)
             }
@@ -196,6 +226,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
 }
 
 #Preview {
-    let viewModel = LoginSceneModel()
-    return LoginScene(viewModel: viewModel)
+    let viewModel = RegisterSceneModel()
+    return RegisterScene(viewModel: viewModel)
 }
+

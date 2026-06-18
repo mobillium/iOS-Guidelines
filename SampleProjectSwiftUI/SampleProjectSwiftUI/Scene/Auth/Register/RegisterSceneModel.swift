@@ -1,8 +1,8 @@
 //
-//  LoginSceneModel.swift
+//  RegisterSceneModel.swift
 //  SampleProjectSwiftUI
 //
-//  Created by Mehmet Salih Aslan on 9.04.2026.
+//  Created by Mehmet Salih Aslan on 18.06.2026.
 //
 
 import Foundation
@@ -11,10 +11,12 @@ import DataProvider
 import Utilities
 
 @MainActor
-class LoginSceneModel: BaseSceneModel {
+class RegisterSceneModel: BaseSceneModel {
 
+    @Published var email: String = ""
     @Published var username: String = ""
     @Published var password: String = ""
+    @Published var emailError: String?
     @Published var usernameError: String?
     @Published var passwordError: String?
 
@@ -22,6 +24,16 @@ class LoginSceneModel: BaseSceneModel {
 
     override init() {
         super.init()
+    }
+
+    func validateEmail() {
+        if email.isEmpty {
+            emailError = "E-posta boş olamaz."
+        } else if !isValidEmail(email) {
+            emailError = "Geçerli bir e-posta adresi giriniz."
+        } else {
+            emailError = nil
+        }
     }
 
     func validateUsername() {
@@ -50,20 +62,23 @@ class LoginSceneModel: BaseSceneModel {
         return emailTest.evaluate(with: email)
     }
 
-    func login() {
+    func register() {
+        validateEmail()
         validateUsername()
         validatePassword()
 
-        if usernameError == nil && !username.isEmpty && passwordError == nil {
+        if emailError == nil && !email.isEmpty &&
+           usernameError == nil && !username.isEmpty &&
+           passwordError == nil {
             Task {
-                let _ = await loginRequest()
+                let _ = await registerRequest()
             }
         }
     }
 
-    private func loginRequest() async -> Bool {
+    private func registerRequest() async -> Bool {
         showLoading = true
-        let result = await authRepository.login(username: username, password: password)
+        let result = await authRepository.register(username: username, email: email, password: password)
         showLoading = false
 
         switch result {
@@ -73,8 +88,9 @@ class LoginSceneModel: BaseSceneModel {
             NotificationCenter.default.post(name: .dismissAuth, object: nil)
             return true
         case .failure:
-            passwordError = "Hatalı şifre"
+            passwordError = "Kayıt işlemi başarısız oldu."
             return false
         }
     }
 }
+

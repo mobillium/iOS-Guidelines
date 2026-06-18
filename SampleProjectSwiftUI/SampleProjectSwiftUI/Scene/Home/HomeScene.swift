@@ -10,6 +10,7 @@ import SwiftUI
 import Components
 import Router
 import LocalizationKit
+import DataProvider
 
 struct HomeScene<ViewModel: HomeSceneModel>: View {
     
@@ -17,6 +18,7 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
     @State var selectedIndex = 0
     @State var options = [L10n.Home.editorChoiceRecipes, L10n.Home.lastAddedRecipes]
     @ObservedObject var router = Router()
+    @State private var showLogoutAlert = false
     
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
@@ -38,8 +40,8 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                     .tabViewStyle(.page(indexDisplayMode: .never))
                 }
             }, viewModel: viewModel)
-            .navigationDestination(for: HomeDestinations.self)
-            .sheetDestination(router: router, for: HomeSheetDestinations.self)
+            .navigationDestination(for: RecipeDestinations.self)
+            .sheetDestination(router: router, for: AuthSheetDestinations.self)
             .ignoresSafeArea(edges: .bottom)
             .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)
@@ -51,6 +53,22 @@ struct HomeScene<ViewModel: HomeSceneModel>: View {
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(.appPureWhite)
                 })
+                if TokenStorage.isLoggedIn {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showLogoutAlert = true
+                        } label: {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .foregroundColor(.appPureWhite)
+                        }
+                    }
+                }
+            }
+            .alert("Çıkış Yap", isPresented: $showLogoutAlert) {
+                Button("Çıkış Yap", role: .destructive) { viewModel.logout() }
+                Button("İptal", role: .cancel) {}
+            } message: {
+                Text("Hesabından çıkmak istediğinden emin misin?")
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())

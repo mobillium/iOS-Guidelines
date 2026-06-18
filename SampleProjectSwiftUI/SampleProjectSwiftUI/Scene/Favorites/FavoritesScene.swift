@@ -29,7 +29,7 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                             HorizontalRecipesView(
                                 viewModel: viewModel.recipesViewModel,
                             ) { recipeId in
-                                let destination = FavoritesDestinations.recipeDetail(recipeId: recipeId)
+                                let destination = RecipeDestinations.recipeDetail(recipeId: recipeId)
                                 router.navigate(to: destination)
                             }
                         }
@@ -37,7 +37,8 @@ struct FavoritesScene<ViewModel: FavoritesSceneModel>: View {
                     }
                 }
             }, viewModel: viewModel)
-            .navigationDestination(for: FavoritesDestinations.self)
+            .navigationDestination(for: RecipeDestinations.self)
+            .sheetDestination(router: router, for: AuthSheetDestinations.self)
             .frame(width: UIScreen.main.bounds.size.width)
             .background(Color.appElevation1)
             .navigationBarTitleDisplayMode(.inline)

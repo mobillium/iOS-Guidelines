@@ -36,7 +36,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
                             isFollowing: user.isFollowing,
                             onFollowTap: {
                                 guard TokenStorage.isLoggedIn else {
-                                    router.presentSheet(destination: HomeSheetDestinations.auth)
+                                    router.presentSheet(destination: AuthSheetDestinations.auth)
                                     return
                                 }
                                 viewModel.followUser()
@@ -70,6 +70,11 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
             }
         }
         .onReceive(NotificationCenter.default.publisher(for: .loginSuccess)) { _ in
+            Task { @MainActor in
+                await viewModel.fetchRecipe()
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .logoutSuccess)) { _ in
             Task { @MainActor in
                 await viewModel.fetchRecipe()
             }
@@ -173,7 +178,7 @@ struct RecipeDetailScene<ViewModel: RecipeDetailSceneModel>: View {
     var addCommentButton: some View {
         Button("Yorum Ekle") {
             let recipeId = viewModel.recipeId
-            let destination = HomeDestinations.recipeComments(recipeId: recipeId)
+            let destination = RecipeDestinations.recipeComments(recipeId: recipeId)
             self.router.navigate(to: destination)
         }
         .buttonStyle(PrimaryLargeButton())

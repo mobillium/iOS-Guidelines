@@ -33,7 +33,7 @@ struct RecipesScene<ViewModel: RecipesSceneModel>: View {
                     )
                     .onTapGesture {
                         let recipeId = recipe.id
-                        let destination = HomeDestinations.recipeDetail(recipeId: recipeId)
+                        let destination = RecipeDestinations.recipeDetail(recipeId: recipeId)
                         self.router.navigate(to: destination)
                     }
                 }

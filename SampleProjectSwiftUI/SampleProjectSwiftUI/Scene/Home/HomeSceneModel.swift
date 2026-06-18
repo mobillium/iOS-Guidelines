@@ -6,7 +6,25 @@
 //
 
 import Combine
+import DataProvider
+import Utilities
 
+@MainActor
 class HomeSceneModel: BaseSceneModel {
-    
+
+    private let authRepository = AuthRepository(dataProvider: apiDataProvider)
+
+    func logout() {
+        Task {
+            showFullScreenLoading = true
+            let result = await authRepository.logout()
+            showFullScreenLoading = false
+            switch result {
+            case .success:
+                TokenStorage.delete()
+            case .failure(let error):
+                print("Logout failed: \(error)")
+            }
+        }
+    }
 }

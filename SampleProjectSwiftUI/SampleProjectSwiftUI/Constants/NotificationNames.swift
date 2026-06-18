@@ -8,5 +8,7 @@
 import Foundation
 
 public extension Notification.Name {
+    static let dismissAuth = Notification.Name(rawValue: "dismissAuth")
     static let loginSuccess = Notification.Name(rawValue: "loginSuccess")
+    static let logoutSuccess = Notification.Name(rawValue: "logoutSuccess")
 }

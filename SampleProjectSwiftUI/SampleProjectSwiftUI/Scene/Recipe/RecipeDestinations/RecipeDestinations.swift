@@ -1,14 +1,15 @@
 //
-//  RecipeCommentsDestination.swift
+//  RecipeDestinations.swift
 //  SampleProjectSwiftUI
 //
-//  Created by Murat Celebi on 18.12.2025.
+//  Created by Mehmet Salih Aslan on 18.06.2026.
 //
 
 import SwiftUI
 
-enum RecipeCommentsDestination: DestinationProtocol {
+enum RecipeDestinations: DestinationProtocol {
     case recipeComments(recipeId: Int)
+    case recipeDetail(recipeId: Int)
 
     @MainActor
     @ViewBuilder
@@ -16,6 +17,8 @@ enum RecipeCommentsDestination: DestinationProtocol {
         switch self {
         case .recipeComments(let recipeId):
             RecipeCommentsScene(viewModel: RecipeCommentsSceneModel(recipeId: recipeId))
+        case .recipeDetail(let recipeId):
+            RecipeDetailScene(viewModel: RecipeDetailSceneModel(recipeId: recipeId))
         }
     }
 }
