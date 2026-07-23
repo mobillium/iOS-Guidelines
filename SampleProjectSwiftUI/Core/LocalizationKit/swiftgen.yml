@@ -1,7 +1,11 @@
+input_dir: Sources
+output_dir: ${DERIVED_SOURCES_DIR}
+
 strings:
-  inputs: Sources/Resources
+  inputs:
+    - Resources
   outputs:
     - templatePath: strings.stencil
-      output: Sources/Generated/StringConstants.swift
+      output: Strings.generated.swift
       params:
           publicAccess: public

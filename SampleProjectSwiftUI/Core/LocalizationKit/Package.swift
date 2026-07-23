@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "LocalizationKit",
+    defaultLocalization: "en",
     platforms: [
         .iOS(.v17)
     ],
@@ -15,14 +16,15 @@ let package = Package(
             targets: ["LocalizationKit"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/SwiftGen/SwiftGenPlugin", from: "6.6.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "LocalizationKit",
-            resources: [
-                .process("Resources"),
+            plugins: [
+                .plugin(name: "SwiftGenPlugin", package: "SwiftGenPlugin")
             ],
         ),
         .testTarget(
