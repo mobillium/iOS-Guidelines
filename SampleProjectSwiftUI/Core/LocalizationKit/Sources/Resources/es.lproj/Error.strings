@@ -1,0 +1,7 @@
+"Error.empty" = "El campo %@ no puede estar vacío.";
+"Error.refreshFromTop" = "Por favor, actualiza deslizando la pantalla hacia abajo.";
+"Error.emptyFields" = "Por favor, rellena los campos vacíos.";
+"Error.checkInformations" = "Por favor, comprueba tu información.";
+"Error.Key.username" = "Nombre de usuario";
+"Error.Key.email" = "Correo electrónico";
+"Error.Key.comment" = "Comentario";

@@ -6,6 +6,6 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"Placeholder.username" = "Username";
-"Placeholder.email" = "Email Address";
-"Placeholder.password" = "Password";
+"Placeholder.username" = "Kullanıcı Adı";
+"Placeholder.email" = "E-mail Adresi";
+"Placeholder.password" = "Şifre";

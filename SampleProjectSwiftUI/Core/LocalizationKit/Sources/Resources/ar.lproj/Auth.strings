@@ -1,0 +1,8 @@
+"Login.title" = "تسجيل الدخول";
+"Login.bottomText" = "ليس لديك حساب؟";
+"Login.forgotPassword" = "هل نسيت كلمة المرور؟";
+"Register.title" = "إنشاء حساب";
+"Register.bottomText" = "هل لديك حساب بالفعل؟";
+"SignIn.navigationTitle" = "تسجيل الدخول";
+"ResetPassword.title" = "إعادة تعيين كلمة المرور";
+"ResetPassword.reset" = "إعادة تعيين";

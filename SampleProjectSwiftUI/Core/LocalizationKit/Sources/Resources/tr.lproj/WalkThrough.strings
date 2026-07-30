@@ -1,0 +1,13 @@
+/*
+ WalkThrough.strings
+ SampleProject
+ */
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "İlerle";
+"WalkThrough.Start" = "Başla!";
+"WalkThrough.firstTitle" = "Fodamy Network'e hoş geldin!";
+"WalkThrough.secondTitle" = "Tarif bulmak hiç bu kadar kolay olmamıştı.";
+"WalkThrough.thirdTitle" = "Yeni tarif ekle.";
+"WalkThrough.fourthTitle" = "Tarifleri başkalarıyla paylaş.";
+"WalkThrough.descriptionText" = "Fodamy, dünyanın her yerinden favori tariflerini bulabileceğin en iyi yerdir.";

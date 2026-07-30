@@ -1,0 +1,13 @@
+/*
+ WalkThrough.strings
+ SampleProject
+ */
+
+// MARK: - WalkThrough
+"WalkThrough.Next" = "Next";
+"WalkThrough.Start" = "Start!";
+"WalkThrough.firstTitle" = "Welcome to Fodamy Network!";
+"WalkThrough.secondTitle" = "Finding recipes were not that easy.";
+"WalkThrough.thirdTitle" = "Add new recipe.";
+"WalkThrough.fourthTitle" = "Share recipes with others.";
+"WalkThrough.descriptionText" = "Fodamy is the best place to find your favorite recipes in all around the world.";

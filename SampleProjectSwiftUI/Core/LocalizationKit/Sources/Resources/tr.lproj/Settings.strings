@@ -1,0 +1,6 @@
+// MARK: - Settings
+"Settings.title" = "Ayarlar";
+"Settings.language" = "Dil";
+
+// MARK: - LanguageSelection
+"LanguageSelection.title" = "Dil";

@@ -7,7 +7,7 @@
  */
 
 // MARK: - Action
-"Action.block" = "Block";
-"Action.loginWarning" = "You need to sign in.";
+"Action.block" = "Engelle";
+"Action.loginWarning" = "Giriş yapmanız gereklidir.";
 
-"Comment.placeholder" = "Write something..";
+"Comment.placeholder" = "Bir şeyler yazın..";

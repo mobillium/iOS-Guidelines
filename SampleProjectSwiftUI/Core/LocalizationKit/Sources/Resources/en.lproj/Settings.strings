@@ -1,0 +1,6 @@
+// MARK: - Settings
+"Settings.title" = "Settings";
+"Settings.language" = "Language";
+
+// MARK: - LanguageSelection
+"LanguageSelection.title" = "Language";

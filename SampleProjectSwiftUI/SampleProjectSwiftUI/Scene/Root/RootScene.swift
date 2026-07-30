@@ -7,10 +7,12 @@
 
 import Combine
 import SwiftUI
+import LocalizationKit
 
 struct RootScene<ViewModel: RootSceneModel>: View {
     
     @StateObject var viewModel = RootSceneModel.shared
+    @StateObject private var languageManager = LanguageManager.shared
     
     var body: some View {
         ZStack {
@@ -24,6 +26,11 @@ struct RootScene<ViewModel: RootSceneModel>: View {
                     MainTabScene(viewModel: viewModel)
                 }
             }
+        }
+        .environmentObject(languageManager)
+        .id(languageManager.current)
+        .task {
+            languageManager.configureOnLaunch()
         }
     }
 }

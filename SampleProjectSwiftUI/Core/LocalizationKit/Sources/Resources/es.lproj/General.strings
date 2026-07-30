@@ -1,0 +1,13 @@
+"General.login" = "Iniciar sesión";
+"General.register" = "Registrarse";
+"General.comment" = "Comentar";
+"General.like" = "Me gusta";
+"General.follow" = "Seguir";
+"General.following" = "Siguiendo";
+"General.recipeIngredients" = "Ingredientes";
+"General.recipeSteps" = "Instrucciones";
+"General.addComment" = "Añadir comentario";
+"General.comments" = "Comentarios";
+"General.giveUp" = "Cancelar";
+"General.recipe" = "Receta";
+"General.follower" = "Seguidor";

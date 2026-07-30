@@ -1,0 +1,7 @@
+"Error.empty" = "حقل %@ لا يمكن أن يكون فارغاً.";
+"Error.refreshFromTop" = "يرجى التحديث بسحب الشاشة لأسفل.";
+"Error.emptyFields" = "يرجى ملء الحقول الفارغة.";
+"Error.checkInformations" = "يرجى التحقق من معلوماتك.";
+"Error.Key.username" = "اسم المستخدم";
+"Error.Key.email" = "البريد الإلكتروني";
+"Error.Key.comment" = "التعليق";

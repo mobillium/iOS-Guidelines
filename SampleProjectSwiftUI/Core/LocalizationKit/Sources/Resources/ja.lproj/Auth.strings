@@ -1,0 +1,8 @@
+"Login.title" = "ログイン";
+"Login.bottomText" = "アカウントをお持ちではないですか？";
+"Login.forgotPassword" = "パスワードをお忘れですか？";
+"Register.title" = "サインアップ";
+"Register.bottomText" = "すでにアカウントをお持ちですか？";
+"SignIn.navigationTitle" = "ログイン";
+"ResetPassword.title" = "パスワードのリセット";
+"ResetPassword.reset" = "リセット";

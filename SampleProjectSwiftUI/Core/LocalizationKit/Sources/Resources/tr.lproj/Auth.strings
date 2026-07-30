@@ -1,0 +1,15 @@
+// MARK: - Login
+"Login.title" = "Giriş Yap";
+"Login.bottomText" = "Hesabın mı yok?";
+"Login.forgotPassword" = "Şifrenizi mi unuttunuz?";
+
+// MARK: - Register
+"Register.title" = "Üye Ol";
+"Register.bottomText" = "Hesabın mı var?";
+
+// MARK: - SignInPassword
+"SignIn.navigationTitle" = "Giriş Yap";
+
+// MARK: - PasswordReset
+"ResetPassword.title" = "Şifre Sıfırlama";
+"ResetPassword.reset" = "Sıfırla";

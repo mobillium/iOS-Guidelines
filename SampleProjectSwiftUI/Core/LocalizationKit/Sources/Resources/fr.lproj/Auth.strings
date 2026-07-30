@@ -1,0 +1,8 @@
+"Login.title" = "Se connecter";
+"Login.bottomText" = "Vous n'avez pas de compte ?";
+"Login.forgotPassword" = "Mot de passe oublié ?";
+"Register.title" = "S'inscrire";
+"Register.bottomText" = "Vous avez déjà un compte ?";
+"SignIn.navigationTitle" = "Se connecter";
+"ResetPassword.title" = "Réinitialisation du mot de passe";
+"ResetPassword.reset" = "Réinitialiser";

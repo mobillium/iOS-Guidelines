@@ -1,0 +1,7 @@
+"Error.empty" = "%@フィールドは空にできません。";
+"Error.refreshFromTop" = "画面を下へスワイプして更新してください。";
+"Error.emptyFields" = "空のフィールドに入力してください。";
+"Error.checkInformations" = "情報を確認してください。";
+"Error.Key.username" = "ユーザー名";
+"Error.Key.email" = "メールアドレス";
+"Error.Key.comment" = "コメント";

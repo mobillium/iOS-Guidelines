@@ -6,17 +6,17 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"General.login" = "Giriş Yap";
-"General.register" = "Üye Ol";
-"General.comment" = "Yorum";
-"General.like" = "Beğeni";
-"General.follow" = "Takip Et";
-"General.following" = "Takip Ediliyor";
-"General.recipeIngredients" = "Malzemeler";
-"General.recipeSteps" = "Yapılışı";
-"General.addComment" = "Yorum Ekle";
-"General.comments" = "Yorumlar";
-"General.giveUp" = "Vazgeç";
-"General.login" = "Giriş Yap";
-"General.recipe" = "Tarif";
-"General.follower" = "Takipçi";
+"General.login" = "Sign In";
+"General.register" = "Sign Up";
+"General.comment" = "Comment";
+"General.like" = "Like";
+"General.follow" = "Follow";
+"General.following" = "Following";
+"General.recipeIngredients" = "Ingredients";
+"General.recipeSteps" = "Directions";
+"General.addComment" = "Add Comment";
+"General.comments" = "Comments";
+"General.giveUp" = "Cancel";
+"General.login" = "Sign In";
+"General.recipe" = "Recipe";
+"General.follower" = "Follower";

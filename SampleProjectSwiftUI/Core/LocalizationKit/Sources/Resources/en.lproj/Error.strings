@@ -6,12 +6,12 @@
  Copyright © 2021 SampleProject. All rights reserved.
  */
 
-"Error.empty" = "%@ alanı boş olamaz.";
-"Error.refreshFromTop" = "Lütfen ekranı yukarıdan aşağıya kaydırarak yenileyiniz.";
-"Error.emptyFields" = "Lütfen boş alanları doldurunuz.";
-"Error.checkInformations" = "Lütfen bilgilerinizi kontrol ediniz.";
+"Error.empty" = "%@ field cannot be empty.";
+"Error.refreshFromTop" = "Please refresh by pulling the screen down.";
+"Error.emptyFields" = "Please fill in the empty fields.";
+"Error.checkInformations" = "Please check your information.";
 
 // MARK: - Keys
 "Error.Key.username" = "Username";
-"Error.Key.email" = "E-posta";
-"Error.Key.comment" = "Yorum";
+"Error.Key.email" = "Email";
+"Error.Key.comment" = "Comment";

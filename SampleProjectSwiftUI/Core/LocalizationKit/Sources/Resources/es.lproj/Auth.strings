@@ -1,0 +1,8 @@
+"Login.title" = "Iniciar sesión";
+"Login.bottomText" = "¿No tienes una cuenta?";
+"Login.forgotPassword" = "¿Olvidaste tu contraseña?";
+"Register.title" = "Registrarse";
+"Register.bottomText" = "¿Ya tienes una cuenta?";
+"SignIn.navigationTitle" = "Iniciar sesión";
+"ResetPassword.title" = "Restablecer contraseña";
+"ResetPassword.reset" = "Restablecer";

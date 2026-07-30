@@ -1,0 +1,13 @@
+"General.login" = "ログイン";
+"General.register" = "サインアップ";
+"General.comment" = "コメント";
+"General.like" = "いいね";
+"General.follow" = "フォロー";
+"General.following" = "フォロー中";
+"General.recipeIngredients" = "材料";
+"General.recipeSteps" = "作り方";
+"General.addComment" = "コメントを追加";
+"General.comments" = "コメント";
+"General.giveUp" = "キャンセル";
+"General.recipe" = "レシピ";
+"General.follower" = "フォロワー";

@@ -22,19 +22,24 @@ struct MainTabScene<ViewModel: MainTabSceneModel>: View {
         TabView {
             HomeScene(viewModel: HomeSceneModel())
                 .tabItem {
-                    Image("ic_home")
-                        .renderingMode(.template)
-                        .foregroundColor(.appFocus)
+                    Image(systemName: "house")
+                        .environment(\.symbolVariants, .none)
                 }
                 .tag(0)
             
             FavoritesScene(viewModel: FavoritesSceneModel())
                 .tabItem {
-                    Image("ic_heart")
-                        .renderingMode(.template)
-                        .foregroundColor(.appFocus)
+                    Image(systemName: "heart")
+                        .environment(\.symbolVariants, .none)
                 }
                 .tag(1)
+
+            SettingsScene(viewModel: SettingsSceneModel())
+                .tabItem {
+                    Image(systemName: "gearshape")
+                        .environment(\.symbolVariants, .none)
+                }
+                .tag(2)
         }
         .accentColor(.appPrimary)
     }

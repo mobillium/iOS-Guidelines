@@ -1,7 +1,4 @@
-// MARK: - Title
-"Home.editorChoiceRecipes" = "EDİTÖR SEÇİMİ";
-"Home.lastAddedRecipes" = "SON EKLENENLER";
-
-// MARK: - Others
-"Home.recipeCommnetAndLikeCount" = "%@ Yorum %@ Beğeni";
-"Home.userRecipeAndFollowerCount" = "%@ Tarif %@ Takipçi";
+"Home.editorChoiceRecipes" = "EDITOR'S CHOICE";
+"Home.lastAddedRecipes" = "RECENTLY ADDED";
+"Home.recipeCommnetAndLikeCount" = "%@ Comments %@ Likes";
+"Home.userRecipeAndFollowerCount" = "%@ Recipes %@ Followers";

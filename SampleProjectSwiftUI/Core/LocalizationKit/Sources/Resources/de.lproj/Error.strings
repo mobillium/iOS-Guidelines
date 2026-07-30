@@ -1,0 +1,7 @@
+"Error.empty" = "Das Feld %@ darf nicht leer sein.";
+"Error.refreshFromTop" = "Bitte durch Herunterziehen des Bildschirms aktualisieren.";
+"Error.emptyFields" = "Bitte füllen Sie die leeren Felder aus.";
+"Error.checkInformations" = "Bitte überprüfen Sie Ihre Informationen.";
+"Error.Key.username" = "Benutzername";
+"Error.Key.email" = "E-Mail";
+"Error.Key.comment" = "Kommentar";

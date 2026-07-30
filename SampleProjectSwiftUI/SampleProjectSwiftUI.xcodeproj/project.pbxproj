@@ -138,7 +138,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DDAA05628D365230015840C /* Build configuration list for PBXNativeTarget "SampleProjectSwiftUI" */;
 			buildPhases = (
-				3D7C8A7E2E61A190009A9381 /* Swiftgen */,
 				3DDAA0F828D3690F0015840C /* Swiftlint */,
 				3DDAA02E28D365220015840C /* Sources */,
 				3DDAA02F28D365220015840C /* Frameworks */,
@@ -279,24 +278,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3D7C8A7E2E61A190009A9381 /* Swiftgen */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = Swiftgen;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# 1. Paket yollarını bir dizi (array) olarak tanımla\nPACKAGES=(\n    \"${SRCROOT}/Core/LocalizationKit\"\n    \"${SRCROOT}/Core/AssetsKit\"\n    \"${SRCROOT}/Core/FontsKit\"\n)\n\n# 2. SwiftGen yolunu belirle\nif [[ -x \"/opt/homebrew/bin/swiftgen\" ]]; then\n    SWIFTGEN_PATH=\"/opt/homebrew/bin/swiftgen\"\nelif [[ -x \"/usr/local/bin/swiftgen\" ]]; then\n    SWIFTGEN_PATH=\"/usr/local/bin/swiftgen\"\nelse\n    echo \"error: SwiftGen kurulu değil. 'brew install swiftgen' komutu ile kurun.\"\n    exit 1\nfi\n\n# 3. Her bir paket için işlemi tekrarla\nfor PACKAGE_DIR in \"${PACKAGES[@]}\"; do\n    if [ -d \"$PACKAGE_DIR\" ]; then\n        echo \"SwiftGen çalıştırılıyor: $PACKAGE_DIR\"\n        cd \"$PACKAGE_DIR\"\n        \n        # SwiftGen'i çalıştır (Paket içinde swiftgen.yml olduğu varsayılır)\n        \"$SWIFTGEN_PATH\" config run --config \"swiftgen.yml\"\n    else\n        echo \"warning: Dizin bulunamadı, atlanıyor: $PACKAGE_DIR\"\n    fi\ndone\n";
-		};
 		3DDAA0F828D3690F0015840C /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
