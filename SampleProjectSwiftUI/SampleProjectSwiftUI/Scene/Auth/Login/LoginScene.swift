@@ -15,28 +15,13 @@ import LocalizationKit
 struct LoginScene<ViewModel: LoginSceneModel>: View {
     
     @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject private var router: Router
     
     var body: some View {
         BaseScene(content: {
             VStack(spacing: .zero) {
-                HStack(spacing: .zero) {
-                    Button(action: {
-                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
-                    }) {
-                        Image("ic_back", bundle: Bundle.assetsKit)
-                            .tint(Color.appText)
-                            .frame(width: 48, height: 48)
-                    }
-                    .padding([.leading], -18.5)
-                    Spacer()
-                }
-                .padding([.leading], 16)
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: .zero) {
-                        headerView
-                        
-                        Spacer(minLength: 32)
-                        
                         usernameFieldView
                         
                         Spacer(minLength: 20)
@@ -58,17 +43,35 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
                 bottomSignUpSection
             }
         }, viewModel: viewModel)
+        .navigationTitle(L10n.Login.title)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.appElevation1)
-        .navigationBarHidden(true)
-    }
-    
-    // MARK: - Header View
-    private var headerView: some View {
-        Text(L10n.Login.title)
-            .font(.font(.nunitoBold, size: .xxLarge))
-            .foregroundColor(.appFocus)
-            .frame(maxWidth: .infinity, alignment: .center)
+        .toolbarBackground(Color.appPrimary, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if #available(iOS 26.0, *) {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.font(.nunitoBold, size: .medium))
+                            .foregroundColor(.appPureWhite)
+                    }
+                    .buttonStyle(GlassProminentButtonStyle())
+                    .tint(.appPrimary)
+                } else {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.font(.nunitoBold, size: .medium))
+                            .foregroundColor(.appPureWhite)
+                    }
+                }
+            }
+        }
     }
     
     // MARK: - Username Field View
@@ -156,7 +159,7 @@ struct LoginScene<ViewModel: LoginSceneModel>: View {
         HStack {
             Spacer()
             Button(action: {
-                // TODO: Navigate to forgot password screen
+                router.navigate(to: AuthDestinations.forgotPassword)
             }) {
                 Text(L10n.Login.forgotPassword)
                     .font(.font(.nunitoSemiBold, size: .small))

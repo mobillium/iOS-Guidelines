@@ -20,24 +20,8 @@ struct RegisterScene<ViewModel: RegisterSceneModel>: View {
     var body: some View {
         BaseScene(content: {
             VStack(spacing: .zero) {
-                HStack(spacing: .zero) {
-                    Button(action: {
-                        router.navigateBack()
-                    }) {
-                        Image("ic_back", bundle: Bundle.assetsKit)
-                            .tint(Color.appText)
-                            .frame(width: 48, height: 48)
-                    }
-                    .padding([.leading], -18.5)
-                    Spacer()
-                }
-                .padding([.leading], 16)
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: .zero) {
-                        headerView
-
-                        Spacer(minLength: 32)
-
                         emailFieldView
 
                         Spacer(minLength: 20)
@@ -59,17 +43,35 @@ struct RegisterScene<ViewModel: RegisterSceneModel>: View {
                 bottomSignInSection
             }
         }, viewModel: viewModel)
+        .navigationTitle(L10n.Register.title)
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.appElevation1)
-        .navigationBarHidden(true)
-    }
-
-    // MARK: - Header View
-    private var headerView: some View {
-        Text(L10n.Register.title)
-            .font(.font(.nunitoBold, size: .xxLarge))
-            .foregroundColor(.appFocus)
-            .frame(maxWidth: .infinity, alignment: .center)
+        .toolbarBackground(Color.appPrimary, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                if #available(iOS 26.0, *) {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.font(.nunitoBold, size: .medium))
+                            .foregroundColor(.appPureWhite)
+                    }
+                    .buttonStyle(GlassProminentButtonStyle())
+                    .tint(.appPrimary)
+                } else {
+                    Button(action: {
+                        NotificationCenter.default.post(name: .dismissAuth, object: nil)
+                    }) {
+                        Image(systemName: "xmark")
+                            .font(.font(.nunitoBold, size: .medium))
+                            .foregroundColor(.appPureWhite)
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Email Field View

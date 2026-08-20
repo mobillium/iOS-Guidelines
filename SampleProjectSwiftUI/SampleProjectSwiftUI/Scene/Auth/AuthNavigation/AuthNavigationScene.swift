@@ -25,6 +25,7 @@ struct AuthNavigationScene: View {
         .onReceive(NotificationCenter.default.publisher(for: .dismissAuth)) { _ in
             dismiss()
         }
+        .installToast(position: .bottom)
         .environmentObject(router)
     }
 }

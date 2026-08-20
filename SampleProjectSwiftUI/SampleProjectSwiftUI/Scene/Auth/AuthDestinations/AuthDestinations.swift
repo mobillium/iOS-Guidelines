@@ -10,6 +10,7 @@ import SwiftUI
 enum AuthDestinations: DestinationProtocol {
     case login
     case register
+    case forgotPassword
 
     @MainActor
     @ViewBuilder
@@ -19,6 +20,8 @@ enum AuthDestinations: DestinationProtocol {
             LoginScene(viewModel: LoginSceneModel())
         case .register:
             RegisterScene(viewModel: RegisterSceneModel())
+        case .forgotPassword:
+            ForgotPasswordScene(viewModel: ForgotPasswordSceneModel())
         }
     }
 }
